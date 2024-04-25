@@ -28,7 +28,7 @@ import mne_connectivity
 
 [1;31m---------------------------------------------------------------------------[0m
 [1;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-[1;32mC:\Users\ALEXAN~1\AppData\Local\Temp/ipykernel_12508/4132493247.py[0m in [0;36m<module>[1;34m[0m
+[1;32mC:\Users\ALEXAN~1\AppData\Local\Temp/ipykernel_4836/4132493247.py[0m in [0;36m<module>[1;34m[0m
 [0;32m      5[0m [1;32mimport[0m [0mmatplotlib[0m[1;33m[0m[1;33m[0m[0m
 [0;32m      6[0m [1;32mimport[0m [0mseaborn[0m [1;32mas[0m [0msns[0m[1;33m[0m[1;33m[0m[0m
 [1;32m----> 7[1;33m [1;32mimport[0m [0mmne_connectivity[0m[1;33m[0m[1;33m[0m[0m
