@@ -1,5 +1,6 @@
 1. Add .md or .ipynb files
 2. Add to content list in _toc.yml file
-3. Push main to github without folder _build
-4. Locally in folder of repo "jupyter-book build ."
-5. Then locally in folder of repo "ghp-import -n -p -f _build/html"
+3. Delete old _build folder
+4. Push main to github (Don't do anything with gh-pages branch)
+5. Locally in folder of repo "jupyter-book build ."
+6. Then locally in folder of repo "ghp-import -n -p -f _build/html"
