@@ -7,16 +7,12 @@ options:  # The options key will be applied to all chapters, but not sub-section
   numbered: True
 parts:
 
-- caption: Biology of Aging
+- caption: Introduction
   numbered: true
   chapters:
   - file: bio/intro_neuroml
-  - file: bio/shell_intro
 
 - caption: Seminar EEG
   numbered: true
   chapters:
   - file: seminar1/seminar1-working-with-eeg
-
-
-  

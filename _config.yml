@@ -3,14 +3,12 @@
 
 title: Neuroimaging and Machine Learning for Biomedicine
 author: Nadezhda Alsahanova
-logo: symbol.png
+logo: logo.png
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
 execute:
   execute_notebooks: force
-  timeout: 300
-#  exclude_patterns: ['projects/2023/**/*.ipynb']
 
 # Define the name of the latex output file for PDF builds
 latex:
@@ -24,7 +22,7 @@ bibtex_bibfiles:
 sphinx:
   config:
     bibtex_reference_style: author_year
-    
+
 # Information about where the book exists on the web
 repository:
   url: https://github.com/BIMAI-lab/NEUROML_course  # Online location of your book
@@ -34,6 +32,6 @@ repository:
 # Add GitHub buttons to your book
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
 html:
-  favicon: "./symbol.png"
+  favicon: "./logo.png"
   use_issues_button: true
   use_repository_button: true
