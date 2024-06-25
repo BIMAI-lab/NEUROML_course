@@ -12,7 +12,32 @@ parts:
   chapters:
   - file: bio/intro_neuroml
 
-- caption: Seminar EEG
+- caption: Seminar 1: Working with EEG
   numbered: true
   chapters:
   - file: seminar1/seminar1-working-with-eeg
+
+- caption: Seminars 2-3: Working with MRI
+  numbered: true
+  chapters:
+  - file: seminar2/seminar2_1_mri
+  - file: seminar2/seminar2_2_transform
+  - file: seminar2/seminar2_3_freesurfer
+  - url: https://colab.research.google.com/drive/1i0f49198_Jb4fp-dw-8Dl46S8gKRyO8A?usp=sharing
+    title: MRI classification on morphometry data
+  - url: https://colab.research.google.com/drive/1fUSEvtxTgWYatJTBa1kHjKQU2vUW0V3v?usp=sharing
+    title: MRI classification with 3D CNN
+  - url: https://colab.research.google.com/drive/19yE-7yJDztLJHCvxFgMR6rGH-A3MFjsM?usp=sharing
+    title: MRI segmentation with 3D U-net
+
+- caption: Seminar 4-6: Working with fMRI
+  numbered: true
+  chapters:
+  - url: https://colab.research.google.com/drive/1V3pLq3B_AdMFBL3EVJD9VFU7GJ0PvAA5?usp=sharing
+    title: Functional connectivity
+  - url: https://colab.research.google.com/drive/1elqHcFpcx1_QX4jhbNihM0whPgfJzBV3?usp=sharing
+    title: Extract ICA components from fMRI data
+  - url: https://colab.research.google.com/drive/1zFSdOD0HkhTi9r2l4t_pbW--FFgTK9fm?usp=sharing
+    title: Deep Learning methods for fMRI data
+
+
