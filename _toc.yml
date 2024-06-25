@@ -12,7 +12,7 @@ parts:
   chapters:
   - file: bio/intro_neuroml
 
-- caption: Seminar 1: Working with EEG
+- caption: Seminar 1 - Working with EEG
   numbered: true
   chapters:
   - file: seminar1/seminar1-working-with-eeg
