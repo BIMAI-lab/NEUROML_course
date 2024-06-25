@@ -64,6 +64,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../_static/logo.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="3. MRI data analysis, sources databases, tools and QC" href="../seminar2/seminar2_1_mri.html" />
     <link rel="prev" title="1. Introduction to neuroscience and neuroimaging" href="../bio/intro_neuroml.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
@@ -159,9 +160,31 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../bio/intro_neuroml.html">1. Introduction to neuroscience and neuroimaging</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Seminar EEG</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Seminar 1. Working with EEG</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">2. Seminar 1. EEG analysis</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Seminars 2-3. Working with MRI</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../seminar2/seminar2_1_mri.html">3. MRI data analysis, sources databases, tools and QC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../seminar2/seminar2_2_transform.html">4. Transformations</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../seminar2/seminar2_3_freesurfer.html">10. FREESURFER</a></li>
+
+
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1i0f49198_Jb4fp-dw-8Dl46S8gKRyO8A?usp=sharing">MRI classification on morphometry data</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1fUSEvtxTgWYatJTBa1kHjKQU2vUW0V3v?usp=sharing">MRI classification with 3D CNN</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/19yE-7yJDztLJHCvxFgMR6rGH-A3MFjsM?usp=sharing">MRI segmentation with 3D U-net</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Seminar 4-6. Working with fMRI</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1V3pLq3B_AdMFBL3EVJD9VFU7GJ0PvAA5?usp=sharing">Functional connectivity</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1elqHcFpcx1_QX4jhbNihM0whPgfJzBV3?usp=sharing">Extract ICA components from fMRI data</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1zFSdOD0HkhTi9r2l4t_pbW--FFgTK9fm?usp=sharing">Deep Learning methods for fMRI data</a></li>
 </ul>
 
     </div>
@@ -433,7 +456,9 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Alexander\anaconda3\lib\site-packages\pandas\core\computation\expressions.py:21: UserWarning: Pandas requires version &#39;2.8.4&#39; or newer of &#39;numexpr&#39; (version &#39;2.7.3&#39; currently installed).
   from pandas.core.computation.check import NUMEXPR_INSTALLED
-C:\Users\Alexander\anaconda3\lib\site-packages\pandas\core\arrays\masked.py:60: UserWarning: Pandas requires version &#39;1.3.6&#39; or newer of &#39;bottleneck&#39; (version &#39;1.3.2&#39; currently installed).
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Alexander\anaconda3\lib\site-packages\pandas\core\arrays\masked.py:60: UserWarning: Pandas requires version &#39;1.3.6&#39; or newer of &#39;bottleneck&#39; (version &#39;1.3.2&#39; currently installed).
   from pandas.core import (
 </pre></div>
 </div>
@@ -992,9 +1017,11 @@ File formats (EDF, FIFF)</p>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Plotting power spectral density (dB=True).
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ALEXAN~1\AppData\Local\Temp/ipykernel_18748/3346483182.py:1: FutureWarning: The value of `amplitude=&#39;auto&#39;` will be removed in MNE 1.8.0, and the new default will be `amplitude=False`.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ALEXAN~1\AppData\Local\Temp/ipykernel_10924/3346483182.py:1: FutureWarning: The value of `amplitude=&#39;auto&#39;` will be removed in MNE 1.8.0, and the new default will be `amplitude=False`.
   sample_1020.plot_psd();
-C:\Users\Alexander\anaconda3\lib\site-packages\mne\viz\utils.py:167: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Alexander\anaconda3\lib\site-packages\mne\viz\utils.py:167: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
   (fig or plt).show(**kwargs)
 </pre></div>
 </div>
@@ -1480,7 +1507,7 @@ Name: count, dtype: int64
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Averaging across epochs...
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ALEXAN~1\AppData\Local\Temp/ipykernel_18748/2204970765.py:1: FutureWarning: The value of `amplitude=&#39;auto&#39;` will be removed in MNE 1.8.0, and the new default will be `amplitude=False`.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ALEXAN~1\AppData\Local\Temp/ipykernel_10924/2204970765.py:1: FutureWarning: The value of `amplitude=&#39;auto&#39;` will be removed in MNE 1.8.0, and the new default will be `amplitude=False`.
   epochs.plot_psd();
 C:\Users\Alexander\anaconda3\lib\site-packages\mne\viz\utils.py:167: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
   (fig or plt).show(**kwargs)
@@ -1594,7 +1621,7 @@ Name: count, dtype: int64
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Selecting by number: 10 components
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fitting ICA took 0.3s.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fitting ICA took 1.3s.
 </pre></div>
 </div>
 <div class="output text_html"><table class="table table-hover table-striped table-sm table-responsive small">
@@ -2364,6 +2391,15 @@ Name: count, dtype: int64
         <p class="prev-next-subtitle">previous</p>
         <p class="prev-next-title"><span class="section-number">1. </span>Introduction to neuroscience and neuroimaging</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="../seminar2/seminar2_1_mri.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>MRI data analysis, sources databases, tools and QC</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div></div>
   

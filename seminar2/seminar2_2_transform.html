@@ -1,0 +1,980 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>4. Transformations &#8212; Neuroimaging and Machine Learning for Biomedicine</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'seminar2/seminar2_2_transform';</script>
+    <link rel="shortcut icon" href="../_static/logo.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="10. FREESURFER" href="seminar2_3_freesurfer.html" />
+    <link rel="prev" title="3. MRI data analysis, sources databases, tools and QC" href="seminar2_1_mri.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to the Neuroimaging and Machine Learning for Biomedicine coursebook
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../bio/intro_neuroml.html">1. Introduction to neuroscience and neuroimaging</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Seminar 1. Working with EEG</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../seminar1/seminar1-working-with-eeg.html">2. Seminar 1. EEG analysis</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Seminars 2-3. Working with MRI</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="seminar2_1_mri.html">3. MRI data analysis, sources databases, tools and QC</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">4. Transformations</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="seminar2_3_freesurfer.html">10. FREESURFER</a></li>
+
+
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1i0f49198_Jb4fp-dw-8Dl46S8gKRyO8A?usp=sharing">MRI classification on morphometry data</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1fUSEvtxTgWYatJTBa1kHjKQU2vUW0V3v?usp=sharing">MRI classification with 3D CNN</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/19yE-7yJDztLJHCvxFgMR6rGH-A3MFjsM?usp=sharing">MRI segmentation with 3D U-net</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Seminar 4-6. Working with fMRI</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1V3pLq3B_AdMFBL3EVJD9VFU7GJ0PvAA5?usp=sharing">Functional connectivity</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1elqHcFpcx1_QX4jhbNihM0whPgfJzBV3?usp=sharing">Extract ICA components from fMRI data</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1zFSdOD0HkhTi9r2l4t_pbW--FFgTK9fm?usp=sharing">Deep Learning methods for fMRI data</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/BIMAI-lab/NEUROML_course" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/BIMAI-lab/NEUROML_course/issues/new?title=Issue%20on%20page%20%2Fseminar2/seminar2_2_transform.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/seminar2/seminar2_2_transform.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Transformations</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">4. Transformations</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#affine-transformations-and-rigid-transformations">5. Affine transformations and rigid transformations</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#spatial-normalization-methods">6. Spatial Normalization Methods</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ants-registration">7. ANTs Registration</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ants-initialize-ants-transform">8. ANTs initialize + ANTs transform</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#file-formats-convertation-volume-to-volume">9. File formats convertation - volume-to-volume</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="transformations">
+<h1><span class="section-number">4. </span>Transformations<a class="headerlink" href="#transformations" title="Permalink to this headline">#</a></h1>
+<p>Before you can start with a second level analysis you are facing the problem that all your output from the first level analysis are still in their subject specific subject-space. Because of the huge differences in brain size and cortical structure, it is very important to transform the data of each subject from its individual subject-space into a common standardized reference-space. This process of transformation is what we call normalization and it consists of a rigid body transformation (translations and rotations) as well as of a affine transformation (zooms and shears). The most common template that subject data is normalized to is the MNI template.</p>
+<p><strong>MNI Space and templates</strong></p>
+<p><em>The Montreal Neurological Institute (MNI)</em> has published several “template brains,” which are generic brain shapes created by averaging together hundreds of individual anatomical scans. There are linear and non linear templates.</p>
+<p><a class="reference external" href="https://www.lead-dbs.org/about-the-mni-spaces/">https://www.lead-dbs.org/about-the-mni-spaces/</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="n">Image</span><span class="p">(</span><span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;/workspace/assets/atlases.png&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">800</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="ne">C</span>:\Users\ALEXAN~1\AppData\Local\Temp/ipykernel_9248/1361960725.py in &lt;module&gt;
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">Image</span><span class="p">(</span><span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;/workspace/assets/atlases.png&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">800</span><span class="p">)</span>
+
+<span class="nn">~\anaconda3\lib\site-packages\IPython\core\display.py</span> in <span class="ni">__init__</span><span class="nt">(self, data, url, filename, format, embed, width, height, retina, unconfined, metadata)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1229</span>         <span class="bp">self</span><span class="o">.</span><span class="n">retina</span> <span class="o">=</span> <span class="n">retina</span>
+<span class="g g-Whitespace">   </span><span class="mi">1230</span>         <span class="bp">self</span><span class="o">.</span><span class="n">unconfined</span> <span class="o">=</span> <span class="n">unconfined</span>
+<span class="ne">-&gt; </span><span class="mi">1231</span>         <span class="nb">super</span><span class="p">(</span><span class="n">Image</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="n">filename</span><span class="p">,</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1232</span>                 <span class="n">metadata</span><span class="o">=</span><span class="n">metadata</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1233</span> 
+
+<span class="nn">~\anaconda3\lib\site-packages\IPython\core\display.py</span> in <span class="ni">__init__</span><span class="nt">(self, data, url, filename, metadata)</span>
+<span class="g g-Whitespace">    </span><span class="mi">635</span>             <span class="bp">self</span><span class="o">.</span><span class="n">metadata</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="g g-Whitespace">    </span><span class="mi">636</span> 
+<span class="ne">--&gt; </span><span class="mi">637</span>         <span class="bp">self</span><span class="o">.</span><span class="n">reload</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">638</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_check_data</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">639</span> 
+
+<span class="nn">~\anaconda3\lib\site-packages\IPython\core\display.py</span> in <span class="ni">reload</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1261</span>         <span class="sd">&quot;&quot;&quot;Reload the raw data from file or URL.&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1262</span>         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">embed</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1263</span>             <span class="nb">super</span><span class="p">(</span><span class="n">Image</span><span class="p">,</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">reload</span><span class="p">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1264</span>             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">retina</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1265</span>                 <span class="bp">self</span><span class="o">.</span><span class="n">_retina_shape</span><span class="p">()</span>
+
+<span class="nn">~\anaconda3\lib\site-packages\IPython\core\display.py</span> in <span class="ni">reload</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">660</span>         <span class="sd">&quot;&quot;&quot;Reload the raw data from file or URL.&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">661</span>         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">filename</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">662</span>             <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">filename</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_read_flags</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">663</span>                 <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">664</span>         <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">url</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;/workspace/assets/atlases.png&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import warnings</span>
+<span class="c1"># warnings.filterwarnings(&#39;ignore&#39;)</span>
+<span class="c1"># import nilearn</span>
+<span class="c1"># from nilearn import plotting</span>
+<span class="c1"># from nilearn import image</span>
+<span class="c1"># from nilearn.datasets import load_mni152_template</span>
+<span class="c1"># import nibabel as nib</span>
+<span class="c1"># %matplotlib inline</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can think of the image affine as a combination of a series of transformations to go from voxel coordinates to mm coordinates in terms of the magnet isocenter. Here is the EPI affine broken down into a series of transformations, with the results shown on the localizer image:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;/workspace/assets/affine_1.png&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="affine-transformations-and-rigid-transformations">
+<h1><span class="section-number">5. </span>Affine transformations and rigid transformations<a class="headerlink" href="#affine-transformations-and-rigid-transformations" title="Permalink to this headline">#</a></h1>
+<p>Why affine qform and sform tranformations are important?
+<em>sform</em> allows full 12 parameter affine transfrom to be encoded, however <em>qform</em> 9 parameter is limited to encoding
+translations, rotations (via a quaternion representation) and isotropic zooms.</p>
+<p><a class="reference external" href="https://www.lead-dbs.org/about-the-mni-spaces/">https://www.lead-dbs.org/about-the-mni-spaces/</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># !wget --progress=bar:force:noscroll -P /tmp http://www.bic.mni.mcgill.ca/~vfonov/icbm/2009/mni_icbm152_nlin_sym_09a_nifti.zip &amp;&amp; \</span>
+<span class="c1"># 	mkdir -p /workspace/data/mni_icbm152_nlin_sym_09a &amp;&amp; \</span>
+<span class="c1"># 	unzip -o -d /workspace/data/tmp/mni_icbm152_nlin_sym_09a_nifti.zip &amp;&amp; \</span>
+<span class="c1"># 	rm -r /tmp/mni_icbm152_nlin_sym_09a_nifti.zip</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># nii_file = nib.load(&#39;/workspace/data/raw/100206/unprocessed/3T/T1w_MPR1/100206_3T_T1w_MPR1.nii.gz&#39;)</span>
+<span class="c1"># # Load ing MNI template</span>
+<span class="c1"># mni_space_template = nib.load(&#39;/workspace/data/mni_icbm152_nlin_sym_09a/mni_icbm152_t1_tal_nlin_sym_09a.nii&#39;)  # Full template</span>
+
+<span class="c1"># nilearn.plotting.plot_anat(nii_file,</span>
+<span class="c1">#                            title=&#39;Nifti T1 Native Space&#39;, annotate=True)</span>
+
+<span class="c1"># nilearn.plotting.plot_anat(mni_space_template,</span>
+<span class="c1">#                            title=&#39;Nifti MNI152 Space&#39;)</span>
+
+<span class="c1"># diff = nilearn.plotting.plot_anat(nii_file,</span>
+<span class="c1">#                            title=&#39;Space displacement&#39;)</span>
+<span class="c1"># diff.add_contours(mni_space_template, threshold=70)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s check how using qform we can translate images. <br />
+First: Check images orientation between MNI template and out T1 image.</p>
+<p>print(“””Orintation comparison before transform:</p>
+<ul class="simple">
+<li><p>T1 native image orientation:\n {0}</p></li>
+<li><p>MNI Space template brain:\n {1}
+“””.format(nii_file.affine, mni_space_template.affine))</p></li>
+</ul>
+<p>Second: Check shapes of image</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># print(&quot;&quot;&quot;Shape comparison before transform:</span>
+<span class="c1"># - T1 native image affine:\n {0}</span>
+<span class="c1"># - MNI Space template brain:\n {1}</span>
+<span class="c1"># &quot;&quot;&quot;.format(nii_file.shape, mni_space_template.shape))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Third: use from_matvec method, to create 4x4 matrix from 3x3 vector to add translation of translate to dot with qform header</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># from nibabel.affines import from_matvec, to_matvec, apply_affine</span>
+<span class="c1"># import numpy as np</span>
+<span class="c1"># import matplotlib.pyplot as plt</span>
+
+<span class="c1"># # reflect = np.array([[-1, 0, 0],</span>
+<span class="c1"># #                     [0, 1, 0],</span>
+<span class="c1"># #                     [0, 0, 1]])</span>
+
+<span class="c1"># reflect = np.array([[1, 0, 0],</span>
+<span class="c1">#                      [0, 1, 0],</span>
+<span class="c1">#                      [0, 0, 1]])</span>
+
+<span class="c1"># translate_affine = from_matvec(reflect, [50, 0, 0])  # shift 50 x direction</span>
+<span class="c1"># translate_affine</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># transformed = np.dot(nii_file.get_qform(), translate_affine)</span>
+<span class="c1"># #nii_file.affine = transformed</span>
+<span class="c1"># print(transformed)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># print(nii_file.get_qform())</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Finally, create new nifti with same array if intensities but with new qform header after translation with NIFTI1Image with new</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># header_info = nii_file.header</span>
+<span class="c1"># vox_data = np.array(nii_file.get_fdata())</span>
+<span class="c1"># transformed_nii = nib.Nifti1Image(vox_data, transformed)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># tranfsorm_image = nilearn.plotting.plot_anat(transformed_nii,</span>
+<span class="c1">#                            title=&#39;Space displacement&#39;, annotate=True)</span>
+<span class="c1"># tranfsorm_image.add_overlay(nii_file, alpha=0.5)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># transform_image = nilearn.plotting.plot_anat(transformed_nii,</span>
+<span class="c1">#                            title=&#39;Space displacement&#39;, annotate=True)</span>
+<span class="c1"># transform_image.add_overlay(nii_file,threshold=0.8e3, colorbar=True)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Try: How about rotation?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># cos_gamma = np.cos(0.3)</span>
+<span class="c1"># sin_gamma = np.sin(0.3)</span>
+<span class="c1"># rotation_affine = np.array([[1, 0, 0, 0],</span>
+<span class="c1">#                             [0, cos_gamma, -sin_gamma, 0],</span>
+<span class="c1">#                             [0, sin_gamma, cos_gamma, 0],</span>
+<span class="c1">#                             [0, 0, 0, 1]])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># rotation_affine</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># after_rot = image.resample_img(nii_file, </span>
+<span class="c1">#                                target_affine=rotation_affine.dot(nii_file.affine),</span>
+<span class="c1">#                                target_shape=nii_file.shape,</span>
+<span class="c1">#                                interpolation=&#39;continuous&#39;)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># chimera = nib.Nifti1Image(after_rot.get_fdata(), nii_file.affine) # get_data - error</span>
+<span class="c1"># tranfsorm_image = nilearn.plotting.plot_anat(nii_file,</span>
+<span class="c1">#                            title=&#39;Rotation&#39;, annotate=True)</span>
+<span class="c1"># tranfsorm_image.add_overlay(chimera, alpha=0.5)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># after_rot.shape == nii_file.shape</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="spatial-normalization-methods">
+<h1><span class="section-number">6. </span>Spatial Normalization Methods<a class="headerlink" href="#spatial-normalization-methods" title="Permalink to this headline">#</a></h1>
+<p>All brains are different. The brain size of two subject can differ in size by up to 30%. <br />
+There may also be substantial variation in the shapes of the brain. <br />
+Normalization allows one to stretch, squeeze and warp each brain so that it is the same as some standard brain. <br />
+Pros/cons:</p>
+<ul class="simple">
+<li><p>results can be generalized to larger population;</p></li>
+<li><p>results can be compared across studies;</p></li>
+<li><p>results can be averaged across subjects;</p></li>
+</ul>
+<ul class="simple">
+<li><ul>
+<li><p>potential errors (always make visual control of results);</p></li>
+</ul>
+</li>
+<li><ul>
+<li><p>reduces spatial resolution</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;/workspace/assets/normalization.png&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="ants-registration">
+<h1><span class="section-number">7. </span>ANTs Registration<a class="headerlink" href="#ants-registration" title="Permalink to this headline">#</a></h1>
+<p>Volume-based registration method, often used for corregistration between series. \</p>
+<p><a class="reference external" href="https://nipype.readthedocs.io/en/1.1.7/interfaces/generated/interfaces.ants/registration.html">https://nipype.readthedocs.io/en/1.1.7/interfaces/generated/interfaces.ants/registration.html</a> <br />
+<a class="github reference external" href="https://github.com/ANTsX/ANTs/wiki/Anatomy-of-an-antsRegistration-call">ANTsX/ANTs</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># from nipype.interfaces.ants import RegistrationSynQuick</span>
+<span class="c1"># reg = RegistrationSynQuick()</span>
+<span class="c1"># reg.inputs.fixed_image = &#39;/workspace/data/mni_icbm152_nlin_sym_09a/mni_icbm152_t1_tal_nlin_sym_09a.nii&#39;</span>
+<span class="c1"># reg.inputs.moving_image = &#39;/workspace/data/raw/100206/unprocessed/3T/T1w_MPR1/100206_3T_T1w_MPR1.nii.gz&#39;</span>
+<span class="c1"># reg.inputs.output_prefix = &#39;subject_name&#39;</span>
+<span class="c1"># print(reg.cmdline)</span>
+<span class="c1"># reg.run()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="ants-initialize-ants-transform">
+<h1><span class="section-number">8. </span>ANTs initialize + ANTs transform<a class="headerlink" href="#ants-initialize-ants-transform" title="Permalink to this headline">#</a></h1>
+<p>Next methods of ants compute optimal transformation and produces ./mat transformation matrix, then calling registation() to apply it.</p>
+<p>ANTs initialize affine between two spaces and outputs transformation matrix
+ANTs Transform takes affine matrix and output target space image</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># from nipype.interfaces.ants import AffineInitializer</span>
+<span class="c1"># init = AffineInitializer()</span>
+<span class="c1"># init.inputs.fixed_image = &#39;/workspace/data/mni_icbm152_nlin_sym_09a/mni_icbm152_t1_tal_nlin_sym_09a.nii&#39;</span>
+<span class="c1"># init.inputs.moving_image = &#39;/workspace/data/raw/100206/unprocessed/3T/T1w_MPR1/100206_3T_T1w_MPR1.nii.gz&#39;</span>
+<span class="c1"># init.inputs.out_file = &#39;/workspace/data/transfm.mat&#39;</span>
+<span class="c1"># print(init.cmdline)</span>
+<span class="c1"># init.run()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Apply a transform list to map an image from one domain to another.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># from nipype.interfaces.ants import ApplyTransforms</span>
+<span class="c1"># at = ApplyTransforms()</span>
+<span class="c1"># at.inputs.input_image = &#39;/workspace/data/raw/100206/unprocessed/3T/T1w_MPR1/100206_3T_T1w_MPR1.nii.gz&#39;</span>
+<span class="c1"># at.inputs.reference_image = &#39;/workspace/data/mni_icbm152_nlin_sym_09a/mni_icbm152_t1_tal_nlin_sym_09a.nii&#39;</span>
+<span class="c1"># at.inputs.transforms = &#39;/workspace/data/transfm.mat&#39;</span>
+<span class="c1"># at.inputs.output_image = &#39;./sub-100206_MNI159_space.nii.gz&#39;</span>
+<span class="c1"># at.inputs.interpolation = &#39;Linear&#39;</span>
+<span class="c1"># print(at.cmdline)</span>
+<span class="c1"># at.run()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Compare shape and orientation done by two methods</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># nii_file_mni152_antsreg = nib.load(&#39;./sub-100206_MNI159_space.nii.gz&#39;)</span>
+<span class="c1"># nii_file_mni152_antstransform = nib.load(&#39;./subject_nameWarped.nii.gz&#39;)</span>
+<span class="c1"># print(&quot;&quot;&quot;Orientation comparison after transform:</span>
+<span class="c1"># - T1 native after transform:\n {0}</span>
+<span class="c1"># - MNI Space template:\n {1}</span>
+<span class="c1"># - T1 native after transform with affine: \n {2}</span>
+<span class="c1"># &quot;&quot;&quot;.format(nii_file_mni152_antsreg.affine, mni_space_template.affine, nii_file_mni152_antstransform.affine))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># print(&quot;&quot;&quot;Shape comparison after transform:</span>
+<span class="c1"># - T1 native after transform:\n {0}</span>
+<span class="c1"># - MNI Space template brain:\n {1}</span>
+<span class="c1"># - T1 native after transform with antstransform: \n {2}</span>
+<span class="c1"># &quot;&quot;&quot;.format(nii_file_mni152_antsreg.shape, mni_space_template.shape, nii_file_mni152_antstransform.shape))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>T1w and template alignment</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># antstransform_result = nilearn.plotting.plot_anat(nii_file_mni152_antsreg)</span>
+<span class="c1"># antstransform_result.add_contours(mni_space_template, threshold=70, title=&#39;Nifti MNI152 Space&#39;)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import nilearn</span>
+<span class="c1"># from nilearn import plotting</span>
+
+<span class="c1"># nilearn.plotting.view_img(nii_file, bg_img=mni_space_template, threshold=&#39;auto&#39;)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Tips:</p>
+<ol class="arabic simple">
+<li><p>Run a bias correction before antsRegistration (i.e. N4). It helps getting better registration. \</p></li>
+<li><p>Remove the skull before antsRegistration. If you have two brain-only images, you can be sure that surrounding tissues (i.e. the skull) will not take a toll on the registration accuracy. If you are using these skull-stripped versions, you can avoid using the mask, because you want the registration to use the “edge” features. If you use a mask, anything out of the mask will not be considered, the algorithm will try to match what’s inside the brain, but not the edge of the brain itself (see Nick’s explanation here). \</p></li>
+<li><p>Never register a lesioned brain with a healthy brain without a proper mask. The algorithm will just pull the remaining parts of the lesioned brain to fill “the gap”. Despite initial statements that you can register lesioned brains without the need to mask out the lesion, there is evidence showing that results without lesion masking are sub-optimal. If you really don’t have the lesion mask, even a coarse and imprecise drawing of lesions helps (see Andersen 2010). \</p></li>
+<li><p>Don’t forget to read the parts of the manual (<a class="github reference external" href="https://github.com/ANTsX/ANTs/wiki/Anatomy-of-an-antsRegistration-call">ANTsX/ANTs</a>) related to registration.</p></li>
+</ol>
+</section>
+<section id="file-formats-convertation-volume-to-volume">
+<h1><span class="section-number">9. </span>File formats convertation - volume-to-volume<a class="headerlink" href="#file-formats-convertation-volume-to-volume" title="Permalink to this headline">#</a></h1>
+<p>You can convert file from preprocessing freesurfer to mni and t1 spaces, using antsTransform with fresurfer native command: <em>mri_convert</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># !mri_convert --in_type mgz --out_type nii --out_orientation RAS \</span>
+<span class="c1">#             /workspace/data/freesurfer_preproc/100206/mri/T1.mgz \</span>
+<span class="c1">#             /workspace/T1_fs_preprocessed.nii</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># freesurfer_t1 = nib.load(&#39;./T1_fs_preprocessed.nii&#39;)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># freesurfer_t1.shape</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># freesurfer_t1.affine</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># freesurfer_plot = nilearn.plotting.plot_anat(freesurfer_t1)</span>
+<span class="c1"># freesurfer_plot.add_contours(mni_space_template)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import os</span>
+<span class="c1">#  Implement ANTs registration to allign mni and freesurfer template</span>
+
+<span class="c1">#  PUT YOUR CODE HERE</span>
+
+<span class="c1"># reg = RegistrationSynQuick()</span>
+<span class="c1"># reg.inputs.moving_image = os.path.abspath(&#39;./T1_fs_preprocessed.nii&#39;)</span>
+<span class="c1"># reg.inputs.fixed_image = os.path.abspath(&#39;...&#39;)</span>
+<span class="c1"># ...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># reg = RegistrationSynQuick()</span>
+<span class="c1"># reg.inputs.moving_image = os.path.abspath(&#39;./T1_fs_preprocessed.nii&#39;)</span>
+<span class="c1"># reg.inputs.fixed_image = os.path.abspath(&#39;/workspace/data/mni_icbm152_nlin_sym_09a/mni_icbm152_t1_tal_nlin_sym_09a.nii&#39;)</span>
+<span class="c1"># reg.inputs.output_prefix = &#39;fs&#39;</span>
+<span class="c1"># print(reg.cmdline)</span>
+<span class="c1"># reg.run()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># nilearn.plotting.plot_img(&#39;fsInverseWarped.nii.gz&#39;, bg_img=&#39;fsWarped.nii.gz&#39;, threshold=&#39;auto&#39;, alpha=0.8)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./seminar2"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="seminar2_1_mri.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>MRI data analysis, sources databases, tools and QC</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="seminar2_3_freesurfer.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">10. </span>FREESURFER</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">4. Transformations</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#affine-transformations-and-rigid-transformations">5. Affine transformations and rigid transformations</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#spatial-normalization-methods">6. Spatial Normalization Methods</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ants-registration">7. ANTs Registration</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ants-initialize-ants-transform">8. ANTs initialize + ANTs transform</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#file-formats-convertation-volume-to-volume">9. File formats convertation - volume-to-volume</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Nadezhda Alsahanova
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
