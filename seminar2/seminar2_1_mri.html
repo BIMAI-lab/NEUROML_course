@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>3. MRI data analysis, sources databases, tools and QC &#8212; Neuroimaging and Machine Learning for Biomedicine</title>
+    <title>3. MRI data analysis, sources databases, tools &#8212; Neuroimaging and Machine Learning for Biomedicine</title>
   
   
   
@@ -166,7 +166,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Seminars 2-3. Working with MRI</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">3. MRI data analysis, sources databases, tools and QC</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">3. MRI data analysis, sources databases, tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="seminar2_2_transform.html">4. Transformations</a></li>
 
 
@@ -368,7 +368,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>MRI data analysis, sources databases, tools and QC</h1>
+    <h1>MRI data analysis, sources databases, tools</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -396,8 +396,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="mri-data-analysis-sources-databases-tools-and-qc">
-<h1><span class="section-number">3. </span>MRI data analysis, sources databases, tools and QC<a class="headerlink" href="#mri-data-analysis-sources-databases-tools-and-qc" title="Permalink to this headline">#</a></h1>
+  <section id="mri-data-analysis-sources-databases-tools">
+<h1><span class="section-number">3. </span>MRI data analysis, sources databases, tools<a class="headerlink" href="#mri-data-analysis-sources-databases-tools" title="Permalink to this headline">#</a></h1>
 <section id="plan">
 <h2><span class="section-number">3.1. </span>PLAN:<a class="headerlink" href="#plan" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
@@ -444,47 +444,12 @@ document.write(`
 <p>All volume-based formats store 3D or 4D arrays of voxels in some fashion with a variety of additional meta-data. Anatomical images are typically 3D while EPIs are typically 4D (x,y,z, and time).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;/workspace/assets/voxel.png&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">800</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;./assets/voxel.png&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">800</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="ne">C</span>:\Users\ALEXAN~1\AppData\Local\Temp/ipykernel_5620/926435947.py in &lt;module&gt;
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">Image</span><span class="p">(</span><span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;/workspace/assets/voxel.png&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">800</span><span class="p">)</span>
-
-<span class="nn">~\anaconda3\lib\site-packages\IPython\core\display.py</span> in <span class="ni">__init__</span><span class="nt">(self, data, url, filename, format, embed, width, height, retina, unconfined, metadata)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1229</span>         <span class="bp">self</span><span class="o">.</span><span class="n">retina</span> <span class="o">=</span> <span class="n">retina</span>
-<span class="g g-Whitespace">   </span><span class="mi">1230</span>         <span class="bp">self</span><span class="o">.</span><span class="n">unconfined</span> <span class="o">=</span> <span class="n">unconfined</span>
-<span class="ne">-&gt; </span><span class="mi">1231</span>         <span class="nb">super</span><span class="p">(</span><span class="n">Image</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="n">filename</span><span class="p">,</span> 
-<span class="g g-Whitespace">   </span><span class="mi">1232</span>                 <span class="n">metadata</span><span class="o">=</span><span class="n">metadata</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1233</span> 
-
-<span class="nn">~\anaconda3\lib\site-packages\IPython\core\display.py</span> in <span class="ni">__init__</span><span class="nt">(self, data, url, filename, metadata)</span>
-<span class="g g-Whitespace">    </span><span class="mi">635</span>             <span class="bp">self</span><span class="o">.</span><span class="n">metadata</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="g g-Whitespace">    </span><span class="mi">636</span> 
-<span class="ne">--&gt; </span><span class="mi">637</span>         <span class="bp">self</span><span class="o">.</span><span class="n">reload</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">638</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_check_data</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">639</span> 
-
-<span class="nn">~\anaconda3\lib\site-packages\IPython\core\display.py</span> in <span class="ni">reload</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1261</span>         <span class="sd">&quot;&quot;&quot;Reload the raw data from file or URL.&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1262</span>         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">embed</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1263</span>             <span class="nb">super</span><span class="p">(</span><span class="n">Image</span><span class="p">,</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">reload</span><span class="p">()</span>
-<span class="g g-Whitespace">   </span><span class="mi">1264</span>             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">retina</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1265</span>                 <span class="bp">self</span><span class="o">.</span><span class="n">_retina_shape</span><span class="p">()</span>
-
-<span class="nn">~\anaconda3\lib\site-packages\IPython\core\display.py</span> in <span class="ni">reload</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">660</span>         <span class="sd">&quot;&quot;&quot;Reload the raw data from file or URL.&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">661</span>         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">filename</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">662</span>             <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">filename</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_read_flags</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">663</span>                 <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">664</span>         <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">url</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;/workspace/assets/voxel.png&#39;
-</pre></div>
-</div>
+<img alt="../_images/51766c6093e1a133c9ec61543baedb8b350b9449d15057eee8ecd633ef98a8d4.png" src="../_images/51766c6093e1a133c9ec61543baedb8b350b9449d15057eee8ecd633ef98a8d4.png" />
 </div>
 </div>
 <p><strong>voxel:</strong> A three-dimensional pixel and the basic unit of spatial measurement in MRI.</p>
@@ -651,9 +616,12 @@ Robust .dcm to nii/nii.gz converter. Params <em>%i</em> <em>%n</em> <em>%p</em> 
 <p><strong>MGH File Format</strong> is a default format of <em>freesurfer</em> preprocessing software. That can do the following</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;/workspace/assets/freesurfer.png&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">800</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;./assets/freesurfer.png&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">800</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/0ce80cf1516a95a6b080a7b4b95a4271b15d80d61e90aea1e58f2c34f1fffc3d.png" src="../_images/0ce80cf1516a95a6b080a7b4b95a4271b15d80d61e90aea1e58f2c34f1fffc3d.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -710,9 +678,12 @@ Robust .dcm to nii/nii.gz converter. Params <em>%i</em> <em>%n</em> <em>%p</em> 
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;/workspace/assets/Orientation.png&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">800</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;./assets/Orientation.png&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">800</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/b4c8a6a449bc7144cd1238443b5e1cf90cdcb0010d4bd2d578f412cfd42c403c.png" src="../_images/b4c8a6a449bc7144cd1238443b5e1cf90cdcb0010d4bd2d578f412cfd42c403c.png" />
 </div>
 </div>
 <p>DICOM patient coordinate and Nifti coodrinate system when Patient is Head First Supine. The arrows of axes indicate the positive directions, LPS for DICOM and RAS for Nifti. For Dicom images, the origin (0,0,0) refers to magnet isocenter.</p>
@@ -721,9 +692,12 @@ Robust .dcm to nii/nii.gz converter. Params <em>%i</em> <em>%n</em> <em>%p</em> 
 Simplify representation of DICOM neuroimaging data and grants huge advantages for experiments and version control of dataset. Moreover, reduces dataset storage range.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;/workspace/assets/BIDS.png&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">800</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;./assets/BIDS.png&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">800</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/d7ef48655b4a606a0adf460d10a4bf12c68e38c0e02be1502d887bac092fd861.png" src="../_images/d7ef48655b4a606a0adf460d10a4bf12c68e38c0e02be1502d887bac092fd861.png" />
 </div>
 </div>
 <p>There is a few robust DICOM converters:</p>
