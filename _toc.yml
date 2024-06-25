@@ -12,12 +12,12 @@ parts:
   chapters:
   - file: bio/intro_neuroml
 
-- caption: Seminar 1 - Working with EEG
+- caption: Seminar 1. Working with EEG
   numbered: true
   chapters:
   - file: seminar1/seminar1-working-with-eeg
 
-- caption: Seminars 2-3: Working with MRI
+- caption: Seminars 2-3. Working with MRI
   numbered: true
   chapters:
   - file: seminar2/seminar2_1_mri
@@ -30,7 +30,7 @@ parts:
   - url: https://colab.research.google.com/drive/19yE-7yJDztLJHCvxFgMR6rGH-A3MFjsM?usp=sharing
     title: MRI segmentation with 3D U-net
 
-- caption: Seminar 4-6: Working with fMRI
+- caption: Seminar 4-6. Working with fMRI
   numbered: true
   chapters:
   - url: https://colab.research.google.com/drive/1V3pLq3B_AdMFBL3EVJD9VFU7GJ0PvAA5?usp=sharing
