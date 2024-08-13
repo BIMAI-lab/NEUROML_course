@@ -8,36 +8,53 @@ options:  # The options key will be applied to all chapters, but not sub-section
 parts:
 
 - caption: Introduction
-  numbered: true
+  numbered: false
   chapters:
-  - file: bio/intro_neuroml
+  - url: https://colab.research.google.com/drive/1AM67Sd37J0hIJ-kLyzAZRm8op_JcUQ9b?usp=sharing
+    title: Intro to shell
+  - file: seminar0/Seminar1_python_colab
+    title: Python fundamentals
+  - file: seminar0/Seminar1_ML
+    title: Intro to machine learning
+  - file: seminar0/00_pytorch_fundamentals
+    title: Pytorch fundamentals
+  - url: https://drive.google.com/file/d/1q0XncKq2y_wHLXJaxhjfBCDGHABmzrjM/view?usp=sharing
+    title: Intro to computer vision
 
 - caption: Seminar 1. Working with EEG
-  numbered: true
+  numbered: false
   chapters:
   - file: seminar1/seminar1-working-with-eeg
 
 - caption: Seminars 2-3. Working with MRI
-  numbered: true
+  numbered: false
   chapters:
   - file: seminar2/seminar2_1_mri
+    title: Seminar 2.1. MRI data analysis, databases and tools
   - file: seminar2/seminar2_2_transform
+    title: Seminar 2.2. MRI transformations
   - file: seminar2/seminar2_3_freesurfer
+    title: Seminar 2.3. Freesurfer
   - url: https://colab.research.google.com/drive/1i0f49198_Jb4fp-dw-8Dl46S8gKRyO8A?usp=sharing
-    title: MRI classification on morphometry data
+    title: Seminar 3.1. MRI classification on morphometry data
   - url: https://colab.research.google.com/drive/1fUSEvtxTgWYatJTBa1kHjKQU2vUW0V3v?usp=sharing
-    title: MRI classification with 3D CNN
+    title: Seminar 3.2. MRI classification with 3D CNN
   - url: https://colab.research.google.com/drive/19yE-7yJDztLJHCvxFgMR6rGH-A3MFjsM?usp=sharing
-    title: MRI segmentation with 3D U-net
+    title: Seminar 3.3. MRI segmentation with 3D U-net
 
 - caption: Seminar 4-6. Working with fMRI
-  numbered: true
+  numbered: false
   chapters:
   - url: https://colab.research.google.com/drive/1V3pLq3B_AdMFBL3EVJD9VFU7GJ0PvAA5?usp=sharing
-    title: Functional connectivity
+    title: Seminar 5. Functional connectivity
   - url: https://colab.research.google.com/drive/1elqHcFpcx1_QX4jhbNihM0whPgfJzBV3?usp=sharing
-    title: Extract ICA components from fMRI data
+    title: Seminar 6.1. Extract ICA components from fMRI data
   - url: https://colab.research.google.com/drive/1zFSdOD0HkhTi9r2l4t_pbW--FFgTK9fm?usp=sharing
-    title: Deep Learning methods for fMRI data
+    title: Seminar 6.2. Deep Learning methods for fMRI data
 
+- caption: Seminar 7. Interpretation
+  numbered: false
+  chapters:
+  - url: https://colab.research.google.com/drive/1sJtU1uWezC-hEpDSkyhl0toioOt3F8FF?usp=sharing
+    title: Seminar 7. Interpretation of 3D CNNs for Brain MRI Data Classification
 
