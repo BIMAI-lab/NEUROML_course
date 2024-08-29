@@ -10,6 +10,8 @@ parts:
 - caption: Introduction
   numbered: false
   chapters:
+  - file: bio/intro_links.md
+    title: Links
   - url: https://colab.research.google.com/drive/1AM67Sd37J0hIJ-kLyzAZRm8op_JcUQ9b?usp=sharing
     title: Intro to shell
   - file: seminar0/Seminar1_python_colab
