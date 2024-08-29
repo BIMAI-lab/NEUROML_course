@@ -65,7 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Intro to ML" href="Seminar1_ML.html" />
-    <link rel="prev" title="Welcome to the Neuroimaging and Machine Learning for Biomedicine coursebook" href="../intro.html" />
+    <link rel="prev" title="Introduction to neuroscience and neuroimaging" href="../bio/intro_links.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -158,6 +158,7 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
 <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../bio/intro_links.html">Links</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1AM67Sd37J0hIJ-kLyzAZRm8op_JcUQ9b?usp=sharing">Intro to shell</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">How to work with Python</a></li>
 
@@ -409,48 +410,49 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">How to work with Python</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started"><strong>Getting started</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Ресурсы по теме</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#colab">Работа с блокнотами в Colab</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Работа с данными</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-colab">What is Colab?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started">Getting started</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resources">Resources</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#working-woth-notebooks-in-colab">Working woth notebooks in Colab</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-data">Working with data</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#python">Про Python</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Библиотеки</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Часть 1 - Основы Python</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Стандартные функции языка</a><ul class="nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#python">Python</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#libraries">Libraries</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-basics-of-python">Part 1 - Basics of Python</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#standart-functions">Standart functions</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#print">print()</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Задача 1</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Задача 1</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Арифметические операции</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Задача 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Арифметические операции</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Задача 2</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Переменные и типы переменных</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Задача 4</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Переменные и типы переменных</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Задача 4</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Листы</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">Задача 5</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">Задача 6</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Листы</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Задача 5</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Задача 6</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">Основные конструкции языка</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">Логические выражения</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">Задача 7</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Основные конструкции языка</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Логические выражения</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Задача 7</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">Условный оператор</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">Задачи 9</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">Условный оператор</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">Задачи 9</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#while">Цикл while</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">Задача 10</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">Задача 10</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for">Цикл for</a><ul class="nav section-nav flex-column">
@@ -459,9 +461,9 @@ document.write(`
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">Цикл for</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">Написание функций</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">Задача 11</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">Цикл for</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">Написание функций</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">Задача 11</a></li>
 </ul>
 </li>
 </ul>
@@ -482,9 +484,8 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="how-to-work-with-python">
 <h1>How to work with Python<a class="headerlink" href="#how-to-work-with-python" title="Permalink to this headline">#</a></h1>
 <p><a class="reference external" href="https://colab.research.google.com/drive/1HRZTjLezI_QNm8aFp6Wf5YzKmOg1fxXw?usp=sharing"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
-<div class="markdown-google-sans">
-  <h2>What is Colab?</h2>
-</div>
+<section id="what-is-colab">
+<h2>What is Colab?<a class="headerlink" href="#what-is-colab" title="Permalink to this headline">#</a></h2>
 <p>Colab, or “Colaboratory”, allows you to write and execute Python in your browser, with</p>
 <ul class="simple">
 <li><p>Zero configuration required</p></li>
@@ -492,10 +493,9 @@ document.write(`
 <li><p>Easy sharing</p></li>
 </ul>
 <p>Whether you’re a <strong>student</strong>, a <strong>data scientist</strong> or an <strong>AI researcher</strong>, Colab can make your work easier.</p>
-<div class="markdown-google-sans">
+</section>
 <section id="getting-started">
-<h2><strong>Getting started</strong><a class="headerlink" href="#getting-started" title="Permalink to this headline">#</a></h2>
-</div>
+<h2>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this headline">#</a></h2>
 <p>The document you are reading is not a static web page, but an interactive environment called a <strong>Colab notebook</strong> that lets you write and execute code.</p>
 <p>For example, here is a <strong>code cell</strong> with a short Python script that computes a value, stores it in a variable, and prints the result:</p>
 <div class="cell docutils container">
@@ -527,93 +527,59 @@ document.write(`
 </div>
 </div>
 </div>
-<p><strong>Создание ячейки</strong></p>
-<ul class="simple">
-<li><p>Чтобы создать новую ячейку, можно воспользоваться : <br></p>
-<ol class="arabic simple">
-<li><p>воспользоваться кнопкой “+ Код” на верхней панели управления для создания ячейки с кодом;<br></p></li>
-<li><p>воспользоваться кнопкой “+ Текст” на верхней панели управления для создания ячейки с текстом;<br></p></li>
-</ol>
-</li>
-</ul>
-<p><strong>Прерывание работы</strong></p>
-<p>Иногда требуется искусственно остановить работу ячейки.</p>
-<ul class="simple">
-<li><p>Можно нажать кнопку стоп при работе активной ячейки. Знак СТОП находится на самой ячейке.</p></li>
-<li><p>Можно воспользоваться опцией в меню ‘Среда выполнения’ - ‘Прервать выполнение кода’.</p></li>
-<li><p>Можно радикально “перезагрузить” ноутбук в меню ‘Среда выполнения’ - ‘Перезапустить среду выполнения’, но это удалит всю информацию о переменных из памяти.</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Эта ячейка с бесконечным циклом, запустите и прервите выполнение кода любым путем.</span>
-<span class="c1"># while True:</span>
-<span class="c1">#     a = 0</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="markdown-google-sans">
+<p><strong>New cell</strong></p>
+<p>You can add new cells by using the + CODE and + TEXT buttons that show when you hover between cells. These buttons are also in the toolbar above the notebook where they can be used to add a cell below the currently selected cell.</p>
 </section>
-<section id="id1">
-<h2>Ресурсы по теме<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
-<section id="colab">
-<h3>Работа с блокнотами в Colab<a class="headerlink" href="#colab" title="Permalink to this headline">#</a></h3>
-</div>
+<section id="resources">
+<h2>Resources<a class="headerlink" href="#resources" title="Permalink to this headline">#</a></h2>
+<p>Links work in Colab!</p>
+<section id="working-woth-notebooks-in-colab">
+<h3>Working woth notebooks in Colab<a class="headerlink" href="#working-woth-notebooks-in-colab" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
-<li><p><span class="xref myst">Общие сведения о Colaboratory</span></p></li>
-<li><p><span class="xref myst">Руководство для Markdown</span></p></li>
-<li><p><span class="xref myst">Импорт библиотек и установка зависимостей</span></p></li>
-<li><p><a class="reference external" href="https://colab.research.google.com/github/googlecolab/colabtools/blob/main/notebooks/colab-github-demo.ipynb">Сохранение и загрузка блокнотов в GitHub</a></p></li>
+<li><p><span class="xref myst">General information about Colaboratory</span></p></li>
+<li><p><span class="xref myst">Markdown guide</span></p></li>
+<li><p><span class="xref myst">Importing libraries</span></p></li>
+<li><p><a class="reference external" href="https://colab.research.google.com/github/googlecolab/colabtools/blob/main/notebooks/colab-github-demo.ipynb">Saving notebooks in GitHub</a></p></li>
 </ul>
-<div class="markdown-google-sans">
-<p><a name="working-with-data"></a></p>
 </section>
-<section id="id2">
-<h3>Работа с данными<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
-</div>
+<section id="working-with-data">
+<h3>Working with data<a class="headerlink" href="#working-with-data" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
-<li><p><span class="xref myst">Загрузка данных: Диск, Таблицы и Google Cloud Storage</span></p></li>
-<li><p><span class="xref myst">Диаграмма: визуализация данных</span></p></li>
+<li><p><span class="xref myst">Downloading the data from Drive and Google Cloud Storage</span></p></li>
+<li><p><span class="xref myst">Visualization of the data</span></p></li>
 </ul>
-<div class="markdown-google-sans"></section>
+</section>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="python">
-<h1>Про Python<a class="headerlink" href="#python" title="Permalink to this headline">#</a></h1>
-<p><strong>Python</strong> - язык программирования общего назначения, т.е. на нем можно написать все, что угодно.</p>
-<ol class="arabic simple">
-<li><p>Open-source, т.е. он свободно и бесплатно доступен <br></p></li>
-<li><p>Много библиотек, т.е. кода, для работы со специфическими задачами.</p></li>
-</ol>
-<p><strong>Python</strong> - это свободный интерпретируемый объектно-ориентированный расширяемый встраиваемый язык программирования очень высокого уровня (Г.Россум, Ф.Л.Дж.Дрейк, Д.С.Откидач “Язык программирования Python”).</p>
-<p>Python - это язык, который могут читать и “понимать” разные программные средства.</p>
+<h1>Python<a class="headerlink" href="#python" title="Permalink to this headline">#</a></h1>
+<p><strong>Python</strong> is a high-level, general-purpose programming language.</p>
 </section>
-<hr class="docutils" />
-<section class="tex2jax_ignore mathjax_ignore" id="id3">
-<h1>Библиотеки<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h1>
-<p>Среди наиболее популярных библиотек:</p>
+<section class="tex2jax_ignore mathjax_ignore" id="libraries">
+<h1>Libraries<a class="headerlink" href="#libraries" title="Permalink to this headline">#</a></h1>
+<p>List of the most frequently used libraries:</p>
 <ul class="simple">
-<li><p><a href="http://numpy.org">Numpy</a> - это один из основных пакетов для научных вычислений. Он содержит функциональные средства для работы с многомерными массивами и высокоуровневыми математическими функциями.</p></li>
-<li><p><a href="http://numpy.org">SciPy</a> - научные вычисления. Методы оптимизации, интегрирования, модули обработки сигналов и изображений, статистика, линейная алгебра, сплайны, кластеризация и многое другое.</p></li>
-<li><p><a href="http://pandas.pydata.org/">Pandas</a> - библиотека для обработки и анализа данных. Предназначена для данных разной природы - матричных, панельных данных, временных рядов. Претендует на звание самого мощного и гибкого средства для анализа данных с открытым исходным кодом.</p></li>
-<li><p><a href="http://scikit-learn.org/stable/">Scikit-learn</a> - реализация очень многих методов машинного обучения и интеллекуального анализа данных (data mining) с отличной документацией.</p></li>
-<li><p><a href="http://http://matplotlib.org/">matplotlib</a> - библиотека для визаулизации данных, в основном двухмерная графика.</p></li>
+<li><p><a href="http://numpy.org">Numpy</a>  is the short name for Numerical Python, which is a Python library predominantly used for technical and scientific computing. Its array-oriented computing capabilities make it an essential tool for fields such as linear algebra, statistical analysis, and machine learning.</p></li>
+<li><p><a href="http://numpy.org">SciPy</a> is a Python library used for scientific and technical computing. It is built on top of NumPy so it has additional functionalities for various scientific computing tasks. Optimization methods, integration, signal and image processing modules, statistics, linear algebra, splines, clustering and much more.</p></li>
+<li><p><a href="http://pandas.pydata.org/">Pandas</a> is an open-source data manipulation library for Python. It is built on top of the NumPy library. It introduces two primary data structures Series and DataFrame. Series is a one-dimensional labelled data whereas DataFrame is a two-dimensional labelled data resuming a table.</p></li>
+<li><p><a href="http://scikit-learn.org/stable/">Scikit-learn</a> is a machine-learning library that provides tools for data mining and analysis. It includes lots of machine learning algorithms for different tasks.</p></li>
+<li><p><a href="http://http://matplotlib.org/">matplotlib</a> is a data visualization library that allows developers to create static animated and interactive animations in Python. The graphs and plots it produces are extensively used for data visualization.</p></li>
 </ul>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="id4">
-<h1>Часть 1 - Основы Python<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h1>
-<p>Для прикладных целей важно овладеть несколькими аспектами:</p>
+<section class="tex2jax_ignore mathjax_ignore" id="part-1-basics-of-python">
+<h1>Part 1 - Basics of Python<a class="headerlink" href="#part-1-basics-of-python" title="Permalink to this headline">#</a></h1>
+<p>For applied purposes, it is important to master several aspects:</p>
 <ul class="simple">
-<li><p>Стандартные функции языка</p></li>
-<li><p>Переменные и типы данных</p></li>
-<li><p>Основные конструкции</p></li>
-<li><p>Написание пользовательских функций</p></li>
-<li><p>Загрузка и использование библиотек</p></li>
+<li><p>Standart functions</p></li>
+<li><p>Variables</p></li>
+<li><p>Basics structures</p></li>
+<li><p>Functions</p></li>
+<li><p>Usage of libraries</p></li>
 </ul>
-<section id="id5">
-<h2>Стандартные функции языка<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
-<p>Функции - это маленькие программки, которые умеют выполнять какую-то операцию <br />
-Функции <b>вызываются</b>, после имени функции следуют круглые скобки, в которых указываются <b>аргументы</b> (над каким объектом будет выполнена операция) и <b>параметры </b> (с какими условиями)</p>
+<section id="standart-functions">
+<h2>Standart functions<a class="headerlink" href="#standart-functions" title="Permalink to this headline">#</a></h2>
+<p>Functions - это маленькие программки, которые умеют выполнять какую-то операцию <br />
+Functions can be <b>called</b>, после имени функции следуют круглые скобки, в которых указываются <b>аргументы</b> (над каким объектом будет выполнена операция) и <b>параметры </b> (с какими условиями)</p>
 <section id="print">
 <h3>print()<a class="headerlink" href="#print" title="Permalink to this headline">#</a></h3>
 <p>Функция для вывода содержимого на экран. <br>
@@ -673,8 +639,8 @@ document.write(`
 </div>
 </div>
 </div>
-<section id="id6">
-<h4>Задача 1<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h4>
+<section id="id1">
+<h4>Задача 1<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h4>
 <p>Выведите на экран фразу “Hello, world!”</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -685,8 +651,8 @@ document.write(`
 </div>
 </section>
 </section>
-<section id="id7">
-<h3>Арифметические операции<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
+<section id="id2">
+<h3>Арифметические операции<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Сложение: +</p></li>
 <li><p>Вычитание: -</p></li>
@@ -722,14 +688,14 @@ document.write(`
 </div>
 </div>
 </div>
-<section id="id8">
-<h4>Задача 2<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h4>
+<section id="id3">
+<h4>Задача 2<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h4>
 <p>Представим, что у нас в активе $100, которые можно инвестировать с 10%-ным ежегодным доходом. <br>
 Сколько денег мы заработаем через год? Выведите ответ на экран.</p>
 </section>
 </section>
-<section id="id9">
-<h3>Переменные и типы переменных<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
+<section id="id4">
+<h3>Переменные и типы переменных<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
 <p>Результаты операций и манипуляций иногда нужно сохранять, поэтому мы определяем переменные - именованные объекты, которым присваиваем значения.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -838,8 +804,8 @@ Savings in 2017: 2000
 </div>
 </div>
 </div>
-<section id="id10">
-<h4>Задача 4<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h4>
+<section id="id5">
+<h4>Задача 4<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h4>
 <p>Поправьте строчку кода так, чтобы она работала:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -850,8 +816,8 @@ Savings in 2017: 2000
 </div>
 </section>
 </section>
-<section id="id11">
-<h3>Листы<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h3>
+<section id="id6">
+<h3>Листы<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
 <p>Четыре рассмотренных типа данных устроены так, что в одной переменной записано одно значение:</p>
 <ul class="simple">
 <li><p>int: целое число</p></li>
@@ -939,8 +905,8 @@ Savings in 2017: 2000
 </div>
 </div>
 </div>
-<section id="id12">
-<h4>Задача 5<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h4>
+<section id="id7">
+<h4>Задача 5<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h4>
 <p>Создайте лист home, в котором записан название и метраж комнат в доме (kitchen - 10, bedroom - 12, bathroom - 5). Распечатайте лист.</p>
 <p>Есть много методов (т.е. функций, которые присущи только листам) для работы с листами:</p>
 <p>Методы</p>
@@ -1001,8 +967,8 @@ Savings in 2017: 2000
 </div>
 </div>
 </section>
-<section id="id13">
-<h4>Задача 6<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h4>
+<section id="id8">
+<h4>Задача 6<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h4>
 <p>Посчитайте сумму сбережений всей семьи</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1026,10 +992,10 @@ Savings in 2017: 2000
 </section>
 </section>
 </section>
-<section id="id14">
-<h2>Основные конструкции языка<a class="headerlink" href="#id14" title="Permalink to this headline">#</a></h2>
-<section id="id15">
-<h3>Логические выражения<a class="headerlink" href="#id15" title="Permalink to this headline">#</a></h3>
+<section id="id9">
+<h2>Основные конструкции языка<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h2>
+<section id="id10">
+<h3>Логические выражения<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h3>
 <p>По аналогии с арифметическими выражениями существуют логические выражения, которые могут быть истинными или ложными. Простое логическое выражение имеет вид <br /></p>
 <p>&lt;арифметическое выражение&gt; &lt;знак сравнения&gt; &lt;арифметическое выражение&gt;. <br /></p>
 <p>Например, если у нас есть переменные x и y с какими-то значениями, то логическое выражение <br /> x + y &lt; 3y <br /> в качестве первого арифметического выражения имеет x + y, в качестве знака сравнения &lt; (меньше), а второе арифметическое выражение в нём 3y.</p>
@@ -1074,8 +1040,8 @@ False
 </div>
 </div>
 </div>
-<section id="id16">
-<h4>Задача 7<a class="headerlink" href="#id16" title="Permalink to this headline">#</a></h4>
+<section id="id11">
+<h4>Задача 7<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h4>
 <p>Сравните, больше ли x 10. Результат распечатайте</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1095,8 +1061,8 @@ False
 </div>
 </section>
 </section>
-<section id="id17">
-<h3>Условный оператор<a class="headerlink" href="#id17" title="Permalink to this headline">#</a></h3>
+<section id="id12">
+<h3>Условный оператор<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h3>
 <p>Наиболее частое применение логические выражения находят в условных операторах.</p>
 <p>Синтаксис в питоне: <br />
 <strong>if</strong> условие1:<br />
@@ -1149,8 +1115,8 @@ Y не меньше, чем X
 </div>
 </div>
 </div>
-<section id="id18">
-<h4>Задачи 9<a class="headerlink" href="#id18" title="Permalink to this headline">#</a></h4>
+<section id="id13">
+<h4>Задачи 9<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h4>
 <ol class="arabic simple">
 <li><p>Дана площадь кухни. Если она превышает 15 кв.м, то должна появиться строчка “Кухня большая!”, в противном случае - “Кухня маленькая”</p></li>
 </ol>
@@ -1196,8 +1162,8 @@ The weather is OK.
 </div>
 </div>
 </div>
-<section id="id19">
-<h4>Задача 10<a class="headerlink" href="#id19" title="Permalink to this headline">#</a></h4>
+<section id="id14">
+<h4>Задача 10<a class="headerlink" href="#id14" title="Permalink to this headline">#</a></h4>
 <p>По данному целому числу N распечатайте квадраты всех чисел, предшествующих N (включая N), в порядке убывания</p>
 <p><strong>Образец</strong></p>
 <p>Входные данные: <br />
@@ -1236,7 +1202,9 @@ The weather is OK.
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>range(0, 5)
-[0, 1, 2, 3, 4]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 1, 2, 3, 4]
 [2, 3, 4, 5, 6]
 [2, 4]
 </pre></div>
@@ -1246,8 +1214,8 @@ The weather is OK.
 </section>
 </section>
 </section>
-<section id="id20">
-<h2>Цикл for<a class="headerlink" href="#id20" title="Permalink to this headline">#</a></h2>
+<section id="id15">
+<h2>Цикл for<a class="headerlink" href="#id15" title="Permalink to this headline">#</a></h2>
 <p>Цикл for позволяет поочередно перебрать элементы из чего-нибудь итерируемого.</p>
 <p>Ее синтаксис: <br />
 <strong>for</strong> i <strong>in</strong> диапазон изменений i:<br />
@@ -1288,8 +1256,8 @@ yellow apple
 </div>
 </div>
 </section>
-<section id="id21">
-<h2>Написание функций<a class="headerlink" href="#id21" title="Permalink to this headline">#</a></h2>
+<section id="id16">
+<h2>Написание функций<a class="headerlink" href="#id16" title="Permalink to this headline">#</a></h2>
 <p>Если какие-то операции надо повторять из раза в раз и нет готовых функций, то можно создать свою.</p>
 <p>Синтаксис: <br />
 <strong>def</strong> название функции(список аргументов):<br />
@@ -1310,8 +1278,8 @@ yellow apple
 </div>
 </div>
 </div>
-<section id="id22">
-<h3>Задача 11<a class="headerlink" href="#id22" title="Permalink to this headline">#</a></h3>
+<section id="id17">
+<h3>Задача 11<a class="headerlink" href="#id17" title="Permalink to this headline">#</a></h3>
 <p>Напишите функцию, которая по 2 сторонам прямоугольника возвращает его периметр.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1646,12 +1614,12 @@ another matrix product
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../intro.html"
+       href="../bio/intro_links.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Welcome to the Neuroimaging and Machine Learning for Biomedicine coursebook</p>
+        <p class="prev-next-title">Introduction to neuroscience and neuroimaging</p>
       </div>
     </a>
     <a class="right-next"
@@ -1682,48 +1650,49 @@ another matrix product
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">How to work with Python</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started"><strong>Getting started</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Ресурсы по теме</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#colab">Работа с блокнотами в Colab</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Работа с данными</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-colab">What is Colab?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started">Getting started</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resources">Resources</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#working-woth-notebooks-in-colab">Working woth notebooks in Colab</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-data">Working with data</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#python">Про Python</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Библиотеки</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Часть 1 - Основы Python</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Стандартные функции языка</a><ul class="nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#python">Python</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#libraries">Libraries</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-basics-of-python">Part 1 - Basics of Python</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#standart-functions">Standart functions</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#print">print()</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Задача 1</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Задача 1</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Арифметические операции</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Задача 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Арифметические операции</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Задача 2</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Переменные и типы переменных</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Задача 4</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Переменные и типы переменных</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Задача 4</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Листы</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">Задача 5</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">Задача 6</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Листы</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Задача 5</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Задача 6</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">Основные конструкции языка</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">Логические выражения</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">Задача 7</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Основные конструкции языка</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Логические выражения</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Задача 7</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">Условный оператор</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">Задачи 9</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">Условный оператор</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">Задачи 9</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#while">Цикл while</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">Задача 10</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">Задача 10</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for">Цикл for</a><ul class="nav section-nav flex-column">
@@ -1732,9 +1701,9 @@ another matrix product
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">Цикл for</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">Написание функций</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">Задача 11</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">Цикл for</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">Написание функций</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">Задача 11</a></li>
 </ul>
 </li>
 </ul>
