@@ -158,30 +158,6 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../bio/intro_links.html">Links</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1AM67Sd37J0hIJ-kLyzAZRm8op_JcUQ9b?usp=sharing">Intro to shell</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Seminar1_python_colab.html">How to work with Python</a></li>
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="Seminar1_ML.html">Intro to ML</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <li class="toctree-l1"><a class="reference internal" href="00_pytorch_fundamentals.html">Pytorch fundamentals</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://drive.google.com/file/d/1q0XncKq2y_wHLXJaxhjfBCDGHABmzrjM/view?usp=sharing">Intro to computer vision</a></li>
 </ul>
@@ -708,32 +684,6 @@ torchvision version: 0.12.0+cpu
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/train-images-idx3-ubyte.gz
-Using downloaded and verified file: data\FashionMNIST\raw\train-images-idx3-ubyte.gz
-Extracting data\FashionMNIST\raw\train-images-idx3-ubyte.gz to data\FashionMNIST\raw
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/train-labels-idx1-ubyte.gz
-Using downloaded and verified file: data\FashionMNIST\raw\train-labels-idx1-ubyte.gz
-Extracting data\FashionMNIST\raw\train-labels-idx1-ubyte.gz to data\FashionMNIST\raw
-
-Downloading http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/t10k-images-idx3-ubyte.gz
-Downloading http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/t10k-images-idx3-ubyte.gz to data\FashionMNIST\raw\t10k-images-idx3-ubyte.gz
-</pre></div>
-</div>
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "f19e762b275a4da093a9202d2b1368bb"}</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Extracting data\FashionMNIST\raw\t10k-images-idx3-ubyte.gz to data\FashionMNIST\raw
-
-Downloading http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/t10k-labels-idx1-ubyte.gz
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/t10k-labels-idx1-ubyte.gz to data\FashionMNIST\raw\t10k-labels-idx1-ubyte.gz
-</pre></div>
-</div>
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "f3bc997ec96e41e9ac72f2bab9f8c1c5"}</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Extracting data\FashionMNIST\raw\t10k-labels-idx1-ubyte.gz to data\FashionMNIST\raw
-</pre></div>
-</div>
-</div>
 </div>
 <p>Let’s check out the first sample of the training data.</p>
 <div class="cell docutils container">
@@ -1062,7 +1012,7 @@ Downloading http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/t10k-labe
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dataloaders: (&lt;torch.utils.data.dataloader.DataLoader object at 0x000001FED0799F70&gt;, &lt;torch.utils.data.dataloader.DataLoader object at 0x000001FED079F190&gt;)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dataloaders: (&lt;torch.utils.data.dataloader.DataLoader object at 0x0000022FF247A070&gt;, &lt;torch.utils.data.dataloader.DataLoader object at 0x0000022FF2480400&gt;)
 Length of train dataloader: 1875 batches of 32
 Length of test dataloader: 313 batches of 32
 </pre></div>
@@ -1149,7 +1099,7 @@ Label: 6, label size: torch.Size([])
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="ne">C</span>:\Users\ALEXAN~1\AppData\Local\Temp/ipykernel_21760/1631652932.py in &lt;module&gt;
+<span class="ne">C</span>:\Users\ALEXAN~1\AppData\Local\Temp/ipykernel_18336/1631652932.py in &lt;module&gt;
 <span class="g g-Whitespace">     </span><span class="mi">13</span> 
 <span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="c1"># 4. Create an instance of the model and send it to target device</span>
 <span class="ne">---&gt; </span><span class="mi">15</span> <span class="n">model_0</span> <span class="o">=</span> <span class="n">CircleModelV0</span><span class="p">()</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
