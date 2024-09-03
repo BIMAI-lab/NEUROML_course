@@ -67,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Seminar 1. EEG analysis" href="../seminar1/seminar1-working-with-eeg.html" />
-    <link rel="prev" title="Introduction to neuroscience and neuroimaging" href="../bio/intro_links.html" />
+    <link rel="prev" title="Intro to ML" href="Seminar1_ML.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -162,6 +162,29 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../bio/intro_links.html">Links</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1AM67Sd37J0hIJ-kLyzAZRm8op_JcUQ9b?usp=sharing">Intro to shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Seminar1_python_colab.html">How to work with Python</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Seminar1_ML.html">Intro to ML</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Pytorch fundamentals</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://drive.google.com/file/d/1q0XncKq2y_wHLXJaxhjfBCDGHABmzrjM/view?usp=sharing">Intro to computer vision</a></li>
 </ul>
@@ -455,6 +478,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="pytorch-fundamentals">
 <h1>00. PyTorch Fundamentals<a class="headerlink" href="#pytorch-fundamentals" title="Permalink to this headline">#</a></h1>
+<p><a class="reference external" href="https://colab.research.google.com/drive/1f3BvsOhhtbExXPz6K5ecV_BgyhMNlTm8?usp=sharing"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
 <section id="pytorch-allows-you-to-manipulate-and-process-data-and-write-machine-learning-algorithms-using-python-code">
 <h2>PyTorch allows you to manipulate and process data and write machine learning algorithms using Python code.<a class="headerlink" href="#pytorch-allows-you-to-manipulate-and-process-data-and-write-machine-learning-algorithms-using-python-code" title="Permalink to this headline">#</a></h2>
 </section>
@@ -744,9 +768,9 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(tensor([[0.6915, 0.6407, 0.6904, 0.8336],
-         [0.4416, 0.0681, 0.1524, 0.0432],
-         [0.6055, 0.1500, 0.1753, 0.6499]]),
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(tensor([[0.6250, 0.6918, 0.6799, 0.7112],
+         [0.1948, 0.3191, 0.1048, 0.8441],
+         [0.1653, 0.4121, 0.8219, 0.0299]]),
  torch.float32)
 </pre></div>
 </div>
@@ -1193,9 +1217,8 @@ New shapes: tensor_A = torch.Size([3, 2]) (same as above), tensor_B.T = torch.Si
 Multiplying: torch.Size([3, 2]) * torch.Size([2, 3]) &lt;- inner dimensions match
 
 Output:
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[ 27.,  30.,  33.],
+
+tensor([[ 27.,  30.,  33.],
         [ 61.,  68.,  75.],
         [ 95., 106., 117.]])
 
@@ -1264,9 +1287,8 @@ y = x\cdot{A^T} + b
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Input shape: torch.Size([3, 2])
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Output:
+
+Output:
 tensor([[2.2368, 1.2292, 0.4714, 0.3864, 0.1309, 0.9838],
         [4.4919, 2.1970, 0.4469, 0.5285, 0.3401, 2.4777],
         [6.7469, 3.1648, 0.4224, 0.6705, 0.5493, 3.9716]],
@@ -1359,7 +1381,9 @@ Sum: 450
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tensor: tensor([10, 20, 30, 40, 50, 60, 70, 80, 90])
-Index where max value occurs: 8
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index where max value occurs: 8
 Index where min value occurs: 0
 </pre></div>
 </div>
@@ -2120,12 +2144,12 @@ Does Tensor C equal Tensor D? (anywhere)
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../bio/intro_links.html"
+       href="Seminar1_ML.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Introduction to neuroscience and neuroimaging</p>
+        <p class="prev-next-title">Intro to ML</p>
       </div>
     </a>
     <a class="right-next"

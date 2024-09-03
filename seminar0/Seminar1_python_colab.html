@@ -64,6 +64,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../_static/logo.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Intro to ML" href="Seminar1_ML.html" />
+    <link rel="prev" title="Introduction to neuroscience and neuroimaging" href="../bio/intro_links.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -155,9 +157,32 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../bio/intro_links.html">Links</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1AM67Sd37J0hIJ-kLyzAZRm8op_JcUQ9b?usp=sharing">Intro to shell</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">How to work with Python</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Seminar1_ML.html">Intro to ML</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <li class="toctree-l1"><a class="reference internal" href="00_pytorch_fundamentals.html">Pytorch fundamentals</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://drive.google.com/file/d/1q0XncKq2y_wHLXJaxhjfBCDGHABmzrjM/view?usp=sharing">Intro to computer vision</a></li>
 </ul>
@@ -398,51 +423,53 @@ document.write(`
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-basics-of-python">Part 1 - Basics of Python</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#standart-functions">Standart functions</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#print">print()</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Задача 1</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#task-1">Task 1</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Арифметические операции</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Задача 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arithmetic-operations">Arithmetic operations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-and-types-of-variables">Variables and types of variables</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#task-2">Task 2</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Переменные и типы переменных</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Задача 4</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Листы</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Задача 5</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Задача 6</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Основные конструкции языка</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Логические выражения</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Задача 7</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">Условный оператор</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">Задачи 9</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#while">Цикл while</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">Задача 10</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for">Цикл for</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#range-n">Функция range(n)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lists">Lists</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#task-3">Task 3</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#task-4">Task 4</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#task-5">Task 5</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">Цикл for</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">Написание функций</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">Задача 11</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-language-constructions">Basic language constructions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logical-expressions">Logical expressions</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#task-6">Task 6</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#task-7">Task  7</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#task-8">Task 8</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-operator">Conditional operator</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#task-9">Task 9</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-while-loop">The while loop</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#task-10">Task 10</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-loop">For loop</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-range-n-function">The <code class="docutils literal notranslate"><span class="pre">range(n)</span></code> function</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy">Работа с NumPy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-functions">Writing functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#task-11">Task 11</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-numpy">Working with NumPy</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-12">Task 12</a></li>
+</ul>
+</li>
 </ul>
 
             </nav>
@@ -457,7 +484,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="how-to-work-with-python">
 <h1>How to work with Python<a class="headerlink" href="#how-to-work-with-python" title="Permalink to this headline">#</a></h1>
-<p><a class="reference external" href="https://colab.research.google.com/drive/1HRZTjLezI_QNm8aFp6Wf5YzKmOg1fxXw?usp=sharing"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
+<p><a class="reference external" href="https://colab.research.google.com/drive/1Ms6fSJi_KdovOzjU1BI5gJazARBc59oI?usp=sharing"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
 <section id="what-is-colab">
 <h2>What is Colab?<a class="headerlink" href="#what-is-colab" title="Permalink to this headline">#</a></h2>
 <p>Colab, or “Colaboratory”, allows you to write and execute Python in your browser, with</p>
@@ -552,18 +579,17 @@ document.write(`
 </ul>
 <section id="standart-functions">
 <h2>Standart functions<a class="headerlink" href="#standart-functions" title="Permalink to this headline">#</a></h2>
-<p>Functions - это маленькие программки, которые умеют выполнять какую-то операцию <br />
-Functions can be <b>called</b>, после имени функции следуют круглые скобки, в которых указываются <b>аргументы</b> (над каким объектом будет выполнена операция) и <b>параметры </b> (с какими условиями)</p>
+<p>Functions can be <b>called</b>, the function name is followed by parentheses, which specify <b>arguments</b> (on which object the operation will be performed) and <b>parameters </b> (with what conditions)</p>
 <section id="print">
 <h3>print()<a class="headerlink" href="#print" title="Permalink to this headline">#</a></h3>
-<p>Функция для вывода содержимого на экран. <br>
-<strong>Обязательно</strong>: передать хотя бы какой-то объект, который нужно напечатать.</p>
-<p>Ее полный синтаксис:</p>
+<p>A function for displaying content on the screen. <br>
+<strong>Required</strong>: pass at least some object that needs to be printed.</p>
+<p>Its full syntax is:</p>
 <p>print(*objects, sep=’ ‘, end=’\n’, file=sys.stdout, flush=False)¶</p>
 <ul class="simple">
-<li><p>objects: один или несколько объектов для вывода, перечисленные через запятую</p></li>
-<li><p>sep: разделитель между несколькими объектами; стандартно установлен пробел</p></li>
-<li><p>end: окончание строки; стандартно установлен перевод на новую строчку ‘\n’</p></li>
+<li><p>objects: one or more objects to output, separated by commas</p></li>
+<li><p>sep: separator between several objects; a space is set as standard</p></li>
+<li><p>end: the end of the line; a newline translation ‘\n’ is set as standard</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -613,64 +639,57 @@ Functions can be <b>called</b>, после имени функции следу�
 </div>
 </div>
 </div>
-<section id="id1">
-<h4>Задача 1<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h4>
-<p>Выведите на экран фразу “Hello, world!”</p>
+<section id="task-1">
+<h4>Task 1<a class="headerlink" href="#task-1" title="Permalink to this headline">#</a></h4>
+<p>Print the phrase: “Hello, world!”</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Напишите код и запустите</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write a code</span>
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 </section>
-<section id="id2">
-<h3>Арифметические операции<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
+<section id="arithmetic-operations">
+<h3>Arithmetic operations<a class="headerlink" href="#arithmetic-operations" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
-<li><p>Сложение: +</p></li>
-<li><p>Вычитание: -</p></li>
-<li><p>Умножение: *</p></li>
-<li><p>Деление: /</p></li>
-<li><p>Возведение в степень: **</p></li>
-<li><p>Целочисленное деление: //</p></li>
-<li><p>Остаток от деления: %</p></li>
+<li><p>Addition: +</p></li>
+<li><p>Subtraction: -</p></li>
+<li><p>Multiplication: *</p></li>
+<li><p>Division: /</p></li>
+<li><p>Exponentiation: **</p></li>
+<li><p>Integer division: //</p></li>
+<li><p>The remainder of the division: %</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Работаем с числами&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;и&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="mi">5</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">5</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="mi">5</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="mi">5</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span> <span class="mi">5</span> <span class="o">//</span> <span class="mi">2</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Результат остатка от деления:&#39;</span><span class="p">,</span> <span class="mi">5</span> <span class="o">%</span> <span class="mi">2</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Результат возведения в степени:&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">5</span> <span class="o">%</span> <span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">5</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Работаем с числами 5 и 2
-7
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7
 3
 10
 2.5
 2
-Результат остатка от деления: 1
-Результат возведения в степени: 25
+1
+25
 </pre></div>
 </div>
 </div>
 </div>
-<section id="id3">
-<h4>Задача 2<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h4>
-<p>Представим, что у нас в активе $100, которые можно инвестировать с 10%-ным ежегодным доходом. <br>
-Сколько денег мы заработаем через год? Выведите ответ на экран.</p>
 </section>
-</section>
-<section id="id4">
-<h3>Переменные и типы переменных<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
-<p>Результаты операций и манипуляций иногда нужно сохранять, поэтому мы определяем переменные - именованные объекты, которым присваиваем значения.</p>
+<section id="variables-and-types-of-variables">
+<h3>Variables and types of variables<a class="headerlink" href="#variables-and-types-of-variables" title="Permalink to this headline">#</a></h3>
+<p>The results of operations and manipulations sometimes need to be saved, so we define variables - named objects to which we assign values.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">savings_2017</span> <span class="o">=</span> <span class="mi">2000</span>
@@ -682,7 +701,7 @@ Functions can be <b>called</b>, после имени функции следу�
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># так можно подробно посмотреть информацию о функции</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># this way you can view the information about the function in detail</span>
 round<span class="o">?</span>
 </pre></div>
 </div>
@@ -690,18 +709,20 @@ round<span class="o">?</span>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Вывести на печать % роста накоплений</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">increase</span><span class="p">),</span> <span class="s1">&#39;%&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">increase</span><span class="p">),</span> <span class="s1">&#39;%&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>%
 </pre></div>
 </div>
 </div>
 </div>
-<p>Функция <strong>type</strong> позволяет определить, какого типа переменная нам дана или какого типа переменную мы записали.</p>
+<p>The <strong>type</strong> function allows you to determine what type of variable is given to us or what type of variable we have written.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">savings_2017</span><span class="p">))</span>
@@ -742,12 +763,12 @@ round<span class="o">?</span>
 </div>
 </div>
 </div>
-<p>Если нужно поменять тип переменной, то полезны функции:</p>
+<p>If you need to change the type of a variable, then the functions are useful:</p>
 <ul class="simple">
-<li><p>int() - возвращает целочисленную переменную</p></li>
-<li><p>float() - возвращает нецелочисленную переменную</p></li>
-<li><p>bool() - возвращает булеву переменную</p></li>
-<li><p>str() - возвращает строковую переменную</p></li>
+<li><p>int() - returns an integer variable</p></li>
+<li><p>float() - returns a non-integer variable</p></li>
+<li><p>bool() - returns a Boolean variable</p></li>
+<li><p>str() - returns a string variable</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -776,11 +797,14 @@ Savings in 2017: 2000
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>200
 </pre></div>
 </div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
 </div>
 </div>
-<section id="id5">
-<h4>Задача 4<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h4>
-<p>Поправьте строчку кода так, чтобы она работала:</p>
+</div>
+<section id="task-2">
+<h4>Task 2<a class="headerlink" href="#task-2" title="Permalink to this headline">#</a></h4>
+<p>Correct the line of code so that it works:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># print(&quot;I started with $&quot; + savings_2016 + &quot; and now have $&quot; + savings_2017_new + &quot;. Not good!&quot;)</span>
@@ -790,16 +814,16 @@ Savings in 2017: 2000
 </div>
 </section>
 </section>
-<section id="id6">
-<h3>Листы<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
-<p>Четыре рассмотренных типа данных устроены так, что в одной переменной записано одно значение:</p>
+<section id="lists">
+<h3>Lists<a class="headerlink" href="#lists" title="Permalink to this headline">#</a></h3>
+<p>The four data types considered are arranged in such a way that one value is written in one variable:</p>
 <ul class="simple">
-<li><p>int: целое число</p></li>
-<li><p>float: число с дробной частью</p></li>
-<li><p>str: текст</p></li>
-<li><p>bool: логическая переменная</p></li>
+<li><p>int: an integer</p></li>
+<li><p>float: a number with a fractional part</p></li>
+<li><p>str: text</p></li>
+<li><p>bool: a boolean variable</p></li>
 </ul>
-<p>Например, если мы хотим зафиксировать накопления членов семьи, мы можем создать ряд переменных и вписать туда информацию</p>
+<p>For example, if we want to record the savings of family members, we can create a number of variables and enter information there</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">savings1</span> <span class="o">=</span> <span class="mi">500</span>
@@ -810,7 +834,7 @@ Savings in 2017: 2000
 </div>
 </div>
 </div>
-<p>Но это не очень удобно, мы можем записать всю информацию в одной переменной:</p>
+<p>But this is not very convenient, we can write all the information in one variable:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">savings_family</span> <span class="o">=</span> <span class="p">[</span><span class="mi">500</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">746</span><span class="p">,</span> <span class="mi">2000</span><span class="p">]</span>
@@ -818,7 +842,7 @@ Savings in 2017: 2000
 </div>
 </div>
 </div>
-<p>Эта конструкция называется листом и является отдельным типом данных. К элементам листа можно обращаться по индексу:</p>
+<p>This construction is called a <strong>list</strong> and is a separate data type. The elements of the list can be accessed by the index:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">savings_family</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
@@ -843,7 +867,7 @@ Savings in 2017: 2000
 </div>
 </div>
 </div>
-<p>А здесь - лист листов :)</p>
+<p>List of lists :)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">savings_family</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;mom&#39;</span><span class="p">,</span> <span class="mi">500</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;dad&#39;</span><span class="p">,</span> <span class="mi">1000</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;brother&#39;</span><span class="p">,</span> <span class="mi">746</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;me&#39;</span><span class="p">,</span> <span class="mi">2000</span><span class="p">]]</span>
@@ -877,32 +901,28 @@ Savings in 2017: 2000
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[&#39;mom&#39;, 500], [&#39;dad&#39;, 1000], [&#39;brother&#39;, 746], [&#39;me&#39;, 2000]]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
 </div>
 </div>
-</div>
-<section id="id7">
-<h4>Задача 5<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h4>
-<p>Создайте лист home, в котором записан название и метраж комнат в доме (kitchen - 10, bedroom - 12, bathroom - 5). Распечатайте лист.</p>
-<p>Есть много методов (т.е. функций, которые присущи только листам) для работы с листами:</p>
-<p>Методы</p>
+<section id="task-3">
+<h4>Task 3<a class="headerlink" href="#task-3" title="Permalink to this headline">#</a></h4>
+<p>Make the list called <code class="docutils literal notranslate"><span class="pre">home</span></code> that contains the name and footage of the rooms in the house (kitchen - 10, bedroom - 12, bathroom - 5). Print the list.</p>
+<p>There are many methods (i.e. functions that are unique to lists) for working with lists:</p>
 <ul class="simple">
-<li><p>list.append(x)	Добавляет элемент в конец списка</p></li>
-<li><p>list.extend(L)	Расширяет список list, добавляя в конец все элементы списка L</p></li>
-<li><p>list.insert(i, x)	Вставляет на i-ый элемент значение x</p></li>
-<li><p>list.remove(x)	Удаляет первый элемент в списке, имеющий значение x. ValueError, если такого элемента не существует</p></li>
-<li><p>list.pop([i])	Удаляет i-ый элемент и возвращает его. Если индекс не указан, удаляется последний элемент</p></li>
-<li><p>list.index(x, [start [, end]])	Возвращает положение первого элемента со значением x (при этом поиск ведется от start до end)</p></li>
-<li><p>list.count(x)	Возвращает количество элементов со значением x</p></li>
-<li><p>list.sort([key=функция])	Сортирует список на основе функции</p></li>
-<li><p>list.reverse()	Разворачивает список</p></li>
-<li><p>list.copy()	Поверхностная копия списка</p></li>
-<li><p>list.clear()	Очищает список</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">list.append(x)</span></code> adds an item to the end of the list.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">list.extend(L)</span></code> extends the list by adding all the elements of the list <code class="docutils literal notranslate"><span class="pre">L</span></code> to the end.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">list.insert(i,</span> <span class="pre">x)</span></code> inserts the value of <code class="docutils literal notranslate"><span class="pre">x</span></code> on the <code class="docutils literal notranslate"><span class="pre">i</span></code>th element.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">list.remove(x)</span></code> deletes the first item in the list that has the value <code class="docutils literal notranslate"><span class="pre">x</span></code>. <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> if no such item exists.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">list.pop([i])</span></code> deletes the <code class="docutils literal notranslate"><span class="pre">i</span></code>th element and returns it. If the index is not specified, the last element is deleted.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">list.index(x,</span> <span class="pre">[start</span> <span class="pre">[,</span> <span class="pre">end]])</span></code>	returns the position of the first element with the value <code class="docutils literal notranslate"><span class="pre">x</span></code> (in this case, the search is conducted from start to end).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">list.count(x)</span></code> returns the number of items with the value <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">list.sort([key=function])</span></code> sorts the list based on the function.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">list.reverse()</span></code> reverses the list using.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">list.copy()</span></code> is a surface copy of the list.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">list.clear()</span></code> clears the list.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#удаляем запись про последнего члена семьи</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># deleting the entry about the last family member</span>
 <span class="n">savings_family</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">savings_family</span><span class="p">)</span>
 </pre></div>
@@ -916,7 +936,7 @@ Savings in 2017: 2000
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#а теперь добавим</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># and now let&#39;s add new one</span>
 <span class="n">savings_family</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="s1">&#39;me&#39;</span><span class="p">,</span> <span class="mi">2000</span><span class="p">])</span>
 </pre></div>
 </div>
@@ -924,32 +944,21 @@ Savings in 2017: 2000
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Создаём список из двух списков, в котором хранится информация о сбережениях дяди в 4000 и о сбережениях тети в 10000</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># We create a list of two lists, which stores information about the savings of an uncle, </span>
+<span class="c1"># who has 4,000 rubles, and the savings of an aunt, who has 10,000 rubles</span>
 <span class="n">savings_relatives</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;uncle&#39;</span><span class="p">,</span> <span class="mi">4000</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;aunt&#39;</span><span class="p">,</span> <span class="mi">10000</span><span class="p">]]</span>
 </pre></div>
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">savings_family</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">savings_relatives</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">savings_family</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[&#39;mom&#39;, 500], [&#39;dad&#39;, 1000], [&#39;brother&#39;, 746], [&#39;me&#39;, 2000], [&#39;uncle&#39;, 4000], [&#39;aunt&#39;, 10000]]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-</div>
-</div>
 </section>
-<section id="id8">
-<h4>Задача 6<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h4>
-<p>Посчитайте сумму сбережений всей семьи</p>
+<section id="task-4">
+<h4>Task 4<a class="headerlink" href="#task-4" title="Permalink to this headline">#</a></h4>
+<p>Add list of relatives savings to list of family savings. Print the resulting list.</p>
+</section>
+<section id="task-5">
+<h4>Task 5<a class="headerlink" href="#task-5" title="Permalink to this headline">#</a></h4>
+<p>Count all savings</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">member</span> <span class="ow">in</span> <span class="n">savings_family</span><span class="p">:</span>
@@ -963,8 +972,6 @@ Savings in 2017: 2000
 [&#39;dad&#39;, 1000]
 [&#39;brother&#39;, 746]
 [&#39;me&#39;, 2000]
-[&#39;uncle&#39;, 4000]
-[&#39;aunt&#39;, 10000]
 </pre></div>
 </div>
 </div>
@@ -972,27 +979,30 @@ Savings in 2017: 2000
 </section>
 </section>
 </section>
-<section id="id9">
-<h2>Основные конструкции языка<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h2>
-<section id="id10">
-<h3>Логические выражения<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h3>
-<p>По аналогии с арифметическими выражениями существуют логические выражения, которые могут быть истинными или ложными. Простое логическое выражение имеет вид <br /></p>
-<p>&lt;арифметическое выражение&gt; &lt;знак сравнения&gt; &lt;арифметическое выражение&gt;. <br /></p>
-<p>Например, если у нас есть переменные x и y с какими-то значениями, то логическое выражение <br /> x + y &lt; 3y <br /> в качестве первого арифметического выражения имеет x + y, в качестве знака сравнения &lt; (меньше), а второе арифметическое выражение в нём 3y.</p>
+<section id="basic-language-constructions">
+<h2>Basic language constructions<a class="headerlink" href="#basic-language-constructions" title="Permalink to this headline">#</a></h2>
+<section id="logical-expressions">
+<h3>Logical expressions<a class="headerlink" href="#logical-expressions" title="Permalink to this headline">#</a></h3>
+<p>By analogy with arithmetic expressions, there are logical expressions that can be true or false. A simple logical expression has the form</p>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;arithmetic</span> <span class="pre">expression&gt;</span> <span class="pre">&lt;comparison</span> <span class="pre">sign&gt;</span> <span class="pre">&lt;arithmetic</span> <span class="pre">expression&gt;</span></code>.</p>
+<p>For example, if we have variables <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> with some values, then the logical expression</p>
+<p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">+</span> <span class="pre">y</span> <span class="pre">&lt;</span> <span class="pre">3y</span></code></p>
+<p>has <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">+</span> <span class="pre">y</span></code> as the first arithmetic expression, <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> (less than) as the comparison sign, and the second arithmetic expression in it is <code class="docutils literal notranslate"><span class="pre">3y</span></code>.</p>
 <center>
     <table>
         <tr>
-            <th>Логическое выражение </th>
-            <th> Значение </th>
-        </tr>
-        <tr><td>&lt;</td><td> Меньше</td></tr>
-        <tr><td>&gt;</td><td> Больше</td></tr>
-        <tr><td>&lt;=</td><td> Меньше или равно</td></tr>
-        <tr><td>&gt;=</td><td> Больше или равно</td></tr>
-        <tr><td>==</td><td> Равно </td></tr>
-        <tr><td>!=</td><td> Не равно</td></tr>
+            <th>Boolean expression </th>
+<th> Value </th>
+</tr>
+        <tr><td><</td><td>  Less-than  </td></tr>
+        <tr><td>></td><td> Greater-than </td></tr>
+        <tr><td><=<lt;=</td><td> Less than or equal to</td></tr>
+        <tr><td>>=</td><td> Greater than or equal to</td></tr>
+        <tr><td>==</td><td> Equal </td></tr>
+        <tr><td>!=</td><td> Not equal </td></tr>
     </table>
-</center><div class="cell docutils container">
+</center>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">&gt;</span> <span class="mi">2</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
@@ -1009,10 +1019,12 @@ False
 </div>
 </div>
 </div>
-<p>Чтобы записать сложное логическое выражение, часто бывает необходимо воспользоваться логическими связками “и”, “или” и “не”. В Питоне они обозначаются как and, or и not соответственно. Операции and и or являеются бинарными, т.е. должны быть записаны между операндами, например x &lt; 3 or y &gt; 2. Операция not - унарная и должна быть записана перед единственным своим операндом.</p>
+<p>To write a complex logical expression, it is often necessary to use the logical connectives “and”, “or” and “not”. In Python, they are denoted as <code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">or</span></code> and <code class="docutils literal notranslate"><span class="pre">not</span></code>, respectively. The <code class="docutils literal notranslate"><span class="pre">and</span></code> and <code class="docutils literal notranslate"><span class="pre">or</span></code> operations are binary, i.e. they must be written between operands, for example <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&lt;</span> <span class="pre">3</span> <span class="pre">or</span> <span class="pre">y</span> <span class="pre">&gt;</span> <span class="pre">2</span></code>. The operation <code class="docutils literal notranslate"><span class="pre">not</span></code> is unary and must be written before one operand.</p>
+<section id="task-6">
+<h4>Task 6<a class="headerlink" href="#task-6" title="Permalink to this headline">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Задайте 3 любых числа x, y, z:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set three numbers x, y, z and try different complex logical expressions:</span>
 
 <span class="c1"># print(x == y)</span>
 <span class="c1"># print(x &gt; y and y &lt; z)</span>
@@ -1020,9 +1032,10 @@ False
 </div>
 </div>
 </div>
-<section id="id11">
-<h4>Задача 7<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h4>
-<p>Сравните, больше ли x 10. Результат распечатайте</p>
+</section>
+<section id="task-7">
+<h4>Task  7<a class="headerlink" href="#task-7" title="Permalink to this headline">#</a></h4>
+<p>Compare whether <code class="docutils literal notranslate"><span class="pre">x</span></code> is greater than <code class="docutils literal notranslate"><span class="pre">10</span></code>. Print the result.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">7</span>
@@ -1030,8 +1043,10 @@ False
 </div>
 </div>
 </div>
-<p><strong>Задача 8</strong></p>
-<p>Сбережения мамы попадают в интервал с 300 до 500? Напишите логическое выражение, проверяющее это условие</p>
+</section>
+<section id="task-8">
+<h4>Task 8<a class="headerlink" href="#task-8" title="Permalink to this headline">#</a></h4>
+<p>Do mom’s savings fall into the range from 300 to 500? Write a boolean expression that checks this condition</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">savings_mom</span> <span class="o">=</span> <span class="mi">500</span>
@@ -1041,65 +1056,64 @@ False
 </div>
 </section>
 </section>
-<section id="id12">
-<h3>Условный оператор<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h3>
-<p>Наиболее частое применение логические выражения находят в условных операторах.</p>
-<p>Синтаксис в питоне: <br />
-<strong>if</strong> условие1:<br />
-  команды<br />
-<strong>elif</strong> условие2:<br />
-  команды<br />
-<strong>elif</strong> условие3:<br />
-  команды<br />
+<section id="conditional-operator">
+<h3>Conditional operator<a class="headerlink" href="#conditional-operator" title="Permalink to this headline">#</a></h3>
+<p>Logical expressions are most often used in conditional statements.</p>
+<p>Syntax in python: <br />
+<strong>if</strong> condition1:<br />
+  commands<br />
+<strong>elif</strong> condition2:<br />
+  commands<br />
+<strong>elif</strong> condition 3:<br />
+  commands<br />
 <strong>else</strong>: <br />
-  команды<br /></p>
+  commands<br /></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
 <span class="n">y</span> <span class="o">=</span> <span class="mi">7</span>
 <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;X больше Y&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;X is greater than Y&#39;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">y</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Y не меньше, чем X&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Y is not greater than X&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 
-Y не меньше, чем X
+Y is not greater than X
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># x = int(input(&#39;Введите х &#39;))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Uncomment next two lines and run the cell</span>
+<span class="c1"># x = int(input(&#39;Введите х &#39;))</span>
 <span class="c1"># y = int(input(&#39;Введите y &#39;))</span>
 <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;X больше Y&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;X is greater than Y&#39;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">y</span><span class="p">)</span>
 <span class="k">elif</span> <span class="n">y</span> <span class="o">&gt;</span> <span class="n">x</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Y больше X&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Y is greater than X&#39;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">y</span> <span class="o">-</span> <span class="n">x</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;X равно Y&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;X equals Y&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Y больше X
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Y is greater than X
 2
 </pre></div>
 </div>
 </div>
 </div>
-<section id="id13">
-<h4>Задачи 9<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h4>
-<ol class="arabic simple">
-<li><p>Дана площадь кухни. Если она превышает 15 кв.м, то должна появиться строчка “Кухня большая!”, в противном случае - “Кухня маленькая”</p></li>
-</ol>
+<section id="task-9">
+<h4>Task 9<a class="headerlink" href="#task-9" title="Permalink to this headline">#</a></h4>
+<p>The kitchen area is given. If it exceeds 15 square meters, then the line “Kitchen is big!” should appear, otherwise - “Kitchen is small”</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">room</span> <span class="o">=</span> <span class="s2">&quot;kit&quot;</span>
@@ -1115,40 +1129,40 @@ Y не меньше, чем X
 </div>
 </section>
 </section>
-<section id="while">
-<h3>Цикл while<a class="headerlink" href="#while" title="Permalink to this headline">#</a></h3>
-<p>Как только строчка кода выполнилась, она “забывается”, т.е. чтобы повторить это действие, нужно явно прописать еще раз. Для многократного повторения одних и тех же действий используются циклические конструкции.</p>
-<p>While переводится как “пока” и позволяет выполнять команды, до тех пор, пока условие верно. После окончания выполнения блока команд, относящихся к while, управление возвращается на строку с условием и, если оно выполнено, то выполнение блока команд повторяется, а если не выполнено, то продолжается выполнение команд, записанных после while.</p>
-<p>Важно случайно не сделать бесконечный цикл!</p>
-<p><strong>while</strong> условие1:<br />
-  команды<br /></p>
-<p>Все команды пишутся с отступом.</p>
+<section id="the-while-loop">
+<h3>The while loop<a class="headerlink" href="#the-while-loop" title="Permalink to this headline">#</a></h3>
+<p>As soon as a line of code is executed, it is “forgotten”, i.e. to repeat this action, you need to explicitly register it again. Cyclic constructions are used to repeat the same actions many times.</p>
+<p><code class="docutils literal notranslate"><span class="pre">while</span></code> allows you to execute commands as long as the condition is true. After the end of the execution of the block of commands related to <code class="docutils literal notranslate"><span class="pre">while</span></code>, control returns to the line with the condition and, if it is True, the execution of the block of commands is repeated, and if it is False, the execution of commands written after <code class="docutils literal notranslate"><span class="pre">while</span></code> continues.</p>
+<p>It is important not to accidentally make an endless loop!</p>
+<p><strong>while</strong> condition1:<br />
+  commands<br /></p>
+<p>All commands are indented.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">temperature</span> <span class="o">=</span> <span class="mi">5</span>
 <span class="k">while</span> <span class="n">temperature</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The weather is OK.&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Temperature is </span><span class="si">{</span><span class="n">temperature</span><span class="si">}</span><span class="s1">. The weather is OK.&#39;</span><span class="p">)</span>
     <span class="n">temperature</span> <span class="o">=</span> <span class="n">temperature</span> <span class="o">-</span> <span class="mi">1</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The weather is OK.
-The weather is OK.
-The weather is OK.
-The weather is OK.
-The weather is OK.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Temperature is 5. The weather is OK.
+Temperature is 4. The weather is OK.
+Temperature is 3. The weather is OK.
+Temperature is 2. The weather is OK.
+Temperature is 1. The weather is OK.
 </pre></div>
 </div>
 </div>
 </div>
-<section id="id14">
-<h4>Задача 10<a class="headerlink" href="#id14" title="Permalink to this headline">#</a></h4>
-<p>По данному целому числу N распечатайте квадраты всех чисел, предшествующих N (включая N), в порядке убывания</p>
-<p><strong>Образец</strong></p>
-<p>Входные данные: <br />
+<section id="task-10">
+<h4>Task 10<a class="headerlink" href="#task-10" title="Permalink to this headline">#</a></h4>
+<p>For a given integer N, print out the squares of all the numbers preceding N (including N) in descending order</p>
+<p><strong>Sample</strong></p>
+<p>Input data: <br />
 3</p>
-<p>Вывод программы: <br />
+<p>Program output: <br />
 9<br />
 4<br />
 1<br /></p>
@@ -1162,12 +1176,12 @@ The weather is OK.
 </div>
 </section>
 </section>
-<section id="for">
-<h3>Цикл for<a class="headerlink" href="#for" title="Permalink to this headline">#</a></h3>
-<section id="range-n">
-<h4>Функция range(n)<a class="headerlink" href="#range-n" title="Permalink to this headline">#</a></h4>
-<p>Создается объект класса range, внутри которого содержится арифметическая прогрессия в заданных диапазонах и с определенным шагом</p>
-<p>Ее синтаксис:</p>
+<section id="for-loop">
+<h3>For loop<a class="headerlink" href="#for-loop" title="Permalink to this headline">#</a></h3>
+<section id="the-range-n-function">
+<h4>The <code class="docutils literal notranslate"><span class="pre">range(n)</span></code> function<a class="headerlink" href="#the-range-n-function" title="Permalink to this headline">#</a></h4>
+<p>creates an object of the range class, which contains an arithmetic progression in specified ranges and with a certain step</p>
+<p>Its syntax is:</p>
 <ul class="simple">
 <li><p>range(start, stop[, step])</p></li>
 </ul>
@@ -1189,16 +1203,11 @@ The weather is OK.
 </div>
 </div>
 </div>
-</section>
-</section>
-</section>
-<section id="id15">
-<h2>Цикл for<a class="headerlink" href="#id15" title="Permalink to this headline">#</a></h2>
-<p>Цикл for позволяет поочередно перебрать элементы из чего-нибудь итерируемого.</p>
-<p>Ее синтаксис: <br />
-<strong>for</strong> i <strong>in</strong> диапазон изменений i:<br />
-  команды</p>
-<p>Все команды пишутся с отступом</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">for</span></code> loop allows you to iterate through the elements from something iterable.</p>
+<p>Its syntax is: <br />
+<strong>for</strong> i <strong>in</strong> range of changes i:<br />
+  commands</p>
+<p>All commands are indented</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">5</span>
@@ -1234,21 +1243,24 @@ yellow apple
 </div>
 </div>
 </section>
-<section id="id16">
-<h2>Написание функций<a class="headerlink" href="#id16" title="Permalink to this headline">#</a></h2>
-<p>Если какие-то операции надо повторять из раза в раз и нет готовых функций, то можно создать свою.</p>
-<p>Синтаксис: <br />
-<strong>def</strong> название функции(список аргументов):<br />
-  команды<br />
-  <strong>return</strong> результат выполнения функции<br /></p>
-<p>Все команды пишутся с отступом.</p>
-<p>Функция должна быть записана в любом месте до ее первого вызова.</p>
+</section>
+</section>
+<section id="writing-functions">
+<h2>Writing functions<a class="headerlink" href="#writing-functions" title="Permalink to this headline">#</a></h2>
+<p>If some operations need to be repeated from time to time and there are no ready-made functions, then you can create your own.</p>
+<p>Syntax: <br />
+<strong>def</strong> function name(list of arguments):<br />
+  commands<br />
+  <strong>return</strong> result of the function<br /></p>
+<p>All commands are indented.</p>
+<p>The function must be written anywhere before it is first called.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">power</span><span class="p">(</span><span class="n">number</span><span class="p">,</span> <span class="n">p</span><span class="p">):</span>
     <span class="n">result</span> <span class="o">=</span> <span class="n">number</span><span class="o">**</span><span class="n">p</span>
     <span class="k">return</span> <span class="n">result</span>
 
+<span class="c1"># Uncomment and try to run the cell</span>
 <span class="c1"># number = int(input(&quot;Число &quot;))</span>
 <span class="c1"># p = int(input(&quot;Степень&quot;))</span>
 <span class="c1"># print(power(number, p))</span>
@@ -1256,9 +1268,9 @@ yellow apple
 </div>
 </div>
 </div>
-<section id="id17">
-<h3>Задача 11<a class="headerlink" href="#id17" title="Permalink to this headline">#</a></h3>
-<p>Напишите функцию, которая по 2 сторонам прямоугольника возвращает его периметр.</p>
+<section id="task-11">
+<h3>Task 11<a class="headerlink" href="#task-11" title="Permalink to this headline">#</a></h3>
+<p>Write a function that returns the perimeter of a rectangle using the length of the two sides.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># def rectangle(a, b):</span>
@@ -1274,14 +1286,13 @@ yellow apple
 </section>
 </section>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="numpy">
-<h1>Работа с NumPy<a class="headerlink" href="#numpy" title="Permalink to this headline">#</a></h1>
-<p>NumPy – это модуль для python, который предоставляет общие математические и числовые операции в виде быстрых функций. Они обеспечивают функционал, который можно сравнить с функционалом MatLab. <code class="docutils literal notranslate"><span class="pre">NumPy</span></code> (Numeric Python) предоставляет базовые методы для манипуляции с большими массивами и матрицами. <code class="docutils literal notranslate"><span class="pre">SciPy</span></code> (Scientific Python) расширяет функционал numpy огромной коллекцией полезных алгоритмов, таких как минимизация, преобразование Фурье, регрессия, и другие прикладные математические техники.</p>
-<p>Чтобы использовать (любую) библиотеку, нужно подгрузить ее в наш рабочий документ. <br>
-Команда устроена так:</p>
-<p><strong>import</strong> название библиотеки</p>
-<p>Для дальнейшего использования название библиотеки могут сократить, но тогда в загрузке указывают ее псевдоним</p>
-<p><strong>import</strong> название библиотеки <strong>as</strong> псевдоним</p>
+<section class="tex2jax_ignore mathjax_ignore" id="working-with-numpy">
+<h1>Working with NumPy<a class="headerlink" href="#working-with-numpy" title="Permalink to this headline">#</a></h1>
+<p><a class="reference external" href="https://numpy.org/doc/stable/index.html">NumPy</a> is a python module that provides common mathematical and numerical operations in the form of fast functions. They provide functionality that can be compared to the functionality of MatLab. ‘NumPy’ (Numeric Python) provides basic methods for manipulating large arrays and matrices. <code class="docutils literal notranslate"><span class="pre">SciPy</span></code> (Scientific Python) extends the functionality of numpy with a huge collection of useful algorithms such as minimization, Fourier transform, regression, and other applied mathematical techniques.</p>
+<p>To use (any) library, you need to import it to our notebook:</p>
+<p><strong>import</strong> library name</p>
+<p>For further use, the name of the library can be shortened, but then its alias is indicated in the import</p>
+<p><strong>import</strong> library name <strong>as</strong> alias</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -1289,8 +1300,8 @@ yellow apple
 </div>
 </div>
 </div>
-<p>Главной особенностью numpy является объект <code class="docutils literal notranslate"><span class="pre">array</span></code>. Массивы схожи со списками в python, исключая тот факт, что элементы массива должны иметь одинаковый тип данных, как <code class="docutils literal notranslate"><span class="pre">float</span></code> и <code class="docutils literal notranslate"><span class="pre">int</span></code>. С массивами можно проводить числовые операции с большим объемом информации в разы быстрее и, главное, намного эффективнее чем со списками.</p>
-<p>Создание массива из списка:</p>
+<p>The main feature of numpy is the <code class="docutils literal notranslate"><span class="pre">array</span></code> object. Arrays are similar to lists in python, except for the fact that array elements must have the same data type as <code class="docutils literal notranslate"><span class="pre">float</span></code> and <code class="docutils literal notranslate"><span class="pre">int</span></code>. With arrays, numerical operations can be performed with a large amount of information many times faster and, most importantly, much more efficiently than with lists.</p>
+<p>Creating an array from a list:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="nb">float</span><span class="p">)</span>
@@ -1304,7 +1315,7 @@ yellow apple
 </div>
 </div>
 </div>
-<p>Ко всем элементам можно получить доступ и манипулировать ими так же, как вы бы это делали с обычными списками:</p>
+<p>All elements can be accessed and manipulated in the same way as with lists:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># try to print element of array</span>
@@ -1318,7 +1329,7 @@ yellow apple
 </div>
 </div>
 </div>
-<p>Массивы могут быть и многомерными. Вот пример двумерного массива (матрица):</p>
+<p>Arrays can also be multidimensional. Here is an example of a two-dimensional array (matrix):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]],</span> <span class="nb">float</span><span class="p">)</span>
@@ -1347,49 +1358,51 @@ yellow apple
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Размер массива:&#39;</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Тип данных в массиве:&#39;</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Array shape:&#39;</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Type of data in the array:&#39;</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Размер массива: (2, 3)
-Тип данных в массиве: float64
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Array shape: (2, 3)
+Type of data in the array: float64
 </pre></div>
 </div>
 </div>
 </div>
-<p>Размер массива можно изменить при помощи методов <code class="docutils literal notranslate"><span class="pre">reshape</span></code>, <code class="docutils literal notranslate"><span class="pre">flatten</span></code>, <code class="docutils literal notranslate"><span class="pre">transpose</span></code>. С помощью <code class="docutils literal notranslate"><span class="pre">reshape</span></code> можно добавлять или удалять измерения в массиве, а также изменять количество элементов в каждом измерении.</p>
+<p>The shape of the array can be changed using the methods <code class="docutils literal notranslate"><span class="pre">reshape</span></code>, <code class="docutils literal notranslate"><span class="pre">flatten</span></code>, <code class="docutils literal notranslate"><span class="pre">transpose</span></code>. Using <code class="docutils literal notranslate"><span class="pre">reshape</span></code>, you can add or remove dimensions in an array, as well as change the number of elements in each dimension.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span> <span class="nb">float</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Старый размер:&#39;</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Old shape:&#39;</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 <span class="n">a</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Новый размер:&#39;</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;New shape:&#39;</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Старый размер: (10,)
-Новый размер: (5, 2)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Old shape: (10,)
+New shape: (5, 2)
 </pre></div>
 </div>
 </div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">transpose</span></code> - функция, позволяющяя менять порядок осей.</p>
+<p><code class="docutils literal notranslate"><span class="pre">transpose</span></code> is a function that allows you to change the order of the axes.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Размер после transpose:&#39;</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Shape after transpose:&#39;</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Размер после transpose: (2, 5)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Shape after transpose: (2, 5)
 </pre></div>
 </div>
 </div>
 </div>
+<section id="task-12">
+<h2>Task 12<a class="headerlink" href="#task-12" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># make array 3-dimentional with shape = (1, 2, 5)</span>
@@ -1399,21 +1412,21 @@ yellow apple
 </div>
 </div>
 </div>
-<p>Функция <code class="docutils literal notranslate"><span class="pre">flatten</span></code> позволяет вытягивать массив, то есть из многомерного массива переконвертировать в одномерный.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">flatten</span></code> function allows you to convert  an array from a multidimensional array to a one-dimensional one.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Размер вытянутого массива:&#39;</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Shape of the flattened array:&#39;</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Размер вытянутого массива: (10,)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Shape of the flattened array: (10,)
 </pre></div>
 </div>
 </div>
 </div>
-<p>Арифметические операторы в массивах применяются поэлементно.</p>
+<p>Arithmetic operators in arrays are applied 	elementwise.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">])</span>
@@ -1466,7 +1479,7 @@ a - b: [20 29 38 47]
 </div>
 </div>
 </div>
-<p>Посмотрим на перемножение матриц:</p>
+<p>Let’s look at the multiplication of matrices:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
@@ -1486,7 +1499,9 @@ a - b: [20 29 38 47]
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>elementwise product:
-[[2 0]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[2 0]
  [0 4]]
 matrix product
 [[5 4]
@@ -1496,14 +1511,11 @@ another matrix product
  [3 4]]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
 </div>
 </div>
-</div>
-<p>В машинном обучении и науке о данных иногда вам придется работать со случайно сгенерированными данными. Различные методы <code class="docutils literal notranslate"><span class="pre">numpy</span></code> <code class="docutils literal notranslate"><span class="pre">random</span></code>
-существуют для генерации случайных целых чисел или массива <code class="docutils literal notranslate"><span class="pre">numpy</span></code> со случайными целыми числами.</p>
-<p>Если мы инициализируем начальные условия с определенным начальным значением, то для этого начального значения всегда будут генерироваться одни и те же случайные числа. Это означает, что <code class="docutils literal notranslate"><span class="pre">numpy</span></code> <code class="docutils literal notranslate"><span class="pre">random</span></code> является детерминированным для данного начального значения.</p>
+<p>In machine learning and data science, sometimes you will have to work with randomly generated data. Various <code class="docutils literal notranslate"><span class="pre">numpy</span></code> <code class="docutils literal notranslate"><span class="pre">random</span></code> methods
+exist to generate random values or a <code class="docutils literal notranslate"><span class="pre">numpy</span></code> array with random values.</p>
+<p>If we initialize the initial conditions with a certain initial value (<code class="docutils literal notranslate"><span class="pre">random.seed</span></code>), then the same random numbers will always be generated for this initial value. This means that <code class="docutils literal notranslate"><span class="pre">numpy</span></code> <code class="docutils literal notranslate"><span class="pre">random</span></code> is deterministic for a given initial value.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
@@ -1511,7 +1523,7 @@ another matrix product
 </div>
 </div>
 </div>
-<p>Рассмотрим несколько функций для генерации случайных значений:</p>
+<p>Let’s consider several functions for generating random values:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>np.random.normal<span class="o">?</span>
@@ -1558,7 +1570,8 @@ another matrix product
 </div>
 </div>
 </div>
-<p>Больше информации об использовании <code class="docutils literal notranslate"><span class="pre">Numpy</span></code> можно найти в следующем <a class="reference external" href="https://numpy.org/doc/stable/user/quickstart.html">туториале</a> .</p>
+<p>More information about using <code class="docutils literal notranslate"><span class="pre">Numpy</span></code> can be found in the following <a class="reference external" href="https://numpy.org/doc/stable/user/quickstart.html">tutorial</a> .</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1592,6 +1605,24 @@ another matrix product
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="../bio/intro_links.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Introduction to neuroscience and neuroimaging</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Seminar1_ML.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Intro to ML</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div></div>
   
 </div>
@@ -1625,51 +1656,53 @@ another matrix product
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-basics-of-python">Part 1 - Basics of Python</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#standart-functions">Standart functions</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#print">print()</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Задача 1</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#task-1">Task 1</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Арифметические операции</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Задача 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arithmetic-operations">Arithmetic operations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-and-types-of-variables">Variables and types of variables</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#task-2">Task 2</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Переменные и типы переменных</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Задача 4</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Листы</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Задача 5</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Задача 6</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Основные конструкции языка</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Логические выражения</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Задача 7</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">Условный оператор</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">Задачи 9</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#while">Цикл while</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">Задача 10</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for">Цикл for</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#range-n">Функция range(n)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lists">Lists</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#task-3">Task 3</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#task-4">Task 4</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#task-5">Task 5</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">Цикл for</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">Написание функций</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">Задача 11</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-language-constructions">Basic language constructions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logical-expressions">Logical expressions</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#task-6">Task 6</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#task-7">Task  7</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#task-8">Task 8</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-operator">Conditional operator</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#task-9">Task 9</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-while-loop">The while loop</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#task-10">Task 10</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-loop">For loop</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-range-n-function">The <code class="docutils literal notranslate"><span class="pre">range(n)</span></code> function</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy">Работа с NumPy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-functions">Writing functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#task-11">Task 11</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-numpy">Working with NumPy</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-12">Task 12</a></li>
+</ul>
+</li>
 </ul>
 
   </nav></div>

@@ -66,6 +66,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../_static/logo.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="00. PyTorch Fundamentals" href="00_pytorch_fundamentals.html" />
+    <link rel="prev" title="How to work with Python" href="Seminar1_python_colab.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -157,9 +159,32 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../bio/intro_links.html">Links</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1AM67Sd37J0hIJ-kLyzAZRm8op_JcUQ9b?usp=sharing">Intro to shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Seminar1_python_colab.html">How to work with Python</a></li>
+
+
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Intro to ML</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <li class="toctree-l1"><a class="reference internal" href="00_pytorch_fundamentals.html">Pytorch fundamentals</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://drive.google.com/file/d/1q0XncKq2y_wHLXJaxhjfBCDGHABmzrjM/view?usp=sharing">Intro to computer vision</a></li>
 </ul>
@@ -389,58 +414,65 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ml-task">ML task</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Как задаются объекты. Признаковое описание</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Практика</a><ul class="nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#how-objects-are-set-feature-description">How objects are set. Feature description</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice">Practice</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas">Pandas</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Визуализация</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Корреляции в данных</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Пропуски в данных</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualization">Visualization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#task-1">Task 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#correlations-in-the-data">Correlations in the data</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#missing-values">Missing values</a></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Типы задач</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classification">Задача классификации (classification):</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regression">Задача восстановления регрессии (regression):</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#forecasting">Задача прогнозирования (forecasting)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Метод обучения</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-tasks">Types of tasks</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classification-task">Classification task:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regression-recovery-task">Regression recovery task:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#forecasting-task">Forecasting task</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-method">Learning method</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-problem-of-underfitting-and-overfitting">The problem of underfitting and overfitting:</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Проблема недообучения и переобучения</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-validation-cv">Кросс-проверка (cross-validation, CV)</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Обучение регрессии</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Практика</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Линейный случай с шумом</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">Нелинейный случай (добавление признаков)</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#n">Полиномиальные признаки степени <span class="math notranslate nohighlight">\(n\)</span></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-validation-cv">Cross-validation (CV)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#regression-training">Regression Training</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Practice</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-case-with-noise">Linear case with noise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nonlinear-case-feature-extraction">Nonlinear case (feature extraction)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#polynomial-signs-of-degree-n">Polynomial signs of degree <span class="math notranslate nohighlight">\(n\)</span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#task-2">Task 2</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#task-3">Task 3</a></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">Обучение классификации:</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">Практика</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#training-classification-model">Training classification model:</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Practice</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">Анализ ошибок классификации</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">Функции потерь, зависящие от штрафа за ошибку</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#w-0"><strong>От <span class="math notranslate nohighlight">\(w_0\)</span> критическим образом зависит как работает классификатор!</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#analysis-of-classification-errors">Analysis of classification errors</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#loss-functions-depending-on-the-error-penalty">Loss functions depending on the error penalty</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-the-classifier-works-critically-depends-on-w-0"><strong>How the classifier works critically depends on <span class="math notranslate nohighlight">\(w_0\)</span>!</strong></a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#roc">Определение ROC-кривой</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#roc-auc-area-under-curve">ROC-кривая и площадь под кривой AUC (Area Under Curve)</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">Оценки качества двухклассовой классификации</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">Точность и полнота многоклассовой классификации</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">Оценки качества классификации</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">Агрегированные оценки:</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">Подбор параметров модели</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">Проклятие размерности</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id23">Снижение размерности. Метод главных компонент: постановка задачи</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id24">Матричные обозначения</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id25">Практика</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-of-the-roc-curve">Definition of the ROC curve</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#roc-curve-and-auc-area-under-curve">ROC-curve and AUC (Area Under Curve)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#assessment-of-the-quality-of-two-class-classification">Assessment of the quality of two-class classification</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#accuracy-and-completeness-of-multiclass-classification">Accuracy and completeness of multiclass classification</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#assessment-of-classification-quality">Assessment of classification quality</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#aggregated-estimates">Aggregated estimates:</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-choose-model-hyperparameters">How to choose model hyperparameters</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-4">Task 4</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#the-curse-of-dimensionality">The curse of dimensionality</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dimensionality-reduction-the-principal-component-analysis-pca-problem-statement">Dimensionality reduction. The principal component analysis (PCA): problem statement</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#matrix-notation">Matrix notation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Practice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#presentation">Presentation:</a></li>
 </ul>
 </li>
 </ul>
@@ -457,7 +489,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="intro-to-ml">
 <h1>Intro to ML<a class="headerlink" href="#intro-to-ml" title="Permalink to this headline">#</a></h1>
-<p><a class="reference external" href="https://colab.research.google.com/drive/17R-q49ARHIf_MSAbZLKSsy11CoQSjEuT?usp=sharing"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
+<p><a class="reference external" href="https://colab.research.google.com/drive/1Aw08NAP_qcWTnjH901WnXaFTbX6RtVO5?usp=sharing"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
 <section id="ml-task">
 <h2>ML task<a class="headerlink" href="#ml-task" title="Permalink to this headline">#</a></h2>
 <p>Let <span class="math notranslate nohighlight">\(X\)</span> is <code class="docutils literal notranslate"><span class="pre">data</span> <span class="pre">samples</span></code>, <span class="math notranslate nohighlight">\(Y\)</span> - <code class="docutils literal notranslate"><span class="pre">targets</span></code>.  <span class="math notranslate nohighlight">\(y : X \rightarrow Y\)</span> is an unknown target function.</p>
@@ -472,34 +504,34 @@ document.write(`
 </ul>
 </section>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>Как задаются объекты. Признаковое описание<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
-<p><span class="math notranslate nohighlight">\(f_j\)</span> - признаки объектов (features).</p>
-<p><code class="docutils literal notranslate"><span class="pre">Типы</span> <span class="pre">признаков:</span></code></p>
+<section class="tex2jax_ignore mathjax_ignore" id="how-objects-are-set-feature-description">
+<h1>How objects are set. Feature description<a class="headerlink" href="#how-objects-are-set-feature-description" title="Permalink to this headline">#</a></h1>
+<p><span class="math notranslate nohighlight">\(f_j\)</span> - features of objects.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Types</span> <span class="pre">of</span> <span class="pre">features:</span></code></p>
 <ul class="simple">
-<li><p>Бинарный признак <span class="math notranslate nohighlight">\(f_j\)</span>:</p>
+<li><p>Binary feature <span class="math notranslate nohighlight">\(f_j\)</span>:</p>
 <ul>
-<li><p>пол, головная боль, слабость, тошнота, и т.д.</p></li>
+<li><p>gender, headache, weakness, nausea, etc.</p></li>
 </ul>
 </li>
-<li><p><span class="math notranslate nohighlight">\(f_j\)</span> - категориальный признак:</p>
+<li><p><span class="math notranslate nohighlight">\(f_j\)</span> - categorical feature:</p>
 <ul>
-<li><p>название лекарства</p></li>
+<li><p>name of the medicine</p></li>
 </ul>
 </li>
-<li><p><span class="math notranslate nohighlight">\(f_j\)</span> - порядковый признак:</p>
+<li><p><span class="math notranslate nohighlight">\(f_j\)</span> is an ordinal feature:</p>
 <ul>
-<li><p>тяжесть состояния, желтушность, и т.д.</p></li>
+<li><p>severity of the condition, jaundice, etc.</p></li>
 </ul>
 </li>
-<li><p>Количественный признак <span class="math notranslate nohighlight">\(f_j\)</span>:</p>
+<li><p>Quantitative feature:</p>
 <ul>
-<li><p>возраст, пульс, артериальное давление, содержание гемоглобина в крови, доза препарата, и т.д.</p></li>
+<li><p>age, pulse, blood pressure, hemoglobin content in the blood, dose of the drug, etc.</p></li>
 </ul>
 </li>
 </ul>
-<p><code class="docutils literal notranslate"><span class="pre">Вектор</span></code> <span class="math notranslate nohighlight">\(\big(f_1(x), f_2(x), \ldots, f_n(x)\big)\)</span> - признаковое описание объекта <span class="math notranslate nohighlight">\(x \in X\)</span>.</p>
-<p><code class="docutils literal notranslate"><span class="pre">Матрица</span> <span class="pre">&quot;объекты-признаки&quot;</span></code> (feature data) задается следующим образом:</p>
+<p><code class="docutils literal notranslate"><span class="pre">Vector</span></code> <span class="math notranslate nohighlight">\(\big(f_1(x), f_2(x), \ldots, f_n(x)\big)\)</span> is a feature description of the object <span class="math notranslate nohighlight">\(x \in X\)</span>.</p>
+<p>The feature data is set as follows:</p>
 <p>\begin{equation*}
 F =
 \begin{pmatrix}
@@ -508,12 +540,12 @@ f_1(x_1) &amp; \dots &amp; f_n(x_1) \
 f_1(x_ℓ) &amp; \dots &amp; f_n(x_\ell)
 \end{pmatrix}
 \end{equation*}</p>
-<section id="id2">
-<h2>Практика<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<section id="practice">
+<h2>Practice<a class="headerlink" href="#practice" title="Permalink to this headline">#</a></h2>
 <section id="pandas">
 <h3>Pandas<a class="headerlink" href="#pandas" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
-<li><p><a href="http://pandas.pydata.org/">Pandas</a> - библиотека для обработки и анализа данных. Предназначена для данных разной природы - матричных, панельных данных, временных рядов.</p></li>
+<li><p><a href="http://pandas.pydata.org/">Pandas</a> is a library for data processing and analysis.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -528,41 +560,41 @@ f_1(x_ℓ) &amp; \dots &amp; f_n(x_\ell)
 </div>
 </div>
 </div>
-<p>В пандас есть две структуры данных:</p>
+<p>There are two data structures in <code class="docutils literal notranslate"><span class="pre">pandas</span></code>:</p>
 <ul class="simple">
-<li><p>Series: одномерный массив с именованными индексами (чаще всего, данные одного типа)</p></li>
-<li><p>DataFrame: двухмерный массив, имеет табличную структуру, легко изменяется по размерам, может содержать в себе данные разных типов</p></li>
+<li><p>Series: a one-dimensional array with named indexes (most often, data of the same type)</p></li>
+<li><p>DataFrame: a two-dimensional array, has a tabular structure, can contain data of different types</p></li>
 </ul>
-<p>Оба типа можно создавать вручную с помощью функций из самой библиотеки:</p>
+<p>Both types can be created manually using functions from the library itself:</p>
 <ul class="simple">
 <li><p>pandas.Series(data=None, index=None, dtype=None)</p></li>
 <li><p>pandas.DataFrame(data=None, index=None, columns=None, dtype=None)</p>
 <ul>
-<li><p><strong>data</strong> - данные, которые надо записать в структуру</p></li>
-<li><p><strong>index</strong> - индексы строк</p></li>
-<li><p><strong>columns</strong> - названия столбцов</p></li>
-<li><p><strong>dtype</strong> - тип данных</p></li>
+<li><p><strong>data</strong> - data to be written to the structure</p></li>
+<li><p><strong>index</strong> - row indexes</p></li>
+<li><p><strong>columns</strong> - column names</p></li>
+<li><p><strong>dtype</strong> - data type</p></li>
 </ul>
 </li>
 </ul>
-<p>Кроме data, остальные параметры опциональны</p>
-<p>Данные мы будем загружать из файла.</p>
+<p>In addition to data, other parameters are optional.</p>
+<p>We will download the data from the file.</p>
 <ul class="simple">
-<li><p>Функции типа <strong>pd.read_формат</strong> и <strong>pd.to_формат</strong>
-считывают и записывают данные соответственно. Например, табличку Excel можно считать с помощью команды <code class="docutils literal notranslate"><span class="pre">pd.read_excel</span></code>.  <br /> Полный список можно найти в документации:
+<li><p>Functions like <strong>pd.read_format</strong> and <strong>pd.to_format</strong>
+read and write data, respectively. For example, an Excel spreadsheet can be read using the command `pd.read_excel’.  <br /> The full list can be found in the documentation:
 <a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/io.html">http://pandas.pydata.org/pandas-docs/stable/io.html</a></p></li>
 </ul>
-<p>Научимся считывать данные в формате csv (comma separated value) функцией:</p>
+<p>Let’s learn how to read data in csv format (comma separated value) function:</p>
 <ul class="simple">
 <li><p><a href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html#pandas.read_csv"> pd.read_csv()</a>:</p></li>
 </ul>
-<p>Аргументов у нее очень много, критически важные:</p>
+<p>It has a lot of arguments, critical ones:</p>
 <ul class="simple">
-<li><p><strong>filepath_or_buffer</strong> - текстовая строка с названием (адресом) файла</p></li>
-<li><p><strong>sep</strong> - разделитель между данными</p></li>
-<li><p><strong>header</strong> - номер строки, в которой в файле указаны названия столбцов, None, если нет</p></li>
-<li><p><strong>names</strong> - список с названиями колонок</p></li>
-<li><p><strong>index_col</strong> - или номер столбца, или список,  или ничего - колонка, из которой надо взять названия строк</p></li>
+<li><p><strong>filepath_or_buffer</strong> - a text string with the name (address) of the file</p></li>
+<li><p><strong>sep</strong> - separator between data</p></li>
+<li><p><strong>header</strong> - the number of the row in which the column names are specified in the file, None if not</p></li>
+<li><p><strong>names</strong> - list with column names</p></li>
+<li><p><strong>index_col</strong> - either the column number, or the list, or nothing - the column from which you need to take the names of the rows</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -572,7 +604,7 @@ f_1(x_ℓ) &amp; \dots &amp; f_n(x_\ell)
 </div>
 </div>
 </div>
-<p>Функция <code class="docutils literal notranslate"><span class="pre">head(n)</span></code> позволяет увидеть первые <code class="docutils literal notranslate"><span class="pre">n</span></code> строчек датафрейма. Есть еще функция <code class="docutils literal notranslate"><span class="pre">tail(n)</span></code>, позволяющая увидеть последние   <code class="docutils literal notranslate"><span class="pre">n</span></code> строчек датафрейма</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">head(n)</span></code> function allows you to see the first <code class="docutils literal notranslate"><span class="pre">n</span></code> lines of the dataframe. There is also a <code class="docutils literal notranslate"><span class="pre">tail(n)</span></code> function that allows you to see the last <code class="docutils literal notranslate"><span class="pre">n</span></code> lines of the dataframe</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># preview the data</span>
@@ -701,22 +733,22 @@ f_1(x_ℓ) &amp; \dots &amp; f_n(x_\ell)
 </table>
 </div></div></div>
 </div>
-<p>Что обозначают каждый из столбцов:</p>
+<p>What do each of the columns mean:</p>
 <p>| Variable | Definition | Key |
 | ————- |:————-|: —–|
-| survival | Выживание   | 0 = No, 1 = Yes |
-| pclass   | Класс билета | 1 = 1st, 2 = 2nd, 3 = 3rd |
-| sex | Пол | |
-| Age | Возраст в годах | |
-| sibsp | количество супругов, бартьев, сестер на борту | |
-| parch | количество родителей, детей на борту | |
-| ticket | Номер билета  | |
-| fare   | Стоимость проезда | |
-| cabin  | Номер кабины | |
-| embarked | Порт посадки | C = Cherbourg, Q = Queenstown, S = Southampton |</p>
-<p>Посчитаем, сколько записей в данных.</p>
+| survival | Survival   | 0 = No, 1 = Yes |
+| pclass   | Ticket class | 1 = 1st, 2 = 2nd, 3 = 3rd |
+| sex | Sex | |
+| Age | Age in years | |
+| sibsp | Number of spouses, brothers, sisters on board | |
+| parch | Number of parents and children on board | |
+| ticket | Ticket number  | |
+| fare   | Fare | |
+| cabin  | Cabin number | |
+| embarked | Port of embarkation | C = Cherbourg, Q = Queenstown, S = Southampton |</p>
+<p>Let’s count how many records are in the data.</p>
 <ul class="simple">
-<li><p>Помогает метод <strong>count()</strong>:</p></li>
+<li><p>The method <strong>count()</strong> helps:</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -741,9 +773,9 @@ dtype: int64
 </div>
 </div>
 </div>
-<p>Можно заметить, что некоторых значений меньше, чем должно быть. Это значит, что есть отсутствующие значения.</p>
+<p>You may notice that the number of some values is less than it should be. This means that there are missing values.</p>
 <ul class="simple">
-<li><p>Метод <strong>info()</strong> заодно показывает, какого типа данные в столбцах</p></li>
+<li><p>The <strong>info()</strong> shows what type of data is in the columns</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -774,10 +806,10 @@ memory usage: 83.5+ KB
 </div>
 </div>
 </div>
-<p>Теперь посмотрим, а что содержательно у нас есть на руках.</p>
-<p>Глазами просматривать не будем, а попросим посчитать основные описательные статистики. Причем сразу все :)</p>
+<p>Now let’s see what we have on hand.</p>
+<p>We will not look through them with our eyes, but calculate the main descriptive statistics. And all at once :)</p>
 <ul class="simple">
-<li><p><strong>describe()</strong> - метод, который возвращает табличку с описательными статистиками. В таком виде считает все для числовых столбцов</p></li>
+<li><p><strong>describe()</strong> is a method that returns a table with descriptive statistics. In this form, it counts everything for numeric columns</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -889,13 +921,13 @@ memory usage: 83.5+ KB
 </table>
 </div></div></div>
 </div>
-<p>Допустим, нам не нужен датасет, а только определенные столбцы или строки или столбцы и строки.</p>
-<p>Как делать?
-Помним, что:</p>
+<p>Let’s say we don’t need a dataset, but only certain columns or rows or columns and rows.</p>
+<p>How to do it?
+Remember that:</p>
 <ul class="simple">
-<li><p>у столбцов есть названия</p></li>
-<li><p>у строк есть названия</p></li>
-<li><p>если нет названий, то они пронумерованы с нуля</p></li>
+<li><p>the columns have names</p></li>
+<li><p>the rows have names</p></li>
+<li><p>if there are no names, then they are numbered from scratch</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -963,7 +995,7 @@ memory usage: 83.5+ KB
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">titanic_dataframe</span><span class="p">[:</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># выбор строк</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">titanic_dataframe</span><span class="p">[:</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># row</span>
 </pre></div>
 </div>
 </div>
@@ -1034,7 +1066,7 @@ memory usage: 83.5+ KB
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">titanic_dataframe</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">,[</span><span class="s1">&#39;Survived&#39;</span><span class="p">,</span>	<span class="s1">&#39;Pclass&#39;</span><span class="p">]]</span> <span class="c1"># выбор строк и столбцов по названию</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">titanic_dataframe</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">,[</span><span class="s1">&#39;Survived&#39;</span><span class="p">,</span>	<span class="s1">&#39;Pclass&#39;</span><span class="p">]]</span> <span class="c1"># choose rows and columns by names</span>
 </pre></div>
 </div>
 </div>
@@ -1098,7 +1130,7 @@ memory usage: 83.5+ KB
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">titanic_dataframe</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">]]</span> <span class="c1"># выбор строк и столбцов по индексу, iloc (index location)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">titanic_dataframe</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">]]</span> <span class="c1"># choose rows and columns by indices, iloc (index location)</span>
 </pre></div>
 </div>
 </div>
@@ -1150,7 +1182,7 @@ memory usage: 83.5+ KB
 </table>
 </div></div></div>
 </div>
-<p>А если мне нужны пассажиры старше 18 лет? Как быть?</p>
+<p>And if I need passengers over the age of 18? What should I do?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># задаем маску по условию</span>
@@ -1284,11 +1316,11 @@ memory usage: 83.5+ KB
 </div></div></div>
 </div>
 </section>
-<section id="id3">
-<h3>Визуализация<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<section id="visualization">
+<h3>Visualization<a class="headerlink" href="#visualization" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># библиотеки для визуализации: matplotlib, seaborn</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># libraries for visualization: matplotlib, seaborn</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s1">&#39;whitegrid&#39;</span><span class="p">)</span>
@@ -1299,9 +1331,9 @@ memory usage: 83.5+ KB
 </div>
 </div>
 </div>
-<p><a class="reference external" href="https://devpractice.ru/matplotlib-lesson-1-quick-start-guide/">Простой гайд по matplotlib</a></p>
-<p><a class="reference external" href="https://habr.com/ru/articles/468295/">Усложненый гайд по matplotlib</a></p>
-<p><a class="reference external" href="https://dzen.ru/a/YCzNtfvJ0mK5xuiw">Гайд по seaborn</a></p>
+<p><a class="reference external" href="https://devpractice.ru/matplotlib-lesson-1-quick-start-guide/">Simple matplotlib guide</a></p>
+<p><a class="reference external" href="https://habr.com/ru/articles/468295/">Complex matplotlib guide</a></p>
+<p><a class="reference external" href="https://dzen.ru/a/YCzNtfvJ0mK5xuiw">Seaborn guide</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Simple plot</span>
@@ -1340,11 +1372,14 @@ sns.catplot<span class="o">?</span>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/06ec1b7404ba45a85bad96ff8087c2c2b186d3d7c6c480ac84be97c9e8eb8364.png" src="../_images/06ec1b7404ba45a85bad96ff8087c2c2b186d3d7c6c480ac84be97c9e8eb8364.png" />
-<img alt="../_images/000c01547621ae646c1ba37ab152a6aba246c28dd08e238dc756fc1a4e799747.png" src="../_images/000c01547621ae646c1ba37ab152a6aba246c28dd08e238dc756fc1a4e799747.png" />
+<img alt="../_images/b1a7f6049d1e6ed823eb1295c774c3204dc99da3ff56c2d784f28a074ef49875.png" src="../_images/b1a7f6049d1e6ed823eb1295c774c3204dc99da3ff56c2d784f28a074ef49875.png" />
+<img alt="../_images/d7886ee692aa9000b9f22a2966dbc0a414dc04732782e1652e0898d2322c1287.png" src="../_images/d7886ee692aa9000b9f22a2966dbc0a414dc04732782e1652e0898d2322c1287.png" />
 </div>
 </div>
-<p>Постройте графики по выжившим, по выжившим в зависимости от класса.</p>
+</section>
+<section id="task-1">
+<h3>Task 1<a class="headerlink" href="#task-1" title="Permalink to this headline">#</a></h3>
+<p>Plot graphs by survivors and by survivors depending on the class.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code</span>
@@ -1364,29 +1399,29 @@ sns.catplot<span class="o">?</span>
 </div>
 </div>
 </section>
-<section id="id4">
-<h3>Корреляции в данных<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
-<p>Пусть <span class="math notranslate nohighlight">\(x\)</span> и <span class="math notranslate nohighlight">\(y\)</span> - <span class="math notranslate nohighlight">\(n\)</span> размерные вектора, тогда ковариация:
+<section id="correlations-in-the-data">
+<h3>Correlations in the data<a class="headerlink" href="#correlations-in-the-data" title="Permalink to this headline">#</a></h3>
+<p>Let <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> be <span class="math notranslate nohighlight">\(n\)</span> dimensional vectors, then covariance:
 $<span class="math notranslate nohighlight">\(
-Cov(x,y) = \frac{\sum_i \left(x_i - \bar{x}\right) \left(y_i - \bar{y}\right)}{n-1} .
+Cov(x,y) =\frac{\sum_i\left(x_i - \bar{x}\right)\left(y_i - \bar{y}\right)}{n-1} .
 \)</span>$</p>
-<p>Корреляция Пирсона (линейная):</p>
+<p>Pearson correlation (linear):</p>
 <div class="math notranslate nohighlight">
 \[
 Corr(x,y) = \frac{Cov}{\sigma_x \sigma_y} .
 \]</div>
-<p>Коэффициент корреляции Пирсона - это просто нормализованная ковариация между двумя переменными, чтобы дать интерпретируемую оценку, такую, что:
+<p>The Pearson correlation coefficient is simply a normalized covariance between two variables to give an interpretable estimate such that:
 $<span class="math notranslate nohighlight">\(
 Corr(x,y)  \in [-1, 1]
 \)</span>$</p>
 <p><img alt="" src="https://drive.google.com/uc?export=view&amp;id=1n78FZWGw6Lk1jDRjeZEtCCq34ay22ibo" /></p>
-<p>Допущения корреляции Пирсона:</p>
+<p>Pearson correlation assumptions:</p>
 <ol class="arabic simple">
-<li><p>Связь между переменными должна быть линейной.</p></li>
+<li><p>The relationship between variables should be linear.</p></li>
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Построим распределения 2 признаков:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot distribution of two features:</span>
 <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="mi">13</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
 
 <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
@@ -1408,22 +1443,22 @@ Corr(x,y)  \in [-1, 1]
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span>
-<span class="c1"># посчитаем корреляцию</span>
+<span class="c1"># calculate the correlation</span>
 <span class="n">titanic_dataframe_nonan</span> <span class="o">=</span> <span class="n">titanic_dataframe</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
 <span class="n">corr</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">pearsonr</span><span class="p">(</span><span class="n">titanic_dataframe_nonan</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">],</span> <span class="n">titanic_dataframe_nonan</span><span class="p">[</span><span class="s1">&#39;Fare&#39;</span><span class="p">])</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Корреляция:&#39;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">corr</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Correlation:&#39;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">corr</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Корреляция: -0.09
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Correlation: -0.09
 </pre></div>
 </div>
 </div>
 </div>
-<section id="id5">
-<h4>Пропуски в данных<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h4>
+<section id="missing-values">
+<h4>Missing values<a class="headerlink" href="#missing-values" title="Permalink to this headline">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Number of missing values of age:&#39;</span><span class="p">,</span> <span class="n">titanic_dataframe</span><span class="p">[</span><span class="s2">&quot;Age&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
@@ -1436,28 +1471,28 @@ Corr(x,y)  \in [-1, 1]
 </div>
 </div>
 </div>
-<p>Как справлятся с отсутствием данных:</p>
+<p>How to deal with the missing values:</p>
 <ul class="simple">
-<li><p>Удалить признаки или наблюдения с отсутствующими значениями <code class="docutils literal notranslate"><span class="pre">dropna()</span></code>:</p>
+<li><p>Delete signs or observations with missing values of <code class="docutils literal notranslate"><span class="pre">dropna()</span></code>:</p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">+</span></code> Просто в использовании;</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">-</span></code> Уменьшение размера датасета;</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">-</span></code> Потеря информации;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+</span></code> is easy to use;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-</span></code> Reducing the size of the dataset;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-</span></code> Loss of information;</p></li>
 </ul>
 </li>
-<li><p>Заполнение средним или медианным значением <code class="docutils literal notranslate"><span class="pre">fillna(mean_value)</span></code>:</p>
+<li><p>Filling with the average or median value of <code class="docutils literal notranslate"><span class="pre">fillna(mean_value)</span></code>:</p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">+</span></code> Просто в использовании;</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">+</span></code> Среднее значение и медиана может обеспечить хорошую оценку недостающих значений;</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">-</span></code> Работает только для численных значений;</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">-</span></code> Чувствительность к выбросам в данных;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+</span></code> is easy to use;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+</span></code> Mean and median can provide a good estimate of missing values;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-</span></code> Works only for numerical values;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-</span></code> Sensitivity to outliers in data;</p></li>
 </ul>
 </li>
-<li><p>Заполнение случайными значениями:</p>
+<li><p>Filling with random values:</p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">+</span></code> Можно применить и к категориальным, и к численным признакам;</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">+</span></code> Вносит меньше искажений в дисперсию;</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">-</span></code> Работает не в каждой ситуации, так как может привнести шум в данные, что приведет к неверным статистическим выводам;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+</span></code> Can be applied to both categorical and numerical features;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+</span></code> Introduces less distortion to the variance;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-</span></code> does not work in every situation, as it can introduce noise into the data, which will lead to incorrect statistical conclusions;</p></li>
 </ul>
 </li>
 </ul>
@@ -1494,112 +1529,112 @@ Corr(x,y)  \in [-1, 1]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/18f1dc3f6253ff03f72598d143da5423c98ad592516e8299a3d818988b9da280.png" src="../_images/18f1dc3f6253ff03f72598d143da5423c98ad592516e8299a3d818988b9da280.png" />
+<img alt="../_images/f4f7f84a3224130a45be1871965b408de17e7f60715e8a6c6dec05cf5ff0d190.png" src="../_images/f4f7f84a3224130a45be1871965b408de17e7f60715e8a6c6dec05cf5ff0d190.png" />
 </div>
 </div>
 </section>
 </section>
 </section>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="id6">
-<h1>Типы задач<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h1>
-<section id="classification">
-<h2>Задача классификации (classification):<a class="headerlink" href="#classification" title="Permalink to this headline">#</a></h2>
+<section class="tex2jax_ignore mathjax_ignore" id="types-of-tasks">
+<h1>Types of tasks<a class="headerlink" href="#types-of-tasks" title="Permalink to this headline">#</a></h1>
+<section id="classification-task">
+<h2>Classification task:<a class="headerlink" href="#classification-task" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(Y = \{-1, +1\}\)</span> - классификация на 2 класса;</p></li>
-<li><p><span class="math notranslate nohighlight">\(Y = \{1, \ldots, M\}\)</span> - классификация на <span class="math notranslate nohighlight">\(M\)</span> непересекающихся классов. В этом случае всё множество объектов <span class="math notranslate nohighlight">\(X\)</span> разбивается на классы и алгоритм <span class="math notranslate nohighlight">\(a(x)\)</span> должен давать ответ на вопрос “какому классу принадлежит <span class="math notranslate nohighlight">\(x\)</span>?”.</p></li>
+<li><p><span class="math notranslate nohighlight">\(Y = \{-1, +1\}\)</span> - classification into 2 classes (binary);</p></li>
+<li><p><span class="math notranslate nohighlight">\(Y = \{1, \ldots, M\}\)</span> - classification into <span class="math notranslate nohighlight">\(M\)</span> disjoint classes. In this case, the entire set of objects <span class="math notranslate nohighlight">\(X\)</span> is divided into classes and the algorithm <span class="math notranslate nohighlight">\(a(x)\)</span> should answer the question “which class does <span class="math notranslate nohighlight">\(x\)</span> belong to?”.</p></li>
 </ul>
 </section>
-<section id="regression">
-<h2>Задача восстановления регрессии (regression):<a class="headerlink" href="#regression" title="Permalink to this headline">#</a></h2>
+<section id="regression-recovery-task">
+<h2>Regression recovery task:<a class="headerlink" href="#regression-recovery-task" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(Y = \mathbb{R}\)</span> или <span class="math notranslate nohighlight">\(Y = \mathbb{R}^m\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(Y = \mathbb{R}\)</span> or <span class="math notranslate nohighlight">\(Y = \mathbb{R}^m\)</span></p></li>
 </ul>
 </section>
-<section id="forecasting">
-<h2>Задача прогнозирования (forecasting)<a class="headerlink" href="#forecasting" title="Permalink to this headline">#</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">Задачи</span> <span class="pre">прогнозирования</span></code> являются частными случаями классификации или регрессии, когда <span class="math notranslate nohighlight">\(x \in X\)</span> — описание прошлого поведения объекта <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y \in Y\)</span> — описание некоторых характеристик его будущего поведения.</p>
+<section id="forecasting-task">
+<h2>Forecasting task<a class="headerlink" href="#forecasting-task" title="Permalink to this headline">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">Forecasting</span> <span class="pre">tasks</span></code> are special cases of classification or regression, when <span class="math notranslate nohighlight">\(x\in X\)</span> is a description of the past behavior of an object <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\in Y\)</span> is a description of some characteristics of its future behavior.</p>
 </section>
-<section id="id7">
-<h2>Метод обучения<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">Этап</span> <span class="pre">обучения</span> <span class="pre">(train)</span></code> - по выборке <span class="math notranslate nohighlight">\(X^\ell = \big(x_i, y_i\big)_{i=1}^{ℓ}\)</span> строим алгоритм <span class="math notranslate nohighlight">\(a \in A\)</span>.</p>
-<p><code class="docutils literal notranslate"><span class="pre">Этап</span> <span class="pre">применения</span> <span class="pre">(test)</span></code> - имея алгоритм <span class="math notranslate nohighlight">\(a \in A\)</span> к новым объектам <span class="math notranslate nohighlight">\(x^\prime\)</span>, получаем ответы <span class="math notranslate nohighlight">\(y^\prime = a(x^\prime)\)</span>.</p>
+<section id="learning-method">
+<h2>Learning method<a class="headerlink" href="#learning-method" title="Permalink to this headline">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">Train</span></code> - based on the sample <span class="math notranslate nohighlight">\(X^l =\big(x_i, y_i\big)_{i=1}^{l}\)</span> we build the algorithm <span class="math notranslate nohighlight">\(a \in A\)</span>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Test</span></code> - having the algorithm <span class="math notranslate nohighlight">\(a\in A\)</span> to new objects <span class="math notranslate nohighlight">\(x^\prime\)</span>, we get the answers <span class="math notranslate nohighlight">\(y^\prime = a(x^\prime)\)</span>.</p>
 </section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="id8">
-<h1>Проблема недообучения и переобучения<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h1>
+<section id="the-problem-of-underfitting-and-overfitting">
+<h2>The problem of underfitting and overfitting:<a class="headerlink" href="#the-problem-of-underfitting-and-overfitting" title="Permalink to this headline">#</a></h2>
 <p><img alt="" src="https://drive.google.com/uc?export=view&amp;id=1AoPF0vlVTZ10D2X1rOB_9A3zMrdvoe7X" /></p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">Недообучение</span> <span class="pre">(underfitting)</span></code>: модель слишком проста, недостаточное число параметров <span class="math notranslate nohighlight">\(n\)</span>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Переобучение</span> <span class="pre">(overfitting)</span></code>: модель слишком сложна, избыточное число параметров <span class="math notranslate nohighlight">\(n\)</span>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Underfitting</span></code>: the model is too simple, the number of parameters <span class="math notranslate nohighlight">\(n\)</span> is insufficient.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Overfitting</span></code>: the model is too complex, there is an excessive number of parameters <span class="math notranslate nohighlight">\(n\)</span>.</p></li>
 </ul>
 <p><img alt="" src="https://drive.google.com/uc?export=view&amp;id=1xfQCQaBCW_tHdD__TwSfBrRtBbu3Q6k3" /></p>
-<p><code class="docutils literal notranslate"><span class="pre">Из-за</span> <span class="pre">чего</span> <span class="pre">возникает</span> <span class="pre">переобучение?</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">What</span> <span class="pre">causes</span> <span class="pre">overfitting?</span></code></p>
 <ul class="simple">
-<li><p>избыточная сложность пространства памаметров, лишние степени свободы в модели <span class="math notranslate nohighlight">\(g(x, θ)\)</span> “тратятся” на чрезмерно точную подгонку под обучающую выборку <span class="math notranslate nohighlight">\(X^ℓ\)</span>;</p></li>
-<li><p>переобучение есть всегда, когда есть выбор (<span class="math notranslate nohighlight">\(a\)</span> из <span class="math notranslate nohighlight">\(A\)</span>) по неполной информации (по конечной выборке <span class="math notranslate nohighlight">\(X^\ell\)</span>).</p></li>
+<li><p>excessive complexity of the pamameter space, extra degrees of freedom in the model <span class="math notranslate nohighlight">\(g(x, θ)\)</span> are “spent” on overly accurate fitting to the training sample <span class="math notranslate nohighlight">\(X^l\)</span>;</p></li>
+<li><p>overfitting is always there when there is a choice (<span class="math notranslate nohighlight">\(a\)</span> from <span class="math notranslate nohighlight">\(A\)</span>) based on incomplete information (according to the final sample <span class="math notranslate nohighlight">\(X^l\)</span>).</p></li>
 </ul>
-<p><code class="docutils literal notranslate"><span class="pre">Как</span> <span class="pre">обнаружить</span> <span class="pre">переобучение?</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">How</span> <span class="pre">to</span> <span class="pre">detect</span> <span class="pre">overfitting?</span></code></p>
 <ul class="simple">
-<li><p>эмпирически, путем разбиения выборки на <span class="math notranslate nohighlight">\(\text{train}\)</span> и <span class="math notranslate nohighlight">\(\text{test}\)</span>, причем на <span class="math notranslate nohighlight">\(\text{test}\)</span> должны быть известны правильные ответы.</p></li>
+<li><p>empirically, by dividing the sample into <span class="math notranslate nohighlight">\(\text{train}\)</span> and <span class="math notranslate nohighlight">\(\text{test}\)</span>, and the correct answers should be known for <span class="math notranslate nohighlight">\(\text{test}\)</span>.</p></li>
 </ul>
-<p><code class="docutils literal notranslate"><span class="pre">Избавиться</span> <span class="pre">от</span> <span class="pre">него</span> <span class="pre">нельзя.</span> <span class="pre">Как</span> <span class="pre">его</span> <span class="pre">минимизировать?</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">You</span> <span class="pre">can't</span> <span class="pre">get</span> <span class="pre">rid</span> <span class="pre">of</span> <span class="pre">him.</span> <span class="pre">How</span> <span class="pre">to</span> <span class="pre">minimize</span> <span class="pre">it?</span></code></p>
 <ul class="simple">
-<li><p>минимизировать <code class="docutils literal notranslate"><span class="pre">HoldOut</span></code>, <code class="docutils literal notranslate"><span class="pre">LOO</span></code> или <code class="docutils literal notranslate"><span class="pre">CV</span></code>, но осторожно!!!</p></li>
-<li><p>накладывать ограничения на <span class="math notranslate nohighlight">\(θ\)</span> (регуляризация).</p></li>
+<li><p>minimize using <code class="docutils literal notranslate"><span class="pre">HoldOut</span></code>, <code class="docutils literal notranslate"><span class="pre">LOO</span></code> or <code class="docutils literal notranslate"><span class="pre">CV</span></code>, but be careful!!!</p></li>
+<li><p>impose restrictions on <span class="math notranslate nohighlight">\(θ\)</span> (regularization).</p></li>
 </ul>
 </section>
+</section>
 <section class="tex2jax_ignore mathjax_ignore" id="cross-validation-cv">
-<h1>Кросс-проверка (cross-validation, CV)<a class="headerlink" href="#cross-validation-cv" title="Permalink to this headline">#</a></h1>
-<p><code class="docutils literal notranslate"><span class="pre">Внешний</span> <span class="pre">критерий</span></code> оценивает качество “вне обучения”, например, по отложенной (hold-out) контрольной выборке <span class="math notranslate nohighlight">\(X^k\)</span>:
+<h1>Cross-validation (CV)<a class="headerlink" href="#cross-validation-cv" title="Permalink to this headline">#</a></h1>
+<p>An <code class="docutils literal notranslate"><span class="pre">external</span> <span class="pre">criterion</span></code> evaluates the quality of “out-of-training”, for example, by a hold-out control sample <span class="math notranslate nohighlight">\(X^k\)</span>:
 \begin{equation}
 Q_{\mu}\big(X^\ell, X^k\big) = Q\big(\mu\big(X^\ell\big), X^k\big).
 \end{equation}</p>
-<p>Усреднение оценок <code class="docutils literal notranslate"><span class="pre">hold-out</span></code> по заданному <span class="math notranslate nohighlight">\(N\)</span> - множеству разбиений <span class="math notranslate nohighlight">\(X^L = X_n^{\ell} \bigcup X_n^{k}, \quad n = 1, \ldots, N\)</span>:</p>
+<p>Averaging <code class="docutils literal notranslate"><span class="pre">hold-out</span></code> estimates over a given <span class="math notranslate nohighlight">\(N\)</span> - set of partitions <span class="math notranslate nohighlight">\(X^L = X_n^{\ell} \bigcup X_n^{k}, \quad n = 1, \ldots, N\)</span>:</p>
 <p>\begin{equation}
 \text{CV}\big(\mu, X^L\big) = \frac{1}{\vert N\vert} \sum_{n \in N} Q_{\mu}\big(X_n^{\ell}, X_n^{k}\big).
 \end{equation}</p>
-<p>Частные случаи - разные способы задания <span class="math notranslate nohighlight">\(N\)</span>.</p>
+<p>Special cases are different ways of setting <span class="math notranslate nohighlight">\(N\)</span>.</p>
 <ul class="simple">
-<li><p>Случайное множество разбиений.</p></li>
-<li><p>Полная кросс-проверка (complete cross-validation, CCV): <span class="math notranslate nohighlight">\(N\)</span> - множество всех <span class="math notranslate nohighlight">\(C_{\ell + k}^{k}\)</span> разбиений.</p></li>
+<li><p>A random set of partitions.</p></li>
+<li><p>Complete cross-validation (CCV): <span class="math notranslate nohighlight">\(N\)</span> is the set of all <span class="math notranslate nohighlight">\(C_{\ell+k}^{k}\)</span> partitions.</p></li>
 </ul>
-<p><code class="docutils literal notranslate"><span class="pre">Недостаток:</span></code> оценка CCV вычислительно слишком сложна. Используются либо малые значения <span class="math notranslate nohighlight">\(k\)</span>, либо комбинаторные оценки CCV.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Disadvantage:</span></code> CCV estimation is computationally too complicated. Either small values of <span class="math notranslate nohighlight">\(k\)</span> or combinatorial estimates of CCV are used.</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">Скользящий</span> <span class="pre">контроль</span></code> (leave one out CV): <span class="math notranslate nohighlight">\(~k=1\)</span>,
+<li><p><code class="docutils literal notranslate"><span class="pre">Sliding</span> <span class="pre">control</span></code> (Leave One Out CV): <span class="math notranslate nohighlight">\(~k=1\)</span>,
 \begin{equation}
 \text{LOO}\big(\mu, X^L\big) = \frac{1}{L} \sum_{n \in N} Q_{\mu}\big(X^L \backslash {x_i}, {x_i}\big).
 \end{equation}</p></li>
 </ul>
-<p><code class="docutils literal notranslate"><span class="pre">Недостаток:</span></code> <span class="math notranslate nohighlight">\(\text{LOO}\)</span>: ресурсоемкость, высокая дисперсия.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Disadvantage:</span></code> <span class="math notranslate nohighlight">\(\text{LOO}\)</span>: resource intensive, high variance.</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">Кросс-проверка</span></code> по <span class="math notranslate nohighlight">\(q\)</span> блокам (<span class="math notranslate nohighlight">\(q\)</span>-fold CV): случайное разбиение <span class="math notranslate nohighlight">\(X^L = X_1^{\ell_1} \bigcup \ldots X_q^{\ell_q}\)</span> на <span class="math notranslate nohighlight">\(q\)</span> блоков (почти) равной длины,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Cross-checking</span></code> on <span class="math notranslate nohighlight">\(q\)</span> blocks (<span class="math notranslate nohighlight">\(q\)</span>-fold CV): randomly splitting <span class="math notranslate nohighlight">\(X^L=X_1^{\ell_1}\bigcup\ldots X_q^{\ell_q}\)</span> into <span class="math notranslate nohighlight">\(q\)</span> blocks of (almost) equal length,</p></li>
 </ul>
 <p>\begin{equation}
 \text{CV}<em>q\big(\mu, X^L\big) = \frac{1}{q} \sum</em>{n=1}^{q} Q_{\mu}\big(X^L \backslash X_n^{\ell_n}, ~X_n^{\ell_n}\big).
 \end{equation}</p>
-<p><code class="docutils literal notranslate"><span class="pre">Недостаток</span></code> <span class="math notranslate nohighlight">\(q\)</span>-fold CV:</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">disadvantage</span></code> of <span class="math notranslate nohighlight">\(q\)</span>-fold CV:</p>
 <ul class="simple">
-<li><p>оценка существенно зависит от разбиения на блоки;</p></li>
-<li><p>каждый объект лишь один раз участвует в контроле.</p></li>
+<li><p>the score depends significantly on the division into blocks;</p></li>
+<li><p>Each object participates in the control only once.</p></li>
 </ul>
 <p><img alt="" src="https://drive.google.com/uc?export=view&amp;id=1W0It3dugIF0L3VmbNdZex0VMrV28WA3R" /></p>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="id9">
-<h1>Обучение регрессии<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h1>
-<p><code class="docutils literal notranslate"><span class="pre">Обучающая</span> <span class="pre">выборка:</span></code> <span class="math notranslate nohighlight">\(X^\ell = \big(x_i,~y_i\big)_{i=1}^{\ell}, \quad x_i \in \mathbb{R}^n, \quad y_i \in \mathbb{R}\)</span></p>
+<section class="tex2jax_ignore mathjax_ignore" id="regression-training">
+<h1>Regression Training<a class="headerlink" href="#regression-training" title="Permalink to this headline">#</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">Training</span> <span class="pre">sample:</span></code> <span class="math notranslate nohighlight">\(X^\ell = \big(x_i,~y_i\big)_{i=1}^{\ell}, \quad x_i \in \mathbb{R}^n, \quad y_i \in \mathbb{R}\)</span></p>
 <ul class="simple">
-<li><p>Модель регрессии - <strong>линейная</strong>:
+<li><p>Regression model - <strong>linear</strong>:
 \begin{equation}
 a(x, θ) = \sum_{j=1}^{n} θ_j f_j(x), \quad θ \in \mathbb{R}^n
 \end{equation}</p></li>
-<li><p>Функция потерь - <strong>квадратичная</strong>:
+<li><p>The loss function is <strong>quadratic</strong>:
 \begin{equation}
 \mathscr{L}(a,~y) = \big(a - y\big)^2
 \end{equation}</p></li>
 </ul>
-<section id="id10">
-<h2>Практика<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h2>
+<section id="id1">
+<h2>Practice<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -1621,8 +1656,8 @@ a(x, θ) = \sum_{j=1}^{n} θ_j f_j(x), \quad θ \in \mathbb{R}^n
 </div>
 </div>
 </div>
-<section id="id11">
-<h3>Линейный случай с шумом<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h3>
+<section id="linear-case-with-noise">
+<h3>Linear case with noise<a class="headerlink" href="#linear-case-with-noise" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># set the parameters with respect to the problem statement</span>
@@ -1703,9 +1738,9 @@ a(x, θ) = \sum_{j=1}^{n} θ_j f_j(x), \quad θ \in \mathbb{R}^n
 </div>
 </div>
 </section>
-<section id="id12">
-<h3>Нелинейный случай (добавление признаков)<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h3>
-<p>Многие функции являются нелинейными. Рассмотрим для примера:</p>
+<section id="nonlinear-case-feature-extraction">
+<h3>Nonlinear case (feature extraction)<a class="headerlink" href="#nonlinear-case-feature-extraction" title="Permalink to this headline">#</a></h3>
+<p>Many functions are non-linear. Let’s take an example:</p>
 <div class="math notranslate nohighlight">
 \[
 y(x) = cos\Big(\frac{x}{10}\Big)
@@ -1738,9 +1773,9 @@ y(x) = cos\Big(\frac{x}{10}\Big)
 <img alt="../_images/33f2e0752b16656eda538e6bde26cd9802ea0c62ae12408f0ea93584360ed534.png" src="../_images/33f2e0752b16656eda538e6bde26cd9802ea0c62ae12408f0ea93584360ed534.png" />
 </div>
 </div>
-<section id="n">
-<h4>Полиномиальные признаки степени <span class="math notranslate nohighlight">\(n\)</span><a class="headerlink" href="#n" title="Permalink to this headline">#</a></h4>
-<p>Из графика видно, что зависимость нелинейная. Не зная функцию мы лишь можем предположить зависимость.</p>
+<section id="polynomial-signs-of-degree-n">
+<h4>Polynomial signs of degree <span class="math notranslate nohighlight">\(n\)</span><a class="headerlink" href="#polynomial-signs-of-degree-n" title="Permalink to this headline">#</a></h4>
+<p>The graph shows that the dependence is nonlinear. Without knowing the function, we can only assume a dependency.</p>
 <div class="math notranslate nohighlight">
 \[a^*(x) = \theta_1 x^1 + \theta_2 x^2 + \ldots \theta_n x^n + b = \theta^{T} X \]</div>
 <div class="cell docutils container">
@@ -1756,14 +1791,17 @@ y(x) = cos\Big(\frac{x}{10}\Big)
 </div>
 </div>
 </div>
+</section>
+<section id="task-2">
+<h4>Task 2<a class="headerlink" href="#task-2" title="Permalink to this headline">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Input, $x$&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Output, $v(x)$&#39;</span><span class="p">)</span>
-<span class="c1"># Добавьте степени в список и посмотрите, как ведет себя предсказание</span>
-<span class="c1"># Попробуйте добавить большую степень &gt; 100</span>
+<span class="c1"># Add degrees to the list and see how the prediction behaves</span>
+<span class="c1"># Try adding a higher degree &gt; 100</span>
 <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span>
     <span class="n">x_poly</span> <span class="o">=</span> <span class="n">make_polynomial_features</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="n">p</span><span class="p">)</span>
     <span class="n">model</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_poly</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
@@ -1781,7 +1819,7 @@ y(x) = cos\Big(\frac{x}{10}\Big)
 <img alt="../_images/e8a9bd110b714016460dafdb60b208ffdc249ca78c9da0d67249b517910d041f.png" src="../_images/e8a9bd110b714016460dafdb60b208ffdc249ca78c9da0d67249b517910d041f.png" />
 </div>
 </div>
-<p>Видно явное переобучение, но метрика на обучающей выборке снижается с ростом степени полинома. Давайте разделим датасет на обучающую и тестовую выборки. И будем смотреть метрику на тестовой выборке.</p>
+<p>There is an obvious overfitting, but the metric on the training sample decreases with increasing degree of the polynomial. Let’s divide the dataset into training and test samples. And we will look at the metric on the test sample.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.33</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
@@ -1789,13 +1827,16 @@ y(x) = cos\Big(\frac{x}{10}\Big)
 </div>
 </div>
 </div>
+</section>
+<section id="task-3">
+<h4>Task 3<a class="headerlink" href="#task-3" title="Permalink to this headline">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Input, $x$&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Output, $v(x)$&#39;</span><span class="p">)</span>
-<span class="c1"># Добавьте степени в список и посмотрите, как ведет себя метрика на тесте</span>
+<span class="c1"># Add degrees to the list and see how the metric behaves on the test</span>
 
 <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span>
     <span class="n">x_poly</span> <span class="o">=</span> <span class="n">make_polynomial_features</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="n">p</span><span class="p">)</span>
@@ -1820,21 +1861,21 @@ y(x) = cos\Big(\frac{x}{10}\Big)
 </section>
 </section>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="id13">
-<h1>Обучение классификации:<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h1>
-<p><code class="docutils literal notranslate"><span class="pre">Обучающая</span> <span class="pre">выборка:</span></code> <span class="math notranslate nohighlight">\(X^\ell = \big(x_i,~y_i\big)_{i=1}^{\ell}, \quad x_i \in \mathbb{R}^n, \quad y_i \in \{-1,~+1\}\)</span></p>
+<section class="tex2jax_ignore mathjax_ignore" id="training-classification-model">
+<h1>Training classification model:<a class="headerlink" href="#training-classification-model" title="Permalink to this headline">#</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">Train</span> <span class="pre">sample:</span></code> <span class="math notranslate nohighlight">\(X^\ell = \big(x_i,~y_i\big)_{i=1}^{\ell}, \quad x_i \in \mathbb{R}^n, \quad y_i \in \{-1,~+1\}\)</span></p>
 <ul class="simple">
-<li><p>Модель классификации - <strong>линейная</strong>:
+<li><p>Classification model - <strong>linear</strong>:
 \begin{equation}
 a(x, θ) = \text{sign} \big(\sum_{j=1}^{n} θ_j f_j(x)\big), \quad θ \in \mathbb{R}^n
 \end{equation}</p></li>
-<li><p>Функция потерь - <strong>бинарная</strong> или ее <strong>аппроксимация</strong>:
+<li><p>The loss function is <strong>binary</strong> or its <strong>approximation</strong>::
 \begin{equation}
 \mathscr{L}(a,~y) = [ay &lt; 0] = \big[x^\top θ \cdot y &lt; 0\big] \le \mathscr{L}\big(x^\top θ \cdot y)
 \end{equation}</p></li>
 </ul>
-<section id="id14">
-<h2>Практика<a class="headerlink" href="#id14" title="Permalink to this headline">#</a></h2>
+<section id="id2">
+<h2>Practice<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sign</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
@@ -1868,7 +1909,7 @@ a(x, θ) = \text{sign} \big(\sum_{j=1}^{n} θ_j f_j(x)\big), \quad θ \in \mathb
                            <span class="n">n_clusters_per_class</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
                            <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 
-<span class="c1"># Добавляем константу</span>
+<span class="c1"># Adding constant</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">([</span><span class="n">X</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">([</span><span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="mi">1</span><span class="p">])])</span>
 
 <span class="n">model</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">2000</span><span class="p">,</span> <span class="n">fit_intercept</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
@@ -1899,7 +1940,7 @@ a(x, θ) = \text{sign} \big(\sum_{j=1}^{n} θ_j f_j(x)\big), \quad θ \in \mathb
     <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">y</span><span class="o">==</span><span class="n">k</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[</span><span class="n">y</span><span class="o">==</span><span class="n">k</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span>
                <span class="n">label</span><span class="o">=</span><span class="s1">&#39;класс </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">k</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="n">cols</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
 
-<span class="c1"># без константы, с константой</span>
+<span class="c1"># let&#39;s plot results with and without the constant</span>
 <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
     <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">*</span><span class="n">get_line</span><span class="p">(</span><span class="o">*</span><span class="n">model</span><span class="o">.</span><span class="n">coef_</span><span class="p">[</span><span class="mi">0</span><span class="p">][:</span><span class="mi">2</span><span class="p">]),</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">cols</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
     <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">*</span><span class="n">get_line</span><span class="p">(</span><span class="o">*</span><span class="n">model</span><span class="o">.</span><span class="n">coef_</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">cols</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
@@ -1915,26 +1956,23 @@ a(x, θ) = \text{sign} \big(\sum_{j=1}^{n} θ_j f_j(x)\big), \quad θ \in \mathb
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Генерация данных</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Data generation</span>
 <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">l</span> <span class="o">=</span> <span class="mi">100</span>
 <span class="n">n</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="c1"># генерируем три Гауссианы</span>
+<span class="c1"># Lets generate three Gaussian</span>
 <span class="n">X1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">]])</span> <span class="o">+</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
 <span class="n">X2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span> <span class="o">+</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
 <span class="n">X3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span> <span class="o">+</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
 
 <span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">([</span><span class="n">X1</span><span class="p">,</span> <span class="n">X2</span><span class="p">,</span> <span class="n">X3</span><span class="p">])</span>
-<span class="c1"># делаем вектор ответов</span>
+<span class="c1"># target vector</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">([[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">l</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">l</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">*</span><span class="n">l</span><span class="p">])</span>
 
-<span class="c1"># Добавляем константу</span>
+<span class="c1"># Adding a constant</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">([</span><span class="n">X</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">([</span><span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="mi">1</span><span class="p">])])</span>
 
-<span class="c1"># обучения моделей</span>
-<span class="n">models</span> <span class="o">=</span> <span class="p">[]</span>
-
-<span class="c1"># обучения моделей</span>
+<span class="c1"># list to add trained models for prediction of one class</span>
 <span class="n">models</span> <span class="o">=</span> <span class="p">[]</span>
 
 <span class="c1"># fit_intercept is a constant (a.k.a. bias or intercept) should be</span>
@@ -1976,7 +2014,7 @@ a(x, θ) = \text{sign} \big(\sum_{j=1}^{n} θ_j f_j(x)\big), \quad θ \in \mathb
     <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">y</span><span class="o">==</span><span class="n">k</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[</span><span class="n">y</span><span class="o">==</span><span class="n">k</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span>
                <span class="n">label</span><span class="o">=</span><span class="s1">&#39;класс </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">k</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="n">cols</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
 
-<span class="c1"># без константы, с константой</span>
+<span class="c1"># let&#39;s plot results with and without the constant</span>
 <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
     <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">*</span><span class="n">get_line</span><span class="p">(</span><span class="o">*</span><span class="n">models</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">.</span><span class="n">coef_</span><span class="p">[</span><span class="mi">0</span><span class="p">][:</span><span class="mi">2</span><span class="p">]),</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">cols</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
     <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">*</span><span class="n">get_line</span><span class="p">(</span><span class="o">*</span><span class="n">models</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">.</span><span class="n">coef_</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">cols</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
@@ -1992,64 +2030,67 @@ a(x, θ) = \text{sign} \big(\sum_{j=1}^{n} θ_j f_j(x)\big), \quad θ \in \mathb
 </div>
 </section>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="id15">
-<h1>Анализ ошибок классификации<a class="headerlink" href="#id15" title="Permalink to this headline">#</a></h1>
-<p>Задача классификации на <code class="docutils literal notranslate"><span class="pre">два</span> <span class="pre">класса</span></code>, <span class="math notranslate nohighlight">\(y_i \in \{-1,~+1\}\)</span>.</p>
-<p><code class="docutils literal notranslate"><span class="pre">Алгоритм</span> <span class="pre">классификации</span></code> <span class="math notranslate nohighlight">\(a(x_i) \in \{-1,~+1\}\)</span>.</p>
-<p>Применяя алгоритм <span class="math notranslate nohighlight">\(a(x)\)</span> к объектам <span class="math notranslate nohighlight">\(x\)</span> мы можем получить <span class="math notranslate nohighlight">\(4\)</span> возможных ситуации:</p>
+<section class="tex2jax_ignore mathjax_ignore" id="analysis-of-classification-errors">
+<h1>Analysis of classification errors<a class="headerlink" href="#analysis-of-classification-errors" title="Permalink to this headline">#</a></h1>
+<p>The task of classification into <code class="docutils literal notranslate"><span class="pre">two</span> <span class="pre">classes</span></code>, <span class="math notranslate nohighlight">\(y_i\in \{-1,~+1\}\)</span>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Classification</span> <span class="pre">algorithm</span></code> <span class="math notranslate nohighlight">\(a(x_i) \in \{-1,~+1\}\)</span>.</p>
+<p>By applying the algorithm <span class="math notranslate nohighlight">\(a(x)\)</span> to objects <span class="math notranslate nohighlight">\(x\)</span>, we can get <span class="math notranslate nohighlight">\(4\)</span> possible situations:</p>
 <p><img alt="" src="https://drive.google.com/uc?export=view&amp;id=1zfrRBSZhAs3RZeLYhUKeo0RsDPpPXjm-" /></p>
-<p><code class="docutils literal notranslate"><span class="pre">Positive</span> <span class="pre">/</span> <span class="pre">Negative</span></code> - какой ответ дал классификатор <span class="math notranslate nohighlight">\(a(x)\)</span>. <code class="docutils literal notranslate"><span class="pre">True</span> <span class="pre">/</span> <span class="pre">False</span></code> - классификатор дал правильный ответ или ошибся.</p>
-<p><strong>Доля правильных классификации</strong> (чем больше, тем лучше):
+<p><code class="docutils literal notranslate"><span class="pre">Positive</span> <span class="pre">/</span> <span class="pre">Negative</span></code> - which answer was given by the classifier <span class="math notranslate nohighlight">\(a(x)\)</span>. <code class="docutils literal notranslate"><span class="pre">True</span> <span class="pre">/</span> <span class="pre">False</span></code> - the classifier gave the correct answer or made a mistake.</p>
+<p><strong>Number of correct classifications</strong> (the more, the better):
 \begin{equation}
 \text{Accuracy} = \frac{1}{\ell}\sum_{i=1}^{\ell}\big[a(x_i) = y_i\big] = ~\frac{\text{TP} + \text{TN}}{\text{FP} + \text{FN} + \text{TP} + \text{TN}}
 \end{equation}</p>
-<p><code class="docutils literal notranslate"><span class="pre">!!!</span> <span class="pre">Недостаток</span> <span class="pre">!!!</span></code>: не учитывает ни численность (дисбаланс) классов, ни цена ошибки на объектах разных классов.</p>
-<p><strong>Например</strong>: если в выборке какого-то класса в <span class="math notranslate nohighlight">\(100\)</span> раз больше, чем другого. Если алгоритм <span class="math notranslate nohighlight">\(a(x)\)</span> ошибся на всех объектах маленького класса, то у нас будет всего лишь <span class="math notranslate nohighlight">\(1\%\)</span> ошибка. Вроде бы <span class="math notranslate nohighlight">\(1\%\)</span> ошибка - это мало, но мы не решили задачу.</p>
+<p><code class="docutils literal notranslate"><span class="pre">!!!</span> <span class="pre">Disadvantage</span> <span class="pre">!!!</span></code>: does not take into account either the number (imbalance) of classes, or the cost of an error on objects of different classes.</p>
+<p><strong>For example</strong>: if there is <span class="math notranslate nohighlight">\(100\)</span> times more samples of one class than another class. If the algorithm <span class="math notranslate nohighlight">\(a(x)\)</span> is wrong on all objects of a small class, then we will have only <span class="math notranslate nohighlight">\(1\%\)</span> error. It seems that <span class="math notranslate nohighlight">\(1\%\)</span> error is good enough, but we have not solved the task correctly.</p>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="id16">
-<h1>Функции потерь, зависящие от штрафа за ошибку<a class="headerlink" href="#id16" title="Permalink to this headline">#</a></h1>
-<p>Задача классификации на <code class="docutils literal notranslate"><span class="pre">два</span> <span class="pre">класса</span></code>, <span class="math notranslate nohighlight">\(y_i \in \{-1,~+1\}\)</span>.</p>
-<p><code class="docutils literal notranslate"><span class="pre">Модель</span> <span class="pre">классификации</span></code> <span class="math notranslate nohighlight">\(a(x; w, w_0)  = \text{sign}\big(g(x, w) - w_0\big)\)</span>, где <span class="math notranslate nohighlight">\(w_0\)</span> - свободный член.</p>
-<section id="w-0">
-<h2><strong>От <span class="math notranslate nohighlight">\(w_0\)</span> критическим образом зависит как работает классификатор!</strong><a class="headerlink" href="#w-0" title="Permalink to this headline">#</a></h2>
-<p>В зависимости от того, как мы двигаем значение <span class="math notranslate nohighlight">\(w_0\)</span> будет зависить то, насколько много объектов <span class="math notranslate nohighlight">\(x_i\)</span> будет таких, что <span class="math notranslate nohighlight">\(a(x_i) = +1\)</span>. Т.е. баланс классов на совести свободного члена <span class="math notranslate nohighlight">\(w_0\)</span>. В принципе, можно разделить задачу на две части: строить <span class="math notranslate nohighlight">\(g(x, w)\)</span>, а потом <span class="math notranslate nohighlight">\(w_0\)</span> определять отдельно.</p>
-<p><code class="docutils literal notranslate"><span class="pre">Как</span> <span class="pre">можно</span> <span class="pre">учесть</span> <span class="pre">различную</span> <span class="pre">стоимость</span> <span class="pre">классов?</span></code></p>
+<section class="tex2jax_ignore mathjax_ignore" id="loss-functions-depending-on-the-error-penalty">
+<h1>Loss functions depending on the error penalty<a class="headerlink" href="#loss-functions-depending-on-the-error-penalty" title="Permalink to this headline">#</a></h1>
+<p>The task of classification into <code class="docutils literal notranslate"><span class="pre">two</span> <span class="pre">classes</span></code>, <span class="math notranslate nohighlight">\(y_i\in \{-1,~+1\}\)</span>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Classification</span> <span class="pre">model</span></code> <span class="math notranslate nohighlight">\(a(x;w, w_0) = \text{sign}\big(g(x,w) - w_0\big)\)</span>, where <span class="math notranslate nohighlight">\(w_0\)</span> is a free term.</p>
+<section id="how-the-classifier-works-critically-depends-on-w-0">
+<h2><strong>How the classifier works critically depends on <span class="math notranslate nohighlight">\(w_0\)</span>!</strong><a class="headerlink" href="#how-the-classifier-works-critically-depends-on-w-0" title="Permalink to this headline">#</a></h2>
+<p>Depending on how we move the value of <span class="math notranslate nohighlight">\(w_0\)</span>, it will depend on how many objects <span class="math notranslate nohighlight">\(x_i\)</span> will be such that <span class="math notranslate nohighlight">\(a(x_i) = +1\)</span>. That is, the balance of classes is on the conscience of the bias term <span class="math notranslate nohighlight">\(w_0\)</span>. In principle, you can divide the task into two parts: build <span class="math notranslate nohighlight">\(g(x,w)\)</span>, and then define <span class="math notranslate nohighlight">\(w_0\)</span> separately.</p>
+<p><code class="docutils literal notranslate"><span class="pre">How</span> <span class="pre">can</span> <span class="pre">the</span> <span class="pre">different</span> <span class="pre">cost</span> <span class="pre">of</span> <span class="pre">classes</span> <span class="pre">be</span> <span class="pre">taken</span> <span class="pre">into</span> <span class="pre">account?</span></code></p>
 <ul class="simple">
-<li><p>Стоимость класса - мощность класса;</p></li>
-<li><p>Стоимость класса - какой-то класс может быть более важным для задачи, чем другой.</p></li>
+<li><p>Class cost - Class capacity;</p></li>
+<li><p>Class cost - One class may be more important to the task than another.</p></li>
 </ul>
-<p>Пусть <span class="math notranslate nohighlight">\(λ_y\)</span> - штраф за ошибку на объектах класса <span class="math notranslate nohighlight">\(y\)</span>.</p>
-<p><code class="docutils literal notranslate"><span class="pre">Функция</span> <span class="pre">потерь</span></code> теперь зависит от штрафов:
+<p>Let <span class="math notranslate nohighlight">\(λ_y\)</span> be the penalty for an error on objects of class <span class="math notranslate nohighlight">\(y\)</span>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">loss</span> <span class="pre">function</span></code> now depends on penalties:
 \begin{equation}
 \mathscr{L}(a, ~y) = \lambda_{y_i}\big[a(x_i; ~w, w_0) \not = y_i \big] = \lambda_{y_i}\big[\big(g(x_i; ~w) - w_0 \big)y_i &lt; 0\big].
 \end{equation}</p>
-<p><code class="docutils literal notranslate"><span class="pre">Проблема:</span></code>
-На практике штрафы <span class="math notranslate nohighlight">\(\{\lambda_{y_i}\}\)</span> могут пересматриваться:</p>
+<p><code class="docutils literal notranslate"><span class="pre">The</span> <span class="pre">problem:</span></code>
+In practice, fines of <span class="math notranslate nohighlight">\(\{\lambda_{y_i}\}\)</span> can be reviewed:</p>
 <ul class="simple">
-<li><p>Нужен удобный способ выбора <span class="math notranslate nohighlight">\(w_0\)</span> в зависимости от <span class="math notranslate nohighlight">\(\{\lambda_{y_i}\}\)</span>, не требующий построения заново.</p></li>
-<li><p>Нужна характеристика качества модели <span class="math notranslate nohighlight">\(g(x, w)\)</span>, не зависящая от штрафов <span class="math notranslate nohighlight">\(\{\lambda_{y_i}\}\)</span> и численности классов.</p></li>
+<li><p>We need a convenient way to select <span class="math notranslate nohighlight">\(w_0\)</span> depending on <span class="math notranslate nohighlight">\(\{\lambda_{y_i}\}\)</span>, which does not require retraining of the model.</p></li>
+<li><p>We need a characteristic of the quality of the model <span class="math notranslate nohighlight">\(g(x,w)\)</span>, independent of the penalties <span class="math notranslate nohighlight">\(\{\lambda_{y_i}\}\)</span> and the number of classes.</p></li>
 </ul>
 </section>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="roc">
-<h1>Определение ROC-кривой<a class="headerlink" href="#roc" title="Permalink to this headline">#</a></h1>
-<p>Кривая ошибок <code class="docutils literal notranslate"><span class="pre">ROC</span> <span class="pre">(receiver</span> <span class="pre">operating</span> <span class="pre">characteristic)</span></code>.
-Каждая точка кривой соответсвует некоторому <span class="math notranslate nohighlight">\(a(x; w, w_0)\)</span>.</p>
+<section class="tex2jax_ignore mathjax_ignore" id="definition-of-the-roc-curve">
+<h1>Definition of the ROC curve<a class="headerlink" href="#definition-of-the-roc-curve" title="Permalink to this headline">#</a></h1>
+<p>The error curve is <code class="docutils literal notranslate"><span class="pre">ROC</span> <span class="pre">(receiver</span> <span class="pre">operating</span> <span class="pre">characteristic)</span></code>.
+Each point of the curve corresponds to some <span class="math notranslate nohighlight">\(a(x;w, w_0)\)</span>.</p>
 <ul class="simple">
-<li><p>по оси X: доля ошибочных положительных классификаций <code class="docutils literal notranslate"><span class="pre">(FPR</span> <span class="pre">-</span> <span class="pre">false</span> <span class="pre">positive</span> <span class="pre">rate)</span></code>:
+<li><p>on the X axis: <code class="docutils literal notranslate"><span class="pre">(FPR</span> <span class="pre">-</span> <span class="pre">false</span> <span class="pre">positive</span> <span class="pre">rate)</span></code>:
 \begin{equation}
-\text{FPR} = \frac{\sum_{i=1}^{\ell}\big[ y_i = -1\big]\big[a(x_i; w, w_0) = +1\big]}{\sum_{i=1}^{\ell}\big[ y_i = -1\big]}
+\text{FPR} = \frac{\sum_{i=1}^{\el}\big[ y_i = -1\big]\big[a(x_i; w, w_0) = +1\big]}{\sum_{i=1}^{\el}\big[ y_i = -1\big]}
 \end{equation}</p></li>
-<li><p>по оси Y: доля правильных положительных классификаций <code class="docutils literal notranslate"><span class="pre">(TPR</span> <span class="pre">-</span> <span class="pre">true</span> <span class="pre">positive</span> <span class="pre">rate)</span></code>:</p></li>
+<li><ul>
+<li><p>on the Y axis: <code class="docutils literal notranslate"><span class="pre">(TPR</span> <span class="pre">-</span> <span class="pre">true</span> <span class="pre">positive</span> <span class="pre">rate)</span></code>:</p></li>
+</ul>
+</li>
 </ul>
 <p>\begin{equation}
-\text{TPR} = \frac{\sum_{i=1}^{\ell}\big[ y_i = +1\big]\big[a(x_i; w, w_0) = +1\big]}{\sum_{i=1}^{\ell}\big[ y_i = +1\big]}
+\text{TPR} = \frac{\sum_{i=1}^{\el}\big[ y_i = +1\big]\big[a(x_i; w, w_0) = +1\big]}{\sum_{i=1}^{\el}\big[ y_i = +1\big]}
 \end{equation}</p>
-<p><span class="math notranslate nohighlight">\(1 - \text{FPR}\)</span> называется <code class="docutils literal notranslate"><span class="pre">специфичностью</span></code> алгоритма <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(\text{TPR}\)</span> называется <code class="docutils literal notranslate"><span class="pre">чувствительностью</span></code> алгоритма <span class="math notranslate nohighlight">\(a\)</span>.</p>
-<p>Чем меньше <span class="math notranslate nohighlight">\(\text{FPR}\)</span>, тем лучше. Чем больше <span class="math notranslate nohighlight">\(\text{TPR}\)</span>, тем лучше.</p>
+<p><span class="math notranslate nohighlight">\(1 - \text{FPR}\)</span> is called the <code class="docutils literal notranslate"><span class="pre">specificity</span></code> of the algorithm <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(\text{TPR}\)</span> is called the <code class="docutils literal notranslate"><span class="pre">sensitivity</span></code> of the algorithm <span class="math notranslate nohighlight">\(a\)</span>.</p>
+<p>The smaller the <span class="math notranslate nohighlight">\(\text{FPR}\)</span>, the better. The more <span class="math notranslate nohighlight">\(\text{TPR}\)</span>, the better.</p>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="roc-auc-area-under-curve">
-<h1>ROC-кривая и площадь под кривой AUC (Area Under Curve)<a class="headerlink" href="#roc-auc-area-under-curve" title="Permalink to this headline">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="roc-curve-and-auc-area-under-curve">
+<h1>ROC-curve and AUC (Area Under Curve)<a class="headerlink" href="#roc-curve-and-auc-area-under-curve" title="Permalink to this headline">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
@@ -2066,9 +2107,9 @@ a(x, θ) = \text{sign} \big(\sum_{j=1}^{n} θ_j f_j(x)\big), \quad θ \in \mathb
 </div>
 </div>
 </div>
-<p>Полезно проводить деление выборки не только на <code class="docutils literal notranslate"><span class="pre">train</span></code> и <code class="docutils literal notranslate"><span class="pre">test</span></code>, но и на валидационную выборку, <code class="docutils literal notranslate"><span class="pre">val</span></code>.
-В данном случае валидационная выборка используется для выбора модели или набора гиперпараметров, которые вы хотели бы использовать.
-Тестовая выборка используется для оценки того, как ваша модель будет работать с невидимыми данными.</p>
+<p>It is useful to divide the sample not only into <code class="docutils literal notranslate"><span class="pre">train</span></code> and <code class="docutils literal notranslate"><span class="pre">test</span></code>, but also into a validation sample, <code class="docutils literal notranslate"><span class="pre">val</span></code>.
+In this case, the validation sample is used to select the model or set of hyperparameters that you would like to use.
+A test sample is used to evaluate how your model will work with invisible data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">,</span> <span class="n">Y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span>
@@ -2110,10 +2151,10 @@ a(x, θ) = \text{sign} \big(\sum_{j=1}^{n} θ_j f_j(x)\big), \quad θ \in \mathb
 <img alt="../_images/0ccfd7e9ad2152fb1a92a55f9dabb23171d0b61d7959d05ab2ea874d601f67b8.png" src="../_images/0ccfd7e9ad2152fb1a92a55f9dabb23171d0b61d7959d05ab2ea874d601f67b8.png" />
 </div>
 </div>
-<p>Площадь под <code class="docutils literal notranslate"><span class="pre">ROC-кривой</span></code> <span class="math notranslate nohighlight">\(=0,94\)</span> на валидационной выборке. Теперь на основании этого нужно выбрать как-то <code class="docutils literal notranslate"><span class="pre">threshold</span></code>, т.е. нужно выбрать threshold таким образом, чтобы был максимально <code class="docutils literal notranslate"><span class="pre">TP</span></code> и <code class="docutils literal notranslate"><span class="pre">FP</span></code> одновременно. Оптимальный threshold находится в точке пересечения <code class="docutils literal notranslate"><span class="pre">TPR</span></code> и <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">-</span> <span class="pre">FPR</span></code>.</p>
-<p><code class="docutils literal notranslate"><span class="pre">Диагональ</span></code> - это классификатор, который идеально плохой, т. е. который всегда допускает половину ошибок. <code class="docutils literal notranslate"><span class="pre">Идеальный</span> <span class="pre">классификатор</span></code> - это тот, у которого площадь под <code class="docutils literal notranslate"><span class="pre">ROC-кривой</span></code> <span class="math notranslate nohighlight">\(→ 1\)</span>. Верхний левый угол - это точка, где расположен идеальный классификатор. Сама кривая строиться исключительно по <span class="math notranslate nohighlight">\(g(x; w, w_0)\)</span> и не зависит от <span class="math notranslate nohighlight">\(w\)</span>, а выбор точки на этой кривой - это выбор свободного члена <span class="math notranslate nohighlight">\(w_0\)</span>.</p>
-<p>Площадь под <code class="docutils literal notranslate"><span class="pre">ROC-кривой</span></code> оценивает только <span class="math notranslate nohighlight">\(w\)</span>, не глядя на <span class="math notranslate nohighlight">\(w_0\)</span>.</p>
-<p><code class="docutils literal notranslate"><span class="pre">AUC</span></code> - это доля правильно упорядоченных пар <span class="math notranslate nohighlight">\(\big(x_i, y_i\big)\)</span>, т.е. между парой <span class="math notranslate nohighlight">\((i, j)\)</span> правильное отношение порядка по ответам: <span class="math notranslate nohighlight">\(\big[y_i &lt; y_j\big]\)</span>. А функция <span class="math notranslate nohighlight">\(g(x, w)\)</span> должна воспроизводить такой же порядок на этих объектах: <span class="math notranslate nohighlight">\(\big[g(x_i, w) &lt; g(x_j, w)\big]\)</span>. Если <span class="math notranslate nohighlight">\(g(x, w)\)</span> сможет это сделать, то у нас будет идеальная <code class="docutils literal notranslate"><span class="pre">ROC-кривой</span></code>, чем больше  пар <span class="math notranslate nohighlight">\(\big(x_i, y_i\big)\)</span> упорядоченны, тем выше площать под <code class="docutils literal notranslate"><span class="pre">ROC-кривой</span></code>.</p>
+<p>The area under the <code class="docutils literal notranslate"><span class="pre">ROC</span> <span class="pre">curve</span></code> is <span class="math notranslate nohighlight">\(=0.94\)</span> in the validation sample. Now, based on this, you need to select a <code class="docutils literal notranslate"><span class="pre">threshold</span></code> somehow, i.e. you need to select the threshold in such a way that there is a maximum of <code class="docutils literal notranslate"><span class="pre">TP</span></code> and a minimum of <code class="docutils literal notranslate"><span class="pre">FP</span></code> at the same time. The optimal threshold is located at the intersection of <code class="docutils literal notranslate"><span class="pre">TPR</span></code> and <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">-</span> <span class="pre">FPR</span></code>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">diagonal</span></code> is a classifier that is ideally bad, i.e. that always makes half the mistakes. The <code class="docutils literal notranslate"><span class="pre">ideal</span> <span class="pre">classifier</span></code> is the one with the area under the <code class="docutils literal notranslate"><span class="pre">ROC</span> <span class="pre">curve</span></code> <span class="math notranslate nohighlight">\(→ 1\)</span>. The upper left corner is the point where the ideal classifier is located. The curve itself is constructed exclusively by <span class="math notranslate nohighlight">\(g(x; w, w_0)\)</span> and does not depend on <span class="math notranslate nohighlight">\(w\)</span>, and the choice of a point on this curve is the choice of a free member of <span class="math notranslate nohighlight">\(w_0\)</span>.</p>
+<p>The area under the <code class="docutils literal notranslate"><span class="pre">ROC</span> <span class="pre">curve</span></code> is estimated only by <span class="math notranslate nohighlight">\(w\)</span>, without looking at <span class="math notranslate nohighlight">\(w_0\)</span>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">AUC</span></code> is the proportion of correctly ordered pairs <span class="math notranslate nohighlight">\(\big(x_i, y_i\big)\)</span>, i.e. between the pair <span class="math notranslate nohighlight">\((i, j)\)</span> is the correct order ratio for the answers: <span class="math notranslate nohighlight">\(\big[y_i &lt;y_j\big]\)</span>. And the function <span class="math notranslate nohighlight">\(g(x,w)\)</span> should reproduce the same order on these objects: <span class="math notranslate nohighlight">\(\big[g(x_i,w) &lt; g(x_j,w)\big]\)</span>. If <span class="math notranslate nohighlight">\(g(x,w)\)</span> can do this, then we will have an ideal <code class="docutils literal notranslate"><span class="pre">ROC</span> <span class="pre">curve</span></code>, the more pairs <span class="math notranslate nohighlight">\(\big(x_i,y_i\big)\)</span> are ordered, the higher the area under the `ROC curve’.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">thresholds</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">lw</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;TPR&#39;</span><span class="p">)</span>
@@ -2134,67 +2175,63 @@ a(x, θ) = \text{sign} \big(\sum_{j=1}^{n} θ_j f_j(x)\big), \quad θ \in \mathb
 </div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="id17">
-<h1>Оценки качества двухклассовой классификации<a class="headerlink" href="#id17" title="Permalink to this headline">#</a></h1>
-<p>Наша выборка состоит из релевантных (relevant elements) и нерелевантных объектов.</p>
-<p>В информационном поиске:
-\begin{equation}
-\text{Точность, Precision} = \frac{\text{TP}}{\text{TP} + \text{FP}}
+<section class="tex2jax_ignore mathjax_ignore" id="assessment-of-the-quality-of-two-class-classification">
+<h1>Assessment of the quality of two-class classification<a class="headerlink" href="#assessment-of-the-quality-of-two-class-classification" title="Permalink to this headline">#</a></h1>
+<p>Our sample consists of relevant and irrelevant elements.</p>
+<p>\begin{equation}
+\text{Precision} = \frac{\text{TP}}{\text{TP} + \text{FP}}
 \end{equation}</p>
 <p>\begin{equation}
-\text{Полнота, Recall} = \frac{\text{TP}}{\text{TP} + \text{FN}}
+\text{Recall} = \frac{\text{TP}}{\text{TP} + \text{FN}}
 \end{equation}</p>
-<p><code class="docutils literal notranslate"><span class="pre">Precision</span></code> - доля релевантных объектов среди найденных
-<code class="docutils literal notranslate"><span class="pre">Recall</span></code> - доля найденных среди релевантных объектов</p>
-<p>В медицинской диагностики:
+<p>In medical diagnostics:
 \begin{equation}
-\text{Чувствительность, Sensitivity} = \frac{\text{TP}}{\text{TP} + \text{FN}}
+\text{Sensitivity} = \frac{\text{TP}}{\text{TP} + \text{FN}}
 \end{equation}</p>
 <p>\begin{equation}
-\text{Специфичность, Specificity} = \frac{\text{TN}}{\text{TN} + \text{FP}}
+\text{Specificity} = \frac{\text{TN}}{\text{TN} + \text{FP}}
 \end{equation}</p>
-<p><code class="docutils literal notranslate"><span class="pre">Sensitivity</span></code> - доля верных положительных диагнозов
-<code class="docutils literal notranslate"><span class="pre">Specificity</span></code> - доля верных отрицательных диагнозов</p>
-<p><code class="docutils literal notranslate"><span class="pre">Кружочек</span></code> - это то, что наш алгоритм выдал. В этом кружочке есть какое-то количество правильно выданных <code class="docutils literal notranslate"><span class="pre">TP</span> <span class="pre">(зеленных</span> <span class="pre">точек)</span></code> и какое-то количество выданных <code class="docutils literal notranslate"><span class="pre">FP</span> <span class="pre">(красные</span> <span class="pre">точки)</span></code>. Зеленных точек должно быть как можно больше, а красных как можно меньше.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Sensitivity</span></code> - the proportion of correct positive diagnoses</p>
+<p><code class="docutils literal notranslate"><span class="pre">Specificity</span></code> - the proportion of correct negative diagnoses</p>
 <p><img alt="" src="https://drive.google.com/uc?export=view&amp;id=1fqhNeKdWtDOXiOWOa7j3M2cqw2CtS45H" /></p>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="id18">
-<h1>Точность и полнота многоклассовой классификации<a class="headerlink" href="#id18" title="Permalink to this headline">#</a></h1>
-<p>Для каждого класса <span class="math notranslate nohighlight">\(y \in Y\)</span>:</p>
+<section class="tex2jax_ignore mathjax_ignore" id="accuracy-and-completeness-of-multiclass-classification">
+<h1>Accuracy and completeness of multiclass classification<a class="headerlink" href="#accuracy-and-completeness-of-multiclass-classification" title="Permalink to this headline">#</a></h1>
+<p>For each class <span class="math notranslate nohighlight">\(y \in Y\)</span>:</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\text{TP}_y\)</span> - верные положительные</p></li>
-<li><p><span class="math notranslate nohighlight">\(\text{FP}_y\)</span> - ложные положительные</p></li>
-<li><p><span class="math notranslate nohighlight">\(\text{FN}_y\)</span> - ложные отрицательные</p></li>
+<li><p><span class="math notranslate nohighlight">\(\text{TP}_y\)</span> - true positive</p></li>
+<li><p><span class="math notranslate nohighlight">\(\text{FP}_y\)</span> - false positives</p></li>
+<li><p><span class="math notranslate nohighlight">\(\text{FN}_y\)</span> - false negatives</p></li>
 </ul>
-<p>Точность и полнота с <code class="docutils literal notranslate"><span class="pre">микроусреднением</span></code>:</p>
+<p>Accuracy and completeness with <code class="docutils literal notranslate"><span class="pre">micro-averaging</span></code>:</p>
 <p>\begin{equation}
 \text{Precision: } P = \frac{\sum_y\text{TP}_y}{\sum_y \big(\text{TP}_y + \text{FP}_y\big)}
 \end{equation}</p>
 <p>\begin{equation}
 \text{Recall: } R = \frac{\sum_y\text{TP}_y}{\sum_y \big(\text{TP}_y + \text{FN}_y\big)}
 \end{equation}</p>
-<p><code class="docutils literal notranslate"><span class="pre">Микроусреднение</span></code> не чувствительно к ошибкам на малочисленных классах, т.е. микроусреднение плохо там, где у нас есть несбалансированные классы.</p>
-<p>Точность и полнота с <code class="docutils literal notranslate"><span class="pre">макроусреднением</span></code>:</p>
+<p><code class="docutils literal notranslate"><span class="pre">Micro-averaging</span></code> is not error-sensitive on small classes, i.e. micro-averaging is bad where we have unbalanced classes.</p>
+<p>Accuracy and completeness with <code class="docutils literal notranslate"><span class="pre">macro-averaging</span></code>:</p>
 <p>\begin{equation}
 \text{Precision: } P = \frac{1}{\vert Y \vert}\sum_y\frac{\text{TP}_y}{\text{TP}_y + \text{FP}_y}
 \end{equation}</p>
 <p>\begin{equation}
 \text{Recall: } R = \frac{1}{\vert Y \vert}\sum_y\frac{\text{TP}}{\text{TP}_y + \text{FN}_y}
 \end{equation}</p>
-<p><code class="docutils literal notranslate"><span class="pre">Макроусреднение</span></code> чувствительно к ошибкам на малочисленных классах.</p>
+<p>Macro-averaging is sensitive to errors in small classes.</p>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="id19">
-<h1>Оценки качества классификации<a class="headerlink" href="#id19" title="Permalink to this headline">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="assessment-of-classification-quality">
+<h1>Assessment of classification quality<a class="headerlink" href="#assessment-of-classification-quality" title="Permalink to this headline">#</a></h1>
 <ul class="simple">
-<li><p>Если у нас есть несбалансированность классов, то пользуйтесь <code class="docutils literal notranslate"><span class="pre">ROC-кривой</span></code> и также <code class="docutils literal notranslate"><span class="pre">чувствительностью</span></code> и <code class="docutils literal notranslate"><span class="pre">специфичностью</span></code>.</p></li>
-<li><p>Точность и полнота лучше подходят дла задач поиска, когда доля объектов релевантного класса очень мала.</p></li>
+<li><p>If we have an imbalance of classes, then use the <code class="docutils literal notranslate"><span class="pre">ROC</span> <span class="pre">curve</span></code> and also <code class="docutils literal notranslate"><span class="pre">sensitivity</span></code> and `specificity’.</p></li>
+<li><p>Precision and recall are better suited for tasks when the proportion of objects of the relevant class is very small.</p></li>
 </ul>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="id20">
-<h1>Агрегированные оценки:<a class="headerlink" href="#id20" title="Permalink to this headline">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="aggregated-estimates">
+<h1>Aggregated estimates:<a class="headerlink" href="#aggregated-estimates" title="Permalink to this headline">#</a></h1>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">AUC</span></code> лучше подходит для оценивания качества, когда соотношение цены ошибок не фиксировано</p></li>
-<li><p><span class="math notranslate nohighlight">\(F_1 = \frac{2PR}{P + R}\)</span> - <span class="math notranslate nohighlight">\(F\)</span>-мера, другой способ агрегирования <span class="math notranslate nohighlight">\(P\)</span> и <span class="math notranslate nohighlight">\(R\)</span>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AUC</span></code> is better suited for quality assessment when the error price ratio is not fixed</p></li>
+<li><p><span class="math notranslate nohighlight">\(F_1 = \frac{2 PR}{P+R}\)</span> - <span class="math notranslate nohighlight">\(F\)</span> is a measure, another way of aggregating <span class="math notranslate nohighlight">\(P\)</span> and <span class="math notranslate nohighlight">\(R\)</span>.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2237,8 +2274,8 @@ weighted avg       0.85      0.84      0.84       100
 </div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="id21">
-<h1>Подбор параметров модели<a class="headerlink" href="#id21" title="Permalink to this headline">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="how-to-choose-model-hyperparameters">
+<h1>How to choose model hyperparameters<a class="headerlink" href="#how-to-choose-model-hyperparameters" title="Permalink to this headline">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">GridSearchCV</span>
@@ -2313,6 +2350,8 @@ F1-score: 0.87
 </div>
 </div>
 </div>
+<section id="task-4">
+<h2>Task 4<a class="headerlink" href="#task-4" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot roc curve</span>
@@ -2321,32 +2360,33 @@ F1-score: 0.87
 </div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="id22">
-<h1>Проклятие размерности<a class="headerlink" href="#id22" title="Permalink to this headline">#</a></h1>
-<p>Многие алгоритмы, которые хорошо работают в малых размерностях, становятся трудноразрешимыми, когда ввод многомерный. Правильное обобщение становится экспоненциально сложнее по мере роста размерности (количества features), потому что обучающий набор фиксированного размера покрывает сокращающуюся часть входного пространства.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="the-curse-of-dimensionality">
+<h1>The curse of dimensionality<a class="headerlink" href="#the-curse-of-dimensionality" title="Permalink to this headline">#</a></h1>
+<p>Many algorithms that work well in small dimensions make many mistakes  when the input is multidimensional. The correct generalization becomes exponentially more difficult as the dimension (number of features) increases, because a fixed-size training set covers a shrinking part of the input space.</p>
 <p><img alt="" src="https://drive.google.com/uc?export=view&amp;id=1nk-4C5wMGBHQpfeAq7dX-nofj4EGpjoF" /></p>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="id23">
-<h1>Снижение размерности. Метод главных компонент: постановка задачи<a class="headerlink" href="#id23" title="Permalink to this headline">#</a></h1>
-<p>У нас есть <code class="docutils literal notranslate"><span class="pre">исходные</span> <span class="pre">признаки</span></code> <span class="math notranslate nohighlight">\(\big(f_1(x), \ldots, f_n(x)\big)\)</span>. Мы хотим каким-то образом преобразовать исходные признаки, чтобы получить какие-то <code class="docutils literal notranslate"><span class="pre">новые</span> <span class="pre">признаки</span></code> <span class="math notranslate nohighlight">\(\big(g_1(x), \ldots, g_m(x)\big)\)</span>, причем <span class="math notranslate nohighlight">\( m \le n\)</span>.</p>
-<p><code class="docutils literal notranslate"><span class="pre">Требование:</span></code></p>
+<section class="tex2jax_ignore mathjax_ignore" id="dimensionality-reduction-the-principal-component-analysis-pca-problem-statement">
+<h1>Dimensionality reduction. The principal component analysis (PCA): problem statement<a class="headerlink" href="#dimensionality-reduction-the-principal-component-analysis-pca-problem-statement" title="Permalink to this headline">#</a></h1>
+<p>We have the <code class="docutils literal notranslate"><span class="pre">initial</span> <span class="pre">featrues</span></code> <span class="math notranslate nohighlight">\(\big(f_1(x),\ldots, f_n(x)\big)\)</span>. We want to somehow transform the original features to get some <code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">features</span></code> <span class="math notranslate nohighlight">\(\big(g_1(x),\ldots, g_m(x)\big)\)</span>, and <span class="math notranslate nohighlight">\(m\le n\)</span>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Requirement:</span></code></p>
 <ul class="simple">
-<li><p>старые признаки <span class="math notranslate nohighlight">\(\big(f_1(x), \ldots, f_n(x)\big)\)</span> должны линейно восстанавливаться по новым <span class="math notranslate nohighlight">\(\big(g_1(x), \ldots, g_m(x)\big)\)</span>:
+<li><p>the old features <span class="math notranslate nohighlight">\(\big(f_1(x), \ldots, f_n(x)\big)\)</span> must be linearly restored by the new <span class="math notranslate nohighlight">\(\big(g_1(x), \ldots, g_m(x)\big)\)</span>:
 \begin{equation}
 \hat{f_j}(x) = \sum_{s=1}^{m} g_s(x) u_{js}, \quad j =1, \ldots, n, \quad \forall x \in X,
 \end{equation}
-где <span class="math notranslate nohighlight">\(\hat{f_j}(x)\)</span> - оценка исходного признака <span class="math notranslate nohighlight">\(f_j(x)\)</span>, и эта оценка должна быть близка по всем объектам обучающей выборке <span class="math notranslate nohighlight">\(x_1, \ldots, x_{\ell}\)</span>:</p></li>
+where <span class="math notranslate nohighlight">\(\hat{f_j}(x)\)</span> is the estimate of the initial feature <span class="math notranslate nohighlight">\(f_j(x)\)</span>, and this estimate should be close to all objects in the training sample <span class="math notranslate nohighlight">\(x_1, \ldots, x_{\ell}\)</span>:</p></li>
 </ul>
 <p>\begin{equation}
 \sum_{i=1}^{\ell}\big(\sum_{j=1}^{n} \hat{f_j}(x_i) - f_j(x_i)\big)^2 → \min_{{g_s(x_i)}, ~{u_{js}}}
 \end{equation}</p>
-<p><code class="docutils literal notranslate"><span class="pre">Основная</span> <span class="pre">идея:</span></code></p>
-<p>У нас есть <code class="docutils literal notranslate"><span class="pre">исходные</span> <span class="pre">признаки</span></code> и мы хотим построить <code class="docutils literal notranslate"><span class="pre">новые</span> <span class="pre">признаки</span></code>, подразумевая, что новых признаков <code class="docutils literal notranslate"><span class="pre">будет</span> <span class="pre">меньше</span></code>, чем исходных. Но мы хотим, чтобы по меньшему числу новых признаков исходные хорошо восстанавливались. Фактически мы хотим добиться <code class="docutils literal notranslate"><span class="pre">сжатия</span> <span class="pre">информации</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">The</span> <span class="pre">basic</span> <span class="pre">idea:</span></code></p>
+<p>We have <code class="docutils literal notranslate"><span class="pre">initial</span> <span class="pre">features</span></code> and we want to build <code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">features</span></code>, meaning that there will be fewer new features than the original ones. But we want the original ones to be recovered well from a smaller number of new features. In fact, we want to achieve <code class="docutils literal notranslate"><span class="pre">information</span> <span class="pre">compression</span></code>.</p>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="id24">
-<h1>Матричные обозначения<a class="headerlink" href="#id24" title="Permalink to this headline">#</a></h1>
-<p><code class="docutils literal notranslate"><span class="pre">Матрицы</span> <span class="pre">&quot;объекты-признаки&quot;:</span></code></p>
-<p><span class="math notranslate nohighlight">\(F\)</span> - <code class="docutils literal notranslate"><span class="pre">старая</span></code> и <span class="math notranslate nohighlight">\(G\)</span> - <code class="docutils literal notranslate"><span class="pre">новая</span></code>:</p>
+<section class="tex2jax_ignore mathjax_ignore" id="matrix-notation">
+<h1>Matrix notation<a class="headerlink" href="#matrix-notation" title="Permalink to this headline">#</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">Matrices</span> <span class="pre">of</span> <span class="pre">&quot;features&quot;:</span></code></p>
+<p><span class="math notranslate nohighlight">\(F\)</span> is <code class="docutils literal notranslate"><span class="pre">old</span></code> and <span class="math notranslate nohighlight">\(G\)</span> is <code class="docutils literal notranslate"><span class="pre">new</span></code>:</p>
 <p>\begin{equation*}
 F =
 \begin{pmatrix}
@@ -2361,7 +2401,7 @@ g_1(x_1) &amp; \dots &amp; g_m(x_1) \
 g_1(x_ℓ) &amp; \dots &amp; g_m(x_\ell)
 \end{pmatrix}
 \end{equation*}</p>
-<p><code class="docutils literal notranslate"><span class="pre">Матрица</span></code> <span class="math notranslate nohighlight">\(U\)</span> - это линейное преобразование новых признаков в старые:</p>
+<p><code class="docutils literal notranslate"><span class="pre">Matrix</span></code> <span class="math notranslate nohighlight">\(U\)</span> - is a linear transformation of new features into old ones:</p>
 <p>\begin{equation*}
 U =
 \begin{pmatrix}
@@ -2373,12 +2413,12 @@ u_{n1} &amp; \dots &amp; u_{nm}
 <p>\begin{equation*}
 \hat{F} = GU^\top ≈ F.
 \end{equation*}</p>
-<p><code class="docutils literal notranslate"><span class="pre">Найти:</span></code> и новые признаки <span class="math notranslate nohighlight">\(G\)</span>, и преобразование <span class="math notranslate nohighlight">\(U\)</span>:
+<p><code class="docutils literal notranslate"><span class="pre">Find:</span></code> new features <span class="math notranslate nohighlight">\(G\)</span>, and linear transformation <span class="math notranslate nohighlight">\(U\)</span>:
 \begin{equation*}
 \big\Vert G U^\top - F \big\Vert^2 \rightarrow \min_{G, ~U}
 \end{equation*}</p>
-<section id="id25">
-<h2>Практика<a class="headerlink" href="#id25" title="Permalink to this headline">#</a></h2>
+<section id="id3">
+<h2>Practice<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">torchvision</span> <span class="kn">import</span> <span class="n">datasets</span>
@@ -2446,7 +2486,7 @@ Y_test:  (10000,)
 </div>
 </div>
 </div>
-<p>Многие алгоритмы чувствительны к отклонениям исходных переменных. То есть, если существуют большие различия между диапазонами исходных переменных, то переменные, которые имеют большие диапазоны, будут доминировать над переменными с малыми диапазонами, что приведет к необъективным результатам. Чтобы избежать проблем, важно провести стандартизацию данных.</p>
+<p>Many algorithms are sensitive to deviations of the initial variables. That is, if there are large differences between the ranges of the original variables, then variables that have large ranges will dominate over variables with small ranges, which will lead to biased results. To avoid problems, it is important to standardize the data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
@@ -2506,40 +2546,46 @@ Y_test:  (10000,)
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|                                                                                           | 0/33 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  3%|██▌                                                                                | 1/33 [00:01&lt;00:42,  1.33s/it]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  3%|██▌                                                                                | 1/33 [00:01&lt;00:34,  1.07s/it]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  6%|█████                                                                              | 2/33 [00:03&lt;00:47,  1.54s/it]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  6%|█████                                                                              | 2/33 [00:02&lt;00:38,  1.25s/it]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  9%|███████▌                                                                           | 3/33 [00:04&lt;00:48,  1.61s/it]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  9%|███████▌                                                                           | 3/33 [00:03&lt;00:39,  1.31s/it]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 12%|██████████                                                                         | 4/33 [00:06&lt;00:52,  1.81s/it]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 12%|██████████                                                                         | 4/33 [00:05&lt;00:44,  1.52s/it]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 15%|████████████▌                                                                      | 5/33 [00:09&lt;00:54,  1.96s/it]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 15%|████████████▌                                                                      | 5/33 [00:07&lt;00:45,  1.64s/it]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 18%|███████████████                                                                    | 6/33 [00:11&lt;00:59,  2.20s/it]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 18%|███████████████                                                                    | 6/33 [00:09&lt;00:48,  1.79s/it]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 21%|█████████████████▌                                                                 | 7/33 [00:14&lt;01:01,  2.36s/it]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 21%|█████████████████▌                                                                 | 7/33 [00:11&lt;00:49,  1.92s/it]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 24%|████████████████████                                                               | 8/33 [00:17&lt;01:08,  2.74s/it]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 24%|████████████████████                                                               | 8/33 [00:14&lt;00:50,  2.03s/it]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 27%|██████████████████████▋                                                            | 9/33 [00:22&lt;01:16,  3.20s/it]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 27%|██████████████████████▋                                                            | 9/33 [00:16&lt;00:52,  2.19s/it]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 30%|████████████████████████▊                                                         | 10/33 [00:25&lt;01:16,  3.34s/it]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 30%|████████████████████████▊                                                         | 10/33 [00:19&lt;00:52,  2.30s/it]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 33%|███████████████████████████▎                                                      | 11/33 [00:29&lt;01:13,  3.35s/it]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 33%|███████████████████████████▎                                                      | 11/33 [00:21&lt;00:52,  2.38s/it]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 33%|███████████████████████████▎                                                      | 11/33 [00:30&lt;01:00,  2.73s/it]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 36%|█████████████████████████████▊                                                    | 12/33 [00:24&lt;00:51,  2.46s/it]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 39%|████████████████████████████████▎                                                 | 13/33 [00:27&lt;00:52,  2.62s/it]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 39%|████████████████████████████████▎                                                 | 13/33 [00:30&lt;00:46,  2.31s/it]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
@@ -2547,7 +2593,7 @@ Y_test:  (10000,)
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="ne">C</span>:\Users\ALEXAN~1\AppData\Local\Temp/ipykernel_11008/4144833336.py in &lt;module&gt;
+<span class="ne">C</span>:\Users\ALEXAN~1\AppData\Local\Temp/ipykernel_9952/4144833336.py in &lt;module&gt;
 <span class="g g-Whitespace">      </span><span class="mi">8</span>     <span class="n">clf</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">9</span> 
 <span class="ne">---&gt; </span><span class="mi">10</span>     <span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_pca</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">)</span>
@@ -2668,6 +2714,10 @@ Y_test:  (10000,)
 </div>
 </div>
 </section>
+<section id="presentation">
+<h2>Presentation:<a class="headerlink" href="#presentation" title="Permalink to this headline">#</a></h2>
+<p><a class="reference external" href="https://docs.google.com/presentation/d/1nQq4_1QJT_kE3f8xgOCR_ZADZmE6O8hC/edit?usp=sharing&amp;ouid=108809518155956876008&amp;rtpof=true&amp;sd=true">Link to the presentation in Russian</a></p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -2701,6 +2751,24 @@ Y_test:  (10000,)
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="Seminar1_python_colab.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">How to work with Python</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="00_pytorch_fundamentals.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">00. PyTorch Fundamentals</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div></div>
   
 </div>
@@ -2723,58 +2791,65 @@ Y_test:  (10000,)
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ml-task">ML task</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Как задаются объекты. Признаковое описание</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Практика</a><ul class="nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#how-objects-are-set-feature-description">How objects are set. Feature description</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice">Practice</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas">Pandas</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Визуализация</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Корреляции в данных</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Пропуски в данных</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualization">Visualization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#task-1">Task 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#correlations-in-the-data">Correlations in the data</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#missing-values">Missing values</a></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Типы задач</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classification">Задача классификации (classification):</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regression">Задача восстановления регрессии (regression):</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#forecasting">Задача прогнозирования (forecasting)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Метод обучения</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-tasks">Types of tasks</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classification-task">Classification task:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regression-recovery-task">Regression recovery task:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#forecasting-task">Forecasting task</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-method">Learning method</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-problem-of-underfitting-and-overfitting">The problem of underfitting and overfitting:</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Проблема недообучения и переобучения</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-validation-cv">Кросс-проверка (cross-validation, CV)</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Обучение регрессии</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Практика</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Линейный случай с шумом</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">Нелинейный случай (добавление признаков)</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#n">Полиномиальные признаки степени <span class="math notranslate nohighlight">\(n\)</span></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-validation-cv">Cross-validation (CV)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#regression-training">Regression Training</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Practice</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-case-with-noise">Linear case with noise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nonlinear-case-feature-extraction">Nonlinear case (feature extraction)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#polynomial-signs-of-degree-n">Polynomial signs of degree <span class="math notranslate nohighlight">\(n\)</span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#task-2">Task 2</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#task-3">Task 3</a></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">Обучение классификации:</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">Практика</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#training-classification-model">Training classification model:</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Practice</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">Анализ ошибок классификации</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">Функции потерь, зависящие от штрафа за ошибку</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#w-0"><strong>От <span class="math notranslate nohighlight">\(w_0\)</span> критическим образом зависит как работает классификатор!</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#analysis-of-classification-errors">Analysis of classification errors</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#loss-functions-depending-on-the-error-penalty">Loss functions depending on the error penalty</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-the-classifier-works-critically-depends-on-w-0"><strong>How the classifier works critically depends on <span class="math notranslate nohighlight">\(w_0\)</span>!</strong></a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#roc">Определение ROC-кривой</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#roc-auc-area-under-curve">ROC-кривая и площадь под кривой AUC (Area Under Curve)</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">Оценки качества двухклассовой классификации</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">Точность и полнота многоклассовой классификации</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">Оценки качества классификации</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">Агрегированные оценки:</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">Подбор параметров модели</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">Проклятие размерности</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id23">Снижение размерности. Метод главных компонент: постановка задачи</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id24">Матричные обозначения</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id25">Практика</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-of-the-roc-curve">Definition of the ROC curve</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#roc-curve-and-auc-area-under-curve">ROC-curve and AUC (Area Under Curve)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#assessment-of-the-quality-of-two-class-classification">Assessment of the quality of two-class classification</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#accuracy-and-completeness-of-multiclass-classification">Accuracy and completeness of multiclass classification</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#assessment-of-classification-quality">Assessment of classification quality</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#aggregated-estimates">Aggregated estimates:</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-choose-model-hyperparameters">How to choose model hyperparameters</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-4">Task 4</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#the-curse-of-dimensionality">The curse of dimensionality</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dimensionality-reduction-the-principal-component-analysis-pca-problem-statement">Dimensionality reduction. The principal component analysis (PCA): problem statement</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#matrix-notation">Matrix notation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Practice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#presentation">Presentation:</a></li>
 </ul>
 </li>
 </ul>
