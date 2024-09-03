@@ -65,6 +65,10 @@ Docker tutorials:
 
 If you haven't worked with Python before and don't understand what's going on, see other parts of Introduction.
 
+## Survey
+
+Please, take a [survey](https://forms.gle/zLpkUA2VTYtEmHZm9). It will help us to adjust course to your skills.  
+
 
 ## Credits
 This text prepared by Polina Druzhinina and Nadezhda Alsahanova.
