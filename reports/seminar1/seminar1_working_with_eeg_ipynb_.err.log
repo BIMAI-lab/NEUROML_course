@@ -1,0 +1,59 @@
+Traceback (most recent call last):
+  File "C:\Users\Alexander\anaconda3\lib\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
+    executenb(
+  File "C:\Users\Alexander\anaconda3\lib\site-packages\nbclient\client.py", line 1112, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "C:\Users\Alexander\anaconda3\lib\site-packages\nbclient\util.py", line 74, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "C:\Users\Alexander\anaconda3\lib\site-packages\nbclient\util.py", line 53, in just_run
+    return loop.run_until_complete(coro)
+  File "C:\Users\Alexander\anaconda3\lib\asyncio\base_events.py", line 642, in run_until_complete
+    return future.result()
+  File "C:\Users\Alexander\anaconda3\lib\site-packages\nbclient\client.py", line 553, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\Alexander\anaconda3\lib\site-packages\nbclient\client.py", line 857, in async_execute_cell
+    self._check_raise_for_error(cell, exec_reply)
+  File "C:\Users\Alexander\anaconda3\lib\site-packages\nbclient\client.py", line 760, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+sample_1020 = sample.copy().pick(channels_to_use)
+
+# check that everything is OK
+assert len(channels_to_use) == len(sample_1020.ch_names)
+------------------
+
+[1;31m---------------------------------------------------------------------------[0m
+[1;31mValueError[0m                                Traceback (most recent call last)
+[1;32mC:\Users\ALEXAN~1\AppData\Local\Temp/ipykernel_5460/3434496327.py[0m in [0;36m<module>[1;34m[0m
+[1;32m----> 1[1;33m [0msample_1020[0m [1;33m=[0m [0msample[0m[1;33m.[0m[0mcopy[0m[1;33m([0m[1;33m)[0m[1;33m.[0m[0mpick[0m[1;33m([0m[0mchannels_to_use[0m[1;33m)[0m[1;33m[0m[1;33m[0m[0m
+[0m[0;32m      2[0m [1;33m[0m[0m
+[0;32m      3[0m [1;31m# check that everything is OK[0m[1;33m[0m[1;33m[0m[0m
+[0;32m      4[0m [1;32massert[0m [0mlen[0m[1;33m([0m[0mchannels_to_use[0m[1;33m)[0m [1;33m==[0m [0mlen[0m[1;33m([0m[0msample_1020[0m[1;33m.[0m[0mch_names[0m[1;33m)[0m[1;33m[0m[1;33m[0m[0m
+
+[1;32m<decorator-gen-131>[0m in [0;36mpick[1;34m(self, picks, exclude, verbose)[0m
+
+[1;32m~\anaconda3\lib\site-packages\mne\channels\channels.py[0m in [0;36mpick[1;34m(self, picks, exclude, verbose)[0m
+[0;32m    501[0m             [0mThe[0m [0mmodified[0m [0minstance[0m[1;33m.[0m[1;33m[0m[1;33m[0m[0m
+[0;32m    502[0m         """
+[1;32m--> 503[1;33m         [0mpicks[0m [1;33m=[0m [0m_picks_to_idx[0m[1;33m([0m[0mself[0m[1;33m.[0m[0minfo[0m[1;33m,[0m [0mpicks[0m[1;33m,[0m [1;34m"all"[0m[1;33m,[0m [0mexclude[0m[1;33m,[0m [0mallow_empty[0m[1;33m=[0m[1;32mFalse[0m[1;33m)[0m[1;33m[0m[1;33m[0m[0m
+[0m[0;32m    504[0m         [0mself[0m[1;33m.[0m[0m_pick_drop_channels[0m[1;33m([0m[0mpicks[0m[1;33m)[0m[1;33m[0m[1;33m[0m[0m
+[0;32m    505[0m [1;33m[0m[0m
+
+[1;32m~\anaconda3\lib\site-packages\mne\_fiff\pick.py[0m in [0;36m_picks_to_idx[1;34m(info, picks, none, exclude, allow_empty, with_ref_meg, return_kind, picks_on)[0m
+[0;32m   1253[0m         [1;32mraise[0m [0mValueError[0m[1;33m([0m[1;34mf"picks must be 1D, got {picks.ndim}D"[0m[1;33m)[0m[1;33m[0m[1;33m[0m[0m
+[0;32m   1254[0m     [1;32mif[0m [0mpicks[0m[1;33m.[0m[0mdtype[0m[1;33m.[0m[0mchar[0m [1;32min[0m [1;33m([0m[1;34m"S"[0m[1;33m,[0m [1;34m"U"[0m[1;33m)[0m[1;33m:[0m[1;33m[0m[1;33m[0m[0m
+[1;32m-> 1255[1;33m         picks = _picks_str_to_idx(
+[0m[0;32m   1256[0m             [0minfo[0m[1;33m,[0m[1;33m[0m[1;33m[0m[0m
+[0;32m   1257[0m             [0mpicks[0m[1;33m,[0m[1;33m[0m[1;33m[0m[0m
+
+[1;32m~\anaconda3\lib\site-packages\mne\_fiff\pick.py[0m in [0;36m_picks_str_to_idx[1;34m(info, picks, exclude, with_ref_meg, return_kind, extra_repr, allow_empty, orig_picks)[0m
+[0;32m   1390[0m     [1;32mif[0m [0msum[0m[1;33m([0m[0many_found[0m[1;33m)[0m [1;33m==[0m [1;36m0[0m[1;33m:[0m[1;33m[0m[1;33m[0m[0m
+[0;32m   1391[0m         [1;32mif[0m [1;32mnot[0m [0mallow_empty[0m[1;33m:[0m[1;33m[0m[1;33m[0m[0m
+[1;32m-> 1392[1;33m             raise ValueError(
+[0m[0;32m   1393[0m                 [1;34mf"picks ({repr(orig_picks) + extra_repr}) could not be interpreted as "[0m[1;33m[0m[1;33m[0m[0m
+[0;32m   1394[0m                 [1;34mf'channel names (no channel "{str(bad_names)}"), channel types (no type'[0m[1;33m[0m[1;33m[0m[0m
+
+[1;31mValueError[0m: picks (['Fp1', 'Fp2', 'F7', 'F3', 'F4', 'Fz', 'F8', 'T7', 'C3', 'Cz', 'C4', 'T8', 'P7', 'P3', 'Pz', 'P4', 'P8', 'O1', 'O2']) could not be interpreted as channel names (no channel "['Fp1', 'Fp2', 'F7', 'F3', 'F4', 'Fz', 'F8', 'T7', 'C3', 'Cz', 'C4', 'T8', 'P7', 'P3', 'Pz', 'P4', 'P8', 'O1', 'O2']"), channel types (no type "Fp1" present), or a generic type (just "all" or "data")
+ValueError: picks (['Fp1', 'Fp2', 'F7', 'F3', 'F4', 'Fz', 'F8', 'T7', 'C3', 'Cz', 'C4', 'T8', 'P7', 'P3', 'Pz', 'P4', 'P8', 'O1', 'O2']) could not be interpreted as channel names (no channel "['Fp1', 'Fp2', 'F7', 'F3', 'F4', 'Fz', 'F8', 'T7', 'C3', 'Cz', 'C4', 'T8', 'P7', 'P3', 'Pz', 'P4', 'P8', 'O1', 'O2']"), channel types (no type "Fp1" present), or a generic type (just "all" or "data")
+
