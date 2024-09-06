@@ -6,7 +6,7 @@
 **Note**: To Follow seminar you will need [docker](https://docs.docker.com/get-docker/) installed and supplementary data downloaded
   1) [Install Docker](https://docs.docker.com/engine/install/);
   2) Download `NEUROML-data.zip` from [YaDisk](https://disk.yandex.ru/d/xxnRbLetEh07YQ) and unzip it to local directory;
-  3) Clone repository to your local machine;
+  3) Clone [the repository](https://github.com/BIMAI-lab/NEUROML_course) to your local machine;
   4) Run docker locally and ensure it working with command `docker run hello-world`;
   5) In terminal: `cd NEUROML_course/seminar2`
   6) Type command `docker build -t neuroml/seminar2:0.0.1 .` and wait for successfull build (the dot . is importaint)
