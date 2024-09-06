@@ -1,0 +1,2414 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Seminar 1. EEG analysis &#8212; Neuroimaging and Machine Learning for Biomedicine</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'seminar1/seminar1_working_with_eeg_ipynb_';</script>
+    <link rel="shortcut icon" href="../_static/logo.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="MRI data analysis, sources databases, tools" href="../seminar2/seminar2_1_mri.html" />
+    <link rel="prev" title="00. PyTorch Fundamentals" href="../seminar0/00_pytorch_fundamentals.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to the Neuroimaging and Machine Learning for Biomedicine coursebook
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../bio/intro_links.html">Links</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1AM67Sd37J0hIJ-kLyzAZRm8op_JcUQ9b?usp=sharing">Intro to shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../seminar0/Seminar1_python_colab.html">How to work with Python</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../seminar0/Seminar1_ML.html">Intro to ML</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../seminar0/00_pytorch_fundamentals.html">Pytorch fundamentals</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://drive.google.com/file/d/1q0XncKq2y_wHLXJaxhjfBCDGHABmzrjM/view?usp=sharing">Intro to computer vision</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Seminar 1. Working with EEG</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Seminar 1. EEG analysis</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Seminars 2-3. Working with MRI</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../seminar2/seminar2_1_mri.html">Seminar 2.1. MRI data analysis, databases and tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../seminar2/seminar2_2_transform.html">Transformations</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../seminar2/seminar2_3_freesurfer.html">FREESURFER</a></li>
+
+
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1i0f49198_Jb4fp-dw-8Dl46S8gKRyO8A?usp=sharing">Seminar 3.1. MRI classification on morphometry data</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1fUSEvtxTgWYatJTBa1kHjKQU2vUW0V3v?usp=sharing">Seminar 3.2. MRI classification with 3D CNN</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/19yE-7yJDztLJHCvxFgMR6rGH-A3MFjsM?usp=sharing">Seminar 3.3. MRI segmentation with 3D U-net</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Seminar 4-6. Working with fMRI</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1V3pLq3B_AdMFBL3EVJD9VFU7GJ0PvAA5?usp=sharing">Seminar 5. Functional connectivity</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1elqHcFpcx1_QX4jhbNihM0whPgfJzBV3?usp=sharing">Seminar 6.1. Extract ICA components from fMRI data</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1zFSdOD0HkhTi9r2l4t_pbW--FFgTK9fm?usp=sharing">Seminar 6.2. Deep Learning methods for fMRI data</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Seminar 7. Interpretation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1sJtU1uWezC-hEpDSkyhl0toioOt3F8FF?usp=sharing">Seminar 7. Interpretation of 3D CNNs for Brain MRI Data Classification</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/BIMAI-lab/NEUROML_course" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/BIMAI-lab/NEUROML_course/issues/new?title=Issue%20on%20page%20%2Fseminar1/seminar1_working_with_eeg_ipynb_.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/seminar1/seminar1_working_with_eeg_ipynb_.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Seminar 1. EEG analysis</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1">Part 1</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#channel-selection-and-adding-a-montage">Channel selection and adding a montage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-the-signals">Explore the signals</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#band-pass-filtering">Band-pass filtering</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-eeg-signals">Plot EEG signals</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#extracting-events">Extracting events</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2">Part 2</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#independent-component-analysis-for-artifact-removal">Independent Component Analysis for Artifact Removal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamics-of-alpha-and-beta-activity">Dynamics of alpha and beta activity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#computing-functional-connectivity">Computing functional connectivity</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="seminar-1-eeg-analysis">
+<h1>Seminar 1. EEG analysis<a class="headerlink" href="#seminar-1-eeg-analysis" title="Permalink to this headline">#</a></h1>
+<p><a class="reference external" href="https://colab.research.google.com/drive/1H81W_DpkHv-ZC9bEbOBW9zfcOe7SCDnR?usp=sharing"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
+<p><strong>Plan</strong></p>
+<ol class="arabic simple">
+<li><p>Read and visualize the data</p></li>
+<li><p>Preprocess the data</p></li>
+<li><p>Use ICA for noise reduction</p></li>
+<li><p>Compute ERP and plot topomaps for ERP</p></li>
+<li><p>Compute beta band envelopes for ERP</p></li>
+<li><p>Compute coherence</p></li>
+</ol>
+<section id="part-1">
+<h2>Part 1<a class="headerlink" href="#part-1" title="Permalink to this headline">#</a></h2>
+<p>All preprocessing and some data analysis of EEG data can be done using the <a class="reference external" href="https://mne.tools/stable/auto_tutorials/index.html">Python library MNE</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># For Colab only</span>
+<span class="c1"># !pip install mne</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">mne</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">mne_connectivity</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># not in colab</span>
+<span class="c1"># %matplotlib notebook</span>
+<span class="c1"># in colab</span>
+<span class="c1"># %matplotlib inline</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><a class="reference external" href="http://mne.io">mne.io</a> includes the funtions for different EEG-record formats:
+<a class="reference external" href="https://mne.tools/stable/documentation/implementation.html#supported-data-formats">https://mne.tools/stable/documentation/implementation.html#supported-data-formats</a></p>
+<p>We will work with data for one patient from <a class="reference external" href="https://www.physionet.org/content/eegmmidb/1.0.0/">EEG Motor Movement/Imagery Dataset</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># !wget &quot;https://www.physionet.org/files/eegmmidb/1.0.0/S003/S003R03.edf&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># !wget &quot;https://www.physionet.org/files/eegmmidb/1.0.0/S003/S003R03.edf.event&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># !ls</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample</span> <span class="o">=</span> <span class="n">mne</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">read_raw_edf</span><span class="p">(</span><span class="s1">&#39;S003R03.edf&#39;</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">preload</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Get some info about a record</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample</span><span class="o">.</span><span class="n">info</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><details open>
+    <summary><strong>General</strong></summary>
+    <table class="table table-hover table-striped table-sm table-responsive small">
+        <tr>
+            <th>Measurement date</th>
+            
+            <td>August 12, 2009  16:15:00 GMT</td>
+            
+        </tr>
+        <tr>
+            <th>Experimenter</th>
+            
+            <td>Unknown</td>
+            
+        </tr>
+        <tr>
+            <th>Participant</th>
+            
+            
+            <td>X</td>
+            
+            
+        </tr>
+    </table>
+    </details>
+    <details open>
+        <summary><strong>Channels</strong></summary>
+        <table class="table table-hover table-striped table-sm table-responsive small">
+            <tr>
+                <th>Digitized points</th>
+                
+                <td>Not available</td>
+                
+            </tr>
+            <tr>
+                <th>Good channels</th>
+                <td>64 EEG</td>
+            </tr>
+            <tr>
+                <th>Bad channels</th>
+                <td>None</td>
+            </tr>
+            <tr>
+                <th>EOG channels</th>
+                <td>Not available</td>
+            </tr>
+            <tr>
+                <th>ECG channels</th>
+                <td>Not available</td>
+            </tr>
+        </table>
+        </details>
+        <details open>
+            <summary><strong>Data</strong></summary>
+            <table class="table table-hover table-striped table-sm table-responsive small">
+                
+                <tr>
+                    <th>Sampling frequency</th>
+                    <td>160.00 Hz</td>
+                </tr>
+                
+                
+                <tr>
+                    <th>Highpass</th>
+                    <td>0.00 Hz</td>
+                </tr>
+                
+                
+                <tr>
+                    <th>Lowpass</th>
+                    <td>80.00 Hz</td>
+                </tr>
+                
+                
+                
+                
+            </table>
+            </details></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sampling frequency</span>
+<span class="n">sample</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;sfreq&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>160.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Length in seconds</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span> <span class="o">/</span> <span class="n">sample</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;sfreq&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>125.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Number of channels</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">sample</span><span class="o">.</span><span class="n">ch_names</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>64
+</pre></div>
+</div>
+</div>
+</div>
+<section id="channel-selection-and-adding-a-montage">
+<h3>Channel selection and adding a montage<a class="headerlink" href="#channel-selection-and-adding-a-montage" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample</span><span class="o">.</span><span class="n">ch_names</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Fc5.&#39;, &#39;Fc3.&#39;, &#39;Fc1.&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># fix trailing dots in channel names</span>
+<span class="c1"># use sample.rename_channels(map)</span>
+
+<span class="c1"># YOUR CODE HERE</span>
+<span class="nb">map</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">ch</span> <span class="ow">in</span> <span class="n">sample</span><span class="o">.</span><span class="n">ch_names</span><span class="p">:</span>
+    <span class="nb">map</span><span class="p">[</span><span class="n">ch</span><span class="p">]</span> <span class="o">=</span> <span class="n">ch</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="n">sample</span><span class="o">.</span><span class="n">rename_channels</span><span class="p">(</span><span class="nb">map</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><details open>
+    <summary><strong>General</strong></summary>
+    <table class="table table-hover table-striped table-sm table-responsive small">
+        <tr>
+            <th>Measurement date</th>
+            
+            <td>August 12, 2009  16:15:00 GMT</td>
+            
+        </tr>
+        <tr>
+            <th>Experimenter</th>
+            
+            <td>Unknown</td>
+            
+        </tr>
+        <tr>
+            <th>Participant</th>
+            
+            
+            <td>X</td>
+            
+            
+        </tr>
+    </table>
+    </details>
+    <details open>
+        <summary><strong>Channels</strong></summary>
+        <table class="table table-hover table-striped table-sm table-responsive small">
+            <tr>
+                <th>Digitized points</th>
+                
+                <td>Not available</td>
+                
+            </tr>
+            <tr>
+                <th>Good channels</th>
+                <td>64 EEG</td>
+            </tr>
+            <tr>
+                <th>Bad channels</th>
+                <td>None</td>
+            </tr>
+            <tr>
+                <th>EOG channels</th>
+                <td>Not available</td>
+            </tr>
+            <tr>
+                <th>ECG channels</th>
+                <td>Not available</td>
+            </tr>
+        </table>
+        </details>
+        <details open>
+            <summary><strong>Data</strong></summary>
+            <table class="table table-hover table-striped table-sm table-responsive small">
+                
+                <tr>
+                    <th>Sampling frequency</th>
+                    <td>160.00 Hz</td>
+                </tr>
+                
+                
+                <tr>
+                    <th>Highpass</th>
+                    <td>0.00 Hz</td>
+                </tr>
+                
+                
+                <tr>
+                    <th>Lowpass</th>
+                    <td>80.00 Hz</td>
+                </tr>
+                
+                
+                
+                <tr>
+                    <th>Filenames</th>
+                    <td>S003R03.edf</td>
+                </tr>
+                
+                
+                <tr>
+                    <th>Duration</th>
+                    <td>00:02:05 (HH:MM:SS)</td>
+                </tr>
+                
+            </table>
+            </details></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample</span><span class="o">.</span><span class="n">ch_names</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Fc5&#39;, &#39;Fc3&#39;, &#39;Fc1&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 19 channels from International 10-20 system. no A1 and A2 here</span>
+<span class="c1"># Be careful. Pure 10-20 labeling differs from high-resolution montages</span>
+<span class="c1"># In MNE, 10-20 montage is actually an extended high-resulution version of 10-20</span>
+<span class="c1"># FYI, mapping from pure 10-20 to high-resolution versions</span>
+<span class="c1"># T3 = T7</span>
+<span class="c1"># T4 = T8</span>
+<span class="c1"># T5 = P7</span>
+<span class="c1"># T6 = P8</span>
+
+<span class="n">channels_to_use</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="c1"># prefrontal</span>
+    <span class="s1">&#39;Fp1&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Fp2&#39;</span><span class="p">,</span>
+    <span class="c1"># frontal</span>
+    <span class="s1">&#39;F7&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;F3&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;F4&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Fz&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;F8&#39;</span><span class="p">,</span>
+    <span class="c1"># central and temporal</span>
+    <span class="s1">&#39;T7&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;C3&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Cz&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;C4&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;T8&#39;</span><span class="p">,</span>
+    <span class="c1"># parietal</span>
+    <span class="s1">&#39;P7&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;P3&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Pz&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;P4&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;P8&#39;</span><span class="p">,</span>
+    <span class="c1"># occipital</span>
+    <span class="s1">&#39;O1&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;O2&#39;</span><span class="p">,</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_1020</span> <span class="o">=</span> <span class="n">sample</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span><span class="o">.</span><span class="n">pick</span><span class="p">(</span><span class="n">channels_to_use</span><span class="p">)</span>
+
+<span class="c1"># check that everything is OK</span>
+<span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">channels_to_use</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">sample_1020</span><span class="o">.</span><span class="n">ch_names</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ten_twenty_montage</span> <span class="o">=</span> <span class="n">mne</span><span class="o">.</span><span class="n">channels</span><span class="o">.</span><span class="n">make_standard_montage</span><span class="p">(</span><span class="s1">&#39;standard_1020&#39;</span><span class="p">)</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">ten_twenty_montage</span><span class="o">.</span><span class="n">ch_names</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>94
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_1020</span><span class="o">.</span><span class="n">set_montage</span><span class="p">(</span><span class="n">ten_twenty_montage</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><details open>
+    <summary><strong>General</strong></summary>
+    <table class="table table-hover table-striped table-sm table-responsive small">
+        <tr>
+            <th>Measurement date</th>
+            
+            <td>August 12, 2009  16:15:00 GMT</td>
+            
+        </tr>
+        <tr>
+            <th>Experimenter</th>
+            
+            <td>Unknown</td>
+            
+        </tr>
+        <tr>
+            <th>Participant</th>
+            
+            
+            <td>X</td>
+            
+            
+        </tr>
+    </table>
+    </details>
+    <details open>
+        <summary><strong>Channels</strong></summary>
+        <table class="table table-hover table-striped table-sm table-responsive small">
+            <tr>
+                <th>Digitized points</th>
+                
+                <td>22 points</td>
+                
+            </tr>
+            <tr>
+                <th>Good channels</th>
+                <td>19 EEG</td>
+            </tr>
+            <tr>
+                <th>Bad channels</th>
+                <td>None</td>
+            </tr>
+            <tr>
+                <th>EOG channels</th>
+                <td>Not available</td>
+            </tr>
+            <tr>
+                <th>ECG channels</th>
+                <td>Not available</td>
+            </tr>
+        </table>
+        </details>
+        <details open>
+            <summary><strong>Data</strong></summary>
+            <table class="table table-hover table-striped table-sm table-responsive small">
+                
+                <tr>
+                    <th>Sampling frequency</th>
+                    <td>160.00 Hz</td>
+                </tr>
+                
+                
+                <tr>
+                    <th>Highpass</th>
+                    <td>0.00 Hz</td>
+                </tr>
+                
+                
+                <tr>
+                    <th>Lowpass</th>
+                    <td>80.00 Hz</td>
+                </tr>
+                
+                
+                
+                <tr>
+                    <th>Filenames</th>
+                    <td>S003R03.edf</td>
+                </tr>
+                
+                
+                <tr>
+                    <th>Duration</th>
+                    <td>00:02:05 (HH:MM:SS)</td>
+                </tr>
+                
+            </table>
+            </details></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_1020</span><span class="o">.</span><span class="n">plot_sensors</span><span class="p">(</span><span class="n">show_names</span><span class="o">=</span><span class="kc">True</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/787dcf32afdc13ee58ebc4631afb19745ec1a080e87b11468fb3da4b6c2b2680.png" src="../_images/787dcf32afdc13ee58ebc4631afb19745ec1a080e87b11468fb3da4b6c2b2680.png" />
+</div>
+</div>
+</section>
+<section id="explore-the-signals">
+<h3>Explore the signals<a class="headerlink" href="#explore-the-signals" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_1020</span><span class="o">.</span><span class="n">compute_psd</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Effective window size : 12.800 (s)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Plotting power spectral density (dB=True).
+</pre></div>
+</div>
+<img alt="../_images/1c3cb306ef8e3a88d4bf2d016f9b510c6f687986dfdf27ce0a81760c96c7fd31.png" src="../_images/1c3cb306ef8e3a88d4bf2d016f9b510c6f687986dfdf27ce0a81760c96c7fd31.png" />
+</div>
+</div>
+<p>Do you see peaks connected to power line noise?</p>
+<p>The <a class="reference external" href="https://mne.tools/stable/generated/mne.filter.notch_filter.html#mne-filter-notch-filter">notch filter’s</a> purpose is to filter out activity at a specific frequency (rather than a frequency range). Because the alternating current in standard electric outlets in North America oscillates at 60 Hz, electric fields produced by the 60-Hz activity in the environment that surrounds us in our indoor environments frequently contaminates the EEG. Sixty-hertz notch filters (filters designed specifically to filter out 60-Hz activity) are used to attenuate or eliminate this unwanted signal. In countries where line frequencies are 50 Hz, 50-Hz notch filters are used for the same purpose.</p>
+<section id="band-pass-filtering">
+<h4>Band-pass filtering<a class="headerlink" href="#band-pass-filtering" title="Permalink to this headline">#</a></h4>
+<p>It’s better to remove low-freq components &lt; 1 Hz and high-freq &gt; 50Hz (non-informative for EEG)</p>
+<p>Let’s use IIR filter.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_1020</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">l_freq</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">h_freq</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;iir&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Filtering raw data in 1 contiguous segment
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Setting up band-pass filter from 1 - 50 Hz
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>IIR filter parameters
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>---------------------
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Butterworth bandpass zero-phase (two-pass forward and reverse) non-causal filter:
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>- Filter order 16 (effective, after forward-backward)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>- Cutoffs at 1.00, 50.00 Hz: -6.02, -6.02 dB
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output text_html"><details open>
+    <summary><strong>General</strong></summary>
+    <table class="table table-hover table-striped table-sm table-responsive small">
+        <tr>
+            <th>Measurement date</th>
+            
+            <td>August 12, 2009  16:15:00 GMT</td>
+            
+        </tr>
+        <tr>
+            <th>Experimenter</th>
+            
+            <td>Unknown</td>
+            
+        </tr>
+        <tr>
+            <th>Participant</th>
+            
+            
+            <td>X</td>
+            
+            
+        </tr>
+    </table>
+    </details>
+    <details open>
+        <summary><strong>Channels</strong></summary>
+        <table class="table table-hover table-striped table-sm table-responsive small">
+            <tr>
+                <th>Digitized points</th>
+                
+                <td>22 points</td>
+                
+            </tr>
+            <tr>
+                <th>Good channels</th>
+                <td>19 EEG</td>
+            </tr>
+            <tr>
+                <th>Bad channels</th>
+                <td>None</td>
+            </tr>
+            <tr>
+                <th>EOG channels</th>
+                <td>Not available</td>
+            </tr>
+            <tr>
+                <th>ECG channels</th>
+                <td>Not available</td>
+            </tr>
+        </table>
+        </details>
+        <details open>
+            <summary><strong>Data</strong></summary>
+            <table class="table table-hover table-striped table-sm table-responsive small">
+                
+                <tr>
+                    <th>Sampling frequency</th>
+                    <td>160.00 Hz</td>
+                </tr>
+                
+                
+                <tr>
+                    <th>Highpass</th>
+                    <td>1.00 Hz</td>
+                </tr>
+                
+                
+                <tr>
+                    <th>Lowpass</th>
+                    <td>50.00 Hz</td>
+                </tr>
+                
+                
+                
+                <tr>
+                    <th>Filenames</th>
+                    <td>S003R03.edf</td>
+                </tr>
+                
+                
+                <tr>
+                    <th>Duration</th>
+                    <td>00:02:05 (HH:MM:SS)</td>
+                </tr>
+                
+            </table>
+            </details></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot psd after filtering</span>
+
+<span class="c1"># YOUR CODE HERE</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="plot-eeg-signals">
+<h4>Plot EEG signals<a class="headerlink" href="#plot-eeg-signals" title="Permalink to this headline">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_1020</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n_channels</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mi">20</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Using matplotlib as 2D backend.
+</pre></div>
+</div>
+<img alt="../_images/fcc673a613566f07c4eba36eb1d8f751d962cd9797f297be0896679b2a2c67e4.png" src="../_images/fcc673a613566f07c4eba36eb1d8f751d962cd9797f297be0896679b2a2c67e4.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot in better scale. Use &#39;scalings&#39; argument</span>
+
+<span class="c1"># YOUR CODE HERE</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="extracting-events">
+<h3>Extracting events<a class="headerlink" href="#extracting-events" title="Permalink to this headline">#</a></h3>
+<p>Mne has several functions for event selection.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">mne.find_events</span></code> is used when events are stored in trigger channels (e.g. FIFF format)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mne.events_from_annotations</span></code> is used for when events are stored in annotations (EDF+ format)</p></li>
+</ul>
+<p>Look for documentation for your EEG-record format</p>
+<p>Here we have EDF+ format</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">events</span><span class="p">,</span> <span class="n">events_dict</span> <span class="o">=</span> <span class="n">mne</span><span class="o">.</span><span class="n">events_from_annotations</span><span class="p">(</span><span class="n">sample_1020</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Used Annotations descriptions: [&#39;T0&#39;, &#39;T1&#39;, &#39;T2&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">events_dict</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;T0&#39;: 1, &#39;T1&#39;: 2, &#39;T2&#39;: 3}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">events</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[   0,    0,    1],
+       [ 672,    0,    3],
+       [1328,    0,    1],
+       [2000,    0,    2],
+       [2656,    0,    1]])
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Epochs</strong> objects are a data structure for representing and analyzing equal-duration chunks of the EEG/MEG signal. Epochs are most often used to represent data that is time-locked to repeated experimental events. The Raw object and the events array are the bare minimum needed to create an Epochs object, which we create with the <code class="docutils literal notranslate"><span class="pre">mne.Epochs</span></code> class constructor.</p>
+<p>However, you will almost surely want to change some of the other default parameters. Here we’ll change <code class="docutils literal notranslate"><span class="pre">tmin</span></code> and <code class="docutils literal notranslate"><span class="pre">tmax</span></code> (the time relative to each event at which to start and end each epoch).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">epochs</span> <span class="o">=</span> <span class="n">mne</span><span class="o">.</span><span class="n">Epochs</span><span class="p">(</span><span class="n">sample_1020</span><span class="p">,</span> <span class="n">events</span><span class="p">,</span>  <span class="n">tmin</span><span class="o">=-</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">tmax</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">preload</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Not setting metadata
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>30 matching events found
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Setting baseline interval to [-0.5, 0.0] s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Applying baseline correction (mode: mean)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 projection items activated
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Using data from preloaded Raw for 30 events and 209 original time points ...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1 bad epochs dropped
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">epochs</span><span class="o">.</span><span class="n">events</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;_&#39;</span><span class="p">,</span> <span class="s1">&#39;__&#39;</span><span class="p">,</span> <span class="s1">&#39;event_id&#39;</span><span class="p">])[</span><span class="s1">&#39;event_id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>event_id
+1    14
+3     8
+2     7
+Name: count, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Check that length is right</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="n">epochs</span><span class="p">:</span>
+    <span class="k">break</span>
+<span class="n">epoch</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(19, 209)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">epoch</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="n">sample_1020</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;sfreq&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.30625
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_1020</span><span class="o">.</span><span class="n">to_data_frame</span><span class="p">()</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(20000, 20)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">epochs</span><span class="o">.</span><span class="n">to_data_frame</span><span class="p">()</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="p">:</span><span class="mi">10</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>time</th>
+      <th>condition</th>
+      <th>epoch</th>
+      <th>Fp1</th>
+      <th>Fp2</th>
+      <th>F7</th>
+      <th>F3</th>
+      <th>F4</th>
+      <th>Fz</th>
+      <th>F8</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>-0.50000</td>
+      <td>3</td>
+      <td>1</td>
+      <td>236.675891</td>
+      <td>244.275703</td>
+      <td>125.936913</td>
+      <td>88.829681</td>
+      <td>112.445086</td>
+      <td>73.438632</td>
+      <td>145.805904</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>-0.49375</td>
+      <td>3</td>
+      <td>1</td>
+      <td>175.970007</td>
+      <td>183.425016</td>
+      <td>103.803572</td>
+      <td>63.009365</td>
+      <td>82.687750</td>
+      <td>48.730906</td>
+      <td>115.749079</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>-0.48750</td>
+      <td>3</td>
+      <td>1</td>
+      <td>127.095181</td>
+      <td>132.985975</td>
+      <td>61.669835</td>
+      <td>31.478465</td>
+      <td>62.299189</td>
+      <td>33.384794</td>
+      <td>93.870855</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="n">sample_1020</span><span class="o">.</span><span class="n">ch_names</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;epoch&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;epoch&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="k">lambda</span> <span class="n">arr</span><span class="p">:</span> <span class="n">arr</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">-</span> <span class="n">arr</span><span class="o">.</span><span class="n">min</span><span class="p">())</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">]);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/faa56e595fd4639fedfebe5434ca34038434848a766d0bc498393a0602a1893b.png" src="../_images/faa56e595fd4639fedfebe5434ca34038434848a766d0bc498393a0602a1893b.png" />
+</div>
+</div>
+<p>Note also that the Epochs constructor accepts parameters <code class="docutils literal notranslate"><span class="pre">reject</span></code> for rejecting individual epochs based on signal amplitude.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">epochs</span> <span class="o">=</span> <span class="n">mne</span><span class="o">.</span><span class="n">Epochs</span><span class="p">(</span><span class="n">sample_1020</span><span class="p">,</span> <span class="n">events</span><span class="p">,</span>  <span class="n">tmin</span><span class="o">=-</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">tmax</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">reject</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;eeg&#39;</span><span class="p">:</span> <span class="mf">600e-6</span><span class="p">},</span> <span class="n">preload</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">baseline</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">.1</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Not setting metadata
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>30 matching events found
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Applying baseline correction (mode: mean)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 projection items activated
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Using data from preloaded Raw for 30 events and 209 original time points ...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Rejecting  epoch based on EEG : [&#39;Fp1&#39;, &#39;Fp2&#39;]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Rejecting  epoch based on EEG : [&#39;Fp2&#39;]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Rejecting  epoch based on EEG : [&#39;Fp2&#39;]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Rejecting  epoch based on EEG : [&#39;Fp2&#39;]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Rejecting  epoch based on EEG : [&#39;Fp2&#39;]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Rejecting  epoch based on EEG : [&#39;Fp1&#39;, &#39;Fp2&#39;]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Rejecting  epoch based on EEG : [&#39;Fp1&#39;, &#39;Fp2&#39;]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Rejecting  epoch based on EEG : [&#39;Fp1&#39;, &#39;Fp2&#39;]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Rejecting  epoch based on EEG : [&#39;Fp1&#39;, &#39;Fp2&#39;]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Rejecting  epoch based on EEG : [&#39;Fp1&#39;, &#39;Fp2&#39;]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Rejecting  epoch based on EEG : [&#39;Fp2&#39;]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Rejecting  epoch based on EEG : [&#39;Fp1&#39;, &#39;Fp2&#39;]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Rejecting  epoch based on EEG : [&#39;Fp1&#39;, &#39;Fp2&#39;]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Rejecting  epoch based on EEG : [&#39;Fp1&#39;, &#39;Fp2&#39;]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15 bad epochs dropped
+</pre></div>
+</div>
+</div>
+</div>
+<p>PSD on epochs differs from the raw. More averaging is used</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">epochs</span><span class="o">.</span><span class="n">plot_psd</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NOTE: plot_psd() is a legacy function. New code should use .compute_psd().plot().
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Using multitaper spectrum estimation with 7 DPSS windows
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Plotting power spectral density (dB=True).
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Averaging across epochs...
+</pre></div>
+</div>
+<img alt="../_images/03c3d4e91de1f8806c4018160fe4d2b7896abe03acd74e7006712e5d0f1010c0.png" src="../_images/03c3d4e91de1f8806c4018160fe4d2b7896abe03acd74e7006712e5d0f1010c0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">epochs</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n_channels</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">scalings</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;eeg&#39;</span><span class="p">:</span><span class="mf">3e-4</span><span class="p">});</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/1a6137c856adfe7836d3c21ba9dcc1efd69f693370d5c2cdf83a310793fb357f.png" src="../_images/1a6137c856adfe7836d3c21ba9dcc1efd69f693370d5c2cdf83a310793fb357f.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">epochs</span><span class="o">.</span><span class="n">event_id</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;1&#39;: 1, &#39;2&#39;: 2, &#39;3&#39;: 3}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># check number of events of each type</span>
+<span class="c1"># use epochs.events</span>
+
+<span class="c1"># Your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">evoked_T0</span> <span class="o">=</span> <span class="n">epochs</span><span class="p">[</span><span class="s1">&#39;1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">average</span><span class="p">()</span>
+<span class="n">evoked_T1</span> <span class="o">=</span> <span class="n">epochs</span><span class="p">[</span><span class="s1">&#39;2&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">average</span><span class="p">()</span>
+<span class="n">evoked_T2</span> <span class="o">=</span> <span class="n">epochs</span><span class="p">[</span><span class="s1">&#39;3&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">average</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">evoked_T0</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">spatial_colors</span><span class="o">=</span><span class="kc">True</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/63ab8bd1ef4b0c1f261d3912193c89f35949eabcb0d65f7ed01a40eddb804876.png" src="../_images/63ab8bd1ef4b0c1f261d3912193c89f35949eabcb0d65f7ed01a40eddb804876.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">evoked_T1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">spatial_colors</span><span class="o">=</span><span class="kc">True</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/728a1652a5e2043585e8d91740faf5b707c009b7e4686413e076c167795f35cf.png" src="../_images/728a1652a5e2043585e8d91740faf5b707c009b7e4686413e076c167795f35cf.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">evoked_T2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">spatial_colors</span><span class="o">=</span><span class="kc">True</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/56619296de8950b6cab38908be7ae5dc877f13945b322ce6039c1450bd0177f0.png" src="../_images/56619296de8950b6cab38908be7ae5dc877f13945b322ce6039c1450bd0177f0.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="part-2">
+<h2>Part 2<a class="headerlink" href="#part-2" title="Permalink to this headline">#</a></h2>
+<section id="independent-component-analysis-for-artifact-removal">
+<h3>Independent Component Analysis for Artifact Removal<a class="headerlink" href="#independent-component-analysis-for-artifact-removal" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ica</span> <span class="o">=</span> <span class="n">mne</span><span class="o">.</span><span class="n">preprocessing</span><span class="o">.</span><span class="n">ICA</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ica</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">sample_1020</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fitting ICA to data using 19 channels (please be patient, this may take a while)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Selecting by number: 10 components
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fitting ICA took 0.2s.
+</pre></div>
+</div>
+<div class="output text_html"><table class="table table-hover table-striped table-sm table-responsive small">
+    <tr>
+        <th>Method</th>
+        <td>fastica</td>
+    </tr>
+    <tr>
+        <th>Fit parameters</th>
+        <td>algorithm=parallel<br />fun=logcosh<br />fun_args=None<br />max_iter=1000<br /></td>
+    </tr>
+    <tr>
+        <th>Fit</th>
+        <td>17 iterations on raw data (20000 samples)</td>
+    </tr>
+    
+    <tr>
+        <th>ICA components</th>
+        <td>10</td>
+    </tr>
+    <tr>
+        <th>Available PCA components</th>
+        <td>19</td>
+    </tr>
+    <tr>
+        <th>Channel types</th>
+        <td>eeg</td>
+    </tr>
+    <tr>
+        <th>ICA components marked for exclusion</th>
+        <td>&mdash;</td>
+    </tr>
+    
+</table></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ica</span><span class="o">.</span><span class="n">plot_sources</span><span class="p">(</span><span class="n">sample_1020</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Creating RawArray with float64 data, n_channels=10, n_times=20000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Range : 0 ... 19999 =      0.000 ...   124.994 secs
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ready.
+</pre></div>
+</div>
+<img alt="../_images/03355a862c7f573922acdd1f461573cc8c41e915f70d2bbf71c1b7b722bf1d9a.png" src="../_images/03355a862c7f573922acdd1f461573cc8c41e915f70d2bbf71c1b7b722bf1d9a.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ica</span><span class="o">.</span><span class="n">plot_components</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/1a67fb66c0c94b83f710a05138cae8af587996f67bc8a46d2df5dc507671ab63.png" src="../_images/1a67fb66c0c94b83f710a05138cae8af587996f67bc8a46d2df5dc507671ab63.png" />
+</div>
+</div>
+<p>Inspect ICA components more deeply. Check out spectrogram. Segments info is not very relevant here since we build ICA on the raw data</p>
+<p>We expect to see alpha and beta rythms picks on the spectrogram for good components (7-13 Hz and 13-30Hz respectively). And also slight decrease as frequency goes higher</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ica</span><span class="o">.</span><span class="n">plot_properties</span><span class="p">(</span><span class="n">sample_1020</span><span class="p">,</span> <span class="n">picks</span><span class="o">=</span><span class="p">[</span><span class="mi">4</span><span class="p">]);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Using multitaper spectrum estimation with 7 DPSS windows
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Not setting metadata
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>62 matching events found
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>No baseline correction applied
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 projection items activated
+</pre></div>
+</div>
+<img alt="../_images/43062e16969148b3b09a35d922414fb328ff46b8e15a96e2f6d7f4f4c04bb415.png" src="../_images/43062e16969148b3b09a35d922414fb328ff46b8e15a96e2f6d7f4f4c04bb415.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ica</span><span class="o">.</span><span class="n">plot_overlay</span><span class="p">(</span><span class="n">sample_1020</span><span class="p">,</span> <span class="n">exclude</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span> <span class="n">picks</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;F3&#39;</span><span class="p">]);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Applying ICA to Raw instance
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Transforming to ICA space (10 components)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Zeroing out 6 ICA components
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Projecting back using 19 PCA components
+</pre></div>
+</div>
+<img alt="../_images/5da9fedc4a9c1c5c519b372106d699d6e99118cf42644dcfdba3d70408dd2d2f.png" src="../_images/5da9fedc4a9c1c5c519b372106d699d6e99118cf42644dcfdba3d70408dd2d2f.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ica</span><span class="o">.</span><span class="n">exclude</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_1020_clr</span> <span class="o">=</span> <span class="n">sample_1020</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ica</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">sample_1020_clr</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Applying ICA to Raw instance
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Transforming to ICA space (10 components)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Zeroing out 2 ICA components
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Projecting back using 19 PCA components
+</pre></div>
+</div>
+<div class="output text_html"><details open>
+    <summary><strong>General</strong></summary>
+    <table class="table table-hover table-striped table-sm table-responsive small">
+        <tr>
+            <th>Measurement date</th>
+            
+            <td>August 12, 2009  16:15:00 GMT</td>
+            
+        </tr>
+        <tr>
+            <th>Experimenter</th>
+            
+            <td>Unknown</td>
+            
+        </tr>
+        <tr>
+            <th>Participant</th>
+            
+            
+            <td>X</td>
+            
+            
+        </tr>
+    </table>
+    </details>
+    <details open>
+        <summary><strong>Channels</strong></summary>
+        <table class="table table-hover table-striped table-sm table-responsive small">
+            <tr>
+                <th>Digitized points</th>
+                
+                <td>22 points</td>
+                
+            </tr>
+            <tr>
+                <th>Good channels</th>
+                <td>19 EEG</td>
+            </tr>
+            <tr>
+                <th>Bad channels</th>
+                <td>None</td>
+            </tr>
+            <tr>
+                <th>EOG channels</th>
+                <td>Not available</td>
+            </tr>
+            <tr>
+                <th>ECG channels</th>
+                <td>Not available</td>
+            </tr>
+        </table>
+        </details>
+        <details open>
+            <summary><strong>Data</strong></summary>
+            <table class="table table-hover table-striped table-sm table-responsive small">
+                
+                <tr>
+                    <th>Sampling frequency</th>
+                    <td>160.00 Hz</td>
+                </tr>
+                
+                
+                <tr>
+                    <th>Highpass</th>
+                    <td>1.00 Hz</td>
+                </tr>
+                
+                
+                <tr>
+                    <th>Lowpass</th>
+                    <td>50.00 Hz</td>
+                </tr>
+                
+                
+                
+                <tr>
+                    <th>Filenames</th>
+                    <td>S003R03.edf</td>
+                </tr>
+                
+                
+                <tr>
+                    <th>Duration</th>
+                    <td>00:02:05 (HH:MM:SS)</td>
+                </tr>
+                
+            </table>
+            </details></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot channels</span>
+
+<span class="c1"># YOUR CODE HERE</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">epochs</span> <span class="o">=</span> <span class="n">mne</span><span class="o">.</span><span class="n">Epochs</span><span class="p">(</span><span class="n">sample_1020_clr</span><span class="p">,</span> <span class="n">events</span><span class="p">,</span>  <span class="n">tmin</span><span class="o">=-</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">tmax</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">reject</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;eeg&#39;</span><span class="p">:</span> <span class="mf">600e-6</span><span class="p">},</span> <span class="n">preload</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">baseline</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">.1</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Not setting metadata
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>30 matching events found
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Applying baseline correction (mode: mean)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 projection items activated
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Using data from preloaded Raw for 30 events and 209 original time points ...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1 bad epochs dropped
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">evoked_T0</span> <span class="o">=</span> <span class="n">epochs</span><span class="p">[</span><span class="s1">&#39;1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">average</span><span class="p">()</span>
+<span class="n">evoked_T1</span> <span class="o">=</span> <span class="n">epochs</span><span class="p">[</span><span class="s1">&#39;2&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">average</span><span class="p">()</span>
+<span class="n">evoked_T2</span> <span class="o">=</span> <span class="n">epochs</span><span class="p">[</span><span class="s1">&#39;3&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">average</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">evoked_T0</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">spatial_colors</span><span class="o">=</span><span class="kc">True</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/9406b52753cc2fd20401b039d8e9bc71c2e52760d5f999ca834886b48e196cd6.png" src="../_images/9406b52753cc2fd20401b039d8e9bc71c2e52760d5f999ca834886b48e196cd6.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">evoked_T1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">spatial_colors</span><span class="o">=</span><span class="kc">True</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/a6e402b273d102fef07f7ebb5f184ac09ee4bdb943de055b9d61ff81723ba73b.png" src="../_images/a6e402b273d102fef07f7ebb5f184ac09ee4bdb943de055b9d61ff81723ba73b.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">evoked_T2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">spatial_colors</span><span class="o">=</span><span class="kc">True</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/70ea7128d85b6b1bb565d1a4650e60807b0f4e882b3043e7109334ae189884c7.png" src="../_images/70ea7128d85b6b1bb565d1a4650e60807b0f4e882b3043e7109334ae189884c7.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">evoked_T0</span><span class="o">.</span><span class="n">plot_topomap</span><span class="p">(</span><span class="n">times</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">.2</span><span class="p">,</span> <span class="mf">.4</span><span class="p">,</span> <span class="mf">.6</span><span class="p">,</span> <span class="mf">.8</span><span class="p">],</span> <span class="n">vlim</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">50</span><span class="p">,</span><span class="mi">50</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/d936eb9589817fa41ab1110ab29cd64e8209a7b86ca9e00832022983684cb3e4.png" src="../_images/d936eb9589817fa41ab1110ab29cd64e8209a7b86ca9e00832022983684cb3e4.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">evoked_T1</span><span class="o">.</span><span class="n">plot_topomap</span><span class="p">(</span><span class="n">times</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">.2</span><span class="p">,</span> <span class="mf">.4</span><span class="p">,</span> <span class="mf">.6</span><span class="p">,</span> <span class="mf">.8</span><span class="p">],</span> <span class="n">vlim</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">50</span><span class="p">,</span><span class="mi">50</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/457e36ec682182a80d1d0ae6dea40b25a3a8292fa806a4a2624a4b2ab53c3997.png" src="../_images/457e36ec682182a80d1d0ae6dea40b25a3a8292fa806a4a2624a4b2ab53c3997.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">evoked_T2</span><span class="o">.</span><span class="n">plot_topomap</span><span class="p">(</span><span class="n">times</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">.2</span><span class="p">,</span> <span class="mf">.4</span><span class="p">,</span> <span class="mf">.6</span><span class="p">,</span> <span class="mf">.8</span><span class="p">],</span> <span class="n">vlim</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">50</span><span class="p">,</span><span class="mi">50</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/f40713a2fd99d89f8474ece5419eeaba57f95c5b206b2be1407ec4850dccf7b3.png" src="../_images/f40713a2fd99d89f8474ece5419eeaba57f95c5b206b2be1407ec4850dccf7b3.png" />
+</div>
+</div>
+</section>
+<section id="dynamics-of-alpha-and-beta-activity">
+<h3>Dynamics of alpha and beta activity<a class="headerlink" href="#dynamics-of-alpha-and-beta-activity" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">evoked_T0_alpha</span> <span class="o">=</span> <span class="n">evoked_T0</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">l_freq</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">h_freq</span><span class="o">=</span><span class="mi">13</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;iir&#39;</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">apply_hilbert</span><span class="p">(</span><span class="n">envelope</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">evoked_T1_alpha</span> <span class="o">=</span> <span class="n">evoked_T1</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">l_freq</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">h_freq</span><span class="o">=</span><span class="mi">13</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;iir&#39;</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">apply_hilbert</span><span class="p">(</span><span class="n">envelope</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">evoked_T2_alpha</span> <span class="o">=</span> <span class="n">evoked_T2</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">l_freq</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">h_freq</span><span class="o">=</span><span class="mi">13</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;iir&#39;</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">apply_hilbert</span><span class="p">(</span><span class="n">envelope</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">evoked_T1_alpha</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">spatial_colors</span><span class="o">=</span><span class="kc">True</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/9b3fac471b4de30d1ea23ee9b4b3eb9f4059896572d32467b0f34cc068bad8ff.png" src="../_images/9b3fac471b4de30d1ea23ee9b4b3eb9f4059896572d32467b0f34cc068bad8ff.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">evoked_T0_alpha</span><span class="o">.</span><span class="n">plot_topomap</span><span class="p">(</span><span class="n">times</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">.1</span><span class="p">,</span> <span class="mf">.2</span><span class="p">,</span> <span class="mf">.3</span><span class="p">,</span> <span class="mf">.4</span><span class="p">,</span> <span class="mf">.6</span><span class="p">],</span> <span class="n">vlim</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">30</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/b385d2998185eebdbc01499c48d463164149e892ea07949cc85295a35f328a6c.png" src="../_images/b385d2998185eebdbc01499c48d463164149e892ea07949cc85295a35f328a6c.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">evoked_T1_alpha</span><span class="o">.</span><span class="n">plot_topomap</span><span class="p">(</span><span class="n">times</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">.1</span><span class="p">,</span> <span class="mf">.2</span><span class="p">,</span> <span class="mf">.3</span><span class="p">,</span> <span class="mf">.4</span><span class="p">,</span> <span class="mf">.6</span><span class="p">],</span> <span class="n">vlim</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">30</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/d9397d8c2f0b6c654362900385ae43b3a7d59f099eb8612e99dbe8e5bb41c325.png" src="../_images/d9397d8c2f0b6c654362900385ae43b3a7d59f099eb8612e99dbe8e5bb41c325.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">evoked_T2_alpha</span><span class="o">.</span><span class="n">plot_topomap</span><span class="p">(</span><span class="n">times</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">.1</span><span class="p">,</span> <span class="mf">.2</span><span class="p">,</span> <span class="mf">.3</span><span class="p">,</span> <span class="mf">.4</span><span class="p">,</span> <span class="mf">.6</span><span class="p">],</span> <span class="n">vlim</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">30</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/3fb2bc4a1af7bbc58a92a2131dcd175704f6571535dc1ba9cbd13b3adc870424.png" src="../_images/3fb2bc4a1af7bbc58a92a2131dcd175704f6571535dc1ba9cbd13b3adc870424.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">evoked_T0_beta_low</span> <span class="o">=</span> <span class="n">evoked_T0</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">l_freq</span><span class="o">=</span><span class="mi">13</span><span class="p">,</span> <span class="n">h_freq</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;iir&#39;</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">apply_hilbert</span><span class="p">(</span><span class="n">envelope</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">evoked_T1_beta_low</span> <span class="o">=</span> <span class="n">evoked_T1</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">l_freq</span><span class="o">=</span><span class="mi">13</span><span class="p">,</span> <span class="n">h_freq</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;iir&#39;</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">apply_hilbert</span><span class="p">(</span><span class="n">envelope</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">evoked_T2_beta_low</span> <span class="o">=</span> <span class="n">evoked_T2</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">l_freq</span><span class="o">=</span><span class="mi">13</span><span class="p">,</span> <span class="n">h_freq</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;iir&#39;</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">apply_hilbert</span><span class="p">(</span><span class="n">envelope</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">evoked_T0_beta_low</span><span class="o">.</span><span class="n">plot_topomap</span><span class="p">(</span><span class="n">times</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">.2</span><span class="p">,</span> <span class="mf">.4</span><span class="p">,</span> <span class="mf">.6</span><span class="p">,</span> <span class="mf">.8</span><span class="p">],</span> <span class="n">vlim</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">30</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/03d8fc227f1a972258714c4ca250233587d0a5e374e9d0524d2e1c8fe4eadb6c.png" src="../_images/03d8fc227f1a972258714c4ca250233587d0a5e374e9d0524d2e1c8fe4eadb6c.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">evoked_T1_beta_low</span><span class="o">.</span><span class="n">plot_topomap</span><span class="p">(</span><span class="n">times</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">.2</span><span class="p">,</span> <span class="mf">.4</span><span class="p">,</span> <span class="mf">.6</span><span class="p">,</span> <span class="mf">.8</span><span class="p">],</span> <span class="n">vlim</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">30</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/3dbe53d0daec861863b75b02c26072d6d50bbc28cfde31b93af4646b6fd50a41.png" src="../_images/3dbe53d0daec861863b75b02c26072d6d50bbc28cfde31b93af4646b6fd50a41.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">evoked_T2_beta_low</span><span class="o">.</span><span class="n">plot_topomap</span><span class="p">(</span><span class="n">times</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">.2</span><span class="p">,</span> <span class="mf">.4</span><span class="p">,</span> <span class="mf">.6</span><span class="p">,</span> <span class="mf">.8</span><span class="p">],</span> <span class="n">vlim</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">30</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/7b581fc0f91b0d16bc6bc7cc59ca224c99acd2c6eb119134792d4f45915afbef.png" src="../_images/7b581fc0f91b0d16bc6bc7cc59ca224c99acd2c6eb119134792d4f45915afbef.png" />
+</div>
+</div>
+</section>
+<section id="computing-functional-connectivity">
+<h3>Computing functional connectivity<a class="headerlink" href="#computing-functional-connectivity" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">conn_T1</span> <span class="o">=</span> <span class="n">mne_connectivity</span><span class="o">.</span><span class="n">spectral_connectivity_epochs</span><span class="p">(</span><span class="n">epochs</span><span class="p">[</span><span class="s1">&#39;2&#39;</span><span class="p">],</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;coh&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Adding metadata with 3 columns
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Connectivity computation...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>only using indices for lower-triangular matrix
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    computing connectivity for 171 connections
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    using t=-0.500s..0.800s for estimation (209 points)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    frequencies: 4.6Hz..79.6Hz (99 points)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Using multitaper spectrum estimation with 7 DPSS windows
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    the following metrics will be computed: Coherence
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    computing cross-spectral density for epoch 1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    computing cross-spectral density for epoch 2
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    computing cross-spectral density for epoch 3
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    computing cross-spectral density for epoch 4
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    computing cross-spectral density for epoch 5
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    computing cross-spectral density for epoch 6
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    computing cross-spectral density for epoch 7
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    assembling connectivity matrix
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Connectivity computation done]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_topomap_connectivity_2d</span><span class="p">(</span><span class="n">info</span><span class="p">,</span> <span class="n">con</span><span class="p">,</span> <span class="n">picks</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">pairs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cm</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">show_values</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">show_names</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Plots connectivity-like data in 2d</span>
+<span class="sd">    </span>
+<span class="sd">    Drawing every pair of channels will likely make a mess</span>
+<span class="sd">    There are two options to avoid it:</span>
+<span class="sd">    - provide picks</span>
+<span class="sd">    - provide specific pairs of channels to draw</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="c1"># get positions</span>
+    <span class="n">_</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">mne</span><span class="o">.</span><span class="n">viz</span><span class="o">.</span><span class="n">topomap</span><span class="o">.</span><span class="n">_prepare_topomap_plot</span><span class="p">(</span><span class="n">info</span><span class="p">,</span> <span class="s1">&#39;eeg&#39;</span><span class="p">);</span>
+    
+<span class="c1">#     if picks is None and pairs is None:</span>
+<span class="c1">#         picks = info.ch_names</span>
+    
+    <span class="n">ch_names_lower</span> <span class="o">=</span> <span class="p">[</span><span class="n">ch</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">for</span> <span class="n">ch</span> <span class="ow">in</span> <span class="n">info</span><span class="o">.</span><span class="n">ch_names</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">picks</span><span class="p">:</span>
+        <span class="n">picks_lower</span> <span class="o">=</span> <span class="p">[</span><span class="n">ch</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">for</span> <span class="n">ch</span> <span class="ow">in</span> <span class="n">picks</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">pairs</span><span class="p">:</span>
+        <span class="n">pairs_lower</span> <span class="o">=</span> <span class="p">[</span><span class="nb">tuple</span><span class="p">(</span><span class="nb">sorted</span><span class="p">([</span><span class="n">ch1</span><span class="o">.</span><span class="n">lower</span><span class="p">(),</span> <span class="n">ch2</span><span class="o">.</span><span class="n">lower</span><span class="p">()]))</span> <span class="k">for</span> <span class="n">ch1</span><span class="p">,</span> <span class="n">ch2</span> <span class="ow">in</span> <span class="n">pairs</span><span class="p">]</span>
+    
+    <span class="n">rows</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">idx1</span><span class="p">,</span> <span class="n">ch1</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">ch_names_lower</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">idx2</span><span class="p">,</span> <span class="n">ch2</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">ch_names_lower</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">ch1</span> <span class="o">&gt;=</span> <span class="n">ch2</span><span class="p">:</span>
+                <span class="k">continue</span>
+            <span class="k">if</span> <span class="n">picks</span> <span class="ow">and</span> <span class="p">(</span><span class="n">ch1</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">picks_lower</span> <span class="ow">or</span> <span class="n">ch2</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">picks_lower</span><span class="p">):</span>
+                    <span class="k">continue</span>
+            <span class="k">if</span> <span class="n">pairs</span> <span class="ow">and</span> <span class="p">(</span><span class="n">ch1</span><span class="p">,</span> <span class="n">ch2</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">pairs_lower</span><span class="p">:</span>
+                    <span class="k">continue</span>
+            <span class="n">rows</span><span class="o">.</span><span class="n">append</span><span class="p">((</span>
+                <span class="n">pos</span><span class="p">[</span><span class="n">idx1</span><span class="p">],</span>
+                <span class="n">pos</span><span class="p">[</span><span class="n">idx2</span><span class="p">],</span>
+                <span class="n">con</span><span class="p">[</span><span class="n">idx1</span><span class="p">,</span> <span class="n">idx2</span><span class="p">]</span>
+            <span class="p">))</span>
+    
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">len</span><span class="p">(</span><span class="n">rows</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;No pairs to plot&#39;</span><span class="p">)</span>
+    
+    <span class="n">con_to_plot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">row</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">rows</span><span class="p">])</span>
+    <span class="k">if</span> <span class="n">vmin</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">vmin</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">con_to_plot</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">vmax</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">vmax</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">con_to_plot</span><span class="p">,</span> <span class="mi">98</span><span class="p">)</span>
+    <span class="n">norm</span> <span class="o">=</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">Normalize</span><span class="p">(</span><span class="n">vmin</span><span class="o">=</span><span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">vmax</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="n">cm</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">cm</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">diverging_palette</span><span class="p">(</span><span class="mi">240</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">as_cmap</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
+    <span class="n">mne</span><span class="o">.</span><span class="n">viz</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">plot_sensors</span><span class="p">(</span><span class="n">info</span><span class="p">,</span> <span class="n">show_names</span><span class="o">=</span><span class="n">show_names</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">axes</span><span class="o">=</span><span class="n">ax</span><span class="p">);</span>
+    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">rows</span><span class="p">:</span>
+        <span class="n">rgba_color</span> <span class="o">=</span> <span class="n">cm</span><span class="p">(</span><span class="n">norm</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]],</span> <span class="p">[</span><span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]],</span> <span class="n">color</span><span class="o">=</span><span class="n">rgba_color</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">show_values</span><span class="p">:</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">((</span><span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">row</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> 
+                     <span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">row</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> 
+                     <span class="s1">&#39;</span><span class="si">{:.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">conn_T0</span> <span class="o">=</span> <span class="n">mne_connectivity</span><span class="o">.</span><span class="n">spectral_connectivity_epochs</span><span class="p">(</span><span class="n">epochs</span><span class="p">[</span><span class="s1">&#39;1&#39;</span><span class="p">],</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;coh&#39;</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">);</span>
+<span class="n">conn_T1</span> <span class="o">=</span> <span class="n">mne_connectivity</span><span class="o">.</span><span class="n">spectral_connectivity_epochs</span><span class="p">(</span><span class="n">epochs</span><span class="p">[</span><span class="s1">&#39;2&#39;</span><span class="p">],</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;coh&#39;</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">);</span>
+<span class="n">conn_T2</span> <span class="o">=</span> <span class="n">mne_connectivity</span><span class="o">.</span><span class="n">spectral_connectivity_epochs</span><span class="p">(</span><span class="n">epochs</span><span class="p">[</span><span class="s1">&#39;3&#39;</span><span class="p">],</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;coh&#39;</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">conn_T0</span><span class="o">.</span><span class="n">freqs</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[4.593301435406698,
+ 5.358851674641148,
+ 6.124401913875597,
+ 6.8899521531100465,
+ 7.655502392344497,
+ 8.421052631578947,
+ 9.186602870813395,
+ 9.952153110047846,
+ 10.717703349282296,
+ 11.483253588516744,
+ 12.248803827751194,
+ 13.014354066985645,
+ 13.779904306220093,
+ 14.545454545454543,
+ 15.311004784688993,
+ 16.076555023923444,
+ 16.842105263157894,
+ 17.60765550239234,
+ 18.37320574162679,
+ 19.13875598086124,
+ 19.90430622009569,
+ 20.66985645933014,
+ 21.43540669856459,
+ 22.200956937799038,
+ 22.96650717703349,
+ 23.73205741626794,
+ 24.49760765550239,
+ 25.26315789473684,
+ 26.02870813397129,
+ 26.79425837320574,
+ 27.559808612440186,
+ 28.325358851674636,
+ 29.090909090909086,
+ 29.856459330143537,
+ 30.622009569377987,
+ 31.387559808612437,
+ 32.15311004784689,
+ 32.91866028708134,
+ 33.68421052631579,
+ 34.44976076555023,
+ 35.21531100478468,
+ 35.98086124401913,
+ 36.74641148325358,
+ 37.51196172248803,
+ 38.27751196172248,
+ 39.04306220095693,
+ 39.80861244019138,
+ 40.57416267942583,
+ 41.33971291866028,
+ 42.10526315789473,
+ 42.87081339712918,
+ 43.63636363636363,
+ 44.401913875598076,
+ 45.167464114832526,
+ 45.93301435406698,
+ 46.69856459330143,
+ 47.46411483253588,
+ 48.22966507177033,
+ 48.99521531100478,
+ 49.76076555023923,
+ 50.52631578947368,
+ 51.29186602870813,
+ 52.05741626794258,
+ 52.82296650717703,
+ 53.58851674641148,
+ 54.35406698564592,
+ 55.11961722488037,
+ 55.88516746411482,
+ 56.65071770334927,
+ 57.41626794258372,
+ 58.18181818181817,
+ 58.94736842105262,
+ 59.71291866028707,
+ 60.47846889952152,
+ 61.244019138755974,
+ 62.009569377990424,
+ 62.775119617224874,
+ 63.540669856459324,
+ 64.30622009569377,
+ 65.07177033492822,
+ 65.83732057416267,
+ 66.60287081339712,
+ 67.36842105263158,
+ 68.13397129186602,
+ 68.89952153110046,
+ 69.66507177033492,
+ 70.43062200956936,
+ 71.19617224880382,
+ 71.96172248803826,
+ 72.72727272727272,
+ 73.49282296650716,
+ 74.25837320574162,
+ 75.02392344497606,
+ 75.78947368421052,
+ 76.55502392344496,
+ 77.32057416267942,
+ 78.08612440191386,
+ 78.8516746411483,
+ 79.61722488038276]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">conn_T0_beta</span> <span class="o">=</span> <span class="n">conn_T0</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">output</span><span class="o">=</span><span class="s2">&quot;dense&quot;</span><span class="p">)[:,</span> <span class="p">:,</span> <span class="mi">12</span><span class="p">:</span><span class="mi">27</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">conn_T0_beta</span> <span class="o">=</span> <span class="n">conn_T0_beta</span> <span class="o">+</span> <span class="n">conn_T0_beta</span><span class="o">.</span><span class="n">T</span>
+
+<span class="n">conn_T1_beta</span> <span class="o">=</span> <span class="n">conn_T1</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">output</span><span class="o">=</span><span class="s2">&quot;dense&quot;</span><span class="p">)[:,</span> <span class="p">:,</span> <span class="mi">12</span><span class="p">:</span><span class="mi">27</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">conn_T1_beta</span> <span class="o">=</span> <span class="n">conn_T1_beta</span> <span class="o">+</span> <span class="n">conn_T1_beta</span><span class="o">.</span><span class="n">T</span>
+
+<span class="n">conn_T2_beta</span> <span class="o">=</span> <span class="n">conn_T2</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">output</span><span class="o">=</span><span class="s2">&quot;dense&quot;</span><span class="p">)[:,</span> <span class="p">:,</span> <span class="mi">12</span><span class="p">:</span><span class="mi">27</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">conn_T2_beta</span> <span class="o">=</span> <span class="n">conn_T2_beta</span> <span class="o">+</span> <span class="n">conn_T2_beta</span><span class="o">.</span><span class="n">T</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_topomap_connectivity_2d</span><span class="p">(</span><span class="n">epochs</span><span class="o">.</span><span class="n">info</span><span class="p">,</span> <span class="n">conn_T1_beta</span><span class="p">,</span> <span class="n">picks</span><span class="o">=</span><span class="n">epochs</span><span class="o">.</span><span class="n">ch_names</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/ae0caad1937c34cb08a5b158e3ba39581f78e9f718b6cd31e24d6f10b0e92150.png" src="../_images/ae0caad1937c34cb08a5b158e3ba39581f78e9f718b6cd31e24d6f10b0e92150.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_topomap_connectivity_2d</span><span class="p">(</span><span class="n">epochs</span><span class="o">.</span><span class="n">info</span><span class="p">,</span> <span class="n">conn_T0_beta</span><span class="p">,</span> 
+                             <span class="n">pairs</span><span class="o">=</span><span class="p">[(</span><span class="s1">&#39;F7&#39;</span><span class="p">,</span> <span class="s1">&#39;F4&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;O2&#39;</span><span class="p">,</span> <span class="s1">&#39;T7&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;C3&#39;</span><span class="p">,</span> <span class="s1">&#39;C4&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;P7&#39;</span><span class="p">,</span> <span class="s1">&#39;P8&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;F8&#39;</span><span class="p">,</span> <span class="s1">&#39;T8&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;O1&#39;</span><span class="p">,</span> <span class="s1">&#39;O2&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;O1&#39;</span><span class="p">,</span> <span class="s1">&#39;P4&#39;</span><span class="p">)],</span>
+                             <span class="n">show_values</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                             <span class="n">show_names</span><span class="o">=</span><span class="kc">False</span>
+                            
+                            <span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/0c9c7431dc88c1ac040dba01f657f945302c7b33dafdbbe29a612fb999848d47.png" src="../_images/0c9c7431dc88c1ac040dba01f657f945302c7b33dafdbbe29a612fb999848d47.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># calculate coherence in alpha band</span>
+<span class="c1"># plot 5-10 pairs that you are interested in</span>
+
+<span class="c1"># YOUR CODE HERE</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./seminar1"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../seminar0/00_pytorch_fundamentals.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">00. PyTorch Fundamentals</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../seminar2/seminar2_1_mri.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">MRI data analysis, sources databases, tools</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1">Part 1</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#channel-selection-and-adding-a-montage">Channel selection and adding a montage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-the-signals">Explore the signals</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#band-pass-filtering">Band-pass filtering</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-eeg-signals">Plot EEG signals</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#extracting-events">Extracting events</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2">Part 2</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#independent-component-analysis-for-artifact-removal">Independent Component Analysis for Artifact Removal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamics-of-alpha-and-beta-activity">Dynamics of alpha and beta activity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#computing-functional-connectivity">Computing functional connectivity</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Nadezhda Alsahanova
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
