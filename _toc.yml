@@ -31,6 +31,8 @@ parts:
 - caption: Seminars 2-3. Working with MRI
   numbered: false
   chapters:
+  - file: seminar2/docker.md
+    title: Preparation to Seminar 2
   - file: seminar2/seminar2_1_mri
     title: Seminar 2.1. MRI data analysis, databases and tools
   - file: seminar2/seminar2_2_transform
