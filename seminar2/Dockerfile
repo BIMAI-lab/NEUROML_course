@@ -63,13 +63,6 @@ RUN apt-get update -qq \
     && make install \
     && rm -rf /tmp/dcm2niix
 
-ENV ANTSPATH="/opt/ants-2.2.0" \
-    PATH="/opt/ants-2.2.0:$PATH"
-RUN echo "Downloading ANTs ..." \
-    && mkdir -p /opt/ants-2.2.0 \
-    && curl -fsSL --retry 5 https://dl.dropbox.com/s/2f4sui1z6lcgyek/ANTs-Linux-centos5_x86_64-v2.2.0-0740f91.tar.gz \
-    | tar -xz -C /opt/ants-2.2.0 --strip-components 1
-
 ENV FREESURFER_HOME="/opt/freesurfer-6.0.1" \
     PATH="/opt/freesurfer-6.0.1/bin:$PATH"
 RUN apt-get update -qq \
@@ -123,7 +116,9 @@ RUN export PATH="/opt/miniconda-latest/bin:$PATH" \
            'traits' \
            'nipype' \
            'seaborn' \
-	   'heudiconv' \
+           'heudiconv' \
+           'pip' \
+    && /opt/miniconda-latest/envs/neuro/bin/pip install antspyx \
     && sync && conda clean --all && sync
 
 RUN wget --no-check-certificate https://ftpmirror.gnu.org/parallel/parallel-20190222.tar.bz2 \
@@ -172,7 +167,7 @@ RUN echo '{ \
     \n    [ \
     \n      "ants", \
     \n      { \
-    \n        "version": "2.2.0" \
+    \n        "version": "2.4.4" \
     \n      } \
     \n    ], \
     \n    [ \
