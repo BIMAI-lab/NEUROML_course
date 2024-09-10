@@ -60,12 +60,10 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'seminar1/seminar1_working_with_eeg_ipynb_';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'seminar1/seminar1_working_with_eeg_ipynb_-Copy1';</script>
     <link rel="shortcut icon" href="../_static/logo.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Preparation to the seminar 2" href="../seminar2/docker.html" />
-    <link rel="prev" title="00. PyTorch Fundamentals" href="../seminar0/00_pytorch_fundamentals.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -187,8 +185,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference external" href="https://drive.google.com/file/d/1q0XncKq2y_wHLXJaxhjfBCDGHABmzrjM/view?usp=sharing">Intro to computer vision</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Seminar 1. Working with EEG</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Seminar 1. EEG analysis</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="seminar1_working_with_eeg_ipynb_.html">Seminar 1. EEG analysis</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Seminars 2-3. Working with MRI</span></p>
 <ul class="nav bd-sidenav">
@@ -287,7 +285,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/BIMAI-lab/NEUROML_course/issues/new?title=Issue%20on%20page%20%2Fseminar1/seminar1_working_with_eeg_ipynb_.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/BIMAI-lab/NEUROML_course/issues/new?title=Issue%20on%20page%20%2Fseminar1/seminar1_working_with_eeg_ipynb_-Copy1.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -317,7 +315,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/seminar1/seminar1_working_with_eeg_ipynb_.ipynb" target="_blank"
+      <li><a href="../_sources/seminar1/seminar1_working_with_eeg_ipynb_-Copy1.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -482,7 +480,7 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># not in colab</span>
 <span class="c1"># %matplotlib notebook</span>
 <span class="c1"># in colab</span>
-<span class="c1"># %matplotlib inline</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
 </pre></div>
 </div>
 </div>
@@ -513,7 +511,7 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample</span> <span class="o">=</span> <span class="n">mne</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">read_raw_edf</span><span class="p">(</span><span class="s1">&#39;S003R03.edf&#39;</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">preload</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample</span> <span class="o">=</span> <span class="n">mne</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">read_raw_edf</span><span class="p">(</span><span class="s1">&#39;S005R03.edf&#39;</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">preload</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -626,7 +624,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>125.0
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>123.0
 </pre></div>
 </div>
 </div>
@@ -749,13 +747,13 @@ document.write(`
                 
                 <tr>
                     <th>Filenames</th>
-                    <td>S003R03.edf</td>
+                    <td>S005R03.edf</td>
                 </tr>
                 
                 
                 <tr>
                     <th>Duration</th>
-                    <td>00:02:05 (HH:MM:SS)</td>
+                    <td>00:02:03 (HH:MM:SS)</td>
                 </tr>
                 
             </table>
@@ -839,99 +837,47 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_1020</span><span class="o">.</span><span class="n">set_montage</span><span class="p">(</span><span class="n">ten_twenty_montage</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample</span><span class="o">.</span><span class="n">set_montage</span><span class="p">(</span><span class="n">ten_twenty_montage</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><details open>
-    <summary><strong>General</strong></summary>
-    <table class="table table-hover table-striped table-sm table-responsive small">
-        <tr>
-            <th>Measurement date</th>
-            
-            <td>August 12, 2009  16:15:00 GMT</td>
-            
-        </tr>
-        <tr>
-            <th>Experimenter</th>
-            
-            <td>Unknown</td>
-            
-        </tr>
-        <tr>
-            <th>Participant</th>
-            
-            
-            <td>X</td>
-            
-            
-        </tr>
-    </table>
-    </details>
-    <details open>
-        <summary><strong>Channels</strong></summary>
-        <table class="table table-hover table-striped table-sm table-responsive small">
-            <tr>
-                <th>Digitized points</th>
-                
-                <td>22 points</td>
-                
-            </tr>
-            <tr>
-                <th>Good channels</th>
-                <td>19 EEG</td>
-            </tr>
-            <tr>
-                <th>Bad channels</th>
-                <td>None</td>
-            </tr>
-            <tr>
-                <th>EOG channels</th>
-                <td>Not available</td>
-            </tr>
-            <tr>
-                <th>ECG channels</th>
-                <td>Not available</td>
-            </tr>
-        </table>
-        </details>
-        <details open>
-            <summary><strong>Data</strong></summary>
-            <table class="table table-hover table-striped table-sm table-responsive small">
-                
-                <tr>
-                    <th>Sampling frequency</th>
-                    <td>160.00 Hz</td>
-                </tr>
-                
-                
-                <tr>
-                    <th>Highpass</th>
-                    <td>0.00 Hz</td>
-                </tr>
-                
-                
-                <tr>
-                    <th>Lowpass</th>
-                    <td>80.00 Hz</td>
-                </tr>
-                
-                
-                
-                <tr>
-                    <th>Filenames</th>
-                    <td>S003R03.edf</td>
-                </tr>
-                
-                
-                <tr>
-                    <th>Duration</th>
-                    <td>00:02:05 (HH:MM:SS)</td>
-                </tr>
-                
-            </table>
-            </details></div></div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="ne">C</span>:\Users\ALEXAN~1\AppData\Local\Temp/ipykernel_14644/9837167.py in &lt;module&gt;
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">sample</span><span class="o">.</span><span class="n">set_montage</span><span class="p">(</span><span class="n">ten_twenty_montage</span><span class="p">)</span>
+
+<span class="nn">&lt;decorator-gen-25&gt;</span> in <span class="ni">set_montage</span><span class="nt">(self, montage, match_case, match_alias, on_missing, verbose)</span>
+
+<span class="nn">~\anaconda3\lib\site-packages\mne\_fiff\meas_info.py</span> in <span class="ni">set_montage</span><span class="nt">(self, montage, match_case, match_alias, on_missing, verbose)</span>
+<span class="g g-Whitespace">    </span><span class="mi">425</span> 
+<span class="g g-Whitespace">    </span><span class="mi">426</span>         <span class="n">info</span> <span class="o">=</span> <span class="bp">self</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">Info</span><span class="p">)</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">info</span>
+<span class="ne">--&gt; </span><span class="mi">427</span>         <span class="n">_set_montage</span><span class="p">(</span><span class="n">info</span><span class="p">,</span> <span class="n">montage</span><span class="p">,</span> <span class="n">match_case</span><span class="p">,</span> <span class="n">match_alias</span><span class="p">,</span> <span class="n">on_missing</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">428</span>         <span class="k">return</span> <span class="bp">self</span>
+<span class="g g-Whitespace">    </span><span class="mi">429</span> 
+
+<span class="nn">~\anaconda3\lib\site-packages\mne\channels\montage.py</span> in <span class="ni">_set_montage</span><span class="nt">(***failed resolving arguments***)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1256</span>             <span class="sa">f</span><span class="s2">&quot;position</span><span class="si">{</span><span class="n">pl</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">are_is</span><span class="si">}</span><span class="s2"> allowed to be unknown in your analyses.&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1257</span>         <span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1258</span>         <span class="n">_on_missing</span><span class="p">(</span><span class="n">on_missing</span><span class="p">,</span> <span class="n">missing_coord_msg</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1259</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1260</span>         <span class="c1"># set ch coordinates and names from digmontage or nan coords</span>
+
+<span class="nn">~\anaconda3\lib\site-packages\mne\utils\check.py</span> in <span class="ni">_on_missing</span><span class="nt">(on_missing, msg, name, error_klass)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1188</span>     <span class="n">on_missing</span> <span class="o">=</span> <span class="s2">&quot;warn&quot;</span> <span class="k">if</span> <span class="n">on_missing</span> <span class="o">==</span> <span class="s2">&quot;warning&quot;</span> <span class="k">else</span> <span class="n">on_missing</span>
+<span class="g g-Whitespace">   </span><span class="mi">1189</span>     <span class="k">if</span> <span class="n">on_missing</span> <span class="o">==</span> <span class="s2">&quot;raise&quot;</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1190</span>         <span class="k">raise</span> <span class="n">error_klass</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1191</span>     <span class="k">elif</span> <span class="n">on_missing</span> <span class="o">==</span> <span class="s2">&quot;warn&quot;</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1192</span>         <span class="n">warn</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+
+<span class="ne">ValueError</span>: DigMontage is only a subset of info. There are 28 channel positions not present in the DigMontage. The channels missing from the montage are:
+
+<span class="p">[</span><span class="s1">&#39;Fc5&#39;</span><span class="p">,</span> <span class="s1">&#39;Fc3&#39;</span><span class="p">,</span> <span class="s1">&#39;Fc1&#39;</span><span class="p">,</span> <span class="s1">&#39;Fcz&#39;</span><span class="p">,</span> <span class="s1">&#39;Fc2&#39;</span><span class="p">,</span> <span class="s1">&#39;Fc4&#39;</span><span class="p">,</span> <span class="s1">&#39;Fc6&#39;</span><span class="p">,</span> <span class="s1">&#39;Cp5&#39;</span><span class="p">,</span> <span class="s1">&#39;Cp3&#39;</span><span class="p">,</span> <span class="s1">&#39;Cp1&#39;</span><span class="p">,</span> <span class="s1">&#39;Cpz&#39;</span><span class="p">,</span> <span class="s1">&#39;Cp2&#39;</span><span class="p">,</span> <span class="s1">&#39;Cp4&#39;</span><span class="p">,</span> <span class="s1">&#39;Cp6&#39;</span><span class="p">,</span> <span class="s1">&#39;Af7&#39;</span><span class="p">,</span> <span class="s1">&#39;Af3&#39;</span><span class="p">,</span> <span class="s1">&#39;Afz&#39;</span><span class="p">,</span> <span class="s1">&#39;Af4&#39;</span><span class="p">,</span> <span class="s1">&#39;Af8&#39;</span><span class="p">,</span> <span class="s1">&#39;Ft7&#39;</span><span class="p">,</span> <span class="s1">&#39;Ft8&#39;</span><span class="p">,</span> <span class="s1">&#39;Tp7&#39;</span><span class="p">,</span> <span class="s1">&#39;Tp8&#39;</span><span class="p">,</span> <span class="s1">&#39;Po7&#39;</span><span class="p">,</span> <span class="s1">&#39;Po3&#39;</span><span class="p">,</span> <span class="s1">&#39;Poz&#39;</span><span class="p">,</span> <span class="s1">&#39;Po4&#39;</span><span class="p">,</span> <span class="s1">&#39;Po8&#39;</span><span class="p">]</span><span class="o">.</span>
+
+<span class="n">Consider</span> <span class="n">using</span> <span class="n">inst</span><span class="o">.</span><span class="n">rename_channels</span> <span class="n">to</span> <span class="n">match</span> <span class="n">the</span> <span class="n">montage</span> <span class="n">nomenclature</span><span class="p">,</span> <span class="ow">or</span> <span class="n">inst</span><span class="o">.</span><span class="n">set_channel_types</span> <span class="k">if</span> <span class="n">these</span> <span class="n">are</span> <span class="ow">not</span> <span class="n">EEG</span> <span class="n">channels</span><span class="p">,</span> <span class="ow">or</span> <span class="n">use</span> <span class="n">the</span> <span class="n">on_missing</span> <span class="n">parameter</span> <span class="k">if</span> <span class="n">the</span> <span class="n">channel</span> <span class="n">positions</span> <span class="n">are</span> <span class="n">allowed</span> <span class="n">to</span> <span class="n">be</span> <span class="n">unknown</span> <span class="ow">in</span> <span class="n">your</span> <span class="n">analyses</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -940,7 +886,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/787dcf32afdc13ee58ebc4631afb19745ec1a080e87b11468fb3da4b6c2b2680.png" src="../_images/787dcf32afdc13ee58ebc4631afb19745ec1a080e87b11468fb3da4b6c2b2680.png" />
+<img alt="../_images/2832d206ad77394b9287b3f77e938395c20c2779491d61301d935f40bfe49b74.png" src="../_images/2832d206ad77394b9287b3f77e938395c20c2779491d61301d935f40bfe49b74.png" />
 </div>
 </div>
 </section>
@@ -954,9 +900,13 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Effective window size : 12.800 (s)
+Plotting power spectral density (dB=True).
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Plotting power spectral density (dB=True).
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ALEXAN~1\AppData\Local\Temp/ipykernel_2220/2993928519.py:1: FutureWarning: The value of `amplitude=&#39;auto&#39;` will be removed in MNE 1.8.0, and the new default will be `amplitude=False`.
+  sample_1020.compute_psd().plot();
+C:\Users\Alexander\anaconda3\lib\site-packages\mne\viz\utils.py:167: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  (fig or plt).show(**kwargs)
 </pre></div>
 </div>
 <img alt="../_images/1c3cb306ef8e3a88d4bf2d016f9b510c6f687986dfdf27ce0a81760c96c7fd31.png" src="../_images/1c3cb306ef8e3a88d4bf2d016f9b510c6f687986dfdf27ce0a81760c96c7fd31.png" />
@@ -976,30 +926,13 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Filtering raw data in 1 contiguous segment
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Setting up band-pass filter from 1 - 50 Hz
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>IIR filter parameters
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>---------------------
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Butterworth bandpass zero-phase (two-pass forward and reverse) non-causal filter:
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>- Filter order 16 (effective, after forward-backward)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>- Cutoffs at 1.00, 50.00 Hz: -6.02, -6.02 dB
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+Setting up band-pass filter from 1 - 50 Hz
+
+IIR filter parameters
+---------------------
+Butterworth bandpass zero-phase (two-pass forward and reverse) non-causal filter:
+- Filter order 16 (effective, after forward-backward)
+- Cutoffs at 1.00, 50.00 Hz: -6.02, -6.02 dB
 </pre></div>
 </div>
 <div class="output text_html"><details open>
@@ -1190,24 +1123,12 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Not setting metadata
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>30 matching events found
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Setting baseline interval to [-0.5, 0.0] s
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Applying baseline correction (mode: mean)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 projection items activated
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Using data from preloaded Raw for 30 events and 209 original time points ...
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1 bad epochs dropped
+30 matching events found
+Setting baseline interval to [-0.5, 0.0] s
+Applying baseline correction (mode: mean)
+0 projection items activated
+Using data from preloaded Raw for 30 events and 209 original time points ...
+1 bad epochs dropped
 </pre></div>
 </div>
 </div>
@@ -1369,63 +1290,25 @@ Name: count, dtype: int64
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Not setting metadata
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>30 matching events found
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Applying baseline correction (mode: mean)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 projection items activated
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Using data from preloaded Raw for 30 events and 209 original time points ...
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Rejecting  epoch based on EEG : [&#39;Fp1&#39;, &#39;Fp2&#39;]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Rejecting  epoch based on EEG : [&#39;Fp2&#39;]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Rejecting  epoch based on EEG : [&#39;Fp2&#39;]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Rejecting  epoch based on EEG : [&#39;Fp2&#39;]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Rejecting  epoch based on EEG : [&#39;Fp2&#39;]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Rejecting  epoch based on EEG : [&#39;Fp1&#39;, &#39;Fp2&#39;]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Rejecting  epoch based on EEG : [&#39;Fp1&#39;, &#39;Fp2&#39;]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Rejecting  epoch based on EEG : [&#39;Fp1&#39;, &#39;Fp2&#39;]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Rejecting  epoch based on EEG : [&#39;Fp1&#39;, &#39;Fp2&#39;]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Rejecting  epoch based on EEG : [&#39;Fp1&#39;, &#39;Fp2&#39;]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Rejecting  epoch based on EEG : [&#39;Fp2&#39;]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Rejecting  epoch based on EEG : [&#39;Fp1&#39;, &#39;Fp2&#39;]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Rejecting  epoch based on EEG : [&#39;Fp1&#39;, &#39;Fp2&#39;]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Rejecting  epoch based on EEG : [&#39;Fp1&#39;, &#39;Fp2&#39;]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15 bad epochs dropped
+30 matching events found
+Applying baseline correction (mode: mean)
+0 projection items activated
+Using data from preloaded Raw for 30 events and 209 original time points ...
+    Rejecting  epoch based on EEG : [&#39;Fp1&#39;, &#39;Fp2&#39;]
+    Rejecting  epoch based on EEG : [&#39;Fp2&#39;]
+    Rejecting  epoch based on EEG : [&#39;Fp2&#39;]
+    Rejecting  epoch based on EEG : [&#39;Fp2&#39;]
+    Rejecting  epoch based on EEG : [&#39;Fp2&#39;]
+    Rejecting  epoch based on EEG : [&#39;Fp1&#39;, &#39;Fp2&#39;]
+    Rejecting  epoch based on EEG : [&#39;Fp1&#39;, &#39;Fp2&#39;]
+    Rejecting  epoch based on EEG : [&#39;Fp1&#39;, &#39;Fp2&#39;]
+    Rejecting  epoch based on EEG : [&#39;Fp1&#39;, &#39;Fp2&#39;]
+    Rejecting  epoch based on EEG : [&#39;Fp1&#39;, &#39;Fp2&#39;]
+    Rejecting  epoch based on EEG : [&#39;Fp2&#39;]
+    Rejecting  epoch based on EEG : [&#39;Fp1&#39;, &#39;Fp2&#39;]
+    Rejecting  epoch based on EEG : [&#39;Fp1&#39;, &#39;Fp2&#39;]
+    Rejecting  epoch based on EEG : [&#39;Fp1&#39;, &#39;Fp2&#39;]
+15 bad epochs dropped
 </pre></div>
 </div>
 </div>
@@ -1439,15 +1322,15 @@ Name: count, dtype: int64
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NOTE: plot_psd() is a legacy function. New code should use .compute_psd().plot().
+    Using multitaper spectrum estimation with 7 DPSS windows
+Plotting power spectral density (dB=True).
+Averaging across epochs...
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Using multitaper spectrum estimation with 7 DPSS windows
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Plotting power spectral density (dB=True).
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Averaging across epochs...
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\ALEXAN~1\AppData\Local\Temp/ipykernel_2220/2204970765.py:1: FutureWarning: The value of `amplitude=&#39;auto&#39;` will be removed in MNE 1.8.0, and the new default will be `amplitude=False`.
+  epochs.plot_psd();
+C:\Users\Alexander\anaconda3\lib\site-packages\mne\viz\utils.py:167: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  (fig or plt).show(**kwargs)
 </pre></div>
 </div>
 <img alt="../_images/03c3d4e91de1f8806c4018160fe4d2b7896abe03acd74e7006712e5d0f1010c0.png" src="../_images/03c3d4e91de1f8806c4018160fe4d2b7896abe03acd74e7006712e5d0f1010c0.png" />
@@ -1572,12 +1455,8 @@ Name: count, dtype: int64
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fitting ICA to data using 19 channels (please be patient, this may take a while)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Selecting by number: 10 components
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fitting ICA took 0.5s.
+Selecting by number: 10 components
+Fitting ICA took 1.3s.
 </pre></div>
 </div>
 <div class="output text_html"><table class="table table-hover table-striped table-sm table-responsive small">
@@ -1636,12 +1515,8 @@ Name: count, dtype: int64
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Creating RawArray with float64 data, n_channels=10, n_times=20000
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Range : 0 ... 19999 =      0.000 ...   124.994 secs
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ready.
+    Range : 0 ... 19999 =      0.000 ...   124.994 secs
+Ready.
 </pre></div>
 </div>
 <img alt="../_images/03355a862c7f573922acdd1f461573cc8c41e915f70d2bbf71c1b7b722bf1d9a.png" src="../_images/03355a862c7f573922acdd1f461573cc8c41e915f70d2bbf71c1b7b722bf1d9a.png" />
@@ -1667,18 +1542,10 @@ Name: count, dtype: int64
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Using multitaper spectrum estimation with 7 DPSS windows
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Not setting metadata
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>62 matching events found
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>No baseline correction applied
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 projection items activated
+Not setting metadata
+62 matching events found
+No baseline correction applied
+0 projection items activated
 </pre></div>
 </div>
 <img alt="../_images/dce9754ee88be4c0868d814775d140fd311662cc4112e07240de5676454c0c50.png" src="../_images/dce9754ee88be4c0868d814775d140fd311662cc4112e07240de5676454c0c50.png" />
@@ -1693,15 +1560,9 @@ Name: count, dtype: int64
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Applying ICA to Raw instance
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Transforming to ICA space (10 components)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Zeroing out 3 ICA components
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Projecting back using 19 PCA components
+    Transforming to ICA space (10 components)
+    Zeroing out 3 ICA components
+    Projecting back using 19 PCA components
 </pre></div>
 </div>
 <img alt="../_images/94459928f97fbf63a12117972a0434c30fd4ef16625bbb5d3c7c2d9b8ee987d0.png" src="../_images/94459928f97fbf63a12117972a0434c30fd4ef16625bbb5d3c7c2d9b8ee987d0.png" />
@@ -1715,15 +1576,9 @@ Name: count, dtype: int64
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Applying ICA to Raw instance
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Transforming to ICA space (10 components)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Zeroing out 2 ICA components
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Projecting back using 19 PCA components
+    Transforming to ICA space (10 components)
+    Zeroing out 2 ICA components
+    Projecting back using 19 PCA components
 </pre></div>
 </div>
 <img alt="../_images/f1a2b5483d18b280a88032307b1b012c6a21c332170f4ef4260fe3e9820dbc4d.png" src="../_images/f1a2b5483d18b280a88032307b1b012c6a21c332170f4ef4260fe3e9820dbc4d.png" />
@@ -1751,15 +1606,9 @@ Name: count, dtype: int64
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Applying ICA to Raw instance
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Transforming to ICA space (10 components)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Zeroing out 2 ICA components
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Projecting back using 19 PCA components
+    Transforming to ICA space (10 components)
+    Zeroing out 2 ICA components
+    Projecting back using 19 PCA components
 </pre></div>
 </div>
 <div class="output text_html"><details open>
@@ -1868,21 +1717,11 @@ Name: count, dtype: int64
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Not setting metadata
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>30 matching events found
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Applying baseline correction (mode: mean)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 projection items activated
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Using data from preloaded Raw for 30 events and 209 original time points ...
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1 bad epochs dropped
+30 matching events found
+Applying baseline correction (mode: mean)
+0 projection items activated
+Using data from preloaded Raw for 30 events and 209 original time points ...
+1 bad epochs dropped
 </pre></div>
 </div>
 </div>
@@ -1940,12 +1779,8 @@ Name: count, dtype: int64
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>combining channels using GFP (eeg channels)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>combining channels using GFP (eeg channels)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>combining channels using GFP (eeg channels)
+combining channels using GFP (eeg channels)
+combining channels using GFP (eeg channels)
 </pre></div>
 </div>
 <img alt="../_images/ff3d97235d2bc26a788d91cbe9891a1b9163e57c5a552a2c816e0ead73bc4ca2.png" src="../_images/ff3d97235d2bc26a788d91cbe9891a1b9163e57c5a552a2c816e0ead73bc4ca2.png" />
@@ -2009,54 +1844,22 @@ Name: count, dtype: int64
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Adding metadata with 3 columns
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Connectivity computation...
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>only using indices for lower-triangular matrix
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    computing connectivity for 171 connections
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    using t=-0.500s..0.800s for estimation (209 points)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    frequencies: 4.6Hz..79.6Hz (99 points)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Using multitaper spectrum estimation with 7 DPSS windows
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    the following metrics will be computed: Coherence
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    computing cross-spectral density for epoch 1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    computing cross-spectral density for epoch 2
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    computing cross-spectral density for epoch 3
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    computing cross-spectral density for epoch 4
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    computing cross-spectral density for epoch 5
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    computing cross-spectral density for epoch 6
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    computing cross-spectral density for epoch 7
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    assembling connectivity matrix
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Connectivity computation done]
+Connectivity computation...
+only using indices for lower-triangular matrix
+    computing connectivity for 171 connections
+    using t=-0.500s..0.800s for estimation (209 points)
+    frequencies: 4.6Hz..79.6Hz (99 points)
+    Using multitaper spectrum estimation with 7 DPSS windows
+    the following metrics will be computed: Coherence
+    computing cross-spectral density for epoch 1
+    computing cross-spectral density for epoch 2
+    computing cross-spectral density for epoch 3
+    computing cross-spectral density for epoch 4
+    computing cross-spectral density for epoch 5
+    computing cross-spectral density for epoch 6
+    computing cross-spectral density for epoch 7
+    assembling connectivity matrix
+[Connectivity computation done]
 </pre></div>
 </div>
 </div>
@@ -2229,24 +2032,6 @@ Name: count, dtype: int64
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="../seminar0/00_pytorch_fundamentals.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">00. PyTorch Fundamentals</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="../seminar2/docker.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Preparation to the seminar 2</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div></div>
   
 </div>
