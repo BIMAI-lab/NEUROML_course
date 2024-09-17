@@ -202,9 +202,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../seminar2/seminar2_3_freesurfer.html">FREESURFER</a></li>
 
 
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1i0f49198_Jb4fp-dw-8Dl46S8gKRyO8A?usp=sharing">Seminar 3.1. MRI classification on morphometry data</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://drive.google.com/file/d/1HuS7ChgQvch4vrD8gfITGUZP9E8hZ8Hw/view?usp=sharing">Seminar 3.2. MRI classification with 3D CNN</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://drive.google.com/file/d/1m7mWY0LI2M6PdevJf5rLCdm-WrAOoXJ-/view?usp=sharing">Seminar 3.3. MRI segmentation with 3D U-net</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://drive.google.com/file/d/1HuS7ChgQvch4vrD8gfITGUZP9E8hZ8Hw/view?usp=sharing">Seminar 3.1. MRI classification with 3D CNN</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://drive.google.com/file/d/1m7mWY0LI2M6PdevJf5rLCdm-WrAOoXJ-/view?usp=sharing">Seminar 3.2. MRI segmentation with 3D U-net</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Seminar 4-6. Working with fMRI</span></p>
 <ul class="current nav bd-sidenav">
@@ -439,7 +438,7 @@ document.write(`
 <p>Pull docker image from docker registry:<br />
 <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">pull</span> <span class="pre">miykael/nipype_tutorial:latest</span></code><br />
 (make sure that docker daemon on your computer is working)<br />
-In case of any troubles please read this [instruction](docker pull miykael/nipype_tutorial:latest)</p>
+In case of any troubles please read this <a class="reference external" href="https://miykael.github.io/nipype_tutorial/notebooks/introduction_docker.html">instruction</a></p>
 </section>
 <section id="step-2">
 <h3>Step 2.<a class="headerlink" href="#step-2" title="Permalink to this headline">#</a></h3>
@@ -449,14 +448,14 @@ In case of any troubles please read this [instruction](docker pull miykael/nipyp
 <h3>Step 3.<a class="headerlink" href="#step-3" title="Permalink to this headline">#</a></h3>
 <p>Run this command to run docker container with mounted directory of the seminar.</p>
 <p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span> <span class="pre">-it</span> <span class="pre">--rm</span> <span class="pre">-p</span> <span class="pre">8888:8888</span> <span class="pre">-v</span> <span class="pre">&lt;PATH_TO_SEMINAR_4_ON_YOUR_PC&gt;:/home/neuro/nipype_tutorial/notebooks/seminar</span> <span class="pre">miykael/nipype_tutorial</span> <span class="pre">jupyter</span> <span class="pre">notebook</span> </code><br />
-Note that <code class="docutils literal notranslate"><span class="pre">&lt;PATH_TO_SEMINAR_4_ON_YOUR_PC&gt;</span></code> is a global path to the seminar 4 directory on your computer.<br />
-Don’t forget to copy the token of your jupyter server (check the terminal). Then detach your container (<code class="docutils literal notranslate"><span class="pre">CTRL+P+Q</span></code>) just in case. If everything is okay, the jupyter server can be reached at <a class="reference external" href="http://localhost:8888/">http://localhost:8888/</a>.</p>
+Note that <code class="docutils literal notranslate"><span class="pre">&lt;PATH_TO_SEMINAR_4_ON_YOUR_PC&gt;</span></code> is a global path to the seminar 4 directory on your computer.</p>
+<p>Don’t forget to copy the <strong>token</strong> of your jupyter server (check the terminal). Then detach your container (<code class="docutils literal notranslate"><span class="pre">CTRL+P+Q</span></code>) just in case. If everything is okay, the jupyter server can be reached at <a class="reference external" href="http://localhost:8888/">http://localhost:8888/</a>.</p>
 </section>
 </section>
 <section id="faq">
 <h2>FAQ.<a class="headerlink" href="#faq" title="Permalink to this headline">#</a></h2>
-<p>In case of any problem with datalas during datased pulling (I faced it on the machines with M1* chips) please download dataset from <a class="reference external" href="https://disk.yandex.ru/d/Q2dZs2CoM2Sohw">here</a>. Then please put the archive to the mounted directory from the previous step. Next you need to unarchive data. In order to do so please attach to you docker container <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">exec</span> <span class="pre">-ti</span> <span class="pre">-u</span> <span class="pre">root</span> <span class="pre">&lt;CONTAINER</span> <span class="pre">NAME&gt;</span></code>. Container name can be checked by means of this command <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">ps</span></code>. Then inside your container please run <code class="docutils literal notranslate"><span class="pre">tar</span> <span class="pre">-xf</span> <span class="pre">&lt;ARCHIVE_NAME&gt;.tar</span></code>.  Make sure to specify the correct path to data inside all of your notebooks.</p>
-<p>Also I uploaded all artifacts (preprocessed data etc.) obtained during two parts of the seminar <a class="reference external" href="https://disk.yandex.ru/d/V5N05i337wUw_g">here</a>. In case of any problem with notebook execution you can simply take it and use. The procedure of using this data is the same as for dataset% download, move, unarchive, specify correct pathes.</p>
+<p>In case of any problem with datalas during datased pulling (someone can face it on the machines with M1* chips) please download dataset from <a class="reference external" href="https://disk.yandex.ru/d/Q2dZs2CoM2Sohw">here</a>. Then please put the archive to the mounted directory from the previous step. Next you need to unarchive data. In order to do so please attach to you docker container <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">exec</span> <span class="pre">-ti</span> <span class="pre">-u</span> <span class="pre">root</span> <span class="pre">&lt;CONTAINER</span> <span class="pre">NAME&gt;</span></code>. Container name can be checked by means of this command <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">ps</span></code>. Then inside your container please run <code class="docutils literal notranslate"><span class="pre">tar</span> <span class="pre">-xf</span> <span class="pre">&lt;ARCHIVE_NAME&gt;.tar</span></code>.  Make sure to specify the correct path to data inside all of your notebooks.</p>
+<p>Also all artifacts (preprocessed data etc.) obtained during two parts of the seminar are uploaded <a class="reference external" href="https://disk.yandex.ru/d/V5N05i337wUw_g">here</a>. In case of any problem with notebook execution you can simply take it and use. The procedure of using this data is the same as for dataset% download, move, unarchive, specify correct pathes.</p>
 <section id="dataset">
 <h3>Dataset:<a class="headerlink" href="#dataset" title="Permalink to this headline">#</a></h3>
 <ul class="simple">

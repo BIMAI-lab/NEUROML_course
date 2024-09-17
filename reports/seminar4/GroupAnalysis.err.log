@@ -23,7 +23,7 @@ datalad get -J 4 -d /data/ds000114 /data/ds000114/derivatives/fmriprep/sub-0[234
 
 [1;31m---------------------------------------------------------------------------[0m
 [1;31mCalledProcessError[0m                        Traceback (most recent call last)
-[1;32mC:\Users\ALEXAN~1\AppData\Local\Temp/ipykernel_8012/1077004943.py[0m in [0;36m<module>[1;34m[0m
+[1;32mC:\Users\ALEXAN~1\AppData\Local\Temp/ipykernel_17864/1077004943.py[0m in [0;36m<module>[1;34m[0m
 [1;32m----> 1[1;33m [0mget_ipython[0m[1;33m([0m[1;33m)[0m[1;33m.[0m[0mrun_cell_magic[0m[1;33m([0m[1;34m'bash'[0m[1;33m,[0m [1;34m''[0m[1;33m,[0m [1;34m'datalad get -J 4 -d /data/ds000114 /data/ds000114/derivatives/fmriprep/sub-0[2345789]/anat/*h5\n'[0m[1;33m)[0m[1;33m[0m[1;33m[0m[0m
 [0m
 [1;32m~\anaconda3\lib\site-packages\IPython\core\interactiveshell.py[0m in [0;36mrun_cell_magic[1;34m(self, magic_name, line, cell)[0m

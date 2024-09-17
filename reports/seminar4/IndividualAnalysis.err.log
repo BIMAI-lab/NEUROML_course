@@ -34,7 +34,7 @@ from utils import list_files
 
 [1;31m---------------------------------------------------------------------------[0m
 [1;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-[1;32mC:\Users\ALEXAN~1\AppData\Local\Temp/ipykernel_18692/869111389.py[0m in [0;36m<module>[1;34m[0m
+[1;32mC:\Users\ALEXAN~1\AppData\Local\Temp/ipykernel_16872/869111389.py[0m in [0;36m<module>[1;34m[0m
 [0;32m      2[0m [1;32mimport[0m [0mos[0m[1;33m[0m[1;33m[0m[0m
 [0;32m      3[0m [1;33m[0m[0m
 [1;32m----> 4[1;33m [1;32mfrom[0m [0mnilearn[0m [1;32mimport[0m [0mplotting[0m[1;33m[0m[1;33m[0m[0m
