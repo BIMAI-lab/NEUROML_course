@@ -37,7 +37,7 @@ model_0
 
 [1;31m---------------------------------------------------------------------------[0m
 [1;31mNameError[0m                                 Traceback (most recent call last)
-[1;32mC:\Users\ALEXAN~1\AppData\Local\Temp/ipykernel_18280/1631652932.py[0m in [0;36m<module>[1;34m[0m
+[1;32mC:\Users\ALEXAN~1\AppData\Local\Temp/ipykernel_16048/1631652932.py[0m in [0;36m<module>[1;34m[0m
 [0;32m     13[0m [1;33m[0m[0m
 [0;32m     14[0m [1;31m# 4. Create an instance of the model and send it to target device[0m[1;33m[0m[1;33m[0m[0m
 [1;32m---> 15[1;33m [0mmodel_0[0m [1;33m=[0m [0mCircleModelV0[0m[1;33m([0m[1;33m)[0m[1;33m.[0m[0mto[0m[1;33m([0m[0mdevice[0m[1;33m)[0m[1;33m[0m[1;33m[0m[0m
