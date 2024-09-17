@@ -39,12 +39,10 @@ parts:
     title: Seminar 2.2. MRI transformations
   - file: seminar2/seminar2_3_freesurfer
     title: Seminar 2.3. Freesurfer
-  - url: https://colab.research.google.com/drive/1i0f49198_Jb4fp-dw-8Dl46S8gKRyO8A?usp=sharing
-    title: Seminar 3.1. MRI classification on morphometry data
   - url: https://drive.google.com/file/d/1HuS7ChgQvch4vrD8gfITGUZP9E8hZ8Hw/view?usp=sharing
-    title: Seminar 3.2. MRI classification with 3D CNN
+    title: Seminar 3.1. MRI classification with 3D CNN
   - url: https://drive.google.com/file/d/1m7mWY0LI2M6PdevJf5rLCdm-WrAOoXJ-/view?usp=sharing
-    title: Seminar 3.3. MRI segmentation with 3D U-net
+    title: Seminar 3.2. MRI segmentation with 3D U-net
 
 - caption: Seminar 4-6. Working with fMRI
   numbered: false
