@@ -41,14 +41,16 @@ parts:
     title: Seminar 2.3. Freesurfer
   - url: https://colab.research.google.com/drive/1i0f49198_Jb4fp-dw-8Dl46S8gKRyO8A?usp=sharing
     title: Seminar 3.1. MRI classification on morphometry data
-  - url: https://colab.research.google.com/drive/1fUSEvtxTgWYatJTBa1kHjKQU2vUW0V3v?usp=sharing
+  - url: https://drive.google.com/file/d/1HuS7ChgQvch4vrD8gfITGUZP9E8hZ8Hw/view?usp=sharing
     title: Seminar 3.2. MRI classification with 3D CNN
-  - url: https://colab.research.google.com/drive/19yE-7yJDztLJHCvxFgMR6rGH-A3MFjsM?usp=sharing
+  - url: https://drive.google.com/file/d/1m7mWY0LI2M6PdevJf5rLCdm-WrAOoXJ-/view?usp=sharing
     title: Seminar 3.3. MRI segmentation with 3D U-net
 
 - caption: Seminar 4-6. Working with fMRI
   numbered: false
   chapters:
+  - file: seminar4/README.md
+    title: Preparation to Seminar 4
   - url: https://colab.research.google.com/drive/1V3pLq3B_AdMFBL3EVJD9VFU7GJ0PvAA5?usp=sharing
     title: Seminar 5. Functional connectivity
   - url: https://colab.research.google.com/drive/1elqHcFpcx1_QX4jhbNihM0whPgfJzBV3?usp=sharing
