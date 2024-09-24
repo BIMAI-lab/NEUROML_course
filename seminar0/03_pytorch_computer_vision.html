@@ -206,10 +206,8 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Seminar 4-6. Working with fMRI</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../seminar4/README.html">Preparation to Seminar 4</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1V3pLq3B_AdMFBL3EVJD9VFU7GJ0PvAA5?usp=sharing">Seminar 5. Functional connectivity</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1elqHcFpcx1_QX4jhbNihM0whPgfJzBV3?usp=sharing">Seminar 6.1. Extract ICA components from fMRI data</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1zFSdOD0HkhTi9r2l4t_pbW--FFgTK9fm?usp=sharing">Seminar 6.2. Deep Learning methods for fMRI data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../seminar4/README.html">Preparation to Seminar 4-5</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1yrb9DbrZoGs0bD7li_UuU3jPvf7_KH1B?usp=sharing">Seminar 6. Analyze task-based fMRI for motor and emotion task</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Seminar 7. Interpretation</span></p>
 <ul class="nav bd-sidenav">
@@ -1036,7 +1034,7 @@ torchvision version: 0.12.0+cpu
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dataloaders: (&lt;torch.utils.data.dataloader.DataLoader object at 0x0000015E3392B910&gt;, &lt;torch.utils.data.dataloader.DataLoader object at 0x0000015E33931460&gt;)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dataloaders: (&lt;torch.utils.data.dataloader.DataLoader object at 0x00000257E5D1B070&gt;, &lt;torch.utils.data.dataloader.DataLoader object at 0x00000257E5D20400&gt;)
 Length of train dataloader: 1875 batches of 32
 Length of test dataloader: 313 batches of 32
 </pre></div>
@@ -1123,7 +1121,7 @@ Label: 6, label size: torch.Size([])
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="ne">C</span>:\Users\ALEXAN~1\AppData\Local\Temp/ipykernel_2152/1631652932.py in &lt;module&gt;
+<span class="ne">C</span>:\Users\ALEXAN~1\AppData\Local\Temp/ipykernel_8056/1631652932.py in &lt;module&gt;
 <span class="g g-Whitespace">     </span><span class="mi">13</span> 
 <span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="c1"># 4. Create an instance of the model and send it to target device</span>
 <span class="ne">---&gt; </span><span class="mi">15</span> <span class="n">model_0</span> <span class="o">=</span> <span class="n">CircleModelV0</span><span class="p">()</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>

@@ -210,10 +210,8 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Seminar 4-6. Working with fMRI</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../seminar4/README.html">Preparation to Seminar 4</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1V3pLq3B_AdMFBL3EVJD9VFU7GJ0PvAA5?usp=sharing">Seminar 5. Functional connectivity</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1elqHcFpcx1_QX4jhbNihM0whPgfJzBV3?usp=sharing">Seminar 6.1. Extract ICA components from fMRI data</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1zFSdOD0HkhTi9r2l4t_pbW--FFgTK9fm?usp=sharing">Seminar 6.2. Deep Learning methods for fMRI data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../seminar4/README.html">Preparation to Seminar 4-5</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1yrb9DbrZoGs0bD7li_UuU3jPvf7_KH1B?usp=sharing">Seminar 6. Analyze task-based fMRI for motor and emotion task</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Seminar 7. Interpretation</span></p>
 <ul class="nav bd-sidenav">
@@ -1373,8 +1371,8 @@ sns.catplot<span class="o">?</span>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/4e3039d71dcd9c97a98aff6eb5b101cc50d292facff9f3918c80ddef77df9f79.png" src="../_images/4e3039d71dcd9c97a98aff6eb5b101cc50d292facff9f3918c80ddef77df9f79.png" />
-<img alt="../_images/1e4b2cf5d923f63db7fda1c5efff961b00b143fc703da587ae06adedc9ecae4e.png" src="../_images/1e4b2cf5d923f63db7fda1c5efff961b00b143fc703da587ae06adedc9ecae4e.png" />
+<img alt="../_images/ef49b9619dd552e4130fb9b9501b097668605c5c09288646484c6877680430a0.png" src="../_images/ef49b9619dd552e4130fb9b9501b097668605c5c09288646484c6877680430a0.png" />
+<img alt="../_images/ee8c3d4a5578200012af43ccc802746e6e485b70101a018d17b99c16195adb38.png" src="../_images/ee8c3d4a5578200012af43ccc802746e6e485b70101a018d17b99c16195adb38.png" />
 </div>
 </div>
 </section>
@@ -1530,7 +1528,7 @@ Corr(x,y)  \in [-1, 1]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ca66decd768a955f8a29c201f99a77f4e7e0883a9849b28864758320256738c8.png" src="../_images/ca66decd768a955f8a29c201f99a77f4e7e0883a9849b28864758320256738c8.png" />
+<img alt="../_images/6739abfd2a823a1ca128b81cbb1dd3c48ddc6ade68a58973228ee93278be3997.png" src="../_images/6739abfd2a823a1ca128b81cbb1dd3c48ddc6ade68a58973228ee93278be3997.png" />
 </div>
 </div>
 </section>
@@ -2547,37 +2545,130 @@ Y_test:  (10000,)
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|                                                                                           | 0/33 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  3%|██▌                                                                                | 1/33 [00:01&lt;00:59,  1.85s/it]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  3%|██▌                                                                                | 1/33 [00:01&lt;00:32,  1.01s/it]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  6%|█████                                                                              | 2/33 [00:04&lt;01:10,  2.29s/it]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  6%|█████                                                                              | 2/33 [00:02&lt;00:35,  1.15s/it]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  9%|███████▌                                                                           | 3/33 [00:06&lt;01:09,  2.30s/it]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  9%|███████▌                                                                           | 3/33 [00:03&lt;00:35,  1.19s/it]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 12%|██████████                                                                         | 4/33 [00:09&lt;01:13,  2.54s/it]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 12%|██████████                                                                         | 4/33 [00:05&lt;00:39,  1.36s/it]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 15%|████████████▌                                                                      | 5/33 [00:12&lt;01:11,  2.54s/it]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 15%|████████████▌                                                                      | 5/33 [00:06&lt;00:39,  1.42s/it]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 18%|███████████████                                                                    | 6/33 [00:15&lt;01:19,  2.96s/it]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 18%|███████████████                                                                    | 6/33 [00:08&lt;00:42,  1.58s/it]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 21%|█████████████████▌                                                                 | 7/33 [00:19&lt;01:25,  3.28s/it]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 21%|█████████████████▌                                                                 | 7/33 [00:10&lt;00:43,  1.69s/it]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 24%|████████████████████                                                               | 8/33 [00:23&lt;01:24,  3.38s/it]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 24%|████████████████████                                                               | 8/33 [00:12&lt;00:44,  1.78s/it]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 27%|██████████████████████▋                                                            | 9/33 [00:27&lt;01:26,  3.62s/it]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 27%|██████████████████████▋                                                            | 9/33 [00:14&lt;00:46,  1.94s/it]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 27%|██████████████████████▋                                                            | 9/33 [00:30&lt;01:20,  3.33s/it]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 30%|████████████████████████▊                                                         | 10/33 [00:17&lt;00:47,  2.05s/it]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 33%|███████████████████████████▎                                                      | 11/33 [00:19&lt;00:47,  2.15s/it]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 36%|█████████████████████████████▊                                                    | 12/33 [00:21&lt;00:46,  2.22s/it]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 39%|████████████████████████████████▎                                                 | 13/33 [00:24&lt;00:47,  2.39s/it]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 42%|██████████████████████████████████▊                                               | 14/33 [00:27&lt;00:47,  2.48s/it]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 45%|█████████████████████████████████████▎                                            | 15/33 [00:29&lt;00:45,  2.54s/it]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 45%|█████████████████████████████████████▎                                            | 15/33 [00:30&lt;00:36,  2.00s/it]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="ne">C</span>:\Users\ALEXAN~1\AppData\Local\Temp/ipykernel_15464/4144833336.py in &lt;module&gt;
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="k">for</span> <span class="n">pc</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">3</span><span class="p">)):</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="n">pca</span> <span class="o">=</span> <span class="n">PCA</span><span class="p">(</span><span class="n">pc</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">5</span>     <span class="n">X_train_pca</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_train_scaled</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="n">X_test_pca</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> 
+
+<span class="nn">~\anaconda3\lib\site-packages\sklearn\decomposition\_pca.py</span> in <span class="ni">fit_transform</span><span class="nt">(self, X, y)</span>
+<span class="g g-Whitespace">    </span><span class="mi">381</span>         <span class="n">C</span><span class="o">-</span><span class="n">ordered</span> <span class="n">array</span><span class="p">,</span> <span class="n">use</span> <span class="s1">&#39;np.ascontiguousarray&#39;</span><span class="o">.</span>
+<span class="g g-Whitespace">    </span><span class="mi">382</span>         <span class="s2">&quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">383</span><span class="s2">         U, S, Vt = self._fit(X)</span>
+<span class="g g-Whitespace">    </span><span class="mi">384</span><span class="s2">         U = U[:, :self.n_components_]</span>
+<span class="g g-Whitespace">    </span><span class="mi">385</span><span class="s2"> </span>
+
+<span class="nn">~\anaconda3\lib\site-packages\sklearn\decomposition\_pca.py</span> in <span class="ni">_fit</span><span class="nt">(self, X)</span>
+<span class="g g-Whitespace">    </span><span class="mi">430</span><span class="s2">             return self._fit_full(X, n_components)</span>
+<span class="g g-Whitespace">    </span><span class="mi">431</span><span class="s2">         elif self._fit_svd_solver in [&#39;arpack&#39;, &#39;randomized&#39;]:</span>
+<span class="ne">--&gt; </span><span class="mi">432</span><span class="s2">             return self._fit_truncated(X, n_components, self._fit_svd_solver)</span>
+<span class="g g-Whitespace">    </span><span class="mi">433</span><span class="s2">         else:</span>
+<span class="g g-Whitespace">    </span><span class="mi">434</span><span class="s2">             raise ValueError(&quot;Unrecognized svd_solver=&#39;</span><span class="si">{0}</span><span class="s2">&#39;&quot;</span>
+
+<span class="nn">~\anaconda3\lib\site-packages\sklearn\decomposition\_pca.py</span> in <span class="ni">_fit_truncated</span><span class="nt">(self, X, n_components, svd_solver)</span>
+<span class="g g-Whitespace">    </span><span class="mi">546</span><span class="s2">         elif svd_solver == &#39;randomized&#39;:</span>
+<span class="g g-Whitespace">    </span><span class="mi">547</span><span class="s2">             # sign flipping is done inside</span>
+<span class="ne">--&gt; </span><span class="mi">548</span><span class="s2">             U, S, Vt = randomized_svd(X, n_components=n_components,</span>
+<span class="g g-Whitespace">    </span><span class="mi">549</span><span class="s2">                                       n_iter=self.iterated_power,</span>
+<span class="g g-Whitespace">    </span><span class="mi">550</span><span class="s2">                                       flip_sign=True,</span>
+
+<span class="nn">~\anaconda3\lib\site-packages\sklearn\utils\validation.py</span> in <span class="ni">inner_f</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">61</span><span class="s2">             extra_args = len(args) - len(all_args)</span>
+<span class="g g-Whitespace">     </span><span class="mi">62</span><span class="s2">             if extra_args &lt;= 0:</span>
+<span class="ne">---&gt; </span><span class="mi">63</span><span class="s2">                 return f(*args, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">64</span><span class="s2"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">65</span><span class="s2">             # extra_args &gt; 0</span>
+
+<span class="nn">~\anaconda3\lib\site-packages\sklearn\utils\extmath.py</span> in <span class="ni">randomized_svd</span><span class="nt">(M, n_components, n_oversamples, n_iter, power_iteration_normalizer, transpose, flip_sign, random_state)</span>
+<span class="g g-Whitespace">    </span><span class="mi">346</span><span class="s2">         M = M.T</span>
+<span class="g g-Whitespace">    </span><span class="mi">347</span><span class="s2"> </span>
+<span class="ne">--&gt; </span><span class="mi">348</span><span class="s2">     Q = randomized_range_finder(</span>
+<span class="g g-Whitespace">    </span><span class="mi">349</span><span class="s2">         M, size=n_random, n_iter=n_iter,</span>
+<span class="g g-Whitespace">    </span><span class="mi">350</span><span class="s2">         power_iteration_normalizer=power_iteration_normalizer,</span>
+
+<span class="nn">~\anaconda3\lib\site-packages\sklearn\utils\validation.py</span> in <span class="ni">inner_f</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">61</span><span class="s2">             extra_args = len(args) - len(all_args)</span>
+<span class="g g-Whitespace">     </span><span class="mi">62</span><span class="s2">             if extra_args &lt;= 0:</span>
+<span class="ne">---&gt; </span><span class="mi">63</span><span class="s2">                 return f(*args, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">64</span><span class="s2"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">65</span><span class="s2">             # extra_args &gt; 0</span>
+
+<span class="nn">~\anaconda3\lib\site-packages\sklearn\utils\extmath.py</span> in <span class="ni">randomized_range_finder</span><span class="nt">(A, size, n_iter, power_iteration_normalizer, random_state)</span>
+<span class="g g-Whitespace">    </span><span class="mi">231</span><span class="s2">             Q = safe_sparse_dot(A.T, Q)</span>
+<span class="g g-Whitespace">    </span><span class="mi">232</span><span class="s2">         elif power_iteration_normalizer == &#39;LU&#39;:</span>
+<span class="ne">--&gt; </span><span class="mi">233</span><span class="s2">             Q, _ = linalg.lu(safe_sparse_dot(A, Q), permute_l=True)</span>
+<span class="g g-Whitespace">    </span><span class="mi">234</span><span class="s2">             Q, _ = linalg.lu(safe_sparse_dot(A.T, Q), permute_l=True)</span>
+<span class="g g-Whitespace">    </span><span class="mi">235</span><span class="s2">         elif power_iteration_normalizer == &#39;QR&#39;:</span>
+
+<span class="nn">~\anaconda3\lib\site-packages\sklearn\utils\validation.py</span> in <span class="ni">inner_f</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">61</span><span class="s2">             extra_args = len(args) - len(all_args)</span>
+<span class="g g-Whitespace">     </span><span class="mi">62</span><span class="s2">             if extra_args &lt;= 0:</span>
+<span class="ne">---&gt; </span><span class="mi">63</span><span class="s2">                 return f(*args, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">64</span><span class="s2"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">65</span><span class="s2">             # extra_args &gt; 0</span>
+
+<span class="nn">~\anaconda3\lib\site-packages\sklearn\utils\extmath.py</span> in <span class="ni">safe_sparse_dot</span><span class="nt">(a, b, dense_output)</span>
+<span class="g g-Whitespace">    </span><span class="mi">150</span><span class="s2">             ret = np.dot(a, b)</span>
+<span class="g g-Whitespace">    </span><span class="mi">151</span><span class="s2">     else:</span>
+<span class="ne">--&gt; </span><span class="mi">152</span><span class="s2">         ret = a @ b</span>
+<span class="g g-Whitespace">    </span><span class="mi">153</span><span class="s2"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">154</span><span class="s2">     if (sparse.issparse(a) and sparse.issparse(b)</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
 </div>
 </div>

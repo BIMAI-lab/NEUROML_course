@@ -210,10 +210,8 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Seminar 4-6. Working with fMRI</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../seminar4/README.html">Preparation to Seminar 4</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1V3pLq3B_AdMFBL3EVJD9VFU7GJ0PvAA5?usp=sharing">Seminar 5. Functional connectivity</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1elqHcFpcx1_QX4jhbNihM0whPgfJzBV3?usp=sharing">Seminar 6.1. Extract ICA components from fMRI data</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1zFSdOD0HkhTi9r2l4t_pbW--FFgTK9fm?usp=sharing">Seminar 6.2. Deep Learning methods for fMRI data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../seminar4/README.html">Preparation to Seminar 4-5</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1yrb9DbrZoGs0bD7li_UuU3jPvf7_KH1B?usp=sharing">Seminar 6. Analyze task-based fMRI for motor and emotion task</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Seminar 7. Interpretation</span></p>
 <ul class="nav bd-sidenav">
@@ -769,9 +767,9 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(tensor([[0.8401, 0.8826, 0.7993, 0.1470],
-         [0.5499, 0.6535, 0.7134, 0.5118],
-         [0.3660, 0.8192, 0.0611, 0.6424]]),
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(tensor([[0.3333, 0.8072, 0.2383, 0.7939],
+         [0.0101, 0.9724, 0.2936, 0.2365],
+         [0.7882, 0.3681, 0.8565, 0.8759]]),
  torch.float32)
 </pre></div>
 </div>
@@ -1581,8 +1579,9 @@ New shape: torch.Size([7])
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Previous tensor: tensor([1., 2., 3., 4., 5., 6., 7.])
 Previous shape: torch.Size([7])
-
-New tensor: tensor([[1., 2., 3., 4., 5., 6., 7.]])
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>New tensor: tensor([[1., 2., 3., 4., 5., 6., 7.]])
 New shape: torch.Size([1, 7])
 </pre></div>
 </div>

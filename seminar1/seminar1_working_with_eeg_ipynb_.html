@@ -208,10 +208,8 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Seminar 4-6. Working with fMRI</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../seminar4/README.html">Preparation to Seminar 4</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1V3pLq3B_AdMFBL3EVJD9VFU7GJ0PvAA5?usp=sharing">Seminar 5. Functional connectivity</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1elqHcFpcx1_QX4jhbNihM0whPgfJzBV3?usp=sharing">Seminar 6.1. Extract ICA components from fMRI data</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1zFSdOD0HkhTi9r2l4t_pbW--FFgTK9fm?usp=sharing">Seminar 6.2. Deep Learning methods for fMRI data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../seminar4/README.html">Preparation to Seminar 4-5</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1yrb9DbrZoGs0bD7li_UuU3jPvf7_KH1B?usp=sharing">Seminar 6. Analyze task-based fMRI for motor and emotion task</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Seminar 7. Interpretation</span></p>
 <ul class="nav bd-sidenav">
@@ -1914,7 +1912,7 @@ if (IPython.notebook.kernel !== null) {
         mpl.mpl_figure_comm
     );
 }
-</script><div class="output text_html"><div id='b35e3271-f152-4f73-964f-859fb0f3d3e7'></div></div></div>
+</script><div class="output text_html"><div id='f319b362-8de1-4a74-9aef-59c3198079f5'></div></div></div>
 </div>
 </section>
 <section id="explore-the-signals">
@@ -2906,7 +2904,7 @@ if (IPython.notebook.kernel !== null) {
         mpl.mpl_figure_comm
     );
 }
-</script><div class="output text_html"><div id='18f9d609-870e-4c11-8cd1-a5e7b33d5f05'></div></div></div>
+</script><div class="output text_html"><div id='7fb075e9-dacc-48cb-904e-9a958a5a131b'></div></div></div>
 </div>
 <p>Do you see peaks connected to power line noise?</p>
 <p>The <a class="reference external" href="https://mne.tools/stable/generated/mne.filter.notch_filter.html#mne-filter-notch-filter">notch filter’s</a> purpose is to filter out activity at a specific frequency (rather than a frequency range). Because the alternating current in standard electric outlets in North America oscillates at 60 Hz, electric fields produced by the 60-Hz activity in the environment that surrounds us in our indoor environments frequently contaminates the EEG. Sixty-hertz notch filters (filters designed specifically to filter out 60-Hz activity) are used to attenuate or eliminate this unwanted signal. In countries where line frequencies are 50 Hz, 50-Hz notch filters are used for the same purpose.</p>
@@ -4033,7 +4031,7 @@ if (IPython.notebook.kernel !== null) {
         mpl.mpl_figure_comm
     );
 }
-</script><div class="output text_html"><div id='654a85b0-3a2f-4997-aa1c-3e9bc7df046e'></div></div></div>
+</script><div class="output text_html"><div id='8e15ef23-f4ee-40ae-9411-fd0d3351f25c'></div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -5019,7 +5017,7 @@ if (IPython.notebook.kernel !== null) {
         mpl.mpl_figure_comm
     );
 }
-</script><div class="output text_html"><div id='ef829077-74cd-4283-b358-dce6146ab8d5'></div></div></div>
+</script><div class="output text_html"><div id='19e4afd4-5fec-49de-bede-3a2149e478d2'></div></div></div>
 </div>
 </section>
 </section>
@@ -6223,7 +6221,7 @@ if (IPython.notebook.kernel !== null) {
         mpl.mpl_figure_comm
     );
 }
-</script><div class="output text_html"><div id='46fd1dce-4076-4587-8044-70f05410b7d0'></div></div></div>
+</script><div class="output text_html"><div id='e1bfd8dc-7e78-416c-bbe4-e439371a9fd8'></div></div></div>
 </div>
 <p>Note also that the Epochs constructor accepts parameters <code class="docutils literal notranslate"><span class="pre">reject</span></code> for rejecting individual epochs based on signal amplitude.</p>
 <div class="cell docutils container">
@@ -7289,7 +7287,7 @@ if (IPython.notebook.kernel !== null) {
         mpl.mpl_figure_comm
     );
 }
-</script><div class="output text_html"><div id='9101a3d5-756c-40e1-8ac3-57fee2e8ae99'></div></div></div>
+</script><div class="output text_html"><div id='d25a4928-1547-405d-aea8-dff56c02b4d7'></div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -8272,7 +8270,7 @@ if (IPython.notebook.kernel !== null) {
         mpl.mpl_figure_comm
     );
 }
-</script><div class="output text_html"><div id='6ab33d75-609e-4623-900a-f8d4673dc726'></div></div></div>
+</script><div class="output text_html"><div id='53f71b60-6111-4255-bbd3-154c98fc2f10'></div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -9286,7 +9284,7 @@ if (IPython.notebook.kernel !== null) {
         mpl.mpl_figure_comm
     );
 }
-</script><div class="output text_html"><div id='9a4cda16-1875-4a50-a21a-af30eea2f51e'></div></div></div>
+</script><div class="output text_html"><div id='e972745e-d617-4b26-929e-d5663469f91a'></div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -10269,7 +10267,7 @@ if (IPython.notebook.kernel !== null) {
         mpl.mpl_figure_comm
     );
 }
-</script><div class="output text_html"><div id='0d5bb0bf-de0b-4579-96e4-b6ef0f60dffd'></div></div></div>
+</script><div class="output text_html"><div id='8fb51aac-7fbd-4315-9164-c0a2ba5b8f0c'></div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -11252,7 +11250,7 @@ if (IPython.notebook.kernel !== null) {
         mpl.mpl_figure_comm
     );
 }
-</script><div class="output text_html"><div id='acbb5156-062b-4818-a003-fd14173830da'></div></div></div>
+</script><div class="output text_html"><div id='2da13f69-6d57-4e50-9bfe-ed8f74fa9d6b'></div></div></div>
 </div>
 </section>
 </section>
@@ -11307,7 +11305,7 @@ if (IPython.notebook.kernel !== null) {
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Selecting by number: 12 components
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fitting ICA took 0.9s.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fitting ICA took 0.4s.
 </pre></div>
 </div>
 <div class="output text_html"><table class="table table-hover table-striped table-sm table-responsive small">
@@ -12348,7 +12346,7 @@ if (IPython.notebook.kernel !== null) {
         mpl.mpl_figure_comm
     );
 }
-</script><div class="output text_html"><div id='2bef9ee4-476e-4021-9188-feeb17d33133'></div></div></div>
+</script><div class="output text_html"><div id='0c70c5cd-66f7-4071-b099-09d5ca38538a'></div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -13331,7 +13329,7 @@ if (IPython.notebook.kernel !== null) {
         mpl.mpl_figure_comm
     );
 }
-</script><div class="output text_html"><div id='72d5d3c4-0090-411f-849c-058ee52fb697'></div></div></div>
+</script><div class="output text_html"><div id='8f00b4f2-967c-466e-8718-3e34fc84af10'></div></div></div>
 </div>
 <p>Inspect ICA components more deeply. Check out spectrogram. Segments info is not very relevant here since we build ICA on the raw data</p>
 <p>We expect to see alpha and beta rythms picks on the spectrogram for good components (7-13 Hz and 13-30Hz respectively). And also slight decrease as frequency goes higher</p>
@@ -14316,7 +14314,7 @@ if (IPython.notebook.kernel !== null) {
         mpl.mpl_figure_comm
     );
 }
-</script><div class="output text_html"><div id='e138c7d2-333d-4f35-b34e-29a2e3cc2fd3'></div></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Using multitaper spectrum estimation with 7 DPSS windows
+</script><div class="output text_html"><div id='2218f6ec-f5b2-4763-a0ab-9078650310dc'></div></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Using multitaper spectrum estimation with 7 DPSS windows
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Not setting metadata
@@ -15327,7 +15325,7 @@ if (IPython.notebook.kernel !== null) {
         mpl.mpl_figure_comm
     );
 }
-</script><div class="output text_html"><div id='0331f5f6-b6be-428f-931a-ca7270dcaa43'></div></div></div>
+</script><div class="output text_html"><div id='144a6f20-1fb1-4e21-b015-8ff47e73f270'></div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -16322,7 +16320,7 @@ if (IPython.notebook.kernel !== null) {
         mpl.mpl_figure_comm
     );
 }
-</script><div class="output text_html"><div id='77fbe2fa-5a45-4d83-bf1e-258266335b47'></div></div></div>
+</script><div class="output text_html"><div id='3deb6c60-a5ff-4c30-86fa-267058c95f65'></div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -17430,7 +17428,7 @@ if (IPython.notebook.kernel !== null) {
         mpl.mpl_figure_comm
     );
 }
-</script><div class="output text_html"><div id='cd7adbdb-50c7-493c-b56e-28c10e959f63'></div></div></div>
+</script><div class="output text_html"><div id='876aef21-2cb1-463a-9b77-9d891d31ceaa'></div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -18449,7 +18447,7 @@ if (IPython.notebook.kernel !== null) {
         mpl.mpl_figure_comm
     );
 }
-</script><div class="output text_html"><div id='cf052ac1-097f-4d11-be92-4ed065f6c177'></div></div></div>
+</script><div class="output text_html"><div id='331c1576-37e3-4e7e-9164-d939d29c445d'></div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -19432,7 +19430,7 @@ if (IPython.notebook.kernel !== null) {
         mpl.mpl_figure_comm
     );
 }
-</script><div class="output text_html"><div id='91b64d77-2cac-4f26-9b59-9d65646b281d'></div></div></div>
+</script><div class="output text_html"><div id='7efc1d4b-a16a-48b5-8947-58fd98788d50'></div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -20415,7 +20413,7 @@ if (IPython.notebook.kernel !== null) {
         mpl.mpl_figure_comm
     );
 }
-</script><div class="output text_html"><div id='a7e85766-2e80-4716-9a55-458fd5dbf3cd'></div></div></div>
+</script><div class="output text_html"><div id='f56e2fa8-ec58-4637-acda-d6190a6d6208'></div></div></div>
 </div>
 <p>Let’s plot Global Field Power (GFP).</p>
 <p>GFP is, generally speaking, a measure of agreement of the signals picked up by all sensors across the entire scalp: if all sensors have the same value at a given time point, the GFP will be zero at that time point. If the signals differ, the GFP will be non-zero at that time point. GFP peaks may reflect “interesting” brain activity, warranting further investigation.</p>
@@ -21404,7 +21402,7 @@ if (IPython.notebook.kernel !== null) {
         mpl.mpl_figure_comm
     );
 }
-</script><div class="output text_html"><div id='7984fd2a-c947-414e-a57b-c0605569cf07'></div></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>combining channels using GFP (eeg channels)
+</script><div class="output text_html"><div id='5dcd6f92-9c76-438c-acfc-e0a71674ac0e'></div></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>combining channels using GFP (eeg channels)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>combining channels using GFP (eeg channels)
@@ -22401,7 +22399,7 @@ if (IPython.notebook.kernel !== null) {
         mpl.mpl_figure_comm
     );
 }
-</script><div class="output text_html"><div id='16aee24f-3a44-477e-a007-f437139059a2'></div></div><script type="application/javascript">/* Put everything inside the global mpl namespace */
+</script><div class="output text_html"><div id='cc62d5a8-a0ba-48d3-921a-4a4cfa99e168'></div></div><script type="application/javascript">/* Put everything inside the global mpl namespace */
 /* global mpl */
 window.mpl = {};
 
@@ -23375,7 +23373,7 @@ if (IPython.notebook.kernel !== null) {
         mpl.mpl_figure_comm
     );
 }
-</script><div class="output text_html"><div id='cb0f764c-da4e-4937-82b5-d1133da5133a'></div></div></div>
+</script><div class="output text_html"><div id='c2f041cf-457d-4fea-8c96-96eac5ca6352'></div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -24362,7 +24360,7 @@ if (IPython.notebook.kernel !== null) {
         mpl.mpl_figure_comm
     );
 }
-</script><div class="output text_html"><div id='d247a953-f351-4bef-befe-3eacb66d112e'></div></div><script type="application/javascript">/* Put everything inside the global mpl namespace */
+</script><div class="output text_html"><div id='59a11bdd-5504-41a8-a166-a9eff4b0c517'></div></div><script type="application/javascript">/* Put everything inside the global mpl namespace */
 /* global mpl */
 window.mpl = {};
 
@@ -25336,7 +25334,7 @@ if (IPython.notebook.kernel !== null) {
         mpl.mpl_figure_comm
     );
 }
-</script><div class="output text_html"><div id='9e2e14cb-d761-4c4a-8299-d53d2d896cfa'></div></div></div>
+</script><div class="output text_html"><div id='bc53096f-ce3c-4c69-894a-a5becaa45e8c'></div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -26323,7 +26321,7 @@ if (IPython.notebook.kernel !== null) {
         mpl.mpl_figure_comm
     );
 }
-</script><div class="output text_html"><div id='08dadf39-8387-4ffc-8517-e256a691ab96'></div></div><script type="application/javascript">/* Put everything inside the global mpl namespace */
+</script><div class="output text_html"><div id='383cfc40-3122-4645-beea-8a6bb7302e23'></div></div><script type="application/javascript">/* Put everything inside the global mpl namespace */
 /* global mpl */
 window.mpl = {};
 
@@ -27297,7 +27295,7 @@ if (IPython.notebook.kernel !== null) {
         mpl.mpl_figure_comm
     );
 }
-</script><div class="output text_html"><div id='362d4342-be91-449a-8a4f-9a49cafbc556'></div></div></div>
+</script><div class="output text_html"><div id='5e64d3bc-4dc1-485a-9efc-77025ac26ae9'></div></div></div>
 </div>
 </section>
 </section>
@@ -28445,7 +28443,7 @@ if (IPython.notebook.kernel !== null) {
         mpl.mpl_figure_comm
     );
 }
-</script><div class="output text_html"><div id='3c013100-9459-4ae3-8d7a-b9f5258f8c27'></div></div></div>
+</script><div class="output text_html"><div id='2907f714-d5e0-4457-b7ae-5753c5c1a5db'></div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -29432,7 +29430,7 @@ if (IPython.notebook.kernel !== null) {
         mpl.mpl_figure_comm
     );
 }
-</script><div class="output text_html"><div id='7d92c6b6-9261-432c-bb83-974cfcde0a6e'></div></div></div>
+</script><div class="output text_html"><div id='c33a7e11-dcbc-4a46-8264-8c70a9085fcd'></div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -30415,7 +30413,7 @@ if (IPython.notebook.kernel !== null) {
         mpl.mpl_figure_comm
     );
 }
-</script><div class="output text_html"><div id='b2b86caf-85e6-414f-a7c4-1f98c5403e57'></div></div></div>
+</script><div class="output text_html"><div id='362038a2-33dd-45d9-b966-e73bf1046dc0'></div></div></div>
 </div>
 <p>Over the motor cortex, beta waves (12-20 Hz) are associated with the muscle contractions that happen in isotonic movements and are suppressed prior to and during movement changes, with similar observations across fine and gross motor skills.</p>
 <div class="cell docutils container">
