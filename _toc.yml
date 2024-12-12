@@ -18,6 +18,8 @@ parts:
     title: Python fundamentals
   - file: seminar0/Seminar1_ML
     title: Machine learning fundamentals
+  - url: https://colab.research.google.com/drive/1jkf4Jt0QvDz2O7UoZ-sZAi0V0oke5Yju?usp=sharing
+    title: Machine learning fundamentals on medical data
   - file: seminar0/00_pytorch_fundamentals
     title: Pytorch fundamentals
   - url: https://drive.google.com/file/d/1q0XncKq2y_wHLXJaxhjfBCDGHABmzrjM/view?usp=sharing
