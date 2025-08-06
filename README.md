@@ -8,6 +8,7 @@ This is a repository containing seminars and lecture materials for the Skoltech 
 ## Main links
 
 - [Cite](https://bimai-lab.github.io/NEUROML_course/intro.html)
+- [:cupid: Lab Page](https://adase.appliedai.tech/)
 - [✈️ Telegram Channel](https://t.me/+oI9K02ZDD1NiMGQy)
 
 
