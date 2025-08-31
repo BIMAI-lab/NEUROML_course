@@ -25,6 +25,15 @@ parts:
   - url: https://drive.google.com/file/d/1q0XncKq2y_wHLXJaxhjfBCDGHABmzrjM/view?usp=sharing
     title: Intro to computer vision
 
+
+- caption: Seminar 0. Opening Seminar 
+  numbered: false
+  chapters:
+  - file: intro/intro.md
+    title: Lecture Notes
+  - file: intro/opening_seminar.ipynb
+    title: Opening Seminar
+
 - caption: Seminar 1. Working with EEG
   numbered: false
   chapters:
