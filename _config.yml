@@ -35,3 +35,5 @@ html:
   favicon: "./logo.png"
   use_issues_button: true
   use_repository_button: true
+  extra_css:
+   - _static/myadmonitions.css
