@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>00. PyTorch Fundamentals &#8212; Neuroimaging and Machine Learning for Biomedicine</title>
   
@@ -15,61 +14,60 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/myadmonitions.css?v=0009bf62" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'seminar0/00_pytorch_fundamentals';</script>
-    <link rel="shortcut icon" href="../_static/logo.png"/>
+    <link rel="icon" href="../_static/logo.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Seminar 1. EEG analysis" href="../seminar1/seminar1_working_with_eeg_ipynb_.html" />
+    <link rel="next" title="Lecture Notes" href="../intro/intro.html" />
     <link rel="prev" title="Intro to ML" href="Seminar1_ML.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -77,19 +75,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -111,12 +113,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -131,9 +141,13 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="../intro.html">
+  
   
   
   
@@ -143,12 +157,23 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Neuroimaging and Machine Learning for Biomedicine - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Neuroimaging and Machine Learning for Biomedicine - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -185,8 +210,24 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1jkf4Jt0QvDz2O7UoZ-sZAi0V0oke5Yju?usp=sharing">Machine learning fundamentals on medical data</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Pytorch fundamentals</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://drive.google.com/file/d/1q0XncKq2y_wHLXJaxhjfBCDGHABmzrjM/view?usp=sharing">Intro to computer vision</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Seminar 0. Opening Seminar</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../intro/intro.html">Lecture Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/opening_seminar.html">Motivation &amp; Overview</a></li>
+
+
+
+
+
+
+
+
+
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Seminar 1. Working with EEG</span></p>
 <ul class="nav bd-sidenav">
@@ -231,7 +272,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -240,14 +281,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -369,26 +410,28 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -473,18 +516,18 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="pytorch-fundamentals">
-<h1>00. PyTorch Fundamentals<a class="headerlink" href="#pytorch-fundamentals" title="Permalink to this headline">#</a></h1>
+<h1>00. PyTorch Fundamentals<a class="headerlink" href="#pytorch-fundamentals" title="Link to this heading">#</a></h1>
 <p><a class="reference external" href="https://colab.research.google.com/drive/1f3BvsOhhtbExXPz6K5ecV_BgyhMNlTm8?usp=sharing"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
 <section id="pytorch-allows-you-to-manipulate-and-process-data-and-write-machine-learning-algorithms-using-python-code">
-<h2>PyTorch allows you to manipulate and process data and write machine learning algorithms using Python code.<a class="headerlink" href="#pytorch-allows-you-to-manipulate-and-process-data-and-write-machine-learning-algorithms-using-python-code" title="Permalink to this headline">#</a></h2>
+<h2>PyTorch allows you to manipulate and process data and write machine learning algorithms using Python code.<a class="headerlink" href="#pytorch-allows-you-to-manipulate-and-process-data-and-write-machine-learning-algorithms-using-python-code" title="Link to this heading">#</a></h2>
 </section>
 <section id="what-we-re-going-to-cover-in-this-module">
-<h2>What we’re going to cover in this module<a class="headerlink" href="#what-we-re-going-to-cover-in-this-module" title="Permalink to this headline">#</a></h2>
+<h2>What we’re going to cover in this module<a class="headerlink" href="#what-we-re-going-to-cover-in-this-module" title="Link to this heading">#</a></h2>
 <p>We’re going to cover:</p>
-<table class="colwidths-auto table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p><strong>Topic</strong></p></th>
 <th class="head"><p><strong>Contents</strong></p></th>
@@ -520,26 +563,33 @@ document.write(`
 </tr>
 </tbody>
 </table>
+</div>
 </section>
 <section id="importing-pytorch">
-<h2>Importing PyTorch<a class="headerlink" href="#importing-pytorch" title="Permalink to this headline">#</a></h2>
+<h2>Importing PyTorch<a class="headerlink" href="#importing-pytorch" title="Link to this heading">#</a></h2>
 <p>Let’s start by importing PyTorch and checking the version we’re using.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
 <span class="n">torch</span><span class="o">.</span><span class="n">__version__</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;1.11.0&#39;
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">torch</span><span class="o">.</span><span class="n">__version__</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;torch&#39;
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="introduction-to-tensors">
-<h2>Introduction to tensors<a class="headerlink" href="#introduction-to-tensors" title="Permalink to this headline">#</a></h2>
+<h2>Introduction to tensors<a class="headerlink" href="#introduction-to-tensors" title="Link to this heading">#</a></h2>
 <p>Tensors are the fundamental building block of machine learning.</p>
 <p>Their job is to represent data in a numerical way.</p>
 <p>For example, you could represent an image as a tensor with shape <code class="docutils literal notranslate"><span class="pre">[3,</span> <span class="pre">224,</span> <span class="pre">224]</span></code> which would mean <code class="docutils literal notranslate"><span class="pre">[colour_channels,</span> <span class="pre">height,</span> <span class="pre">width]</span></code>, as in the image has <code class="docutils literal notranslate"><span class="pre">3</span></code> colour channels (red, green, blue), a height of <code class="docutils literal notranslate"><span class="pre">224</span></code> pixels and a width of <code class="docutils literal notranslate"><span class="pre">224</span></code> pixels.</p>
@@ -548,7 +598,7 @@ document.write(`
 <p>But we’re getting ahead of ourselves.</p>
 <p>Let’s learn more about tensors by coding them.</p>
 <section id="creating-tensors">
-<h3>Creating tensors<a class="headerlink" href="#creating-tensors" title="Permalink to this headline">#</a></h3>
+<h3>Creating tensors<a class="headerlink" href="#creating-tensors" title="Link to this heading">#</a></h3>
 <p>PyTorch loves tensors. So much so there’s a whole documentation page dedicated to the <a class="reference external" href="https://pytorch.org/docs/stable/tensors.html"><code class="docutils literal notranslate"><span class="pre">torch.Tensor</span></code></a> class.</p>
 <p>Let’s code.</p>
 <p>The first thing we’re going to create is a <strong>scalar</strong>.</p>
@@ -620,7 +670,7 @@ document.write(`
 <p>How many dimensions do you think it’ll have?</p>
 </section>
 <section id="task">
-<h3>TASK<a class="headerlink" href="#task" title="Permalink to this headline">#</a></h3>
+<h3>TASK<a class="headerlink" href="#task" title="Link to this heading">#</a></h3>
 <p>Check the number of dimensions of vector</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -669,7 +719,7 @@ document.write(`
 </div>
 </section>
 <section id="id1">
-<h3>TASK<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<h3>TASK<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <p>Check the number of dimensions and shape</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -700,7 +750,7 @@ document.write(`
 </div>
 </section>
 <section id="id2">
-<h3>TASK<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
+<h3>TASK<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <p>Check the number of dimensions and shape</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -713,7 +763,7 @@ document.write(`
 <p>That means there’s 1 dimension of 3 by 3.</p>
 <p><img alt="example of different tensor dimensions" src="https://raw.githubusercontent.com/mrdbourke/pytorch-deep-learning/main/images/00-pytorch-different-tensor-dimensions.png" /></p>
 <p>Let’s summarise.</p>
-<table class="colwidths-auto table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
 <th class="head"><p>What is it?</p></th>
@@ -744,10 +794,11 @@ document.write(`
 </tr>
 </tbody>
 </table>
+</div>
 <p><img alt="scalar vector matrix tensor and what they look like" src="https://raw.githubusercontent.com/mrdbourke/pytorch-deep-learning/main/images/00-scalar-vector-matrix-tensor.png" /></p>
 </section>
 <section id="random-tensors">
-<h3>Random tensors<a class="headerlink" href="#random-tensors" title="Permalink to this headline">#</a></h3>
+<h3>Random tensors<a class="headerlink" href="#random-tensors" title="Link to this heading">#</a></h3>
 <p>We’ve established tensors represent some form of data.</p>
 <p>And machine learning models such as neural networks manipulate and seek patterns within tensors.</p>
 <p>But when building machine learning models with PyTorch, it’s rare you’ll create tensors by hand (like what we’ve being doing).</p>
@@ -767,9 +818,9 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(tensor([[0.3333, 0.8072, 0.2383, 0.7939],
-         [0.0101, 0.9724, 0.2936, 0.2365],
-         [0.7882, 0.3681, 0.8565, 0.8759]]),
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(tensor([[0.9328, 0.2536, 0.9397, 0.2386],
+         [0.5772, 0.9247, 0.9495, 0.1839],
+         [0.2117, 0.0706, 0.0098, 0.4946]]),
  torch.float32)
 </pre></div>
 </div>
@@ -779,7 +830,7 @@ document.write(`
 <p>For example, say you wanted a random tensor in the common image shape of <code class="docutils literal notranslate"><span class="pre">[224,</span> <span class="pre">224,</span> <span class="pre">3]</span></code> (<code class="docutils literal notranslate"><span class="pre">[height,</span> <span class="pre">width,</span> <span class="pre">color_channels</span></code>]).</p>
 </section>
 <section id="id3">
-<h3>Task<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<h3>Task<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <p>Create a random tensor of size (224, 224, 3), check shape and dtype</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -791,7 +842,7 @@ document.write(`
 </div>
 </section>
 <section id="zeros-and-ones">
-<h3>Zeros and ones<a class="headerlink" href="#zeros-and-ones" title="Permalink to this headline">#</a></h3>
+<h3>Zeros and ones<a class="headerlink" href="#zeros-and-ones" title="Link to this heading">#</a></h3>
 <p>Sometimes you’ll just want to fill tensors with zeros or ones.</p>
 <p>This happens a lot with masking (like masking some of the values in one tensor with zeros to let a model know not to learn them).</p>
 <p>Let’s create a tensor full of zeros with <a class="reference external" href="https://pytorch.org/docs/stable/generated/torch.zeros.html"><code class="docutils literal notranslate"><span class="pre">torch.zeros()</span></code></a></p>
@@ -814,7 +865,7 @@ document.write(`
 </div>
 </div>
 <section id="id4">
-<h4>TASK<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h4>
+<h4>TASK<a class="headerlink" href="#id4" title="Link to this heading">#</a></h4>
 <p>We can do the same to create a tensor of all ones except using <a class="reference external" href="https://pytorch.org/docs/stable/generated/torch.ones.html"><code class="docutils literal notranslate"><span class="pre">torch.ones()</span></code> </a> instead.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -826,7 +877,7 @@ document.write(`
 </section>
 </section>
 <section id="tensor-datatypes">
-<h3>Tensor datatypes<a class="headerlink" href="#tensor-datatypes" title="Permalink to this headline">#</a></h3>
+<h3>Tensor datatypes<a class="headerlink" href="#tensor-datatypes" title="Link to this heading">#</a></h3>
 <p>There are many different <a class="reference external" href="https://pytorch.org/docs/stable/tensors.html#data-types">tensor datatypes available in PyTorch</a>.</p>
 <p>Some are specific for CPU and some are better for GPU.</p>
 <p>Getting to know which is which can take some time.</p>
@@ -893,7 +944,7 @@ document.write(`
 </section>
 </section>
 <section id="getting-information-from-tensors">
-<h2>Getting information from tensors<a class="headerlink" href="#getting-information-from-tensors" title="Permalink to this headline">#</a></h2>
+<h2>Getting information from tensors<a class="headerlink" href="#getting-information-from-tensors" title="Link to this heading">#</a></h2>
 <p>Once you’ve created tensors (or someone else or a PyTorch module has created them for you), you might want to get some information from them.</p>
 <p>We’ve seen these before but three of the most common attributes you’ll want to find out about tensors are:</p>
 <ul class="simple">
@@ -903,7 +954,7 @@ document.write(`
 </ul>
 <p>Let’s create a random tensor and find out details about it.</p>
 <section id="id5">
-<h3>TASK<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
+<h3>TASK<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a tensor with torch.rand and print itsshape, dtype, device</span>
@@ -921,7 +972,7 @@ document.write(`
 </section>
 </section>
 <section id="manipulating-tensors-tensor-operations">
-<h2>Manipulating tensors (tensor operations)<a class="headerlink" href="#manipulating-tensors-tensor-operations" title="Permalink to this headline">#</a></h2>
+<h2>Manipulating tensors (tensor operations)<a class="headerlink" href="#manipulating-tensors-tensor-operations" title="Link to this heading">#</a></h2>
 <p>In deep learning, data (images, text, video, audio, protein structures, etc) gets represented as tensors.</p>
 <p>A model learns by investigating those tensors and performing a series of operations (could be 1,000,000s+) on tensors to create a representation of the patterns in the input data.</p>
 <p>These operations are often a wonderful dance between:</p>
@@ -935,7 +986,7 @@ document.write(`
 <p>And that’s it. Sure there are a few more here and there but these are the basic building blocks of neural networks.</p>
 <p>Stacking these building blocks in the right way, you can create the most sophisticated of neural networks (just like lego!).</p>
 <section id="basic-operations">
-<h3>Basic operations<a class="headerlink" href="#basic-operations" title="Permalink to this headline">#</a></h3>
+<h3>Basic operations<a class="headerlink" href="#basic-operations" title="Link to this heading">#</a></h3>
 <p>Let’s start with a few of the fundamental operations, addition (<code class="docutils literal notranslate"><span class="pre">+</span></code>), subtraction (<code class="docutils literal notranslate"><span class="pre">-</span></code>), mutliplication (<code class="docutils literal notranslate"><span class="pre">*</span></code>).</p>
 <p>They work just as you think they would.</p>
 <div class="cell docutils container">
@@ -970,7 +1021,7 @@ document.write(`
 </section>
 </section>
 <section id="id6">
-<h2>Task<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h2>
+<h2>Task<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># TODO </span>
@@ -1023,7 +1074,7 @@ Equals: tensor([1, 4, 9])
 </div>
 </div>
 <section id="matrix-multiplication-is-all-you-need">
-<h3>Matrix multiplication (is all you need)<a class="headerlink" href="#matrix-multiplication-is-all-you-need" title="Permalink to this headline">#</a></h3>
+<h3>Matrix multiplication (is all you need)<a class="headerlink" href="#matrix-multiplication-is-all-you-need" title="Link to this heading">#</a></h3>
 <p>One of the most common operations in machine learning and deep learning algorithms (like neural networks) is <a class="reference external" href="https://www.mathsisfun.com/algebra/matrix-multiplying.html">matrix multiplication</a>.</p>
 <p>PyTorch implements matrix multiplication functionality in the <a class="reference external" href="https://pytorch.org/docs/stable/generated/torch.matmul.html"><code class="docutils literal notranslate"><span class="pre">torch.matmul()</span></code></a> method.</p>
 <p>The main two rules for matrix multiplication to remember are:</p>
@@ -1051,7 +1102,7 @@ Equals: tensor([1, 4, 9])
 <p>Let’s create a tensor and perform element-wise multiplication and matrix multiplication on it.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
 <span class="n">tensor</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
 <span class="n">tensor</span><span class="o">.</span><span class="n">shape</span>
 </pre></div>
@@ -1065,7 +1116,7 @@ Equals: tensor([1, 4, 9])
 </div>
 <p>The difference between element-wise multiplication and matrix multiplication is the addition of values.</p>
 <p>For our <code class="docutils literal notranslate"><span class="pre">tensor</span></code> variable with values <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3]</span></code>:</p>
-<table class="colwidths-auto table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Operation</p></th>
 <th class="head"><p>Calculation</p></th>
@@ -1083,6 +1134,7 @@ Equals: tensor([1, 4, 9])
 </tr>
 </tbody>
 </table>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Element-wise matrix multiplication</span>
@@ -1124,13 +1176,13 @@ Equals: tensor([1, 4, 9])
 </div>
 </section>
 <section id="why-we-have-such-dim-and-shape">
-<h3>Why we have such dim and shape?<a class="headerlink" href="#why-we-have-such-dim-and-shape" title="Permalink to this headline">#</a></h3>
+<h3>Why we have such dim and shape?<a class="headerlink" href="#why-we-have-such-dim-and-shape" title="Link to this heading">#</a></h3>
 <p>You can do matrix multiplication by hand but it’s not recommended.</p>
 <p>The in-built <code class="docutils literal notranslate"><span class="pre">torch.matmul()</span></code> method is faster.</p>
 </section>
 </section>
 <section id="one-of-the-most-common-errors-in-deep-learning-shape-errors">
-<h2>One of the most common errors in deep learning (shape errors)<a class="headerlink" href="#one-of-the-most-common-errors-in-deep-learning-shape-errors" title="Permalink to this headline">#</a></h2>
+<h2>One of the most common errors in deep learning (shape errors)<a class="headerlink" href="#one-of-the-most-common-errors-in-deep-learning-shape-errors" title="Link to this heading">#</a></h2>
 <p>Because much of deep learning is multiplying and performing operations on matrices and matrices have a strict rule about what shapes and sizes can be combined, one of the most common errors you’ll run into in deep learning is shape mismatches.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1149,7 +1201,7 @@ Equals: tensor([1, 4, 9])
 </div>
 </div>
 <section id="what-do-we-need-to-do-to-make-multiplication">
-<h3>What do we need to do to make multiplication?<a class="headerlink" href="#what-do-we-need-to-do-to-make-multiplication" title="Permalink to this headline">#</a></h3>
+<h3>What do we need to do to make multiplication?<a class="headerlink" href="#what-do-we-need-to-do-to-make-multiplication" title="Link to this heading">#</a></h3>
 <p>We can make matrix multiplication work between <code class="docutils literal notranslate"><span class="pre">tensor_A</span></code> and <code class="docutils literal notranslate"><span class="pre">tensor_B</span></code> by making their inner dimensions match.</p>
 <p>One of the ways to do this is with a <strong>transpose</strong> (switch the dimensions of a given tensor).</p>
 <p>You can perform transposes in PyTorch using either:</p>
@@ -1308,7 +1360,7 @@ Output shape: torch.Size([3, 6])
 <p><em>When you start digging into neural network layers and building your own, you’ll find matrix multiplications everywhere. <strong>Source:</strong> <a class="reference external" href="https://marksaroufim.substack.com/p/working-class-deep-learner">https://marksaroufim.substack.com/p/working-class-deep-learner</a></em></p>
 </section>
 <section id="finding-the-min-max-mean-sum-etc-aggregation">
-<h3>Finding the min, max, mean, sum, etc (aggregation)<a class="headerlink" href="#finding-the-min-max-mean-sum-etc-aggregation" title="Permalink to this headline">#</a></h3>
+<h3>Finding the min, max, mean, sum, etc (aggregation)<a class="headerlink" href="#finding-the-min-max-mean-sum-etc-aggregation" title="Link to this heading">#</a></h3>
 <p>Now we’ve seen a few ways to manipulate tensors, let’s run through a few ways to aggregate them (go from more values to less values).</p>
 <p>First we’ll create a tensor and then find the max, min, mean and sum of it.</p>
 <div class="cell docutils container">
@@ -1363,7 +1415,7 @@ Sum: 450
 </div>
 </section>
 <section id="positional-min-max">
-<h3>Positional min/max<a class="headerlink" href="#positional-min-max" title="Permalink to this headline">#</a></h3>
+<h3>Positional min/max<a class="headerlink" href="#positional-min-max" title="Link to this heading">#</a></h3>
 <p>You can also find the index of a tensor where the max or minimum occurs with <a class="reference external" href="https://pytorch.org/docs/stable/generated/torch.argmax.html"><code class="docutils literal notranslate"><span class="pre">torch.argmax()</span></code></a> and <a class="reference external" href="https://pytorch.org/docs/stable/generated/torch.argmin.html"><code class="docutils literal notranslate"><span class="pre">torch.argmin()</span></code></a> respectively.</p>
 <p>This is helpful incase you just want the position where the highest (or lowest) value is and not the actual value itself (we’ll see this in a later section when using the <a class="reference external" href="https://pytorch.org/docs/stable/generated/torch.nn.Softmax.html">softmax activation function</a>).</p>
 <div class="cell docutils container">
@@ -1388,7 +1440,7 @@ Index where min value occurs: 0
 </div>
 </section>
 <section id="change-tensor-datatype">
-<h3>Change tensor datatype<a class="headerlink" href="#change-tensor-datatype" title="Permalink to this headline">#</a></h3>
+<h3>Change tensor datatype<a class="headerlink" href="#change-tensor-datatype" title="Link to this heading">#</a></h3>
 <p>As mentioned, a common issue with deep learning operations is having your tensors in different datatypes.</p>
 <p>If one tensor is in <code class="docutils literal notranslate"><span class="pre">torch.float64</span></code> and another is in <code class="docutils literal notranslate"><span class="pre">torch.float32</span></code>, you might run into some errors.</p>
 <p>But there’s a fix.</p>
@@ -1446,10 +1498,10 @@ Index where min value occurs: 0
 </div></blockquote>
 </section>
 <section id="reshaping-stacking-squeezing-and-unsqueezing">
-<h3>Reshaping, stacking, squeezing and unsqueezing<a class="headerlink" href="#reshaping-stacking-squeezing-and-unsqueezing" title="Permalink to this headline">#</a></h3>
+<h3>Reshaping, stacking, squeezing and unsqueezing<a class="headerlink" href="#reshaping-stacking-squeezing-and-unsqueezing" title="Link to this heading">#</a></h3>
 <p>Often times you’ll want to reshape or change the dimensions of your tensors without actually changing the values inside them.</p>
 <p>To do so, some popular methods are:</p>
-<table class="colwidths-auto table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Method</p></th>
 <th class="head"><p>One-line description</p></th>
@@ -1476,6 +1528,7 @@ Index where min value occurs: 0
 </tr>
 </tbody>
 </table>
+</div>
 <p>Why do any of these?</p>
 <p>Because deep learning models (neural networks) are all about manipulating tensors in some way. And because of the rules of matrix multiplication, if you’ve got shape mismatches, you’ll run into errors. These methods help you make sure the right elements of your tensors are mixing with the right elements of other tensors.</p>
 <p>Let’s try them out.</p>
@@ -1483,7 +1536,7 @@ Index where min value occurs: 0
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a tensor</span>
-<span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">8.</span><span class="p">)</span>
 <span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span>
 </pre></div>
@@ -1530,7 +1583,7 @@ Index where min value occurs: 0
 </div>
 </section>
 <section id="id7">
-<h3>Task<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
+<h3>Task<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
 <p>try changing dim to dim=1 and see what happens</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1579,9 +1632,8 @@ New shape: torch.Size([7])
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Previous tensor: tensor([1., 2., 3., 4., 5., 6., 7.])
 Previous shape: torch.Size([7])
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>New tensor: tensor([[1., 2., 3., 4., 5., 6., 7.]])
+
+New tensor: tensor([[1., 2., 3., 4., 5., 6., 7.]])
 New shape: torch.Size([1, 7])
 </pre></div>
 </div>
@@ -1614,14 +1666,14 @@ New shape: torch.Size([3, 224, 224])
 </section>
 </section>
 <section id="indexing-selecting-data-from-tensors">
-<h2>Indexing (selecting data from tensors)<a class="headerlink" href="#indexing-selecting-data-from-tensors" title="Permalink to this headline">#</a></h2>
+<h2>Indexing (selecting data from tensors)<a class="headerlink" href="#indexing-selecting-data-from-tensors" title="Link to this heading">#</a></h2>
 <p>Sometimes you’ll want to select specific data from tensors (for example, only the first column or second row).</p>
 <p>To do so, you can use indexing.</p>
 <p>If you’ve ever done indexing on Python lists or NumPy arrays, indexing in PyTorch with tensors is very similar.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a tensor</span>
-<span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span>
 </pre></div>
@@ -1659,7 +1711,7 @@ Third square bracket: 1
 </div>
 <p>You can also use <code class="docutils literal notranslate"><span class="pre">:</span></code> to specify “all values in this dimension” and then use a comma (<code class="docutils literal notranslate"><span class="pre">,</span></code>) to add another dimension.</p>
 <section id="id8">
-<h3>TASK<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
+<h3>TASK<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get all values of 0th dimension and the 0 index of 1st dimension</span>
@@ -1695,7 +1747,7 @@ Third square bracket: 1
 </section>
 </section>
 <section id="pytorch-tensors-numpy">
-<h2>PyTorch tensors &amp; NumPy<a class="headerlink" href="#pytorch-tensors-numpy" title="Permalink to this headline">#</a></h2>
+<h2>PyTorch tensors &amp; NumPy<a class="headerlink" href="#pytorch-tensors-numpy" title="Link to this heading">#</a></h2>
 <p>Since NumPy is a popular Python numerical computing library, PyTorch has functionality to interact with it nicely.</p>
 <p>The two main methods you’ll want to use for NumPy to PyTorch (and back again) are:</p>
 <ul class="simple">
@@ -1706,8 +1758,8 @@ Third square bracket: 1
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># NumPy array to tensor</span>
-<span class="kn">import</span> <span class="nn">torch</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="n">array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">)</span>
 <span class="n">tensor</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">from_numpy</span><span class="p">(</span><span class="n">array</span><span class="p">)</span>
 <span class="n">array</span><span class="p">,</span> <span class="n">tensor</span>
@@ -1761,7 +1813,7 @@ Third square bracket: 1
 </div>
 <p>And the same rule applies as above, if you change the original <code class="docutils literal notranslate"><span class="pre">tensor</span></code>, the new <code class="docutils literal notranslate"><span class="pre">numpy_tensor</span></code> stays the same.</p>
 <section id="id9">
-<h3>Task<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
+<h3>Task<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Change the tensor, keep the array the same</span>
@@ -1772,7 +1824,7 @@ Third square bracket: 1
 </section>
 </section>
 <section id="reproducibility-trying-to-take-the-random-out-of-random">
-<h2>Reproducibility (trying to take the random out of random)<a class="headerlink" href="#reproducibility-trying-to-take-the-random-out-of-random" title="Permalink to this headline">#</a></h2>
+<h2>Reproducibility (trying to take the random out of random)<a class="headerlink" href="#reproducibility-trying-to-take-the-random-out-of-random" title="Link to this heading">#</a></h2>
 <p>As you learn more about neural networks and machine learning, you’ll start to discover how much randomness plays a part.</p>
 <p>Well, pseudorandomness that is. Because after all, as they’re designed, a computer is fundamentally deterministic (each step is predictable) so the randomness they create are simulated randomness (though there is debate on this too, but since I’m not a computer scientist, I’ll let you find out more yourself).</p>
 <p>How does this relate to neural networks and deep learning then?</p>
@@ -1791,7 +1843,7 @@ Third square bracket: 1
 <p>We’ll start by creating two random tensors, since they’re random, you’d expect them to be different right?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
 
 <span class="c1"># Create two random tensors</span>
 <span class="n">random_tensor_A</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
@@ -1832,8 +1884,8 @@ Does Tensor A equal Tensor B? (anywhere)
 <p>Let’s try it out by creating some more <em>flavoured</em> random tensors.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
-<span class="kn">import</span> <span class="nn">random</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
 
 <span class="c1"># # Set the random seed</span>
 <span class="n">RANDOM_SEED</span><span class="o">=</span><span class="mi">42</span> <span class="c1"># try changing this to different values and see what happens to the numbers below</span>
@@ -1875,7 +1927,7 @@ Does Tensor C equal Tensor D? (anywhere)
 </div>
 </section>
 <section id="running-tensors-on-gpus-and-making-faster-computations">
-<h2>Running tensors on GPUs (and making faster computations)<a class="headerlink" href="#running-tensors-on-gpus-and-making-faster-computations" title="Permalink to this headline">#</a></h2>
+<h2>Running tensors on GPUs (and making faster computations)<a class="headerlink" href="#running-tensors-on-gpus-and-making-faster-computations" title="Link to this heading">#</a></h2>
 <p>Deep learning algorithms require a lot of numerical operations.</p>
 <p>And by default these operations are often done on a CPU (computer processing unit).</p>
 <p>However, there’s another common piece of hardware called a GPU (graphics processing unit), which is often much faster at performing the specific types of operations neural networks need (matrix multiplications) than CPUs.</p>
@@ -1886,9 +1938,9 @@ Does Tensor C equal Tensor D? (anywhere)
 <div><p><strong>Note:</strong> When I reference “GPU” throughout this course, I’m referencing a <a class="reference external" href="https://developer.nvidia.com/cuda-gpus">Nvidia GPU with CUDA</a> enabled (CUDA is a computing platform and API that helps allow GPUs be used for general purpose computing &amp; not just graphics) unless otherwise specified.</p>
 </div></blockquote>
 <section id="getting-a-gpu">
-<h3>1. Getting a GPU<a class="headerlink" href="#getting-a-gpu" title="Permalink to this headline">#</a></h3>
+<h3>1. Getting a GPU<a class="headerlink" href="#getting-a-gpu" title="Link to this heading">#</a></h3>
 <p>You may already know what’s going on when I say GPU. But if not, there are a few ways to get access to one.</p>
-<table class="colwidths-auto table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p><strong>Method</strong></p></th>
 <th class="head"><p><strong>Difficulty to setup</strong></p></th>
@@ -1918,6 +1970,7 @@ Does Tensor C equal Tensor D? (anywhere)
 </tr>
 </tbody>
 </table>
+</div>
 <p>There are more options for using GPUs but the above three will suffice for now.</p>
 <p>Personally, I use a combination of Google Colab and my own personal computer for small scale experiments (and creating this course) and go to cloud resources when I need more compute power.</p>
 <blockquote>
@@ -1961,7 +2014,7 @@ Does Tensor C equal Tensor D? (anywhere)
 </div>
 </section>
 <section id="getting-pytorch-to-run-on-the-gpu">
-<h3>2. Getting PyTorch to run on the GPU<a class="headerlink" href="#getting-pytorch-to-run-on-the-gpu" title="Permalink to this headline">#</a></h3>
+<h3>2. Getting PyTorch to run on the GPU<a class="headerlink" href="#getting-pytorch-to-run-on-the-gpu" title="Link to this heading">#</a></h3>
 <p>Once you’ve got a GPU ready to access, the next step is getting PyTorch to use for storing data (tensors) and computing on data (performing operations on tensors).</p>
 <p>To do so, you can use the <a class="reference external" href="https://pytorch.org/docs/stable/cuda.html"><code class="docutils literal notranslate"><span class="pre">torch.cuda</span></code></a> package.</p>
 <p>Rather than talk about it, let’s try it out.</p>
@@ -1969,7 +2022,7 @@ Does Tensor C equal Tensor D? (anywhere)
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check for GPU</span>
-<span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
 <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -2020,7 +2073,7 @@ Does Tensor C equal Tensor D? (anywhere)
 <p>Knowing the number of GPUs PyTorch has access to is helpful incase you wanted to run a specific process on one GPU and another process on another (PyTorch also has features to let you run a process across <em>all</em> GPUs).</p>
 </section>
 <section id="putting-tensors-and-models-on-the-gpu">
-<h3>3. Putting tensors (and models) on the GPU<a class="headerlink" href="#putting-tensors-and-models-on-the-gpu" title="Permalink to this headline">#</a></h3>
+<h3>3. Putting tensors (and models) on the GPU<a class="headerlink" href="#putting-tensors-and-models-on-the-gpu" title="Link to this heading">#</a></h3>
 <p>You can put tensors (and models, we’ll see this later) on a specific device by calling <a class="reference external" href="https://pytorch.org/docs/stable/generated/torch.Tensor.to.html"><code class="docutils literal notranslate"><span class="pre">to(device)</span></code></a> on them. Where <code class="docutils literal notranslate"><span class="pre">device</span></code> is the target device you’d like the tensor (or model) to go to.</p>
 <p>Why do this?</p>
 <p>GPUs offer far faster numerical computing than CPUs do and if a GPU isn’t available, because of our <strong>device agnostic code</strong> (see above), it’ll run on the CPU.</p>
@@ -2060,7 +2113,7 @@ Does Tensor C equal Tensor D? (anywhere)
 <p>Notice the second tensor has <code class="docutils literal notranslate"><span class="pre">device='cuda:0'</span></code>, this means it’s stored on the 0th GPU available (GPUs are 0 indexed, if two GPUs were available, they’d be <code class="docutils literal notranslate"><span class="pre">'cuda:0'</span></code> and <code class="docutils literal notranslate"><span class="pre">'cuda:1'</span></code> respectively, up to <code class="docutils literal notranslate"><span class="pre">'cuda:n'</span></code>).</p>
 </section>
 <section id="moving-tensors-back-to-the-cpu">
-<h3>4. Moving tensors back to the CPU<a class="headerlink" href="#moving-tensors-back-to-the-cpu" title="Permalink to this headline">#</a></h3>
+<h3>4. Moving tensors back to the CPU<a class="headerlink" href="#moving-tensors-back-to-the-cpu" title="Link to this heading">#</a></h3>
 <p>What if we wanted to move the tensor back to CPU?</p>
 <p>For example, you’ll want to do this if you want to interact with your tensors with NumPy (NumPy does not leverage the GPU).</p>
 <p>Let’s try using the <a class="reference external" href="https://pytorch.org/docs/stable/generated/torch.Tensor.numpy.html"><code class="docutils literal notranslate"><span class="pre">torch.Tensor.numpy()</span></code></a> method on our <code class="docutils literal notranslate"><span class="pre">tensor_on_gpu</span></code>.</p>
@@ -2135,11 +2188,10 @@ Does Tensor C equal Tensor D? (anywhere)
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="Seminar1_ML.html"
@@ -2151,18 +2203,15 @@ Does Tensor C equal Tensor D? (anywhere)
       </div>
     </a>
     <a class="right-next"
-       href="../seminar1/seminar1_working_with_eeg_ipynb_.html"
+       href="../intro/intro.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Seminar 1. EEG analysis</p>
+        <p class="prev-next-title">Lecture Notes</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -2170,6 +2219,7 @@ Does Tensor C equal Tensor D? (anywhere)
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -2246,16 +2296,17 @@ Does Tensor C equal Tensor D? (anywhere)
   <div class="footer-item">
     
 <p class="component-author">
-By Nadezhda Alsahanova
+By Nadezhda Alsahanova, Aleksandra Beliaeva
 </p>
 
   </div>
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -2279,8 +2330,8 @@ By Nadezhda Alsahanova
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

@@ -1,39 +1,57 @@
 Traceback (most recent call last):
-  File "C:\Users\Alexander\anaconda3\lib\site-packages\nbclient\client.py", line 622, in _async_poll_for_reply
-    msg = await ensure_async(self.kc.shell_channel.get_msg(timeout=new_timeout))
-  File "C:\Users\Alexander\anaconda3\lib\site-packages\nbclient\util.py", line 85, in ensure_async
-    result = await obj
-  File "C:\Users\Alexander\anaconda3\lib\site-packages\jupyter_client\asynchronous\channels.py", line 48, in get_msg
-    raise Empty
-_queue.Empty
+  File "/Users/rahmatullaev/Documents/projects/.venv/lib/python3.13/site-packages/jupyter_core/utils/__init__.py", line 154, in wrapped
+    asyncio.get_running_loop()
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^
+RuntimeError: no running event loop
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "C:\Users\Alexander\anaconda3\lib\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
+  File "/Users/rahmatullaev/Documents/projects/.venv/lib/python3.13/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
     executenb(
-  File "C:\Users\Alexander\anaconda3\lib\site-packages\nbclient\client.py", line 1112, in execute
+    ~~~~~~~~~^
+        nb,
+        ^^^
+    ...<4 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/Users/rahmatullaev/Documents/projects/.venv/lib/python3.13/site-packages/nbclient/client.py", line 1305, in execute
     return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
-  File "C:\Users\Alexander\anaconda3\lib\site-packages\nbclient\util.py", line 74, in wrapped
-    return just_run(coro(*args, **kwargs))
-  File "C:\Users\Alexander\anaconda3\lib\site-packages\nbclient\util.py", line 53, in just_run
-    return loop.run_until_complete(coro)
-  File "C:\Users\Alexander\anaconda3\lib\asyncio\base_events.py", line 642, in run_until_complete
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/rahmatullaev/Documents/projects/.venv/lib/python3.13/site-packages/jupyter_core/utils/__init__.py", line 158, in wrapped
+    return loop.run_until_complete(inner)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/base_events.py", line 725, in run_until_complete
     return future.result()
-  File "C:\Users\Alexander\anaconda3\lib\site-packages\nbclient\client.py", line 553, in async_execute
+           ~~~~~~~~~~~~~^^
+  File "/Users/rahmatullaev/Documents/projects/.venv/lib/python3.13/site-packages/nbclient/client.py", line 705, in async_execute
     await self.async_execute_cell(
-  File "C:\Users\Alexander\anaconda3\lib\site-packages\nbclient\client.py", line 841, in async_execute_cell
-    exec_reply = await self.task_poll_for_reply
-  File "C:\Users\Alexander\anaconda3\lib\site-packages\nbclient\client.py", line 646, in _async_poll_for_reply
-    await self._async_handle_timeout(timeout, cell)
-  File "C:\Users\Alexander\anaconda3\lib\site-packages\nbclient\client.py", line 696, in _async_handle_timeout
-    raise CellTimeoutError.error_from_timeout_and_cell(
-nbclient.exceptions.CellTimeoutError: A cell timed out while it was being executed, after 30 seconds.
-The message was: Cell execution timed out.
-Here is a preview of the cell contents:
--------------------
-['acc_list, pc_list = [], []', '', 'for pc in tqdm(range(2, 101, 3)):', '    pca = PCA(pc)', '    X_train_pca = pca.fit_transform(X_train_scaled)']
-...
-['', '    acc = accuracy_score(Y_test, y_preds)', '', '    acc_list.append(acc)', '    pc_list.append(pc)']
--------------------
+        cell, index, execution_count=self.code_cells_executed + 1
+    )
+  File "/Users/rahmatullaev/Documents/projects/.venv/lib/python3.13/site-packages/nbclient/client.py", line 1058, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/Users/rahmatullaev/Documents/projects/.venv/lib/python3.13/site-packages/nbclient/client.py", line 914, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+from torchvision import datasets
+from sklearn.decomposition import PCA
+from sklearn.preprocessing import StandardScaler
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import confusion_matrix, accuracy_score
+from tqdm import tqdm
+------------------
+
+
+[31m---------------------------------------------------------------------------[39m
+[31mModuleNotFoundError[39m                       Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[50][39m[32m, line 1[39m
+[32m----> [39m[32m1[39m [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01mtorchvision[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m datasets
+[32m      2[39m [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01msklearn[39;00m[34;01m.[39;00m[34;01mdecomposition[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m PCA
+[32m      3[39m [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01msklearn[39;00m[34;01m.[39;00m[34;01mpreprocessing[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m StandardScaler
+
+[31mModuleNotFoundError[39m: No module named 'torchvision'
 

@@ -1,19 +1,38 @@
 Traceback (most recent call last):
-  File "C:\Users\Alexander\anaconda3\lib\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
+  File "/Users/rahmatullaev/Documents/projects/.venv/lib/python3.13/site-packages/jupyter_core/utils/__init__.py", line 154, in wrapped
+    asyncio.get_running_loop()
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^
+RuntimeError: no running event loop
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/rahmatullaev/Documents/projects/.venv/lib/python3.13/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
     executenb(
-  File "C:\Users\Alexander\anaconda3\lib\site-packages\nbclient\client.py", line 1112, in execute
+    ~~~~~~~~~^
+        nb,
+        ^^^
+    ...<4 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/Users/rahmatullaev/Documents/projects/.venv/lib/python3.13/site-packages/nbclient/client.py", line 1305, in execute
     return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
-  File "C:\Users\Alexander\anaconda3\lib\site-packages\nbclient\util.py", line 74, in wrapped
-    return just_run(coro(*args, **kwargs))
-  File "C:\Users\Alexander\anaconda3\lib\site-packages\nbclient\util.py", line 53, in just_run
-    return loop.run_until_complete(coro)
-  File "C:\Users\Alexander\anaconda3\lib\asyncio\base_events.py", line 642, in run_until_complete
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/rahmatullaev/Documents/projects/.venv/lib/python3.13/site-packages/jupyter_core/utils/__init__.py", line 158, in wrapped
+    return loop.run_until_complete(inner)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/base_events.py", line 725, in run_until_complete
     return future.result()
-  File "C:\Users\Alexander\anaconda3\lib\site-packages\nbclient\client.py", line 553, in async_execute
+           ~~~~~~~~~~~~~^^
+  File "/Users/rahmatullaev/Documents/projects/.venv/lib/python3.13/site-packages/nbclient/client.py", line 705, in async_execute
     await self.async_execute_cell(
-  File "C:\Users\Alexander\anaconda3\lib\site-packages\nbclient\client.py", line 857, in async_execute_cell
-    self._check_raise_for_error(cell, exec_reply)
-  File "C:\Users\Alexander\anaconda3\lib\site-packages\nbclient\client.py", line 760, in _check_raise_for_error
+        cell, index, execution_count=self.code_cells_executed + 1
+    )
+  File "/Users/rahmatullaev/Documents/projects/.venv/lib/python3.13/site-packages/nbclient/client.py", line 1058, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/Users/rahmatullaev/Documents/projects/.venv/lib/python3.13/site-packages/nbclient/client.py", line 914, in _check_raise_for_error
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
@@ -21,12 +40,12 @@ from google.colab import drive
 drive.mount('/content/drive')
 ------------------
 
-[1;31m---------------------------------------------------------------------------[0m
-[1;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-[1;32mC:\Users\ALEXAN~1\AppData\Local\Temp/ipykernel_15624/1408506528.py[0m in [0;36m<module>[1;34m[0m
-[1;32m----> 1[1;33m [1;32mfrom[0m [0mgoogle[0m[1;33m.[0m[0mcolab[0m [1;32mimport[0m [0mdrive[0m[1;33m[0m[1;33m[0m[0m
-[0m[0;32m      2[0m [0mdrive[0m[1;33m.[0m[0mmount[0m[1;33m([0m[1;34m'/content/drive'[0m[1;33m)[0m[1;33m[0m[1;33m[0m[0m
 
-[1;31mModuleNotFoundError[0m: No module named 'google'
-ModuleNotFoundError: No module named 'google'
+[31m---------------------------------------------------------------------------[39m
+[31mModuleNotFoundError[39m                       Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[5][39m[32m, line 1[39m
+[32m----> [39m[32m1[39m [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01mgoogle[39;00m[34;01m.[39;00m[34;01mcolab[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m drive
+[32m      2[39m drive.mount([33m'[39m[33m/content/drive[39m[33m'[39m)
+
+[31mModuleNotFoundError[39m: No module named 'google'
 

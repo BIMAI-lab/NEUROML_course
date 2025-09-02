@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>MRI data analysis, sources databases, tools &#8212; Neuroimaging and Machine Learning for Biomedicine</title>
   
@@ -15,59 +14,58 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/myadmonitions.css?v=0009bf62" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'seminar2/seminar2_1_mri';</script>
-    <link rel="shortcut icon" href="../_static/logo.png"/>
+    <link rel="icon" href="../_static/logo.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Transformations" href="seminar2_2_transform.html" />
     <link rel="prev" title="Preparation to the seminar 2" href="docker.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -75,19 +73,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -109,12 +111,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -129,9 +139,13 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="../intro.html">
+  
   
   
   
@@ -141,12 +155,23 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Neuroimaging and Machine Learning for Biomedicine - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Neuroimaging and Machine Learning for Biomedicine - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -183,8 +208,24 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1jkf4Jt0QvDz2O7UoZ-sZAi0V0oke5Yju?usp=sharing">Machine learning fundamentals on medical data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../seminar0/00_pytorch_fundamentals.html">Pytorch fundamentals</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://drive.google.com/file/d/1q0XncKq2y_wHLXJaxhjfBCDGHABmzrjM/view?usp=sharing">Intro to computer vision</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Seminar 0. Opening Seminar</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../intro/intro.html">Lecture Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/opening_seminar.html">Motivation &amp; Overview</a></li>
+
+
+
+
+
+
+
+
+
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Seminar 1. Working with EEG</span></p>
 <ul class="nav bd-sidenav">
@@ -229,7 +270,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -238,14 +279,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -367,26 +408,28 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -423,12 +466,12 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section id="mri-data-analysis-sources-databases-tools">
-<h1>MRI data analysis, sources databases, tools<a class="headerlink" href="#mri-data-analysis-sources-databases-tools" title="Permalink to this headline">#</a></h1>
+<h1>MRI data analysis, sources databases, tools<a class="headerlink" href="#mri-data-analysis-sources-databases-tools" title="Link to this heading">#</a></h1>
 <section id="plan">
-<h2>PLAN:<a class="headerlink" href="#plan" title="Permalink to this headline">#</a></h2>
+<h2>PLAN:<a class="headerlink" href="#plan" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p><strong>MRI data formats</strong> \</p></li>
 <li><p><strong>accessing data voxel and meta data</strong> \</p></li>
@@ -452,7 +495,7 @@ document.write(`
 <span class="c1"># import warnings</span>
 <span class="c1"># warnings.filterwarnings(&#39;ignore&#39;)</span>
 <span class="c1"># from ipywidgets import interact, interactive, fixed, interact_manual</span>
-<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">Image</span>
 <span class="c1"># import ipywidgets as widgets</span>
 <span class="c1"># import nibabel.freesurfer.mghformat as mgh</span>
 <span class="c1"># import nibabel as nib</span>
@@ -469,7 +512,7 @@ document.write(`
 </div>
 </section>
 <section id="mri-file-formats">
-<h2>1) MRI File Formats<a class="headerlink" href="#mri-file-formats" title="Permalink to this headline">#</a></h2>
+<h2>1) MRI File Formats<a class="headerlink" href="#mri-file-formats" title="Link to this heading">#</a></h2>
 <p>All volume-based formats store 3D or 4D arrays of voxels in some fashion with a variety of additional meta-data. Anatomical images are typically 3D while EPIs are typically 4D (x,y,z, and time).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -478,7 +521,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/51766c6093e1a133c9ec61543baedb8b350b9449d15057eee8ecd633ef98a8d4.png" src="../_images/51766c6093e1a133c9ec61543baedb8b350b9449d15057eee8ecd633ef98a8d4.png" />
+<a class="reference internal image-reference" href="../_images/51766c6093e1a133c9ec61543baedb8b350b9449d15057eee8ecd633ef98a8d4.png"><img alt="../_images/51766c6093e1a133c9ec61543baedb8b350b9449d15057eee8ecd633ef98a8d4.png" src="../_images/51766c6093e1a133c9ec61543baedb8b350b9449d15057eee8ecd633ef98a8d4.png" style="width: 1000px; height: 800px;" />
+</a>
 </div>
 </div>
 <p><strong>voxel:</strong> A three-dimensional pixel and the basic unit of spatial measurement in MRI.</p>
@@ -495,7 +539,7 @@ All volume files contain both meta-data and voxels. The meta-data is just a set 
 </ol>
 </section>
 <section id="dicom-file-format">
-<h2>DICOM file format<a class="headerlink" href="#dicom-file-format" title="Permalink to this headline">#</a></h2>
+<h2>DICOM file format<a class="headerlink" href="#dicom-file-format" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># # Single slice of Brain MRI</span>
@@ -593,7 +637,7 @@ Accordingly, we need to be able to, at a minimum, store some amount of informati
 </div>
 </section>
 <section id="data-manipulations">
-<h2>Data manipulations<a class="headerlink" href="#data-manipulations" title="Permalink to this headline">#</a></h2>
+<h2>Data manipulations<a class="headerlink" href="#data-manipulations" title="Link to this heading">#</a></h2>
 <p>Assume that you recieved new dicom from hospital or downloaded challenge data and you need to convert to convinient NIFTI, let’s review the tool distinctive from simple one represented above:</p>
 <p><strong>dcm2niix</strong> <br />
 Robust .dcm to nii/nii.gz converter. Params <em>%i</em> <em>%n</em> <em>%p</em> stands for patient ID, subject name, protocol name DICOM header keys. Try to run with params %p_%t_%s \</p>
@@ -615,7 +659,7 @@ Robust .dcm to nii/nii.gz converter. Params <em>%i</em> <em>%n</em> <em>%p</em> 
 </div>
 </section>
 <section id="nifti-file-format">
-<h2>Nifti File Format<a class="headerlink" href="#nifti-file-format" title="Permalink to this headline">#</a></h2>
+<h2>Nifti File Format<a class="headerlink" href="#nifti-file-format" title="Link to this heading">#</a></h2>
 <p>The Neuroimaging Informatics Technology Initiative (nifti) is format to store radiological information, the first three dimensions are reserved to define the three spatial dimensions — x, y and z —, while the fourth dimension is reserved to define the time points — t. The remaining dimensions, from fifth to seventh, are for other uses. The fifth dimension, however, can still have some predefined uses, such as to store voxel-specific distributional parameters or to hold vector-based data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -626,7 +670,7 @@ Robust .dcm to nii/nii.gz converter. Params <em>%i</em> <em>%n</em> <em>%p</em> 
 </div>
 </section>
 <section id="nifti-header">
-<h2>Nifti Header<a class="headerlink" href="#nifti-header" title="Permalink to this headline">#</a></h2>
+<h2>Nifti Header<a class="headerlink" href="#nifti-header" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># nii_header = nii_file.header</span>
@@ -641,7 +685,7 @@ Robust .dcm to nii/nii.gz converter. Params <em>%i</em> <em>%n</em> <em>%p</em> 
 </div>
 </section>
 <section id="mgh-file-format">
-<h2>MGH File Format<a class="headerlink" href="#mgh-file-format" title="Permalink to this headline">#</a></h2>
+<h2>MGH File Format<a class="headerlink" href="#mgh-file-format" title="Link to this heading">#</a></h2>
 <p><strong>MGH File Format</strong> is a default format of <em>freesurfer</em> preprocessing software. That can do the following</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -650,7 +694,8 @@ Robust .dcm to nii/nii.gz converter. Params <em>%i</em> <em>%n</em> <em>%p</em> 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/0ce80cf1516a95a6b080a7b4b95a4271b15d80d61e90aea1e58f2c34f1fffc3d.png" src="../_images/0ce80cf1516a95a6b080a7b4b95a4271b15d80d61e90aea1e58f2c34f1fffc3d.png" />
+<a class="reference internal image-reference" href="../_images/0ce80cf1516a95a6b080a7b4b95a4271b15d80d61e90aea1e58f2c34f1fffc3d.png"><img alt="../_images/0ce80cf1516a95a6b080a7b4b95a4271b15d80d61e90aea1e58f2c34f1fffc3d.png" src="../_images/0ce80cf1516a95a6b080a7b4b95a4271b15d80d61e90aea1e58f2c34f1fffc3d.png" style="width: 1000px; height: 800px;" />
+</a>
 </div>
 </div>
 <div class="cell docutils container">
@@ -712,7 +757,8 @@ Robust .dcm to nii/nii.gz converter. Params <em>%i</em> <em>%n</em> <em>%p</em> 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/b4c8a6a449bc7144cd1238443b5e1cf90cdcb0010d4bd2d578f412cfd42c403c.png" src="../_images/b4c8a6a449bc7144cd1238443b5e1cf90cdcb0010d4bd2d578f412cfd42c403c.png" />
+<a class="reference internal image-reference" href="../_images/b4c8a6a449bc7144cd1238443b5e1cf90cdcb0010d4bd2d578f412cfd42c403c.png"><img alt="../_images/b4c8a6a449bc7144cd1238443b5e1cf90cdcb0010d4bd2d578f412cfd42c403c.png" src="../_images/b4c8a6a449bc7144cd1238443b5e1cf90cdcb0010d4bd2d578f412cfd42c403c.png" style="width: 600px; height: 800px;" />
+</a>
 </div>
 </div>
 <p>DICOM patient coordinate and Nifti coodrinate system when Patient is Head First Supine. The arrows of axes indicate the positive directions, LPS for DICOM and RAS for Nifti. For Dicom images, the origin (0,0,0) refers to magnet isocenter.</p>
@@ -726,7 +772,8 @@ Simplify representation of DICOM neuroimaging data and grants huge advantages fo
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/d7ef48655b4a606a0adf460d10a4bf12c68e38c0e02be1502d887bac092fd861.png" src="../_images/d7ef48655b4a606a0adf460d10a4bf12c68e38c0e02be1502d887bac092fd861.png" />
+<a class="reference internal image-reference" href="../_images/d7ef48655b4a606a0adf460d10a4bf12c68e38c0e02be1502d887bac092fd861.png"><img alt="../_images/d7ef48655b4a606a0adf460d10a4bf12c68e38c0e02be1502d887bac092fd861.png" src="../_images/d7ef48655b4a606a0adf460d10a4bf12c68e38c0e02be1502d887bac092fd861.png" style="width: 800px; height: 800px;" />
+</a>
 </div>
 </div>
 <p>There is a few robust DICOM converters:</p>
@@ -796,11 +843,10 @@ The only required function for a heuristic, <em>infotodict</em> is used to both 
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="docker.html"
@@ -820,10 +866,7 @@ The only required function for a heuristic, <em>infotodict</em> is used to both 
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -831,6 +874,7 @@ The only required function for a heuristic, <em>infotodict</em> is used to both 
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -859,16 +903,17 @@ The only required function for a heuristic, <em>infotodict</em> is used to both 
   <div class="footer-item">
     
 <p class="component-author">
-By Nadezhda Alsahanova
+By Nadezhda Alsahanova, Aleksandra Beliaeva
 </p>
 
   </div>
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -892,8 +937,8 @@ By Nadezhda Alsahanova
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>
