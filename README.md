@@ -1,15 +1,15 @@
-# NEUROML2024
+# NEUROML2025
 
 
 
 ## Neuroimaging and Machine Learning for Biomedicine
-This is a repository containing seminars and lecture materials for the Skoltech course on Machine Learning in Neuroimaging data, Fall 2024.
+This is a repository containing seminars and lecture materials for the Skoltech course on Machine Learning in Neuroimaging data, Fall 2025.
 
 ## Main links
 
 - [Cite](https://bimai-lab.github.io/NEUROML_course/intro.html)
 - [:cupid: Lab Page](https://adase.appliedai.tech/)
-- [✈️ Telegram Channel](https://t.me/+oI9K02ZDD1NiMGQy)
+- [✈️ Telegram Channel](https://t.me/+0ugoFCJbzmEyZTRi)
 
 
 ## Course description:
