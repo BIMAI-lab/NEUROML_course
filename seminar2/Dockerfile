@@ -43,6 +43,15 @@ RUN apt-get update -qq \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
+    
+# Newer CMake for dcm2niix (needs CheckIPOSupported)
+ARG CMAKE_VERSION=3.23.5
+RUN apt-get update -qq && apt-get install -y -q --no-install-recommends wget \
+ && wget -q https://github.com/Kitware/CMake/releases/download/v${CMAKE_VERSION}/cmake-${CMAKE_VERSION}-Linux-x86_64.sh \
+ && bash cmake-${CMAKE_VERSION}-Linux-x86_64.sh --skip-license --prefix=/usr/local \
+ && rm cmake-${CMAKE_VERSION}-Linux-x86_64.sh
+
+
 ENV PATH="/opt/dcm2niix-latest/bin:$PATH"
 RUN apt-get update -qq \
     && apt-get install -y -q --no-install-recommends \
@@ -94,32 +103,39 @@ RUN wget --progress=bar:force:noscroll -c --no-check-certificate https://surfer.
          --exclude='freesurfer/trctrain' \
     && sed -i '$isource "/opt/freesurfer-6.0.1/SetUpFreeSurfer.sh"' "$ND_ENTRYPOINT"
 
+    
 ENV CONDA_DIR="/opt/miniconda-latest" \
     PATH="/opt/miniconda-latest/bin:$PATH"
+
 RUN export PATH="/opt/miniconda-latest/bin:$PATH" \
     && echo "Downloading Miniconda installer ..." \
     && conda_installer="/tmp/miniconda.sh" \
-    && curl -fsSL --retry 5 -o "$conda_installer" https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh \
-    && bash "$conda_installer" -b -p /opt/miniconda-latest \
+    && curl -fsSL --retry 5 -o "$conda_installer" https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh \
+    && bash "$conda_installer" -b -p "$CONDA_DIR" \
     && rm -f "$conda_installer" \
-    && conda update -yq -nbase conda \
+    \
+    # Accept Anaconda channel Terms of Service (prevents CondaToSNonInteractiveError)
+    && conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/main \
+    && conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/r \
+    \
+    # Prefer conda-forge and strict channel priority
     && conda config --system --prepend channels conda-forge \
+    && conda config --system --set channel_priority strict \
     && conda config --system --set auto_update_conda false \
     && conda config --system --set show_channel_urls true \
-    && sync && conda clean --all && sync \
+    \
+    # Now safe to update conda (will come from conda-forge)
+    && conda update -yq -n base conda \
+    \
+    # Create env and install packages
     && conda create -y -q --name neuro \
     && conda install -y -q --name neuro \
-           'jupyter' \
-           'jupyterlab' \
-           'matplotlib' \
-           'nilearn' \
-           'traits' \
-           'nipype' \
-           'seaborn' \
-           'heudiconv' \
-           'pip' \
+         jupyter jupyterlab matplotlib nilearn traits nipype seaborn heudiconv pip \
     && /opt/miniconda-latest/envs/neuro/bin/pip install antspyx \
-    && sync && conda clean --all && sync
+    \
+    # Clean caches (non-interactive)
+    && conda clean --all -y
+
 
 RUN wget --no-check-certificate https://ftpmirror.gnu.org/parallel/parallel-20190222.tar.bz2 \
     && bzip2 -dc parallel-20190222.tar.bz2 | tar xvf - \
