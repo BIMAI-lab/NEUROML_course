@@ -14,13 +14,13 @@ parts:
     title: Links
   - url: https://colab.research.google.com/drive/1AM67Sd37J0hIJ-kLyzAZRm8op_JcUQ9b?usp=sharing
     title: Intro to shell
-  - file: seminar0/Seminar1_python_colab
+  - file: seminar1/Seminar1_python_colab
     title: Python fundamentals
-  - file: seminar0/Seminar1_ML
+  - file: seminar1/Seminar1_ML
     title: Machine learning fundamentals
   - url: https://colab.research.google.com/drive/1jkf4Jt0QvDz2O7UoZ-sZAi0V0oke5Yju?usp=sharing
     title: Machine learning fundamentals on medical data
-  - file: seminar0/00_pytorch_fundamentals
+  - file: seminar1/00_pytorch_fundamentals
     title: Pytorch fundamentals
   - url: https://drive.google.com/file/d/1q0XncKq2y_wHLXJaxhjfBCDGHABmzrjM/view?usp=sharing
     title: Intro to computer vision
@@ -29,9 +29,9 @@ parts:
 - caption: Seminar 1. Opening Seminar 
   numbered: false
   chapters:
-  - file: intro/intro.md
+  - file: seminar1/intro.md
     title: Lecture Notes
-  - file: intro/opening_seminar.ipynb
+  - file: seminar1/opening_seminar.ipynb
     title: Opening Seminar
 
 - caption: Seminars 2-3. Working with EEG
@@ -58,7 +58,7 @@ parts:
 - caption: Seminars 6-8. Working with fMRI
   numbered: false
   chapters:
-  - file: seminar4/README.md
+  - file: seminars6_7/README.md
     title: Preparation to Seminar 6-8
   - url: https://colab.research.google.com/drive/1Hed2ggYNbyvBMeYpNeapMAepxeQBVLRL?usp=sharing
     title: Seminar 8.1. Analyze task-based fMRI for motor and emotion task
