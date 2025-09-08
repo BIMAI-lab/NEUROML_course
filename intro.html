@@ -58,6 +58,8 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
     <link rel="icon" href="_static/logo.png"/>
     <link rel="index" title="Index" href="genindex.html" />
@@ -186,8 +188,47 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="bio/intro_links.html">Links</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1AM67Sd37J0hIJ-kLyzAZRm8op_JcUQ9b?usp=sharing">Intro to shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seminar1/Seminar1_python_colab.html">How to work with Python</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="seminar1/Seminar1_ML.html">Intro to ML</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1jkf4Jt0QvDz2O7UoZ-sZAi0V0oke5Yju?usp=sharing">Machine learning fundamentals on medical data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seminar1/00_pytorch_fundamentals.html">Pytorch fundamentals</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://drive.google.com/file/d/1q0XncKq2y_wHLXJaxhjfBCDGHABmzrjM/view?usp=sharing">Intro to computer vision</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Seminar 1. Opening Seminar</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="seminar1/intro.html">Lecture Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seminar1/opening_seminar.html">Motivation &amp; Overview</a></li>
+
+
+
+
+
+
+
+
+
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Seminars 2-3. Working with EEG</span></p>
 <ul class="nav bd-sidenav">
@@ -211,6 +252,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Seminars 6-8. Working with fMRI</span></p>
 <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="seminars6_7/README.html">Preparation to Seminar 6-8</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1Hed2ggYNbyvBMeYpNeapMAepxeQBVLRL?usp=sharing">Seminar 8.1. Analyze task-based fMRI for motor and emotion task</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1F0UzTsmF1NK6F3NEsJHUw9G5K3j_-eYA?usp=sharing">Seminar 8.2. Functional connectivity</a></li>
 </ul>
@@ -468,11 +510,50 @@ Application of AI systems in clinics (for example, creating medical decision sup
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="bio/intro_links.html">Links</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1AM67Sd37J0hIJ-kLyzAZRm8op_JcUQ9b?usp=sharing">Intro to shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seminar1/Seminar1_python_colab.html">How to work with Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seminar1/Seminar1_python_colab.html#python">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seminar1/Seminar1_python_colab.html#libraries">Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seminar1/Seminar1_python_colab.html#part-1-basics-of-python">Part 1 - Basics of Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seminar1/Seminar1_python_colab.html#working-with-numpy">Working with NumPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seminar1/Seminar1_ML.html">Intro to ML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seminar1/Seminar1_ML.html#how-objects-are-set-feature-description">How objects are set. Feature description</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seminar1/Seminar1_ML.html#types-of-tasks">Types of tasks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seminar1/Seminar1_ML.html#cross-validation-cv">Cross-validation (CV)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seminar1/Seminar1_ML.html#regression-training">Regression Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seminar1/Seminar1_ML.html#training-classification-model">Training classification model:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seminar1/Seminar1_ML.html#analysis-of-classification-errors">Analysis of classification errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seminar1/Seminar1_ML.html#loss-functions-depending-on-the-error-penalty">Loss functions depending on the error penalty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seminar1/Seminar1_ML.html#definition-of-the-roc-curve">Definition of the ROC curve</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seminar1/Seminar1_ML.html#roc-curve-and-auc-area-under-curve">ROC-curve and AUC (Area Under Curve)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seminar1/Seminar1_ML.html#assessment-of-the-quality-of-two-class-classification">Assessment of the quality of two-class classification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seminar1/Seminar1_ML.html#accuracy-and-completeness-of-multiclass-classification">Accuracy and completeness of multiclass classification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seminar1/Seminar1_ML.html#assessment-of-classification-quality">Assessment of classification quality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seminar1/Seminar1_ML.html#aggregated-estimates">Aggregated estimates:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seminar1/Seminar1_ML.html#how-to-choose-model-hyperparameters">How to choose model hyperparameters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seminar1/Seminar1_ML.html#the-curse-of-dimensionality">The curse of dimensionality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seminar1/Seminar1_ML.html#dimensionality-reduction-the-principal-component-analysis-pca-problem-statement">Dimensionality reduction. The principal component analysis (PCA): problem statement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seminar1/Seminar1_ML.html#matrix-notation">Matrix notation</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1jkf4Jt0QvDz2O7UoZ-sZAi0V0oke5Yju?usp=sharing">Machine learning fundamentals on medical data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seminar1/00_pytorch_fundamentals.html">Pytorch fundamentals</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://drive.google.com/file/d/1q0XncKq2y_wHLXJaxhjfBCDGHABmzrjM/view?usp=sharing">Intro to computer vision</a></li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Seminar 1. Opening Seminar</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="seminar1/intro.html">Lecture Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seminar1/opening_seminar.html">Motivation &amp; Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seminar1/opening_seminar.html#neuroimaging-modalities">Neuroimaging Modalities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seminar1/opening_seminar.html#machine-learning-in-neuroimaging">Machine Learning in Neuroimaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seminar1/opening_seminar.html#reminder-of-the-classical-pipeline-ml-task">Reminder of the Classical Pipeline - ML task</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seminar1/opening_seminar.html#how-objects-are-set-feature-description">How objects are set. Feature description</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seminar1/opening_seminar.html#training-classification-model">Training classification model:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seminar1/opening_seminar.html#analysis-of-classification-errors">Analysis of classification errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seminar1/opening_seminar.html#example-tasks">Example Tasks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seminar1/opening_seminar.html#data-challenges-preprocessing">Data Challenges &amp; Preprocessing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seminar1/opening_seminar.html#preprocessing-examples"><strong>Preprocessing examples:</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="seminar1/opening_seminar.html#hidden-traps-often-forgotten-even-by-professionals">Hidden Traps (Often Forgotten, Even by Professionals)</a></li>
+</ul>
 </div>
 <div class="toctree-wrapper compound">
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Seminars 2-3. Working with EEG</span></p>
@@ -501,6 +582,7 @@ Application of AI systems in clinics (for example, creating medical decision sup
 <div class="toctree-wrapper compound">
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Seminars 6-8. Working with fMRI</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="seminars6_7/README.html">Preparation to Seminar 6-8</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1Hed2ggYNbyvBMeYpNeapMAepxeQBVLRL?usp=sharing">Seminar 8.1. Analyze task-based fMRI for motor and emotion task</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1F0UzTsmF1NK6F3NEsJHUw9G5K3j_-eYA?usp=sharing">Seminar 8.2. Functional connectivity</a></li>
 </ul>
