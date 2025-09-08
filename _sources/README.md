@@ -20,9 +20,9 @@ This course is specifically aimed at MSc and PhD students with basic knowledge o
 
 * SEMINAR 0 Intro
  
-* SEMINAR 1  EEG analysis, Machine Learning in EEG
+* SEMINAR 2-3  EEG analysis, Machine Learning in EEG
 
-* SEMINAR 2 MRI data analysis, sources, databases, tools \
+* SEMINAR 4 MRI data analysis, sources, databases, tools \
   **Note**: To Follow seminar you will need [docker](https://docs.docker.com/get-docker/) installed and supplementary data downloaded
   1) Install Docker;
   2) Download `NEUROML-data.zip` from [YaDisk](https://disk.yandex.ru/d/xxnRbLetEh07YQ) and unzip it to local directory;
@@ -34,20 +34,20 @@ This course is specifically aimed at MSc and PhD students with basic knowledge o
      **Note**: If you have *Windows*, pay attention to paths, type paths in conventional powershell script `C:\directory\to\downloaded\data\on\step\2`
   8) Open browser (preferebly Chrome) -> localhost:8080
      
-* SEMINAR 3 Machine Learning for structural MRI data analysis 
+* SEMINAR 5 Machine Learning for structural MRI data analysis 
 
-* SEMINAR 4 fMRI data preprocessing, analysis, GLM
+* SEMINAR 6-7 fMRI data preprocessing, analysis, GLM
 
   1) First follow the instruction for geting the docker image: https://miykael.github.io/nipype_tutorial/notebooks/introduction_docker.html.
   2) Clone the seminar4 repository
   3) Run the container and mount the folder: docker run -it --rm -p 8888:8888 -v /path_to_seminar-4:/home/neuro/nipype_tutorial/notebooks/seminar miykael/nipype_tutorial jupyter notebook
   4) Dowload the data from: https://www.openfmri.org/dataset/ds000114/
   
-* SEMINAR 5 Functional connectivity analysis and Machine Learning modelling
+* SEMINAR 8 Functional connectivity analysis and Machine Learning modelling
 
-* SEMINAR 6 Interpretation of ML models
+* SEMINAR 9 Interpretation of ML models
 
-* SEMINAR 7 Generative models
+* SEMINAR 10 Generative models
 
 #### Datasets used (please get a personal account and complete data use agreement):
 * Human Connectome Project https://db.humanconnectome.org/data/projects/HCP_1200

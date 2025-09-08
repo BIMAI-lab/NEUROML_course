@@ -1,0 +1,867 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>fMRI data preprocessing - Introduction &#8212; Neuroimaging and Machine Learning for Biomedicine</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/myadmonitions.css?v=0009bf62" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'seminars6_7/Introduction';</script>
+    <link rel="icon" href="../_static/logo.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Neuroimaging and Machine Learning for Biomedicine - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Neuroimaging and Machine Learning for Biomedicine - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to the Neuroimaging and Machine Learning for Biomedicine coursebook
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../bio/intro_links.html">Links</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1AM67Sd37J0hIJ-kLyzAZRm8op_JcUQ9b?usp=sharing">Intro to shell</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1jkf4Jt0QvDz2O7UoZ-sZAi0V0oke5Yju?usp=sharing">Machine learning fundamentals on medical data</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://drive.google.com/file/d/1q0XncKq2y_wHLXJaxhjfBCDGHABmzrjM/view?usp=sharing">Intro to computer vision</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Seminars 2-3. Working with EEG</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../seminars2_3/seminar1_working_with_eeg_ipynb_.html">Seminar 1. EEG analysis</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Seminars 4-5. Working with MRI</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../seminar4/docker.html">Preparation to Seminar 4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../seminar4/seminar4_1_mri.html">Seminar 4.1. MRI data analysis, databases and tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../seminar4/seminar4_2_transform.html">Transformations</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../seminar4/seminar4_3_freesurfer.html">FREESURFER</a></li>
+
+
+<li class="toctree-l1"><a class="reference external" href="https://drive.google.com/file/d/1HuS7ChgQvch4vrD8gfITGUZP9E8hZ8Hw/view?usp=sharing">Seminar 5.1. MRI classification with 3D CNN</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://drive.google.com/file/d/1m7mWY0LI2M6PdevJf5rLCdm-WrAOoXJ-/view?usp=sharing">Seminar 5.2. MRI segmentation with 3D U-net</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Seminars 6-8. Working with fMRI</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1Hed2ggYNbyvBMeYpNeapMAepxeQBVLRL?usp=sharing">Seminar 8 (part 1): Analyze task-based fMRI for motor and emotion task</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1F0UzTsmF1NK6F3NEsJHUw9G5K3j_-eYA?usp=sharing">Seminar 8 (part 2): Functional connectivity</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Seminar 9. Interpretation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1sJtU1uWezC-hEpDSkyhl0toioOt3F8FF?usp=sharing">Seminar 9. Interpretation of 3D CNNs for Brain MRI Data Classification</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/BIMAI-lab/NEUROML_course" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/BIMAI-lab/NEUROML_course/issues/new?title=Issue%20on%20page%20%2Fseminars6_7/Introduction.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/seminars6_7/Introduction.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>fMRI data preprocessing - Introduction</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">fMRI data preprocessing - Introduction</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-nipype">Introduction Nipype</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="fmri-data-preprocessing-introduction">
+<h1>fMRI data preprocessing - Introduction<a class="headerlink" href="#fmri-data-preprocessing-introduction" title="Link to this heading">#</a></h1>
+<p><a class="reference external" href="https://colab.research.google.com/github/adasegroup/NEUROML2020/blob/seminar4/seminar-4/Introduction.ipynb"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
+<p>fMRI scans are saved in dicom format. For scientific analysis of brain images the nifty format (.nii files) are often used.
+The conversion from dicom to nifty can be done with <a class="reference external" href="https://www.nitrc.org/plugins/mwiki/index.php/dcm2nii:MainPage#Introduction">dcm2niix</a></p>
+<p>Many file are generated during fMRI sessions. These can arranged in many ways, thus a standard is needed how to arrange them.
+Commonly used standard is <a class="reference external" href="https://bids.neuroimaging.io/">Brain Imaging Data Structure (BIDS)</a>.</p>
+<p>You can use <a class="reference external" href="https://heudiconv.readthedocs.io/en/latest/">HeuDiConv</a> or <a class="reference external" href="https://cbedetti.github.io/Dcm2Bids/tutorial/">Dcm2Bids</a> to automate the conversion from dicom to BIDS.</p>
+<p><img alt="DICOM TO BIDS" src="https://www.incf.org/sites/default/files/articles/bids_standard-2.jpg" /></p>
+<p>Let’s download the data we will be working with. We will download data through DataLad. It’s destibuted data managements system, its provide data storage and version control.</p>
+<p><a class="reference external" href="http://www.datalad.org/">http://www.datalad.org/</a></p>
+<p>about the data, that we working with:
+<a class="reference external" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3641991/">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3641991/</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+sudo datalad get -J 20 -d /data/ds000114 \
+    /data/ds000114/derivatives/fmriprep/sub-*/anat/*preproc.nii.gz \
+    /data/ds000114/sub-*/ses-test/func/*fingerfootlips*
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sudo: a terminal is required to read the password; either use the -S option to read from standard in
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>put or configure an askpass helper
+sudo: a password is required
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">CalledProcessError</span><span class="g g-Whitespace">                        </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_cell_magic</span><span class="p">(</span><span class="s1">&#39;bash&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;sudo datalad get -J 20 -d /data/ds000114 </span><span class="se">\\\n</span><span class="s1">    /data/ds000114/derivatives/fmriprep/sub-*/anat/*preproc.nii.gz </span><span class="se">\\\n</span><span class="s1">    /data/ds000114/sub-*/ses-test/func/*fingerfootlips*</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nn">File ~/Documents/projects/.venv/lib/python3.13/site-packages/IPython/core/interactiveshell.py:2565,</span> in <span class="ni">InteractiveShell.run_cell_magic</span><span class="nt">(self, magic_name, line, cell)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2563</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">builtin_trap</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">2564</span>     <span class="n">args</span> <span class="o">=</span> <span class="p">(</span><span class="n">magic_arg_s</span><span class="p">,</span> <span class="n">cell</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">2565</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2567</span> <span class="c1"># The code below prevents the output from being displayed</span>
+<span class="g g-Whitespace">   </span><span class="mi">2568</span> <span class="c1"># when using magics with decorator @output_can_be_silenced</span>
+<span class="g g-Whitespace">   </span><span class="mi">2569</span> <span class="c1"># when the last Python token in the expression is a &#39;;&#39;.</span>
+<span class="g g-Whitespace">   </span><span class="mi">2570</span> <span class="k">if</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">magic</span><span class="o">.</span><span class="n">MAGIC_OUTPUT_CAN_BE_SILENCED</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
+
+<span class="nn">File ~/Documents/projects/.venv/lib/python3.13/site-packages/IPython/core/magics/script.py:160,</span> in <span class="ni">ScriptMagics._make_script_magic.&lt;locals&gt;.named_script_magic</span><span class="nt">(line, cell)</span>
+<span class="g g-Whitespace">    </span><span class="mi">158</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">159</span>     <span class="n">line</span> <span class="o">=</span> <span class="n">script</span>
+<span class="ne">--&gt; </span><span class="mi">160</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">shebang</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">cell</span><span class="p">)</span>
+
+<span class="nn">File ~/Documents/projects/.venv/lib/python3.13/site-packages/IPython/core/magics/script.py:343,</span> in <span class="ni">ScriptMagics.shebang</span><span class="nt">(self, line, cell)</span>
+<span class="g g-Whitespace">    </span><span class="mi">338</span> <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">raise_error</span> <span class="ow">and</span> <span class="n">p</span><span class="o">.</span><span class="n">returncode</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">339</span>     <span class="c1"># If we get here and p.returncode is still None, we must have</span>
+<span class="g g-Whitespace">    </span><span class="mi">340</span>     <span class="c1"># killed it but not yet seen its return code. We don&#39;t wait for it,</span>
+<span class="g g-Whitespace">    </span><span class="mi">341</span>     <span class="c1"># in case it&#39;s stuck in uninterruptible sleep. -9 = SIGKILL</span>
+<span class="g g-Whitespace">    </span><span class="mi">342</span>     <span class="n">rc</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">returncode</span> <span class="ow">or</span> <span class="o">-</span><span class="mi">9</span>
+<span class="ne">--&gt; </span><span class="mi">343</span>     <span class="k">raise</span> <span class="n">CalledProcessError</span><span class="p">(</span><span class="n">rc</span><span class="p">,</span> <span class="n">cell</span><span class="p">)</span>
+
+<span class="ne">CalledProcessError</span>: Command &#39;b&#39;sudo datalad get -J 20 -d /data/ds000114 \\\n    /data/ds000114/derivatives/fmriprep/sub-*/anat/*preproc.nii.gz \\\n    /data/ds000114/sub-*/ses-test/func/*fingerfootlips*\n&#39;&#39; returned non-zero exit status 1.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Unfortunately this cell doesn’t work properly when you deploy docker container on a mac with M* chip (I personally tried M1 and M1X and there were some troubles with it). In this case I recommend to use data from the archive. <strong>NOTE</strong> in case of using data from the archive you need to specify correct pathes in the proceeding cells.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">list_files</span>
+<span class="c1"># The data is already in BIDS format</span>
+<span class="c1"># The subjects peformed 5 tasks. We will focus on fingerfootlips task</span>
+<span class="n">list_files</span><span class="p">(</span><span class="s1">&#39;/data/ds000114/sub-01/ses-retest&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ses-retest/
+    func/
+        sub-01_ses-retest_task-linebisection_bold.nii.gz
+        sub-01_ses-retest_task-fingerfootlips_bold.nii.gz
+        sub-01_ses-retest_task-covertverbgeneration_bold.nii.gz
+        sub-01_ses-retest_task-linebisection_events.tsv
+        sub-01_ses-retest_task-overtwordrepetition_bold.nii.gz
+        sub-01_ses-retest_task-overtverbgeneration_bold.nii.gz
+    anat/
+        sub-01_ses-retest_T1w.nii.gz
+    dwi/
+        sub-01_ses-retest_dwi.nii.gz
+</pre></div>
+</div>
+</div>
+</div>
+<p>With nibabel we can load a file and inspect its properties.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">nibabel</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">nilearn</span><span class="w"> </span><span class="kn">import</span> <span class="n">plotting</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+
+<span class="n">anat</span> <span class="o">=</span> <span class="n">nibabel</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;/data/ds000114/derivatives/fmriprep/sub-01/anat/sub-01_t1w_preproc.nii.gz&#39;</span><span class="p">)</span>
+<span class="n">fmri</span> <span class="o">=</span> <span class="n">nibabel</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;/data/ds000114/sub-01/ses-test/func/sub-01_ses-test_task-fingerfootlips_bold.nii.gz&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Anatomical dimensionality is </span><span class="si">{</span><span class="n">anat</span><span class="o">.</span><span class="n">ndim</span><span class="si">}</span><span class="s1"> and fmri is </span><span class="si">{</span><span class="n">fmri</span><span class="o">.</span><span class="n">ndim</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="c1">#The anatomical image have higher resolution then the fmri</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Anatomical voxelization: </span><span class="si">{</span><span class="n">anat</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="se">\n</span><span class="s1">fMRI voxelization: </span><span class="si">{</span><span class="n">fmri</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="c1">#the data can be accessed as</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Anatomical volume affine:</span><span class="se">\n</span><span class="si">{</span><span class="n">anat</span><span class="o">.</span><span class="n">affine</span><span class="si">}</span><span class="se">\n</span><span class="s1">fMRI affine:</span><span class="se">\n</span><span class="si">{</span><span class="n">fmri</span><span class="o">.</span><span class="n">affine</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">anat</span><span class="o">.</span><span class="n">dataobj</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Anatomical dimensionality is 3 and fmri is 4
+Anatomical voxelization: (256, 156, 256)
+fMRI voxelization: (64, 64, 30, 184)
+
+Anatomical volume affine:
+[[ 9.99182463e-01 -5.10393567e-02  9.58159845e-03 -1.27317017e+02]
+ [ 3.95217389e-02  1.29798853e+00 -2.68560350e-02 -8.03349991e+01]
+ [-8.51583015e-03  3.53622437e-02  9.99593377e-01 -1.38213226e+02]
+ [ 0.00000000e+00  0.00000000e+00  0.00000000e+00  1.00000000e+00]]
+fMRI affine:
+[[-3.99471426e+00 -2.04233140e-01  2.29353290e-02  1.30641693e+02]
+ [-2.05448717e-01  3.98260689e+00 -3.10890853e-01 -9.74732285e+01]
+ [ 6.95819734e-03  3.11659902e-01  3.98780894e+00 -8.06465759e+01]
+ [ 0.00000000e+00  0.00000000e+00  0.00000000e+00  1.00000000e+00]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">anat</span><span class="o">.</span><span class="n">orthoview</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;OrthoSlicer3D: /data/ds000114/derivatives/fmriprep/sub-01/anat/sub-01_t1w_preproc.nii.gz (256, 156, 256)&gt;
+</pre></div>
+</div>
+<img alt="../_images/ec4c2182acfe144434b52d5380f4d301a967af3b55c3aec1a9f79a76e0e8431d.png" src="../_images/ec4c2182acfe144434b52d5380f4d301a967af3b55c3aec1a9f79a76e0e8431d.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fmri</span><span class="o">.</span><span class="n">orthoview</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;OrthoSlicer3D: /data/ds000114/sub-01/ses-test/func/sub-01_ses-test_task-fingerfootlips_bold.nii.gz (64, 64, 30, 184)&gt;
+</pre></div>
+</div>
+<img alt="../_images/6c0b74e9756131caa3815c38aa71d02d7c8fa97a800408110112105cd7361946.png" src="../_images/6c0b74e9756131caa3815c38aa71d02d7c8fa97a800408110112105cd7361946.png" />
+</div>
+</div>
+<p>Lets stop on SliceTiming key, unlike a photograph, in which the entire picture is taken in a single moment, an fMRI volume is acquired in slices. Each of these slices takes time to acquire - from tens to hundreds of milliseconds.</p>
+<p>The two most commonly used methods for creating volumes are sequential and interleaved slice acquisition. Sequential slice acquisition acquires each adjacent slice consecutively, either bottom-to-top or top-to-bottom. Interleaved slice acquisition acquires every other slice, and then fills in the gaps on the second pass. Both of these methods are illustrated in the video below.</p>
+<p><a class="reference external" href="https://www.brainvoyager.com/bv/doc/UsersGuide/Preprocessing/SliceScanTimeCorrection.html">https://www.brainvoyager.com/bv/doc/UsersGuide/Preprocessing/SliceScanTimeCorrection.html</a></p>
+<p><img alt="SliceTiming" src="https://andysbrainbook.readthedocs.io/en/latest/_images/SliceTimingCorrection_Demo.gif" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+
+<span class="c1">#metadata is located in json files</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/data/ds000114/task-fingerfootlips_bold.json&#39;</span><span class="p">,</span> <span class="s1">&#39;rt&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
+    <span class="n">task_info</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">fp</span><span class="p">)</span>
+<span class="n">task_info</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;EchoTime&#39;: 0.05,
+ &#39;FlipAngle&#39;: 90,
+ &#39;RepetitionTime&#39;: 2.5,
+ &#39;SliceTiming&#39;: [0.0,
+  1.2499999999999998,
+  0.08333333333333333,
+  1.333333333333333,
+  0.16666666666666666,
+  1.4166666666666663,
+  0.25,
+  1.4999999999999996,
+  0.3333333333333333,
+  1.5833333333333328,
+  0.41666666666666663,
+  1.666666666666666,
+  0.5,
+  1.7499999999999993,
+  0.5833333333333333,
+  1.8333333333333326,
+  0.6666666666666666,
+  1.9166666666666659,
+  0.75,
+  1.9999999999999991,
+  0.8333333333333333,
+  2.083333333333332,
+  0.9166666666666666,
+  2.1666666666666656,
+  1.0,
+  2.249999999999999,
+  1.0833333333333333,
+  2.333333333333332,
+  1.1666666666666665,
+  2.416666666666665],
+ &#39;TaskName&#39;: &#39;finger_foot_lips&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">task_info</span><span class="p">[</span><span class="s1">&#39;SliceTiming&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>30
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="introduction-nipype">
+<h1>Introduction Nipype<a class="headerlink" href="#introduction-nipype" title="Link to this heading">#</a></h1>
+<p><strong>Why nipype?</strong></p>
+<p>Nipype allows to build preprocessing pipelines from different softwares, and it is computationally efficient. There are some helpful ready to use pipleines written with Nipype like <a class="reference external" href="https://fmriprep.org/en/stable/index.html">fmriprep</a>. To use fmriprep the data have to be in valid BIDS format. The user have to supply only the path to the data setup the <a class="reference external" href="https://fmriprep.org/en/stable/usage.html#command-line-arguments">parametars</a>.</p>
+<p>In Nipype, interfaces are python modules that allow you to use various external packages (e.g. FSL, SPM or FreeSurfer), even if they themselves are written in another programming language than python. Such an interface knows what sort of options an external program has and how to execute it.</p>
+<p><img alt="Nipype architecture" src="https://raw.github.com/satra/intro2nipype/master/images/arch.png" /></p>
+<p>In Nipype, a node is an object that executes a certain function. This function can be anything from a Nipype interface to a user-specified function or an external script. Each node consists of a name, an interface category and at least one input field, and at least one output field.</p>
+<p>Once you connect multiple nodes to each other, you create a directed graph. In Nipype we call such graphs either workflows or pipelines. Directed connections can only be established from an output field of a node to an input field of another node.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">nipype</span><span class="w"> </span><span class="kn">import</span> <span class="n">Node</span><span class="p">,</span> <span class="n">Function</span><span class="p">,</span> <span class="n">Workflow</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">clear_output</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">multiply</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
+
+<span class="c1">#Create a Node that multiplies 2 numbers</span>
+<span class="n">mul</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">Function</span><span class="p">(</span><span class="n">input_names</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">],</span>
+                      <span class="n">output_names</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;multiply_result&#39;</span><span class="p">],</span>
+                      <span class="n">function</span><span class="o">=</span><span class="n">multiply</span><span class="p">),</span> 
+             <span class="n">name</span><span class="o">=</span><span class="s1">&#39;a_x_b&#39;</span><span class="p">)</span>
+
+<span class="n">mul</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">mul</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">b</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">mul</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+<span class="n">result</span><span class="o">.</span><span class="n">outputs</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230922-21:01:31,979 nipype.workflow INFO:
+	 [Node] Setting-up &quot;a_x_b&quot; in &quot;/tmp/tmpnn7l0_rd/a_x_b&quot;.
+230922-21:01:31,984 nipype.workflow INFO:
+	 [Node] Executing &quot;a_x_b&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
+230922-21:01:31,987 nipype.workflow INFO:
+	 [Node] Finished &quot;a_x_b&quot;, elapsed time 0.000427s.
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>multiply_result = 6
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Create a Node that adds 2 numbers</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+
+
+
+<span class="n">adder</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">Function</span><span class="p">(</span><span class="n">input_names</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">],</span>
+                      <span class="n">output_names</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;add&#39;</span><span class="p">],</span>
+                      <span class="n">function</span><span class="o">=</span><span class="n">add</span><span class="p">),</span> 
+             <span class="n">name</span><span class="o">=</span><span class="s1">&#39;a_plus_b&#39;</span><span class="p">)</span>
+<span class="n">adder</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">b</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="c1">#Create a workflow </span>
+<span class="n">wf</span> <span class="o">=</span> <span class="n">Workflow</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">)</span>
+<span class="c1"># connect the nodes </span>
+<span class="n">wf</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">mul</span><span class="p">,</span> <span class="s1">&#39;multiply_result&#39;</span><span class="p">,</span> <span class="n">adder</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span>
+<span class="c1">#visualize the graph</span>
+<span class="n">wf</span><span class="o">.</span><span class="n">write_graph</span><span class="p">(</span><span class="n">graph2use</span><span class="o">=</span><span class="s1">&#39;flat&#39;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;png&#39;</span><span class="p">,</span> <span class="n">simple_form</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">clear_output</span><span class="p">()</span>
+<span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;graph_detailed.png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/b7332b216d6c470daf7c74246d1c8a0d2cc70fd42348c06eae499a2bc290b3d6.png" src="../_images/b7332b216d6c470daf7c74246d1c8a0d2cc70fd42348c06eae499a2bc290b3d6.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#run the graph</span>
+<span class="n">eg</span> <span class="o">=</span> <span class="n">wf</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+<span class="n">clear_output</span><span class="p">()</span><span class="c1">#don&#39;t print the pipeline steps during exection</span>
+<span class="c1">#check the results</span>
+<span class="n">eg</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">eg</span><span class="o">.</span><span class="n">nodes</span><span class="p">())</span>
+<span class="n">nodes_outputs</span> <span class="o">=</span> <span class="p">[</span><span class="n">node</span><span class="o">.</span><span class="n">result</span><span class="o">.</span><span class="n">outputs</span> <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">eg</span><span class="p">]</span>
+<span class="n">nodes_outputs</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[
+ multiply_result = 6,
+ 
+ add = 16]
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Dataset:</strong>
+<a class="reference external" href="https://openneuro.org/datasets/ds000114/versions/1.0.1">A test-retest fMRI dataset for motor, language and spatial attention functions</a></p>
+<p><strong>About nipype</strong>
+<a class="reference external" href="https://www.frontiersin.org/articles/10.3389/fninf.2011.00013/full">https://www.frontiersin.org/articles/10.3389/fninf.2011.00013/full</a></p>
+<p><strong>Thanks to Michael Notter for the wonderful <a class="reference external" href="https://miykael.github.io/nipype_tutorial/">nipype tutorial</a></strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="nb">echo</span><span class="w"> </span><span class="nv">$FSLDIR</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./seminars6_7"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">fMRI data preprocessing - Introduction</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-nipype">Introduction Nipype</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Nadezhda Alsahanova, Aleksandra Beliaeva
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

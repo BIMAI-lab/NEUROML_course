@@ -1,0 +1,859 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Motivation &amp; Overview &#8212; Neuroimaging and Machine Learning for Biomedicine</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/myadmonitions.css?v=0009bf62" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'seminar1/opening_seminar';</script>
+    <link rel="icon" href="../_static/logo.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Neuroimaging and Machine Learning for Biomedicine - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Neuroimaging and Machine Learning for Biomedicine - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to the Neuroimaging and Machine Learning for Biomedicine coursebook
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../bio/intro_links.html">Links</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1AM67Sd37J0hIJ-kLyzAZRm8op_JcUQ9b?usp=sharing">Intro to shell</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1jkf4Jt0QvDz2O7UoZ-sZAi0V0oke5Yju?usp=sharing">Machine learning fundamentals on medical data</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://drive.google.com/file/d/1q0XncKq2y_wHLXJaxhjfBCDGHABmzrjM/view?usp=sharing">Intro to computer vision</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Seminars 2-3. Working with EEG</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../seminars2_3/seminar1_working_with_eeg_ipynb_.html">Seminar 1. EEG analysis</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Seminars 4-5. Working with MRI</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../seminar4/docker.html">Preparation to Seminar 4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../seminar4/seminar4_1_mri.html">Seminar 4.1. MRI data analysis, databases and tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../seminar4/seminar4_2_transform.html">Transformations</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../seminar4/seminar4_3_freesurfer.html">FREESURFER</a></li>
+
+
+<li class="toctree-l1"><a class="reference external" href="https://drive.google.com/file/d/1HuS7ChgQvch4vrD8gfITGUZP9E8hZ8Hw/view?usp=sharing">Seminar 5.1. MRI classification with 3D CNN</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://drive.google.com/file/d/1m7mWY0LI2M6PdevJf5rLCdm-WrAOoXJ-/view?usp=sharing">Seminar 5.2. MRI segmentation with 3D U-net</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Seminars 6-8. Working with fMRI</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1Hed2ggYNbyvBMeYpNeapMAepxeQBVLRL?usp=sharing">Seminar 8 (part 1): Analyze task-based fMRI for motor and emotion task</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1F0UzTsmF1NK6F3NEsJHUw9G5K3j_-eYA?usp=sharing">Seminar 8 (part 2): Functional connectivity</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Seminar 9. Interpretation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1sJtU1uWezC-hEpDSkyhl0toioOt3F8FF?usp=sharing">Seminar 9. Interpretation of 3D CNNs for Brain MRI Data Classification</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/BIMAI-lab/NEUROML_course" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/BIMAI-lab/NEUROML_course/issues/new?title=Issue%20on%20page%20%2Fseminar1/opening_seminar.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/seminar1/opening_seminar.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Motivation & Overview</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Motivation &amp; Overview</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#neuroimaging-modalities">Neuroimaging Modalities</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-learning-in-neuroimaging">Machine Learning in Neuroimaging</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#reminder-of-the-classical-pipeline-ml-task">Reminder of the Classical Pipeline - ML task</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#how-objects-are-set-feature-description">How objects are set. Feature description</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#training-classification-model">Training classification model:</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#analysis-of-classification-errors">Analysis of classification errors</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example-tasks">Example Tasks</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#data-challenges-preprocessing">Data Challenges &amp; Preprocessing</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#high-dimensional-low-sample-data-overfitting-risk">- <strong>High-dimensional, low-sample data</strong> → overfitting risk.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-problem-of-underfitting-and-overfitting">The problem of underfitting and overfitting:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-validation-cv">Cross-validation (CV)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#noise-artifacts-eeg-blinks-muscle-mri-motion-scanner-drift-fnirs-physiological">- <strong>Noise/artifacts:</strong> EEG (blinks, muscle), MRI (motion, scanner drift), fNIRS (physiological).</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variability-multi-site-multi-device-multimodal-fusion-issues">- <strong>Variability:</strong> multi-site, multi-device, multimodal fusion issues.</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocessing-examples"><strong>Preprocessing examples:</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#hidden-traps-often-forgotten-even-by-professionals">Hidden Traps (Often Forgotten, Even by Professionals)</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="motivation-overview">
+<h1>Motivation &amp; Overview<a class="headerlink" href="#motivation-overview" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p>Modern neuroimaging technologies (EEG, fNIRS, MRI) generate massive and complex data.</p></li>
+<li><p>Machine Learning (ML) methods surged in neuroimaging research, going beyond classical univariate statistics.</p></li>
+<li><p>ML models can now distinguish neurological/psychiatric patients from controls, predict Alzheimer’s, schizophrenia, autism.</p></li>
+<li><p>Importance: pattern recognition, biomarker discovery, clinical decision support.</p></li>
+</ul>
+</section>
+<section id="neuroimaging-modalities">
+<h1>Neuroimaging Modalities<a class="headerlink" href="#neuroimaging-modalities" title="Link to this heading">#</a></h1>
+<ul>
+<li><p><strong>EEG (Electroencephalography).</strong><br />
+Provides excellent temporal resolution (milliseconds) but limited spatial precision. It is highly sensitive to artifacts such as eye blinks, muscle noise, and electromagnetic interference. Common preprocessing steps include frequency filtering (low-pass/high-pass) and artifact removal methods (e.g., ICA). ML approaches on EEG have successfully classified cognitive traits.</p>
+<p><strong>Example Study:</strong><br />
+Mikheev et al. (2024) investigated EEG patterns during arithmetic, logical, and verbal tasks, applying ML models (logistic regression, Riemann projections, LightGBM with handcrafted spectral power features and explainability via SHAP) to distinguish individuals with mathematics vs. humanities background, achieving balanced accuracies between 0.84–0.89.<br />
+<a class="reference external" href="https://doi.org/10.1038/s41598-024-55163-w">Read the article (Scientific Reports)</a></p>
+<p><strong>Python libraries:</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://mne.tools/">MNE-Python</a> – preprocessing, ICA, filtering</p></li>
+<li><p><a class="reference external" href="https://pyriemann.readthedocs.io/">pyriemann</a> – methods on SPD matrices</p></li>
+<li><p><a class="reference external" href="https://scikit-learn.org/stable/">scikit-learn</a> – various classifiers</p></li>
+<li><p><a class="reference external" href="https://www.tensorflow.org/">TensorFlow/Keras</a> – deep learning</p></li>
+<li><p><a class="reference external" href="https://pytorch.org/">PyTorch</a> – deep learning</p></li>
+</ul>
+</li>
+<li><p><strong>MRI / fMRI.</strong><br />
+Structural MRI provides high spatial resolution anatomical imaging; fMRI captures BOLD signals with ~second-level delays. fMRI data are large (millions of voxels) and susceptible to noise from subject motion, physiological fluctuations (e.g. breathing, heartbeat), and scanner drift. The choice of preprocessing pipeline can substantially alter results.</p>
+<p><strong>Example Study:</strong><br />
+Luppi et al. (2024) systematically evaluated 768 fMRI data-processing pipelines for resting-state functional connectomics and found that most pipelines produced inconsistent or misleading network reconstructions. A subset demonstrated robust performance across datasets and evaluation criteria.<br />
+<a class="reference external" href="https://doi.org/10.1038/s41467-024-48781-5">Read the article (Nature Communications)</a></p>
+<p><strong>Python libraries:</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://nilearn.github.io/">Nilearn</a> – machine learning for neuroimaging data</p></li>
+<li><p><a class="reference external" href="https://nipy.org/nibabel/">NiBabel</a> – neuroimaging file handling</p></li>
+<li><p><a class="reference external" href="https://fmriprep.org/">fMRIPrep</a> – standardized preprocessing pipeline</p></li>
+<li><p><a class="reference external" href="https://nipype.readthedocs.io/">Nipype</a> – workflow orchestration</p></li>
+</ul>
+</li>
+<li><p><strong>fNIRS (Functional Near-Infrared Spectroscopy).</strong><br />
+Measures cortical hemodynamics via optical signals. Advantages include portability and robustness to head motion (suitable for children), while limitations involve shallow penetration depth and sensitivity to physiological noise (pulse, respiration).</p>
+<p><strong>Python libraries:</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://mne.tools/mne-nirs/stable/index.html">MNE-NIRS</a> – fNIRS integration with MNE</p></li>
+</ul>
+</li>
+</ul>
+<p>Each modality generates distinct data types—multi-channel time series (EEG), 3D voxel volumes (fMRI), or optical signals (fNIRS)—and requires tailored preprocessing strategies to address modality-specific noise sources and artifacts.</p>
+</section>
+<section id="machine-learning-in-neuroimaging">
+<h1>Machine Learning in Neuroimaging<a class="headerlink" href="#machine-learning-in-neuroimaging" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p><strong>Supervised learning:</strong> Classification (patient vs. control), regression (predicting scores).</p></li>
+<li><p><strong>Unsupervised learning:</strong> Discover hidden clusters, connectivity subtypes.</p></li>
+<li><p><strong>Contrast with classical stats:</strong> GLM tests voxels independently; ML captures multivariate patterns.</p></li>
+</ul>
+<p><strong>Common ML Approaches:</strong></p>
+<ul class="simple">
+<li><p>Feature engineering + SVM/Random Forest.</p></li>
+<li><p>Deep Learning (CNNs, autoencoders) → segmentation, disease prediction.</p></li>
+<li><p>Validation: Proper CV, avoiding overfitting, ensuring generalization.</p></li>
+</ul>
+</section>
+<section id="reminder-of-the-classical-pipeline-ml-task">
+<h1>Reminder of the Classical Pipeline - ML task<a class="headerlink" href="#reminder-of-the-classical-pipeline-ml-task" title="Link to this heading">#</a></h1>
+<p>Let <span class="math notranslate nohighlight">\(X\)</span> is <code class="docutils literal notranslate"><span class="pre">data</span> <span class="pre">samples</span></code>, <span class="math notranslate nohighlight">\(Y\)</span> - <code class="docutils literal notranslate"><span class="pre">targets</span></code>.  <span class="math notranslate nohighlight">\(y : X \rightarrow Y\)</span> is an unknown target function.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Input:</span></code></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\{x_1, \dots, x_l\} \subset X\)</span> - training sample;</p></li>
+<li><p><span class="math notranslate nohighlight">\(y_i = y(x_i), ~i = 1, \dots, l\)</span> - targets.</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">Output:</span></code></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(a: X \rightarrow Y\)</span> - <code class="docutils literal notranslate"><span class="pre">predicted</span> <span class="pre">function</span></code> close to <span class="math notranslate nohighlight">\(y\)</span> on all set <span class="math notranslate nohighlight">\(X\)</span>.</p></li>
+</ul>
+</section>
+<section id="how-objects-are-set-feature-description">
+<h1>How objects are set. Feature description<a class="headerlink" href="#how-objects-are-set-feature-description" title="Link to this heading">#</a></h1>
+<p><span class="math notranslate nohighlight">\(f_j\)</span> - features of objects.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Types</span> <span class="pre">of</span> <span class="pre">features:</span></code></p>
+<ul class="simple">
+<li><p>Binary feature <span class="math notranslate nohighlight">\(f_j\)</span>:</p>
+<ul>
+<li><p>gender, headache, weakness, nausea, etc.</p></li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\(f_j\)</span> - categorical feature:</p>
+<ul>
+<li><p>name of the medicine</p></li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\(f_j\)</span> is an ordinal feature:</p>
+<ul>
+<li><p>severity of the condition, jaundice, etc.</p></li>
+</ul>
+</li>
+<li><p>Quantitative feature:</p>
+<ul>
+<li><p>age, pulse, blood pressure, hemoglobin content in the blood, dose of the drug, etc.</p></li>
+</ul>
+</li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">Vector</span></code> <span class="math notranslate nohighlight">\(\big(f_1(x), f_2(x), \ldots, f_n(x)\big)\)</span> is a feature description of the object <span class="math notranslate nohighlight">\(x \in X\)</span>.</p>
+<p>The feature data is set as follows:</p>
+<p>\begin{equation*}
+F =
+\begin{pmatrix}
+f_1(x_1) &amp; \dots &amp; f_n(x_1) \
+\vdots &amp; \ddots &amp; \vdots \
+f_1(x_ℓ) &amp; \dots &amp; f_n(x_\ell)
+\end{pmatrix}
+\end{equation*}</p>
+</section>
+<section id="training-classification-model">
+<h1>Training classification model:<a class="headerlink" href="#training-classification-model" title="Link to this heading">#</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">Train</span> <span class="pre">sample:</span></code> <span class="math notranslate nohighlight">\(X^\ell = \big(x_i,~y_i\big)_{i=1}^{\ell}, \quad x_i \in \mathbb{R}^n, \quad y_i \in \{-1,~+1\}\)</span></p>
+<ul class="simple">
+<li><p>Classification model - <strong>linear</strong>:
+\begin{equation}
+a(x, θ) = \text{sign} \big(\sum_{j=1}^{n} θ_j f_j(x)\big), \quad θ \in \mathbb{R}^n
+\end{equation}</p></li>
+<li><p>The loss function is <strong>binary</strong> or its <strong>approximation</strong>::
+\begin{equation}
+\mathscr{L}(a,~y) = [ay &lt; 0] = \big[x^\top θ \cdot y &lt; 0\big] \le \mathscr{L}\big(x^\top θ \cdot y)
+\end{equation}</p></li>
+</ul>
+</section>
+<section id="analysis-of-classification-errors">
+<h1>Analysis of classification errors<a class="headerlink" href="#analysis-of-classification-errors" title="Link to this heading">#</a></h1>
+<p>The task of classification into <code class="docutils literal notranslate"><span class="pre">two</span> <span class="pre">classes</span></code>, <span class="math notranslate nohighlight">\(y_i\in \{-1,~+1\}\)</span>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Classification</span> <span class="pre">algorithm</span></code> <span class="math notranslate nohighlight">\(a(x_i) \in \{-1,~+1\}\)</span>.</p>
+<p>By applying the algorithm <span class="math notranslate nohighlight">\(a(x)\)</span> to objects <span class="math notranslate nohighlight">\(x\)</span>, we can get <span class="math notranslate nohighlight">\(4\)</span> possible situations:</p>
+<p><img alt="" src="https://drive.google.com/uc?export=view&amp;id=1zfrRBSZhAs3RZeLYhUKeo0RsDPpPXjm-" /></p>
+<p><code class="docutils literal notranslate"><span class="pre">Positive</span> <span class="pre">/</span> <span class="pre">Negative</span></code> - which answer was given by the classifier <span class="math notranslate nohighlight">\(a(x)\)</span>. <code class="docutils literal notranslate"><span class="pre">True</span> <span class="pre">/</span> <span class="pre">False</span></code> - the classifier gave the correct answer or made a mistake.</p>
+<p><strong>Number of correct classifications</strong> (the more, the better):
+\begin{equation}
+\text{Accuracy} = \frac{1}{\ell}\sum_{i=1}^{\ell}\big[a(x_i) = y_i\big] = ~\frac{\text{TP} + \text{TN}}{\text{FP} + \text{FN} + \text{TP} + \text{TN}}
+\end{equation}</p>
+<p><code class="docutils literal notranslate"><span class="pre">!!!</span> <span class="pre">Disadvantage</span> <span class="pre">!!!</span></code>: does not take into account either the number (imbalance) of classes, or the cost of an error on objects of different classes.</p>
+<p><strong>For example</strong>: Classification of patients vs. healthy controls
+•	Suppose you have 100 subjects: 95 healthy and 5 patients with a rare neurological disorder.
+•	A classifier that always predicts “healthy” will yield an accuracy of 95%.
+•	At first glance, 95% seems like high performance, but the model never identified a single patient — which was the key task.</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Exercise 1</p>
+<p>**Supervised vs Unsupervised Learning in Neuroimaging **</p>
+<ol class="arabic simple">
+<li><p>Provide <strong>one concrete example</strong> of supervised learning in neuroimaging (e.g., patient vs. control classification or regression of cognitive scores).</p></li>
+<li><p>Provide <strong>one concrete example</strong> of unsupervised learning in neuroimaging (e.g., discovering hidden clusters or connectivity subtypes).</p></li>
+<li><p>Explain how machine learning approaches differ from classical GLM-based studies that analyze each voxel independently. Highlight at least <strong>two advantages</strong> of capturing multivariate patterns.</p></li>
+</ol>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Exercise 2</p>
+<p><strong>Feature Engineering vs Deep Learning: Choosing the Right Tool</strong></p>
+<ol class="arabic simple">
+<li><p>Describe a scenario in neuroimaging where a traditional pipeline—feature engineering combined with SVM or Random Forest—is the preferred approach.</p></li>
+<li><p>Describe a scenario where deep learning (e.g., CNNs, autoencoders) is more suitable, such as for segmentation or disease prediction, and explain why.</p></li>
+<li><p>For <strong>each</strong> approach (classic ML vs deep learning), state <strong>one major challenge</strong> (e.g., feature selection, overfitting, required data volume) in the context of neuroimaging.</p></li>
+</ol>
+</div>
+</section>
+<section id="example-tasks">
+<h1>Example Tasks<a class="headerlink" href="#example-tasks" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p><strong>Diagnosis/Prognosis:</strong> Predict Alzheimer’s, schizophrenia, etc. from scans.</p></li>
+<li><p><strong>Cognitive decoding:</strong> Identify stimulus/mental state from EEG/fMRI.</p></li>
+<li><p><strong>Biomarker discovery:</strong> Locate predictive regions or networks.</p></li>
+</ul>
+</section>
+<section id="data-challenges-preprocessing">
+<h1>Data Challenges &amp; Preprocessing<a class="headerlink" href="#data-challenges-preprocessing" title="Link to this heading">#</a></h1>
+<section id="high-dimensional-low-sample-data-overfitting-risk">
+<h2>- <strong>High-dimensional, low-sample data</strong> → overfitting risk.<a class="headerlink" href="#high-dimensional-low-sample-data-overfitting-risk" title="Link to this heading">#</a></h2>
+</section>
+<section id="the-problem-of-underfitting-and-overfitting">
+<h2>The problem of underfitting and overfitting:<a class="headerlink" href="#the-problem-of-underfitting-and-overfitting" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Underfitting</span></code>: the model is too simple, the number of parameters <span class="math notranslate nohighlight">\(n\)</span> is insufficient.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Overfitting</span></code>: the model is too complex, there is an excessive number of parameters <span class="math notranslate nohighlight">\(n\)</span>.</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">What</span> <span class="pre">causes</span> <span class="pre">overfitting?</span></code></p>
+<ul class="simple">
+<li><p>excessive complexity of the pamameter space, extra degrees of freedom in the model <span class="math notranslate nohighlight">\(g(x, θ)\)</span> are “spent” on overly accurate fitting to the training sample <span class="math notranslate nohighlight">\(X^l\)</span>;</p></li>
+<li><p>overfitting is always there when there is a choice (<span class="math notranslate nohighlight">\(a\)</span> from <span class="math notranslate nohighlight">\(A\)</span>) based on incomplete information (according to the final sample <span class="math notranslate nohighlight">\(X^l\)</span>).</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">How</span> <span class="pre">to</span> <span class="pre">detect</span> <span class="pre">overfitting?</span></code></p>
+<ul class="simple">
+<li><p>empirically, by dividing the sample into <span class="math notranslate nohighlight">\(\text{train}\)</span> and <span class="math notranslate nohighlight">\(\text{test}\)</span>, and the correct answers should be known for <span class="math notranslate nohighlight">\(\text{test}\)</span>.</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">You</span> <span class="pre">can't</span> <span class="pre">get</span> <span class="pre">rid</span> <span class="pre">of</span> <span class="pre">him.</span> <span class="pre">How</span> <span class="pre">to</span> <span class="pre">minimize</span> <span class="pre">it?</span></code></p>
+<ul class="simple">
+<li><p>minimize using <code class="docutils literal notranslate"><span class="pre">HoldOut</span></code>, <code class="docutils literal notranslate"><span class="pre">LOO</span></code> or <code class="docutils literal notranslate"><span class="pre">CV</span></code>, but be careful!!!</p></li>
+<li><p>impose restrictions on <span class="math notranslate nohighlight">\(θ\)</span> (regularization).</p></li>
+</ul>
+</section>
+<section id="cross-validation-cv">
+<h2>Cross-validation (CV)<a class="headerlink" href="#cross-validation-cv" title="Link to this heading">#</a></h2>
+<p>An <code class="docutils literal notranslate"><span class="pre">external</span> <span class="pre">criterion</span></code> evaluates the quality of “out-of-training”, for example, by a hold-out control sample <span class="math notranslate nohighlight">\(X^k\)</span>:
+\begin{equation}
+Q_{\mu}\big(X^\ell, X^k\big) = Q\big(\mu\big(X^\ell\big), X^k\big).
+\end{equation}</p>
+<p>Averaging <code class="docutils literal notranslate"><span class="pre">hold-out</span></code> estimates over a given <span class="math notranslate nohighlight">\(N\)</span> - set of partitions <span class="math notranslate nohighlight">\(X^L = X_n^{\ell} \bigcup X_n^{k}, \quad n = 1, \ldots, N\)</span>:</p>
+<p>\begin{equation}
+\text{CV}\big(\mu, X^L\big) = \frac{1}{\vert N\vert} \sum_{n \in N} Q_{\mu}\big(X_n^{\ell}, X_n^{k}\big).
+\end{equation}</p>
+<p>Special cases are different ways of setting <span class="math notranslate nohighlight">\(N\)</span>.</p>
+<ul class="simple">
+<li><p>A random set of partitions.</p></li>
+<li><p>Complete cross-validation (CCV): <span class="math notranslate nohighlight">\(N\)</span> is the set of all <span class="math notranslate nohighlight">\(C_{\ell+k}^{k}\)</span> partitions.</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">Disadvantage:</span></code> CCV estimation is computationally too complicated. Either small values of <span class="math notranslate nohighlight">\(k\)</span> or combinatorial estimates of CCV are used.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Sliding</span> <span class="pre">control</span></code> (Leave One Out CV): <span class="math notranslate nohighlight">\(~k=1\)</span>,
+\begin{equation}
+\text{LOO}\big(\mu, X^L\big) = \frac{1}{L} \sum_{n \in N} Q_{\mu}\big(X^L \backslash {x_i}, {x_i}\big).
+\end{equation}</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">Disadvantage:</span></code> <span class="math notranslate nohighlight">\(\text{LOO}\)</span>: resource intensive, high variance.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Cross-checking</span></code> on <span class="math notranslate nohighlight">\(q\)</span> blocks (<span class="math notranslate nohighlight">\(q\)</span>-fold CV): randomly splitting <span class="math notranslate nohighlight">\(X^L=X_1^{\ell_1}\bigcup\ldots X_q^{\ell_q}\)</span> into <span class="math notranslate nohighlight">\(q\)</span> blocks of (almost) equal length,</p></li>
+</ul>
+<p>\begin{equation}
+\text{CV}<em>q\big(\mu, X^L\big) = \frac{1}{q} \sum</em>{n=1}^{q} Q_{\mu}\big(X^L \backslash X_n^{\ell_n}, ~X_n^{\ell_n}\big).
+\end{equation}</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">disadvantage</span></code> of <span class="math notranslate nohighlight">\(q\)</span>-fold CV:</p>
+<ul class="simple">
+<li><p>the score depends significantly on the division into blocks;</p></li>
+<li><p>Each object participates in the control only once.</p></li>
+</ul>
+<div class="dropdown checklist admonition">
+<p class="admonition-title">Exercise 3</p>
+<p><strong>Our methodological checklist</strong></p>
+<ol class="arabic simple">
+<li><p>Strong regularization: L2/L1/ElasticNet, with hyperparameter tuning via nested CV.</p></li>
+<li><p>Dimensionality reduction: PCA/PLS applied before the model (within a Pipeline to avoid data leakage).</p></li>
+<li><p>Feature selection: L1-induced sparsity (SelectFromModel), mutual information, VarianceThreshold.</p></li>
+<li><p>Simple models: linear methods (LR/SVM), shallow decision trees with limited depth.</p></li>
+<li><p>Proper validation: stratified K-folds, nested CV, and a permutation test to confirm the model is not just “guessing”.</p></li>
+<li><p>Learning curves: verify that adding more data improves performance rather than merely increasing model complexity.</p></li>
+<li><p>Feature stability: resampling (bootstrap) and measuring the frequency of feature selection.</p></li>
+</ol>
+</div>
+</section>
+<section id="noise-artifacts-eeg-blinks-muscle-mri-motion-scanner-drift-fnirs-physiological">
+<h2>- <strong>Noise/artifacts:</strong> EEG (blinks, muscle), MRI (motion, scanner drift), fNIRS (physiological).<a class="headerlink" href="#noise-artifacts-eeg-blinks-muscle-mri-motion-scanner-drift-fnirs-physiological" title="Link to this heading">#</a></h2>
+</section>
+<section id="variability-multi-site-multi-device-multimodal-fusion-issues">
+<h2>- <strong>Variability:</strong> multi-site, multi-device, multimodal fusion issues.<a class="headerlink" href="#variability-multi-site-multi-device-multimodal-fusion-issues" title="Link to this heading">#</a></h2>
+</section>
+</section>
+<section id="preprocessing-examples">
+<h1><strong>Preprocessing examples:</strong><a class="headerlink" href="#preprocessing-examples" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p>EEG: filtering, artifact removal.</p></li>
+<li><p>fMRI: motion correction, normalization.</p></li>
+<li><p>fNIRS: light interference correction.</p></li>
+</ul>
+</section>
+<section id="hidden-traps-often-forgotten-even-by-professionals">
+<h1>Hidden Traps (Often Forgotten, Even by Professionals)<a class="headerlink" href="#hidden-traps-often-forgotten-even-by-professionals" title="Link to this heading">#</a></h1>
+<ol class="arabic">
+<li><p>Data leakage</p>
+<p>•	Test data contaminates training (normalizing before split, ICA across full dataset).</p>
+<p>•	Solution: Always split before preprocessing/feature selection.</p>
+</li>
+<li><p>Multiple comparisons &amp; statistical hypotheses</p>
+<p>•	Thousands of features → false positives.</p>
+<p>•	Solution: Control via FDR, Bonferroni, permutation tests.</p>
+</li>
+<li><p>Correlation ≠ causation</p>
+<p>•	Brain–behavior correlations may reflect confounds (motion, demographics, site).</p>
+<p>•	Solution: Use covariates, stratified CV, domain adaptation.</p>
+</li>
+<li><p>Circular analysis (“double dipping”)</p>
+<p>•	Selecting voxels/features on same data used for testing.</p>
+<p>•	Solution: Nested CV, independent validation sets.</p>
+</li>
+<li><p>Overfitting</p>
+<p>•	Few subjects vs. millions of features.</p>
+<p>•	Solution: Report CV with subject-level separation, not trial-level.</p>
+</li>
+<li><p>Reporting bias</p>
+<p>•	Only reporting accuracy without variance or baseline.</p>
+<p>•	Solution: Show chance levels, CI, label-shuffling controls.</p>
+</li>
+<li><p>Misunderstanding the nature of data</p>
+<p>•	Not all features or modalities are equivalent; missing modalities (e.g., absent fMRI scans, dropped EEG channels, incomplete behavioral data) require domain-aware strategies.</p>
+<p>•	Solution: Before imputation or harmonization, understand why data are missing (technical failure, subject dropout, site heterogeneity).</p>
+<p>•	Solution: Apply biologically and technically justified handling (e.g., modality-specific imputation, harmonization methods such as ComBat, or analysis restricted to common modalities).</p>
+</li>
+</ol>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./seminar1"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Motivation &amp; Overview</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#neuroimaging-modalities">Neuroimaging Modalities</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-learning-in-neuroimaging">Machine Learning in Neuroimaging</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#reminder-of-the-classical-pipeline-ml-task">Reminder of the Classical Pipeline - ML task</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#how-objects-are-set-feature-description">How objects are set. Feature description</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#training-classification-model">Training classification model:</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#analysis-of-classification-errors">Analysis of classification errors</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example-tasks">Example Tasks</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#data-challenges-preprocessing">Data Challenges &amp; Preprocessing</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#high-dimensional-low-sample-data-overfitting-risk">- <strong>High-dimensional, low-sample data</strong> → overfitting risk.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-problem-of-underfitting-and-overfitting">The problem of underfitting and overfitting:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-validation-cv">Cross-validation (CV)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#noise-artifacts-eeg-blinks-muscle-mri-motion-scanner-drift-fnirs-physiological">- <strong>Noise/artifacts:</strong> EEG (blinks, muscle), MRI (motion, scanner drift), fNIRS (physiological).</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variability-multi-site-multi-device-multimodal-fusion-issues">- <strong>Variability:</strong> multi-site, multi-device, multimodal fusion issues.</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocessing-examples"><strong>Preprocessing examples:</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#hidden-traps-often-forgotten-even-by-professionals">Hidden Traps (Often Forgotten, Even by Professionals)</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Nadezhda Alsahanova, Aleksandra Beliaeva
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
