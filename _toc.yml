@@ -61,9 +61,9 @@ parts:
   - file: seminar4/README.md
     title: Preparation to Seminar 6-8
   - url: https://colab.research.google.com/drive/1Hed2ggYNbyvBMeYpNeapMAepxeQBVLRL?usp=sharing
-    title: "Seminar 8 (part 1): Analyze task-based fMRI for motor and emotion task"
+    title: Seminar 8.1. Analyze task-based fMRI for motor and emotion task
   - url: https://colab.research.google.com/drive/1F0UzTsmF1NK6F3NEsJHUw9G5K3j_-eYA?usp=sharing
-    title: "Seminar 8 (part 2): Functional connectivity"
+    title: Seminar 8.2. Functional connectivity
     
 - caption: Seminar 9. Interpretation
   numbered: false
