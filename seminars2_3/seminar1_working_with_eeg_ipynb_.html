@@ -567,6 +567,20 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="nn">Input In [2],</span> in <span class="ni">&lt;cell line: 3&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="kn">import</span><span class="w"> </span><span class="nn">mne</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;mne&#39;
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -588,7 +602,16 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>zsh:1: command not found: wget
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2025-09-02 03:44:39--  https://www.physionet.org/files/eegmmidb/1.0.0/S003/S003R03.edf
+Распознаётся www.physionet.org (www.physionet.org)… 18.18.42.54
+Подключение к www.physionet.org (www.physionet.org)|18.18.42.54|:443... соединение установлено.
+HTTP-запрос отправлен. Ожидание ответа… 200 OK
+Длина: 2596896 (2,5M) [application/octet-stream]
+Сохранение в: «S003R03.edf»
+
+S003R03.edf         100%[===================&gt;]   2,48M   564KB/s    за 4,4s    
+
+2025-09-02 03:44:44 (582 KB/s) - «S003R03.edf» сохранён [2596896/2596896]
 </pre></div>
 </div>
 </div>
@@ -600,7 +623,16 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>zsh:1: command not found: wget
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2025-09-02 03:44:44--  https://www.physionet.org/files/eegmmidb/1.0.0/S003/S003R03.edf.event
+Распознаётся www.physionet.org (www.physionet.org)… 18.18.42.54
+Подключение к www.physionet.org (www.physionet.org)|18.18.42.54|:443... соединение установлено.
+HTTP-запрос отправлен. Ожидание ответа… 200 OK
+Длина: 638 [text/plain]
+Сохранение в: «S003R03.edf.event»
+
+S003R03.edf.event   100%[===================&gt;]     638  --.-KB/s    за 0s      
+
+2025-09-02 03:44:45 (26,5 MB/s) - «S003R03.edf.event» сохранён [638/638]
 </pre></div>
 </div>
 </div>
@@ -774,9 +806,9 @@ this file apply (plus whatever default styling the IDE applies).
 
 
 
-<tr class="mne-repr-section-header general-bf21f292-73a1-4532-8aec-3ddd2efd2a79"
+<tr class="mne-repr-section-header general-14519491-0ef6-4339-ae56-ebcf0003561b"
      title="Hide section" 
-    onclick="toggleVisibility('general-bf21f292-73a1-4532-8aec-3ddd2efd2a79')">
+    onclick="toggleVisibility('general-14519491-0ef6-4339-ae56-ebcf0003561b')">
     <th class="mne-repr-section-toggle">
         <button >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg>
@@ -788,19 +820,19 @@ this file apply (plus whatever default styling the IDE applies).
 </tr>
 
 
-<tr class="repr-element general-bf21f292-73a1-4532-8aec-3ddd2efd2a79 ">
+<tr class="repr-element general-14519491-0ef6-4339-ae56-ebcf0003561b ">
     <td class="mne-repr-section-toggle"></td>
     <td>MNE object type</td>
     <td>Info</td>
 </tr>
-<tr class="repr-element general-bf21f292-73a1-4532-8aec-3ddd2efd2a79 ">
+<tr class="repr-element general-14519491-0ef6-4339-ae56-ebcf0003561b ">
     <td class="mne-repr-section-toggle"></td>
     <td>Measurement date</td>
     
     <td>2009-08-12 at 16:15:00 UTC</td>
     
 </tr>
-<tr class="repr-element general-bf21f292-73a1-4532-8aec-3ddd2efd2a79 ">
+<tr class="repr-element general-14519491-0ef6-4339-ae56-ebcf0003561b ">
     <td class="mne-repr-section-toggle"></td>
     <td>Participant</td>
     
@@ -809,7 +841,7 @@ this file apply (plus whatever default styling the IDE applies).
     
     
 </tr>
-<tr class="repr-element general-bf21f292-73a1-4532-8aec-3ddd2efd2a79 ">
+<tr class="repr-element general-14519491-0ef6-4339-ae56-ebcf0003561b ">
     <td class="mne-repr-section-toggle"></td>
     <td>Experimenter</td>
     
@@ -824,9 +856,9 @@ this file apply (plus whatever default styling the IDE applies).
 
 
 
-<tr class="mne-repr-section-header acquisition-7fea11aa-2cf5-445b-821a-6d1c26a40d8e"
+<tr class="mne-repr-section-header acquisition-e5223431-de3c-42fa-af75-d77c5c060b12"
      title="Hide section" 
-    onclick="toggleVisibility('acquisition-7fea11aa-2cf5-445b-821a-6d1c26a40d8e')">
+    onclick="toggleVisibility('acquisition-e5223431-de3c-42fa-af75-d77c5c060b12')">
     <th class="mne-repr-section-toggle">
         <button >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg>
@@ -845,7 +877,7 @@ this file apply (plus whatever default styling the IDE applies).
 
 
 
-<tr class="repr-element acquisition-7fea11aa-2cf5-445b-821a-6d1c26a40d8e ">
+<tr class="repr-element acquisition-e5223431-de3c-42fa-af75-d77c5c060b12 ">
     <td class="mne-repr-section-toggle"></td>
     <td>Sampling frequency</td>
     <td>160.00 Hz</td>
@@ -861,9 +893,9 @@ this file apply (plus whatever default styling the IDE applies).
 
 
 
-<tr class="mne-repr-section-header channels-18ba9481-ebc7-45d9-aa96-2f459f638a8d"
+<tr class="mne-repr-section-header channels-e6511190-d740-4b39-9654-502fdc13bf59"
      title="Hide section" 
-    onclick="toggleVisibility('channels-18ba9481-ebc7-45d9-aa96-2f459f638a8d')">
+    onclick="toggleVisibility('channels-e6511190-d740-4b39-9654-502fdc13bf59')">
     <th class="mne-repr-section-toggle">
         <button >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg>
@@ -876,7 +908,7 @@ this file apply (plus whatever default styling the IDE applies).
 
 
     
-<tr class="repr-element channels-18ba9481-ebc7-45d9-aa96-2f459f638a8d ">
+<tr class="repr-element channels-e6511190-d740-4b39-9654-502fdc13bf59 ">
     <td class="mne-repr-section-toggle"></td>
     <td>EEG</td>
     <td>
@@ -889,7 +921,7 @@ this file apply (plus whatever default styling the IDE applies).
 </tr>
 
 
-<tr class="repr-element channels-18ba9481-ebc7-45d9-aa96-2f459f638a8d ">
+<tr class="repr-element channels-e6511190-d740-4b39-9654-502fdc13bf59 ">
     <td class="mne-repr-section-toggle"></td>
     <td>Head & sensor digitization</td>
     
@@ -904,9 +936,9 @@ this file apply (plus whatever default styling the IDE applies).
 
 
 
-<tr class="mne-repr-section-header filters-1948ce94-44b9-4b35-abfc-525d36c66203"
+<tr class="mne-repr-section-header filters-a57e2cd2-eb59-4642-9a86-77b3bb1cd9bb"
      title="Hide section" 
-    onclick="toggleVisibility('filters-1948ce94-44b9-4b35-abfc-525d36c66203')">
+    onclick="toggleVisibility('filters-a57e2cd2-eb59-4642-9a86-77b3bb1cd9bb')">
     <th class="mne-repr-section-toggle">
         <button >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg>
@@ -918,14 +950,14 @@ this file apply (plus whatever default styling the IDE applies).
 </tr>
 
 
-<tr class="repr-element filters-1948ce94-44b9-4b35-abfc-525d36c66203 ">
+<tr class="repr-element filters-a57e2cd2-eb59-4642-9a86-77b3bb1cd9bb ">
     <td class="mne-repr-section-toggle"></td>
     <td>Highpass</td>
     <td>0.00 Hz</td>
 </tr>
 
 
-<tr class="repr-element filters-1948ce94-44b9-4b35-abfc-525d36c66203 ">
+<tr class="repr-element filters-a57e2cd2-eb59-4642-9a86-77b3bb1cd9bb ">
     <td class="mne-repr-section-toggle"></td>
     <td>Lowpass</td>
     <td>80.00 Hz</td>
@@ -1171,9 +1203,9 @@ this file apply (plus whatever default styling the IDE applies).
 
 
 
-<tr class="mne-repr-section-header general-b1dee718-6210-4fc2-a507-f22f1261cf82"
+<tr class="mne-repr-section-header general-e2b1d0fe-b9fe-4e93-adb1-f3364091b795"
      title="Hide section" 
-    onclick="toggleVisibility('general-b1dee718-6210-4fc2-a507-f22f1261cf82')">
+    onclick="toggleVisibility('general-e2b1d0fe-b9fe-4e93-adb1-f3364091b795')">
     <th class="mne-repr-section-toggle">
         <button >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg>
@@ -1185,7 +1217,7 @@ this file apply (plus whatever default styling the IDE applies).
 </tr>
 
 
-<tr class="repr-element general-b1dee718-6210-4fc2-a507-f22f1261cf82 ">
+<tr class="repr-element general-e2b1d0fe-b9fe-4e93-adb1-f3364091b795 ">
     <td class="mne-repr-section-toggle"></td>
     <td>Filename(s)</td>
     <td>
@@ -1196,19 +1228,19 @@ this file apply (plus whatever default styling the IDE applies).
     </td>
 </tr>
 
-<tr class="repr-element general-b1dee718-6210-4fc2-a507-f22f1261cf82 ">
+<tr class="repr-element general-e2b1d0fe-b9fe-4e93-adb1-f3364091b795 ">
     <td class="mne-repr-section-toggle"></td>
     <td>MNE object type</td>
     <td>RawEDF</td>
 </tr>
-<tr class="repr-element general-b1dee718-6210-4fc2-a507-f22f1261cf82 ">
+<tr class="repr-element general-e2b1d0fe-b9fe-4e93-adb1-f3364091b795 ">
     <td class="mne-repr-section-toggle"></td>
     <td>Measurement date</td>
     
     <td>2009-08-12 at 16:15:00 UTC</td>
     
 </tr>
-<tr class="repr-element general-b1dee718-6210-4fc2-a507-f22f1261cf82 ">
+<tr class="repr-element general-e2b1d0fe-b9fe-4e93-adb1-f3364091b795 ">
     <td class="mne-repr-section-toggle"></td>
     <td>Participant</td>
     
@@ -1217,7 +1249,7 @@ this file apply (plus whatever default styling the IDE applies).
     
     
 </tr>
-<tr class="repr-element general-b1dee718-6210-4fc2-a507-f22f1261cf82 ">
+<tr class="repr-element general-e2b1d0fe-b9fe-4e93-adb1-f3364091b795 ">
     <td class="mne-repr-section-toggle"></td>
     <td>Experimenter</td>
     
@@ -1232,9 +1264,9 @@ this file apply (plus whatever default styling the IDE applies).
 
 
 
-<tr class="mne-repr-section-header acquisition-b940f339-9c9b-4789-a176-82d309e908c3"
+<tr class="mne-repr-section-header acquisition-645a2b20-4512-4aac-94e9-4b85d6820721"
      title="Hide section" 
-    onclick="toggleVisibility('acquisition-b940f339-9c9b-4789-a176-82d309e908c3')">
+    onclick="toggleVisibility('acquisition-645a2b20-4512-4aac-94e9-4b85d6820721')">
     <th class="mne-repr-section-toggle">
         <button >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg>
@@ -1246,7 +1278,7 @@ this file apply (plus whatever default styling the IDE applies).
 </tr>
 
 
-<tr class="repr-element acquisition-b940f339-9c9b-4789-a176-82d309e908c3 ">
+<tr class="repr-element acquisition-645a2b20-4512-4aac-94e9-4b85d6820721 ">
     <td class="mne-repr-section-toggle"></td>
     <td>Duration</td>
     <td>00:02:05 (HH:MM:SS)</td>
@@ -1259,14 +1291,14 @@ this file apply (plus whatever default styling the IDE applies).
 
 
 
-<tr class="repr-element acquisition-b940f339-9c9b-4789-a176-82d309e908c3 ">
+<tr class="repr-element acquisition-645a2b20-4512-4aac-94e9-4b85d6820721 ">
     <td class="mne-repr-section-toggle"></td>
     <td>Sampling frequency</td>
     <td>160.00 Hz</td>
 </tr>
 
 
-<tr class="repr-element acquisition-b940f339-9c9b-4789-a176-82d309e908c3 ">
+<tr class="repr-element acquisition-645a2b20-4512-4aac-94e9-4b85d6820721 ">
     <td class="mne-repr-section-toggle"></td>
     <td>Time points</td>
     <td>20,000</td>
@@ -1281,9 +1313,9 @@ this file apply (plus whatever default styling the IDE applies).
 
 
 
-<tr class="mne-repr-section-header channels-8360a1d3-b67f-4a0e-90c2-dd70ae830b68"
+<tr class="mne-repr-section-header channels-e5273bf9-9c7c-4b26-8aa7-d6ae43b74ee9"
      title="Hide section" 
-    onclick="toggleVisibility('channels-8360a1d3-b67f-4a0e-90c2-dd70ae830b68')">
+    onclick="toggleVisibility('channels-e5273bf9-9c7c-4b26-8aa7-d6ae43b74ee9')">
     <th class="mne-repr-section-toggle">
         <button >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg>
@@ -1296,7 +1328,7 @@ this file apply (plus whatever default styling the IDE applies).
 
 
     
-<tr class="repr-element channels-8360a1d3-b67f-4a0e-90c2-dd70ae830b68 ">
+<tr class="repr-element channels-e5273bf9-9c7c-4b26-8aa7-d6ae43b74ee9 ">
     <td class="mne-repr-section-toggle"></td>
     <td>EEG</td>
     <td>
@@ -1309,7 +1341,7 @@ this file apply (plus whatever default styling the IDE applies).
 </tr>
 
 
-<tr class="repr-element channels-8360a1d3-b67f-4a0e-90c2-dd70ae830b68 ">
+<tr class="repr-element channels-e5273bf9-9c7c-4b26-8aa7-d6ae43b74ee9 ">
     <td class="mne-repr-section-toggle"></td>
     <td>Head & sensor digitization</td>
     
@@ -1324,9 +1356,9 @@ this file apply (plus whatever default styling the IDE applies).
 
 
 
-<tr class="mne-repr-section-header filters-e4b57cfd-b480-4b3c-b459-c888eefd751e"
+<tr class="mne-repr-section-header filters-059f1f50-0c5e-49ca-aff0-8d27ae91c073"
      title="Hide section" 
-    onclick="toggleVisibility('filters-e4b57cfd-b480-4b3c-b459-c888eefd751e')">
+    onclick="toggleVisibility('filters-059f1f50-0c5e-49ca-aff0-8d27ae91c073')">
     <th class="mne-repr-section-toggle">
         <button >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg>
@@ -1338,14 +1370,14 @@ this file apply (plus whatever default styling the IDE applies).
 </tr>
 
 
-<tr class="repr-element filters-e4b57cfd-b480-4b3c-b459-c888eefd751e ">
+<tr class="repr-element filters-059f1f50-0c5e-49ca-aff0-8d27ae91c073 ">
     <td class="mne-repr-section-toggle"></td>
     <td>Highpass</td>
     <td>0.00 Hz</td>
 </tr>
 
 
-<tr class="repr-element filters-e4b57cfd-b480-4b3c-b459-c888eefd751e ">
+<tr class="repr-element filters-059f1f50-0c5e-49ca-aff0-8d27ae91c073 ">
     <td class="mne-repr-section-toggle"></td>
     <td>Lowpass</td>
     <td>80.00 Hz</td>
@@ -1598,9 +1630,9 @@ this file apply (plus whatever default styling the IDE applies).
 
 
 
-<tr class="mne-repr-section-header general-0328176c-37ee-497a-b011-f3e45bae26aa"
+<tr class="mne-repr-section-header general-4e97b887-557c-468e-91e0-748a04dc54aa"
      title="Hide section" 
-    onclick="toggleVisibility('general-0328176c-37ee-497a-b011-f3e45bae26aa')">
+    onclick="toggleVisibility('general-4e97b887-557c-468e-91e0-748a04dc54aa')">
     <th class="mne-repr-section-toggle">
         <button >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg>
@@ -1612,7 +1644,7 @@ this file apply (plus whatever default styling the IDE applies).
 </tr>
 
 
-<tr class="repr-element general-0328176c-37ee-497a-b011-f3e45bae26aa ">
+<tr class="repr-element general-4e97b887-557c-468e-91e0-748a04dc54aa ">
     <td class="mne-repr-section-toggle"></td>
     <td>Filename(s)</td>
     <td>
@@ -1623,19 +1655,19 @@ this file apply (plus whatever default styling the IDE applies).
     </td>
 </tr>
 
-<tr class="repr-element general-0328176c-37ee-497a-b011-f3e45bae26aa ">
+<tr class="repr-element general-4e97b887-557c-468e-91e0-748a04dc54aa ">
     <td class="mne-repr-section-toggle"></td>
     <td>MNE object type</td>
     <td>RawEDF</td>
 </tr>
-<tr class="repr-element general-0328176c-37ee-497a-b011-f3e45bae26aa ">
+<tr class="repr-element general-4e97b887-557c-468e-91e0-748a04dc54aa ">
     <td class="mne-repr-section-toggle"></td>
     <td>Measurement date</td>
     
     <td>2009-08-12 at 16:15:00 UTC</td>
     
 </tr>
-<tr class="repr-element general-0328176c-37ee-497a-b011-f3e45bae26aa ">
+<tr class="repr-element general-4e97b887-557c-468e-91e0-748a04dc54aa ">
     <td class="mne-repr-section-toggle"></td>
     <td>Participant</td>
     
@@ -1644,7 +1676,7 @@ this file apply (plus whatever default styling the IDE applies).
     
     
 </tr>
-<tr class="repr-element general-0328176c-37ee-497a-b011-f3e45bae26aa ">
+<tr class="repr-element general-4e97b887-557c-468e-91e0-748a04dc54aa ">
     <td class="mne-repr-section-toggle"></td>
     <td>Experimenter</td>
     
@@ -1659,9 +1691,9 @@ this file apply (plus whatever default styling the IDE applies).
 
 
 
-<tr class="mne-repr-section-header acquisition-384bdb02-2d20-411e-bcae-4d0d68c78975"
+<tr class="mne-repr-section-header acquisition-e232aace-2acf-47c4-a6e8-56f6a2505d16"
      title="Hide section" 
-    onclick="toggleVisibility('acquisition-384bdb02-2d20-411e-bcae-4d0d68c78975')">
+    onclick="toggleVisibility('acquisition-e232aace-2acf-47c4-a6e8-56f6a2505d16')">
     <th class="mne-repr-section-toggle">
         <button >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg>
@@ -1673,7 +1705,7 @@ this file apply (plus whatever default styling the IDE applies).
 </tr>
 
 
-<tr class="repr-element acquisition-384bdb02-2d20-411e-bcae-4d0d68c78975 ">
+<tr class="repr-element acquisition-e232aace-2acf-47c4-a6e8-56f6a2505d16 ">
     <td class="mne-repr-section-toggle"></td>
     <td>Duration</td>
     <td>00:02:05 (HH:MM:SS)</td>
@@ -1686,14 +1718,14 @@ this file apply (plus whatever default styling the IDE applies).
 
 
 
-<tr class="repr-element acquisition-384bdb02-2d20-411e-bcae-4d0d68c78975 ">
+<tr class="repr-element acquisition-e232aace-2acf-47c4-a6e8-56f6a2505d16 ">
     <td class="mne-repr-section-toggle"></td>
     <td>Sampling frequency</td>
     <td>160.00 Hz</td>
 </tr>
 
 
-<tr class="repr-element acquisition-384bdb02-2d20-411e-bcae-4d0d68c78975 ">
+<tr class="repr-element acquisition-e232aace-2acf-47c4-a6e8-56f6a2505d16 ">
     <td class="mne-repr-section-toggle"></td>
     <td>Time points</td>
     <td>20,000</td>
@@ -1708,9 +1740,9 @@ this file apply (plus whatever default styling the IDE applies).
 
 
 
-<tr class="mne-repr-section-header channels-50f54ab2-eade-4e68-93f9-30aa02e57d53"
+<tr class="mne-repr-section-header channels-609b7f0d-a445-4bdd-b866-7011d76bb88e"
      title="Hide section" 
-    onclick="toggleVisibility('channels-50f54ab2-eade-4e68-93f9-30aa02e57d53')">
+    onclick="toggleVisibility('channels-609b7f0d-a445-4bdd-b866-7011d76bb88e')">
     <th class="mne-repr-section-toggle">
         <button >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg>
@@ -1723,7 +1755,7 @@ this file apply (plus whatever default styling the IDE applies).
 
 
     
-<tr class="repr-element channels-50f54ab2-eade-4e68-93f9-30aa02e57d53 ">
+<tr class="repr-element channels-609b7f0d-a445-4bdd-b866-7011d76bb88e ">
     <td class="mne-repr-section-toggle"></td>
     <td>EEG</td>
     <td>
@@ -1736,7 +1768,7 @@ this file apply (plus whatever default styling the IDE applies).
 </tr>
 
 
-<tr class="repr-element channels-50f54ab2-eade-4e68-93f9-30aa02e57d53 ">
+<tr class="repr-element channels-609b7f0d-a445-4bdd-b866-7011d76bb88e ">
     <td class="mne-repr-section-toggle"></td>
     <td>Head & sensor digitization</td>
     
@@ -1751,9 +1783,9 @@ this file apply (plus whatever default styling the IDE applies).
 
 
 
-<tr class="mne-repr-section-header filters-73a0cdba-eabd-4591-981a-86062de58c6a"
+<tr class="mne-repr-section-header filters-f8d6b448-abc8-4225-ad09-fd4cd47f025b"
      title="Hide section" 
-    onclick="toggleVisibility('filters-73a0cdba-eabd-4591-981a-86062de58c6a')">
+    onclick="toggleVisibility('filters-f8d6b448-abc8-4225-ad09-fd4cd47f025b')">
     <th class="mne-repr-section-toggle">
         <button >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg>
@@ -1765,14 +1797,14 @@ this file apply (plus whatever default styling the IDE applies).
 </tr>
 
 
-<tr class="repr-element filters-73a0cdba-eabd-4591-981a-86062de58c6a ">
+<tr class="repr-element filters-f8d6b448-abc8-4225-ad09-fd4cd47f025b ">
     <td class="mne-repr-section-toggle"></td>
     <td>Highpass</td>
     <td>0.00 Hz</td>
 </tr>
 
 
-<tr class="repr-element filters-73a0cdba-eabd-4591-981a-86062de58c6a ">
+<tr class="repr-element filters-f8d6b448-abc8-4225-ad09-fd4cd47f025b ">
     <td class="mne-repr-section-toggle"></td>
     <td>Lowpass</td>
     <td>80.00 Hz</td>
@@ -1796,8 +1828,8 @@ this file apply (plus whatever default styling the IDE applies).
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/cb6319b892729b2be5a3cc6a76903227e8242468282fb27849337118ef9375cf.png" src="../_images/cb6319b892729b2be5a3cc6a76903227e8242468282fb27849337118ef9375cf.png" />
-<img alt="../_images/cb6319b892729b2be5a3cc6a76903227e8242468282fb27849337118ef9375cf.png" src="../_images/cb6319b892729b2be5a3cc6a76903227e8242468282fb27849337118ef9375cf.png" />
+<img alt="../_images/3cc55b7bab0e95fa0ebf4f676dfa117e4c50376ed8f28b8e214d30008e47954a.png" src="../_images/3cc55b7bab0e95fa0ebf4f676dfa117e4c50376ed8f28b8e214d30008e47954a.png" />
+<img alt="../_images/3cc55b7bab0e95fa0ebf4f676dfa117e4c50376ed8f28b8e214d30008e47954a.png" src="../_images/3cc55b7bab0e95fa0ebf4f676dfa117e4c50376ed8f28b8e214d30008e47954a.png" />
 </div>
 </div>
 <div class="dropdown admonition">
@@ -1820,13 +1852,11 @@ this file apply (plus whatever default styling the IDE applies).
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Effective window size : 12.800 (s)
+Plotting power spectral density (dB=True).
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Plotting power spectral density (dB=True).
-</pre></div>
-</div>
-<img alt="../_images/035cd25402dabf41319a1a799b1ca9785f379ae2e9da8b1f10788781c1ae14da.png" src="../_images/035cd25402dabf41319a1a799b1ca9785f379ae2e9da8b1f10788781c1ae14da.png" />
-<img alt="../_images/035cd25402dabf41319a1a799b1ca9785f379ae2e9da8b1f10788781c1ae14da.png" src="../_images/035cd25402dabf41319a1a799b1ca9785f379ae2e9da8b1f10788781c1ae14da.png" />
+<img alt="../_images/b07edf98abcc83055a78aa1fa3cb364b674cb9062ba2e18b5ab9367065f13d29.png" src="../_images/b07edf98abcc83055a78aa1fa3cb364b674cb9062ba2e18b5ab9367065f13d29.png" />
+<img alt="../_images/b07edf98abcc83055a78aa1fa3cb364b674cb9062ba2e18b5ab9367065f13d29.png" src="../_images/b07edf98abcc83055a78aa1fa3cb364b674cb9062ba2e18b5ab9367065f13d29.png" />
 </div>
 </div>
 <section id="main-signal-energy-is-concentrated-in-low-frequencies-10-hz">
@@ -1866,30 +1896,13 @@ this file apply (plus whatever default styling the IDE applies).
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Filtering raw data in 1 contiguous segment
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Setting up band-pass filter from 1 - 50 Hz
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>IIR filter parameters
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>---------------------
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Butterworth bandpass zero-phase (two-pass forward and reverse) non-causal filter:
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>- Filter order 16 (effective, after forward-backward)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>- Cutoffs at 1.00, 50.00 Hz: -6.02, -6.02 dB
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+Setting up band-pass filter from 1 - 50 Hz
+
+IIR filter parameters
+---------------------
+Butterworth bandpass zero-phase (two-pass forward and reverse) non-causal filter:
+- Filter order 16 (effective, after forward-backward)
+- Cutoffs at 1.00, 50.00 Hz: -6.02, -6.02 dB
 </pre></div>
 </div>
 <div class="output text_html"><script type="text/javascript">
@@ -2039,9 +2052,9 @@ this file apply (plus whatever default styling the IDE applies).
 
 
 
-<tr class="mne-repr-section-header general-d22ef692-414c-4bff-9919-f75ddd947498"
+<tr class="mne-repr-section-header general-45bd49fb-fe41-4dec-859b-c76f753fb7a1"
      title="Hide section" 
-    onclick="toggleVisibility('general-d22ef692-414c-4bff-9919-f75ddd947498')">
+    onclick="toggleVisibility('general-45bd49fb-fe41-4dec-859b-c76f753fb7a1')">
     <th class="mne-repr-section-toggle">
         <button >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg>
@@ -2053,7 +2066,7 @@ this file apply (plus whatever default styling the IDE applies).
 </tr>
 
 
-<tr class="repr-element general-d22ef692-414c-4bff-9919-f75ddd947498 ">
+<tr class="repr-element general-45bd49fb-fe41-4dec-859b-c76f753fb7a1 ">
     <td class="mne-repr-section-toggle"></td>
     <td>Filename(s)</td>
     <td>
@@ -2064,19 +2077,19 @@ this file apply (plus whatever default styling the IDE applies).
     </td>
 </tr>
 
-<tr class="repr-element general-d22ef692-414c-4bff-9919-f75ddd947498 ">
+<tr class="repr-element general-45bd49fb-fe41-4dec-859b-c76f753fb7a1 ">
     <td class="mne-repr-section-toggle"></td>
     <td>MNE object type</td>
     <td>RawEDF</td>
 </tr>
-<tr class="repr-element general-d22ef692-414c-4bff-9919-f75ddd947498 ">
+<tr class="repr-element general-45bd49fb-fe41-4dec-859b-c76f753fb7a1 ">
     <td class="mne-repr-section-toggle"></td>
     <td>Measurement date</td>
     
     <td>2009-08-12 at 16:15:00 UTC</td>
     
 </tr>
-<tr class="repr-element general-d22ef692-414c-4bff-9919-f75ddd947498 ">
+<tr class="repr-element general-45bd49fb-fe41-4dec-859b-c76f753fb7a1 ">
     <td class="mne-repr-section-toggle"></td>
     <td>Participant</td>
     
@@ -2085,7 +2098,7 @@ this file apply (plus whatever default styling the IDE applies).
     
     
 </tr>
-<tr class="repr-element general-d22ef692-414c-4bff-9919-f75ddd947498 ">
+<tr class="repr-element general-45bd49fb-fe41-4dec-859b-c76f753fb7a1 ">
     <td class="mne-repr-section-toggle"></td>
     <td>Experimenter</td>
     
@@ -2100,9 +2113,9 @@ this file apply (plus whatever default styling the IDE applies).
 
 
 
-<tr class="mne-repr-section-header acquisition-b3850e37-6b70-4c2c-8b51-cf4f06fb39d8"
+<tr class="mne-repr-section-header acquisition-188ac97e-91b6-4c2e-882c-36892a696999"
      title="Hide section" 
-    onclick="toggleVisibility('acquisition-b3850e37-6b70-4c2c-8b51-cf4f06fb39d8')">
+    onclick="toggleVisibility('acquisition-188ac97e-91b6-4c2e-882c-36892a696999')">
     <th class="mne-repr-section-toggle">
         <button >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg>
@@ -2114,7 +2127,7 @@ this file apply (plus whatever default styling the IDE applies).
 </tr>
 
 
-<tr class="repr-element acquisition-b3850e37-6b70-4c2c-8b51-cf4f06fb39d8 ">
+<tr class="repr-element acquisition-188ac97e-91b6-4c2e-882c-36892a696999 ">
     <td class="mne-repr-section-toggle"></td>
     <td>Duration</td>
     <td>00:02:05 (HH:MM:SS)</td>
@@ -2127,14 +2140,14 @@ this file apply (plus whatever default styling the IDE applies).
 
 
 
-<tr class="repr-element acquisition-b3850e37-6b70-4c2c-8b51-cf4f06fb39d8 ">
+<tr class="repr-element acquisition-188ac97e-91b6-4c2e-882c-36892a696999 ">
     <td class="mne-repr-section-toggle"></td>
     <td>Sampling frequency</td>
     <td>160.00 Hz</td>
 </tr>
 
 
-<tr class="repr-element acquisition-b3850e37-6b70-4c2c-8b51-cf4f06fb39d8 ">
+<tr class="repr-element acquisition-188ac97e-91b6-4c2e-882c-36892a696999 ">
     <td class="mne-repr-section-toggle"></td>
     <td>Time points</td>
     <td>20,000</td>
@@ -2149,9 +2162,9 @@ this file apply (plus whatever default styling the IDE applies).
 
 
 
-<tr class="mne-repr-section-header channels-caccc88c-cbf1-4836-b4ce-dc9449168768"
+<tr class="mne-repr-section-header channels-71ea450f-7a00-4295-9a46-057500f9d690"
      title="Hide section" 
-    onclick="toggleVisibility('channels-caccc88c-cbf1-4836-b4ce-dc9449168768')">
+    onclick="toggleVisibility('channels-71ea450f-7a00-4295-9a46-057500f9d690')">
     <th class="mne-repr-section-toggle">
         <button >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg>
@@ -2164,7 +2177,7 @@ this file apply (plus whatever default styling the IDE applies).
 
 
     
-<tr class="repr-element channels-caccc88c-cbf1-4836-b4ce-dc9449168768 ">
+<tr class="repr-element channels-71ea450f-7a00-4295-9a46-057500f9d690 ">
     <td class="mne-repr-section-toggle"></td>
     <td>EEG</td>
     <td>
@@ -2177,7 +2190,7 @@ this file apply (plus whatever default styling the IDE applies).
 </tr>
 
 
-<tr class="repr-element channels-caccc88c-cbf1-4836-b4ce-dc9449168768 ">
+<tr class="repr-element channels-71ea450f-7a00-4295-9a46-057500f9d690 ">
     <td class="mne-repr-section-toggle"></td>
     <td>Head & sensor digitization</td>
     
@@ -2192,9 +2205,9 @@ this file apply (plus whatever default styling the IDE applies).
 
 
 
-<tr class="mne-repr-section-header filters-f5d0b9ad-e391-4c24-9bfc-68bc566a1a5c"
+<tr class="mne-repr-section-header filters-e4cf7da9-e32f-4a74-a8f6-9b5bedccfa2e"
      title="Hide section" 
-    onclick="toggleVisibility('filters-f5d0b9ad-e391-4c24-9bfc-68bc566a1a5c')">
+    onclick="toggleVisibility('filters-e4cf7da9-e32f-4a74-a8f6-9b5bedccfa2e')">
     <th class="mne-repr-section-toggle">
         <button >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg>
@@ -2206,14 +2219,14 @@ this file apply (plus whatever default styling the IDE applies).
 </tr>
 
 
-<tr class="repr-element filters-f5d0b9ad-e391-4c24-9bfc-68bc566a1a5c ">
+<tr class="repr-element filters-e4cf7da9-e32f-4a74-a8f6-9b5bedccfa2e ">
     <td class="mne-repr-section-toggle"></td>
     <td>Highpass</td>
     <td>1.00 Hz</td>
 </tr>
 
 
-<tr class="repr-element filters-f5d0b9ad-e391-4c24-9bfc-68bc566a1a5c ">
+<tr class="repr-element filters-e4cf7da9-e32f-4a74-a8f6-9b5bedccfa2e ">
     <td class="mne-repr-section-toggle"></td>
     <td>Lowpass</td>
     <td>50.00 Hz</td>
@@ -2240,13 +2253,11 @@ this file apply (plus whatever default styling the IDE applies).
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Effective window size : 12.800 (s)
+Plotting power spectral density (dB=True).
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Plotting power spectral density (dB=True).
-</pre></div>
-</div>
-<img alt="../_images/02041ded2408f8df38e7bf10427600e0e22c473b4398ca506971500aa4f93486.png" src="../_images/02041ded2408f8df38e7bf10427600e0e22c473b4398ca506971500aa4f93486.png" />
-<img alt="../_images/02041ded2408f8df38e7bf10427600e0e22c473b4398ca506971500aa4f93486.png" src="../_images/02041ded2408f8df38e7bf10427600e0e22c473b4398ca506971500aa4f93486.png" />
+<img alt="../_images/10985d9f7df87078ce560a020cf2e31ef389a68a575765e7c017bc78cdb65c11.png" src="../_images/10985d9f7df87078ce560a020cf2e31ef389a68a575765e7c017bc78cdb65c11.png" />
+<img alt="../_images/10985d9f7df87078ce560a020cf2e31ef389a68a575765e7c017bc78cdb65c11.png" src="../_images/10985d9f7df87078ce560a020cf2e31ef389a68a575765e7c017bc78cdb65c11.png" />
 </div>
 </div>
 <div class="dropdown admonition">
@@ -2270,8 +2281,8 @@ this file apply (plus whatever default styling the IDE applies).
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Using matplotlib as 2D backend.
 </pre></div>
 </div>
-<img alt="../_images/de3dcb6e894ac23b3799acece8c151b4bbec7f7cf4e289d123fa117556b3f1ea.png" src="../_images/de3dcb6e894ac23b3799acece8c151b4bbec7f7cf4e289d123fa117556b3f1ea.png" />
-<img alt="../_images/de3dcb6e894ac23b3799acece8c151b4bbec7f7cf4e289d123fa117556b3f1ea.png" src="../_images/de3dcb6e894ac23b3799acece8c151b4bbec7f7cf4e289d123fa117556b3f1ea.png" />
+<img alt="../_images/bc6f60c8535bc25f64270e5b813322e28b462a82f9e4cd7488196b90267eddf4.png" src="../_images/bc6f60c8535bc25f64270e5b813322e28b462a82f9e4cd7488196b90267eddf4.png" />
+<img alt="../_images/bc6f60c8535bc25f64270e5b813322e28b462a82f9e4cd7488196b90267eddf4.png" src="../_images/bc6f60c8535bc25f64270e5b813322e28b462a82f9e4cd7488196b90267eddf4.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2282,8 +2293,8 @@ this file apply (plus whatever default styling the IDE applies).
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/3bb63360c59563e559cb95781aac29b4ff0f2c0631d5947b751b5e6ef1e524e0.png" src="../_images/3bb63360c59563e559cb95781aac29b4ff0f2c0631d5947b751b5e6ef1e524e0.png" />
-<img alt="../_images/3bb63360c59563e559cb95781aac29b4ff0f2c0631d5947b751b5e6ef1e524e0.png" src="../_images/3bb63360c59563e559cb95781aac29b4ff0f2c0631d5947b751b5e6ef1e524e0.png" />
+<img alt="../_images/0afcea4470998fb0600bf043075fed061d7bdc2cac026ec5fb1d8e5ecdc95279.png" src="../_images/0afcea4470998fb0600bf043075fed061d7bdc2cac026ec5fb1d8e5ecdc95279.png" />
+<img alt="../_images/0afcea4470998fb0600bf043075fed061d7bdc2cac026ec5fb1d8e5ecdc95279.png" src="../_images/0afcea4470998fb0600bf043075fed061d7bdc2cac026ec5fb1d8e5ecdc95279.png" />
 </div>
 </div>
 </section>
@@ -2306,7 +2317,7 @@ this file apply (plus whatever default styling the IDE applies).
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Used Annotations descriptions: [&#39;T0&#39;, &#39;T1&#39;, &#39;T2&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Used Annotations descriptions: [np.str_(&#39;T0&#39;), np.str_(&#39;T1&#39;), np.str_(&#39;T2&#39;)]
 </pre></div>
 </div>
 </div>
@@ -2318,7 +2329,7 @@ this file apply (plus whatever default styling the IDE applies).
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;T0&#39;: 1, &#39;T1&#39;: 2, &#39;T2&#39;: 3}
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{np.str_(&#39;T0&#39;): 1, np.str_(&#39;T1&#39;): 2, np.str_(&#39;T2&#39;): 3}
 </pre></div>
 </div>
 </div>
@@ -2364,24 +2375,12 @@ this file apply (plus whatever default styling the IDE applies).
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Not setting metadata
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>30 matching events found
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Setting baseline interval to [-0.5, 0.0] s
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Applying baseline correction (mode: mean)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 projection items activated
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Using data from preloaded Raw for 30 events and 209 original time points ...
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1 bad epochs dropped
+30 matching events found
+Setting baseline interval to [-0.5, 0.0] s
+Applying baseline correction (mode: mean)
+0 projection items activated
+Using data from preloaded Raw for 30 events and 209 original time points ...
+1 bad epochs dropped
 </pre></div>
 </div>
 </div>
@@ -2537,7 +2536,7 @@ Name: count, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/473b6bad5a4ec2812d30455c4de2508d4b1f9af98c4517be1043c87076d89883.png" src="../_images/473b6bad5a4ec2812d30455c4de2508d4b1f9af98c4517be1043c87076d89883.png" />
+<img alt="../_images/12345d189b9e237dd2e5194f1dfa39615d404d51d3496709f2e218d4258527bc.png" src="../_images/12345d189b9e237dd2e5194f1dfa39615d404d51d3496709f2e218d4258527bc.png" />
 </div>
 </div>
 <div class="dropdown admonition">
@@ -2556,63 +2555,25 @@ Name: count, dtype: int64
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Not setting metadata
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>30 matching events found
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Applying baseline correction (mode: mean)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 projection items activated
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Using data from preloaded Raw for 30 events and 209 original time points ...
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Rejecting  epoch based on EEG : [&#39;Fp1&#39;, &#39;Fp2&#39;]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Rejecting  epoch based on EEG : [&#39;Fp2&#39;]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Rejecting  epoch based on EEG : [&#39;Fp2&#39;]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Rejecting  epoch based on EEG : [&#39;Fp2&#39;]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Rejecting  epoch based on EEG : [&#39;Fp2&#39;]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Rejecting  epoch based on EEG : [&#39;Fp1&#39;, &#39;Fp2&#39;]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Rejecting  epoch based on EEG : [&#39;Fp1&#39;, &#39;Fp2&#39;]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Rejecting  epoch based on EEG : [&#39;Fp1&#39;, &#39;Fp2&#39;]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Rejecting  epoch based on EEG : [&#39;Fp1&#39;, &#39;Fp2&#39;]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Rejecting  epoch based on EEG : [&#39;Fp1&#39;, &#39;Fp2&#39;]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Rejecting  epoch based on EEG : [&#39;Fp2&#39;]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Rejecting  epoch based on EEG : [&#39;Fp1&#39;, &#39;Fp2&#39;]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Rejecting  epoch based on EEG : [&#39;Fp1&#39;, &#39;Fp2&#39;]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Rejecting  epoch based on EEG : [&#39;Fp1&#39;, &#39;Fp2&#39;]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15 bad epochs dropped
+30 matching events found
+Applying baseline correction (mode: mean)
+0 projection items activated
+Using data from preloaded Raw for 30 events and 209 original time points ...
+    Rejecting  epoch based on EEG : [&#39;Fp1&#39;, &#39;Fp2&#39;]
+    Rejecting  epoch based on EEG : [&#39;Fp2&#39;]
+    Rejecting  epoch based on EEG : [&#39;Fp2&#39;]
+    Rejecting  epoch based on EEG : [&#39;Fp2&#39;]
+    Rejecting  epoch based on EEG : [&#39;Fp2&#39;]
+    Rejecting  epoch based on EEG : [&#39;Fp1&#39;, &#39;Fp2&#39;]
+    Rejecting  epoch based on EEG : [&#39;Fp1&#39;, &#39;Fp2&#39;]
+    Rejecting  epoch based on EEG : [&#39;Fp1&#39;, &#39;Fp2&#39;]
+    Rejecting  epoch based on EEG : [&#39;Fp1&#39;, &#39;Fp2&#39;]
+    Rejecting  epoch based on EEG : [&#39;Fp1&#39;, &#39;Fp2&#39;]
+    Rejecting  epoch based on EEG : [&#39;Fp2&#39;]
+    Rejecting  epoch based on EEG : [&#39;Fp1&#39;, &#39;Fp2&#39;]
+    Rejecting  epoch based on EEG : [&#39;Fp1&#39;, &#39;Fp2&#39;]
+    Rejecting  epoch based on EEG : [&#39;Fp1&#39;, &#39;Fp2&#39;]
+15 bad epochs dropped
 </pre></div>
 </div>
 </div>
@@ -2636,19 +2597,13 @@ Name: count, dtype: int64
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NOTE: plot_psd() is a legacy function. New code should use .compute_psd().plot().
+    Using multitaper spectrum estimation with 7 DPSS windows
+Plotting power spectral density (dB=True).
+Averaging across epochs before plotting...
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Using multitaper spectrum estimation with 7 DPSS windows
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Plotting power spectral density (dB=True).
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Averaging across epochs before plotting...
-</pre></div>
-</div>
-<img alt="../_images/af97df7b5b3d3c5b8a78d9603acfce53a0655cbb7db6e45d0859012dd3aa8e31.png" src="../_images/af97df7b5b3d3c5b8a78d9603acfce53a0655cbb7db6e45d0859012dd3aa8e31.png" />
-<img alt="../_images/af97df7b5b3d3c5b8a78d9603acfce53a0655cbb7db6e45d0859012dd3aa8e31.png" src="../_images/af97df7b5b3d3c5b8a78d9603acfce53a0655cbb7db6e45d0859012dd3aa8e31.png" />
+<img alt="../_images/7ad920ceb6b622fae538e74182330cc790150c302108f2c8755f5d57d274dfed.png" src="../_images/7ad920ceb6b622fae538e74182330cc790150c302108f2c8755f5d57d274dfed.png" />
+<img alt="../_images/7ad920ceb6b622fae538e74182330cc790150c302108f2c8755f5d57d274dfed.png" src="../_images/7ad920ceb6b622fae538e74182330cc790150c302108f2c8755f5d57d274dfed.png" />
 </div>
 </div>
 <div class="dropdown admonition">
@@ -2667,8 +2622,8 @@ Name: count, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/2873499bbd6db7dd037d0a8c3ecd53e83a028e9643d1a606a7302654d78c3acd.png" src="../_images/2873499bbd6db7dd037d0a8c3ecd53e83a028e9643d1a606a7302654d78c3acd.png" />
-<img alt="../_images/2873499bbd6db7dd037d0a8c3ecd53e83a028e9643d1a606a7302654d78c3acd.png" src="../_images/2873499bbd6db7dd037d0a8c3ecd53e83a028e9643d1a606a7302654d78c3acd.png" />
+<img alt="../_images/ce835df874f6db472794d229d7ba7b2b64a923923c635bf387ecc5f455a30c3a.png" src="../_images/ce835df874f6db472794d229d7ba7b2b64a923923c635bf387ecc5f455a30c3a.png" />
+<img alt="../_images/ce835df874f6db472794d229d7ba7b2b64a923923c635bf387ecc5f455a30c3a.png" src="../_images/ce835df874f6db472794d229d7ba7b2b64a923923c635bf387ecc5f455a30c3a.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2725,8 +2680,8 @@ Name: count, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/6d7e13cd745b993df813d84b1db864ee6427188d62ef403278bc8a4a00792dfd.png" src="../_images/6d7e13cd745b993df813d84b1db864ee6427188d62ef403278bc8a4a00792dfd.png" />
-<img alt="../_images/6d7e13cd745b993df813d84b1db864ee6427188d62ef403278bc8a4a00792dfd.png" src="../_images/6d7e13cd745b993df813d84b1db864ee6427188d62ef403278bc8a4a00792dfd.png" />
+<img alt="../_images/0c0405bbea29cb843886694b1bc46d9f1881b513727fa274c94fb0f792a9f784.png" src="../_images/0c0405bbea29cb843886694b1bc46d9f1881b513727fa274c94fb0f792a9f784.png" />
+<img alt="../_images/0c0405bbea29cb843886694b1bc46d9f1881b513727fa274c94fb0f792a9f784.png" src="../_images/0c0405bbea29cb843886694b1bc46d9f1881b513727fa274c94fb0f792a9f784.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2736,8 +2691,8 @@ Name: count, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/b973d43db54be20c9b5823250ee78246844fb0d450d25914a73e56f6a78df596.png" src="../_images/b973d43db54be20c9b5823250ee78246844fb0d450d25914a73e56f6a78df596.png" />
-<img alt="../_images/b973d43db54be20c9b5823250ee78246844fb0d450d25914a73e56f6a78df596.png" src="../_images/b973d43db54be20c9b5823250ee78246844fb0d450d25914a73e56f6a78df596.png" />
+<img alt="../_images/b99210c2c796a78e6979c4acf0428f5fb8e2a6eba8f3bb063ca5f2988a23e8f3.png" src="../_images/b99210c2c796a78e6979c4acf0428f5fb8e2a6eba8f3bb063ca5f2988a23e8f3.png" />
+<img alt="../_images/b99210c2c796a78e6979c4acf0428f5fb8e2a6eba8f3bb063ca5f2988a23e8f3.png" src="../_images/b99210c2c796a78e6979c4acf0428f5fb8e2a6eba8f3bb063ca5f2988a23e8f3.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2747,8 +2702,8 @@ Name: count, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/70135fc6f7fdeff1e961eb8503f0c7bde6f564515bfe57eb072dd242151d8e9f.png" src="../_images/70135fc6f7fdeff1e961eb8503f0c7bde6f564515bfe57eb072dd242151d8e9f.png" />
-<img alt="../_images/70135fc6f7fdeff1e961eb8503f0c7bde6f564515bfe57eb072dd242151d8e9f.png" src="../_images/70135fc6f7fdeff1e961eb8503f0c7bde6f564515bfe57eb072dd242151d8e9f.png" />
+<img alt="../_images/76c795be56ac0891cce2bd8d16ee65a639e821225ad85666bf82834f1f2aeb47.png" src="../_images/76c795be56ac0891cce2bd8d16ee65a639e821225ad85666bf82834f1f2aeb47.png" />
+<img alt="../_images/76c795be56ac0891cce2bd8d16ee65a639e821225ad85666bf82834f1f2aeb47.png" src="../_images/76c795be56ac0891cce2bd8d16ee65a639e821225ad85666bf82834f1f2aeb47.png" />
 </div>
 </div>
 <ul class="simple">
@@ -2823,12 +2778,8 @@ Think of it as preparing a <strong>container</strong> where the following will b
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fitting ICA to data using 19 channels (please be patient, this may take a while)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Selecting by number: 10 components
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fitting ICA took 0.2s.
+Selecting by number: 10 components
+Fitting ICA took 0.2s.
 </pre></div>
 </div>
 <div class="output text_html"><table class="table mne-repr-table">
@@ -2901,16 +2852,12 @@ The colored bars at the top correspond to experimental segments T0/T1/T2.</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Creating RawArray with float64 data, n_channels=10, n_times=20000
+    Range : 0 ... 19999 =      0.000 ...   124.994 secs
+Ready.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Range : 0 ... 19999 =      0.000 ...   124.994 secs
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ready.
-</pre></div>
-</div>
-<img alt="../_images/69c75e3e8e5174beb13844da83e7139d7332ec7be43eccb47fc96b00badbd4bb.png" src="../_images/69c75e3e8e5174beb13844da83e7139d7332ec7be43eccb47fc96b00badbd4bb.png" />
-<img alt="../_images/69c75e3e8e5174beb13844da83e7139d7332ec7be43eccb47fc96b00badbd4bb.png" src="../_images/69c75e3e8e5174beb13844da83e7139d7332ec7be43eccb47fc96b00badbd4bb.png" />
+<img alt="../_images/bfa98ba97d206bf3301eca977b993056a66f13f3c08246d575b7b4fd202ab31e.png" src="../_images/bfa98ba97d206bf3301eca977b993056a66f13f3c08246d575b7b4fd202ab31e.png" />
+<img alt="../_images/bfa98ba97d206bf3301eca977b993056a66f13f3c08246d575b7b4fd202ab31e.png" src="../_images/bfa98ba97d206bf3301eca977b993056a66f13f3c08246d575b7b4fd202ab31e.png" />
 </div>
 </div>
 <div class="dropdown admonition">
@@ -2932,8 +2879,8 @@ The colored bars at the top correspond to experimental segments T0/T1/T2.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/548e8982bd69a86bee65af403449524faab81ff16143a455b196d37e693519eb.png" src="../_images/548e8982bd69a86bee65af403449524faab81ff16143a455b196d37e693519eb.png" />
-<img alt="../_images/035ad87527871fd7e3379caeeb9415c5b0071c060221d95eef47bed12ff07003.png" src="../_images/035ad87527871fd7e3379caeeb9415c5b0071c060221d95eef47bed12ff07003.png" />
+<img alt="../_images/e47819e4af1c9f90787deb202595131310bb1ebbb26575132bf0c4d60e4c4ec1.png" src="../_images/e47819e4af1c9f90787deb202595131310bb1ebbb26575132bf0c4d60e4c4ec1.png" />
+<img alt="../_images/82fec00da5a8d229fca6b9d174bc230ecf692614e54e4fa23020118ab6795a2b.png" src="../_images/82fec00da5a8d229fca6b9d174bc230ecf692614e54e4fa23020118ab6795a2b.png" />
 </div>
 </div>
 <div class="dropdown admonition">
@@ -2958,21 +2905,13 @@ suspicious temporal dynamics + a “matching” artifact topography = a strong c
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Using multitaper spectrum estimation with 7 DPSS windows
+Not setting metadata
+62 matching events found
+No baseline correction applied
+0 projection items activated
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Not setting metadata
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>62 matching events found
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>No baseline correction applied
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 projection items activated
-</pre></div>
-</div>
-<img alt="../_images/e171c27bcfb1b95f75845a9c35f9b454dde31059bd5acf91f3ff026cec54daf5.png" src="../_images/e171c27bcfb1b95f75845a9c35f9b454dde31059bd5acf91f3ff026cec54daf5.png" />
+<img alt="../_images/eeaae85671ee9851feed3e78f23b5c54f25ff220844cbbf985141d784ac530a1.png" src="../_images/eeaae85671ee9851feed3e78f23b5c54f25ff220844cbbf985141d784ac530a1.png" />
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;Figure size 700x600 with 6 Axes&gt;]
 </pre></div>
 </div>
@@ -3001,19 +2940,13 @@ A narrow spike at 50/60 Hz → line noise; a broad high-frequency floor → EMG.
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Applying ICA to Raw instance
+    Transforming to ICA space (10 components)
+    Zeroing out 3 ICA components
+    Projecting back using 19 PCA components
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Transforming to ICA space (10 components)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Zeroing out 3 ICA components
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Projecting back using 19 PCA components
-</pre></div>
-</div>
-<img alt="../_images/ec0b0db339ef8bb12b29b6e88d51e37c14dd713a45777a9540eebfb95922c285.png" src="../_images/ec0b0db339ef8bb12b29b6e88d51e37c14dd713a45777a9540eebfb95922c285.png" />
-<img alt="../_images/ec0b0db339ef8bb12b29b6e88d51e37c14dd713a45777a9540eebfb95922c285.png" src="../_images/ec0b0db339ef8bb12b29b6e88d51e37c14dd713a45777a9540eebfb95922c285.png" />
+<img alt="../_images/024585c921ee84fcbaa72424ef89ffb6f8e7a5a6500111c8bc9ccf7f20a5b95b.png" src="../_images/024585c921ee84fcbaa72424ef89ffb6f8e7a5a6500111c8bc9ccf7f20a5b95b.png" />
+<img alt="../_images/024585c921ee84fcbaa72424ef89ffb6f8e7a5a6500111c8bc9ccf7f20a5b95b.png" src="../_images/024585c921ee84fcbaa72424ef89ffb6f8e7a5a6500111c8bc9ccf7f20a5b95b.png" />
 </div>
 </div>
 <div class="dropdown admonition">
@@ -3035,19 +2968,13 @@ A narrow spike at 50/60 Hz → line noise; a broad high-frequency floor → EMG.
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Applying ICA to Raw instance
+    Transforming to ICA space (10 components)
+    Zeroing out 2 ICA components
+    Projecting back using 19 PCA components
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Transforming to ICA space (10 components)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Zeroing out 2 ICA components
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Projecting back using 19 PCA components
-</pre></div>
-</div>
-<img alt="../_images/bee3458d2ad29e6e001a8134c8c5e3191cc23968195aa789beec5f92254dd321.png" src="../_images/bee3458d2ad29e6e001a8134c8c5e3191cc23968195aa789beec5f92254dd321.png" />
-<img alt="../_images/bee3458d2ad29e6e001a8134c8c5e3191cc23968195aa789beec5f92254dd321.png" src="../_images/bee3458d2ad29e6e001a8134c8c5e3191cc23968195aa789beec5f92254dd321.png" />
+<img alt="../_images/184e4fe22c7a9bc7464685c57534e20f710f91870211e585e433b7c141e4d19b.png" src="../_images/184e4fe22c7a9bc7464685c57534e20f710f91870211e585e433b7c141e4d19b.png" />
+<img alt="../_images/184e4fe22c7a9bc7464685c57534e20f710f91870211e585e433b7c141e4d19b.png" src="../_images/184e4fe22c7a9bc7464685c57534e20f710f91870211e585e433b7c141e4d19b.png" />
 </div>
 </div>
 <div class="dropdown admonition">
@@ -3090,15 +3017,9 @@ A narrow spike at 50/60 Hz → line noise; a broad high-frequency floor → EMG.
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Applying ICA to Raw instance
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Transforming to ICA space (10 components)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Zeroing out 2 ICA components
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Projecting back using 19 PCA components
+    Transforming to ICA space (10 components)
+    Zeroing out 2 ICA components
+    Projecting back using 19 PCA components
 </pre></div>
 </div>
 <div class="output text_html"><script type="text/javascript">
@@ -3248,9 +3169,9 @@ this file apply (plus whatever default styling the IDE applies).
 
 
 
-<tr class="mne-repr-section-header general-19244c4b-adc9-435e-b2f3-5688aab1f024"
+<tr class="mne-repr-section-header general-a8a609c5-8ce6-45c4-8fb7-07dde8905562"
      title="Hide section" 
-    onclick="toggleVisibility('general-19244c4b-adc9-435e-b2f3-5688aab1f024')">
+    onclick="toggleVisibility('general-a8a609c5-8ce6-45c4-8fb7-07dde8905562')">
     <th class="mne-repr-section-toggle">
         <button >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg>
@@ -3262,7 +3183,7 @@ this file apply (plus whatever default styling the IDE applies).
 </tr>
 
 
-<tr class="repr-element general-19244c4b-adc9-435e-b2f3-5688aab1f024 ">
+<tr class="repr-element general-a8a609c5-8ce6-45c4-8fb7-07dde8905562 ">
     <td class="mne-repr-section-toggle"></td>
     <td>Filename(s)</td>
     <td>
@@ -3273,19 +3194,19 @@ this file apply (plus whatever default styling the IDE applies).
     </td>
 </tr>
 
-<tr class="repr-element general-19244c4b-adc9-435e-b2f3-5688aab1f024 ">
+<tr class="repr-element general-a8a609c5-8ce6-45c4-8fb7-07dde8905562 ">
     <td class="mne-repr-section-toggle"></td>
     <td>MNE object type</td>
     <td>RawEDF</td>
 </tr>
-<tr class="repr-element general-19244c4b-adc9-435e-b2f3-5688aab1f024 ">
+<tr class="repr-element general-a8a609c5-8ce6-45c4-8fb7-07dde8905562 ">
     <td class="mne-repr-section-toggle"></td>
     <td>Measurement date</td>
     
     <td>2009-08-12 at 16:15:00 UTC</td>
     
 </tr>
-<tr class="repr-element general-19244c4b-adc9-435e-b2f3-5688aab1f024 ">
+<tr class="repr-element general-a8a609c5-8ce6-45c4-8fb7-07dde8905562 ">
     <td class="mne-repr-section-toggle"></td>
     <td>Participant</td>
     
@@ -3294,7 +3215,7 @@ this file apply (plus whatever default styling the IDE applies).
     
     
 </tr>
-<tr class="repr-element general-19244c4b-adc9-435e-b2f3-5688aab1f024 ">
+<tr class="repr-element general-a8a609c5-8ce6-45c4-8fb7-07dde8905562 ">
     <td class="mne-repr-section-toggle"></td>
     <td>Experimenter</td>
     
@@ -3309,9 +3230,9 @@ this file apply (plus whatever default styling the IDE applies).
 
 
 
-<tr class="mne-repr-section-header acquisition-7df85f7a-a194-48e2-a220-8b8641aba13c"
+<tr class="mne-repr-section-header acquisition-5b771515-e60b-4359-b34f-3dc234726907"
      title="Hide section" 
-    onclick="toggleVisibility('acquisition-7df85f7a-a194-48e2-a220-8b8641aba13c')">
+    onclick="toggleVisibility('acquisition-5b771515-e60b-4359-b34f-3dc234726907')">
     <th class="mne-repr-section-toggle">
         <button >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg>
@@ -3323,7 +3244,7 @@ this file apply (plus whatever default styling the IDE applies).
 </tr>
 
 
-<tr class="repr-element acquisition-7df85f7a-a194-48e2-a220-8b8641aba13c ">
+<tr class="repr-element acquisition-5b771515-e60b-4359-b34f-3dc234726907 ">
     <td class="mne-repr-section-toggle"></td>
     <td>Duration</td>
     <td>00:02:05 (HH:MM:SS)</td>
@@ -3336,14 +3257,14 @@ this file apply (plus whatever default styling the IDE applies).
 
 
 
-<tr class="repr-element acquisition-7df85f7a-a194-48e2-a220-8b8641aba13c ">
+<tr class="repr-element acquisition-5b771515-e60b-4359-b34f-3dc234726907 ">
     <td class="mne-repr-section-toggle"></td>
     <td>Sampling frequency</td>
     <td>160.00 Hz</td>
 </tr>
 
 
-<tr class="repr-element acquisition-7df85f7a-a194-48e2-a220-8b8641aba13c ">
+<tr class="repr-element acquisition-5b771515-e60b-4359-b34f-3dc234726907 ">
     <td class="mne-repr-section-toggle"></td>
     <td>Time points</td>
     <td>20,000</td>
@@ -3358,9 +3279,9 @@ this file apply (plus whatever default styling the IDE applies).
 
 
 
-<tr class="mne-repr-section-header channels-114e83f0-ff36-4328-9665-cc48906180c4"
+<tr class="mne-repr-section-header channels-734330c2-f1a9-423d-8468-5de77ed63902"
      title="Hide section" 
-    onclick="toggleVisibility('channels-114e83f0-ff36-4328-9665-cc48906180c4')">
+    onclick="toggleVisibility('channels-734330c2-f1a9-423d-8468-5de77ed63902')">
     <th class="mne-repr-section-toggle">
         <button >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg>
@@ -3373,7 +3294,7 @@ this file apply (plus whatever default styling the IDE applies).
 
 
     
-<tr class="repr-element channels-114e83f0-ff36-4328-9665-cc48906180c4 ">
+<tr class="repr-element channels-734330c2-f1a9-423d-8468-5de77ed63902 ">
     <td class="mne-repr-section-toggle"></td>
     <td>EEG</td>
     <td>
@@ -3386,7 +3307,7 @@ this file apply (plus whatever default styling the IDE applies).
 </tr>
 
 
-<tr class="repr-element channels-114e83f0-ff36-4328-9665-cc48906180c4 ">
+<tr class="repr-element channels-734330c2-f1a9-423d-8468-5de77ed63902 ">
     <td class="mne-repr-section-toggle"></td>
     <td>Head & sensor digitization</td>
     
@@ -3401,9 +3322,9 @@ this file apply (plus whatever default styling the IDE applies).
 
 
 
-<tr class="mne-repr-section-header filters-beaaf469-4645-4aff-b7ad-ae31bd0c7263"
+<tr class="mne-repr-section-header filters-182241c8-a827-439e-bea0-18185eeb291b"
      title="Hide section" 
-    onclick="toggleVisibility('filters-beaaf469-4645-4aff-b7ad-ae31bd0c7263')">
+    onclick="toggleVisibility('filters-182241c8-a827-439e-bea0-18185eeb291b')">
     <th class="mne-repr-section-toggle">
         <button >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg>
@@ -3415,14 +3336,14 @@ this file apply (plus whatever default styling the IDE applies).
 </tr>
 
 
-<tr class="repr-element filters-beaaf469-4645-4aff-b7ad-ae31bd0c7263 ">
+<tr class="repr-element filters-182241c8-a827-439e-bea0-18185eeb291b ">
     <td class="mne-repr-section-toggle"></td>
     <td>Highpass</td>
     <td>1.00 Hz</td>
 </tr>
 
 
-<tr class="repr-element filters-beaaf469-4645-4aff-b7ad-ae31bd0c7263 ">
+<tr class="repr-element filters-182241c8-a827-439e-bea0-18185eeb291b ">
     <td class="mne-repr-section-toggle"></td>
     <td>Lowpass</td>
     <td>50.00 Hz</td>
@@ -3443,19 +3364,13 @@ this file apply (plus whatever default styling the IDE applies).
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Applying ICA to Raw instance
+    Transforming to ICA space (10 components)
+    Zeroing out 2 ICA components
+    Projecting back using 19 PCA components
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Transforming to ICA space (10 components)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Zeroing out 2 ICA components
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Projecting back using 19 PCA components
-</pre></div>
-</div>
-<img alt="../_images/ecef1938cb94ba557fe5f77248fad4c475f72c4e11e102cd058dca074f554326.png" src="../_images/ecef1938cb94ba557fe5f77248fad4c475f72c4e11e102cd058dca074f554326.png" />
-<img alt="../_images/ecef1938cb94ba557fe5f77248fad4c475f72c4e11e102cd058dca074f554326.png" src="../_images/ecef1938cb94ba557fe5f77248fad4c475f72c4e11e102cd058dca074f554326.png" />
+<img alt="../_images/f1db59bf6295c1c7683fddea4388ab0210c30d00940dd2f97eb9f0abf829b69f.png" src="../_images/f1db59bf6295c1c7683fddea4388ab0210c30d00940dd2f97eb9f0abf829b69f.png" />
+<img alt="../_images/f1db59bf6295c1c7683fddea4388ab0210c30d00940dd2f97eb9f0abf829b69f.png" src="../_images/f1db59bf6295c1c7683fddea4388ab0210c30d00940dd2f97eb9f0abf829b69f.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -3466,21 +3381,11 @@ this file apply (plus whatever default styling the IDE applies).
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Not setting metadata
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>30 matching events found
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Applying baseline correction (mode: mean)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 projection items activated
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Using data from preloaded Raw for 30 events and 209 original time points ...
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1 bad epochs dropped
+30 matching events found
+Applying baseline correction (mode: mean)
+0 projection items activated
+Using data from preloaded Raw for 30 events and 209 original time points ...
+1 bad epochs dropped
 </pre></div>
 </div>
 </div>
@@ -3501,8 +3406,8 @@ this file apply (plus whatever default styling the IDE applies).
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/da5bd5b936a8d082dd6af8fc2d1130cb322e08381b59d2881d0ec78ed1040a69.png" src="../_images/da5bd5b936a8d082dd6af8fc2d1130cb322e08381b59d2881d0ec78ed1040a69.png" />
-<img alt="../_images/da5bd5b936a8d082dd6af8fc2d1130cb322e08381b59d2881d0ec78ed1040a69.png" src="../_images/da5bd5b936a8d082dd6af8fc2d1130cb322e08381b59d2881d0ec78ed1040a69.png" />
+<img alt="../_images/bf02d69092f6f5eb5ec3d4118c76c5f3b8a1642094853841e0fcce88facbe871.png" src="../_images/bf02d69092f6f5eb5ec3d4118c76c5f3b8a1642094853841e0fcce88facbe871.png" />
+<img alt="../_images/bf02d69092f6f5eb5ec3d4118c76c5f3b8a1642094853841e0fcce88facbe871.png" src="../_images/bf02d69092f6f5eb5ec3d4118c76c5f3b8a1642094853841e0fcce88facbe871.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -3512,8 +3417,8 @@ this file apply (plus whatever default styling the IDE applies).
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/b7457c9281c2c26b40437f79bb5b1a013a35ad8da9305b094b5a2540b047adba.png" src="../_images/b7457c9281c2c26b40437f79bb5b1a013a35ad8da9305b094b5a2540b047adba.png" />
-<img alt="../_images/b7457c9281c2c26b40437f79bb5b1a013a35ad8da9305b094b5a2540b047adba.png" src="../_images/b7457c9281c2c26b40437f79bb5b1a013a35ad8da9305b094b5a2540b047adba.png" />
+<img alt="../_images/f8aac711a96f928dc1e945fc4c1262875f78b7cc4109d65535b685e15d20f5d5.png" src="../_images/f8aac711a96f928dc1e945fc4c1262875f78b7cc4109d65535b685e15d20f5d5.png" />
+<img alt="../_images/f8aac711a96f928dc1e945fc4c1262875f78b7cc4109d65535b685e15d20f5d5.png" src="../_images/f8aac711a96f928dc1e945fc4c1262875f78b7cc4109d65535b685e15d20f5d5.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -3523,8 +3428,8 @@ this file apply (plus whatever default styling the IDE applies).
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/b03ea999d6c86ad658afb3249fb9e77023d65903f4a29e4dd41d9801d5486adc.png" src="../_images/b03ea999d6c86ad658afb3249fb9e77023d65903f4a29e4dd41d9801d5486adc.png" />
-<img alt="../_images/b03ea999d6c86ad658afb3249fb9e77023d65903f4a29e4dd41d9801d5486adc.png" src="../_images/b03ea999d6c86ad658afb3249fb9e77023d65903f4a29e4dd41d9801d5486adc.png" />
+<img alt="../_images/fb37edb52adbcb3515b40f49e78e66ef6bf851a4eba29cd4e07bc56e67bb74f6.png" src="../_images/fb37edb52adbcb3515b40f49e78e66ef6bf851a4eba29cd4e07bc56e67bb74f6.png" />
+<img alt="../_images/fb37edb52adbcb3515b40f49e78e66ef6bf851a4eba29cd4e07bc56e67bb74f6.png" src="../_images/fb37edb52adbcb3515b40f49e78e66ef6bf851a4eba29cd4e07bc56e67bb74f6.png" />
 </div>
 </div>
 </section>
@@ -3557,15 +3462,11 @@ Therefore, GFP is often used as a quick overview to identify time periods that m
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>combining channels using GFP (eeg channels)
+combining channels using GFP (eeg channels)
+combining channels using GFP (eeg channels)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>combining channels using GFP (eeg channels)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>combining channels using GFP (eeg channels)
-</pre></div>
-</div>
-<img alt="../_images/abf2ee35b6cb4c39e642a47e34ffd67020dd59c2a21fc3f94f5b49abecc735fd.png" src="../_images/abf2ee35b6cb4c39e642a47e34ffd67020dd59c2a21fc3f94f5b49abecc735fd.png" />
+<img alt="../_images/fe9a8d52fda5a5bca112288841dfdfb3787249c6cc98d96fbf6b561072e89957.png" src="../_images/fe9a8d52fda5a5bca112288841dfdfb3787249c6cc98d96fbf6b561072e89957.png" />
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;Figure size 800x600 with 2 Axes&gt;]
 </pre></div>
 </div>
@@ -3615,9 +3516,9 @@ Therefore, GFP is often used as a quick overview to identify time periods that m
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>No projector specified for this dataset. Please consider the method self.add_proj.
 </pre></div>
 </div>
-<img alt="../_images/fa0edafc77a1a9830bb09c9e20fa9a695bf7fed6e8c0bc39d905ca1b606c1def.png" src="../_images/fa0edafc77a1a9830bb09c9e20fa9a695bf7fed6e8c0bc39d905ca1b606c1def.png" />
-<img alt="../_images/a69380c583227047b425aef9b52b2e02c882b797fc93c8b39958b30779984483.png" src="../_images/a69380c583227047b425aef9b52b2e02c882b797fc93c8b39958b30779984483.png" />
-<img alt="../_images/38346903da763d8f2cc2567de65d7d7165cb7ba99a33a27bbf35826ca919b5ea.png" src="../_images/38346903da763d8f2cc2567de65d7d7165cb7ba99a33a27bbf35826ca919b5ea.png" />
+<img alt="../_images/c121282c7f80935d3bf75503cdf8f541c4e17b5a4195133cac3219b2332edf6d.png" src="../_images/c121282c7f80935d3bf75503cdf8f541c4e17b5a4195133cac3219b2332edf6d.png" />
+<img alt="../_images/dc1150154889ccf5aee7e252bfafbfd0efcb42beb224fa4b06c17d79c97493ad.png" src="../_images/dc1150154889ccf5aee7e252bfafbfd0efcb42beb224fa4b06c17d79c97493ad.png" />
+<img alt="../_images/e2e3d4d169529f6337f42ffc1c5ac5b040bd7196c1fb767700af855d4204c75c.png" src="../_images/e2e3d4d169529f6337f42ffc1c5ac5b040bd7196c1fb767700af855d4204c75c.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -3631,9 +3532,9 @@ Therefore, GFP is often used as a quick overview to identify time periods that m
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>No projector specified for this dataset. Please consider the method self.add_proj.
 </pre></div>
 </div>
-<img alt="../_images/39aa2ec7e4b29e0b353c124df22485e04125321c2851e9dbc4c47c0a0f7df4c3.png" src="../_images/39aa2ec7e4b29e0b353c124df22485e04125321c2851e9dbc4c47c0a0f7df4c3.png" />
-<img alt="../_images/f8fae9e620135177426f6d3fe28a0968f7a5515516767c828864c32904a5f1c6.png" src="../_images/f8fae9e620135177426f6d3fe28a0968f7a5515516767c828864c32904a5f1c6.png" />
-<img alt="../_images/ab699aad6928bbaf4b545c19be33f0d930e1e3baf554d311e086ed35011a40a2.png" src="../_images/ab699aad6928bbaf4b545c19be33f0d930e1e3baf554d311e086ed35011a40a2.png" />
+<img alt="../_images/8cd0488818bfdc7e16c3a31544e36faf21a60035cb8b6e5dbd8b7097541b3216.png" src="../_images/8cd0488818bfdc7e16c3a31544e36faf21a60035cb8b6e5dbd8b7097541b3216.png" />
+<img alt="../_images/5c8c9bb747e117ca9c37a5038426e7ecf1220fe4f811e7e8f66941f4c7aa6860.png" src="../_images/5c8c9bb747e117ca9c37a5038426e7ecf1220fe4f811e7e8f66941f4c7aa6860.png" />
+<img alt="../_images/ad892c3e8892ab815a55e1d84ff3172a59215ed5028c7a6a5e9404ce5866f91c.png" src="../_images/ad892c3e8892ab815a55e1d84ff3172a59215ed5028c7a6a5e9404ce5866f91c.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -3647,9 +3548,9 @@ Therefore, GFP is often used as a quick overview to identify time periods that m
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>No projector specified for this dataset. Please consider the method self.add_proj.
 </pre></div>
 </div>
-<img alt="../_images/29c76fd6b5982b4696432a9a9cf5620e36b33da1684f44bd1486ac13ace87ac4.png" src="../_images/29c76fd6b5982b4696432a9a9cf5620e36b33da1684f44bd1486ac13ace87ac4.png" />
-<img alt="../_images/5824aa9b41f2a1fd6cb3db36c4a7c772e9e77ac5777683ef0f819201989408f6.png" src="../_images/5824aa9b41f2a1fd6cb3db36c4a7c772e9e77ac5777683ef0f819201989408f6.png" />
-<img alt="../_images/9347ebb7293abf4091155b4d4b6b8907383688c74001d2ccd9b93cb5fcdda445.png" src="../_images/9347ebb7293abf4091155b4d4b6b8907383688c74001d2ccd9b93cb5fcdda445.png" />
+<img alt="../_images/1ada9e9f7a5346863ad5427b214b5e48259744d4c9559d3438da393e016bae96.png" src="../_images/1ada9e9f7a5346863ad5427b214b5e48259744d4c9559d3438da393e016bae96.png" />
+<img alt="../_images/34ed89f50f84cc2f3b588547cd02ffc2bae67781c3208a13df117a8bd62dff80.png" src="../_images/34ed89f50f84cc2f3b588547cd02ffc2bae67781c3208a13df117a8bd62dff80.png" />
+<img alt="../_images/bb5b9c114f7cc260547babcce2a4cce6a2b4c7297f1ecc3550f699d7daff5471.png" src="../_images/bb5b9c114f7cc260547babcce2a4cce6a2b4c7297f1ecc3550f699d7daff5471.png" />
 </div>
 </div>
 <div class="dropdown admonition">
@@ -3689,54 +3590,22 @@ This is called <strong>functional connectivity</strong>.</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Adding metadata with 3 columns
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Connectivity computation...
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>only using indices for lower-triangular matrix
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    computing connectivity for 171 connections
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    using t=-0.500s..0.800s for estimation (209 points)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    frequencies: 4.6Hz..79.6Hz (99 points)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Using multitaper spectrum estimation with 7 DPSS windows
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    the following metrics will be computed: Coherence
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    computing cross-spectral density for epoch 1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    computing cross-spectral density for epoch 2
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    computing cross-spectral density for epoch 3
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    computing cross-spectral density for epoch 4
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    computing cross-spectral density for epoch 5
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    computing cross-spectral density for epoch 6
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    computing cross-spectral density for epoch 7
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    assembling connectivity matrix
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Connectivity computation done]
+Connectivity computation...
+only using indices for lower-triangular matrix
+    computing connectivity for 171 connections
+    using t=-0.500s..0.800s for estimation (209 points)
+    frequencies: 4.6Hz..79.6Hz (99 points)
+    Using multitaper spectrum estimation with 7 DPSS windows
+    the following metrics will be computed: Coherence
+    computing cross-spectral density for epoch 1
+    computing cross-spectral density for epoch 2
+    computing cross-spectral density for epoch 3
+    computing cross-spectral density for epoch 4
+    computing cross-spectral density for epoch 5
+    computing cross-spectral density for epoch 6
+    computing cross-spectral density for epoch 7
+    assembling connectivity matrix
+[Connectivity computation done]
 </pre></div>
 </div>
 </div>
@@ -3884,7 +3753,7 @@ This is called <strong>functional connectivity</strong>.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/6f5782b9a4fe84bed90b5d083bca59b629ad12a117e88d4ebe4d2915dac6eb30.png" src="../_images/6f5782b9a4fe84bed90b5d083bca59b629ad12a117e88d4ebe4d2915dac6eb30.png" />
+<img alt="../_images/4ee8a207daebdfbb79b912751cbd4571e9f68679550993533c5cdddf43ed75b6.png" src="../_images/4ee8a207daebdfbb79b912751cbd4571e9f68679550993533c5cdddf43ed75b6.png" />
 </div>
 </div>
 <ul class="simple">
@@ -3918,7 +3787,7 @@ This is called <strong>functional connectivity</strong>.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/bee820cccad466e40fd253b5f90b9727e177a9dcba9a945d61617a76129a5ad4.png" src="../_images/bee820cccad466e40fd253b5f90b9727e177a9dcba9a945d61617a76129a5ad4.png" />
+<img alt="../_images/fdd1b7f7d02f2461106a9011744543fc488fb67ef0ca9544eaf5b64e6a66074c.png" src="../_images/fdd1b7f7d02f2461106a9011744543fc488fb67ef0ca9544eaf5b64e6a66074c.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -3928,7 +3797,7 @@ This is called <strong>functional connectivity</strong>.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/34b26f43d6c350a18ad022b0a5fc7495c8504c2b66b6994ede174b0c074b8d83.png" src="../_images/34b26f43d6c350a18ad022b0a5fc7495c8504c2b66b6994ede174b0c074b8d83.png" />
+<img alt="../_images/d071a8b0fd7d1500cae6222e454c916a4e6f209c027e526b5933ce21b325cbe2.png" src="../_images/d071a8b0fd7d1500cae6222e454c916a4e6f209c027e526b5933ce21b325cbe2.png" />
 </div>
 </div>
 <div class="dropdown admonition">

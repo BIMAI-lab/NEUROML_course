@@ -524,8 +524,8 @@ translations, rotations (via a quaternion representation) and isotropic zooms.</
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># !wget --progress=bar:force:noscroll -P /tmp http://www.bic.mni.mcgill.ca/~vfonov/icbm/2009/mni_icbm152_nlin_sym_09a_nifti.zip &amp;&amp; \</span>
 <span class="c1"># 	mkdir -p /workspace/data/mni_icbm152_nlin_sym_09a &amp;&amp; \</span>
-<span class="c1"># 	unzip -o -d /workspace/data/tmp/mni_icbm152_nlin_sym_09a_nifti.zip &amp;&amp; \</span>
-<span class="c1"># 	rm -r /tmp/mni_icbm152_nlin_sym_09a_nifti.zip</span>
+<span class="c1">#     unzip -o /tmp/mni_icbm152_nlin_sym_09a_nifti.zip -d /workspace/data/ &amp;&amp; \</span>
+<span class="c1">#     rm -r /tmp/mni_icbm152_nlin_sym_09a_nifti.zip</span>
 </pre></div>
 </div>
 </div>
@@ -624,15 +624,6 @@ First: Check images orientation between MNI template and out T1 image.</p>
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># transform_image = nilearn.plotting.plot_anat(transformed_nii,</span>
-<span class="c1">#                            title=&#39;Space displacement&#39;, annotate=True)</span>
-<span class="c1"># transform_image.add_overlay(nii_file,threshold=0.8e3, colorbar=True)</span>
-</pre></div>
-</div>
-</div>
-</div>
 <p>Try: How about rotation?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -719,6 +710,13 @@ Pros/cons:</p>
 <p>Volume-based registration method, often used for corregistration between series. \</p>
 <p><a class="reference external" href="https://nipype.readthedocs.io/en/1.1.7/interfaces/generated/interfaces.ants/registration.html">https://nipype.readthedocs.io/en/1.1.7/interfaces/generated/interfaces.ants/registration.html</a> <br />
 <a class="github reference external" href="https://github.com/ANTsX/ANTs/wiki/Anatomy-of-an-antsRegistration-call">ANTsX/ANTs</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># !conda install -c conda-forge ants -y</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># from nipype.interfaces.ants import RegistrationSynQuick</span>
@@ -863,9 +861,9 @@ ANTs Transform takes affine matrix and output target space image</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import os</span>
-<span class="c1">#  Implement ANTs registration to allign mni and freesurfer template</span>
+<span class="c1"># #  Implement ANTs registration to allign mni and freesurfer template</span>
 
-<span class="c1">#  PUT YOUR CODE HERE</span>
+<span class="c1"># #  PUT YOUR CODE HERE</span>
 
 <span class="c1"># reg = RegistrationSynQuick()</span>
 <span class="c1"># reg.inputs.moving_image = os.path.abspath(&#39;./T1_fs_preprocessed.nii&#39;)</span>
