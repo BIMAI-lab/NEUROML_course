@@ -28,7 +28,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
@@ -252,6 +252,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Seminars 6-8. Working with fMRI</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../seminars6_7/README.html">Preparation to Seminar 6-8</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../seminars6_7/seminars_content.html">Summary of Seminar 6-8</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1Hed2ggYNbyvBMeYpNeapMAepxeQBVLRL?usp=sharing">Seminar 8.1. Analyze task-based fMRI for motor and emotion task</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1F0UzTsmF1NK6F3NEsJHUw9G5K3j_-eYA?usp=sharing">Seminar 8.2. Functional connectivity</a></li>
 </ul>
@@ -569,150 +570,40 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>^C
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: nilearn in /home/fedor/anaconda3/lib/python3.9/site-packages (0.12.1)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Defaulting to user installation because normal site-packages is not writeable
-Collecting nilearn
-  Downloading nilearn-0.12.1-py3-none-any.whl.metadata (9.9 kB)
-Requirement already satisfied: joblib&gt;=1.2.0 in c:\users\dmitriy kornilov\appdata\roaming\python\python310\site-packages (from nilearn) (1.4.2)
-Collecting lxml (from nilearn)
-  Downloading lxml-6.0.1-cp310-cp310-win_amd64.whl.metadata (3.9 kB)
-Collecting nibabel&gt;=5.2.0 (from nilearn)
-  Downloading nibabel-5.3.2-py3-none-any.whl.metadata (9.1 kB)
-Requirement already satisfied: numpy&gt;=1.22.4 in c:\users\dmitriy kornilov\appdata\roaming\python\python310\site-packages (from nilearn) (2.1.3)
-Requirement already satisfied: packaging in c:\users\dmitriy kornilov\appdata\roaming\python\python310\site-packages (from nilearn) (24.2)
-Requirement already satisfied: pandas&gt;=2.2.0 in c:\users\dmitriy kornilov\appdata\roaming\python\python310\site-packages (from nilearn) (2.2.3)
-Requirement already satisfied: requests&gt;=2.25.0 in c:\users\dmitriy kornilov\appdata\roaming\python\python310\site-packages (from nilearn) (2.32.3)
-Requirement already satisfied: scikit-learn&gt;=1.4.0 in c:\users\dmitriy kornilov\appdata\roaming\python\python310\site-packages (from nilearn) (1.5.2)
-Requirement already satisfied: scipy&gt;=1.8.0 in c:\users\dmitriy kornilov\appdata\roaming\python\python310\site-packages (from nilearn) (1.14.1)
-Collecting importlib-resources&gt;=5.12 (from nibabel&gt;=5.2.0-&gt;nilearn)
-  Downloading importlib_resources-6.5.2-py3-none-any.whl.metadata (3.9 kB)
-Requirement already satisfied: typing-extensions&gt;=4.6 in c:\users\dmitriy kornilov\appdata\roaming\python\python310\site-packages (from nibabel&gt;=5.2.0-&gt;nilearn) (4.12.2)
-Requirement already satisfied: python-dateutil&gt;=2.8.2 in c:\users\dmitriy kornilov\appdata\roaming\python\python310\site-packages (from pandas&gt;=2.2.0-&gt;nilearn) (2.9.0.post0)
-Requirement already satisfied: pytz&gt;=2020.1 in c:\users\dmitriy kornilov\appdata\roaming\python\python310\site-packages (from pandas&gt;=2.2.0-&gt;nilearn) (2024.2)
-Requirement already satisfied: tzdata&gt;=2022.7 in c:\users\dmitriy kornilov\appdata\roaming\python\python310\site-packages (from pandas&gt;=2.2.0-&gt;nilearn) (2024.2)
-Requirement already satisfied: charset-normalizer&lt;4,&gt;=2 in c:\users\dmitriy kornilov\appdata\roaming\python\python310\site-packages (from requests&gt;=2.25.0-&gt;nilearn) (3.4.0)
-Requirement already satisfied: idna&lt;4,&gt;=2.5 in c:\users\dmitriy kornilov\appdata\roaming\python\python310\site-packages (from requests&gt;=2.25.0-&gt;nilearn) (3.10)
-Requirement already satisfied: urllib3&lt;3,&gt;=1.21.1 in c:\users\dmitriy kornilov\appdata\roaming\python\python310\site-packages (from requests&gt;=2.25.0-&gt;nilearn) (2.2.3)
-Requirement already satisfied: certifi&gt;=2017.4.17 in c:\users\dmitriy kornilov\appdata\roaming\python\python310\site-packages (from requests&gt;=2.25.0-&gt;nilearn) (2024.8.30)
-Requirement already satisfied: threadpoolctl&gt;=3.1.0 in c:\users\dmitriy kornilov\appdata\roaming\python\python310\site-packages (from scikit-learn&gt;=1.4.0-&gt;nilearn) (3.5.0)
-Requirement already satisfied: six&gt;=1.5 in c:\users\dmitriy kornilov\appdata\roaming\python\python310\site-packages (from python-dateutil&gt;=2.8.2-&gt;pandas&gt;=2.2.0-&gt;nilearn) (1.16.0)
-Downloading nilearn-0.12.1-py3-none-any.whl (12.7 MB)
-   ---------------------------------------- 0.0/12.7 MB ? eta -:--:--
-   ---------------------------------------- 0.0/12.7 MB ? eta -:--:--
-   ---------------------------------------- 0.0/12.7 MB ? eta -:--:--
-   ---------------------------------------- 0.0/12.7 MB ? eta -:--:--
-    --------------------------------------- 0.3/12.7 MB ? eta -:--:--
-    --------------------------------------- 0.3/12.7 MB ? eta -:--:--
-   - -------------------------------------- 0.5/12.7 MB 670.4 kB/s eta 0:00:19
-   -- ------------------------------------- 0.8/12.7 MB 657.8 kB/s eta 0:00:19
-   -- ------------------------------------- 0.8/12.7 MB 657.8 kB/s eta 0:00:19
-   --- ------------------------------------ 1.0/12.7 MB 662.0 kB/s eta 0:00:18
-   --- ------------------------------------ 1.0/12.7 MB 662.0 kB/s eta 0:00:18
-   ---- ----------------------------------- 1.3/12.7 MB 627.1 kB/s eta 0:00:19
-   ---- ----------------------------------- 1.3/12.7 MB 627.1 kB/s eta 0:00:19
-   ---- ----------------------------------- 1.6/12.7 MB 635.3 kB/s eta 0:00:18
-   ----- ---------------------------------- 1.8/12.7 MB 675.3 kB/s eta 0:00:17
-   ----- ---------------------------------- 1.8/12.7 MB 675.3 kB/s eta 0:00:17
-   ------ --------------------------------- 2.1/12.7 MB 699.0 kB/s eta 0:00:16
-   ------- -------------------------------- 2.4/12.7 MB 737.4 kB/s eta 0:00:15
-   -------- ------------------------------- 2.6/12.7 MB 736.4 kB/s eta 0:00:14
-   -------- ------------------------------- 2.6/12.7 MB 736.4 kB/s eta 0:00:14
-   --------- ------------------------------ 2.9/12.7 MB 742.2 kB/s eta 0:00:14
-   --------- ------------------------------ 3.1/12.7 MB 772.0 kB/s eta 0:00:13
-   ---------- ----------------------------- 3.4/12.7 MB 792.6 kB/s eta 0:00:12
-   ----------- ---------------------------- 3.7/12.7 MB 801.9 kB/s eta 0:00:12
-   ----------- ---------------------------- 3.7/12.7 MB 801.9 kB/s eta 0:00:12
-   ------------ --------------------------- 3.9/12.7 MB 801.5 kB/s eta 0:00:11
-   ------------- -------------------------- 4.2/12.7 MB 817.0 kB/s eta 0:00:11
-   ------------- -------------------------- 4.5/12.7 MB 833.5 kB/s eta 0:00:10
-   -------------- ------------------------- 4.7/12.7 MB 853.9 kB/s eta 0:00:10
-   --------------- ------------------------ 5.0/12.7 MB 845.8 kB/s eta 0:00:10
-   ---------------- ----------------------- 5.2/12.7 MB 856.8 kB/s eta 0:00:09
-   ---------------- ----------------------- 5.2/12.7 MB 856.8 kB/s eta 0:00:09
-   ---------------- ----------------------- 5.2/12.7 MB 856.8 kB/s eta 0:00:09
-   ---------------- ----------------------- 5.2/12.7 MB 856.8 kB/s eta 0:00:09
-   ---------------- ----------------------- 5.2/12.7 MB 856.8 kB/s eta 0:00:09
-   ----------------- ---------------------- 5.5/12.7 MB 774.9 kB/s eta 0:00:10
-   ----------------- ---------------------- 5.5/12.7 MB 774.9 kB/s eta 0:00:10
-   ----------------- ---------------------- 5.5/12.7 MB 774.9 kB/s eta 0:00:10
-   ----------------- ---------------------- 5.5/12.7 MB 774.9 kB/s eta 0:00:10
-   ----------------- ---------------------- 5.5/12.7 MB 774.9 kB/s eta 0:00:10
-   ------------------ --------------------- 5.8/12.7 MB 699.0 kB/s eta 0:00:10
-   ------------------ --------------------- 5.8/12.7 MB 699.0 kB/s eta 0:00:10
-   ------------------ --------------------- 5.8/12.7 MB 699.0 kB/s eta 0:00:10
-   ------------------ --------------------- 5.8/12.7 MB 699.0 kB/s eta 0:00:10
-   ------------------ --------------------- 5.8/12.7 MB 699.0 kB/s eta 0:00:10
-   ------------------ --------------------- 6.0/12.7 MB 650.9 kB/s eta 0:00:11
-   ------------------ --------------------- 6.0/12.7 MB 650.9 kB/s eta 0:00:11
-   ------------------- -------------------- 6.3/12.7 MB 648.5 kB/s eta 0:00:10
-   -------------------- ------------------- 6.6/12.7 MB 661.1 kB/s eta 0:00:10
-   --------------------- ------------------ 6.8/12.7 MB 667.8 kB/s eta 0:00:09
-   ---------------------- ----------------- 7.1/12.7 MB 675.2 kB/s eta 0:00:09
-   ----------------------- ---------------- 7.3/12.7 MB 689.4 kB/s eta 0:00:08
-   ----------------------- ---------------- 7.6/12.7 MB 702.1 kB/s eta 0:00:08
-   ------------------------ --------------- 7.9/12.7 MB 711.3 kB/s eta 0:00:07
-   ------------------------- -------------- 8.1/12.7 MB 722.1 kB/s eta 0:00:07
-   ------------------------- -------------- 8.1/12.7 MB 722.1 kB/s eta 0:00:07
-   --------------------------- ------------ 8.7/12.7 MB 734.4 kB/s eta 0:00:06
-   --------------------------- ------------ 8.7/12.7 MB 734.4 kB/s eta 0:00:06
-   --------------------------- ------------ 8.9/12.7 MB 735.2 kB/s eta 0:00:06
-   --------------------------- ------------ 8.9/12.7 MB 735.2 kB/s eta 0:00:06
-   ---------------------------- ----------- 9.2/12.7 MB 736.0 kB/s eta 0:00:05
-   ----------------------------- ---------- 9.4/12.7 MB 745.1 kB/s eta 0:00:05
-   ------------------------------ --------- 9.7/12.7 MB 750.2 kB/s eta 0:00:05
-   ------------------------------- -------- 10.0/12.7 MB 759.8 kB/s eta 0:00:04
-   -------------------------------- ------- 10.2/12.7 MB 756.3 kB/s eta 0:00:04
-   -------------------------------- ------- 10.2/12.7 MB 756.3 kB/s eta 0:00:04
-   -------------------------------- ------- 10.5/12.7 MB 761.7 kB/s eta 0:00:03
-   ---------------------------------- ----- 11.0/12.7 MB 779.0 kB/s eta 0:00:03
-   ----------------------------------- ---- 11.3/12.7 MB 788.2 kB/s eta 0:00:02
-   ----------------------------------- ---- 11.3/12.7 MB 788.2 kB/s eta 0:00:02
-   ------------------------------------ --- 11.5/12.7 MB 789.3 kB/s eta 0:00:02
-   ------------------------------------ --- 11.5/12.7 MB 789.3 kB/s eta 0:00:02
-   ------------------------------------- -- 11.8/12.7 MB 782.8 kB/s eta 0:00:02
-   ------------------------------------- -- 12.1/12.7 MB 785.6 kB/s eta 0:00:01
-   ---------------------------------------  12.6/12.7 MB 807.1 kB/s eta 0:00:01
-   ---------------------------------------- 12.7/12.7 MB 810.1 kB/s eta 0:00:00
-Downloading nibabel-5.3.2-py3-none-any.whl (3.3 MB)
-   ---------------------------------------- 0.0/3.3 MB ? eta -:--:--
-   --- ------------------------------------ 0.3/3.3 MB ? eta -:--:--
-   ------ --------------------------------- 0.5/3.3 MB 1.5 MB/s eta 0:00:02
-   ------ --------------------------------- 0.5/3.3 MB 1.5 MB/s eta 0:00:02
-   --------- ------------------------------ 0.8/3.3 MB 1.1 MB/s eta 0:00:03
-   ------------ --------------------------- 1.0/3.3 MB 1.1 MB/s eta 0:00:02
-   --------------- ------------------------ 1.3/3.3 MB 1.1 MB/s eta 0:00:02
-   ------------------- -------------------- 1.6/3.3 MB 1.1 MB/s eta 0:00:02
-   ---------------------- ----------------- 1.8/3.3 MB 1.1 MB/s eta 0:00:02
-   ------------------------- -------------- 2.1/3.3 MB 1.1 MB/s eta 0:00:02
-   ------------------------- -------------- 2.1/3.3 MB 1.1 MB/s eta 0:00:02
-   ---------------------------- ----------- 2.4/3.3 MB 1.0 MB/s eta 0:00:01
-   ------------------------------- -------- 2.6/3.3 MB 1.1 MB/s eta 0:00:01
-   ----------------------------------- ---- 2.9/3.3 MB 1.1 MB/s eta 0:00:01
-   -------------------------------------- - 3.1/3.3 MB 1.1 MB/s eta 0:00:01
-   ---------------------------------------- 3.3/3.3 MB 1.1 MB/s eta 0:00:00
-Downloading lxml-6.0.1-cp310-cp310-win_amd64.whl (4.0 MB)
-   ---------------------------------------- 0.0/4.0 MB ? eta -:--:--
-   ---------------------------------------- 0.0/4.0 MB ? eta -:--:--
-   -- ------------------------------------- 0.3/4.0 MB ? eta -:--:--
-   ----- ---------------------------------- 0.5/4.0 MB 672.2 kB/s eta 0:00:06
-   ------- -------------------------------- 0.8/4.0 MB 884.1 kB/s eta 0:00:04
-   ---------- ----------------------------- 1.0/4.0 MB 949.8 kB/s eta 0:00:04
-   ---------- ----------------------------- 1.0/4.0 MB 949.8 kB/s eta 0:00:04
-   ------------- -------------------------- 1.3/4.0 MB 919.8 kB/s eta 0:00:03
-   --------------- ------------------------ 1.6/4.0 MB 922.4 kB/s eta 0:00:03
-   ------------------ --------------------- 1.8/4.0 MB 923.6 kB/s eta 0:00:03
-   -------------------- ------------------- 2.1/4.0 MB 970.9 kB/s eta 0:00:02
-   ----------------------- ---------------- 2.4/4.0 MB 1.0 MB/s eta 0:00:02
-   ----------------------- ---------------- 2.4/4.0 MB 1.0 MB/s eta 0:00:02
-   -------------------------- ------------- 2.6/4.0 MB 956.0 kB/s eta 0:00:02
-   ------------------------------- -------- 3.1/4.0 MB 1.0 MB/s eta 0:00:01
-   ------------------------------- -------- 3.1/4.0 MB 1.0 MB/s eta 0:00:01
-   --------------------------------- ------ 3.4/4.0 MB 996.7 kB/s eta 0:00:01
-   ------------------------------------ --- 3.7/4.0 MB 1.0 MB/s eta 0:00:01
-   ---------------------------------------- 4.0/4.0 MB 1.0 MB/s eta 0:00:00
-Downloading importlib_resources-6.5.2-py3-none-any.whl (37 kB)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: requests&gt;=2.25.0 in /home/fedor/anaconda3/lib/python3.9/site-packages (from nilearn) (2.32.5)
+Requirement already satisfied: scikit-learn&gt;=1.4.0 in /home/fedor/anaconda3/lib/python3.9/site-packages (from nilearn) (1.6.1)
+Requirement already satisfied: numpy&gt;=1.22.4 in /home/fedor/anaconda3/lib/python3.9/site-packages (from nilearn) (2.0.2)
+Requirement already satisfied: scipy&gt;=1.8.0 in /home/fedor/anaconda3/lib/python3.9/site-packages (from nilearn) (1.13.1)
+Requirement already satisfied: nibabel&gt;=5.2.0 in /home/fedor/anaconda3/lib/python3.9/site-packages (from nilearn) (5.3.2)
+Requirement already satisfied: joblib&gt;=1.2.0 in /home/fedor/anaconda3/lib/python3.9/site-packages (from nilearn) (1.5.2)
+Requirement already satisfied: pandas&gt;=2.2.0 in /home/fedor/anaconda3/lib/python3.9/site-packages (from nilearn) (2.3.2)
+Requirement already satisfied: packaging in /home/fedor/anaconda3/lib/python3.9/site-packages (from nilearn) (25.0)
+Requirement already satisfied: lxml in /home/fedor/anaconda3/lib/python3.9/site-packages (from nilearn) (4.8.0)
+Requirement already satisfied: typing-extensions&gt;=4.6 in /home/fedor/anaconda3/lib/python3.9/site-packages (from nibabel&gt;=5.2.0-&gt;nilearn) (4.15.0)
+Requirement already satisfied: importlib-resources&gt;=5.12 in /home/fedor/anaconda3/lib/python3.9/site-packages (from nibabel&gt;=5.2.0-&gt;nilearn) (6.5.2)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: tzdata&gt;=2022.7 in /home/fedor/anaconda3/lib/python3.9/site-packages (from pandas&gt;=2.2.0-&gt;nilearn) (2025.2)
+Requirement already satisfied: python-dateutil&gt;=2.8.2 in /home/fedor/anaconda3/lib/python3.9/site-packages (from pandas&gt;=2.2.0-&gt;nilearn) (2.8.2)
+Requirement already satisfied: pytz&gt;=2020.1 in /home/fedor/anaconda3/lib/python3.9/site-packages (from pandas&gt;=2.2.0-&gt;nilearn) (2021.3)
+Requirement already satisfied: certifi&gt;=2017.4.17 in /home/fedor/anaconda3/lib/python3.9/site-packages (from requests&gt;=2.25.0-&gt;nilearn) (2021.10.8)
+Requirement already satisfied: charset_normalizer&lt;4,&gt;=2 in /home/fedor/anaconda3/lib/python3.9/site-packages (from requests&gt;=2.25.0-&gt;nilearn) (2.0.4)
+Requirement already satisfied: urllib3&lt;3,&gt;=1.21.1 in /home/fedor/anaconda3/lib/python3.9/site-packages (from requests&gt;=2.25.0-&gt;nilearn) (1.26.9)
+Requirement already satisfied: idna&lt;4,&gt;=2.5 in /home/fedor/anaconda3/lib/python3.9/site-packages (from requests&gt;=2.25.0-&gt;nilearn) (3.3)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: threadpoolctl&gt;=3.1.0 in /home/fedor/anaconda3/lib/python3.9/site-packages (from scikit-learn&gt;=1.4.0-&gt;nilearn) (3.6.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: zipp&gt;=3.1.0 in /home/fedor/anaconda3/lib/python3.9/site-packages (from importlib-resources&gt;=5.12-&gt;nibabel&gt;=5.2.0-&gt;nilearn) (3.23.0)
+Requirement already satisfied: six&gt;=1.5 in /home/fedor/anaconda3/lib/python3.9/site-packages (from python-dateutil&gt;=2.8.2-&gt;pandas&gt;=2.2.0-&gt;nilearn) (1.16.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> A new release of pip is available: <span class=" -Color -Color-Red">23.0.1</span> -&gt; <span class=" -Color -Color-Green">25.2</span>
+<span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> To update, run: <span class=" -Color -Color-Green">pip install --upgrade pip</span>
 </pre></div>
 </div>
 </div>
@@ -724,48 +615,381 @@ Downloading importlib_resources-6.5.2-py3-none-any.whl (37 kB)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">WARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by &#39;ReadTimeoutError(&quot;HTTPSConnectionPool(host=&#39;pypi.org&#39;, port=443): Read timed out. (read timeout=15)&quot;)&#39;: /simple/diagram2vec/</span>
-Collecting diagram2vec
-  Using cached diagram2vec-0.0.2-py3-none-any.whl.metadata (2.7 kB)
-Using cached diagram2vec-0.0.2-py3-none-any.whl (5.1 kB)
-Installing collected packages: diagram2vec
-Successfully installed diagram2vec-0.0.2
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: diagram2vec in /home/fedor/anaconda3/lib/python3.9/site-packages (0.0.2)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> A new release of pip is available: <span class=" -Color -Color-Red">23.0.1</span> -&gt; <span class=" -Color -Color-Green">25.2</span>
+<span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> To update, run: <span class=" -Color -Color-Green">pip install --upgrade pip</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">re</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
 
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
-<span class="kn">import</span> <span class="nn">nibabel</span> <span class="k">as</span> <span class="nn">nib</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">nibabel</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">nib</span>
 
-<span class="kn">import</span> <span class="nn">nilearn</span>
-<span class="kn">from</span> <span class="nn">nilearn.image</span> <span class="kn">import</span> <span class="n">concat_imgs</span>
-<span class="kn">from</span> <span class="nn">nilearn.input_data</span> <span class="kn">import</span> <span class="n">NiftiLabelsMasker</span>
-<span class="kn">from</span> <span class="nn">nilearn.image</span> <span class="kn">import</span> <span class="n">high_variance_confounds</span>
-<span class="kn">from</span> <span class="nn">nilearn.interfaces.fmriprep</span> <span class="kn">import</span> <span class="n">load_confounds_strategy</span>
-<span class="kn">from</span> <span class="nn">nilearn.connectome</span> <span class="kn">import</span> <span class="n">ConnectivityMeasure</span>
-<span class="kn">from</span> <span class="nn">nilearn</span> <span class="kn">import</span> <span class="n">datasets</span>
-<span class="kn">from</span> <span class="nn">nilearn</span> <span class="kn">import</span> <span class="n">plotting</span>
-<span class="kn">from</span> <span class="nn">nilearn.image</span> <span class="kn">import</span> <span class="n">mean_img</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">nilearn</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">nilearn.image</span><span class="w"> </span><span class="kn">import</span> <span class="n">concat_imgs</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">nilearn.input_data</span><span class="w"> </span><span class="kn">import</span> <span class="n">NiftiLabelsMasker</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">nilearn.image</span><span class="w"> </span><span class="kn">import</span> <span class="n">high_variance_confounds</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">nilearn.interfaces.fmriprep</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_confounds_strategy</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">nilearn.connectome</span><span class="w"> </span><span class="kn">import</span> <span class="n">ConnectivityMeasure</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">nilearn</span><span class="w"> </span><span class="kn">import</span> <span class="n">datasets</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">nilearn</span><span class="w"> </span><span class="kn">import</span> <span class="n">plotting</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">nilearn.image</span><span class="w"> </span><span class="kn">import</span> <span class="n">mean_img</span>
 
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span> 
-<span class="kn">import</span> <span class="nn">nilearn</span> <span class="c1"># pip install nilearn</span>
-<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">spearmanr</span>
-<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mutual_info_score</span>
-<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">networkx</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">nx</span> 
+<span class="kn">import</span><span class="w"> </span><span class="nn">nilearn</span> <span class="c1"># pip install nilearn</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.stats</span><span class="w"> </span><span class="kn">import</span> <span class="n">spearmanr</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">mutual_info_score</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
 <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
-<span class="kn">from</span> <span class="nn">nilearn</span> <span class="kn">import</span> <span class="n">image</span>
-<span class="kn">import</span> <span class="nn">glob</span>
-<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">nilearn</span><span class="w"> </span><span class="kn">import</span> <span class="n">image</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">glob</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A module that was compiled using NumPy 1.x cannot be run in
+NumPy 2.0.2 as it may crash. To support both 1.x and 2.x
+versions of NumPy, modules must be compiled with NumPy 2.0.
+Some module may need to rebuild instead e.g. with &#39;pybind11&gt;=2.12&#39;.
+
+If you are a user of the module, the easiest solution will be to
+downgrade to &#39;numpy&lt;2&#39; or try to upgrade the affected module.
+We expect that some modules will need time to support NumPy 2.
+
+Traceback (most recent call last):  File &quot;/home/fedor/anaconda3/lib/python3.9/runpy.py&quot;, line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File &quot;/home/fedor/anaconda3/lib/python3.9/runpy.py&quot;, line 87, in _run_code
+    exec(code, run_globals)
+  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/ipykernel_launcher.py&quot;, line 16, in &lt;module&gt;
+    app.launch_new_instance()
+  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/traitlets/config/application.py&quot;, line 846, in launch_instance
+    app.start()
+  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/ipykernel/kernelapp.py&quot;, line 677, in start
+    self.io_loop.start()
+  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/tornado/platform/asyncio.py&quot;, line 199, in start
+    self.asyncio_loop.run_forever()
+  File &quot;/home/fedor/anaconda3/lib/python3.9/asyncio/base_events.py&quot;, line 601, in run_forever
+    self._run_once()
+  File &quot;/home/fedor/anaconda3/lib/python3.9/asyncio/base_events.py&quot;, line 1905, in _run_once
+    handle._run()
+  File &quot;/home/fedor/anaconda3/lib/python3.9/asyncio/events.py&quot;, line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/ipykernel/kernelbase.py&quot;, line 471, in dispatch_queue
+    await self.process_one()
+  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/ipykernel/kernelbase.py&quot;, line 460, in process_one
+    await dispatch(*args)
+  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/ipykernel/kernelbase.py&quot;, line 367, in dispatch_shell
+    await result
+  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/ipykernel/kernelbase.py&quot;, line 662, in execute_request
+    reply_content = await reply_content
+  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/ipykernel/ipkernel.py&quot;, line 360, in do_execute
+    res = shell.run_cell(code, store_history=store_history, silent=silent)
+  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/ipykernel/zmqshell.py&quot;, line 532, in run_cell
+    return super().run_cell(*args, **kwargs)
+  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/IPython/core/interactiveshell.py&quot;, line 2863, in run_cell
+    result = self._run_cell(
+  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/IPython/core/interactiveshell.py&quot;, line 2909, in _run_cell
+    return runner(coro)
+  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/IPython/core/async_helpers.py&quot;, line 129, in _pseudo_sync_runner
+    coro.send(None)
+  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/IPython/core/interactiveshell.py&quot;, line 3106, in run_cell_async
+    has_raised = await self.run_ast_nodes(code_ast.body, cell_name,
+  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/IPython/core/interactiveshell.py&quot;, line 3309, in run_ast_nodes
+    if await self.run_code(code, result, async_=asy):
+  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/IPython/core/interactiveshell.py&quot;, line 3369, in run_code
+    exec(code_obj, self.user_global_ns, self.user_ns)
+  File &quot;/tmp/ipykernel_17020/919086590.py&quot;, line 4, in &lt;cell line: 4&gt;
+    import pandas as pd
+  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/pandas/__init__.py&quot;, line 49, in &lt;module&gt;
+    from pandas.core.api import (
+  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/pandas/core/api.py&quot;, line 28, in &lt;module&gt;
+    from pandas.core.arrays import Categorical
+  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/pandas/core/arrays/__init__.py&quot;, line 1, in &lt;module&gt;
+    from pandas.core.arrays.arrow import ArrowExtensionArray
+  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/pandas/core/arrays/arrow/__init__.py&quot;, line 5, in &lt;module&gt;
+    from pandas.core.arrays.arrow.array import ArrowExtensionArray
+  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/pandas/core/arrays/arrow/array.py&quot;, line 52, in &lt;module&gt;
+    from pandas.core import (
+  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/pandas/core/ops/__init__.py&quot;, line 8, in &lt;module&gt;
+    from pandas.core.ops.array_ops import (
+  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/pandas/core/ops/array_ops.py&quot;, line 56, in &lt;module&gt;
+    from pandas.core.computation import expressions
+  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/pandas/core/computation/expressions.py&quot;, line 21, in &lt;module&gt;
+    from pandas.core.computation.check import NUMEXPR_INSTALLED
+  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/pandas/core/computation/check.py&quot;, line 5, in &lt;module&gt;
+    ne = import_optional_dependency(&quot;numexpr&quot;, errors=&quot;warn&quot;)
+  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/pandas/compat/_optional.py&quot;, line 135, in import_optional_dependency
+    module = importlib.import_module(name)
+  File &quot;/home/fedor/anaconda3/lib/python3.9/importlib/__init__.py&quot;, line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/numexpr/__init__.py&quot;, line 24, in &lt;module&gt;
+    from numexpr.interpreter import MAX_THREADS, use_vml, __BLOCK_SIZE1__
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="ne">AttributeError</span>: _ARRAY_API not found
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A module that was compiled using NumPy 1.x cannot be run in
+NumPy 2.0.2 as it may crash. To support both 1.x and 2.x
+versions of NumPy, modules must be compiled with NumPy 2.0.
+Some module may need to rebuild instead e.g. with &#39;pybind11&gt;=2.12&#39;.
+
+If you are a user of the module, the easiest solution will be to
+downgrade to &#39;numpy&lt;2&#39; or try to upgrade the affected module.
+We expect that some modules will need time to support NumPy 2.
+
+Traceback (most recent call last):  File &quot;/home/fedor/anaconda3/lib/python3.9/runpy.py&quot;, line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File &quot;/home/fedor/anaconda3/lib/python3.9/runpy.py&quot;, line 87, in _run_code
+    exec(code, run_globals)
+  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/ipykernel_launcher.py&quot;, line 16, in &lt;module&gt;
+    app.launch_new_instance()
+  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/traitlets/config/application.py&quot;, line 846, in launch_instance
+    app.start()
+  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/ipykernel/kernelapp.py&quot;, line 677, in start
+    self.io_loop.start()
+  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/tornado/platform/asyncio.py&quot;, line 199, in start
+    self.asyncio_loop.run_forever()
+  File &quot;/home/fedor/anaconda3/lib/python3.9/asyncio/base_events.py&quot;, line 601, in run_forever
+    self._run_once()
+  File &quot;/home/fedor/anaconda3/lib/python3.9/asyncio/base_events.py&quot;, line 1905, in _run_once
+    handle._run()
+  File &quot;/home/fedor/anaconda3/lib/python3.9/asyncio/events.py&quot;, line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/ipykernel/kernelbase.py&quot;, line 471, in dispatch_queue
+    await self.process_one()
+  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/ipykernel/kernelbase.py&quot;, line 460, in process_one
+    await dispatch(*args)
+  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/ipykernel/kernelbase.py&quot;, line 367, in dispatch_shell
+    await result
+  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/ipykernel/kernelbase.py&quot;, line 662, in execute_request
+    reply_content = await reply_content
+  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/ipykernel/ipkernel.py&quot;, line 360, in do_execute
+    res = shell.run_cell(code, store_history=store_history, silent=silent)
+  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/ipykernel/zmqshell.py&quot;, line 532, in run_cell
+    return super().run_cell(*args, **kwargs)
+  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/IPython/core/interactiveshell.py&quot;, line 2863, in run_cell
+    result = self._run_cell(
+  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/IPython/core/interactiveshell.py&quot;, line 2909, in _run_cell
+    return runner(coro)
+  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/IPython/core/async_helpers.py&quot;, line 129, in _pseudo_sync_runner
+    coro.send(None)
+  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/IPython/core/interactiveshell.py&quot;, line 3106, in run_cell_async
+    has_raised = await self.run_ast_nodes(code_ast.body, cell_name,
+  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/IPython/core/interactiveshell.py&quot;, line 3309, in run_ast_nodes
+    if await self.run_code(code, result, async_=asy):
+  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/IPython/core/interactiveshell.py&quot;, line 3369, in run_code
+    exec(code_obj, self.user_global_ns, self.user_ns)
+  File &quot;/tmp/ipykernel_17020/919086590.py&quot;, line 4, in &lt;cell line: 4&gt;
+    import pandas as pd
+  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/pandas/__init__.py&quot;, line 49, in &lt;module&gt;
+    from pandas.core.api import (
+  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/pandas/core/api.py&quot;, line 28, in &lt;module&gt;
+    from pandas.core.arrays import Categorical
+  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/pandas/core/arrays/__init__.py&quot;, line 1, in &lt;module&gt;
+    from pandas.core.arrays.arrow import ArrowExtensionArray
+  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/pandas/core/arrays/arrow/__init__.py&quot;, line 5, in &lt;module&gt;
+    from pandas.core.arrays.arrow.array import ArrowExtensionArray
+  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/pandas/core/arrays/arrow/array.py&quot;, line 66, in &lt;module&gt;
+    from pandas.core.arrays.masked import BaseMaskedArray
+  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/pandas/core/arrays/masked.py&quot;, line 61, in &lt;module&gt;
+    from pandas.core import (
+  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/pandas/core/nanops.py&quot;, line 52, in &lt;module&gt;
+    bn = import_optional_dependency(&quot;bottleneck&quot;, errors=&quot;warn&quot;)
+  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/pandas/compat/_optional.py&quot;, line 135, in import_optional_dependency
+    module = importlib.import_module(name)
+  File &quot;/home/fedor/anaconda3/lib/python3.9/importlib/__init__.py&quot;, line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/bottleneck/__init__.py&quot;, line 7, in &lt;module&gt;
+    from .move import (move_argmax, move_argmin, move_max, move_mean, move_median,
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="ne">AttributeError</span>: _ARRAY_API not found
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_17020/919086590.py:11: DeprecationWarning: The import path &#39;nilearn.input_data&#39; is deprecated in version 0.9. Importing from &#39;nilearn.input_data&#39; will be possible at least until release 0.13.0. Please import from &#39;nilearn.maskers&#39; instead.
+  from nilearn.input_data import NiftiLabelsMasker
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A module that was compiled using NumPy 1.x cannot be run in
+NumPy 2.0.2 as it may crash. To support both 1.x and 2.x
+versions of NumPy, modules must be compiled with NumPy 2.0.
+Some module may need to rebuild instead e.g. with &#39;pybind11&gt;=2.12&#39;.
+
+If you are a user of the module, the easiest solution will be to
+downgrade to &#39;numpy&lt;2&#39; or try to upgrade the affected module.
+We expect that some modules will need time to support NumPy 2.
+
+Traceback (most recent call last):  File &quot;/home/fedor/anaconda3/lib/python3.9/runpy.py&quot;, line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File &quot;/home/fedor/anaconda3/lib/python3.9/runpy.py&quot;, line 87, in _run_code
+    exec(code, run_globals)
+  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/ipykernel_launcher.py&quot;, line 16, in &lt;module&gt;
+    app.launch_new_instance()
+  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/traitlets/config/application.py&quot;, line 846, in launch_instance
+    app.start()
+  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/ipykernel/kernelapp.py&quot;, line 677, in start
+    self.io_loop.start()
+  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/tornado/platform/asyncio.py&quot;, line 199, in start
+    self.asyncio_loop.run_forever()
+  File &quot;/home/fedor/anaconda3/lib/python3.9/asyncio/base_events.py&quot;, line 601, in run_forever
+    self._run_once()
+  File &quot;/home/fedor/anaconda3/lib/python3.9/asyncio/base_events.py&quot;, line 1905, in _run_once
+    handle._run()
+  File &quot;/home/fedor/anaconda3/lib/python3.9/asyncio/events.py&quot;, line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/ipykernel/kernelbase.py&quot;, line 471, in dispatch_queue
+    await self.process_one()
+  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/ipykernel/kernelbase.py&quot;, line 460, in process_one
+    await dispatch(*args)
+  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/ipykernel/kernelbase.py&quot;, line 367, in dispatch_shell
+    await result
+  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/ipykernel/kernelbase.py&quot;, line 662, in execute_request
+    reply_content = await reply_content
+  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/ipykernel/ipkernel.py&quot;, line 360, in do_execute
+    res = shell.run_cell(code, store_history=store_history, silent=silent)
+  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/ipykernel/zmqshell.py&quot;, line 532, in run_cell
+    return super().run_cell(*args, **kwargs)
+  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/IPython/core/interactiveshell.py&quot;, line 2863, in run_cell
+    result = self._run_cell(
+  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/IPython/core/interactiveshell.py&quot;, line 2909, in _run_cell
+    return runner(coro)
+  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/IPython/core/async_helpers.py&quot;, line 129, in _pseudo_sync_runner
+    coro.send(None)
+  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/IPython/core/interactiveshell.py&quot;, line 3106, in run_cell_async
+    has_raised = await self.run_ast_nodes(code_ast.body, cell_name,
+  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/IPython/core/interactiveshell.py&quot;, line 3309, in run_ast_nodes
+    if await self.run_code(code, result, async_=asy):
+  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/IPython/core/interactiveshell.py&quot;, line 3369, in run_code
+    exec(code_obj, self.user_global_ns, self.user_ns)
+  File &quot;/tmp/ipykernel_17020/919086590.py&quot;, line 16, in &lt;cell line: 16&gt;
+    from nilearn import plotting
+  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/nilearn/plotting/__init__.py&quot;, line 5, in &lt;module&gt;
+    set_mpl_backend()
+  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/nilearn/_utils/helpers.py&quot;, line 33, in set_mpl_backend
+    import matplotlib
+  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/matplotlib/__init__.py&quot;, line 109, in &lt;module&gt;
+    from . import _api, _version, cbook, docstring, rcsetup
+  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/matplotlib/rcsetup.py&quot;, line 27, in &lt;module&gt;
+    from matplotlib.colors import Colormap, is_color_like
+  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/matplotlib/colors.py&quot;, line 56, in &lt;module&gt;
+    from matplotlib import _api, cbook, scale
+  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/matplotlib/scale.py&quot;, line 23, in &lt;module&gt;
+    from matplotlib.ticker import (
+  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/matplotlib/ticker.py&quot;, line 136, in &lt;module&gt;
+    from matplotlib import transforms as mtransforms
+  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/matplotlib/transforms.py&quot;, line 46, in &lt;module&gt;
+    from matplotlib._path import (
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="ne">AttributeError</span>: _ARRAY_API not found
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_17020/919086590.py:16: UserWarning: Some dependencies of nilearn.plotting package seem to be missing.
+They can be installed with:
+ pip install &#39;nilearn[plotting]&#39;
+  from nilearn import plotting
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
+<span class="nn">Input In [3],</span> in <span class="ni">&lt;cell line: 16&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="kn">from</span><span class="w"> </span><span class="nn">nilearn.connectome</span><span class="w"> </span><span class="kn">import</span> <span class="n">ConnectivityMeasure</span>
+<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="kn">from</span><span class="w"> </span><span class="nn">nilearn</span><span class="w"> </span><span class="kn">import</span> <span class="n">datasets</span>
+<span class="ne">---&gt; </span><span class="mi">16</span> <span class="kn">from</span><span class="w"> </span><span class="nn">nilearn</span><span class="w"> </span><span class="kn">import</span> <span class="n">plotting</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="kn">from</span><span class="w"> </span><span class="nn">nilearn.image</span><span class="w"> </span><span class="kn">import</span> <span class="n">mean_img</span>
+<span class="g g-Whitespace">     </span><span class="mi">19</span> <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="n">File</span> <span class="o">~/</span><span class="n">anaconda3</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.9</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">nilearn</span><span class="o">/</span><span class="n">plotting</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;Plotting code for nilearn.&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span><span class="w"> </span><span class="nn">nilearn._utils.helpers</span><span class="w"> </span><span class="kn">import</span> <span class="n">set_mpl_backend</span>
+<span class="ne">----&gt; </span><span class="mi">5</span> <span class="n">set_mpl_backend</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="c1">###############################################################################</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="kn">from</span><span class="w"> </span><span class="nn">nilearn.plotting</span><span class="w"> </span><span class="kn">import</span> <span class="n">cm</span>
+
+<span class="nn">File ~/anaconda3/lib/python3.9/site-packages/nilearn/_utils/helpers.py:33,</span> in <span class="ni">set_mpl_backend</span><span class="nt">(message)</span>
+<span class="g g-Whitespace">     </span><span class="mi">31</span> <span class="c1"># We are doing local imports here to avoid polluting our namespace</span>
+<span class="g g-Whitespace">     </span><span class="mi">32</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">33</span>     <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib</span>
+<span class="g g-Whitespace">     </span><span class="mi">34</span> <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">35</span>     <span class="n">warning</span> <span class="o">=</span> <span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">36</span>         <span class="s2">&quot;Some dependencies of nilearn.plotting package seem to be missing.&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">37</span>         <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">They can be installed with:</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">38</span>         <span class="s2">&quot; pip install &#39;nilearn[plotting]&#39;&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">39</span>     <span class="p">)</span>
+
+<span class="n">File</span> <span class="o">~/</span><span class="n">anaconda3</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.9</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">matplotlib</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">109</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">    </span><span class="mi">105</span> <span class="kn">from</span><span class="w"> </span><span class="nn">packaging.version</span><span class="w"> </span><span class="kn">import</span> <span class="n">parse</span> <span class="k">as</span> <span class="n">parse_version</span>
+<span class="g g-Whitespace">    </span><span class="mi">107</span> <span class="c1"># cbook must import matplotlib only within function</span>
+<span class="g g-Whitespace">    </span><span class="mi">108</span> <span class="c1"># definitions, so it is safe to import from it here.</span>
+<span class="ne">--&gt; </span><span class="mi">109</span> <span class="kn">from</span><span class="w"> </span><span class="nn">.</span><span class="w"> </span><span class="kn">import</span> <span class="n">_api</span><span class="p">,</span> <span class="n">_version</span><span class="p">,</span> <span class="n">cbook</span><span class="p">,</span> <span class="n">docstring</span><span class="p">,</span> <span class="n">rcsetup</span>
+<span class="g g-Whitespace">    </span><span class="mi">110</span> <span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.cbook</span><span class="w"> </span><span class="kn">import</span> <span class="n">MatplotlibDeprecationWarning</span><span class="p">,</span> <span class="n">sanitize_sequence</span>
+<span class="g g-Whitespace">    </span><span class="mi">111</span> <span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.cbook</span><span class="w"> </span><span class="kn">import</span> <span class="n">mplDeprecation</span>  <span class="c1"># deprecated</span>
+
+<span class="n">File</span> <span class="o">~/</span><span class="n">anaconda3</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.9</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">matplotlib</span><span class="o">/</span><span class="n">rcsetup</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">27</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">25</span> <span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">_api</span><span class="p">,</span> <span class="n">cbook</span>
+<span class="g g-Whitespace">     </span><span class="mi">26</span> <span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.cbook</span><span class="w"> </span><span class="kn">import</span> <span class="n">ls_mapper</span>
+<span class="ne">---&gt; </span><span class="mi">27</span> <span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.colors</span><span class="w"> </span><span class="kn">import</span> <span class="n">Colormap</span><span class="p">,</span> <span class="n">is_color_like</span>
+<span class="g g-Whitespace">     </span><span class="mi">28</span> <span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.fontconfig_pattern</span><span class="w"> </span><span class="kn">import</span> <span class="n">parse_fontconfig_pattern</span>
+<span class="g g-Whitespace">     </span><span class="mi">29</span> <span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib._enums</span><span class="w"> </span><span class="kn">import</span> <span class="n">JoinStyle</span><span class="p">,</span> <span class="n">CapStyle</span>
+
+<span class="n">File</span> <span class="o">~/</span><span class="n">anaconda3</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.9</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">matplotlib</span><span class="o">/</span><span class="n">colors</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">56</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">54</span> <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mpl</span>
+<span class="g g-Whitespace">     </span><span class="mi">55</span> <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="ne">---&gt; </span><span class="mi">56</span> <span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">_api</span><span class="p">,</span> <span class="n">cbook</span><span class="p">,</span> <span class="n">scale</span>
+<span class="g g-Whitespace">     </span><span class="mi">57</span> <span class="kn">from</span><span class="w"> </span><span class="nn">._color_data</span><span class="w"> </span><span class="kn">import</span> <span class="n">BASE_COLORS</span><span class="p">,</span> <span class="n">TABLEAU_COLORS</span><span class="p">,</span> <span class="n">CSS4_COLORS</span><span class="p">,</span> <span class="n">XKCD_COLORS</span>
+<span class="g g-Whitespace">     </span><span class="mi">60</span> <span class="k">class</span><span class="w"> </span><span class="nc">_ColorMapping</span><span class="p">(</span><span class="nb">dict</span><span class="p">):</span>
+
+<span class="n">File</span> <span class="o">~/</span><span class="n">anaconda3</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.9</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">matplotlib</span><span class="o">/</span><span class="n">scale</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">23</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mpl</span>
+<span class="g g-Whitespace">     </span><span class="mi">22</span> <span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">_api</span><span class="p">,</span> <span class="n">docstring</span>
+<span class="ne">---&gt; </span><span class="mi">23</span> <span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.ticker</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">24</span>     <span class="n">NullFormatter</span><span class="p">,</span> <span class="n">ScalarFormatter</span><span class="p">,</span> <span class="n">LogFormatterSciNotation</span><span class="p">,</span> <span class="n">LogitFormatter</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">25</span>     <span class="n">NullLocator</span><span class="p">,</span> <span class="n">LogLocator</span><span class="p">,</span> <span class="n">AutoLocator</span><span class="p">,</span> <span class="n">AutoMinorLocator</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">26</span>     <span class="n">SymmetricalLogLocator</span><span class="p">,</span> <span class="n">LogitLocator</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">27</span> <span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.transforms</span><span class="w"> </span><span class="kn">import</span> <span class="n">Transform</span><span class="p">,</span> <span class="n">IdentityTransform</span>
+<span class="g g-Whitespace">     </span><span class="mi">30</span> <span class="k">class</span><span class="w"> </span><span class="nc">ScaleBase</span><span class="p">:</span>
+
+<span class="n">File</span> <span class="o">~/</span><span class="n">anaconda3</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.9</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">matplotlib</span><span class="o">/</span><span class="n">ticker</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">136</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">    </span><span class="mi">134</span> <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mpl</span>
+<span class="g g-Whitespace">    </span><span class="mi">135</span> <span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">_api</span><span class="p">,</span> <span class="n">cbook</span>
+<span class="ne">--&gt; </span><span class="mi">136</span> <span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">transforms</span> <span class="k">as</span> <span class="n">mtransforms</span>
+<span class="g g-Whitespace">    </span><span class="mi">138</span> <span class="n">_log</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">140</span> <span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;TickHelper&#39;</span><span class="p">,</span> <span class="s1">&#39;Formatter&#39;</span><span class="p">,</span> <span class="s1">&#39;FixedFormatter&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">141</span>            <span class="s1">&#39;NullFormatter&#39;</span><span class="p">,</span> <span class="s1">&#39;FuncFormatter&#39;</span><span class="p">,</span> <span class="s1">&#39;FormatStrFormatter&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">142</span>            <span class="s1">&#39;StrMethodFormatter&#39;</span><span class="p">,</span> <span class="s1">&#39;ScalarFormatter&#39;</span><span class="p">,</span> <span class="s1">&#39;LogFormatter&#39;</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">148</span>            <span class="s1">&#39;MultipleLocator&#39;</span><span class="p">,</span> <span class="s1">&#39;MaxNLocator&#39;</span><span class="p">,</span> <span class="s1">&#39;AutoMinorLocator&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">149</span>            <span class="s1">&#39;SymmetricalLogLocator&#39;</span><span class="p">,</span> <span class="s1">&#39;LogitLocator&#39;</span><span class="p">)</span>
+
+<span class="n">File</span> <span class="o">~/</span><span class="n">anaconda3</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.9</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">matplotlib</span><span class="o">/</span><span class="n">transforms</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">46</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">43</span> <span class="kn">from</span><span class="w"> </span><span class="nn">numpy.linalg</span><span class="w"> </span><span class="kn">import</span> <span class="n">inv</span>
+<span class="g g-Whitespace">     </span><span class="mi">45</span> <span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">_api</span>
+<span class="ne">---&gt; </span><span class="mi">46</span> <span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib._path</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">47</span>     <span class="n">affine_transform</span><span class="p">,</span> <span class="n">count_bboxes_overlapping_bbox</span><span class="p">,</span> <span class="n">update_path_extents</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">48</span> <span class="kn">from</span><span class="w"> </span><span class="nn">.path</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="g g-Whitespace">     </span><span class="mi">50</span> <span class="n">DEBUG</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="ne">ImportError</span>: numpy.core.multiarray failed to import
 </pre></div>
 </div>
 </div>
@@ -1183,7 +1407,7 @@ are comparable across regions and subjects.</p>
 trivial differences in amplitude or baseline.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">make_correlation_matrix</span><span class="p">(</span><span class="n">path_to_fmriprep_data</span><span class="p">,</span> <span class="n">output_path</span><span class="p">,</span> <span class="n">path_to_save_connectivity_matrices</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">make_correlation_matrix</span><span class="p">(</span><span class="n">path_to_fmriprep_data</span><span class="p">,</span> <span class="n">output_path</span><span class="p">,</span> <span class="n">path_to_save_connectivity_matrices</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Process the fmriprep preprocessed functional MRI time-series into 2D correlation matrix as DataFrame using Nilearn lib.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -1237,7 +1461,7 @@ trivial differences in amplitude or baseline.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">path_to_dataset</span> <span class="o">=</span><span class="s1">&#39;./COBRE&#39;</span>
-<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
 
 <span class="n">output_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;./COBRE/cobre_low0.1/&#39;</span><span class="p">)</span>
 
@@ -1458,7 +1682,7 @@ physiological noise.</p>
 It also prepares the data for valid correlation analysis.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nilearn.signal</span> <span class="kn">import</span> <span class="n">clean</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">nilearn.signal</span><span class="w"> </span><span class="kn">import</span> <span class="n">clean</span>
 </pre></div>
 </div>
 </div>
@@ -1541,8 +1765,8 @@ The covariance matrix of a data set is known to be well approximated  with the c
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nilearn.connectome</span> <span class="kn">import</span> <span class="n">ConnectivityMeasure</span>
-<span class="kn">from</span> <span class="nn">sklearn.covariance</span> <span class="kn">import</span> <span class="n">EmpiricalCovariance</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">nilearn.connectome</span><span class="w"> </span><span class="kn">import</span> <span class="n">ConnectivityMeasure</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.covariance</span><span class="w"> </span><span class="kn">import</span> <span class="n">EmpiricalCovariance</span>
 
 <span class="n">covariance_estimator</span> <span class="o">=</span> <span class="n">EmpiricalCovariance</span><span class="p">()</span>
 <span class="n">connectivity_correlation</span> <span class="o">=</span> <span class="n">ConnectivityMeasure</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s2">&quot;correlation&quot;</span><span class="p">,</span> <span class="n">cov_estimator</span><span class="o">=</span><span class="n">covariance_estimator</span><span class="p">)</span>
@@ -1701,7 +1925,7 @@ This stabilizes eigenvalues and guarantees invertibility.</p>
 <p>👉 Shrinkage is widely used in high-dimensional fMRI connectivity analysis because the number of ROIs (features) is often comparable to or larger than the number of time points (samples).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.covariance</span> <span class="kn">import</span> <span class="n">LedoitWolf</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.covariance</span><span class="w"> </span><span class="kn">import</span> <span class="n">LedoitWolf</span>
 
 <span class="c1"># Initialize Ledoit–Wolf shrinkage covariance estimator</span>
 <span class="n">cov_estimator_shrinked</span> <span class="o">=</span> <span class="n">LedoitWolf</span><span class="p">()</span>
@@ -1762,7 +1986,7 @@ Pearson captures linear relationships, but Spearman measures <strong>monotonic</
 It is more robust to outliers and nonlinear scaling of signals, which is often useful in noisy fMRI data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">spearmanr</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scipy.stats</span><span class="w"> </span><span class="kn">import</span> <span class="n">spearmanr</span>
 </pre></div>
 </div>
 </div>
@@ -1848,15 +2072,15 @@ It is more robust to outliers and nonlinear scaling of signals, which is often u
 <p><strong>Why.</strong> Raw MI (in nats/bits) is unbounded and not directly comparable with correlation.  It’s convenient to map it to a <strong>correlation-like index in [0,1]</strong>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mutual_info_score</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">mutual_info_score</span>
 
 <span class="c1"># calc_MI computes MI via a 2D histogram</span>
-<span class="k">def</span> <span class="nf">calc_MI</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">calc_MI</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
     <span class="n">c_xy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram2d</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">bins</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
     <span class="n">mi</span> <span class="o">=</span> <span class="n">mutual_info_score</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">contingency</span><span class="o">=</span><span class="n">c_xy</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">mi</span>
 <span class="c1"># bound maps MI to ρ_MI ∈ [0,1], making it easier to compare with correlations</span>
-<span class="k">def</span> <span class="nf">bound</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">bound</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span> <span class="o">*</span> <span class="n">x</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -2063,7 +2287,7 @@ Threshold edges using p-values from permutation tests or false discovery rate co
 <p><strong>Why.</strong> To show edges on the <em>brain map</em>: understand geography of the network (interhemispheric vs intrahemispheric, clusters).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nilearn</span> <span class="kn">import</span> <span class="n">plotting</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">nilearn</span><span class="w"> </span><span class="kn">import</span> <span class="n">plotting</span>
 
 <span class="c1"># get coordinates of brain regions</span>
 <span class="n">atlas_aal</span> <span class="o">=</span> <span class="n">nilearn</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">fetch_atlas_aal</span><span class="p">()</span>
@@ -2623,8 +2847,8 @@ Requirement already satisfied: six in /opt/miniconda-latest/envs/neuro/lib/pytho
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ripser</span> <span class="kn">import</span> <span class="n">ripser</span>
-<span class="kn">import</span> <span class="nn">diagram2vec</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ripser</span><span class="w"> </span><span class="kn">import</span> <span class="n">ripser</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">diagram2vec</span>
 </pre></div>
 </div>
 </div>
@@ -2972,11 +3196,11 @@ FC matrices (correlations / MI), graph-based and topological features, and spect
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeClassifier</span>
-<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
-<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">cross_val_score</span>
-<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
-<span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.tree</span><span class="w"> </span><span class="kn">import</span> <span class="n">DecisionTreeClassifier</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.ensemble</span><span class="w"> </span><span class="kn">import</span> <span class="n">RandomForestClassifier</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">cross_val_score</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.linear_model</span><span class="w"> </span><span class="kn">import</span> <span class="n">LogisticRegression</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">tqdm</span><span class="w"> </span><span class="kn">import</span> <span class="n">tqdm</span>
 </pre></div>
 </div>
 </div>
@@ -3010,7 +3234,7 @@ FC matrices (correlations / MI), graph-based and topological features, and spect
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_data</span><span class="p">(</span><span class="n">cobre_data</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">get_data</span><span class="p">(</span><span class="n">cobre_data</span><span class="p">):</span>
     <span class="k">del</span> <span class="n">cobre_data</span><span class="p">[</span><span class="s1">&#39;Unnamed: 0&#39;</span><span class="p">]</span>
     <span class="n">data_dict</span> <span class="o">=</span><span class="p">{}</span>
     <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">column</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">cobre_data</span><span class="o">.</span><span class="n">columns</span><span class="p">):</span>
@@ -3285,8 +3509,8 @@ results/cobre_low0.1/sub-A00024663_embed.csv
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="ch">#!g1.4</span>
-<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">cross_val_score</span><span class="p">,</span> <span class="n">KFold</span>
-<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">GridSearchCV</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">cross_val_score</span><span class="p">,</span> <span class="n">KFold</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">GridSearchCV</span>
 <span class="c1"># Declare the inner and outer cross-validation strategies</span>
 <span class="n">inner_cv</span> <span class="o">=</span> <span class="n">KFold</span><span class="p">(</span><span class="n">n_splits</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1380</span><span class="p">)</span>
 <span class="n">outer_cv</span> <span class="o">=</span> <span class="n">KFold</span><span class="p">(</span><span class="n">n_splits</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1380</span><span class="p">)</span>
@@ -3312,8 +3536,8 @@ results/cobre_low0.1/sub-A00024663_embed.csv
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="ch">#!g1.4</span>
-<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">GridSearchCV</span>
-<span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="kn">import</span> <span class="n">SVC</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">GridSearchCV</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.svm</span><span class="w"> </span><span class="kn">import</span> <span class="n">SVC</span>
 
 
 <span class="n">param_grid</span> <span class="o">=</span> <span class="p">[</span>
@@ -3328,7 +3552,7 @@ results/cobre_low0.1/sub-A00024663_embed.csv
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="ch">#!g1.4</span>
-<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">cross_val_score</span><span class="p">,</span> <span class="n">KFold</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">cross_val_score</span><span class="p">,</span> <span class="n">KFold</span>
 
 <span class="c1"># Declare the inner and outer cross-validation strategies</span>
 <span class="n">inner_cv</span> <span class="o">=</span> <span class="n">KFold</span><span class="p">(</span><span class="n">n_splits</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1380</span><span class="p">)</span>
