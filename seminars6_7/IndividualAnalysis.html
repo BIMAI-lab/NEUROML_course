@@ -28,7 +28,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
@@ -246,8 +246,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../seminar4/seminar4_3_freesurfer.html">FREESURFER</a></li>
 
 
-<li class="toctree-l1"><a class="reference external" href="https://drive.google.com/file/d/1HuS7ChgQvch4vrD8gfITGUZP9E8hZ8Hw/view?usp=sharing">Seminar 5.1. MRI classification with 3D CNN</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://drive.google.com/file/d/1m7mWY0LI2M6PdevJf5rLCdm-WrAOoXJ-/view?usp=sharing">Seminar 5.2. MRI segmentation with 3D U-net</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://drive.google.com/file/d/1XMxW_Y73mbMGFIaWY6YlEfscD8YE35yN/view?usp=sharing">Seminar 5.1. MRI classification with 3D CNN</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://drive.google.com/file/d/15M13NfhCGKN6akaWj8reFYvfDH7aLPsY/view?usp=sharing">Seminar 5.2. MRI segmentation with 3D U-net</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Seminars 6-8. Working with fMRI</span></p>
 <ul class="nav bd-sidenav">
@@ -492,17 +492,17 @@ and error term <span class="math notranslate nohighlight">\({\epsilon}\)</span><
 <p>The parameters <span class="math notranslate nohighlight">\({\beta}\)</span> represent the contribution of each variable to the voxel activation.</p>
 <p>The error terms are assumed to be independent and identically distributed.</p>
 <p><img alt="Design matrix" src="https://mri-q.com/uploads/3/4/5/7/34572113/9355842_orig.jpg" /></p>
-<p>The matrix  𝑋  is also called design <a class="reference external" href="http://matrix.It">matrix.It</a> is up to the researcher which factors to include in the design matrix. The design matrix contains factors that a related to the hypothesis the researcher want to answer. Furthermore, sometimes in it are also included factors that are not related to the hypothesis, but are know sources of variability (nuisance factors).</p>
+<p>The matrix  𝑋  is also called design matrix. It is up to the researcher which factors to include in the design matrix. The design matrix contains factors that a related to the hypothesis the researcher want to answer. Furthermore, sometimes in it are also included factors that are not related to the hypothesis, but are know sources of variability (nuisance factors).</p>
 <p>Now lets take a look how we take into account the delayed bold response.
 The hemodynamic response function might look something like this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># https://en.wikipedia.org/wiki/Haemodynamic_response</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span> 
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
 
-<span class="k">def</span><span class="w"> </span><span class="nf">hrf</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">hrf</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">t</span> <span class="o">**</span> <span class="mf">8.6</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">t</span> <span class="o">/</span> <span class="mf">0.547</span><span class="p">)</span>
 
 <span class="n">hrf_times</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
@@ -515,142 +515,7 @@ The hemodynamic response function might look something like this:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A module that was compiled using NumPy 1.x cannot be run in
-NumPy 2.0.2 as it may crash. To support both 1.x and 2.x
-versions of NumPy, modules must be compiled with NumPy 2.0.
-Some module may need to rebuild instead e.g. with &#39;pybind11&gt;=2.12&#39;.
-
-If you are a user of the module, the easiest solution will be to
-downgrade to &#39;numpy&lt;2&#39; or try to upgrade the affected module.
-We expect that some modules will need time to support NumPy 2.
-
-Traceback (most recent call last):  File &quot;/home/fedor/anaconda3/lib/python3.9/runpy.py&quot;, line 197, in _run_module_as_main
-    return _run_code(code, main_globals, None,
-  File &quot;/home/fedor/anaconda3/lib/python3.9/runpy.py&quot;, line 87, in _run_code
-    exec(code, run_globals)
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/ipykernel_launcher.py&quot;, line 16, in &lt;module&gt;
-    app.launch_new_instance()
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/traitlets/config/application.py&quot;, line 846, in launch_instance
-    app.start()
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/ipykernel/kernelapp.py&quot;, line 677, in start
-    self.io_loop.start()
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/tornado/platform/asyncio.py&quot;, line 199, in start
-    self.asyncio_loop.run_forever()
-  File &quot;/home/fedor/anaconda3/lib/python3.9/asyncio/base_events.py&quot;, line 601, in run_forever
-    self._run_once()
-  File &quot;/home/fedor/anaconda3/lib/python3.9/asyncio/base_events.py&quot;, line 1905, in _run_once
-    handle._run()
-  File &quot;/home/fedor/anaconda3/lib/python3.9/asyncio/events.py&quot;, line 80, in _run
-    self._context.run(self._callback, *self._args)
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/ipykernel/kernelbase.py&quot;, line 471, in dispatch_queue
-    await self.process_one()
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/ipykernel/kernelbase.py&quot;, line 460, in process_one
-    await dispatch(*args)
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/ipykernel/kernelbase.py&quot;, line 367, in dispatch_shell
-    await result
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/ipykernel/kernelbase.py&quot;, line 662, in execute_request
-    reply_content = await reply_content
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/ipykernel/ipkernel.py&quot;, line 360, in do_execute
-    res = shell.run_cell(code, store_history=store_history, silent=silent)
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/ipykernel/zmqshell.py&quot;, line 532, in run_cell
-    return super().run_cell(*args, **kwargs)
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/IPython/core/interactiveshell.py&quot;, line 2863, in run_cell
-    result = self._run_cell(
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/IPython/core/interactiveshell.py&quot;, line 2909, in _run_cell
-    return runner(coro)
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/IPython/core/async_helpers.py&quot;, line 129, in _pseudo_sync_runner
-    coro.send(None)
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/IPython/core/interactiveshell.py&quot;, line 3106, in run_cell_async
-    has_raised = await self.run_ast_nodes(code_ast.body, cell_name,
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/IPython/core/interactiveshell.py&quot;, line 3309, in run_ast_nodes
-    if await self.run_code(code, result, async_=asy):
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/IPython/core/interactiveshell.py&quot;, line 3369, in run_code
-    exec(code_obj, self.user_global_ns, self.user_ns)
-  File &quot;/tmp/ipykernel_160863/3243317228.py&quot;, line 3, in &lt;cell line: 3&gt;
-    import matplotlib.pyplot as plt
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/matplotlib/__init__.py&quot;, line 109, in &lt;module&gt;
-    from . import _api, _version, cbook, docstring, rcsetup
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/matplotlib/rcsetup.py&quot;, line 27, in &lt;module&gt;
-    from matplotlib.colors import Colormap, is_color_like
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/matplotlib/colors.py&quot;, line 56, in &lt;module&gt;
-    from matplotlib import _api, cbook, scale
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/matplotlib/scale.py&quot;, line 23, in &lt;module&gt;
-    from matplotlib.ticker import (
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/matplotlib/ticker.py&quot;, line 136, in &lt;module&gt;
-    from matplotlib import transforms as mtransforms
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/matplotlib/transforms.py&quot;, line 46, in &lt;module&gt;
-    from matplotlib._path import (
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="ne">AttributeError</span>: _ARRAY_API not found
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
-<span class="nn">Input In [1],</span> in <span class="ni">&lt;cell line: 3&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># https://en.wikipedia.org/wiki/Haemodynamic_response</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span> 
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="k">def</span><span class="w"> </span><span class="nf">hrf</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="k">return</span> <span class="n">t</span> <span class="o">**</span> <span class="mf">8.6</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">t</span> <span class="o">/</span> <span class="mf">0.547</span><span class="p">)</span>
-
-<span class="n">File</span> <span class="o">~/</span><span class="n">anaconda3</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.9</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">matplotlib</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">109</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">    </span><span class="mi">105</span> <span class="kn">from</span><span class="w"> </span><span class="nn">packaging.version</span><span class="w"> </span><span class="kn">import</span> <span class="n">parse</span> <span class="k">as</span> <span class="n">parse_version</span>
-<span class="g g-Whitespace">    </span><span class="mi">107</span> <span class="c1"># cbook must import matplotlib only within function</span>
-<span class="g g-Whitespace">    </span><span class="mi">108</span> <span class="c1"># definitions, so it is safe to import from it here.</span>
-<span class="ne">--&gt; </span><span class="mi">109</span> <span class="kn">from</span><span class="w"> </span><span class="nn">.</span><span class="w"> </span><span class="kn">import</span> <span class="n">_api</span><span class="p">,</span> <span class="n">_version</span><span class="p">,</span> <span class="n">cbook</span><span class="p">,</span> <span class="n">docstring</span><span class="p">,</span> <span class="n">rcsetup</span>
-<span class="g g-Whitespace">    </span><span class="mi">110</span> <span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.cbook</span><span class="w"> </span><span class="kn">import</span> <span class="n">MatplotlibDeprecationWarning</span><span class="p">,</span> <span class="n">sanitize_sequence</span>
-<span class="g g-Whitespace">    </span><span class="mi">111</span> <span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.cbook</span><span class="w"> </span><span class="kn">import</span> <span class="n">mplDeprecation</span>  <span class="c1"># deprecated</span>
-
-<span class="n">File</span> <span class="o">~/</span><span class="n">anaconda3</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.9</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">matplotlib</span><span class="o">/</span><span class="n">rcsetup</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">27</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">     </span><span class="mi">25</span> <span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">_api</span><span class="p">,</span> <span class="n">cbook</span>
-<span class="g g-Whitespace">     </span><span class="mi">26</span> <span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.cbook</span><span class="w"> </span><span class="kn">import</span> <span class="n">ls_mapper</span>
-<span class="ne">---&gt; </span><span class="mi">27</span> <span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.colors</span><span class="w"> </span><span class="kn">import</span> <span class="n">Colormap</span><span class="p">,</span> <span class="n">is_color_like</span>
-<span class="g g-Whitespace">     </span><span class="mi">28</span> <span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.fontconfig_pattern</span><span class="w"> </span><span class="kn">import</span> <span class="n">parse_fontconfig_pattern</span>
-<span class="g g-Whitespace">     </span><span class="mi">29</span> <span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib._enums</span><span class="w"> </span><span class="kn">import</span> <span class="n">JoinStyle</span><span class="p">,</span> <span class="n">CapStyle</span>
-
-<span class="n">File</span> <span class="o">~/</span><span class="n">anaconda3</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.9</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">matplotlib</span><span class="o">/</span><span class="n">colors</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">56</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">     </span><span class="mi">54</span> <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mpl</span>
-<span class="g g-Whitespace">     </span><span class="mi">55</span> <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="ne">---&gt; </span><span class="mi">56</span> <span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">_api</span><span class="p">,</span> <span class="n">cbook</span><span class="p">,</span> <span class="n">scale</span>
-<span class="g g-Whitespace">     </span><span class="mi">57</span> <span class="kn">from</span><span class="w"> </span><span class="nn">._color_data</span><span class="w"> </span><span class="kn">import</span> <span class="n">BASE_COLORS</span><span class="p">,</span> <span class="n">TABLEAU_COLORS</span><span class="p">,</span> <span class="n">CSS4_COLORS</span><span class="p">,</span> <span class="n">XKCD_COLORS</span>
-<span class="g g-Whitespace">     </span><span class="mi">60</span> <span class="k">class</span><span class="w"> </span><span class="nc">_ColorMapping</span><span class="p">(</span><span class="nb">dict</span><span class="p">):</span>
-
-<span class="n">File</span> <span class="o">~/</span><span class="n">anaconda3</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.9</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">matplotlib</span><span class="o">/</span><span class="n">scale</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">23</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mpl</span>
-<span class="g g-Whitespace">     </span><span class="mi">22</span> <span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">_api</span><span class="p">,</span> <span class="n">docstring</span>
-<span class="ne">---&gt; </span><span class="mi">23</span> <span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.ticker</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">24</span>     <span class="n">NullFormatter</span><span class="p">,</span> <span class="n">ScalarFormatter</span><span class="p">,</span> <span class="n">LogFormatterSciNotation</span><span class="p">,</span> <span class="n">LogitFormatter</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">25</span>     <span class="n">NullLocator</span><span class="p">,</span> <span class="n">LogLocator</span><span class="p">,</span> <span class="n">AutoLocator</span><span class="p">,</span> <span class="n">AutoMinorLocator</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">26</span>     <span class="n">SymmetricalLogLocator</span><span class="p">,</span> <span class="n">LogitLocator</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">27</span> <span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.transforms</span><span class="w"> </span><span class="kn">import</span> <span class="n">Transform</span><span class="p">,</span> <span class="n">IdentityTransform</span>
-<span class="g g-Whitespace">     </span><span class="mi">30</span> <span class="k">class</span><span class="w"> </span><span class="nc">ScaleBase</span><span class="p">:</span>
-
-<span class="n">File</span> <span class="o">~/</span><span class="n">anaconda3</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.9</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">matplotlib</span><span class="o">/</span><span class="n">ticker</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">136</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">    </span><span class="mi">134</span> <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mpl</span>
-<span class="g g-Whitespace">    </span><span class="mi">135</span> <span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">_api</span><span class="p">,</span> <span class="n">cbook</span>
-<span class="ne">--&gt; </span><span class="mi">136</span> <span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">transforms</span> <span class="k">as</span> <span class="n">mtransforms</span>
-<span class="g g-Whitespace">    </span><span class="mi">138</span> <span class="n">_log</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">140</span> <span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;TickHelper&#39;</span><span class="p">,</span> <span class="s1">&#39;Formatter&#39;</span><span class="p">,</span> <span class="s1">&#39;FixedFormatter&#39;</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">141</span>            <span class="s1">&#39;NullFormatter&#39;</span><span class="p">,</span> <span class="s1">&#39;FuncFormatter&#39;</span><span class="p">,</span> <span class="s1">&#39;FormatStrFormatter&#39;</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">142</span>            <span class="s1">&#39;StrMethodFormatter&#39;</span><span class="p">,</span> <span class="s1">&#39;ScalarFormatter&#39;</span><span class="p">,</span> <span class="s1">&#39;LogFormatter&#39;</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">148</span>            <span class="s1">&#39;MultipleLocator&#39;</span><span class="p">,</span> <span class="s1">&#39;MaxNLocator&#39;</span><span class="p">,</span> <span class="s1">&#39;AutoMinorLocator&#39;</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">149</span>            <span class="s1">&#39;SymmetricalLogLocator&#39;</span><span class="p">,</span> <span class="s1">&#39;LogitLocator&#39;</span><span class="p">)</span>
-
-<span class="n">File</span> <span class="o">~/</span><span class="n">anaconda3</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.9</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">matplotlib</span><span class="o">/</span><span class="n">transforms</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">46</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">     </span><span class="mi">43</span> <span class="kn">from</span><span class="w"> </span><span class="nn">numpy.linalg</span><span class="w"> </span><span class="kn">import</span> <span class="n">inv</span>
-<span class="g g-Whitespace">     </span><span class="mi">45</span> <span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">_api</span>
-<span class="ne">---&gt; </span><span class="mi">46</span> <span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib._path</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">47</span>     <span class="n">affine_transform</span><span class="p">,</span> <span class="n">count_bboxes_overlapping_bbox</span><span class="p">,</span> <span class="n">update_path_extents</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">48</span> <span class="kn">from</span><span class="w"> </span><span class="nn">.path</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
-<span class="g g-Whitespace">     </span><span class="mi">50</span> <span class="n">DEBUG</span> <span class="o">=</span> <span class="kc">False</span>
-
-<span class="ne">ImportError</span>: numpy.core.multiarray failed to import
-</pre></div>
-</div>
+<img alt="../_images/1bb8ca19564c537bbbd7b9035efa40a16adfeb5d452a71a17cbaff967858f7f1.png" src="../_images/1bb8ca19564c537bbbd7b9035efa40a16adfeb5d452a71a17cbaff967858f7f1.png" />
 </div>
 </div>
 <p>In the design often we want to include variables, that indicate presence or absence of a stimuli.
@@ -675,10 +540,23 @@ Let’s say we had the 3 stimuli during the timecourse</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/f9c30238da49399146b25f814c86062e067d1a901a6bc195e6388828ed178355.png" src="../_images/f9c30238da49399146b25f814c86062e067d1a901a6bc195e6388828ed178355.png" />
+<img alt="../_images/ef099a50f76ecc46ab825f1a23c6386d239bfac0d59ba74f071c17199bc94ae9.png" src="../_images/ef099a50f76ecc46ab825f1a23c6386d239bfac0d59ba74f071c17199bc94ae9.png" />
 </div>
 </div>
 <p>Next we have to convolve signal with our hrf function</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">hrf_times</span><span class="p">,</span> <span class="n">hrf_signal</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x164e9637a60&gt;]
+</pre></div>
+</div>
+<img alt="../_images/5fd5a6cf4b67a8e8a690f4edff19f4ee88d9c9b8c5ff6f9b9cfaf6ea8f3c79a1.png" src="../_images/5fd5a6cf4b67a8e8a690f4edff19f4ee88d9c9b8c5ff6f9b9cfaf6ea8f3c79a1.png" />
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># https://www.tutorialspoint.com/what-is-convolution-in-signals-and-systems</span>
@@ -695,10 +573,10 @@ Let’s say we had the 3 stimuli during the timecourse</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/111b45e4292a872bee787d9d4a441060f80c368ef0c1077144e483e5fef0d668.png" src="../_images/111b45e4292a872bee787d9d4a441060f80c368ef0c1077144e483e5fef0d668.png" />
+<img alt="../_images/81d71d473b67f6a95a1f4542353cd550ae66350ce4655f5b74a8dec14a46deb6.png" src="../_images/81d71d473b67f6a95a1f4542353cd550ae66350ce4655f5b74a8dec14a46deb6.png" />
 </div>
 </div>
-<p>After that we can fit our fMRI data to the design Matrix and use GLM to for hypotesis testing.
+<p>After that we can fit our fMRI data to the design Matrix and use GLM for hypotesis testing.
 We can evaluate whether a given factor <span class="math notranslate nohighlight">\(i\)</span> has a considerable contribution by its coefficient <span class="math notranslate nohighlight">\({\beta}_{i}\)</span>.
 With t-test we can evaluate whether <span class="math notranslate nohighlight">\({\beta}_{i}\)</span> &gt; 0. We can also test hypothesis of the form <span class="math notranslate nohighlight">\({\beta}_{i}\)</span> &gt; <span class="math notranslate nohighlight">\({\beta}_{j}\)</span>.</p>
 <p>The general form of the hypothesis tests which forms a <strong>contrast</strong> is:
@@ -706,11 +584,11 @@ $<span class="math notranslate nohighlight">\(\sum \limits _{i=1} ^{P} c_{i}{\be
 <p>Typical values for <span class="math notranslate nohighlight">\(c\)</span> are 1 and -1.
 Typically contrasts are express as:<span class="math notranslate nohighlight">\( [c_{1}, c_{2}, ..., c_{N}]\)</span>.</p>
 <p>For example the contrast [1, 0] tests <span class="math notranslate nohighlight">\({\beta}_{1}\)</span> &gt; 0.</p>
-<p>This contrasts form a t-statistics (Recall that coefficient/std(coefficient) in OLS regression follow t-distribution with n-p-1 df).</p>
+<p>This contrasts form a t-statistics (Recall that <span class="math notranslate nohighlight">\(\frac{c^T \beta}{SE(c^T \beta)}\)</span> in OLS regression follow <span class="math notranslate nohighlight">\(t\)</span>-distribution with <span class="math notranslate nohighlight">\(n-p-1\)</span> df).</p>
 <p>We can combine several contrasts and form F-statics. In the contexts of fMRI the F-tests help us answer questions like “Is effect A or effect B or effect C, or any combination of them, significantly non-zero?”.</p>
-<p>Recall that F test is used for comparison between reduced model RF and full model FM:
-$<span class="math notranslate nohighlight">\( F = \frac{(SSE(RM)-SSR(FM)) /(p+1-k))}{SSE(FM)/(n-p-1)} \)</span>$</p>
-<p>where the reduced model have k distinct parameters</p>
+<p>Recall that F test is used for comparison between reduced model <span class="math notranslate nohighlight">\(RF\)</span> and full model <span class="math notranslate nohighlight">\(FM\)</span>:
+$<span class="math notranslate nohighlight">\( F = \frac{(SSE(RM)-SSE(FM)) /(k_{FM}-k_{RM}))}{SSE(FM)/(n-k_{FM})} \)</span>$</p>
+<p>where <span class="math notranslate nohighlight">\(k\)</span> - the number of model distinct parameters</p>
 <p>Combining the test results from all voxels we get statistical map of brain activity.
 Now that the theory out of our way we can see how it is done in Nipype.</p>
 </section>
@@ -725,25 +603,33 @@ Now that the theory out of our way we can see how it is done in Nipype.</p>
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">os</span>
 
-<span class="kn">from</span><span class="w"> </span><span class="nn">nilearn</span><span class="w"> </span><span class="kn">import</span> <span class="n">plotting</span>
+<span class="kn">from</span> <span class="nn">nilearn</span> <span class="kn">import</span> <span class="n">plotting</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline
 
 
-<span class="kn">from</span><span class="w"> </span><span class="nn">nipype.interfaces.spm</span><span class="w"> </span><span class="kn">import</span> <span class="n">Level1Design</span><span class="p">,</span> <span class="n">EstimateModel</span><span class="p">,</span> <span class="n">EstimateContrast</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">nipype.algorithms.modelgen</span><span class="w"> </span><span class="kn">import</span> <span class="n">SpecifySPMModel</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">nipype.interfaces.utility</span><span class="w"> </span><span class="kn">import</span> <span class="n">Function</span><span class="p">,</span> <span class="n">IdentityInterface</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">nipype.interfaces.io</span><span class="w"> </span><span class="kn">import</span> <span class="n">SelectFiles</span><span class="p">,</span> <span class="n">DataSink</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">nipype</span><span class="w"> </span><span class="kn">import</span> <span class="n">Workflow</span><span class="p">,</span> <span class="n">Node</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">list_files</span>
+<span class="kn">from</span> <span class="nn">nipype.interfaces.spm</span> <span class="kn">import</span> <span class="n">Level1Design</span><span class="p">,</span> <span class="n">EstimateModel</span><span class="p">,</span> <span class="n">EstimateContrast</span>
+<span class="kn">from</span> <span class="nn">nipype.algorithms.modelgen</span> <span class="kn">import</span> <span class="n">SpecifySPMModel</span>
+<span class="kn">from</span> <span class="nn">nipype.interfaces.utility</span> <span class="kn">import</span> <span class="n">Function</span><span class="p">,</span> <span class="n">IdentityInterface</span>
+<span class="kn">from</span> <span class="nn">nipype.interfaces.io</span> <span class="kn">import</span> <span class="n">SelectFiles</span><span class="p">,</span> <span class="n">DataSink</span>
+<span class="kn">from</span> <span class="nn">nipype</span> <span class="kn">import</span> <span class="n">Workflow</span><span class="p">,</span> <span class="n">Node</span>
+<span class="kn">from</span> <span class="nn">utils</span> <span class="kn">import</span> <span class="n">list_files</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230923-06:59:24,181 nipype.utils WARNING:
-	 A newer version (1.8.4) of nipy/nipype is available. You are using 1.5.0-rc1.post-dev
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">8</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">from</span> <span class="nn">nilearn</span> <span class="kn">import</span> <span class="n">plotting</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_line_magic</span><span class="p">(</span><span class="s1">&#39;matplotlib&#39;</span><span class="p">,</span> <span class="s1">&#39;inline&#39;</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">8</span> <span class="kn">from</span> <span class="nn">nipype.interfaces.spm</span> <span class="kn">import</span> <span class="n">Level1Design</span><span class="p">,</span> <span class="n">EstimateModel</span><span class="p">,</span> <span class="n">EstimateContrast</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="kn">from</span> <span class="nn">nipype.algorithms.modelgen</span> <span class="kn">import</span> <span class="n">SpecifySPMModel</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="kn">from</span> <span class="nn">nipype.interfaces.utility</span> <span class="kn">import</span> <span class="n">Function</span><span class="p">,</span> <span class="n">IdentityInterface</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;nipype&#39;
 </pre></div>
 </div>
 </div>
@@ -756,9 +642,9 @@ Now that the theory out of our way we can see how it is done in Nipype.</p>
 <span class="n">working_dir</span> <span class="o">=</span> <span class="s1">&#39;workingdir&#39;</span>
 
 <span class="c1"># list of subject identifiers</span>
-<span class="n">subject_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;01&#39;</span><span class="p">,</span> <span class="s1">&#39;02&#39;</span><span class="p">,</span> <span class="s1">&#39;03&#39;</span><span class="p">,</span> <span class="s1">&#39;04&#39;</span><span class="p">,</span> <span class="s1">&#39;05&#39;</span><span class="p">,</span> <span class="s1">&#39;06&#39;</span><span class="p">,</span> <span class="s1">&#39;07&#39;</span><span class="p">,</span> <span class="s1">&#39;08&#39;</span><span class="p">,</span> <span class="s1">&#39;09&#39;</span><span class="p">,</span> <span class="s1">&#39;10&#39;</span><span class="p">]</span>
+<span class="n">subject_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;01&#39;</span><span class="p">,</span> <span class="s1">&#39;02&#39;</span><span class="p">,</span> <span class="s1">&#39;03&#39;</span><span class="p">,</span> <span class="s1">&#39;04&#39;</span><span class="p">,</span> <span class="s1">&#39;05&#39;</span><span class="p">,</span> <span class="s1">&#39;06&#39;</span><span class="p">,</span> <span class="s1">&#39;07&#39;</span><span class="p">,</span> <span class="s1">&#39;08&#39;</span><span class="p">,</span> <span class="s1">&#39;09&#39;</span><span class="p">,</span> <span class="s1">&#39;10&#39;</span><span class="p">]</span> <span class="c1"># TODO: test all subjects</span>
 
-<span class="c1">#subject_list = [&#39;01&#39;, &#39;02&#39;]</span>
+<span class="c1"># subject_list = [&#39;01&#39;, &#39;02&#39;]</span>
 <span class="c1"># Repetition time(TR) of functional images</span>
 <span class="n">TR</span> <span class="o">=</span> <span class="mf">2.5</span>
 </pre></div>
@@ -848,9 +734,9 @@ Now that the theory out of our way we can see how it is done in Nipype.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">subjectinfo</span><span class="p">(</span><span class="n">subject_id</span><span class="p">):</span>
-    <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
-    <span class="kn">from</span><span class="w"> </span><span class="nn">nipype.interfaces.base</span><span class="w"> </span><span class="kn">import</span> <span class="n">Bunch</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">subjectinfo</span><span class="p">(</span><span class="n">subject_id</span><span class="p">):</span>
+    <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+    <span class="kn">from</span> <span class="nn">nipype.interfaces.base</span> <span class="kn">import</span> <span class="n">Bunch</span>
 
     
     <span class="n">trialinfo</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_table</span><span class="p">(</span><span class="s1">&#39;/data/ds000114/task-fingerfootlips_events.tsv&#39;</span><span class="p">)</span>
@@ -885,7 +771,7 @@ Now that the theory out of our way we can see how it is done in Nipype.</p>
 <h2>Initiate Nodes<a class="headerlink" href="#initiate-nodes" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># SpecifyModel - Generates SPM-specific Model</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># SpecifyModel - Generates SPM(Statistical parametric mapping)-specific Model</span>
 <span class="c1">#Setup</span>
 <span class="c1">#https://nipype.readthedocs.io/en/latest/api/generated/nipype.algorithms.modelgen.html#specifymodel</span>
 <span class="n">modelspec</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">SpecifySPMModel</span><span class="p">(</span><span class="n">concatenate_runs</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
@@ -898,7 +784,7 @@ Now that the theory out of our way we can see how it is done in Nipype.</p>
 <span class="c1"># Level1Design - Generates an SPM design matrix</span>
 <span class="c1">#https://www.fil.ion.ucl.ac.uk/spm/doc/manual.pdf#page=59</span>
 <span class="c1">#hrf- Name of basis function(canonical)</span>
-<span class="c1">#&#39;derivs&#39;: [1, 0]-Time derivatives : Time and Dispersion</span>
+<span class="c1">#&#39;derivs&#39;: [1, 0]-Time derivatives : Time and Dispersion (additional regressors for SPM)</span>
 
 <span class="c1">#model_serial_correlations-serial correlations using an autoregressive estimator (order 1)</span>
 
@@ -1033,13 +919,13 @@ Now that the theory out of our way we can see how it is done in Nipype.</p>
 <span class="n">l1analysis</span><span class="o">.</span><span class="n">write_graph</span><span class="p">(</span><span class="n">graph2use</span><span class="o">=</span><span class="s1">&#39;colored&#39;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;png&#39;</span><span class="p">,</span> <span class="n">simple_form</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="c1"># Visualize the graph</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">Image</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>
 <span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">l1analysis</span><span class="o">.</span><span class="n">base_dir</span><span class="si">}</span><span class="s1">/l1analysis/graph.png&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230923-06:59:31,675 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>250815-11:17:15,827 nipype.workflow INFO:
 	 Generated workflow graph: /output/workingdir/l1analysis/graph.png (graph2use=colored, simple_form=True).
 </pre></div>
 </div>
@@ -1055,7 +941,7 @@ Now that the theory out of our way we can see how it is done in Nipype.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230923-06:59:32,995 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>250813-11:02:24,323 nipype.workflow INFO:
 	 Generated workflow graph: /output/workingdir/l1analysis/graph.png (graph2use=flat, simple_form=True).
 </pre></div>
 </div>
@@ -1074,751 +960,751 @@ Now that the theory out of our way we can see how it is done in Nipype.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230923-06:59:38,808 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>250815-11:17:32,922 nipype.workflow INFO:
 	 Workflow l1analysis settings: [&#39;check&#39;, &#39;execution&#39;, &#39;logging&#39;, &#39;monitoring&#39;]
-230923-06:59:38,957 nipype.workflow INFO:
+250815-11:17:33,542 nipype.workflow INFO:
 	 Running serially.
-230923-06:59:38,959 nipype.workflow INFO:
+250815-11:17:33,544 nipype.workflow INFO:
 	 [Node] Setting-up &quot;l1analysis.getsubjectinfo&quot; in &quot;/output/workingdir/l1analysis/_subject_id_10/getsubjectinfo&quot;.
-230923-06:59:38,964 nipype.workflow INFO:
+250815-11:17:33,611 nipype.workflow INFO:
 	 [Node] Running &quot;getsubjectinfo&quot; (&quot;nipype.interfaces.utility.wrappers.Function&quot;)
-230923-06:59:39,26 nipype.workflow INFO:
+250815-11:17:33,723 nipype.workflow INFO:
 	 [Node] Finished &quot;l1analysis.getsubjectinfo&quot;.
-230923-06:59:39,30 nipype.workflow INFO:
+250815-11:17:33,725 nipype.workflow INFO:
 	 [Node] Setting-up &quot;l1analysis.selectfiles&quot; in &quot;/output/workingdir/l1analysis/_subject_id_10/selectfiles&quot;.
-230923-06:59:39,35 nipype.workflow INFO:
+250815-11:17:33,787 nipype.workflow INFO:
 	 [Node] Running &quot;selectfiles&quot; (&quot;nipype.interfaces.io.SelectFiles&quot;)
-230923-06:59:39,43 nipype.workflow INFO:
+250815-11:17:33,914 nipype.workflow INFO:
 	 [Node] Finished &quot;l1analysis.selectfiles&quot;.
-230923-06:59:39,45 nipype.workflow INFO:
+250815-11:17:33,916 nipype.workflow INFO:
 	 [Node] Setting-up &quot;l1analysis.modelspec&quot; in &quot;/output/workingdir/l1analysis/_subject_id_10/modelspec&quot;.
-230923-06:59:39,57 nipype.workflow INFO:
+250815-11:17:34,273 nipype.workflow INFO:
 	 [Node] Running &quot;modelspec&quot; (&quot;nipype.algorithms.modelgen.SpecifySPMModel&quot;)
-230923-06:59:39,165 nipype.workflow INFO:
+250815-11:17:34,483 nipype.workflow INFO:
 	 [Node] Finished &quot;l1analysis.modelspec&quot;.
-230923-06:59:39,167 nipype.workflow INFO:
+250815-11:17:34,484 nipype.workflow INFO:
 	 [Node] Setting-up &quot;l1analysis.level1design&quot; in &quot;/output/workingdir/l1analysis/_subject_id_10/level1design&quot;.
-230923-06:59:39,303 nipype.workflow INFO:
+250815-11:17:34,660 nipype.workflow INFO:
 	 [Node] Running &quot;level1design&quot; (&quot;nipype.interfaces.spm.model.Level1Design&quot;)
-230923-06:59:53,711 nipype.workflow INFO:
+250815-11:18:05,929 nipype.workflow INFO:
 	 [Node] Finished &quot;l1analysis.level1design&quot;.
-230923-06:59:53,714 nipype.workflow INFO:
+250815-11:18:05,931 nipype.workflow INFO:
 	 [Node] Setting-up &quot;l1analysis.level1estimate&quot; in &quot;/output/workingdir/l1analysis/_subject_id_10/level1estimate&quot;.
-230923-06:59:53,723 nipype.workflow INFO:
+250815-11:18:06,123 nipype.workflow INFO:
 	 [Node] Running &quot;level1estimate&quot; (&quot;nipype.interfaces.spm.model.EstimateModel&quot;)
-230923-07:00:09,21 nipype.workflow INFO:
+250815-11:18:39,649 nipype.workflow INFO:
 	 [Node] Finished &quot;l1analysis.level1estimate&quot;.
-230923-07:00:09,23 nipype.workflow INFO:
+250815-11:18:39,651 nipype.workflow INFO:
 	 [Node] Setting-up &quot;l1analysis.level1conest&quot; in &quot;/output/workingdir/l1analysis/_subject_id_10/level1conest&quot;.
-230923-07:00:09,49 nipype.workflow INFO:
+250815-11:18:41,38 nipype.workflow INFO:
 	 [Node] Running &quot;level1conest&quot; (&quot;nipype.interfaces.spm.model.EstimateContrast&quot;)
-230923-07:00:20,606 nipype.workflow INFO:
+250815-11:18:53,352 nipype.workflow INFO:
 	 [Node] Finished &quot;l1analysis.level1conest&quot;.
-230923-07:00:20,608 nipype.workflow INFO:
+250815-11:18:53,354 nipype.workflow INFO:
 	 [Node] Setting-up &quot;l1analysis.datasink&quot; in &quot;/output/workingdir/l1analysis/_subject_id_10/datasink&quot;.
-230923-07:00:20,626 nipype.workflow INFO:
+250815-11:18:53,820 nipype.workflow INFO:
 	 [Node] Running &quot;datasink&quot; (&quot;nipype.interfaces.io.DataSink&quot;)
-230923-07:00:20,630 nipype.interface INFO:
+250815-11:18:53,830 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_10/SPM.mat -&gt; /output/datasink/1stLevel/sub-10/SPM.mat
-230923-07:00:20,652 nipype.interface INFO:
+250815-11:18:53,864 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_10/spmT_0001.nii -&gt; /output/datasink/1stLevel/sub-10/spmT_0001.nii
-230923-07:00:20,654 nipype.interface INFO:
+250815-11:18:53,886 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_10/spmT_0002.nii -&gt; /output/datasink/1stLevel/sub-10/spmT_0002.nii
-230923-07:00:20,656 nipype.interface INFO:
+250815-11:18:53,908 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_10/spmT_0003.nii -&gt; /output/datasink/1stLevel/sub-10/spmT_0003.nii
-230923-07:00:20,658 nipype.interface INFO:
+250815-11:18:53,929 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_10/spmT_0004.nii -&gt; /output/datasink/1stLevel/sub-10/spmT_0004.nii
-230923-07:00:20,660 nipype.interface INFO:
+250815-11:18:53,951 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_10/spmT_0005.nii -&gt; /output/datasink/1stLevel/sub-10/spmT_0005.nii
-230923-07:00:20,662 nipype.interface INFO:
+250815-11:18:53,972 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_10/spmF_0006.nii -&gt; /output/datasink/1stLevel/sub-10/spmF_0006.nii
-230923-07:00:20,664 nipype.interface INFO:
+250815-11:18:53,991 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_10/con_0001.nii -&gt; /output/datasink/1stLevel/sub-10/con_0001.nii
-230923-07:00:20,666 nipype.interface INFO:
+250815-11:18:54,12 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_10/con_0002.nii -&gt; /output/datasink/1stLevel/sub-10/con_0002.nii
-230923-07:00:20,668 nipype.interface INFO:
+250815-11:18:54,40 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_10/con_0003.nii -&gt; /output/datasink/1stLevel/sub-10/con_0003.nii
-230923-07:00:20,670 nipype.interface INFO:
+250815-11:18:54,73 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_10/con_0004.nii -&gt; /output/datasink/1stLevel/sub-10/con_0004.nii
-230923-07:00:20,672 nipype.interface INFO:
+250815-11:18:54,104 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_10/con_0005.nii -&gt; /output/datasink/1stLevel/sub-10/con_0005.nii
-230923-07:00:20,674 nipype.interface INFO:
+250815-11:18:54,133 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_10/ess_0006.nii -&gt; /output/datasink/1stLevel/sub-10/ess_0006.nii
-230923-07:00:20,676 nipype.interface INFO:
+250815-11:18:54,162 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_10/spmF_0006.nii -&gt; /output/datasink/1stLevel/sub-10/spmF_0006.nii
-230923-07:00:20,678 nipype.interface INFO:
+250815-11:18:54,187 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_10/ess_0006.nii -&gt; /output/datasink/1stLevel/sub-10/ess_0006.nii
-230923-07:00:20,685 nipype.workflow INFO:
+250815-11:18:54,377 nipype.workflow INFO:
 	 [Node] Finished &quot;l1analysis.datasink&quot;.
-230923-07:00:20,687 nipype.workflow INFO:
+250815-11:18:54,379 nipype.workflow INFO:
 	 [Node] Setting-up &quot;l1analysis.getsubjectinfo&quot; in &quot;/output/workingdir/l1analysis/_subject_id_09/getsubjectinfo&quot;.
-230923-07:00:20,692 nipype.workflow INFO:
+250815-11:18:54,436 nipype.workflow INFO:
 	 [Node] Running &quot;getsubjectinfo&quot; (&quot;nipype.interfaces.utility.wrappers.Function&quot;)
-230923-07:00:20,714 nipype.workflow INFO:
+250815-11:18:54,536 nipype.workflow INFO:
 	 [Node] Finished &quot;l1analysis.getsubjectinfo&quot;.
-230923-07:00:20,716 nipype.workflow INFO:
+250815-11:18:54,538 nipype.workflow INFO:
 	 [Node] Setting-up &quot;l1analysis.selectfiles&quot; in &quot;/output/workingdir/l1analysis/_subject_id_09/selectfiles&quot;.
-230923-07:00:20,723 nipype.workflow INFO:
+250815-11:18:54,602 nipype.workflow INFO:
 	 [Node] Running &quot;selectfiles&quot; (&quot;nipype.interfaces.io.SelectFiles&quot;)
-230923-07:00:20,731 nipype.workflow INFO:
+250815-11:18:54,764 nipype.workflow INFO:
 	 [Node] Finished &quot;l1analysis.selectfiles&quot;.
-230923-07:00:20,732 nipype.workflow INFO:
+250815-11:18:54,767 nipype.workflow INFO:
 	 [Node] Setting-up &quot;l1analysis.modelspec&quot; in &quot;/output/workingdir/l1analysis/_subject_id_09/modelspec&quot;.
-230923-07:00:20,749 nipype.workflow INFO:
+250815-11:18:55,163 nipype.workflow INFO:
 	 [Node] Running &quot;modelspec&quot; (&quot;nipype.algorithms.modelgen.SpecifySPMModel&quot;)
-230923-07:00:20,830 nipype.workflow INFO:
+250815-11:18:55,342 nipype.workflow INFO:
 	 [Node] Finished &quot;l1analysis.modelspec&quot;.
-230923-07:00:20,832 nipype.workflow INFO:
+250815-11:18:55,344 nipype.workflow INFO:
 	 [Node] Setting-up &quot;l1analysis.level1design&quot; in &quot;/output/workingdir/l1analysis/_subject_id_09/level1design&quot;.
-230923-07:00:20,950 nipype.workflow INFO:
+250815-11:18:55,497 nipype.workflow INFO:
 	 [Node] Running &quot;level1design&quot; (&quot;nipype.interfaces.spm.model.Level1Design&quot;)
-230923-07:00:32,667 nipype.workflow INFO:
+250815-11:19:22,34 nipype.workflow INFO:
 	 [Node] Finished &quot;l1analysis.level1design&quot;.
-230923-07:00:32,670 nipype.workflow INFO:
+250815-11:19:22,37 nipype.workflow INFO:
 	 [Node] Setting-up &quot;l1analysis.level1estimate&quot; in &quot;/output/workingdir/l1analysis/_subject_id_09/level1estimate&quot;.
-230923-07:00:32,680 nipype.workflow INFO:
+250815-11:19:22,221 nipype.workflow INFO:
 	 [Node] Running &quot;level1estimate&quot; (&quot;nipype.interfaces.spm.model.EstimateModel&quot;)
-230923-07:00:46,564 nipype.workflow INFO:
+250815-11:19:58,469 nipype.workflow INFO:
 	 [Node] Finished &quot;l1analysis.level1estimate&quot;.
-230923-07:00:46,566 nipype.workflow INFO:
+250815-11:19:58,471 nipype.workflow INFO:
 	 [Node] Setting-up &quot;l1analysis.level1conest&quot; in &quot;/output/workingdir/l1analysis/_subject_id_09/level1conest&quot;.
-230923-07:00:46,590 nipype.workflow INFO:
+250815-11:19:59,706 nipype.workflow INFO:
 	 [Node] Running &quot;level1conest&quot; (&quot;nipype.interfaces.spm.model.EstimateContrast&quot;)
-230923-07:00:56,990 nipype.workflow INFO:
+250815-11:20:12,198 nipype.workflow INFO:
 	 [Node] Finished &quot;l1analysis.level1conest&quot;.
-230923-07:00:56,993 nipype.workflow INFO:
+250815-11:20:12,200 nipype.workflow INFO:
 	 [Node] Setting-up &quot;l1analysis.datasink&quot; in &quot;/output/workingdir/l1analysis/_subject_id_09/datasink&quot;.
-230923-07:00:57,5 nipype.workflow INFO:
+250815-11:20:12,655 nipype.workflow INFO:
 	 [Node] Running &quot;datasink&quot; (&quot;nipype.interfaces.io.DataSink&quot;)
-230923-07:00:57,8 nipype.interface INFO:
+250815-11:20:12,663 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_09/SPM.mat -&gt; /output/datasink/1stLevel/sub-09/SPM.mat
-230923-07:00:57,10 nipype.interface INFO:
+250815-11:20:12,689 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_09/spmT_0001.nii -&gt; /output/datasink/1stLevel/sub-09/spmT_0001.nii
-230923-07:00:57,12 nipype.interface INFO:
+250815-11:20:12,710 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_09/spmT_0002.nii -&gt; /output/datasink/1stLevel/sub-09/spmT_0002.nii
-230923-07:00:57,13 nipype.interface INFO:
+250815-11:20:12,729 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_09/spmT_0003.nii -&gt; /output/datasink/1stLevel/sub-09/spmT_0003.nii
-230923-07:00:57,15 nipype.interface INFO:
+250815-11:20:12,748 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_09/spmT_0004.nii -&gt; /output/datasink/1stLevel/sub-09/spmT_0004.nii
-230923-07:00:57,17 nipype.interface INFO:
+250815-11:20:12,768 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_09/spmT_0005.nii -&gt; /output/datasink/1stLevel/sub-09/spmT_0005.nii
-230923-07:00:57,18 nipype.interface INFO:
+250815-11:20:12,788 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_09/spmF_0006.nii -&gt; /output/datasink/1stLevel/sub-09/spmF_0006.nii
-230923-07:00:57,20 nipype.interface INFO:
+250815-11:20:12,808 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_09/con_0001.nii -&gt; /output/datasink/1stLevel/sub-09/con_0001.nii
-230923-07:00:57,22 nipype.interface INFO:
+250815-11:20:12,828 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_09/con_0002.nii -&gt; /output/datasink/1stLevel/sub-09/con_0002.nii
-230923-07:00:57,24 nipype.interface INFO:
+250815-11:20:12,849 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_09/con_0003.nii -&gt; /output/datasink/1stLevel/sub-09/con_0003.nii
-230923-07:00:57,25 nipype.interface INFO:
+250815-11:20:12,868 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_09/con_0004.nii -&gt; /output/datasink/1stLevel/sub-09/con_0004.nii
-230923-07:00:57,27 nipype.interface INFO:
+250815-11:20:12,890 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_09/con_0005.nii -&gt; /output/datasink/1stLevel/sub-09/con_0005.nii
-230923-07:00:57,29 nipype.interface INFO:
+250815-11:20:12,910 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_09/ess_0006.nii -&gt; /output/datasink/1stLevel/sub-09/ess_0006.nii
-230923-07:00:57,31 nipype.interface INFO:
+250815-11:20:12,929 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_09/spmF_0006.nii -&gt; /output/datasink/1stLevel/sub-09/spmF_0006.nii
-230923-07:00:57,32 nipype.interface INFO:
+250815-11:20:12,978 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_09/ess_0006.nii -&gt; /output/datasink/1stLevel/sub-09/ess_0006.nii
-230923-07:00:57,38 nipype.workflow INFO:
+250815-11:20:13,209 nipype.workflow INFO:
 	 [Node] Finished &quot;l1analysis.datasink&quot;.
-230923-07:00:57,39 nipype.workflow INFO:
+250815-11:20:13,211 nipype.workflow INFO:
 	 [Node] Setting-up &quot;l1analysis.getsubjectinfo&quot; in &quot;/output/workingdir/l1analysis/_subject_id_08/getsubjectinfo&quot;.
-230923-07:00:57,43 nipype.workflow INFO:
+250815-11:20:13,267 nipype.workflow INFO:
 	 [Node] Running &quot;getsubjectinfo&quot; (&quot;nipype.interfaces.utility.wrappers.Function&quot;)
-230923-07:00:57,58 nipype.workflow INFO:
+250815-11:20:13,370 nipype.workflow INFO:
 	 [Node] Finished &quot;l1analysis.getsubjectinfo&quot;.
-230923-07:00:57,60 nipype.workflow INFO:
+250815-11:20:13,371 nipype.workflow INFO:
 	 [Node] Setting-up &quot;l1analysis.selectfiles&quot; in &quot;/output/workingdir/l1analysis/_subject_id_08/selectfiles&quot;.
-230923-07:00:57,64 nipype.workflow INFO:
+250815-11:20:13,427 nipype.workflow INFO:
 	 [Node] Running &quot;selectfiles&quot; (&quot;nipype.interfaces.io.SelectFiles&quot;)
-230923-07:00:57,70 nipype.workflow INFO:
+250815-11:20:13,563 nipype.workflow INFO:
 	 [Node] Finished &quot;l1analysis.selectfiles&quot;.
-230923-07:00:57,71 nipype.workflow INFO:
+250815-11:20:13,564 nipype.workflow INFO:
 	 [Node] Setting-up &quot;l1analysis.modelspec&quot; in &quot;/output/workingdir/l1analysis/_subject_id_08/modelspec&quot;.
-230923-07:00:57,81 nipype.workflow INFO:
+250815-11:20:13,996 nipype.workflow INFO:
 	 [Node] Running &quot;modelspec&quot; (&quot;nipype.algorithms.modelgen.SpecifySPMModel&quot;)
-230923-07:00:57,143 nipype.workflow INFO:
+250815-11:20:14,198 nipype.workflow INFO:
 	 [Node] Finished &quot;l1analysis.modelspec&quot;.
-230923-07:00:57,145 nipype.workflow INFO:
+250815-11:20:14,200 nipype.workflow INFO:
 	 [Node] Setting-up &quot;l1analysis.level1design&quot; in &quot;/output/workingdir/l1analysis/_subject_id_08/level1design&quot;.
-230923-07:00:57,227 nipype.workflow INFO:
-	 [Node] Running &quot;level1design&quot; (&quot;nipype.interfaces.spm.model.Level1Design&quot;)
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/miniconda-latest/envs/neuro/lib/python3.6/site-packages/nipype/algorithms/modelgen.py:491: UserWarning: loadtxt: Empty input file: &quot;/output/workingdir/l1analysis/_subject_id_08/modelspec/art.sub-08_ses-test_task-fingerfootlips_bold_outliers.txt&quot;
   outindices = np.loadtxt(filename, dtype=int)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230923-07:01:07,774 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.level1design&quot;.
-230923-07:01:07,776 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.level1estimate&quot; in &quot;/output/workingdir/l1analysis/_subject_id_08/level1estimate&quot;.
-230923-07:01:07,786 nipype.workflow INFO:
-	 [Node] Running &quot;level1estimate&quot; (&quot;nipype.interfaces.spm.model.EstimateModel&quot;)
-230923-07:01:21,832 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.level1estimate&quot;.
-230923-07:01:21,834 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.level1conest&quot; in &quot;/output/workingdir/l1analysis/_subject_id_08/level1conest&quot;.
-230923-07:01:21,863 nipype.workflow INFO:
-	 [Node] Running &quot;level1conest&quot; (&quot;nipype.interfaces.spm.model.EstimateContrast&quot;)
-230923-07:01:32,534 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.level1conest&quot;.
-230923-07:01:32,536 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.datasink&quot; in &quot;/output/workingdir/l1analysis/_subject_id_08/datasink&quot;.
-230923-07:01:32,552 nipype.workflow INFO:
-	 [Node] Running &quot;datasink&quot; (&quot;nipype.interfaces.io.DataSink&quot;)
-230923-07:01:32,556 nipype.interface INFO:
-	 sub: /output/datasink/1stLevel/_subject_id_08/SPM.mat -&gt; /output/datasink/1stLevel/sub-08/SPM.mat
-230923-07:01:32,558 nipype.interface INFO:
-	 sub: /output/datasink/1stLevel/_subject_id_08/spmT_0001.nii -&gt; /output/datasink/1stLevel/sub-08/spmT_0001.nii
-230923-07:01:32,560 nipype.interface INFO:
-	 sub: /output/datasink/1stLevel/_subject_id_08/spmT_0002.nii -&gt; /output/datasink/1stLevel/sub-08/spmT_0002.nii
-230923-07:01:32,562 nipype.interface INFO:
-	 sub: /output/datasink/1stLevel/_subject_id_08/spmT_0003.nii -&gt; /output/datasink/1stLevel/sub-08/spmT_0003.nii
-230923-07:01:32,564 nipype.interface INFO:
-	 sub: /output/datasink/1stLevel/_subject_id_08/spmT_0004.nii -&gt; /output/datasink/1stLevel/sub-08/spmT_0004.nii
-230923-07:01:32,566 nipype.interface INFO:
-	 sub: /output/datasink/1stLevel/_subject_id_08/spmT_0005.nii -&gt; /output/datasink/1stLevel/sub-08/spmT_0005.nii
-230923-07:01:32,567 nipype.interface INFO:
-	 sub: /output/datasink/1stLevel/_subject_id_08/spmF_0006.nii -&gt; /output/datasink/1stLevel/sub-08/spmF_0006.nii
-230923-07:01:32,569 nipype.interface INFO:
-	 sub: /output/datasink/1stLevel/_subject_id_08/con_0001.nii -&gt; /output/datasink/1stLevel/sub-08/con_0001.nii
-230923-07:01:32,571 nipype.interface INFO:
-	 sub: /output/datasink/1stLevel/_subject_id_08/con_0002.nii -&gt; /output/datasink/1stLevel/sub-08/con_0002.nii
-230923-07:01:32,573 nipype.interface INFO:
-	 sub: /output/datasink/1stLevel/_subject_id_08/con_0003.nii -&gt; /output/datasink/1stLevel/sub-08/con_0003.nii
-230923-07:01:32,575 nipype.interface INFO:
-	 sub: /output/datasink/1stLevel/_subject_id_08/con_0004.nii -&gt; /output/datasink/1stLevel/sub-08/con_0004.nii
-230923-07:01:32,577 nipype.interface INFO:
-	 sub: /output/datasink/1stLevel/_subject_id_08/con_0005.nii -&gt; /output/datasink/1stLevel/sub-08/con_0005.nii
-230923-07:01:32,579 nipype.interface INFO:
-	 sub: /output/datasink/1stLevel/_subject_id_08/ess_0006.nii -&gt; /output/datasink/1stLevel/sub-08/ess_0006.nii
-230923-07:01:32,580 nipype.interface INFO:
-	 sub: /output/datasink/1stLevel/_subject_id_08/spmF_0006.nii -&gt; /output/datasink/1stLevel/sub-08/spmF_0006.nii
-230923-07:01:32,582 nipype.interface INFO:
-	 sub: /output/datasink/1stLevel/_subject_id_08/ess_0006.nii -&gt; /output/datasink/1stLevel/sub-08/ess_0006.nii
-230923-07:01:32,589 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.datasink&quot;.
-230923-07:01:32,591 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.getsubjectinfo&quot; in &quot;/output/workingdir/l1analysis/_subject_id_07/getsubjectinfo&quot;.
-230923-07:01:32,596 nipype.workflow INFO:
-	 [Node] Running &quot;getsubjectinfo&quot; (&quot;nipype.interfaces.utility.wrappers.Function&quot;)
-230923-07:01:32,618 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.getsubjectinfo&quot;.
-230923-07:01:32,620 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.selectfiles&quot; in &quot;/output/workingdir/l1analysis/_subject_id_07/selectfiles&quot;.
-230923-07:01:32,626 nipype.workflow INFO:
-	 [Node] Running &quot;selectfiles&quot; (&quot;nipype.interfaces.io.SelectFiles&quot;)
-230923-07:01:32,634 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.selectfiles&quot;.
-230923-07:01:32,636 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.modelspec&quot; in &quot;/output/workingdir/l1analysis/_subject_id_07/modelspec&quot;.
-230923-07:01:32,651 nipype.workflow INFO:
-	 [Node] Running &quot;modelspec&quot; (&quot;nipype.algorithms.modelgen.SpecifySPMModel&quot;)
-230923-07:01:32,700 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.modelspec&quot;.
-230923-07:01:32,702 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.level1design&quot; in &quot;/output/workingdir/l1analysis/_subject_id_07/level1design&quot;.
-230923-07:01:32,790 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>250815-11:20:14,374 nipype.workflow INFO:
 	 [Node] Running &quot;level1design&quot; (&quot;nipype.interfaces.spm.model.Level1Design&quot;)
+250815-11:20:41,148 nipype.workflow INFO:
+	 [Node] Finished &quot;l1analysis.level1design&quot;.
+250815-11:20:41,151 nipype.workflow INFO:
+	 [Node] Setting-up &quot;l1analysis.level1estimate&quot; in &quot;/output/workingdir/l1analysis/_subject_id_08/level1estimate&quot;.
+250815-11:20:41,297 nipype.workflow INFO:
+	 [Node] Running &quot;level1estimate&quot; (&quot;nipype.interfaces.spm.model.EstimateModel&quot;)
+250815-11:21:16,887 nipype.workflow INFO:
+	 [Node] Finished &quot;l1analysis.level1estimate&quot;.
+250815-11:21:16,889 nipype.workflow INFO:
+	 [Node] Setting-up &quot;l1analysis.level1conest&quot; in &quot;/output/workingdir/l1analysis/_subject_id_08/level1conest&quot;.
+250815-11:21:18,167 nipype.workflow INFO:
+	 [Node] Running &quot;level1conest&quot; (&quot;nipype.interfaces.spm.model.EstimateContrast&quot;)
+250815-11:21:30,19 nipype.workflow INFO:
+	 [Node] Finished &quot;l1analysis.level1conest&quot;.
+250815-11:21:30,21 nipype.workflow INFO:
+	 [Node] Setting-up &quot;l1analysis.datasink&quot; in &quot;/output/workingdir/l1analysis/_subject_id_08/datasink&quot;.
+250815-11:21:30,552 nipype.workflow INFO:
+	 [Node] Running &quot;datasink&quot; (&quot;nipype.interfaces.io.DataSink&quot;)
+250815-11:21:30,561 nipype.interface INFO:
+	 sub: /output/datasink/1stLevel/_subject_id_08/SPM.mat -&gt; /output/datasink/1stLevel/sub-08/SPM.mat
+250815-11:21:30,589 nipype.interface INFO:
+	 sub: /output/datasink/1stLevel/_subject_id_08/spmT_0001.nii -&gt; /output/datasink/1stLevel/sub-08/spmT_0001.nii
+250815-11:21:30,609 nipype.interface INFO:
+	 sub: /output/datasink/1stLevel/_subject_id_08/spmT_0002.nii -&gt; /output/datasink/1stLevel/sub-08/spmT_0002.nii
+250815-11:21:30,630 nipype.interface INFO:
+	 sub: /output/datasink/1stLevel/_subject_id_08/spmT_0003.nii -&gt; /output/datasink/1stLevel/sub-08/spmT_0003.nii
+250815-11:21:30,649 nipype.interface INFO:
+	 sub: /output/datasink/1stLevel/_subject_id_08/spmT_0004.nii -&gt; /output/datasink/1stLevel/sub-08/spmT_0004.nii
+250815-11:21:30,668 nipype.interface INFO:
+	 sub: /output/datasink/1stLevel/_subject_id_08/spmT_0005.nii -&gt; /output/datasink/1stLevel/sub-08/spmT_0005.nii
+250815-11:21:30,689 nipype.interface INFO:
+	 sub: /output/datasink/1stLevel/_subject_id_08/spmF_0006.nii -&gt; /output/datasink/1stLevel/sub-08/spmF_0006.nii
+250815-11:21:30,709 nipype.interface INFO:
+	 sub: /output/datasink/1stLevel/_subject_id_08/con_0001.nii -&gt; /output/datasink/1stLevel/sub-08/con_0001.nii
+250815-11:21:30,728 nipype.interface INFO:
+	 sub: /output/datasink/1stLevel/_subject_id_08/con_0002.nii -&gt; /output/datasink/1stLevel/sub-08/con_0002.nii
+250815-11:21:30,751 nipype.interface INFO:
+	 sub: /output/datasink/1stLevel/_subject_id_08/con_0003.nii -&gt; /output/datasink/1stLevel/sub-08/con_0003.nii
+250815-11:21:30,772 nipype.interface INFO:
+	 sub: /output/datasink/1stLevel/_subject_id_08/con_0004.nii -&gt; /output/datasink/1stLevel/sub-08/con_0004.nii
+250815-11:21:30,818 nipype.interface INFO:
+	 sub: /output/datasink/1stLevel/_subject_id_08/con_0005.nii -&gt; /output/datasink/1stLevel/sub-08/con_0005.nii
+250815-11:21:30,840 nipype.interface INFO:
+	 sub: /output/datasink/1stLevel/_subject_id_08/ess_0006.nii -&gt; /output/datasink/1stLevel/sub-08/ess_0006.nii
+250815-11:21:30,862 nipype.interface INFO:
+	 sub: /output/datasink/1stLevel/_subject_id_08/spmF_0006.nii -&gt; /output/datasink/1stLevel/sub-08/spmF_0006.nii
+250815-11:21:30,884 nipype.interface INFO:
+	 sub: /output/datasink/1stLevel/_subject_id_08/ess_0006.nii -&gt; /output/datasink/1stLevel/sub-08/ess_0006.nii
+250815-11:21:31,68 nipype.workflow INFO:
+	 [Node] Finished &quot;l1analysis.datasink&quot;.
+250815-11:21:31,70 nipype.workflow INFO:
+	 [Node] Setting-up &quot;l1analysis.getsubjectinfo&quot; in &quot;/output/workingdir/l1analysis/_subject_id_07/getsubjectinfo&quot;.
+250815-11:21:31,162 nipype.workflow INFO:
+	 [Node] Running &quot;getsubjectinfo&quot; (&quot;nipype.interfaces.utility.wrappers.Function&quot;)
+250815-11:21:31,281 nipype.workflow INFO:
+	 [Node] Finished &quot;l1analysis.getsubjectinfo&quot;.
+250815-11:21:31,283 nipype.workflow INFO:
+	 [Node] Setting-up &quot;l1analysis.selectfiles&quot; in &quot;/output/workingdir/l1analysis/_subject_id_07/selectfiles&quot;.
+250815-11:21:31,340 nipype.workflow INFO:
+	 [Node] Running &quot;selectfiles&quot; (&quot;nipype.interfaces.io.SelectFiles&quot;)
+250815-11:21:31,477 nipype.workflow INFO:
+	 [Node] Finished &quot;l1analysis.selectfiles&quot;.
+250815-11:21:31,478 nipype.workflow INFO:
+	 [Node] Setting-up &quot;l1analysis.modelspec&quot; in &quot;/output/workingdir/l1analysis/_subject_id_07/modelspec&quot;.
+250815-11:21:31,901 nipype.workflow INFO:
+	 [Node] Running &quot;modelspec&quot; (&quot;nipype.algorithms.modelgen.SpecifySPMModel&quot;)
+250815-11:21:32,92 nipype.workflow INFO:
+	 [Node] Finished &quot;l1analysis.modelspec&quot;.
+250815-11:21:32,94 nipype.workflow INFO:
+	 [Node] Setting-up &quot;l1analysis.level1design&quot; in &quot;/output/workingdir/l1analysis/_subject_id_07/level1design&quot;.
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/miniconda-latest/envs/neuro/lib/python3.6/site-packages/nipype/algorithms/modelgen.py:491: UserWarning: loadtxt: Empty input file: &quot;/output/workingdir/l1analysis/_subject_id_07/modelspec/art.sub-07_ses-test_task-fingerfootlips_bold_outliers.txt&quot;
   outindices = np.loadtxt(filename, dtype=int)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230923-07:01:43,943 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.level1design&quot;.
-230923-07:01:43,945 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.level1estimate&quot; in &quot;/output/workingdir/l1analysis/_subject_id_07/level1estimate&quot;.
-230923-07:01:43,956 nipype.workflow INFO:
-	 [Node] Running &quot;level1estimate&quot; (&quot;nipype.interfaces.spm.model.EstimateModel&quot;)
-230923-07:01:57,822 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.level1estimate&quot;.
-230923-07:01:57,826 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.level1conest&quot; in &quot;/output/workingdir/l1analysis/_subject_id_07/level1conest&quot;.
-230923-07:01:57,852 nipype.workflow INFO:
-	 [Node] Running &quot;level1conest&quot; (&quot;nipype.interfaces.spm.model.EstimateContrast&quot;)
-230923-07:02:08,407 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.level1conest&quot;.
-230923-07:02:08,409 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.datasink&quot; in &quot;/output/workingdir/l1analysis/_subject_id_07/datasink&quot;.
-230923-07:02:08,421 nipype.workflow INFO:
-	 [Node] Running &quot;datasink&quot; (&quot;nipype.interfaces.io.DataSink&quot;)
-230923-07:02:08,423 nipype.interface INFO:
-	 sub: /output/datasink/1stLevel/_subject_id_07/SPM.mat -&gt; /output/datasink/1stLevel/sub-07/SPM.mat
-230923-07:02:08,425 nipype.interface INFO:
-	 sub: /output/datasink/1stLevel/_subject_id_07/spmT_0001.nii -&gt; /output/datasink/1stLevel/sub-07/spmT_0001.nii
-230923-07:02:08,427 nipype.interface INFO:
-	 sub: /output/datasink/1stLevel/_subject_id_07/spmT_0002.nii -&gt; /output/datasink/1stLevel/sub-07/spmT_0002.nii
-230923-07:02:08,429 nipype.interface INFO:
-	 sub: /output/datasink/1stLevel/_subject_id_07/spmT_0003.nii -&gt; /output/datasink/1stLevel/sub-07/spmT_0003.nii
-230923-07:02:08,430 nipype.interface INFO:
-	 sub: /output/datasink/1stLevel/_subject_id_07/spmT_0004.nii -&gt; /output/datasink/1stLevel/sub-07/spmT_0004.nii
-230923-07:02:08,432 nipype.interface INFO:
-	 sub: /output/datasink/1stLevel/_subject_id_07/spmT_0005.nii -&gt; /output/datasink/1stLevel/sub-07/spmT_0005.nii
-230923-07:02:08,434 nipype.interface INFO:
-	 sub: /output/datasink/1stLevel/_subject_id_07/spmF_0006.nii -&gt; /output/datasink/1stLevel/sub-07/spmF_0006.nii
-230923-07:02:08,435 nipype.interface INFO:
-	 sub: /output/datasink/1stLevel/_subject_id_07/con_0001.nii -&gt; /output/datasink/1stLevel/sub-07/con_0001.nii
-230923-07:02:08,437 nipype.interface INFO:
-	 sub: /output/datasink/1stLevel/_subject_id_07/con_0002.nii -&gt; /output/datasink/1stLevel/sub-07/con_0002.nii
-230923-07:02:08,438 nipype.interface INFO:
-	 sub: /output/datasink/1stLevel/_subject_id_07/con_0003.nii -&gt; /output/datasink/1stLevel/sub-07/con_0003.nii
-230923-07:02:08,440 nipype.interface INFO:
-	 sub: /output/datasink/1stLevel/_subject_id_07/con_0004.nii -&gt; /output/datasink/1stLevel/sub-07/con_0004.nii
-230923-07:02:08,442 nipype.interface INFO:
-	 sub: /output/datasink/1stLevel/_subject_id_07/con_0005.nii -&gt; /output/datasink/1stLevel/sub-07/con_0005.nii
-230923-07:02:08,444 nipype.interface INFO:
-	 sub: /output/datasink/1stLevel/_subject_id_07/ess_0006.nii -&gt; /output/datasink/1stLevel/sub-07/ess_0006.nii
-230923-07:02:08,446 nipype.interface INFO:
-	 sub: /output/datasink/1stLevel/_subject_id_07/spmF_0006.nii -&gt; /output/datasink/1stLevel/sub-07/spmF_0006.nii
-230923-07:02:08,447 nipype.interface INFO:
-	 sub: /output/datasink/1stLevel/_subject_id_07/ess_0006.nii -&gt; /output/datasink/1stLevel/sub-07/ess_0006.nii
-230923-07:02:08,452 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.datasink&quot;.
-230923-07:02:08,454 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.getsubjectinfo&quot; in &quot;/output/workingdir/l1analysis/_subject_id_06/getsubjectinfo&quot;.
-230923-07:02:08,458 nipype.workflow INFO:
-	 [Node] Running &quot;getsubjectinfo&quot; (&quot;nipype.interfaces.utility.wrappers.Function&quot;)
-230923-07:02:08,473 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.getsubjectinfo&quot;.
-230923-07:02:08,474 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.selectfiles&quot; in &quot;/output/workingdir/l1analysis/_subject_id_06/selectfiles&quot;.
-230923-07:02:08,479 nipype.workflow INFO:
-	 [Node] Running &quot;selectfiles&quot; (&quot;nipype.interfaces.io.SelectFiles&quot;)
-230923-07:02:08,485 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.selectfiles&quot;.
-230923-07:02:08,487 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.modelspec&quot; in &quot;/output/workingdir/l1analysis/_subject_id_06/modelspec&quot;.
-230923-07:02:08,498 nipype.workflow INFO:
-	 [Node] Running &quot;modelspec&quot; (&quot;nipype.algorithms.modelgen.SpecifySPMModel&quot;)
-230923-07:02:08,535 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.modelspec&quot;.
-230923-07:02:08,537 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.level1design&quot; in &quot;/output/workingdir/l1analysis/_subject_id_06/level1design&quot;.
-230923-07:02:08,602 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>250815-11:21:32,258 nipype.workflow INFO:
 	 [Node] Running &quot;level1design&quot; (&quot;nipype.interfaces.spm.model.Level1Design&quot;)
+250815-11:21:59,212 nipype.workflow INFO:
+	 [Node] Finished &quot;l1analysis.level1design&quot;.
+250815-11:21:59,214 nipype.workflow INFO:
+	 [Node] Setting-up &quot;l1analysis.level1estimate&quot; in &quot;/output/workingdir/l1analysis/_subject_id_07/level1estimate&quot;.
+250815-11:21:59,398 nipype.workflow INFO:
+	 [Node] Running &quot;level1estimate&quot; (&quot;nipype.interfaces.spm.model.EstimateModel&quot;)
+250815-11:22:34,234 nipype.workflow INFO:
+	 [Node] Finished &quot;l1analysis.level1estimate&quot;.
+250815-11:22:34,237 nipype.workflow INFO:
+	 [Node] Setting-up &quot;l1analysis.level1conest&quot; in &quot;/output/workingdir/l1analysis/_subject_id_07/level1conest&quot;.
+250815-11:22:35,785 nipype.workflow INFO:
+	 [Node] Running &quot;level1conest&quot; (&quot;nipype.interfaces.spm.model.EstimateContrast&quot;)
+250815-11:22:50,638 nipype.workflow INFO:
+	 [Node] Finished &quot;l1analysis.level1conest&quot;.
+250815-11:22:50,640 nipype.workflow INFO:
+	 [Node] Setting-up &quot;l1analysis.datasink&quot; in &quot;/output/workingdir/l1analysis/_subject_id_07/datasink&quot;.
+250815-11:22:51,337 nipype.workflow INFO:
+	 [Node] Running &quot;datasink&quot; (&quot;nipype.interfaces.io.DataSink&quot;)
+250815-11:22:51,344 nipype.interface INFO:
+	 sub: /output/datasink/1stLevel/_subject_id_07/SPM.mat -&gt; /output/datasink/1stLevel/sub-07/SPM.mat
+250815-11:22:51,369 nipype.interface INFO:
+	 sub: /output/datasink/1stLevel/_subject_id_07/spmT_0001.nii -&gt; /output/datasink/1stLevel/sub-07/spmT_0001.nii
+250815-11:22:51,389 nipype.interface INFO:
+	 sub: /output/datasink/1stLevel/_subject_id_07/spmT_0002.nii -&gt; /output/datasink/1stLevel/sub-07/spmT_0002.nii
+250815-11:22:51,408 nipype.interface INFO:
+	 sub: /output/datasink/1stLevel/_subject_id_07/spmT_0003.nii -&gt; /output/datasink/1stLevel/sub-07/spmT_0003.nii
+250815-11:22:51,428 nipype.interface INFO:
+	 sub: /output/datasink/1stLevel/_subject_id_07/spmT_0004.nii -&gt; /output/datasink/1stLevel/sub-07/spmT_0004.nii
+250815-11:22:51,449 nipype.interface INFO:
+	 sub: /output/datasink/1stLevel/_subject_id_07/spmT_0005.nii -&gt; /output/datasink/1stLevel/sub-07/spmT_0005.nii
+250815-11:22:51,470 nipype.interface INFO:
+	 sub: /output/datasink/1stLevel/_subject_id_07/spmF_0006.nii -&gt; /output/datasink/1stLevel/sub-07/spmF_0006.nii
+250815-11:22:51,491 nipype.interface INFO:
+	 sub: /output/datasink/1stLevel/_subject_id_07/con_0001.nii -&gt; /output/datasink/1stLevel/sub-07/con_0001.nii
+250815-11:22:51,511 nipype.interface INFO:
+	 sub: /output/datasink/1stLevel/_subject_id_07/con_0002.nii -&gt; /output/datasink/1stLevel/sub-07/con_0002.nii
+250815-11:22:51,529 nipype.interface INFO:
+	 sub: /output/datasink/1stLevel/_subject_id_07/con_0003.nii -&gt; /output/datasink/1stLevel/sub-07/con_0003.nii
+250815-11:22:51,549 nipype.interface INFO:
+	 sub: /output/datasink/1stLevel/_subject_id_07/con_0004.nii -&gt; /output/datasink/1stLevel/sub-07/con_0004.nii
+250815-11:22:51,568 nipype.interface INFO:
+	 sub: /output/datasink/1stLevel/_subject_id_07/con_0005.nii -&gt; /output/datasink/1stLevel/sub-07/con_0005.nii
+250815-11:22:51,589 nipype.interface INFO:
+	 sub: /output/datasink/1stLevel/_subject_id_07/ess_0006.nii -&gt; /output/datasink/1stLevel/sub-07/ess_0006.nii
+250815-11:22:51,614 nipype.interface INFO:
+	 sub: /output/datasink/1stLevel/_subject_id_07/spmF_0006.nii -&gt; /output/datasink/1stLevel/sub-07/spmF_0006.nii
+250815-11:22:51,636 nipype.interface INFO:
+	 sub: /output/datasink/1stLevel/_subject_id_07/ess_0006.nii -&gt; /output/datasink/1stLevel/sub-07/ess_0006.nii
+250815-11:22:51,847 nipype.workflow INFO:
+	 [Node] Finished &quot;l1analysis.datasink&quot;.
+250815-11:22:51,848 nipype.workflow INFO:
+	 [Node] Setting-up &quot;l1analysis.getsubjectinfo&quot; in &quot;/output/workingdir/l1analysis/_subject_id_06/getsubjectinfo&quot;.
+250815-11:22:51,910 nipype.workflow INFO:
+	 [Node] Running &quot;getsubjectinfo&quot; (&quot;nipype.interfaces.utility.wrappers.Function&quot;)
+250815-11:22:52,32 nipype.workflow INFO:
+	 [Node] Finished &quot;l1analysis.getsubjectinfo&quot;.
+250815-11:22:52,34 nipype.workflow INFO:
+	 [Node] Setting-up &quot;l1analysis.selectfiles&quot; in &quot;/output/workingdir/l1analysis/_subject_id_06/selectfiles&quot;.
+250815-11:22:52,97 nipype.workflow INFO:
+	 [Node] Running &quot;selectfiles&quot; (&quot;nipype.interfaces.io.SelectFiles&quot;)
+250815-11:22:52,253 nipype.workflow INFO:
+	 [Node] Finished &quot;l1analysis.selectfiles&quot;.
+250815-11:22:52,255 nipype.workflow INFO:
+	 [Node] Setting-up &quot;l1analysis.modelspec&quot; in &quot;/output/workingdir/l1analysis/_subject_id_06/modelspec&quot;.
+250815-11:22:52,630 nipype.workflow INFO:
+	 [Node] Running &quot;modelspec&quot; (&quot;nipype.algorithms.modelgen.SpecifySPMModel&quot;)
+250815-11:22:52,854 nipype.workflow INFO:
+	 [Node] Finished &quot;l1analysis.modelspec&quot;.
+250815-11:22:52,856 nipype.workflow INFO:
+	 [Node] Setting-up &quot;l1analysis.level1design&quot; in &quot;/output/workingdir/l1analysis/_subject_id_06/level1design&quot;.
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/miniconda-latest/envs/neuro/lib/python3.6/site-packages/nipype/algorithms/modelgen.py:491: UserWarning: loadtxt: Empty input file: &quot;/output/workingdir/l1analysis/_subject_id_06/modelspec/art.sub-06_ses-test_task-fingerfootlips_bold_outliers.txt&quot;
   outindices = np.loadtxt(filename, dtype=int)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230923-07:02:18,336 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>250815-11:22:53,22 nipype.workflow INFO:
+	 [Node] Running &quot;level1design&quot; (&quot;nipype.interfaces.spm.model.Level1Design&quot;)
+250815-11:23:29,390 nipype.workflow INFO:
 	 [Node] Finished &quot;l1analysis.level1design&quot;.
-230923-07:02:18,339 nipype.workflow INFO:
+250815-11:23:29,392 nipype.workflow INFO:
 	 [Node] Setting-up &quot;l1analysis.level1estimate&quot; in &quot;/output/workingdir/l1analysis/_subject_id_06/level1estimate&quot;.
-230923-07:02:18,348 nipype.workflow INFO:
+250815-11:23:29,632 nipype.workflow INFO:
 	 [Node] Running &quot;level1estimate&quot; (&quot;nipype.interfaces.spm.model.EstimateModel&quot;)
-230923-07:02:32,399 nipype.workflow INFO:
+250815-11:24:16,364 nipype.workflow INFO:
 	 [Node] Finished &quot;l1analysis.level1estimate&quot;.
-230923-07:02:32,402 nipype.workflow INFO:
+250815-11:24:16,367 nipype.workflow INFO:
 	 [Node] Setting-up &quot;l1analysis.level1conest&quot; in &quot;/output/workingdir/l1analysis/_subject_id_06/level1conest&quot;.
-230923-07:02:32,425 nipype.workflow INFO:
+250815-11:24:17,823 nipype.workflow INFO:
 	 [Node] Running &quot;level1conest&quot; (&quot;nipype.interfaces.spm.model.EstimateContrast&quot;)
-230923-07:02:42,587 nipype.workflow INFO:
+250815-11:24:31,958 nipype.workflow INFO:
 	 [Node] Finished &quot;l1analysis.level1conest&quot;.
-230923-07:02:42,590 nipype.workflow INFO:
+250815-11:24:31,960 nipype.workflow INFO:
 	 [Node] Setting-up &quot;l1analysis.datasink&quot; in &quot;/output/workingdir/l1analysis/_subject_id_06/datasink&quot;.
-230923-07:02:42,602 nipype.workflow INFO:
+250815-11:24:32,492 nipype.workflow INFO:
 	 [Node] Running &quot;datasink&quot; (&quot;nipype.interfaces.io.DataSink&quot;)
-230923-07:02:42,606 nipype.interface INFO:
+250815-11:24:32,502 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_06/SPM.mat -&gt; /output/datasink/1stLevel/sub-06/SPM.mat
-230923-07:02:42,608 nipype.interface INFO:
+250815-11:24:32,538 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_06/spmT_0001.nii -&gt; /output/datasink/1stLevel/sub-06/spmT_0001.nii
-230923-07:02:42,610 nipype.interface INFO:
+250815-11:24:32,563 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_06/spmT_0002.nii -&gt; /output/datasink/1stLevel/sub-06/spmT_0002.nii
-230923-07:02:42,613 nipype.interface INFO:
+250815-11:24:32,584 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_06/spmT_0003.nii -&gt; /output/datasink/1stLevel/sub-06/spmT_0003.nii
-230923-07:02:42,615 nipype.interface INFO:
+250815-11:24:32,603 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_06/spmT_0004.nii -&gt; /output/datasink/1stLevel/sub-06/spmT_0004.nii
-230923-07:02:42,617 nipype.interface INFO:
+250815-11:24:32,622 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_06/spmT_0005.nii -&gt; /output/datasink/1stLevel/sub-06/spmT_0005.nii
-230923-07:02:42,619 nipype.interface INFO:
+250815-11:24:32,640 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_06/spmF_0006.nii -&gt; /output/datasink/1stLevel/sub-06/spmF_0006.nii
-230923-07:02:42,621 nipype.interface INFO:
+250815-11:24:32,666 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_06/con_0001.nii -&gt; /output/datasink/1stLevel/sub-06/con_0001.nii
-230923-07:02:42,623 nipype.interface INFO:
+250815-11:24:32,715 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_06/con_0002.nii -&gt; /output/datasink/1stLevel/sub-06/con_0002.nii
-230923-07:02:42,625 nipype.interface INFO:
+250815-11:24:32,735 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_06/con_0003.nii -&gt; /output/datasink/1stLevel/sub-06/con_0003.nii
-230923-07:02:42,627 nipype.interface INFO:
+250815-11:24:32,755 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_06/con_0004.nii -&gt; /output/datasink/1stLevel/sub-06/con_0004.nii
-230923-07:02:42,629 nipype.interface INFO:
+250815-11:24:32,774 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_06/con_0005.nii -&gt; /output/datasink/1stLevel/sub-06/con_0005.nii
-230923-07:02:42,631 nipype.interface INFO:
+250815-11:24:32,794 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_06/ess_0006.nii -&gt; /output/datasink/1stLevel/sub-06/ess_0006.nii
-230923-07:02:42,634 nipype.interface INFO:
+250815-11:24:32,812 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_06/spmF_0006.nii -&gt; /output/datasink/1stLevel/sub-06/spmF_0006.nii
-230923-07:02:42,635 nipype.interface INFO:
+250815-11:24:32,832 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_06/ess_0006.nii -&gt; /output/datasink/1stLevel/sub-06/ess_0006.nii
-230923-07:02:42,643 nipype.workflow INFO:
+250815-11:24:33,40 nipype.workflow INFO:
 	 [Node] Finished &quot;l1analysis.datasink&quot;.
-230923-07:02:42,645 nipype.workflow INFO:
+250815-11:24:33,42 nipype.workflow INFO:
 	 [Node] Setting-up &quot;l1analysis.getsubjectinfo&quot; in &quot;/output/workingdir/l1analysis/_subject_id_05/getsubjectinfo&quot;.
-230923-07:02:42,651 nipype.workflow INFO:
+250815-11:24:33,108 nipype.workflow INFO:
 	 [Node] Running &quot;getsubjectinfo&quot; (&quot;nipype.interfaces.utility.wrappers.Function&quot;)
-230923-07:02:42,670 nipype.workflow INFO:
+250815-11:24:33,257 nipype.workflow INFO:
 	 [Node] Finished &quot;l1analysis.getsubjectinfo&quot;.
-230923-07:02:42,672 nipype.workflow INFO:
+250815-11:24:33,260 nipype.workflow INFO:
 	 [Node] Setting-up &quot;l1analysis.selectfiles&quot; in &quot;/output/workingdir/l1analysis/_subject_id_05/selectfiles&quot;.
-230923-07:02:42,677 nipype.workflow INFO:
+250815-11:24:33,326 nipype.workflow INFO:
 	 [Node] Running &quot;selectfiles&quot; (&quot;nipype.interfaces.io.SelectFiles&quot;)
-230923-07:02:42,683 nipype.workflow INFO:
+250815-11:24:33,486 nipype.workflow INFO:
 	 [Node] Finished &quot;l1analysis.selectfiles&quot;.
-230923-07:02:42,685 nipype.workflow INFO:
+250815-11:24:33,488 nipype.workflow INFO:
 	 [Node] Setting-up &quot;l1analysis.modelspec&quot; in &quot;/output/workingdir/l1analysis/_subject_id_05/modelspec&quot;.
-230923-07:02:42,697 nipype.workflow INFO:
+250815-11:24:33,903 nipype.workflow INFO:
 	 [Node] Running &quot;modelspec&quot; (&quot;nipype.algorithms.modelgen.SpecifySPMModel&quot;)
-230923-07:02:42,750 nipype.workflow INFO:
+250815-11:24:34,102 nipype.workflow INFO:
 	 [Node] Finished &quot;l1analysis.modelspec&quot;.
-230923-07:02:42,752 nipype.workflow INFO:
+250815-11:24:34,104 nipype.workflow INFO:
 	 [Node] Setting-up &quot;l1analysis.level1design&quot; in &quot;/output/workingdir/l1analysis/_subject_id_05/level1design&quot;.
-230923-07:02:42,871 nipype.workflow INFO:
+250815-11:24:34,341 nipype.workflow INFO:
 	 [Node] Running &quot;level1design&quot; (&quot;nipype.interfaces.spm.model.Level1Design&quot;)
-230923-07:02:54,149 nipype.workflow INFO:
+250815-11:25:11,308 nipype.workflow INFO:
 	 [Node] Finished &quot;l1analysis.level1design&quot;.
-230923-07:02:54,152 nipype.workflow INFO:
+250815-11:25:11,311 nipype.workflow INFO:
 	 [Node] Setting-up &quot;l1analysis.level1estimate&quot; in &quot;/output/workingdir/l1analysis/_subject_id_05/level1estimate&quot;.
-230923-07:02:54,162 nipype.workflow INFO:
+250815-11:25:11,629 nipype.workflow INFO:
 	 [Node] Running &quot;level1estimate&quot; (&quot;nipype.interfaces.spm.model.EstimateModel&quot;)
-230923-07:03:08,73 nipype.workflow INFO:
+250815-11:25:58,275 nipype.workflow INFO:
 	 [Node] Finished &quot;l1analysis.level1estimate&quot;.
-230923-07:03:08,76 nipype.workflow INFO:
+250815-11:25:58,277 nipype.workflow INFO:
 	 [Node] Setting-up &quot;l1analysis.level1conest&quot; in &quot;/output/workingdir/l1analysis/_subject_id_05/level1conest&quot;.
-230923-07:03:08,100 nipype.workflow INFO:
+250815-11:26:00,186 nipype.workflow INFO:
 	 [Node] Running &quot;level1conest&quot; (&quot;nipype.interfaces.spm.model.EstimateContrast&quot;)
-230923-07:03:18,462 nipype.workflow INFO:
+250815-11:26:14,417 nipype.workflow INFO:
 	 [Node] Finished &quot;l1analysis.level1conest&quot;.
-230923-07:03:18,465 nipype.workflow INFO:
+250815-11:26:14,419 nipype.workflow INFO:
 	 [Node] Setting-up &quot;l1analysis.datasink&quot; in &quot;/output/workingdir/l1analysis/_subject_id_05/datasink&quot;.
-230923-07:03:18,477 nipype.workflow INFO:
+250815-11:26:14,907 nipype.workflow INFO:
 	 [Node] Running &quot;datasink&quot; (&quot;nipype.interfaces.io.DataSink&quot;)
-230923-07:03:18,480 nipype.interface INFO:
+250815-11:26:14,918 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_05/SPM.mat -&gt; /output/datasink/1stLevel/sub-05/SPM.mat
-230923-07:03:18,482 nipype.interface INFO:
+250815-11:26:14,944 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_05/spmT_0001.nii -&gt; /output/datasink/1stLevel/sub-05/spmT_0001.nii
-230923-07:03:18,484 nipype.interface INFO:
+250815-11:26:14,965 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_05/spmT_0002.nii -&gt; /output/datasink/1stLevel/sub-05/spmT_0002.nii
-230923-07:03:18,486 nipype.interface INFO:
+250815-11:26:14,987 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_05/spmT_0003.nii -&gt; /output/datasink/1stLevel/sub-05/spmT_0003.nii
-230923-07:03:18,488 nipype.interface INFO:
+250815-11:26:15,5 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_05/spmT_0004.nii -&gt; /output/datasink/1stLevel/sub-05/spmT_0004.nii
-230923-07:03:18,489 nipype.interface INFO:
+250815-11:26:15,21 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_05/spmT_0005.nii -&gt; /output/datasink/1stLevel/sub-05/spmT_0005.nii
-230923-07:03:18,491 nipype.interface INFO:
+250815-11:26:15,41 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_05/spmF_0006.nii -&gt; /output/datasink/1stLevel/sub-05/spmF_0006.nii
-230923-07:03:18,493 nipype.interface INFO:
+250815-11:26:15,61 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_05/con_0001.nii -&gt; /output/datasink/1stLevel/sub-05/con_0001.nii
-230923-07:03:18,494 nipype.interface INFO:
+250815-11:26:15,85 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_05/con_0002.nii -&gt; /output/datasink/1stLevel/sub-05/con_0002.nii
-230923-07:03:18,496 nipype.interface INFO:
+250815-11:26:15,111 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_05/con_0003.nii -&gt; /output/datasink/1stLevel/sub-05/con_0003.nii
-230923-07:03:18,498 nipype.interface INFO:
+250815-11:26:15,140 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_05/con_0004.nii -&gt; /output/datasink/1stLevel/sub-05/con_0004.nii
-230923-07:03:18,499 nipype.interface INFO:
+250815-11:26:15,165 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_05/con_0005.nii -&gt; /output/datasink/1stLevel/sub-05/con_0005.nii
-230923-07:03:18,501 nipype.interface INFO:
+250815-11:26:15,189 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_05/ess_0006.nii -&gt; /output/datasink/1stLevel/sub-05/ess_0006.nii
-230923-07:03:18,503 nipype.interface INFO:
+250815-11:26:15,210 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_05/spmF_0006.nii -&gt; /output/datasink/1stLevel/sub-05/spmF_0006.nii
-230923-07:03:18,504 nipype.interface INFO:
+250815-11:26:15,231 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_05/ess_0006.nii -&gt; /output/datasink/1stLevel/sub-05/ess_0006.nii
-230923-07:03:18,510 nipype.workflow INFO:
+250815-11:26:15,452 nipype.workflow INFO:
 	 [Node] Finished &quot;l1analysis.datasink&quot;.
-230923-07:03:18,511 nipype.workflow INFO:
+250815-11:26:15,455 nipype.workflow INFO:
 	 [Node] Setting-up &quot;l1analysis.getsubjectinfo&quot; in &quot;/output/workingdir/l1analysis/_subject_id_04/getsubjectinfo&quot;.
-230923-07:03:18,515 nipype.workflow INFO:
+250815-11:26:15,524 nipype.workflow INFO:
 	 [Node] Running &quot;getsubjectinfo&quot; (&quot;nipype.interfaces.utility.wrappers.Function&quot;)
-230923-07:03:18,530 nipype.workflow INFO:
+250815-11:26:15,639 nipype.workflow INFO:
 	 [Node] Finished &quot;l1analysis.getsubjectinfo&quot;.
-230923-07:03:18,532 nipype.workflow INFO:
+250815-11:26:15,641 nipype.workflow INFO:
 	 [Node] Setting-up &quot;l1analysis.selectfiles&quot; in &quot;/output/workingdir/l1analysis/_subject_id_04/selectfiles&quot;.
-230923-07:03:18,537 nipype.workflow INFO:
+250815-11:26:15,699 nipype.workflow INFO:
 	 [Node] Running &quot;selectfiles&quot; (&quot;nipype.interfaces.io.SelectFiles&quot;)
-230923-07:03:18,542 nipype.workflow INFO:
+250815-11:26:15,830 nipype.workflow INFO:
 	 [Node] Finished &quot;l1analysis.selectfiles&quot;.
-230923-07:03:18,544 nipype.workflow INFO:
+250815-11:26:15,831 nipype.workflow INFO:
 	 [Node] Setting-up &quot;l1analysis.modelspec&quot; in &quot;/output/workingdir/l1analysis/_subject_id_04/modelspec&quot;.
-230923-07:03:18,554 nipype.workflow INFO:
+250815-11:26:16,238 nipype.workflow INFO:
 	 [Node] Running &quot;modelspec&quot; (&quot;nipype.algorithms.modelgen.SpecifySPMModel&quot;)
-230923-07:03:18,622 nipype.workflow INFO:
+250815-11:26:16,423 nipype.workflow INFO:
 	 [Node] Finished &quot;l1analysis.modelspec&quot;.
-230923-07:03:18,624 nipype.workflow INFO:
+250815-11:26:16,425 nipype.workflow INFO:
 	 [Node] Setting-up &quot;l1analysis.level1design&quot; in &quot;/output/workingdir/l1analysis/_subject_id_04/level1design&quot;.
-230923-07:03:18,742 nipype.workflow INFO:
+250815-11:26:16,721 nipype.workflow INFO:
 	 [Node] Running &quot;level1design&quot; (&quot;nipype.interfaces.spm.model.Level1Design&quot;)
-230923-07:03:30,331 nipype.workflow INFO:
+250815-11:26:57,29 nipype.workflow INFO:
 	 [Node] Finished &quot;l1analysis.level1design&quot;.
-230923-07:03:30,333 nipype.workflow INFO:
+250815-11:26:57,33 nipype.workflow INFO:
 	 [Node] Setting-up &quot;l1analysis.level1estimate&quot; in &quot;/output/workingdir/l1analysis/_subject_id_04/level1estimate&quot;.
-230923-07:03:30,344 nipype.workflow INFO:
+250815-11:26:57,376 nipype.workflow INFO:
 	 [Node] Running &quot;level1estimate&quot; (&quot;nipype.interfaces.spm.model.EstimateModel&quot;)
-230923-07:03:44,957 nipype.workflow INFO:
+250815-11:27:45,476 nipype.workflow INFO:
 	 [Node] Finished &quot;l1analysis.level1estimate&quot;.
-230923-07:03:44,959 nipype.workflow INFO:
+250815-11:27:45,480 nipype.workflow INFO:
 	 [Node] Setting-up &quot;l1analysis.level1conest&quot; in &quot;/output/workingdir/l1analysis/_subject_id_04/level1conest&quot;.
-230923-07:03:44,985 nipype.workflow INFO:
+250815-11:27:47,680 nipype.workflow INFO:
 	 [Node] Running &quot;level1conest&quot; (&quot;nipype.interfaces.spm.model.EstimateContrast&quot;)
-230923-07:03:55,531 nipype.workflow INFO:
+250815-11:28:03,828 nipype.workflow INFO:
 	 [Node] Finished &quot;l1analysis.level1conest&quot;.
-230923-07:03:55,534 nipype.workflow INFO:
+250815-11:28:03,831 nipype.workflow INFO:
 	 [Node] Setting-up &quot;l1analysis.datasink&quot; in &quot;/output/workingdir/l1analysis/_subject_id_04/datasink&quot;.
-230923-07:03:55,544 nipype.workflow INFO:
+250815-11:28:04,365 nipype.workflow INFO:
 	 [Node] Running &quot;datasink&quot; (&quot;nipype.interfaces.io.DataSink&quot;)
-230923-07:03:55,546 nipype.interface INFO:
+250815-11:28:04,372 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_04/SPM.mat -&gt; /output/datasink/1stLevel/sub-04/SPM.mat
-230923-07:03:55,548 nipype.interface INFO:
+250815-11:28:04,396 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_04/spmT_0001.nii -&gt; /output/datasink/1stLevel/sub-04/spmT_0001.nii
-230923-07:03:55,550 nipype.interface INFO:
+250815-11:28:04,413 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_04/spmT_0002.nii -&gt; /output/datasink/1stLevel/sub-04/spmT_0002.nii
-230923-07:03:55,551 nipype.interface INFO:
+250815-11:28:04,430 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_04/spmT_0003.nii -&gt; /output/datasink/1stLevel/sub-04/spmT_0003.nii
-230923-07:03:55,553 nipype.interface INFO:
+250815-11:28:04,447 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_04/spmT_0004.nii -&gt; /output/datasink/1stLevel/sub-04/spmT_0004.nii
-230923-07:03:55,554 nipype.interface INFO:
+250815-11:28:04,464 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_04/spmT_0005.nii -&gt; /output/datasink/1stLevel/sub-04/spmT_0005.nii
-230923-07:03:55,555 nipype.interface INFO:
+250815-11:28:04,480 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_04/spmF_0006.nii -&gt; /output/datasink/1stLevel/sub-04/spmF_0006.nii
-230923-07:03:55,557 nipype.interface INFO:
+250815-11:28:04,496 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_04/con_0001.nii -&gt; /output/datasink/1stLevel/sub-04/con_0001.nii
-230923-07:03:55,558 nipype.interface INFO:
+250815-11:28:04,512 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_04/con_0002.nii -&gt; /output/datasink/1stLevel/sub-04/con_0002.nii
-230923-07:03:55,560 nipype.interface INFO:
+250815-11:28:04,527 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_04/con_0003.nii -&gt; /output/datasink/1stLevel/sub-04/con_0003.nii
-230923-07:03:55,561 nipype.interface INFO:
+250815-11:28:04,544 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_04/con_0004.nii -&gt; /output/datasink/1stLevel/sub-04/con_0004.nii
-230923-07:03:55,563 nipype.interface INFO:
+250815-11:28:04,559 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_04/con_0005.nii -&gt; /output/datasink/1stLevel/sub-04/con_0005.nii
-230923-07:03:55,564 nipype.interface INFO:
+250815-11:28:04,576 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_04/ess_0006.nii -&gt; /output/datasink/1stLevel/sub-04/ess_0006.nii
-230923-07:03:55,566 nipype.interface INFO:
+250815-11:28:04,592 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_04/spmF_0006.nii -&gt; /output/datasink/1stLevel/sub-04/spmF_0006.nii
-230923-07:03:55,567 nipype.interface INFO:
+250815-11:28:04,608 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_04/ess_0006.nii -&gt; /output/datasink/1stLevel/sub-04/ess_0006.nii
-230923-07:03:55,574 nipype.workflow INFO:
+250815-11:28:04,800 nipype.workflow INFO:
 	 [Node] Finished &quot;l1analysis.datasink&quot;.
-230923-07:03:55,576 nipype.workflow INFO:
+250815-11:28:04,802 nipype.workflow INFO:
 	 [Node] Setting-up &quot;l1analysis.getsubjectinfo&quot; in &quot;/output/workingdir/l1analysis/_subject_id_03/getsubjectinfo&quot;.
-230923-07:03:55,579 nipype.workflow INFO:
+250815-11:28:04,859 nipype.workflow INFO:
 	 [Node] Running &quot;getsubjectinfo&quot; (&quot;nipype.interfaces.utility.wrappers.Function&quot;)
-230923-07:03:55,592 nipype.workflow INFO:
+250815-11:28:04,964 nipype.workflow INFO:
 	 [Node] Finished &quot;l1analysis.getsubjectinfo&quot;.
-230923-07:03:55,594 nipype.workflow INFO:
+250815-11:28:04,966 nipype.workflow INFO:
 	 [Node] Setting-up &quot;l1analysis.selectfiles&quot; in &quot;/output/workingdir/l1analysis/_subject_id_03/selectfiles&quot;.
-230923-07:03:55,598 nipype.workflow INFO:
+250815-11:28:05,19 nipype.workflow INFO:
 	 [Node] Running &quot;selectfiles&quot; (&quot;nipype.interfaces.io.SelectFiles&quot;)
-230923-07:03:55,603 nipype.workflow INFO:
+250815-11:28:05,216 nipype.workflow INFO:
 	 [Node] Finished &quot;l1analysis.selectfiles&quot;.
-230923-07:03:55,604 nipype.workflow INFO:
+250815-11:28:05,219 nipype.workflow INFO:
 	 [Node] Setting-up &quot;l1analysis.modelspec&quot; in &quot;/output/workingdir/l1analysis/_subject_id_03/modelspec&quot;.
-230923-07:03:55,613 nipype.workflow INFO:
+250815-11:28:05,705 nipype.workflow INFO:
 	 [Node] Running &quot;modelspec&quot; (&quot;nipype.algorithms.modelgen.SpecifySPMModel&quot;)
-230923-07:03:55,656 nipype.workflow INFO:
+250815-11:28:05,922 nipype.workflow INFO:
 	 [Node] Finished &quot;l1analysis.modelspec&quot;.
-230923-07:03:55,659 nipype.workflow INFO:
+250815-11:28:05,924 nipype.workflow INFO:
 	 [Node] Setting-up &quot;l1analysis.level1design&quot; in &quot;/output/workingdir/l1analysis/_subject_id_03/level1design&quot;.
-230923-07:03:55,724 nipype.workflow INFO:
+250815-11:28:06,144 nipype.workflow INFO:
 	 [Node] Running &quot;level1design&quot; (&quot;nipype.interfaces.spm.model.Level1Design&quot;)
-230923-07:04:06,544 nipype.workflow INFO:
+250815-11:28:45,418 nipype.workflow INFO:
 	 [Node] Finished &quot;l1analysis.level1design&quot;.
-230923-07:04:06,547 nipype.workflow INFO:
+250815-11:28:45,421 nipype.workflow INFO:
 	 [Node] Setting-up &quot;l1analysis.level1estimate&quot; in &quot;/output/workingdir/l1analysis/_subject_id_03/level1estimate&quot;.
-230923-07:04:06,557 nipype.workflow INFO:
+250815-11:28:45,710 nipype.workflow INFO:
 	 [Node] Running &quot;level1estimate&quot; (&quot;nipype.interfaces.spm.model.EstimateModel&quot;)
-230923-07:04:21,201 nipype.workflow INFO:
+250815-11:29:34,279 nipype.workflow INFO:
 	 [Node] Finished &quot;l1analysis.level1estimate&quot;.
-230923-07:04:21,203 nipype.workflow INFO:
+250815-11:29:34,282 nipype.workflow INFO:
 	 [Node] Setting-up &quot;l1analysis.level1conest&quot; in &quot;/output/workingdir/l1analysis/_subject_id_03/level1conest&quot;.
-230923-07:04:21,226 nipype.workflow INFO:
+250815-11:29:35,892 nipype.workflow INFO:
 	 [Node] Running &quot;level1conest&quot; (&quot;nipype.interfaces.spm.model.EstimateContrast&quot;)
-230923-07:04:32,121 nipype.workflow INFO:
+250815-11:29:51,455 nipype.workflow INFO:
 	 [Node] Finished &quot;l1analysis.level1conest&quot;.
-230923-07:04:32,124 nipype.workflow INFO:
+250815-11:29:51,457 nipype.workflow INFO:
 	 [Node] Setting-up &quot;l1analysis.datasink&quot; in &quot;/output/workingdir/l1analysis/_subject_id_03/datasink&quot;.
-230923-07:04:32,136 nipype.workflow INFO:
+250815-11:29:52,81 nipype.workflow INFO:
 	 [Node] Running &quot;datasink&quot; (&quot;nipype.interfaces.io.DataSink&quot;)
-230923-07:04:32,138 nipype.interface INFO:
+250815-11:29:52,93 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_03/SPM.mat -&gt; /output/datasink/1stLevel/sub-03/SPM.mat
-230923-07:04:32,140 nipype.interface INFO:
+250815-11:29:52,123 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_03/spmT_0001.nii -&gt; /output/datasink/1stLevel/sub-03/spmT_0001.nii
-230923-07:04:32,142 nipype.interface INFO:
+250815-11:29:52,145 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_03/spmT_0002.nii -&gt; /output/datasink/1stLevel/sub-03/spmT_0002.nii
-230923-07:04:32,143 nipype.interface INFO:
+250815-11:29:52,168 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_03/spmT_0003.nii -&gt; /output/datasink/1stLevel/sub-03/spmT_0003.nii
-230923-07:04:32,145 nipype.interface INFO:
+250815-11:29:52,189 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_03/spmT_0004.nii -&gt; /output/datasink/1stLevel/sub-03/spmT_0004.nii
-230923-07:04:32,147 nipype.interface INFO:
+250815-11:29:52,212 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_03/spmT_0005.nii -&gt; /output/datasink/1stLevel/sub-03/spmT_0005.nii
-230923-07:04:32,149 nipype.interface INFO:
+250815-11:29:52,233 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_03/spmF_0006.nii -&gt; /output/datasink/1stLevel/sub-03/spmF_0006.nii
-230923-07:04:32,150 nipype.interface INFO:
+250815-11:29:52,256 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_03/con_0001.nii -&gt; /output/datasink/1stLevel/sub-03/con_0001.nii
-230923-07:04:32,152 nipype.interface INFO:
+250815-11:29:52,277 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_03/con_0002.nii -&gt; /output/datasink/1stLevel/sub-03/con_0002.nii
-230923-07:04:32,154 nipype.interface INFO:
+250815-11:29:52,320 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_03/con_0003.nii -&gt; /output/datasink/1stLevel/sub-03/con_0003.nii
-230923-07:04:32,155 nipype.interface INFO:
+250815-11:29:52,345 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_03/con_0004.nii -&gt; /output/datasink/1stLevel/sub-03/con_0004.nii
-230923-07:04:32,157 nipype.interface INFO:
+250815-11:29:52,364 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_03/con_0005.nii -&gt; /output/datasink/1stLevel/sub-03/con_0005.nii
-230923-07:04:32,159 nipype.interface INFO:
+250815-11:29:52,385 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_03/ess_0006.nii -&gt; /output/datasink/1stLevel/sub-03/ess_0006.nii
-230923-07:04:32,160 nipype.interface INFO:
+250815-11:29:52,408 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_03/spmF_0006.nii -&gt; /output/datasink/1stLevel/sub-03/spmF_0006.nii
-230923-07:04:32,162 nipype.interface INFO:
+250815-11:29:52,429 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_03/ess_0006.nii -&gt; /output/datasink/1stLevel/sub-03/ess_0006.nii
-230923-07:04:32,167 nipype.workflow INFO:
+250815-11:29:52,676 nipype.workflow INFO:
 	 [Node] Finished &quot;l1analysis.datasink&quot;.
-230923-07:04:32,168 nipype.workflow INFO:
+250815-11:29:52,679 nipype.workflow INFO:
 	 [Node] Setting-up &quot;l1analysis.getsubjectinfo&quot; in &quot;/output/workingdir/l1analysis/_subject_id_02/getsubjectinfo&quot;.
-230923-07:04:32,173 nipype.workflow INFO:
-	 [Node] Running &quot;getsubjectinfo&quot; (&quot;nipype.interfaces.utility.wrappers.Function&quot;)
-230923-07:04:32,193 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.getsubjectinfo&quot;.
-230923-07:04:32,195 nipype.workflow INFO:
+250815-11:29:52,757 nipype.workflow INFO:
+	 [Node] Cached &quot;l1analysis.getsubjectinfo&quot; - collecting precomputed outputs
+250815-11:29:52,759 nipype.workflow INFO:
+	 [Node] &quot;l1analysis.getsubjectinfo&quot; found cached.
+250815-11:29:52,762 nipype.workflow INFO:
 	 [Node] Setting-up &quot;l1analysis.selectfiles&quot; in &quot;/output/workingdir/l1analysis/_subject_id_02/selectfiles&quot;.
-230923-07:04:32,200 nipype.workflow INFO:
+250815-11:29:52,891 nipype.workflow INFO:
 	 [Node] Running &quot;selectfiles&quot; (&quot;nipype.interfaces.io.SelectFiles&quot;)
-230923-07:04:32,205 nipype.workflow INFO:
+250815-11:29:53,40 nipype.workflow INFO:
 	 [Node] Finished &quot;l1analysis.selectfiles&quot;.
-230923-07:04:32,207 nipype.workflow INFO:
+250815-11:29:53,42 nipype.workflow INFO:
 	 [Node] Setting-up &quot;l1analysis.modelspec&quot; in &quot;/output/workingdir/l1analysis/_subject_id_02/modelspec&quot;.
-230923-07:04:32,217 nipype.workflow INFO:
-	 [Node] Running &quot;modelspec&quot; (&quot;nipype.algorithms.modelgen.SpecifySPMModel&quot;)
-230923-07:04:32,263 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.modelspec&quot;.
-230923-07:04:32,265 nipype.workflow INFO:
+250815-11:29:53,321 nipype.workflow INFO:
+	 [Node] Cached &quot;l1analysis.modelspec&quot; - collecting precomputed outputs
+250815-11:29:53,324 nipype.workflow INFO:
+	 [Node] &quot;l1analysis.modelspec&quot; found cached.
+250815-11:29:53,327 nipype.workflow INFO:
 	 [Node] Setting-up &quot;l1analysis.level1design&quot; in &quot;/output/workingdir/l1analysis/_subject_id_02/level1design&quot;.
-230923-07:04:32,336 nipype.workflow INFO:
-	 [Node] Running &quot;level1design&quot; (&quot;nipype.interfaces.spm.model.Level1Design&quot;)
-230923-07:04:43,94 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.level1design&quot;.
-230923-07:04:43,96 nipype.workflow INFO:
+250815-11:29:53,508 nipype.workflow INFO:
+	 [Node] Cached &quot;l1analysis.level1design&quot; - collecting precomputed outputs
+250815-11:29:53,510 nipype.workflow INFO:
+	 [Node] &quot;l1analysis.level1design&quot; found cached.
+250815-11:29:53,512 nipype.workflow INFO:
 	 [Node] Setting-up &quot;l1analysis.level1estimate&quot; in &quot;/output/workingdir/l1analysis/_subject_id_02/level1estimate&quot;.
-230923-07:04:43,106 nipype.workflow INFO:
-	 [Node] Running &quot;level1estimate&quot; (&quot;nipype.interfaces.spm.model.EstimateModel&quot;)
-230923-07:04:57,438 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.level1estimate&quot;.
-230923-07:04:57,440 nipype.workflow INFO:
+250815-11:29:53,825 nipype.workflow INFO:
+	 [Node] Cached &quot;l1analysis.level1estimate&quot; - collecting precomputed outputs
+250815-11:29:53,827 nipype.workflow INFO:
+	 [Node] &quot;l1analysis.level1estimate&quot; found cached.
+250815-11:29:53,828 nipype.workflow INFO:
 	 [Node] Setting-up &quot;l1analysis.level1conest&quot; in &quot;/output/workingdir/l1analysis/_subject_id_02/level1conest&quot;.
-230923-07:04:57,465 nipype.workflow INFO:
-	 [Node] Running &quot;level1conest&quot; (&quot;nipype.interfaces.spm.model.EstimateContrast&quot;)
-230923-07:05:07,359 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.level1conest&quot;.
-230923-07:05:07,362 nipype.workflow INFO:
+250815-11:29:55,247 nipype.workflow INFO:
+	 [Node] Cached &quot;l1analysis.level1conest&quot; - collecting precomputed outputs
+250815-11:29:55,249 nipype.workflow INFO:
+	 [Node] &quot;l1analysis.level1conest&quot; found cached.
+250815-11:29:55,252 nipype.workflow INFO:
 	 [Node] Setting-up &quot;l1analysis.datasink&quot; in &quot;/output/workingdir/l1analysis/_subject_id_02/datasink&quot;.
-230923-07:05:07,374 nipype.workflow INFO:
+250815-11:29:56,22 nipype.workflow INFO:
 	 [Node] Running &quot;datasink&quot; (&quot;nipype.interfaces.io.DataSink&quot;)
-230923-07:05:07,376 nipype.interface INFO:
+250815-11:29:56,30 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_02/SPM.mat -&gt; /output/datasink/1stLevel/sub-02/SPM.mat
-230923-07:05:07,379 nipype.interface INFO:
+250815-11:29:56,52 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_02/spmT_0001.nii -&gt; /output/datasink/1stLevel/sub-02/spmT_0001.nii
-230923-07:05:07,380 nipype.interface INFO:
+250815-11:29:56,88 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_02/spmT_0002.nii -&gt; /output/datasink/1stLevel/sub-02/spmT_0002.nii
-230923-07:05:07,382 nipype.interface INFO:
+250815-11:29:56,109 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_02/spmT_0003.nii -&gt; /output/datasink/1stLevel/sub-02/spmT_0003.nii
-230923-07:05:07,384 nipype.interface INFO:
+250815-11:29:56,156 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_02/spmT_0004.nii -&gt; /output/datasink/1stLevel/sub-02/spmT_0004.nii
-230923-07:05:07,385 nipype.interface INFO:
+250815-11:29:56,177 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_02/spmT_0005.nii -&gt; /output/datasink/1stLevel/sub-02/spmT_0005.nii
-230923-07:05:07,387 nipype.interface INFO:
+250815-11:29:56,198 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_02/spmF_0006.nii -&gt; /output/datasink/1stLevel/sub-02/spmF_0006.nii
-230923-07:05:07,389 nipype.interface INFO:
+250815-11:29:56,219 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_02/con_0001.nii -&gt; /output/datasink/1stLevel/sub-02/con_0001.nii
-230923-07:05:07,391 nipype.interface INFO:
+250815-11:29:56,238 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_02/con_0002.nii -&gt; /output/datasink/1stLevel/sub-02/con_0002.nii
-230923-07:05:07,392 nipype.interface INFO:
+250815-11:29:56,256 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_02/con_0003.nii -&gt; /output/datasink/1stLevel/sub-02/con_0003.nii
-230923-07:05:07,394 nipype.interface INFO:
+250815-11:29:56,277 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_02/con_0004.nii -&gt; /output/datasink/1stLevel/sub-02/con_0004.nii
-230923-07:05:07,395 nipype.interface INFO:
+250815-11:29:56,296 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_02/con_0005.nii -&gt; /output/datasink/1stLevel/sub-02/con_0005.nii
-230923-07:05:07,396 nipype.interface INFO:
+250815-11:29:56,316 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_02/ess_0006.nii -&gt; /output/datasink/1stLevel/sub-02/ess_0006.nii
-230923-07:05:07,399 nipype.interface INFO:
+250815-11:29:56,335 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_02/spmF_0006.nii -&gt; /output/datasink/1stLevel/sub-02/spmF_0006.nii
-230923-07:05:07,400 nipype.interface INFO:
+250815-11:29:56,353 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_02/ess_0006.nii -&gt; /output/datasink/1stLevel/sub-02/ess_0006.nii
-230923-07:05:07,406 nipype.workflow INFO:
+250815-11:29:56,606 nipype.workflow INFO:
 	 [Node] Finished &quot;l1analysis.datasink&quot;.
-230923-07:05:07,407 nipype.workflow INFO:
+250815-11:29:56,609 nipype.workflow INFO:
 	 [Node] Setting-up &quot;l1analysis.getsubjectinfo&quot; in &quot;/output/workingdir/l1analysis/_subject_id_01/getsubjectinfo&quot;.
-230923-07:05:07,411 nipype.workflow INFO:
-	 [Node] Running &quot;getsubjectinfo&quot; (&quot;nipype.interfaces.utility.wrappers.Function&quot;)
-230923-07:05:07,426 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.getsubjectinfo&quot;.
-230923-07:05:07,428 nipype.workflow INFO:
+250815-11:29:56,682 nipype.workflow INFO:
+	 [Node] Cached &quot;l1analysis.getsubjectinfo&quot; - collecting precomputed outputs
+250815-11:29:56,684 nipype.workflow INFO:
+	 [Node] &quot;l1analysis.getsubjectinfo&quot; found cached.
+250815-11:29:56,686 nipype.workflow INFO:
 	 [Node] Setting-up &quot;l1analysis.selectfiles&quot; in &quot;/output/workingdir/l1analysis/_subject_id_01/selectfiles&quot;.
-230923-07:05:07,432 nipype.workflow INFO:
+250815-11:29:56,825 nipype.workflow INFO:
 	 [Node] Running &quot;selectfiles&quot; (&quot;nipype.interfaces.io.SelectFiles&quot;)
-230923-07:05:07,438 nipype.workflow INFO:
+250815-11:29:57,14 nipype.workflow INFO:
 	 [Node] Finished &quot;l1analysis.selectfiles&quot;.
-230923-07:05:07,439 nipype.workflow INFO:
+250815-11:29:57,15 nipype.workflow INFO:
 	 [Node] Setting-up &quot;l1analysis.modelspec&quot; in &quot;/output/workingdir/l1analysis/_subject_id_01/modelspec&quot;.
-230923-07:05:07,449 nipype.workflow INFO:
-	 [Node] Running &quot;modelspec&quot; (&quot;nipype.algorithms.modelgen.SpecifySPMModel&quot;)
-230923-07:05:07,487 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.modelspec&quot;.
-230923-07:05:07,489 nipype.workflow INFO:
+250815-11:29:57,247 nipype.workflow INFO:
+	 [Node] Cached &quot;l1analysis.modelspec&quot; - collecting precomputed outputs
+250815-11:29:57,249 nipype.workflow INFO:
+	 [Node] &quot;l1analysis.modelspec&quot; found cached.
+250815-11:29:57,255 nipype.workflow INFO:
 	 [Node] Setting-up &quot;l1analysis.level1design&quot; in &quot;/output/workingdir/l1analysis/_subject_id_01/level1design&quot;.
-230923-07:05:07,577 nipype.workflow INFO:
-	 [Node] Running &quot;level1design&quot; (&quot;nipype.interfaces.spm.model.Level1Design&quot;)
-230923-07:05:17,327 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.level1design&quot;.
-230923-07:05:17,330 nipype.workflow INFO:
+250815-11:29:57,472 nipype.workflow INFO:
+	 [Node] Cached &quot;l1analysis.level1design&quot; - collecting precomputed outputs
+250815-11:29:57,474 nipype.workflow INFO:
+	 [Node] &quot;l1analysis.level1design&quot; found cached.
+250815-11:29:57,477 nipype.workflow INFO:
 	 [Node] Setting-up &quot;l1analysis.level1estimate&quot; in &quot;/output/workingdir/l1analysis/_subject_id_01/level1estimate&quot;.
-230923-07:05:17,339 nipype.workflow INFO:
-	 [Node] Running &quot;level1estimate&quot; (&quot;nipype.interfaces.spm.model.EstimateModel&quot;)
-230923-07:05:31,172 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.level1estimate&quot;.
-230923-07:05:31,175 nipype.workflow INFO:
+250815-11:29:57,867 nipype.workflow INFO:
+	 [Node] Cached &quot;l1analysis.level1estimate&quot; - collecting precomputed outputs
+250815-11:29:57,869 nipype.workflow INFO:
+	 [Node] &quot;l1analysis.level1estimate&quot; found cached.
+250815-11:29:57,872 nipype.workflow INFO:
 	 [Node] Setting-up &quot;l1analysis.level1conest&quot; in &quot;/output/workingdir/l1analysis/_subject_id_01/level1conest&quot;.
-230923-07:05:31,200 nipype.workflow INFO:
-	 [Node] Running &quot;level1conest&quot; (&quot;nipype.interfaces.spm.model.EstimateContrast&quot;)
-230923-07:05:41,759 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.level1conest&quot;.
-230923-07:05:41,762 nipype.workflow INFO:
+250815-11:29:59,78 nipype.workflow INFO:
+	 [Node] Cached &quot;l1analysis.level1conest&quot; - collecting precomputed outputs
+250815-11:29:59,80 nipype.workflow INFO:
+	 [Node] &quot;l1analysis.level1conest&quot; found cached.
+250815-11:29:59,82 nipype.workflow INFO:
 	 [Node] Setting-up &quot;l1analysis.datasink&quot; in &quot;/output/workingdir/l1analysis/_subject_id_01/datasink&quot;.
-230923-07:05:41,773 nipype.workflow INFO:
+250815-11:29:59,701 nipype.workflow INFO:
 	 [Node] Running &quot;datasink&quot; (&quot;nipype.interfaces.io.DataSink&quot;)
-230923-07:05:41,775 nipype.interface INFO:
+250815-11:29:59,709 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_01/SPM.mat -&gt; /output/datasink/1stLevel/sub-01/SPM.mat
-230923-07:05:41,777 nipype.interface INFO:
+250815-11:29:59,731 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_01/spmT_0001.nii -&gt; /output/datasink/1stLevel/sub-01/spmT_0001.nii
-230923-07:05:41,779 nipype.interface INFO:
+250815-11:29:59,752 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_01/spmT_0002.nii -&gt; /output/datasink/1stLevel/sub-01/spmT_0002.nii
-230923-07:05:41,780 nipype.interface INFO:
+250815-11:29:59,775 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_01/spmT_0003.nii -&gt; /output/datasink/1stLevel/sub-01/spmT_0003.nii
-230923-07:05:41,783 nipype.interface INFO:
+250815-11:29:59,794 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_01/spmT_0004.nii -&gt; /output/datasink/1stLevel/sub-01/spmT_0004.nii
-230923-07:05:41,784 nipype.interface INFO:
+250815-11:29:59,815 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_01/spmT_0005.nii -&gt; /output/datasink/1stLevel/sub-01/spmT_0005.nii
-230923-07:05:41,786 nipype.interface INFO:
+250815-11:29:59,836 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_01/spmF_0006.nii -&gt; /output/datasink/1stLevel/sub-01/spmF_0006.nii
-230923-07:05:41,788 nipype.interface INFO:
+250815-11:29:59,857 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_01/con_0001.nii -&gt; /output/datasink/1stLevel/sub-01/con_0001.nii
-230923-07:05:41,789 nipype.interface INFO:
+250815-11:29:59,875 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_01/con_0002.nii -&gt; /output/datasink/1stLevel/sub-01/con_0002.nii
-230923-07:05:41,791 nipype.interface INFO:
+250815-11:29:59,895 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_01/con_0003.nii -&gt; /output/datasink/1stLevel/sub-01/con_0003.nii
-230923-07:05:41,793 nipype.interface INFO:
+250815-11:29:59,918 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_01/con_0004.nii -&gt; /output/datasink/1stLevel/sub-01/con_0004.nii
-230923-07:05:41,794 nipype.interface INFO:
+250815-11:29:59,940 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_01/con_0005.nii -&gt; /output/datasink/1stLevel/sub-01/con_0005.nii
-230923-07:05:41,796 nipype.interface INFO:
+250815-11:29:59,960 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_01/ess_0006.nii -&gt; /output/datasink/1stLevel/sub-01/ess_0006.nii
-230923-07:05:41,798 nipype.interface INFO:
+250815-11:29:59,981 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_01/spmF_0006.nii -&gt; /output/datasink/1stLevel/sub-01/spmF_0006.nii
-230923-07:05:41,799 nipype.interface INFO:
+250815-11:30:00,2 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_01/ess_0006.nii -&gt; /output/datasink/1stLevel/sub-01/ess_0006.nii
-230923-07:05:41,806 nipype.workflow INFO:
+250815-11:30:00,248 nipype.workflow INFO:
 	 [Node] Finished &quot;l1analysis.datasink&quot;.
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;networkx.classes.digraph.DiGraph at 0x7f57786f80f0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;networkx.classes.digraph.DiGraph at 0x7f17fec6beb8&gt;
 </pre></div>
 </div>
 </div>
@@ -1996,7 +1882,7 @@ Now that the theory out of our way we can see how it is done in Nipype.</p>
 <p>Let’s look at the contrasts of one subject that we’ve just computed.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">nilearn.plotting</span><span class="w"> </span><span class="kn">import</span> <span class="n">plot_stat_map</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nilearn.plotting</span> <span class="kn">import</span> <span class="n">plot_stat_map</span>
 
 <span class="c1">#Reminder the tests were </span>
 <span class="n">test_to_number</span> <span class="o">=</span> <span class="p">{</span>
@@ -2048,6 +1934,7 @@ Now that the theory out of our way we can see how it is done in Nipype.</p>
 <img alt="../_images/5c245779146ef77a3013b8d90029aa5c1c278c56ec4afba2bf2fe11ed60073cd.png" src="../_images/5c245779146ef77a3013b8d90029aa5c1c278c56ec4afba2bf2fe11ed60073cd.png" />
 </div>
 </div>
+<p>The results of the <code class="docutils literal notranslate"><span class="pre">F-test</span></code> are displayed “strangely” for any reason.</p>
 <p><strong>Sources:</strong></p>
 <p><a class="reference external" href="https://www.fmrib.ox.ac.uk/primers/appendices/glm.pdf">General Linear Model for Neuroimaging</a></p>
 <p><a class="reference external" href="https://practical-neuroimaging.github.io/on_convolution.html">Convolution</a></p>

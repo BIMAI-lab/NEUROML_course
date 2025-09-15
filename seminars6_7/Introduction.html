@@ -28,7 +28,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
@@ -244,8 +244,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../seminar4/seminar4_3_freesurfer.html">FREESURFER</a></li>
 
 
-<li class="toctree-l1"><a class="reference external" href="https://drive.google.com/file/d/1HuS7ChgQvch4vrD8gfITGUZP9E8hZ8Hw/view?usp=sharing">Seminar 5.1. MRI classification with 3D CNN</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://drive.google.com/file/d/1m7mWY0LI2M6PdevJf5rLCdm-WrAOoXJ-/view?usp=sharing">Seminar 5.2. MRI segmentation with 3D U-net</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://drive.google.com/file/d/1XMxW_Y73mbMGFIaWY6YlEfscD8YE35yN/view?usp=sharing">Seminar 5.1. MRI classification with 3D CNN</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://drive.google.com/file/d/15M13NfhCGKN6akaWj8reFYvfDH7aLPsY/view?usp=sharing">Seminar 5.2. MRI segmentation with 3D U-net</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Seminars 6-8. Working with fMRI</span></p>
 <ul class="nav bd-sidenav">
@@ -481,41 +481,68 @@ Commonly used standard is <a class="reference external" href="https://bids.neuro
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
-sudo datalad get -J 20 -d /data/ds000114 \
+# sudo
+datalad get -J 20 -d /data/ds000114 \
     /data/ds000114/derivatives/fmriprep/sub-*/anat/*preproc.nii.gz \
     /data/ds000114/sub-*/ses-test/func/*fingerfootlips*
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;3&gt;WSL (9 - Relay) ERROR: CreateProcessCommon:640: execvpe(/bin/bash) failed: No such file or directory
 </pre></div>
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">CalledProcessError</span><span class="g g-Whitespace">                        </span>Traceback (most recent call last)
-<span class="nn">Input In [1],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_cell_magic</span><span class="p">(</span><span class="s1">&#39;bash&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;sudo datalad get -J 20 -d /data/ds000114 </span><span class="se">\\\n</span><span class="s1">    /data/ds000114/derivatives/fmriprep/sub-*/anat/*preproc.nii.gz </span><span class="se">\\\n</span><span class="s1">    /data/ds000114/sub-*/ses-test/func/*fingerfootlips*</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_cell_magic</span><span class="p">(</span><span class="s1">&#39;bash&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;# sudo</span><span class="se">\n</span><span class="s1">datalad get -J 20 -d /data/ds000114 </span><span class="se">\\\n</span><span class="s1">    /data/ds000114/derivatives/fmriprep/sub-*/anat/*preproc.nii.gz </span><span class="se">\\\n</span><span class="s1">    /data/ds000114/sub-*/ses-test/func/*fingerfootlips*</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
 
-<span class="nn">File ~/anaconda3/lib/python3.9/site-packages/IPython/core/interactiveshell.py:2347,</span> in <span class="ni">InteractiveShell.run_cell_magic</span><span class="nt">(self, magic_name, line, cell)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2345</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">builtin_trap</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">2346</span>     <span class="n">args</span> <span class="o">=</span> <span class="p">(</span><span class="n">magic_arg_s</span><span class="p">,</span> <span class="n">cell</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">2347</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2348</span> <span class="k">return</span> <span class="n">result</span>
+<span class="nn">File ~\AppData\Roaming\Python\Python310\site-packages\IPython\core\interactiveshell.py:2541,</span> in <span class="ni">InteractiveShell.run_cell_magic</span><span class="nt">(self, magic_name, line, cell)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2539</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">builtin_trap</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">2540</span>     <span class="n">args</span> <span class="o">=</span> <span class="p">(</span><span class="n">magic_arg_s</span><span class="p">,</span> <span class="n">cell</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">2541</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2543</span> <span class="c1"># The code below prevents the output from being displayed</span>
+<span class="g g-Whitespace">   </span><span class="mi">2544</span> <span class="c1"># when using magics with decorator @output_can_be_silenced</span>
+<span class="g g-Whitespace">   </span><span class="mi">2545</span> <span class="c1"># when the last Python token in the expression is a &#39;;&#39;.</span>
+<span class="g g-Whitespace">   </span><span class="mi">2546</span> <span class="k">if</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">magic</span><span class="o">.</span><span class="n">MAGIC_OUTPUT_CAN_BE_SILENCED</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
 
-<span class="nn">File ~/anaconda3/lib/python3.9/site-packages/IPython/core/magics/script.py:153,</span> in <span class="ni">ScriptMagics._make_script_magic.&lt;locals&gt;.named_script_magic</span><span class="nt">(line, cell)</span>
-<span class="g g-Whitespace">    </span><span class="mi">151</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">152</span>     <span class="n">line</span> <span class="o">=</span> <span class="n">script</span>
-<span class="ne">--&gt; </span><span class="mi">153</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">shebang</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">cell</span><span class="p">)</span>
+<span class="nn">File ~\AppData\Roaming\Python\Python310\site-packages\IPython\core\magics\script.py:155,</span> in <span class="ni">ScriptMagics._make_script_magic.&lt;locals&gt;.named_script_magic</span><span class="nt">(line, cell)</span>
+<span class="g g-Whitespace">    </span><span class="mi">153</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">154</span>     <span class="n">line</span> <span class="o">=</span> <span class="n">script</span>
+<span class="ne">--&gt; </span><span class="mi">155</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">shebang</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">cell</span><span class="p">)</span>
 
-<span class="nn">File ~/anaconda3/lib/python3.9/site-packages/IPython/core/magics/script.py:305,</span> in <span class="ni">ScriptMagics.shebang</span><span class="nt">(self, line, cell)</span>
-<span class="g g-Whitespace">    </span><span class="mi">300</span> <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">raise_error</span> <span class="ow">and</span> <span class="n">p</span><span class="o">.</span><span class="n">returncode</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">301</span>     <span class="c1"># If we get here and p.returncode is still None, we must have</span>
-<span class="g g-Whitespace">    </span><span class="mi">302</span>     <span class="c1"># killed it but not yet seen its return code. We don&#39;t wait for it,</span>
-<span class="g g-Whitespace">    </span><span class="mi">303</span>     <span class="c1"># in case it&#39;s stuck in uninterruptible sleep. -9 = SIGKILL</span>
-<span class="g g-Whitespace">    </span><span class="mi">304</span>     <span class="n">rc</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">returncode</span> <span class="ow">or</span> <span class="o">-</span><span class="mi">9</span>
-<span class="ne">--&gt; </span><span class="mi">305</span>     <span class="k">raise</span> <span class="n">CalledProcessError</span><span class="p">(</span><span class="n">rc</span><span class="p">,</span> <span class="n">cell</span><span class="p">)</span>
+<span class="nn">File ~\AppData\Roaming\Python\Python310\site-packages\IPython\core\magics\script.py:315,</span> in <span class="ni">ScriptMagics.shebang</span><span class="nt">(self, line, cell)</span>
+<span class="g g-Whitespace">    </span><span class="mi">310</span> <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">raise_error</span> <span class="ow">and</span> <span class="n">p</span><span class="o">.</span><span class="n">returncode</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">311</span>     <span class="c1"># If we get here and p.returncode is still None, we must have</span>
+<span class="g g-Whitespace">    </span><span class="mi">312</span>     <span class="c1"># killed it but not yet seen its return code. We don&#39;t wait for it,</span>
+<span class="g g-Whitespace">    </span><span class="mi">313</span>     <span class="c1"># in case it&#39;s stuck in uninterruptible sleep. -9 = SIGKILL</span>
+<span class="g g-Whitespace">    </span><span class="mi">314</span>     <span class="n">rc</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">returncode</span> <span class="ow">or</span> <span class="o">-</span><span class="mi">9</span>
+<span class="ne">--&gt; </span><span class="mi">315</span>     <span class="k">raise</span> <span class="n">CalledProcessError</span><span class="p">(</span><span class="n">rc</span><span class="p">,</span> <span class="n">cell</span><span class="p">)</span>
 
-<span class="ne">CalledProcessError</span>: Command &#39;b&#39;sudo datalad get -J 20 -d /data/ds000114 \\\n    /data/ds000114/derivatives/fmriprep/sub-*/anat/*preproc.nii.gz \\\n    /data/ds000114/sub-*/ses-test/func/*fingerfootlips*\n&#39;&#39; returned non-zero exit status 1.
+<span class="ne">CalledProcessError</span>: Command &#39;b&#39;# sudo\ndatalad get -J 20 -d /data/ds000114 \\\n    /data/ds000114/derivatives/fmriprep/sub-*/anat/*preproc.nii.gz \\\n    /data/ds000114/sub-*/ses-test/func/*fingerfootlips*\n&#39;&#39; returned non-zero exit status 1.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>ls<span class="w"> </span>/data/ds000114/
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CHANGES			  sub-08
+dataset_description.json  sub-09
+derivatives		  sub-10
+dwi.bval		  task-covertverbgeneration_bold.json
+dwi.bvec		  task-covertverbgeneration_events.tsv
+sub-01			  task-fingerfootlips_bold.json
+sub-02			  task-fingerfootlips_events.tsv
+sub-03			  task-linebisection_bold.json
+sub-04			  task-overtverbgeneration_bold.json
+sub-05			  task-overtverbgeneration_events.tsv
+sub-06			  task-overtwordrepetition_bold.json
+sub-07			  task-overtwordrepetition_events.tsv
 </pre></div>
 </div>
 </div>
@@ -523,7 +550,7 @@ sudo datalad get -J 20 -d /data/ds000114 \
 <p>Unfortunately this cell doesn’t work properly when you deploy docker container on a mac with M* chip (I personally tried M1 and M1X and there were some troubles with it). In this case I recommend to use data from the archive. <strong>NOTE</strong> in case of using data from the archive you need to specify correct pathes in the proceeding cells.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">list_files</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">utils</span> <span class="kn">import</span> <span class="n">list_files</span>
 <span class="c1"># The data is already in BIDS format</span>
 <span class="c1"># The subjects peformed 5 tasks. We will focus on fingerfootlips task</span>
 <span class="n">list_files</span><span class="p">(</span><span class="s1">&#39;/data/ds000114/sub-01/ses-retest&#39;</span><span class="p">)</span>
@@ -532,17 +559,17 @@ sudo datalad get -J 20 -d /data/ds000114 \
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ses-retest/
-    func/
-        sub-01_ses-retest_task-linebisection_bold.nii.gz
-        sub-01_ses-retest_task-fingerfootlips_bold.nii.gz
-        sub-01_ses-retest_task-covertverbgeneration_bold.nii.gz
-        sub-01_ses-retest_task-linebisection_events.tsv
-        sub-01_ses-retest_task-overtwordrepetition_bold.nii.gz
-        sub-01_ses-retest_task-overtverbgeneration_bold.nii.gz
     anat/
         sub-01_ses-retest_T1w.nii.gz
     dwi/
         sub-01_ses-retest_dwi.nii.gz
+    func/
+        sub-01_ses-retest_task-covertverbgeneration_bold.nii.gz
+        sub-01_ses-retest_task-fingerfootlips_bold.nii.gz
+        sub-01_ses-retest_task-linebisection_bold.nii.gz
+        sub-01_ses-retest_task-linebisection_events.tsv
+        sub-01_ses-retest_task-overtverbgeneration_bold.nii.gz
+        sub-01_ses-retest_task-overtwordrepetition_bold.nii.gz
 </pre></div>
 </div>
 </div>
@@ -550,10 +577,10 @@ sudo datalad get -J 20 -d /data/ds000114 \
 <p>With nibabel we can load a file and inspect its properties.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">nibabel</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">nilearn</span><span class="w"> </span><span class="kn">import</span> <span class="n">plotting</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nibabel</span>
+<span class="kn">from</span> <span class="nn">nilearn</span> <span class="kn">import</span> <span class="n">plotting</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
 <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
 
 <span class="n">anat</span> <span class="o">=</span> <span class="n">nibabel</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;/data/ds000114/derivatives/fmriprep/sub-01/anat/sub-01_t1w_preproc.nii.gz&#39;</span><span class="p">)</span>
@@ -597,7 +624,7 @@ fMRI affine:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;OrthoSlicer3D: /data/ds000114/derivatives/fmriprep/sub-01/anat/sub-01_t1w_preproc.nii.gz (256, 156, 256)&gt;
 </pre></div>
 </div>
-<img alt="../_images/ec4c2182acfe144434b52d5380f4d301a967af3b55c3aec1a9f79a76e0e8431d.png" src="../_images/ec4c2182acfe144434b52d5380f4d301a967af3b55c3aec1a9f79a76e0e8431d.png" />
+<img alt="../_images/35b8ce307782479462a16c7deea782f18eddd86c7a62b3498cead8c48131f435.png" src="../_images/35b8ce307782479462a16c7deea782f18eddd86c7a62b3498cead8c48131f435.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -610,7 +637,7 @@ fMRI affine:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;OrthoSlicer3D: /data/ds000114/sub-01/ses-test/func/sub-01_ses-test_task-fingerfootlips_bold.nii.gz (64, 64, 30, 184)&gt;
 </pre></div>
 </div>
-<img alt="../_images/6c0b74e9756131caa3815c38aa71d02d7c8fa97a800408110112105cd7361946.png" src="../_images/6c0b74e9756131caa3815c38aa71d02d7c8fa97a800408110112105cd7361946.png" />
+<img alt="../_images/81ec2cd2db5f39585be0399581a7107a4e956b79294e08f1a20607baa0a75e5e.png" src="../_images/81ec2cd2db5f39585be0399581a7107a4e956b79294e08f1a20607baa0a75e5e.png" />
 </div>
 </div>
 <p>Lets stop on SliceTiming key, unlike a photograph, in which the entire picture is taken in a single moment, an fMRI volume is acquired in slices. Each of these slices takes time to acquire - from tens to hundreds of milliseconds.</p>
@@ -619,7 +646,7 @@ fMRI affine:
 <p><img alt="SliceTiming" src="https://andysbrainbook.readthedocs.io/en/latest/_images/SliceTimingCorrection_Demo.gif" /></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
 
 <span class="c1">#metadata is located in json files</span>
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/data/ds000114/task-fingerfootlips_bold.json&#39;</span><span class="p">,</span> <span class="s1">&#39;rt&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
@@ -690,11 +717,11 @@ fMRI affine:
 <p>Once you connect multiple nodes to each other, you create a directed graph. In Nipype we call such graphs either workflows or pipelines. Directed connections can only be established from an output field of a node to an input field of another node.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">nipype</span><span class="w"> </span><span class="kn">import</span> <span class="n">Node</span><span class="p">,</span> <span class="n">Function</span><span class="p">,</span> <span class="n">Workflow</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">clear_output</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nipype</span> <span class="kn">import</span> <span class="n">Node</span><span class="p">,</span> <span class="n">Function</span><span class="p">,</span> <span class="n">Workflow</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">clear_output</span>
 
 
-<span class="k">def</span><span class="w"> </span><span class="nf">multiply</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">multiply</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
 
 <span class="c1">#Create a Node that multiplies 2 numbers</span>
@@ -712,12 +739,12 @@ fMRI affine:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>230922-21:01:31,979 nipype.workflow INFO:
-	 [Node] Setting-up &quot;a_x_b&quot; in &quot;/tmp/tmpnn7l0_rd/a_x_b&quot;.
-230922-21:01:31,984 nipype.workflow INFO:
-	 [Node] Executing &quot;a_x_b&quot; &lt;nipype.interfaces.utility.wrappers.Function&gt;
-230922-21:01:31,987 nipype.workflow INFO:
-	 [Node] Finished &quot;a_x_b&quot;, elapsed time 0.000427s.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>250907-19:20:11,162 nipype.workflow INFO:
+	 [Node] Setting-up &quot;a_x_b&quot; in &quot;/tmp/tmpqq47nphq/a_x_b&quot;.
+250907-19:20:11,173 nipype.workflow INFO:
+	 [Node] Running &quot;a_x_b&quot; (&quot;nipype.interfaces.utility.wrappers.Function&quot;)
+250907-19:20:11,187 nipype.workflow INFO:
+	 [Node] Finished &quot;a_x_b&quot;.
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>multiply_result = 6
@@ -728,7 +755,7 @@ fMRI affine:
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Create a Node that adds 2 numbers</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
 
 
@@ -744,21 +771,21 @@ fMRI affine:
 <span class="c1"># connect the nodes </span>
 <span class="n">wf</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">mul</span><span class="p">,</span> <span class="s1">&#39;multiply_result&#39;</span><span class="p">,</span> <span class="n">adder</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span>
 <span class="c1">#visualize the graph</span>
-<span class="n">wf</span><span class="o">.</span><span class="n">write_graph</span><span class="p">(</span><span class="n">graph2use</span><span class="o">=</span><span class="s1">&#39;flat&#39;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;png&#39;</span><span class="p">,</span> <span class="n">simple_form</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">wf</span><span class="o">.</span><span class="n">write_graph</span><span class="p">(</span><span class="n">graph2use</span><span class="o">=</span><span class="s1">&#39;flat&#39;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;png&#39;</span><span class="p">,</span> <span class="n">simple_form</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">clear_output</span><span class="p">()</span>
 <span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;graph_detailed.png&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/b7332b216d6c470daf7c74246d1c8a0d2cc70fd42348c06eae499a2bc290b3d6.png" src="../_images/b7332b216d6c470daf7c74246d1c8a0d2cc70fd42348c06eae499a2bc290b3d6.png" />
+<img alt="../_images/37d31771122068b1de0830969bb694de623aa671734f54ff4d9cf8cf3dd44b50.png" src="../_images/37d31771122068b1de0830969bb694de623aa671734f54ff4d9cf8cf3dd44b50.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#run the graph</span>
 <span class="n">eg</span> <span class="o">=</span> <span class="n">wf</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
-<span class="n">clear_output</span><span class="p">()</span><span class="c1">#don&#39;t print the pipeline steps during exection</span>
+<span class="n">clear_output</span><span class="p">()</span> <span class="c1">#don&#39;t print the pipeline steps during exection</span>
 <span class="c1">#check the results</span>
 <span class="n">eg</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">eg</span><span class="o">.</span><span class="n">nodes</span><span class="p">())</span>
 <span class="n">nodes_outputs</span> <span class="o">=</span> <span class="p">[</span><span class="n">node</span><span class="o">.</span><span class="n">result</span><span class="o">.</span><span class="n">outputs</span> <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">eg</span><span class="p">]</span>
@@ -787,7 +814,7 @@ fMRI affine:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/share/fsl/5.0
 </pre></div>
 </div>
 </div>

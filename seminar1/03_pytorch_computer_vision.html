@@ -28,7 +28,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
@@ -244,8 +244,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../seminar4/seminar4_3_freesurfer.html">FREESURFER</a></li>
 
 
-<li class="toctree-l1"><a class="reference external" href="https://drive.google.com/file/d/1HuS7ChgQvch4vrD8gfITGUZP9E8hZ8Hw/view?usp=sharing">Seminar 5.1. MRI classification with 3D CNN</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://drive.google.com/file/d/1m7mWY0LI2M6PdevJf5rLCdm-WrAOoXJ-/view?usp=sharing">Seminar 5.2. MRI segmentation with 3D U-net</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://drive.google.com/file/d/1XMxW_Y73mbMGFIaWY6YlEfscD8YE35yN/view?usp=sharing">Seminar 5.1. MRI classification with 3D CNN</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://drive.google.com/file/d/15M13NfhCGKN6akaWj8reFYvfDH7aLPsY/view?usp=sharing">Seminar 5.2. MRI segmentation with 3D U-net</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Seminars 6-8. Working with fMRI</span></p>
 <ul class="nav bd-sidenav">
@@ -688,16 +688,16 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import PyTorch</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">torch</span><span class="w"> </span><span class="kn">import</span> <span class="n">nn</span>
+<span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">from</span> <span class="nn">torch</span> <span class="kn">import</span> <span class="n">nn</span>
 
 <span class="c1"># Import torchvision</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">torchvision</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">torchvision</span><span class="w"> </span><span class="kn">import</span> <span class="n">datasets</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">torchvision.transforms</span><span class="w"> </span><span class="kn">import</span> <span class="n">ToTensor</span>
+<span class="kn">import</span> <span class="nn">torchvision</span>
+<span class="kn">from</span> <span class="nn">torchvision</span> <span class="kn">import</span> <span class="n">datasets</span>
+<span class="kn">from</span> <span class="nn">torchvision.transforms</span> <span class="kn">import</span> <span class="n">ToTensor</span>
 
 <span class="c1"># Import matplotlib for visualization</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
 <span class="c1"># Check versions</span>
 <span class="c1"># Note: your PyTorch version shouldn&#39;t be lower than 1.10.0 and torchvision version shouldn&#39;t be lower than 0.11</span>
@@ -706,15 +706,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="nn">Input In [1],</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Import PyTorch</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span><span class="w"> </span><span class="nn">torch</span><span class="w"> </span><span class="kn">import</span> <span class="n">nn</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1"># Import torchvision</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;torch&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PyTorch version: 2.5.1+cpu
+torchvision version: 0.20.1+cpu
 </pre></div>
 </div>
 </div>
@@ -760,48 +753,6 @@ document.write(`
     <span class="n">download</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="n">transform</span><span class="o">=</span><span class="n">ToTensor</span><span class="p">()</span>
 <span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/train-images-idx3-ubyte.gz
-Downloading http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/train-images-idx3-ubyte.gz to data/FashionMNIST/raw/train-images-idx3-ubyte.gz
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████| 26421880/26421880 [00:01&lt;00:00, 13891074.76it/s]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Extracting data/FashionMNIST/raw/train-images-idx3-ubyte.gz to data/FashionMNIST/raw
-
-Downloading http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/train-labels-idx1-ubyte.gz
-Downloading http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/train-labels-idx1-ubyte.gz to data/FashionMNIST/raw/train-labels-idx1-ubyte.gz
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 29515/29515 [00:00&lt;00:00, 757410.03it/s]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Extracting data/FashionMNIST/raw/train-labels-idx1-ubyte.gz to data/FashionMNIST/raw
-
-Downloading http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/t10k-images-idx3-ubyte.gz
-Downloading http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/t10k-images-idx3-ubyte.gz to data/FashionMNIST/raw/t10k-images-idx3-ubyte.gz
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 4422102/4422102 [00:00&lt;00:00, 13831200.68it/s]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Extracting data/FashionMNIST/raw/t10k-images-idx3-ubyte.gz to data/FashionMNIST/raw
-
-Downloading http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/t10k-labels-idx1-ubyte.gz
-Downloading http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/t10k-labels-idx1-ubyte.gz to data/FashionMNIST/raw/t10k-labels-idx1-ubyte.gz
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 5148/5148 [00:00&lt;00:00, 4927493.61it/s]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Extracting data/FashionMNIST/raw/t10k-labels-idx1-ubyte.gz to data/FashionMNIST/raw
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
@@ -1035,7 +986,7 @@ Downloading http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/t10k-labe
 <h3>1.2 Visualizing our data<a class="headerlink" href="#visualizing-our-data" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="n">image</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="n">train_data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Image shape: </span><span class="si">{</span><span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">image</span><span class="o">.</span><span class="n">squeeze</span><span class="p">())</span> <span class="c1"># image shape is [1, 28, 28] (colour channels, height, width)</span>
@@ -1047,7 +998,7 @@ Downloading http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/t10k-labe
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Image shape: torch.Size([1, 28, 28])
 </pre></div>
 </div>
-<img alt="../_images/a31afcb947956b7065a76659c8f372b01e501a4af37fec24d0b50b1a4f1fea9d.png" src="../_images/a31afcb947956b7065a76659c8f372b01e501a4af37fec24d0b50b1a4f1fea9d.png" />
+<img alt="../_images/47e78624b1067b8039bec5fd4c72bd16c30bba93d3a6db60ea234b202cd73e01.png" src="../_images/47e78624b1067b8039bec5fd4c72bd16c30bba93d3a6db60ea234b202cd73e01.png" />
 </div>
 </div>
 <p>We can turn the image into grayscale using the <code class="docutils literal notranslate"><span class="pre">cmap</span></code> parameter of <code class="docutils literal notranslate"><span class="pre">plt.imshow()</span></code>.</p>
@@ -1059,7 +1010,7 @@ Downloading http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/t10k-labe
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a5c5d47b682d5e814a35af84dfcd0288fbf34478f3d8f177f8d3fd2cad5f3894.png" src="../_images/a5c5d47b682d5e814a35af84dfcd0288fbf34478f3d8f177f8d3fd2cad5f3894.png" />
+<img alt="../_images/eb7a22b884b26331538046a5e3f4ad3b386bb68f7184062a71ba71e50c6caf96.png" src="../_images/eb7a22b884b26331538046a5e3f4ad3b386bb68f7184062a71ba71e50c6caf96.png" />
 </div>
 </div>
 <p>Beautiful, well as beautiful as a pixelated grayscale ankle boot can get.</p>
@@ -1081,7 +1032,7 @@ Downloading http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/t10k-labe
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/750e40ac68e7b769a561dd6ae5d2c00ffaa2a219ef1d4d3030929133d7ce050c.png" src="../_images/750e40ac68e7b769a561dd6ae5d2c00ffaa2a219ef1d4d3030929133d7ce050c.png" />
+<img alt="../_images/238483fa0603af77477ae3959763abd9f4d9a504121cdb380865fcd5fbd96dfa.png" src="../_images/238483fa0603af77477ae3959763abd9f4d9a504121cdb380865fcd5fbd96dfa.png" />
 </div>
 </div>
 </section>
@@ -1109,7 +1060,7 @@ Downloading http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/t10k-labe
 <p>Let’s create <code class="docutils literal notranslate"><span class="pre">DataLoader</span></code>’s for our training and test sets.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">torch.utils.data</span><span class="w"> </span><span class="kn">import</span> <span class="n">DataLoader</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">torch.utils.data</span> <span class="kn">import</span> <span class="n">DataLoader</span>
 
 <span class="c1"># Setup the batch size hyperparameter</span>
 <span class="n">BATCH_SIZE</span> <span class="o">=</span> <span class="mi">32</span>
@@ -1133,7 +1084,7 @@ Downloading http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/t10k-labe
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dataloaders: (&lt;torch.utils.data.dataloader.DataLoader object at 0x7fdde12943d0&gt;, &lt;torch.utils.data.dataloader.DataLoader object at 0x7fdde1294370&gt;)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dataloaders: (&lt;torch.utils.data.dataloader.DataLoader object at 0x000001DD66197A60&gt;, &lt;torch.utils.data.dataloader.DataLoader object at 0x000001DD65D837C0&gt;)
 Length of train dataloader: 1875 batches of 32
 Length of test dataloader: 313 batches of 32
 </pre></div>
@@ -1177,7 +1128,7 @@ Length of test dataloader: 313 batches of 32
 Label: 6, label size: torch.Size([])
 </pre></div>
 </div>
-<img alt="../_images/fc2bf455252811344fff4a70a46186548aac1ee1ba35267ebf41f5496bb9c967.png" src="../_images/fc2bf455252811344fff4a70a46186548aac1ee1ba35267ebf41f5496bb9c967.png" />
+<img alt="../_images/2b356c2934f9af67654e712258939dd19b3c5d90bb5d8dac6edefe634e1ca5b4.png" src="../_images/2b356c2934f9af67654e712258939dd19b3c5d90bb5d8dac6edefe634e1ca5b4.png" />
 </div>
 </div>
 </section>
@@ -1199,15 +1150,15 @@ Label: 6, label size: torch.Size([])
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1. Construct a model class that subclasses nn.Module</span>
-<span class="k">class</span><span class="w"> </span><span class="nc">CircleModelV0</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
-    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">CircleModelV0</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
         <span class="c1"># 2. Create 2 nn.Linear layers capable of handling X and y input and output shapes</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">layer_1</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">in_features</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">out_features</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span> <span class="c1"># takes in 2 features (X), produces 5 features</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">layer_2</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">in_features</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">out_features</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># takes in 5 features, produces 1 feature (y)</span>
     
     <span class="c1"># 3. Define a forward method containing the forward pass computation</span>
-    <span class="k">def</span><span class="w"> </span><span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
         <span class="c1"># Return the output of layer_2, a single feature, the same shape as y</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">layer_2</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">layer_1</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="c1"># computation goes through layer_1 first then the output of layer_1 goes through layer_2</span>
 
@@ -1218,10 +1169,15 @@ Label: 6, label size: torch.Size([])
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CircleModelV0(
-  (layer_1): Linear(in_features=2, out_features=5, bias=True)
-  (layer_2): Linear(in_features=5, out_features=1, bias=True)
-)
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">16</span><span class="p">],</span> <span class="n">line</span> <span class="mi">15</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">layer_2</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">layer_1</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="c1"># computation goes through layer_1 first then the output of layer_1 goes through layer_2</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="c1"># 4. Create an instance of the model and send it to target device</span>
+<span class="ne">---&gt; </span><span class="mi">15</span> <span class="n">model_0</span> <span class="o">=</span> <span class="n">CircleModelV0</span><span class="p">()</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="n">model_0</span>
+
+<span class="ne">NameError</span>: name &#39;device&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -1283,9 +1239,9 @@ Shape after flattening: torch.Size([1, 784]) -&gt; [color_channels, height*width
 <p>Let’s create our first model using <code class="docutils literal notranslate"><span class="pre">nn.Flatten()</span></code> as the first layer.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">torch</span><span class="w"> </span><span class="kn">import</span> <span class="n">nn</span>
-<span class="k">class</span><span class="w"> </span><span class="nc">FashionMNISTModelV0</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
-    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_shape</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">hidden_units</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">output_shape</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">torch</span> <span class="kn">import</span> <span class="n">nn</span>
+<span class="k">class</span> <span class="nc">FashionMNISTModelV0</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_shape</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">hidden_units</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">output_shape</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">layer_stack</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
             <span class="n">nn</span><span class="o">.</span><span class="n">Flatten</span><span class="p">(),</span> <span class="c1"># neural networks like their inputs in vector form</span>
@@ -1293,7 +1249,7 @@ Shape after flattening: torch.Size([1, 784]) -&gt; [color_channels, height*width
             <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">in_features</span><span class="o">=</span><span class="n">hidden_units</span><span class="p">,</span> <span class="n">out_features</span><span class="o">=</span><span class="n">output_shape</span><span class="p">)</span>
         <span class="p">)</span>
 
-    <span class="k">def</span><span class="w"> </span><span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">layer_stack</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1402,7 +1358,7 @@ Shape after flattening: torch.Size([1, 784]) -&gt; [color_channels, height*width
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import accuracy metric</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">torchmetrics</span>
+<span class="kn">import</span> <span class="nn">torchmetrics</span>
 <span class="n">acc</span> <span class="o">=</span> <span class="n">torchmetrics</span><span class="o">.</span><span class="n">Accuracy</span><span class="p">(</span><span class="n">task</span> <span class="o">=</span> <span class="s1">&#39;multiclass&#39;</span><span class="p">,</span> <span class="n">num_classes</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">class_names</span><span class="p">))</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
 
 <span class="c1"># Setup loss function and optimizer</span>
@@ -1424,7 +1380,7 @@ Shape after flattening: torch.Size([1, 784]) -&gt; [color_channels, height*width
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculate accuracy (a classification metric)</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">accuracy_fn</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">accuracy_fn</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">):</span>
     <span class="n">correct</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">eq</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">item</span><span class="p">()</span> <span class="c1"># torch.eq() calculates where two tensors are equal</span>
     <span class="n">acc</span> <span class="o">=</span> <span class="p">(</span><span class="n">correct</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">y_pred</span><span class="p">))</span> <span class="o">*</span> <span class="mi">100</span> 
     <span class="k">return</span> <span class="n">acc</span>
@@ -1456,7 +1412,7 @@ Shape after flattening: torch.Size([1, 784]) -&gt; [color_channels, height*width
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import tqdm for progress bar</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">tqdm.auto</span><span class="w"> </span><span class="kn">import</span> <span class="n">tqdm</span>
+<span class="kn">from</span> <span class="nn">tqdm.auto</span> <span class="kn">import</span> <span class="n">tqdm</span>
 
 <span class="c1"># Set the seed and start the timer</span>
 <span class="n">torch</span><span class="o">.</span><span class="n">manual_seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
@@ -1591,7 +1547,7 @@ Looked at 51200/60000 samples
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">torch</span><span class="o">.</span><span class="n">manual_seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">eval_model</span><span class="p">(</span><span class="n">model</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">,</span>
+<span class="k">def</span> <span class="nf">eval_model</span><span class="p">(</span><span class="n">model</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">,</span>
                <span class="n">data_loader</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">,</span>
                <span class="n">loss_fn</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">,</span>
                <span class="n">accuracy_fn</span><span class="p">):</span>
@@ -1656,7 +1612,7 @@ Looked at 51200/60000 samples
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Setup device agnostic code</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
+<span class="kn">import</span> <span class="nn">torch</span>
 <span class="n">device</span> <span class="o">=</span> <span class="s2">&quot;cuda&quot;</span> <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="s2">&quot;cpu&quot;</span>
 <span class="n">device</span>
 </pre></div>
@@ -1680,8 +1636,8 @@ Looked at 51200/60000 samples
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a model with non-linear and linear layers</span>
-<span class="k">class</span><span class="w"> </span><span class="nc">FashionMNISTModelV1</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
-    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_shape</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">hidden_units</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">output_shape</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">FashionMNISTModelV1</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_shape</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">hidden_units</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">output_shape</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">layer_stack</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
             <span class="n">nn</span><span class="o">.</span><span class="n">Flatten</span><span class="p">(),</span> <span class="c1"># flatten inputs into single vector</span>
@@ -1691,7 +1647,7 @@ Looked at 51200/60000 samples
             <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">()</span>
         <span class="p">)</span>
 
-    <span class="k">def</span><span class="w"> </span><span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">layer_stack</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1725,7 +1681,7 @@ Looked at 51200/60000 samples
 <p>As usual, we’ll setup a loss function, an optimizer and an evaluation metric (we could do multiple evaluation metrics but we’ll stick with accuracy for now).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">helper_functions</span><span class="w"> </span><span class="kn">import</span> <span class="n">accuracy_fn</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">helper_functions</span> <span class="kn">import</span> <span class="n">accuracy_fn</span>
 <span class="n">loss_fn</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">CrossEntropyLoss</span><span class="p">()</span>
 <span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">SGD</span><span class="p">(</span><span class="n">params</span><span class="o">=</span><span class="n">model_1</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span>
                             <span class="n">lr</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
@@ -1746,7 +1702,7 @@ Looked at 51200/60000 samples
 </div></blockquote>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">train_step</span><span class="p">(</span><span class="n">model</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">,</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">train_step</span><span class="p">(</span><span class="n">model</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">,</span>
                <span class="n">data_loader</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">,</span>
                <span class="n">loss_fn</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">,</span>
                <span class="n">optimizer</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">Optimizer</span><span class="p">,</span>
@@ -1781,7 +1737,7 @@ Looked at 51200/60000 samples
     <span class="n">train_acc</span> <span class="o">/=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data_loader</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Train loss: </span><span class="si">{</span><span class="n">train_loss</span><span class="si">:</span><span class="s2">.5f</span><span class="si">}</span><span class="s2"> | Train accuracy: </span><span class="si">{</span><span class="n">train_acc</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">test_step</span><span class="p">(</span><span class="n">data_loader</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">,</span>
+<span class="k">def</span> <span class="nf">test_step</span><span class="p">(</span><span class="n">data_loader</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">,</span>
               <span class="n">model</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">,</span>
               <span class="n">loss_fn</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">,</span>
               <span class="n">accuracy_fn</span><span class="p">,</span>
@@ -1825,7 +1781,7 @@ Looked at 51200/60000 samples
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">torch</span><span class="o">.</span><span class="n">manual_seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
 
 <span class="c1"># Measure time</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">timeit</span><span class="w"> </span><span class="kn">import</span> <span class="n">default_timer</span> <span class="k">as</span> <span class="n">timer</span>
+<span class="kn">from</span> <span class="nn">timeit</span> <span class="kn">import</span> <span class="n">default_timer</span> <span class="k">as</span> <span class="n">timer</span>
 <span class="n">train_time_start_on_gpu</span> <span class="o">=</span> <span class="n">timer</span><span class="p">()</span>
 
 <span class="n">epochs</span> <span class="o">=</span> <span class="mi">3</span>
@@ -1955,7 +1911,7 @@ Train time on cuda: 36.633 seconds
 <span class="g g-Whitespace">   </span><span class="mi">1530</span>     <span class="n">result</span> <span class="o">=</span> <span class="kc">None</span>
 
 <span class="nn">Cell In[50], line 14,</span> in <span class="ni">FashionMNISTModelV1.forward</span><span class="nt">(self, x)</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="k">def</span><span class="w"> </span><span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">):</span>
 <span class="ne">---&gt; </span><span class="mi">14</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">layer_stack</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 
 <span class="nn">File /opt/miniconda-latest/lib/python3.8/site-packages/torch/nn/modules/module.py:1518,</span> in <span class="ni">Module._wrapped_call_impl</span><span class="nt">(self, *args, **kwargs)</span>
@@ -1974,7 +1930,7 @@ Train time on cuda: 36.633 seconds
 <span class="g g-Whitespace">   </span><span class="mi">1530</span>     <span class="n">result</span> <span class="o">=</span> <span class="kc">None</span>
 
 <span class="nn">File /opt/miniconda-latest/lib/python3.8/site-packages/torch/nn/modules/container.py:215,</span> in <span class="ni">Sequential.forward</span><span class="nt">(self, input)</span>
-<span class="g g-Whitespace">    </span><span class="mi">213</span> <span class="k">def</span><span class="w"> </span><span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">input</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">213</span> <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">input</span><span class="p">):</span>
 <span class="g g-Whitespace">    </span><span class="mi">214</span>     <span class="k">for</span> <span class="n">module</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
 <span class="ne">--&gt; </span><span class="mi">215</span>         <span class="nb">input</span> <span class="o">=</span> <span class="n">module</span><span class="p">(</span><span class="nb">input</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">216</span>     <span class="k">return</span> <span class="nb">input</span>
@@ -1995,7 +1951,7 @@ Train time on cuda: 36.633 seconds
 <span class="g g-Whitespace">   </span><span class="mi">1530</span>     <span class="n">result</span> <span class="o">=</span> <span class="kc">None</span>
 
 <span class="nn">File /opt/miniconda-latest/lib/python3.8/site-packages/torch/nn/modules/linear.py:114,</span> in <span class="ni">Linear.forward</span><span class="nt">(self, input)</span>
-<span class="g g-Whitespace">    </span><span class="mi">113</span> <span class="k">def</span><span class="w"> </span><span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">input</span><span class="p">:</span> <span class="n">Tensor</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tensor</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">113</span> <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">input</span><span class="p">:</span> <span class="n">Tensor</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tensor</span><span class="p">:</span>
 <span class="ne">--&gt; </span><span class="mi">114</span>     <span class="k">return</span> <span class="n">F</span><span class="o">.</span><span class="n">linear</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">weight</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">bias</span><span class="p">)</span>
 
 <span class="ne">RuntimeError</span>: Expected all tensors to be on the same device, but found at least two devices, cuda:0 and cpu! (when checking argument for argument mat1 in method wrapper_CUDA_addmm)
@@ -2015,7 +1971,7 @@ Train time on cuda: 36.633 seconds
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Move values to device</span>
 <span class="n">torch</span><span class="o">.</span><span class="n">manual_seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">eval_model</span><span class="p">(</span><span class="n">model</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">,</span>
+<span class="k">def</span> <span class="nf">eval_model</span><span class="p">(</span><span class="n">model</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">,</span>
                <span class="n">data_loader</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">,</span>
                <span class="n">loss_fn</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">,</span>
                <span class="n">accuracy_fn</span><span class="p">,</span>
@@ -2135,12 +2091,12 @@ Train time on cuda: 36.633 seconds
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a convolutional neural network</span>
-<span class="k">class</span><span class="w"> </span><span class="nc">FashionMNISTModelV2</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">FashionMNISTModelV2</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Model architecture copying TinyVGG from:</span>
 <span class="sd">    https://poloclub.github.io/cnn-explainer/</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_shape</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">hidden_units</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">output_shape</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_shape</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">hidden_units</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">output_shape</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">block_1</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
             <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="n">in_channels</span><span class="o">=</span><span class="n">input_shape</span><span class="p">,</span>
@@ -2173,7 +2129,7 @@ Train time on cuda: 36.633 seconds
                       <span class="n">out_features</span><span class="o">=</span><span class="n">output_shape</span><span class="p">)</span>
         <span class="p">)</span>
 
-    <span class="k">def</span><span class="w"> </span><span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">):</span>
         <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">block_1</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
         <span class="c1"># print(x.shape)</span>
         <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">block_2</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
@@ -2775,7 +2731,7 @@ Max pool tensor shape: torch.Size([1, 1, 1, 1])
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">torch</span><span class="o">.</span><span class="n">manual_seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
 
 <span class="c1"># Measure time</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">timeit</span><span class="w"> </span><span class="kn">import</span> <span class="n">default_timer</span> <span class="k">as</span> <span class="n">timer</span>
+<span class="kn">from</span> <span class="nn">timeit</span> <span class="kn">import</span> <span class="n">default_timer</span> <span class="k">as</span> <span class="n">timer</span>
 <span class="n">train_time_start_model_2</span> <span class="o">=</span> <span class="n">timer</span><span class="p">()</span>
 
 <span class="c1"># Train and test model</span>
@@ -2883,7 +2839,7 @@ Train time on cuda: 46.080 seconds
 <p>Let’s combine our model results dictionaries into a DataFrame and find out.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="n">compare_results</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span><span class="n">model_0_results</span><span class="p">,</span> <span class="n">model_1_results</span><span class="p">,</span> <span class="n">model_2_results</span><span class="p">])</span>
 <span class="n">compare_results</span>
 </pre></div>
@@ -3033,7 +2989,7 @@ Train time on cuda: 46.080 seconds
 <p>To do so, let’s create a function <code class="docutils literal notranslate"><span class="pre">make_predictions()</span></code> where we can pass the model and some data for it to predict on.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">make_predictions</span><span class="p">(</span><span class="n">model</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">device</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span> <span class="o">=</span> <span class="n">device</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">make_predictions</span><span class="p">(</span><span class="n">model</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">device</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span> <span class="o">=</span> <span class="n">device</span><span class="p">):</span>
     <span class="n">pred_probs</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
     <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">inference_mode</span><span class="p">():</span>
@@ -3058,7 +3014,7 @@ Train time on cuda: 46.080 seconds
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
 <span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
 <span class="n">test_samples</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">test_labels</span> <span class="o">=</span> <span class="p">[]</span>
@@ -3204,7 +3160,7 @@ Test sample label: 5 (Sandal)
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import tqdm for progress bar</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">tqdm.auto</span><span class="w"> </span><span class="kn">import</span> <span class="n">tqdm</span>
+<span class="kn">from</span> <span class="nn">tqdm.auto</span> <span class="kn">import</span> <span class="n">tqdm</span>
 
 <span class="c1"># 1. Make predictions with trained model</span>
 <span class="n">y_preds</span> <span class="o">=</span> <span class="p">[]</span>
@@ -3242,12 +3198,12 @@ Test sample label: 5 (Sandal)
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># See if torchmetrics exists, if not, install it</span>
 <span class="k">try</span><span class="p">:</span>
-    <span class="kn">import</span><span class="w"> </span><span class="nn">torchmetrics</span><span class="o">,</span><span class="w"> </span><span class="nn">mlxtend</span>
+    <span class="kn">import</span> <span class="nn">torchmetrics</span><span class="o">,</span> <span class="nn">mlxtend</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;mlxtend version: </span><span class="si">{</span><span class="n">mlxtend</span><span class="o">.</span><span class="n">__version__</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="k">assert</span> <span class="nb">int</span><span class="p">(</span><span class="n">mlxtend</span><span class="o">.</span><span class="n">__version__</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span> <span class="o">&gt;=</span> <span class="mi">19</span><span class="p">,</span> <span class="s2">&quot;mlxtend verison should be 0.19.0 or higher&quot;</span>
 <span class="k">except</span><span class="p">:</span>
     <span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>-q<span class="w"> </span>torchmetrics<span class="w"> </span>-U<span class="w"> </span>mlxtend<span class="w"> </span>#<span class="w"> </span>&lt;-<span class="w"> </span>Note:<span class="w"> </span>If<span class="w"> </span>you<span class="err">&#39;</span>re<span class="w"> </span>using<span class="w"> </span>Google<span class="w"> </span>Colab,<span class="w"> </span>this<span class="w"> </span>may<span class="w"> </span>require<span class="w"> </span>restarting<span class="w"> </span>the<span class="w"> </span>runtime
-    <span class="kn">import</span><span class="w"> </span><span class="nn">torchmetrics</span><span class="o">,</span><span class="w"> </span><span class="nn">mlxtend</span>
+    <span class="kn">import</span> <span class="nn">torchmetrics</span><span class="o">,</span> <span class="nn">mlxtend</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;mlxtend version: </span><span class="si">{</span><span class="n">mlxtend</span><span class="o">.</span><span class="n">__version__</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -3263,7 +3219,7 @@ mlxtend version: 0.23.0
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import mlxtend upgraded version</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">mlxtend</span>
+<span class="kn">import</span> <span class="nn">mlxtend</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">mlxtend</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
 <span class="k">assert</span> <span class="nb">int</span><span class="p">(</span><span class="n">mlxtend</span><span class="o">.</span><span class="n">__version__</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span> <span class="o">&gt;=</span> <span class="mi">19</span> <span class="c1"># should be version 0.19.0 or higher</span>
 </pre></div>
@@ -3281,8 +3237,8 @@ mlxtend version: 0.23.0
 <p>Finally we can plot our confision matrix using the <code class="docutils literal notranslate"><span class="pre">plot_confusion_matrix()</span></code> function from <code class="docutils literal notranslate"><span class="pre">mlxtend.plotting</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">torchmetrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">ConfusionMatrix</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">mlxtend.plotting</span><span class="w"> </span><span class="kn">import</span> <span class="n">plot_confusion_matrix</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">torchmetrics</span> <span class="kn">import</span> <span class="n">ConfusionMatrix</span>
+<span class="kn">from</span> <span class="nn">mlxtend.plotting</span> <span class="kn">import</span> <span class="n">plot_confusion_matrix</span>
 
 <span class="c1"># 2. Setup confusion matrix instance and compare predictions to targets</span>
 <span class="n">confmat</span> <span class="o">=</span> <span class="n">ConfusionMatrix</span><span class="p">(</span><span class="n">num_classes</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">class_names</span><span class="p">),</span> <span class="n">task</span><span class="o">=</span><span class="s1">&#39;multiclass&#39;</span><span class="p">)</span>
@@ -3327,7 +3283,7 @@ mlxtend version: 0.23.0
 <p>For now, let’s save our <code class="docutils literal notranslate"><span class="pre">model_2</span></code>’s <code class="docutils literal notranslate"><span class="pre">state_dict()</span></code> then load it back in and evaluate it to make sure the save and load went correctly.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
 
 <span class="c1"># Create models directory (if it doesn&#39;t already exist), see: https://docs.python.org/3/library/pathlib.html#pathlib.Path.mkdir</span>
 <span class="n">MODEL_PATH</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;models&quot;</span><span class="p">)</span>
