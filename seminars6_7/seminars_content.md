@@ -1,4 +1,7 @@
-# Introduction to the Seminars
+
+# Summary of the Seminars 6-8
+
+## Introduction
 
 For fMRI analysis, we need a whole set of tools — **Nipype, FSL, AFNI**, and other packages.  
 To avoid problems with environment setup and to save time, we use a **Docker container**.  
@@ -17,14 +20,14 @@ This dataset was specifically created to check reproducibility and to test fMRI 
 
 ![Functional areas](figs/brain_func_areas.png)
 
-# Preprocessing
+## Preprocessing
 
 Functional MRI data cannot be analyzed in raw form. Before we can run statistical models, we need to **prepare the data**.  
 The goal of preprocessing is to remove noise and artifacts, align the data to anatomy, and make the results comparable across subjects.
 
 ---
 
-## Why do we preprocess?
+### Why do we preprocess?
 - fMRI volumes are collected slice by slice, not instantaneously → we need **slice-timing correction**.  
 - Subjects inevitably move in the scanner → we need **motion correction**.  
 - Functional images have lower spatial resolution than anatomical scans → we need **coregistration** to map them correctly.  
@@ -37,7 +40,7 @@ Without these steps, the statistical analysis would be unreliable and hard to in
 
 ---
 
-## How do we preprocess?
+### How do we preprocess?
 We build a **workflow in Nipype** that combines tools from [FSL](https://nipype.readthedocs.io/en/latest/users/examples/fmri_fsl.html) and [SPM](https://nipype.readthedocs.io/en/latest/users/examples/fmri_spm.html):  
 
 1. **ExtractROI** – remove unstable “dummy scans”.  
@@ -51,7 +54,7 @@ All steps are connected into a single reproducible pipeline.
 
 ---
 
-## What do we get in the end?
+### What do we get in the end?
 After preprocessing, for each subject we obtain:  
 - Skull-stripped anatomical scans.  
 - Functional data aligned to anatomy, resampled to isotropic voxels.  
@@ -61,7 +64,7 @@ After preprocessing, for each subject we obtain:
 
 These outputs form the **foundation for first-level statistical analysis** and, later, **group-level modeling**.
 
-# Analysis: 1st & 2nd Level
+## Analysis: 1st & 2nd Level
 
 The goal of analysis is to move from raw time series to interpretable activation maps:
 - **1st level (individual analysis):** model each subject separately and ask, *which brain regions respond to the experimental tasks?*
@@ -69,11 +72,11 @@ The goal of analysis is to move from raw time series to interpretable activation
 
 ---
 
-## 1st-Level (Individual) Analysis
+### 1st-Level (Individual) Analysis
 
 After preprocessing, we have fMRI volumes aligned to anatomy, corrected for motion, and smoothed.  But voxel time series still need **statistical modeling** to answer: *where is activity linked to our experimental conditions?* The 1st level builds this link within each subject.
 
-### Core idea (GLM)
+#### Core idea (GLM)
 Treat each voxel as a separate time series $y(t)$ and model it as a linear combination of predictors:
 
 $$ y = {\beta} X + {\varepsilon} $$
@@ -89,13 +92,13 @@ Parameters are estimated with **ordinary least squares (OLS)** method.
 This step transforms raw signal fluctuations into **activation maps**: images showing where the brain responds to each task.  
 At this stage, we can already check whether expected regions “light up” (e.g., motor cortex during foot movements).
 
-### Why we convolve with HRF
+#### Why we convolve with HRF
 The BOLD signal is delayed and smeared by blood flow. If we used raw event timings, our model would miss the shape of the measured response.
 Binary event regressors are **convolved with the HRF** to form realistic predictors.
 
 ![HRF function](figs/hrf.png)
 
-### What we test (contrasts)
+#### What we test (contrasts)
 The GLM gives us coefficients for each condition. But research questions are rarely about “all betas at once” — they are about **comparisons**:
 - Is there any activation for finger movement?  
 - Is the foot response stronger than the finger and lips combined?  
@@ -107,12 +110,12 @@ Contrasts are the way to formalize these hypotheses. They let us combine coeffic
 
 ---
 
-## 2nd-Level (Group) Analysis
+### 2nd-Level (Group) Analysis
 
 Individual results are informative, but we usually want to generalize beyond one participant.  
 Group analysis answers: *are these effects consistent across subjects, or could they just be idiosyncratic?*
 
-### Model
+#### Model
 For each voxel, take the 1st-level **contrast values** from all subjects and run a **one-sample t-test**:
 
 $$ c{\beta}= {\beta}_g X_g + {\eta} $$
@@ -130,13 +133,13 @@ Then we can find ${\beta}_g$ and perform hypothesis testing on it
 This is a **random-effects** analysis - accounts for inter-subject variance. 
 At the group level, we don’t just average. We account for **variability between individuals**. Random-effects models test whether the average effect is reliably different from zero across the sample. This is what allows us to make **population-level conclusions**, rather than only describing our specific participants.
 
-### Normalization
+#### Normalization
 Brains differ in size and shape. To compare across subjects, we need to bring everyone’s data into a **common reference space** (like the MNI template).  
 This way, a “motor cortex voxel” corresponds to the same anatomical location for all subjects.  
 
 <img src=https://mriquestions.com/uploads/3/4/5/7/34572113/normalization-from-rorden_orig.jpg width=700>
 
-## Multiple Comparisons correction
+### Multiple Comparisons correction
 In fMRI we test thousands of voxels at once. Without correction, many “activations” would appear just by chance.  
 That’s why we use statistical corrections:
 - **FWER (family-wise error rate):** protects against *any* false positives, but can be conservative.  
@@ -145,7 +148,7 @@ That’s why we use statistical corrections:
 
 ---
 
-## What we gain
+### What we get
 - At the **individual level**, we map each subject’s brain activity in relation to tasks.  
 - At the **group level**, we find effects that are reproducible and meaningful at the population scale.  
 
