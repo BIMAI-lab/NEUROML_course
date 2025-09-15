@@ -15,11 +15,7 @@ During scanning, the participants performed:
 In addition, **structural data** (DTI, T1-weighted) were collected.  
 This dataset was specifically created to check reproducibility and to test fMRI analysis methods, so it is often used in educational materials.
 
-<p align="left">
-  <img src="figs/brain_func_areas.png" width="600"/>
-  <br>
-  <!-- <em>Figure 1. Functional areas of the human brain.</em> -->
-</p>
+![Functional areas](figs/brain_func_areas.png)
 
 # Preprocessing
 
@@ -37,10 +33,7 @@ The goal of preprocessing is to remove noise and artifacts, align the data to an
 
 Without these steps, the statistical analysis would be unreliable and hard to interpret.
 
-<p align="left">
-  <img src="figs/fmri_preprocessing.png" width="700"/>
-  <br>
-</p>
+![Preprocess pipeline](figs/fmri_preprocessing.png)
 
 ---
 
@@ -90,10 +83,7 @@ $$ y = {\beta} X + {\varepsilon} $$
 - $\beta$: regression coefficients (contribution of each variable to the voxel activation)  
 - $\varepsilon$: noise component
 
-<p align="left">
-  <img src="figs/fmri_glm.png" width="400"/>
-  <br>
-</p>
+![GLM 1st level](figs/fmri_glm.png)
 
 Parameters are estimated with **ordinary least squares (OLS)** method. 
 This step transforms raw signal fluctuations into **activation maps**: images showing where the brain responds to each task.  
@@ -103,10 +93,7 @@ At this stage, we can already check whether expected regions “light up” (e.g
 The BOLD signal is delayed and smeared by blood flow. If we used raw event timings, our model would miss the shape of the measured response.
 Binary event regressors are **convolved with the HRF** to form realistic predictors.
 
-<p align="left">
-  <img src="figs/hrf.png" width="400"/>
-  <br>
-</p>
+![HRF function](figs/hrf.png)
 
 ### What we test (contrasts)
 The GLM gives us coefficients for each condition. But research questions are rarely about “all betas at once” — they are about **comparisons**:
@@ -116,11 +103,7 @@ The GLM gives us coefficients for each condition. But research questions are rar
 Contrasts are the way to formalize these hypotheses. They let us combine coefficients and test targeted questions.  
 **The results are statistical maps showing how strongly each hypothesis is supported in each voxel.**
 
-<p align="left">
-  <img src="figs/fmri_1level.png" width="600"/>
-  <br>
-   <em>Results of 1-level analysis for "face vs house" experiment.</em>
-</p>
+![1st level results](figs/fmri_1level.png)
 
 ---
 
@@ -142,7 +125,7 @@ $$ c{\beta}= {\beta}_g X_g + {\eta} $$
 
 Then we can find ${\beta}_g$ and perform hypothesis testing on it
 
-<img src=https://s3.studylib.net/store/data/008208763_1-08a21265815c4e2c11a8b6effd90bfa3.png width=700>
+<img src=https://s3.studylib.net/store/data/008208763_1-08a21265815c4e2c11a8b6effd90bfa3.png width=800>
 
 This is a **random-effects** analysis - accounts for inter-subject variance. 
 At the group level, we don’t just average. We account for **variability between individuals**. Random-effects models test whether the average effect is reliably different from zero across the sample. This is what allows us to make **population-level conclusions**, rather than only describing our specific participants.
