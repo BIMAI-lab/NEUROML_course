@@ -1,4 +1,4 @@
-# Preparation to the seminar 6-8
+# Preparation to the seminars 6-8
 
 ## Prerequisites
 
@@ -15,8 +15,8 @@ Clone this repository.
 ### Step 3.
 Run this command to run docker container with mounted directory of the seminar.  
 
-`docker run -it --rm -p 8888:8888 -v <PATH_TO_SEMINAR_4_ON_YOUR_PC>:/home/neuro/nipype_tutorial/notebooks/seminar miykael/nipype_tutorial jupyter notebook`
-Note that `<PATH_TO_SEMINAR_4_ON_YOUR_PC>` is a global path to the seminar 4 directory on your computer.  
+`docker run -it --rm -p 8888:8888 -v <PATH_TO_SEMINAR_ON_YOUR_PC>:/home/neuro/nipype_tutorial/notebooks/seminar miykael/nipype_tutorial jupyter notebook`
+Note that `<PATH_TO_SEMINAR_ON_YOUR_PC>` is a global path to the seminar 6_7 directory on your computer.  
 
 Don't forget to copy the **token** of your jupyter server (check the terminal). Then detach your container (`CTRL+P+Q`) just in case. If everything is okay, the jupyter server can be reached at http://localhost:8888/.  
 
