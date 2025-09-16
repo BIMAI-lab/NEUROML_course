@@ -244,8 +244,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../seminar4/seminar4_3_freesurfer.html">FREESURFER</a></li>
 
 
-<li class="toctree-l1"><a class="reference external" href="https://drive.google.com/file/d/1XMxW_Y73mbMGFIaWY6YlEfscD8YE35yN/view?usp=sharing">Seminar 5.1. MRI classification with 3D CNN</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://drive.google.com/file/d/15M13NfhCGKN6akaWj8reFYvfDH7aLPsY/view?usp=sharing">Seminar 5.2. MRI segmentation with 3D U-net</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://drive.google.com/file/d/16--0U-QRcPJaWYqUe1RP5_V4zGvGOR76/view?usp=sharing">Seminar 5.1. MRI classification with classic ML</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://drive.google.com/file/d/1XMxW_Y73mbMGFIaWY6YlEfscD8YE35yN/view?usp=sharing">Seminar 5.2. MRI classification with 3D CNN</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://drive.google.com/file/d/15M13NfhCGKN6akaWj8reFYvfDH7aLPsY/view?usp=sharing">Seminar 5.3. MRI segmentation with 3D U-net</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Seminars 6-8. Working with fMRI</span></p>
 <ul class="nav bd-sidenav">
@@ -707,15 +708,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="nn">Input In [1],</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Import PyTorch</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span><span class="w"> </span><span class="nn">torch</span><span class="w"> </span><span class="kn">import</span> <span class="n">nn</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1"># Import torchvision</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;torch&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PyTorch version: 2.6.0+cu124
+torchvision version: 0.21.0+cu124
 </pre></div>
 </div>
 </div>
@@ -761,48 +755,6 @@ document.write(`
     <span class="n">download</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="n">transform</span><span class="o">=</span><span class="n">ToTensor</span><span class="p">()</span>
 <span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/train-images-idx3-ubyte.gz
-Downloading http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/train-images-idx3-ubyte.gz to data/FashionMNIST/raw/train-images-idx3-ubyte.gz
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████| 26421880/26421880 [00:01&lt;00:00, 13891074.76it/s]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Extracting data/FashionMNIST/raw/train-images-idx3-ubyte.gz to data/FashionMNIST/raw
-
-Downloading http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/train-labels-idx1-ubyte.gz
-Downloading http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/train-labels-idx1-ubyte.gz to data/FashionMNIST/raw/train-labels-idx1-ubyte.gz
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 29515/29515 [00:00&lt;00:00, 757410.03it/s]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Extracting data/FashionMNIST/raw/train-labels-idx1-ubyte.gz to data/FashionMNIST/raw
-
-Downloading http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/t10k-images-idx3-ubyte.gz
-Downloading http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/t10k-images-idx3-ubyte.gz to data/FashionMNIST/raw/t10k-images-idx3-ubyte.gz
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 4422102/4422102 [00:00&lt;00:00, 13831200.68it/s]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Extracting data/FashionMNIST/raw/t10k-images-idx3-ubyte.gz to data/FashionMNIST/raw
-
-Downloading http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/t10k-labels-idx1-ubyte.gz
-Downloading http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/t10k-labels-idx1-ubyte.gz to data/FashionMNIST/raw/t10k-labels-idx1-ubyte.gz
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 5148/5148 [00:00&lt;00:00, 4927493.61it/s]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Extracting data/FashionMNIST/raw/t10k-labels-idx1-ubyte.gz to data/FashionMNIST/raw
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
@@ -1048,7 +1000,7 @@ Downloading http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/t10k-labe
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Image shape: torch.Size([1, 28, 28])
 </pre></div>
 </div>
-<img alt="../_images/a31afcb947956b7065a76659c8f372b01e501a4af37fec24d0b50b1a4f1fea9d.png" src="../_images/a31afcb947956b7065a76659c8f372b01e501a4af37fec24d0b50b1a4f1fea9d.png" />
+<img alt="../_images/0ff3bb23092cf60c335e25fe0754d2bb7446f682dd4981e567a39d61102d9e96.png" src="../_images/0ff3bb23092cf60c335e25fe0754d2bb7446f682dd4981e567a39d61102d9e96.png" />
 </div>
 </div>
 <p>We can turn the image into grayscale using the <code class="docutils literal notranslate"><span class="pre">cmap</span></code> parameter of <code class="docutils literal notranslate"><span class="pre">plt.imshow()</span></code>.</p>
@@ -1060,7 +1012,7 @@ Downloading http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/t10k-labe
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a5c5d47b682d5e814a35af84dfcd0288fbf34478f3d8f177f8d3fd2cad5f3894.png" src="../_images/a5c5d47b682d5e814a35af84dfcd0288fbf34478f3d8f177f8d3fd2cad5f3894.png" />
+<img alt="../_images/794ad447047cd400776fa3e20f91aceda2702dc2f461c3222ac09368834a666b.png" src="../_images/794ad447047cd400776fa3e20f91aceda2702dc2f461c3222ac09368834a666b.png" />
 </div>
 </div>
 <p>Beautiful, well as beautiful as a pixelated grayscale ankle boot can get.</p>
@@ -1082,7 +1034,7 @@ Downloading http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/t10k-labe
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/750e40ac68e7b769a561dd6ae5d2c00ffaa2a219ef1d4d3030929133d7ce050c.png" src="../_images/750e40ac68e7b769a561dd6ae5d2c00ffaa2a219ef1d4d3030929133d7ce050c.png" />
+<img alt="../_images/49837f2d0dc185a4c620ed24e5624abe0defc68c97a0e3924398fad5d6552c80.png" src="../_images/49837f2d0dc185a4c620ed24e5624abe0defc68c97a0e3924398fad5d6552c80.png" />
 </div>
 </div>
 </section>
@@ -1134,7 +1086,7 @@ Downloading http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/t10k-labe
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dataloaders: (&lt;torch.utils.data.dataloader.DataLoader object at 0x7fdde12943d0&gt;, &lt;torch.utils.data.dataloader.DataLoader object at 0x7fdde1294370&gt;)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dataloaders: (&lt;torch.utils.data.dataloader.DataLoader object at 0x7f0176786790&gt;, &lt;torch.utils.data.dataloader.DataLoader object at 0x7f0176768690&gt;)
 Length of train dataloader: 1875 batches of 32
 Length of test dataloader: 313 batches of 32
 </pre></div>
@@ -1178,7 +1130,7 @@ Length of test dataloader: 313 batches of 32
 Label: 6, label size: torch.Size([])
 </pre></div>
 </div>
-<img alt="../_images/fc2bf455252811344fff4a70a46186548aac1ee1ba35267ebf41f5496bb9c967.png" src="../_images/fc2bf455252811344fff4a70a46186548aac1ee1ba35267ebf41f5496bb9c967.png" />
+<img alt="../_images/9eb3b94b8bf2fcf19d0f0b1f12436464fe996c234d120455742374749bdd9039.png" src="../_images/9eb3b94b8bf2fcf19d0f0b1f12436464fe996c234d120455742374749bdd9039.png" />
 </div>
 </div>
 </section>
@@ -1219,10 +1171,15 @@ Label: 6, label size: torch.Size([])
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CircleModelV0(
-  (layer_1): Linear(in_features=2, out_features=5, bias=True)
-  (layer_2): Linear(in_features=5, out_features=1, bias=True)
-)
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">16</span><span class="p">],</span> <span class="n">line</span> <span class="mi">15</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">layer_2</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">layer_1</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="c1"># computation goes through layer_1 first then the output of layer_1 goes through layer_2</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="c1"># 4. Create an instance of the model and send it to target device</span>
+<span class="ne">---&gt; </span><span class="mi">15</span> <span class="n">model_0</span> <span class="o">=</span> <span class="n">CircleModelV0</span><span class="p">()</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="n">model_0</span>
+
+<span class="ne">NameError</span>: name &#39;device&#39; is not defined
 </pre></div>
 </div>
 </div>

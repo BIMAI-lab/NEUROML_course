@@ -1,133 +1,48 @@
 Traceback (most recent call last):
-  File "/home/fedor/anaconda3/lib/python3.9/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+  File "/opt/conda/lib/python3.11/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
     executenb(
-  File "/home/fedor/anaconda3/lib/python3.9/site-packages/nbclient/client.py", line 1204, in execute
+  File "/opt/conda/lib/python3.11/site-packages/nbclient/client.py", line 1319, in execute
     return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
-  File "/home/fedor/anaconda3/lib/python3.9/site-packages/nbclient/util.py", line 84, in wrapped
-    return just_run(coro(*args, **kwargs))
-  File "/home/fedor/anaconda3/lib/python3.9/site-packages/nbclient/util.py", line 62, in just_run
-    return loop.run_until_complete(coro)
-  File "/home/fedor/anaconda3/lib/python3.9/asyncio/base_events.py", line 647, in run_until_complete
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
     return future.result()
-  File "/home/fedor/anaconda3/lib/python3.9/site-packages/nbclient/client.py", line 663, in async_execute
+           ^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/site-packages/nbclient/client.py", line 709, in async_execute
     await self.async_execute_cell(
-  File "/home/fedor/anaconda3/lib/python3.9/site-packages/nbclient/client.py", line 965, in async_execute_cell
+  File "/opt/conda/lib/python3.11/site-packages/nbclient/client.py", line 1062, in async_execute_cell
     await self._check_raise_for_error(cell, cell_index, exec_reply)
-  File "/home/fedor/anaconda3/lib/python3.9/site-packages/nbclient/client.py", line 862, in _check_raise_for_error
+  File "/opt/conda/lib/python3.11/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-import os
-import re
-
-import pandas as pd
-import numpy as np
-
-import nibabel as nib
-
-import nilearn
-from nilearn.image import concat_imgs
-from nilearn.input_data import NiftiLabelsMasker
-from nilearn.image import high_variance_confounds
-from nilearn.interfaces.fmriprep import load_confounds_strategy
-from nilearn.connectome import ConnectivityMeasure
-from nilearn import datasets
-from nilearn import plotting
-from nilearn.image import mean_img
-
-import matplotlib.pyplot as plt
-
-import numpy as np
-import networkx as nx 
-import nilearn # pip install nilearn
-from scipy.stats import spearmanr
-from sklearn.metrics import mutual_info_score
-import warnings
-warnings.filterwarnings("ignore")
-from nilearn import image
-import glob
-from pathlib import Path
+fmri_image =image.load_img(fmri_filename)
 ------------------
 
+
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mImportError[0m                               Traceback (most recent call last)
-Input [0;32mIn [3][0m, in [0;36m<cell line: 16>[0;34m()[0m
-[1;32m     14[0m [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01mnilearn[39;00m[38;5;21;01m.[39;00m[38;5;21;01mconnectome[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m ConnectivityMeasure
-[1;32m     15[0m [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01mnilearn[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m datasets
-[0;32m---> 16[0m [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01mnilearn[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m plotting
-[1;32m     17[0m [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01mnilearn[39;00m[38;5;21;01m.[39;00m[38;5;21;01mimage[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m mean_img
-[1;32m     19[0m [38;5;28;01mimport[39;00m[38;5;250m [39m[38;5;21;01mmatplotlib[39;00m[38;5;21;01m.[39;00m[38;5;21;01mpyplot[39;00m[38;5;250m [39m[38;5;28;01mas[39;00m[38;5;250m [39m[38;5;21;01mplt[39;00m
+[0;31mValueError[0m                                Traceback (most recent call last)
+Cell [0;32mIn[8], line 1[0m
+[0;32m----> 1[0m fmri_image [38;5;241m=[39m[43mimage[49m[38;5;241;43m.[39;49m[43mload_img[49m[43m([49m[43mfmri_filename[49m[43m)[49m
 
-File [0;32m~/anaconda3/lib/python3.9/site-packages/nilearn/plotting/__init__.py:5[0m, in [0;36m<module>[0;34m[0m
-[1;32m      1[0m [38;5;124;03m"""Plotting code for nilearn."""[39;00m
-[1;32m      3[0m [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01mnilearn[39;00m[38;5;21;01m.[39;00m[38;5;21;01m_utils[39;00m[38;5;21;01m.[39;00m[38;5;21;01mhelpers[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m set_mpl_backend
-[0;32m----> 5[0m [43mset_mpl_backend[49m[43m([49m[43m)[49m
-[1;32m      7[0m [38;5;66;03m###############################################################################[39;00m
-[1;32m      8[0m [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01mnilearn[39;00m[38;5;21;01m.[39;00m[38;5;21;01mplotting[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m cm
-
-File [0;32m~/anaconda3/lib/python3.9/site-packages/nilearn/_utils/helpers.py:33[0m, in [0;36mset_mpl_backend[0;34m(message)[0m
-[1;32m     31[0m [38;5;66;03m# We are doing local imports here to avoid polluting our namespace[39;00m
-[1;32m     32[0m [38;5;28;01mtry[39;00m:
-[0;32m---> 33[0m     [38;5;28;01mimport[39;00m[38;5;250m [39m[38;5;21;01mmatplotlib[39;00m
-[1;32m     34[0m [38;5;28;01mexcept[39;00m [38;5;167;01mImportError[39;00m:
-[1;32m     35[0m     warning [38;5;241m=[39m (
-[1;32m     36[0m         [38;5;124m"[39m[38;5;124mSome dependencies of nilearn.plotting package seem to be missing.[39m[38;5;124m"[39m
-[1;32m     37[0m         [38;5;124m"[39m[38;5;130;01m\n[39;00m[38;5;124mThey can be installed with:[39m[38;5;130;01m\n[39;00m[38;5;124m"[39m
-[1;32m     38[0m         [38;5;124m"[39m[38;5;124m pip install [39m[38;5;124m'[39m[38;5;124mnilearn[plotting][39m[38;5;124m'[39m[38;5;124m"[39m
-[1;32m     39[0m     )
-
-File [0;32m~/anaconda3/lib/python3.9/site-packages/matplotlib/__init__.py:109[0m, in [0;36m<module>[0;34m[0m
-[1;32m    105[0m [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01mpackaging[39;00m[38;5;21;01m.[39;00m[38;5;21;01mversion[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m parse [38;5;28;01mas[39;00m parse_version
-[1;32m    107[0m [38;5;66;03m# cbook must import matplotlib only within function[39;00m
-[1;32m    108[0m [38;5;66;03m# definitions, so it is safe to import from it here.[39;00m
-[0;32m--> 109[0m [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01m.[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m _api, _version, cbook, docstring, rcsetup
-[1;32m    110[0m [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01mmatplotlib[39;00m[38;5;21;01m.[39;00m[38;5;21;01mcbook[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m MatplotlibDeprecationWarning, sanitize_sequence
-[1;32m    111[0m [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01mmatplotlib[39;00m[38;5;21;01m.[39;00m[38;5;21;01mcbook[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m mplDeprecation  [38;5;66;03m# deprecated[39;00m
-
-File [0;32m~/anaconda3/lib/python3.9/site-packages/matplotlib/rcsetup.py:27[0m, in [0;36m<module>[0;34m[0m
-[1;32m     25[0m [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01mmatplotlib[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m _api, cbook
-[1;32m     26[0m [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01mmatplotlib[39;00m[38;5;21;01m.[39;00m[38;5;21;01mcbook[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m ls_mapper
-[0;32m---> 27[0m [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01mmatplotlib[39;00m[38;5;21;01m.[39;00m[38;5;21;01mcolors[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m Colormap, is_color_like
-[1;32m     28[0m [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01mmatplotlib[39;00m[38;5;21;01m.[39;00m[38;5;21;01mfontconfig_pattern[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m parse_fontconfig_pattern
-[1;32m     29[0m [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01mmatplotlib[39;00m[38;5;21;01m.[39;00m[38;5;21;01m_enums[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m JoinStyle, CapStyle
-
-File [0;32m~/anaconda3/lib/python3.9/site-packages/matplotlib/colors.py:56[0m, in [0;36m<module>[0;34m[0m
-[1;32m     54[0m [38;5;28;01mimport[39;00m[38;5;250m [39m[38;5;21;01mmatplotlib[39;00m[38;5;250m [39m[38;5;28;01mas[39;00m[38;5;250m [39m[38;5;21;01mmpl[39;00m
-[1;32m     55[0m [38;5;28;01mimport[39;00m[38;5;250m [39m[38;5;21;01mnumpy[39;00m[38;5;250m [39m[38;5;28;01mas[39;00m[38;5;250m [39m[38;5;21;01mnp[39;00m
-[0;32m---> 56[0m [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01mmatplotlib[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m _api, cbook, scale
-[1;32m     57[0m [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01m.[39;00m[38;5;21;01m_color_data[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m BASE_COLORS, TABLEAU_COLORS, CSS4_COLORS, XKCD_COLORS
-[1;32m     60[0m [38;5;28;01mclass[39;00m[38;5;250m [39m[38;5;21;01m_ColorMapping[39;00m([38;5;28mdict[39m):
-
-File [0;32m~/anaconda3/lib/python3.9/site-packages/matplotlib/scale.py:23[0m, in [0;36m<module>[0;34m[0m
-[1;32m     21[0m [38;5;28;01mimport[39;00m[38;5;250m [39m[38;5;21;01mmatplotlib[39;00m[38;5;250m [39m[38;5;28;01mas[39;00m[38;5;250m [39m[38;5;21;01mmpl[39;00m
-[1;32m     22[0m [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01mmatplotlib[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m _api, docstring
-[0;32m---> 23[0m [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01mmatplotlib[39;00m[38;5;21;01m.[39;00m[38;5;21;01mticker[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m (
-[1;32m     24[0m     NullFormatter, ScalarFormatter, LogFormatterSciNotation, LogitFormatter,
-[1;32m     25[0m     NullLocator, LogLocator, AutoLocator, AutoMinorLocator,
-[1;32m     26[0m     SymmetricalLogLocator, LogitLocator)
-[1;32m     27[0m [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01mmatplotlib[39;00m[38;5;21;01m.[39;00m[38;5;21;01mtransforms[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m Transform, IdentityTransform
-[1;32m     30[0m [38;5;28;01mclass[39;00m[38;5;250m [39m[38;5;21;01mScaleBase[39;00m:
-
-File [0;32m~/anaconda3/lib/python3.9/site-packages/matplotlib/ticker.py:136[0m, in [0;36m<module>[0;34m[0m
-[1;32m    134[0m [38;5;28;01mimport[39;00m[38;5;250m [39m[38;5;21;01mmatplotlib[39;00m[38;5;250m [39m[38;5;28;01mas[39;00m[38;5;250m [39m[38;5;21;01mmpl[39;00m
-[1;32m    135[0m [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01mmatplotlib[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m _api, cbook
-[0;32m--> 136[0m [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01mmatplotlib[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m transforms [38;5;28;01mas[39;00m mtransforms
-[1;32m    138[0m _log [38;5;241m=[39m logging[38;5;241m.[39mgetLogger([38;5;18m__name__[39m)
-[1;32m    140[0m __all__ [38;5;241m=[39m ([38;5;124m'[39m[38;5;124mTickHelper[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124mFormatter[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124mFixedFormatter[39m[38;5;124m'[39m,
-[1;32m    141[0m            [38;5;124m'[39m[38;5;124mNullFormatter[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124mFuncFormatter[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124mFormatStrFormatter[39m[38;5;124m'[39m,
-[1;32m    142[0m            [38;5;124m'[39m[38;5;124mStrMethodFormatter[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124mScalarFormatter[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124mLogFormatter[39m[38;5;124m'[39m,
+File [0;32m/opt/conda/lib/python3.11/site-packages/nilearn/image/image.py:1468[0m, in [0;36mload_img[0;34m(img, wildcards, dtype)[0m
+[1;32m   1431[0m [38;5;28;01mdef[39;00m[38;5;250m [39m[38;5;21mload_img[39m(img, wildcards[38;5;241m=[39m[38;5;28;01mTrue[39;00m, dtype[38;5;241m=[39m[38;5;28;01mNone[39;00m):
+[1;32m   1432[0m [38;5;250m    [39m[38;5;124;03m"""Load a Niimg-like object from filenames or list of filenames.[39;00m
+[1;32m   1433[0m 
+[1;32m   1434[0m [38;5;124;03m    .. versionadded:: 0.2.5[39;00m
 [0;32m   (...)[0m
-[1;32m    148[0m            [38;5;124m'[39m[38;5;124mMultipleLocator[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124mMaxNLocator[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124mAutoMinorLocator[39m[38;5;124m'[39m,
-[1;32m    149[0m            [38;5;124m'[39m[38;5;124mSymmetricalLogLocator[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124mLogitLocator[39m[38;5;124m'[39m)
+[1;32m   1466[0m 
+[1;32m   1467[0m [38;5;124;03m    """[39;00m
+[0;32m-> 1468[0m     [38;5;28;01mreturn[39;00m [43mcheck_niimg[49m[43m([49m[43mimg[49m[43m,[49m[43m [49m[43mwildcards[49m[38;5;241;43m=[39;49m[43mwildcards[49m[43m,[49m[43m [49m[43mdtype[49m[38;5;241;43m=[39;49m[43mdtype[49m[43m)[49m
 
-File [0;32m~/anaconda3/lib/python3.9/site-packages/matplotlib/transforms.py:46[0m, in [0;36m<module>[0;34m[0m
-[1;32m     43[0m [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01mnumpy[39;00m[38;5;21;01m.[39;00m[38;5;21;01mlinalg[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m inv
-[1;32m     45[0m [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01mmatplotlib[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m _api
-[0;32m---> 46[0m [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01mmatplotlib[39;00m[38;5;21;01m.[39;00m[38;5;21;01m_path[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m (
-[1;32m     47[0m     affine_transform, count_bboxes_overlapping_bbox, update_path_extents)
-[1;32m     48[0m [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01m.[39;00m[38;5;21;01mpath[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m Path
-[1;32m     50[0m DEBUG [38;5;241m=[39m [38;5;28;01mFalse[39;00m
+File [0;32m/opt/conda/lib/python3.11/site-packages/nilearn/_utils/niimg_conversions.py:302[0m, in [0;36mcheck_niimg[0;34m(niimg, ensure_ndim, atleast_4d, dtype, return_iterator, wildcards)[0m
+[1;32m    300[0m         [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m(message)
+[1;32m    301[0m     [38;5;28;01melse[39;00m:
+[0;32m--> 302[0m         [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m([38;5;124mf[39m[38;5;124m"[39m[38;5;124mFile not found: [39m[38;5;124m'[39m[38;5;132;01m{[39;00mniimg[38;5;132;01m}[39;00m[38;5;124m'[39m[38;5;124m"[39m)
+[1;32m    303[0m [38;5;28;01melif[39;00m [38;5;129;01mnot[39;00m Path(niimg)[38;5;241m.[39mexists():
+[1;32m    304[0m     [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m([38;5;124mf[39m[38;5;124m"[39m[38;5;124mFile not found: [39m[38;5;124m'[39m[38;5;132;01m{[39;00mniimg[38;5;132;01m}[39;00m[38;5;124m'[39m[38;5;124m"[39m)
 
-[0;31mImportError[0m: numpy.core.multiarray failed to import
-ImportError: numpy.core.multiarray failed to import
+[0;31mValueError[0m: File not found: './cobre/sub-A00000368/func/sub-A00000368_task-rest_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz'
 

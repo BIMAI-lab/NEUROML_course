@@ -246,8 +246,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../seminar4/seminar4_3_freesurfer.html">FREESURFER</a></li>
 
 
-<li class="toctree-l1"><a class="reference external" href="https://drive.google.com/file/d/1XMxW_Y73mbMGFIaWY6YlEfscD8YE35yN/view?usp=sharing">Seminar 5.1. MRI classification with 3D CNN</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://drive.google.com/file/d/15M13NfhCGKN6akaWj8reFYvfDH7aLPsY/view?usp=sharing">Seminar 5.2. MRI segmentation with 3D U-net</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://drive.google.com/file/d/16--0U-QRcPJaWYqUe1RP5_V4zGvGOR76/view?usp=sharing">Seminar 5.1. MRI classification with classic ML</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://drive.google.com/file/d/1XMxW_Y73mbMGFIaWY6YlEfscD8YE35yN/view?usp=sharing">Seminar 5.2. MRI classification with 3D CNN</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://drive.google.com/file/d/15M13NfhCGKN6akaWj8reFYvfDH7aLPsY/view?usp=sharing">Seminar 5.3. MRI segmentation with 3D U-net</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Seminars 6-8. Working with fMRI</span></p>
 <ul class="nav bd-sidenav">
@@ -600,172 +601,6 @@ f_1(x_ℓ) &amp; \dots &amp; f_n(x_\ell)
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="kn">import</span> <span class="n">Series</span><span class="p">,</span> <span class="n">DataFrame</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A module that was compiled using NumPy 1.x cannot be run in
-NumPy 2.0.2 as it may crash. To support both 1.x and 2.x
-versions of NumPy, modules must be compiled with NumPy 2.0.
-Some module may need to rebuild instead e.g. with &#39;pybind11&gt;=2.12&#39;.
-
-If you are a user of the module, the easiest solution will be to
-downgrade to &#39;numpy&lt;2&#39; or try to upgrade the affected module.
-We expect that some modules will need time to support NumPy 2.
-
-Traceback (most recent call last):  File &quot;/home/fedor/anaconda3/lib/python3.9/runpy.py&quot;, line 197, in _run_module_as_main
-    return _run_code(code, main_globals, None,
-  File &quot;/home/fedor/anaconda3/lib/python3.9/runpy.py&quot;, line 87, in _run_code
-    exec(code, run_globals)
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/ipykernel_launcher.py&quot;, line 16, in &lt;module&gt;
-    app.launch_new_instance()
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/traitlets/config/application.py&quot;, line 846, in launch_instance
-    app.start()
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/ipykernel/kernelapp.py&quot;, line 677, in start
-    self.io_loop.start()
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/tornado/platform/asyncio.py&quot;, line 199, in start
-    self.asyncio_loop.run_forever()
-  File &quot;/home/fedor/anaconda3/lib/python3.9/asyncio/base_events.py&quot;, line 601, in run_forever
-    self._run_once()
-  File &quot;/home/fedor/anaconda3/lib/python3.9/asyncio/base_events.py&quot;, line 1905, in _run_once
-    handle._run()
-  File &quot;/home/fedor/anaconda3/lib/python3.9/asyncio/events.py&quot;, line 80, in _run
-    self._context.run(self._callback, *self._args)
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/ipykernel/kernelbase.py&quot;, line 471, in dispatch_queue
-    await self.process_one()
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/ipykernel/kernelbase.py&quot;, line 460, in process_one
-    await dispatch(*args)
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/ipykernel/kernelbase.py&quot;, line 367, in dispatch_shell
-    await result
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/ipykernel/kernelbase.py&quot;, line 662, in execute_request
-    reply_content = await reply_content
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/ipykernel/ipkernel.py&quot;, line 360, in do_execute
-    res = shell.run_cell(code, store_history=store_history, silent=silent)
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/ipykernel/zmqshell.py&quot;, line 532, in run_cell
-    return super().run_cell(*args, **kwargs)
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/IPython/core/interactiveshell.py&quot;, line 2863, in run_cell
-    result = self._run_cell(
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/IPython/core/interactiveshell.py&quot;, line 2909, in _run_cell
-    return runner(coro)
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/IPython/core/async_helpers.py&quot;, line 129, in _pseudo_sync_runner
-    coro.send(None)
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/IPython/core/interactiveshell.py&quot;, line 3106, in run_cell_async
-    has_raised = await self.run_ast_nodes(code_ast.body, cell_name,
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/IPython/core/interactiveshell.py&quot;, line 3309, in run_ast_nodes
-    if await self.run_code(code, result, async_=asy):
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/IPython/core/interactiveshell.py&quot;, line 3369, in run_code
-    exec(code_obj, self.user_global_ns, self.user_ns)
-  File &quot;/tmp/ipykernel_16862/3312606706.py&quot;, line 6, in &lt;cell line: 6&gt;
-    import pandas as pd
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/pandas/__init__.py&quot;, line 49, in &lt;module&gt;
-    from pandas.core.api import (
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/pandas/core/api.py&quot;, line 28, in &lt;module&gt;
-    from pandas.core.arrays import Categorical
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/pandas/core/arrays/__init__.py&quot;, line 1, in &lt;module&gt;
-    from pandas.core.arrays.arrow import ArrowExtensionArray
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/pandas/core/arrays/arrow/__init__.py&quot;, line 5, in &lt;module&gt;
-    from pandas.core.arrays.arrow.array import ArrowExtensionArray
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/pandas/core/arrays/arrow/array.py&quot;, line 52, in &lt;module&gt;
-    from pandas.core import (
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/pandas/core/ops/__init__.py&quot;, line 8, in &lt;module&gt;
-    from pandas.core.ops.array_ops import (
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/pandas/core/ops/array_ops.py&quot;, line 56, in &lt;module&gt;
-    from pandas.core.computation import expressions
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/pandas/core/computation/expressions.py&quot;, line 21, in &lt;module&gt;
-    from pandas.core.computation.check import NUMEXPR_INSTALLED
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/pandas/core/computation/check.py&quot;, line 5, in &lt;module&gt;
-    ne = import_optional_dependency(&quot;numexpr&quot;, errors=&quot;warn&quot;)
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/pandas/compat/_optional.py&quot;, line 135, in import_optional_dependency
-    module = importlib.import_module(name)
-  File &quot;/home/fedor/anaconda3/lib/python3.9/importlib/__init__.py&quot;, line 127, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/numexpr/__init__.py&quot;, line 24, in &lt;module&gt;
-    from numexpr.interpreter import MAX_THREADS, use_vml, __BLOCK_SIZE1__
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="ne">AttributeError</span>: _ARRAY_API not found
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A module that was compiled using NumPy 1.x cannot be run in
-NumPy 2.0.2 as it may crash. To support both 1.x and 2.x
-versions of NumPy, modules must be compiled with NumPy 2.0.
-Some module may need to rebuild instead e.g. with &#39;pybind11&gt;=2.12&#39;.
-
-If you are a user of the module, the easiest solution will be to
-downgrade to &#39;numpy&lt;2&#39; or try to upgrade the affected module.
-We expect that some modules will need time to support NumPy 2.
-
-Traceback (most recent call last):  File &quot;/home/fedor/anaconda3/lib/python3.9/runpy.py&quot;, line 197, in _run_module_as_main
-    return _run_code(code, main_globals, None,
-  File &quot;/home/fedor/anaconda3/lib/python3.9/runpy.py&quot;, line 87, in _run_code
-    exec(code, run_globals)
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/ipykernel_launcher.py&quot;, line 16, in &lt;module&gt;
-    app.launch_new_instance()
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/traitlets/config/application.py&quot;, line 846, in launch_instance
-    app.start()
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/ipykernel/kernelapp.py&quot;, line 677, in start
-    self.io_loop.start()
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/tornado/platform/asyncio.py&quot;, line 199, in start
-    self.asyncio_loop.run_forever()
-  File &quot;/home/fedor/anaconda3/lib/python3.9/asyncio/base_events.py&quot;, line 601, in run_forever
-    self._run_once()
-  File &quot;/home/fedor/anaconda3/lib/python3.9/asyncio/base_events.py&quot;, line 1905, in _run_once
-    handle._run()
-  File &quot;/home/fedor/anaconda3/lib/python3.9/asyncio/events.py&quot;, line 80, in _run
-    self._context.run(self._callback, *self._args)
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/ipykernel/kernelbase.py&quot;, line 471, in dispatch_queue
-    await self.process_one()
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/ipykernel/kernelbase.py&quot;, line 460, in process_one
-    await dispatch(*args)
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/ipykernel/kernelbase.py&quot;, line 367, in dispatch_shell
-    await result
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/ipykernel/kernelbase.py&quot;, line 662, in execute_request
-    reply_content = await reply_content
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/ipykernel/ipkernel.py&quot;, line 360, in do_execute
-    res = shell.run_cell(code, store_history=store_history, silent=silent)
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/ipykernel/zmqshell.py&quot;, line 532, in run_cell
-    return super().run_cell(*args, **kwargs)
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/IPython/core/interactiveshell.py&quot;, line 2863, in run_cell
-    result = self._run_cell(
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/IPython/core/interactiveshell.py&quot;, line 2909, in _run_cell
-    return runner(coro)
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/IPython/core/async_helpers.py&quot;, line 129, in _pseudo_sync_runner
-    coro.send(None)
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/IPython/core/interactiveshell.py&quot;, line 3106, in run_cell_async
-    has_raised = await self.run_ast_nodes(code_ast.body, cell_name,
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/IPython/core/interactiveshell.py&quot;, line 3309, in run_ast_nodes
-    if await self.run_code(code, result, async_=asy):
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/IPython/core/interactiveshell.py&quot;, line 3369, in run_code
-    exec(code_obj, self.user_global_ns, self.user_ns)
-  File &quot;/tmp/ipykernel_16862/3312606706.py&quot;, line 6, in &lt;cell line: 6&gt;
-    import pandas as pd
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/pandas/__init__.py&quot;, line 49, in &lt;module&gt;
-    from pandas.core.api import (
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/pandas/core/api.py&quot;, line 28, in &lt;module&gt;
-    from pandas.core.arrays import Categorical
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/pandas/core/arrays/__init__.py&quot;, line 1, in &lt;module&gt;
-    from pandas.core.arrays.arrow import ArrowExtensionArray
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/pandas/core/arrays/arrow/__init__.py&quot;, line 5, in &lt;module&gt;
-    from pandas.core.arrays.arrow.array import ArrowExtensionArray
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/pandas/core/arrays/arrow/array.py&quot;, line 66, in &lt;module&gt;
-    from pandas.core.arrays.masked import BaseMaskedArray
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/pandas/core/arrays/masked.py&quot;, line 61, in &lt;module&gt;
-    from pandas.core import (
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/pandas/core/nanops.py&quot;, line 52, in &lt;module&gt;
-    bn = import_optional_dependency(&quot;bottleneck&quot;, errors=&quot;warn&quot;)
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/pandas/compat/_optional.py&quot;, line 135, in import_optional_dependency
-    module = importlib.import_module(name)
-  File &quot;/home/fedor/anaconda3/lib/python3.9/importlib/__init__.py&quot;, line 127, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/bottleneck/__init__.py&quot;, line 7, in &lt;module&gt;
-    from .move import (move_argmax, move_argmin, move_max, move_mean, move_median,
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="ne">AttributeError</span>: _ARRAY_API not found
 </pre></div>
 </div>
 </div>
@@ -1540,143 +1375,6 @@ Remember that:</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A module that was compiled using NumPy 1.x cannot be run in
-NumPy 2.0.2 as it may crash. To support both 1.x and 2.x
-versions of NumPy, modules must be compiled with NumPy 2.0.
-Some module may need to rebuild instead e.g. with &#39;pybind11&gt;=2.12&#39;.
-
-If you are a user of the module, the easiest solution will be to
-downgrade to &#39;numpy&lt;2&#39; or try to upgrade the affected module.
-We expect that some modules will need time to support NumPy 2.
-
-Traceback (most recent call last):  File &quot;/home/fedor/anaconda3/lib/python3.9/runpy.py&quot;, line 197, in _run_module_as_main
-    return _run_code(code, main_globals, None,
-  File &quot;/home/fedor/anaconda3/lib/python3.9/runpy.py&quot;, line 87, in _run_code
-    exec(code, run_globals)
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/ipykernel_launcher.py&quot;, line 16, in &lt;module&gt;
-    app.launch_new_instance()
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/traitlets/config/application.py&quot;, line 846, in launch_instance
-    app.start()
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/ipykernel/kernelapp.py&quot;, line 677, in start
-    self.io_loop.start()
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/tornado/platform/asyncio.py&quot;, line 199, in start
-    self.asyncio_loop.run_forever()
-  File &quot;/home/fedor/anaconda3/lib/python3.9/asyncio/base_events.py&quot;, line 601, in run_forever
-    self._run_once()
-  File &quot;/home/fedor/anaconda3/lib/python3.9/asyncio/base_events.py&quot;, line 1905, in _run_once
-    handle._run()
-  File &quot;/home/fedor/anaconda3/lib/python3.9/asyncio/events.py&quot;, line 80, in _run
-    self._context.run(self._callback, *self._args)
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/ipykernel/kernelbase.py&quot;, line 471, in dispatch_queue
-    await self.process_one()
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/ipykernel/kernelbase.py&quot;, line 460, in process_one
-    await dispatch(*args)
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/ipykernel/kernelbase.py&quot;, line 367, in dispatch_shell
-    await result
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/ipykernel/kernelbase.py&quot;, line 662, in execute_request
-    reply_content = await reply_content
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/ipykernel/ipkernel.py&quot;, line 360, in do_execute
-    res = shell.run_cell(code, store_history=store_history, silent=silent)
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/ipykernel/zmqshell.py&quot;, line 532, in run_cell
-    return super().run_cell(*args, **kwargs)
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/IPython/core/interactiveshell.py&quot;, line 2863, in run_cell
-    result = self._run_cell(
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/IPython/core/interactiveshell.py&quot;, line 2909, in _run_cell
-    return runner(coro)
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/IPython/core/async_helpers.py&quot;, line 129, in _pseudo_sync_runner
-    coro.send(None)
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/IPython/core/interactiveshell.py&quot;, line 3106, in run_cell_async
-    has_raised = await self.run_ast_nodes(code_ast.body, cell_name,
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/IPython/core/interactiveshell.py&quot;, line 3309, in run_ast_nodes
-    if await self.run_code(code, result, async_=asy):
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/IPython/core/interactiveshell.py&quot;, line 3369, in run_code
-    exec(code_obj, self.user_global_ns, self.user_ns)
-  File &quot;/tmp/ipykernel_16862/1103890379.py&quot;, line 2, in &lt;cell line: 2&gt;
-    import matplotlib.pyplot as plt
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/matplotlib/__init__.py&quot;, line 109, in &lt;module&gt;
-    from . import _api, _version, cbook, docstring, rcsetup
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/matplotlib/rcsetup.py&quot;, line 27, in &lt;module&gt;
-    from matplotlib.colors import Colormap, is_color_like
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/matplotlib/colors.py&quot;, line 56, in &lt;module&gt;
-    from matplotlib import _api, cbook, scale
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/matplotlib/scale.py&quot;, line 23, in &lt;module&gt;
-    from matplotlib.ticker import (
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/matplotlib/ticker.py&quot;, line 136, in &lt;module&gt;
-    from matplotlib import transforms as mtransforms
-  File &quot;/home/fedor/anaconda3/lib/python3.9/site-packages/matplotlib/transforms.py&quot;, line 46, in &lt;module&gt;
-    from matplotlib._path import (
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="ne">AttributeError</span>: _ARRAY_API not found
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
-<span class="nn">Input In [12],</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># libraries for visualization: matplotlib, seaborn</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s1">&#39;whitegrid&#39;</span><span class="p">)</span>
-
-<span class="n">File</span> <span class="o">~/</span><span class="n">anaconda3</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.9</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">matplotlib</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">109</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">    </span><span class="mi">105</span> <span class="kn">from</span><span class="w"> </span><span class="nn">packaging.version</span><span class="w"> </span><span class="kn">import</span> <span class="n">parse</span> <span class="k">as</span> <span class="n">parse_version</span>
-<span class="g g-Whitespace">    </span><span class="mi">107</span> <span class="c1"># cbook must import matplotlib only within function</span>
-<span class="g g-Whitespace">    </span><span class="mi">108</span> <span class="c1"># definitions, so it is safe to import from it here.</span>
-<span class="ne">--&gt; </span><span class="mi">109</span> <span class="kn">from</span><span class="w"> </span><span class="nn">.</span><span class="w"> </span><span class="kn">import</span> <span class="n">_api</span><span class="p">,</span> <span class="n">_version</span><span class="p">,</span> <span class="n">cbook</span><span class="p">,</span> <span class="n">docstring</span><span class="p">,</span> <span class="n">rcsetup</span>
-<span class="g g-Whitespace">    </span><span class="mi">110</span> <span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.cbook</span><span class="w"> </span><span class="kn">import</span> <span class="n">MatplotlibDeprecationWarning</span><span class="p">,</span> <span class="n">sanitize_sequence</span>
-<span class="g g-Whitespace">    </span><span class="mi">111</span> <span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.cbook</span><span class="w"> </span><span class="kn">import</span> <span class="n">mplDeprecation</span>  <span class="c1"># deprecated</span>
-
-<span class="n">File</span> <span class="o">~/</span><span class="n">anaconda3</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.9</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">matplotlib</span><span class="o">/</span><span class="n">rcsetup</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">27</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">     </span><span class="mi">25</span> <span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">_api</span><span class="p">,</span> <span class="n">cbook</span>
-<span class="g g-Whitespace">     </span><span class="mi">26</span> <span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.cbook</span><span class="w"> </span><span class="kn">import</span> <span class="n">ls_mapper</span>
-<span class="ne">---&gt; </span><span class="mi">27</span> <span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.colors</span><span class="w"> </span><span class="kn">import</span> <span class="n">Colormap</span><span class="p">,</span> <span class="n">is_color_like</span>
-<span class="g g-Whitespace">     </span><span class="mi">28</span> <span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.fontconfig_pattern</span><span class="w"> </span><span class="kn">import</span> <span class="n">parse_fontconfig_pattern</span>
-<span class="g g-Whitespace">     </span><span class="mi">29</span> <span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib._enums</span><span class="w"> </span><span class="kn">import</span> <span class="n">JoinStyle</span><span class="p">,</span> <span class="n">CapStyle</span>
-
-<span class="n">File</span> <span class="o">~/</span><span class="n">anaconda3</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.9</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">matplotlib</span><span class="o">/</span><span class="n">colors</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">56</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">     </span><span class="mi">54</span> <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mpl</span>
-<span class="g g-Whitespace">     </span><span class="mi">55</span> <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="ne">---&gt; </span><span class="mi">56</span> <span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">_api</span><span class="p">,</span> <span class="n">cbook</span><span class="p">,</span> <span class="n">scale</span>
-<span class="g g-Whitespace">     </span><span class="mi">57</span> <span class="kn">from</span><span class="w"> </span><span class="nn">._color_data</span><span class="w"> </span><span class="kn">import</span> <span class="n">BASE_COLORS</span><span class="p">,</span> <span class="n">TABLEAU_COLORS</span><span class="p">,</span> <span class="n">CSS4_COLORS</span><span class="p">,</span> <span class="n">XKCD_COLORS</span>
-<span class="g g-Whitespace">     </span><span class="mi">60</span> <span class="k">class</span><span class="w"> </span><span class="nc">_ColorMapping</span><span class="p">(</span><span class="nb">dict</span><span class="p">):</span>
-
-<span class="n">File</span> <span class="o">~/</span><span class="n">anaconda3</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.9</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">matplotlib</span><span class="o">/</span><span class="n">scale</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">23</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mpl</span>
-<span class="g g-Whitespace">     </span><span class="mi">22</span> <span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">_api</span><span class="p">,</span> <span class="n">docstring</span>
-<span class="ne">---&gt; </span><span class="mi">23</span> <span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.ticker</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">24</span>     <span class="n">NullFormatter</span><span class="p">,</span> <span class="n">ScalarFormatter</span><span class="p">,</span> <span class="n">LogFormatterSciNotation</span><span class="p">,</span> <span class="n">LogitFormatter</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">25</span>     <span class="n">NullLocator</span><span class="p">,</span> <span class="n">LogLocator</span><span class="p">,</span> <span class="n">AutoLocator</span><span class="p">,</span> <span class="n">AutoMinorLocator</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">26</span>     <span class="n">SymmetricalLogLocator</span><span class="p">,</span> <span class="n">LogitLocator</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">27</span> <span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.transforms</span><span class="w"> </span><span class="kn">import</span> <span class="n">Transform</span><span class="p">,</span> <span class="n">IdentityTransform</span>
-<span class="g g-Whitespace">     </span><span class="mi">30</span> <span class="k">class</span><span class="w"> </span><span class="nc">ScaleBase</span><span class="p">:</span>
-
-<span class="n">File</span> <span class="o">~/</span><span class="n">anaconda3</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.9</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">matplotlib</span><span class="o">/</span><span class="n">ticker</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">136</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">    </span><span class="mi">134</span> <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mpl</span>
-<span class="g g-Whitespace">    </span><span class="mi">135</span> <span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">_api</span><span class="p">,</span> <span class="n">cbook</span>
-<span class="ne">--&gt; </span><span class="mi">136</span> <span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">transforms</span> <span class="k">as</span> <span class="n">mtransforms</span>
-<span class="g g-Whitespace">    </span><span class="mi">138</span> <span class="n">_log</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">140</span> <span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;TickHelper&#39;</span><span class="p">,</span> <span class="s1">&#39;Formatter&#39;</span><span class="p">,</span> <span class="s1">&#39;FixedFormatter&#39;</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">141</span>            <span class="s1">&#39;NullFormatter&#39;</span><span class="p">,</span> <span class="s1">&#39;FuncFormatter&#39;</span><span class="p">,</span> <span class="s1">&#39;FormatStrFormatter&#39;</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">142</span>            <span class="s1">&#39;StrMethodFormatter&#39;</span><span class="p">,</span> <span class="s1">&#39;ScalarFormatter&#39;</span><span class="p">,</span> <span class="s1">&#39;LogFormatter&#39;</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">148</span>            <span class="s1">&#39;MultipleLocator&#39;</span><span class="p">,</span> <span class="s1">&#39;MaxNLocator&#39;</span><span class="p">,</span> <span class="s1">&#39;AutoMinorLocator&#39;</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">149</span>            <span class="s1">&#39;SymmetricalLogLocator&#39;</span><span class="p">,</span> <span class="s1">&#39;LogitLocator&#39;</span><span class="p">)</span>
-
-<span class="n">File</span> <span class="o">~/</span><span class="n">anaconda3</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.9</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">matplotlib</span><span class="o">/</span><span class="n">transforms</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">46</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">     </span><span class="mi">43</span> <span class="kn">from</span><span class="w"> </span><span class="nn">numpy.linalg</span><span class="w"> </span><span class="kn">import</span> <span class="n">inv</span>
-<span class="g g-Whitespace">     </span><span class="mi">45</span> <span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">_api</span>
-<span class="ne">---&gt; </span><span class="mi">46</span> <span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib._path</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">47</span>     <span class="n">affine_transform</span><span class="p">,</span> <span class="n">count_bboxes_overlapping_bbox</span><span class="p">,</span> <span class="n">update_path_extents</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">48</span> <span class="kn">from</span><span class="w"> </span><span class="nn">.path</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
-<span class="g g-Whitespace">     </span><span class="mi">50</span> <span class="n">DEBUG</span> <span class="o">=</span> <span class="kc">False</span>
-
-<span class="ne">ImportError</span>: numpy.core.multiarray failed to import
-</pre></div>
-</div>
-</div>
 </div>
 <p><a class="reference external" href="https://devpractice.ru/matplotlib-lesson-1-quick-start-guide/">Simple matplotlib guide</a></p>
 <p><a class="reference external" href="https://habr.com/ru/articles/468295/">Complex matplotlib guide</a></p>
@@ -1693,7 +1391,7 @@ Traceback (most recent call last):  File &quot;/home/fedor/anaconda3/lib/python3
 </div>
 </div>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="../_images/9ed952bce9fa828bf2183adc0d8e6794e13caf56cc105e899befa2ce077433bf.png"><img alt="../_images/9ed952bce9fa828bf2183adc0d8e6794e13caf56cc105e899befa2ce077433bf.png" src="../_images/9ed952bce9fa828bf2183adc0d8e6794e13caf56cc105e899befa2ce077433bf.png" style="width: 386px; height: 261px;" />
+<a class="reference internal image-reference" href="../_images/d899fbb19b949fd7f5c7d9922c2f89522e1a203ac4aa73b582f36ed663770fae.png"><img alt="../_images/d899fbb19b949fd7f5c7d9922c2f89522e1a203ac4aa73b582f36ed663770fae.png" src="../_images/d899fbb19b949fd7f5c7d9922c2f89522e1a203ac4aa73b582f36ed663770fae.png" style="width: 571px; height: 432px;" />
 </a>
 </div>
 </div>
@@ -1720,9 +1418,9 @@ sns.catplot<span class="o">?</span>
 </div>
 </div>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="../_images/cb9f1ffdd3310bbd71f3d23178daab2cab4872cac30c8109f8955d1829538f9b.png"><img alt="../_images/cb9f1ffdd3310bbd71f3d23178daab2cab4872cac30c8109f8955d1829538f9b.png" src="../_images/cb9f1ffdd3310bbd71f3d23178daab2cab4872cac30c8109f8955d1829538f9b.png" style="width: 870px; height: 281px;" />
+<a class="reference internal image-reference" href="../_images/0673158958f207375e35dad70e6a3fa12ecf4ba101636a9bac4dbe4759f0563f.png"><img alt="../_images/0673158958f207375e35dad70e6a3fa12ecf4ba101636a9bac4dbe4759f0563f.png" src="../_images/0673158958f207375e35dad70e6a3fa12ecf4ba101636a9bac4dbe4759f0563f.png" style="width: 1208px; height: 390px;" />
 </a>
-<a class="reference internal image-reference" href="../_images/fa6a7bd2ad71adb00d31d8ae7e2b40d012fbb4cf688bce177e907e84d2f86fdc.png"><img alt="../_images/fa6a7bd2ad71adb00d31d8ae7e2b40d012fbb4cf688bce177e907e84d2f86fdc.png" src="../_images/fa6a7bd2ad71adb00d31d8ae7e2b40d012fbb4cf688bce177e907e84d2f86fdc.png" style="width: 888px; height: 316px;" />
+<a class="reference internal image-reference" href="../_images/4e352329b4ebea97ce39a4b66eef8a8d7c4ae44d200b2da93ceee8a40546b816.png"><img alt="../_images/4e352329b4ebea97ce39a4b66eef8a8d7c4ae44d200b2da93ceee8a40546b816.png" src="../_images/4e352329b4ebea97ce39a4b66eef8a8d7c4ae44d200b2da93ceee8a40546b816.png" style="width: 1238px; height: 448px;" />
 </a>
 </div>
 </div>
@@ -1745,7 +1443,7 @@ sns.catplot<span class="o">?</span>
 </div>
 </div>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="../_images/a9dd44c3f0a457c1487f91d145efce8e40073ef93427339a13a5f36defe4a800.png"><img alt="../_images/a9dd44c3f0a457c1487f91d145efce8e40073ef93427339a13a5f36defe4a800.png" src="../_images/a9dd44c3f0a457c1487f91d145efce8e40073ef93427339a13a5f36defe4a800.png" style="width: 727px; height: 718px;" />
+<a class="reference internal image-reference" href="../_images/97b89dcc235eaafa1512a1350a95c4e147199ffd29f8c16094039254fc0b38b7.png"><img alt="../_images/97b89dcc235eaafa1512a1350a95c4e147199ffd29f8c16094039254fc0b38b7.png" src="../_images/97b89dcc235eaafa1512a1350a95c4e147199ffd29f8c16094039254fc0b38b7.png" style="width: 1011px; height: 997px;" />
 </a>
 </div>
 </div>
@@ -1788,7 +1486,7 @@ Corr(x,y)  \in [-1, 1]
 </div>
 </div>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="../_images/27f9caea8750d3d9a1811e2e4556d9d795e072cf8f66affd26a3b4385ef720c5.png"><img alt="../_images/27f9caea8750d3d9a1811e2e4556d9d795e072cf8f66affd26a3b4385ef720c5.png" src="../_images/27f9caea8750d3d9a1811e2e4556d9d795e072cf8f66affd26a3b4385ef720c5.png" style="width: 929px; height: 281px;" />
+<a class="reference internal image-reference" href="../_images/9a3ee7d7dd89756b1436a8ff6a14cdd9fddcae2adc4f3fbacac22e54486eedba.png"><img alt="../_images/9a3ee7d7dd89756b1436a8ff6a14cdd9fddcae2adc4f3fbacac22e54486eedba.png" src="../_images/9a3ee7d7dd89756b1436a8ff6a14cdd9fddcae2adc4f3fbacac22e54486eedba.png" style="width: 1290px; height: 390px;" />
 </a>
 </div>
 </div>
@@ -1804,7 +1502,7 @@ Corr(x,y)  \in [-1, 1]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Корреляция: -0.09
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Correlation: -0.09
 </pre></div>
 </div>
 </div>
@@ -1881,7 +1579,7 @@ Corr(x,y)  \in [-1, 1]
 </div>
 </div>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="../_images/9f1659a771399b8c99755d905a373d97ed1506dd6775705c5681aef46dedc329.png"><img alt="../_images/9f1659a771399b8c99755d905a373d97ed1506dd6775705c5681aef46dedc329.png" src="../_images/9f1659a771399b8c99755d905a373d97ed1506dd6775705c5681aef46dedc329.png" style="width: 869px; height: 263px;" />
+<a class="reference internal image-reference" href="../_images/cf11215b28695f644c824233c0418cb68d58bb5b5eebcfe481438637fb87b677.png"><img alt="../_images/cf11215b28695f644c824233c0418cb68d58bb5b5eebcfe481438637fb87b677.png" src="../_images/cf11215b28695f644c824233c0418cb68d58bb5b5eebcfe481438637fb87b677.png" style="width: 1209px; height: 373px;" />
 </a>
 </div>
 </div>
@@ -2037,7 +1735,7 @@ a(x, θ) = \sum_{j=1}^{n} θ_j f_j(x), \quad θ \in \mathbb{R}^n
 </div>
 </div>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="../_images/89e807db423b46de7439bcb7ca4ab6d0a77f1f6106aa14d7db40275cf9ab9b3d.png"><img alt="../_images/89e807db423b46de7439bcb7ca4ab6d0a77f1f6106aa14d7db40275cf9ab9b3d.png" src="../_images/89e807db423b46de7439bcb7ca4ab6d0a77f1f6106aa14d7db40275cf9ab9b3d.png" style="width: 611px; height: 263px;" />
+<a class="reference internal image-reference" href="../_images/569303a0238f06da78125101fad8b2c3f909db3281c7086cf5072fe8ee46b978.png"><img alt="../_images/569303a0238f06da78125101fad8b2c3f909db3281c7086cf5072fe8ee46b978.png" src="../_images/569303a0238f06da78125101fad8b2c3f909db3281c7086cf5072fe8ee46b978.png" style="width: 852px; height: 372px;" />
 </a>
 </div>
 </div>
@@ -2061,10 +1759,422 @@ a(x, θ) = \sum_{j=1}^{n} θ_j f_j(x), \quad θ \in \mathbb{R}^n
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>LinearRegression()
-</pre></div>
-</div>
-</div>
+<div class="output text_html"><style>#sk-container-id-1 {
+  /* Definition of color scheme common for light and dark mode */
+  --sklearn-color-text: #000;
+  --sklearn-color-text-muted: #666;
+  --sklearn-color-line: gray;
+  /* Definition of color scheme for unfitted estimators */
+  --sklearn-color-unfitted-level-0: #fff5e6;
+  --sklearn-color-unfitted-level-1: #f6e4d2;
+  --sklearn-color-unfitted-level-2: #ffe0b3;
+  --sklearn-color-unfitted-level-3: chocolate;
+  /* Definition of color scheme for fitted estimators */
+  --sklearn-color-fitted-level-0: #f0f8ff;
+  --sklearn-color-fitted-level-1: #d4ebff;
+  --sklearn-color-fitted-level-2: #b3dbfd;
+  --sklearn-color-fitted-level-3: cornflowerblue;
+
+  /* Specific color for light theme */
+  --sklearn-color-text-on-default-background: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, black)));
+  --sklearn-color-background: var(--sg-background-color, var(--theme-background, var(--jp-layout-color0, white)));
+  --sklearn-color-border-box: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, black)));
+  --sklearn-color-icon: #696969;
+
+  @media (prefers-color-scheme: dark) {
+    /* Redefinition of color scheme for dark theme */
+    --sklearn-color-text-on-default-background: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, white)));
+    --sklearn-color-background: var(--sg-background-color, var(--theme-background, var(--jp-layout-color0, #111)));
+    --sklearn-color-border-box: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, white)));
+    --sklearn-color-icon: #878787;
+  }
+}
+
+#sk-container-id-1 {
+  color: var(--sklearn-color-text);
+}
+
+#sk-container-id-1 pre {
+  padding: 0;
+}
+
+#sk-container-id-1 input.sk-hidden--visually {
+  border: 0;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+#sk-container-id-1 div.sk-dashed-wrapped {
+  border: 1px dashed var(--sklearn-color-line);
+  margin: 0 0.4em 0.5em 0.4em;
+  box-sizing: border-box;
+  padding-bottom: 0.4em;
+  background-color: var(--sklearn-color-background);
+}
+
+#sk-container-id-1 div.sk-container {
+  /* jupyter's `normalize.less` sets `[hidden] { display: none; }`
+     but bootstrap.min.css set `[hidden] { display: none !important; }`
+     so we also need the `!important` here to be able to override the
+     default hidden behavior on the sphinx rendered scikit-learn.org.
+     See: https://github.com/scikit-learn/scikit-learn/issues/21755 */
+  display: inline-block !important;
+  position: relative;
+}
+
+#sk-container-id-1 div.sk-text-repr-fallback {
+  display: none;
+}
+
+div.sk-parallel-item,
+div.sk-serial,
+div.sk-item {
+  /* draw centered vertical line to link estimators */
+  background-image: linear-gradient(var(--sklearn-color-text-on-default-background), var(--sklearn-color-text-on-default-background));
+  background-size: 2px 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+/* Parallel-specific style estimator block */
+
+#sk-container-id-1 div.sk-parallel-item::after {
+  content: "";
+  width: 100%;
+  border-bottom: 2px solid var(--sklearn-color-text-on-default-background);
+  flex-grow: 1;
+}
+
+#sk-container-id-1 div.sk-parallel {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  background-color: var(--sklearn-color-background);
+  position: relative;
+}
+
+#sk-container-id-1 div.sk-parallel-item {
+  display: flex;
+  flex-direction: column;
+}
+
+#sk-container-id-1 div.sk-parallel-item:first-child::after {
+  align-self: flex-end;
+  width: 50%;
+}
+
+#sk-container-id-1 div.sk-parallel-item:last-child::after {
+  align-self: flex-start;
+  width: 50%;
+}
+
+#sk-container-id-1 div.sk-parallel-item:only-child::after {
+  width: 0;
+}
+
+/* Serial-specific style estimator block */
+
+#sk-container-id-1 div.sk-serial {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--sklearn-color-background);
+  padding-right: 1em;
+  padding-left: 1em;
+}
+
+
+/* Toggleable style: style used for estimator/Pipeline/ColumnTransformer box that is
+clickable and can be expanded/collapsed.
+- Pipeline and ColumnTransformer use this feature and define the default style
+- Estimators will overwrite some part of the style using the `sk-estimator` class
+*/
+
+/* Pipeline and ColumnTransformer style (default) */
+
+#sk-container-id-1 div.sk-toggleable {
+  /* Default theme specific background. It is overwritten whether we have a
+  specific estimator or a Pipeline/ColumnTransformer */
+  background-color: var(--sklearn-color-background);
+}
+
+/* Toggleable label */
+#sk-container-id-1 label.sk-toggleable__label {
+  cursor: pointer;
+  display: flex;
+  width: 100%;
+  margin-bottom: 0;
+  padding: 0.5em;
+  box-sizing: border-box;
+  text-align: center;
+  align-items: start;
+  justify-content: space-between;
+  gap: 0.5em;
+}
+
+#sk-container-id-1 label.sk-toggleable__label .caption {
+  font-size: 0.6rem;
+  font-weight: lighter;
+  color: var(--sklearn-color-text-muted);
+}
+
+#sk-container-id-1 label.sk-toggleable__label-arrow:before {
+  /* Arrow on the left of the label */
+  content: "▸";
+  float: left;
+  margin-right: 0.25em;
+  color: var(--sklearn-color-icon);
+}
+
+#sk-container-id-1 label.sk-toggleable__label-arrow:hover:before {
+  color: var(--sklearn-color-text);
+}
+
+/* Toggleable content - dropdown */
+
+#sk-container-id-1 div.sk-toggleable__content {
+  max-height: 0;
+  max-width: 0;
+  overflow: hidden;
+  text-align: left;
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-0);
+}
+
+#sk-container-id-1 div.sk-toggleable__content.fitted {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+}
+
+#sk-container-id-1 div.sk-toggleable__content pre {
+  margin: 0.2em;
+  border-radius: 0.25em;
+  color: var(--sklearn-color-text);
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-0);
+}
+
+#sk-container-id-1 div.sk-toggleable__content.fitted pre {
+  /* unfitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+}
+
+#sk-container-id-1 input.sk-toggleable__control:checked~div.sk-toggleable__content {
+  /* Expand drop-down */
+  max-height: 200px;
+  max-width: 100%;
+  overflow: auto;
+}
+
+#sk-container-id-1 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {
+  content: "▾";
+}
+
+/* Pipeline/ColumnTransformer-specific style */
+
+#sk-container-id-1 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  color: var(--sklearn-color-text);
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+#sk-container-id-1 div.sk-label.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+/* Estimator-specific style */
+
+/* Colorize estimator box */
+#sk-container-id-1 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+#sk-container-id-1 div.sk-estimator.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+#sk-container-id-1 div.sk-label label.sk-toggleable__label,
+#sk-container-id-1 div.sk-label label {
+  /* The background is the default theme color */
+  color: var(--sklearn-color-text-on-default-background);
+}
+
+/* On hover, darken the color of the background */
+#sk-container-id-1 div.sk-label:hover label.sk-toggleable__label {
+  color: var(--sklearn-color-text);
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+/* Label box, darken color on hover, fitted */
+#sk-container-id-1 div.sk-label.fitted:hover label.sk-toggleable__label.fitted {
+  color: var(--sklearn-color-text);
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+/* Estimator label */
+
+#sk-container-id-1 div.sk-label label {
+  font-family: monospace;
+  font-weight: bold;
+  display: inline-block;
+  line-height: 1.2em;
+}
+
+#sk-container-id-1 div.sk-label-container {
+  text-align: center;
+}
+
+/* Estimator-specific */
+#sk-container-id-1 div.sk-estimator {
+  font-family: monospace;
+  border: 1px dotted var(--sklearn-color-border-box);
+  border-radius: 0.25em;
+  box-sizing: border-box;
+  margin-bottom: 0.5em;
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-0);
+}
+
+#sk-container-id-1 div.sk-estimator.fitted {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+}
+
+/* on hover */
+#sk-container-id-1 div.sk-estimator:hover {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+#sk-container-id-1 div.sk-estimator.fitted:hover {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+/* Specification for estimator info (e.g. "i" and "?") */
+
+/* Common style for "i" and "?" */
+
+.sk-estimator-doc-link,
+a:link.sk-estimator-doc-link,
+a:visited.sk-estimator-doc-link {
+  float: right;
+  font-size: smaller;
+  line-height: 1em;
+  font-family: monospace;
+  background-color: var(--sklearn-color-background);
+  border-radius: 1em;
+  height: 1em;
+  width: 1em;
+  text-decoration: none !important;
+  margin-left: 0.5em;
+  text-align: center;
+  /* unfitted */
+  border: var(--sklearn-color-unfitted-level-1) 1pt solid;
+  color: var(--sklearn-color-unfitted-level-1);
+}
+
+.sk-estimator-doc-link.fitted,
+a:link.sk-estimator-doc-link.fitted,
+a:visited.sk-estimator-doc-link.fitted {
+  /* fitted */
+  border: var(--sklearn-color-fitted-level-1) 1pt solid;
+  color: var(--sklearn-color-fitted-level-1);
+}
+
+/* On hover */
+div.sk-estimator:hover .sk-estimator-doc-link:hover,
+.sk-estimator-doc-link:hover,
+div.sk-label-container:hover .sk-estimator-doc-link:hover,
+.sk-estimator-doc-link:hover {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-3);
+  color: var(--sklearn-color-background);
+  text-decoration: none;
+}
+
+div.sk-estimator.fitted:hover .sk-estimator-doc-link.fitted:hover,
+.sk-estimator-doc-link.fitted:hover,
+div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
+.sk-estimator-doc-link.fitted:hover {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-3);
+  color: var(--sklearn-color-background);
+  text-decoration: none;
+}
+
+/* Span, style for the box shown on hovering the info icon */
+.sk-estimator-doc-link span {
+  display: none;
+  z-index: 9999;
+  position: relative;
+  font-weight: normal;
+  right: .2ex;
+  padding: .5ex;
+  margin: .5ex;
+  width: min-content;
+  min-width: 20ex;
+  max-width: 50ex;
+  color: var(--sklearn-color-text);
+  box-shadow: 2pt 2pt 4pt #999;
+  /* unfitted */
+  background: var(--sklearn-color-unfitted-level-0);
+  border: .5pt solid var(--sklearn-color-unfitted-level-3);
+}
+
+.sk-estimator-doc-link.fitted span {
+  /* fitted */
+  background: var(--sklearn-color-fitted-level-0);
+  border: var(--sklearn-color-fitted-level-3);
+}
+
+.sk-estimator-doc-link:hover span {
+  display: block;
+}
+
+/* "?"-specific style due to the `<a>` HTML tag */
+
+#sk-container-id-1 a.estimator_doc_link {
+  float: right;
+  font-size: 1rem;
+  line-height: 1em;
+  font-family: monospace;
+  background-color: var(--sklearn-color-background);
+  border-radius: 1rem;
+  height: 1rem;
+  width: 1rem;
+  text-decoration: none;
+  /* unfitted */
+  color: var(--sklearn-color-unfitted-level-1);
+  border: var(--sklearn-color-unfitted-level-1) 1pt solid;
+}
+
+#sk-container-id-1 a.estimator_doc_link.fitted {
+  /* fitted */
+  border: var(--sklearn-color-fitted-level-1) 1pt solid;
+  color: var(--sklearn-color-fitted-level-1);
+}
+
+/* On hover */
+#sk-container-id-1 a.estimator_doc_link:hover {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-3);
+  color: var(--sklearn-color-background);
+  text-decoration: none;
+}
+
+#sk-container-id-1 a.estimator_doc_link.fitted:hover {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-3);
+}
+</style><div id="sk-container-id-1" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>LinearRegression()</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-1" type="checkbox" checked><label for="sk-estimator-id-1" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>LinearRegression</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.6/modules/generated/sklearn.linear_model.LinearRegression.html">?<span>Documentation for LinearRegression</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></div></label><div class="sk-toggleable__content fitted"><pre>LinearRegression()</pre></div> </div></div></div></div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2088,7 +2198,7 @@ a(x, θ) = \sum_{j=1}^{n} θ_j f_j(x), \quad θ \in \mathbb{R}^n
 </div>
 </div>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="../_images/6641803b7c7a7dc5cf11a257da9b783c1bd756a8d634aeaf58ee52f0caf6419e.png"><img alt="../_images/6641803b7c7a7dc5cf11a257da9b783c1bd756a8d634aeaf58ee52f0caf6419e.png" src="../_images/6641803b7c7a7dc5cf11a257da9b783c1bd756a8d634aeaf58ee52f0caf6419e.png" style="width: 611px; height: 318px;" />
+<a class="reference internal image-reference" href="../_images/604dd6394d8bf62b60f64e9c1381dfba0b0082ffb6098d97cd338c55a98f8201.png"><img alt="../_images/604dd6394d8bf62b60f64e9c1381dfba0b0082ffb6098d97cd338c55a98f8201.png" src="../_images/604dd6394d8bf62b60f64e9c1381dfba0b0082ffb6098d97cd338c55a98f8201.png" style="width: 852px; height: 449px;" />
 </a>
 </div>
 </div>
@@ -2125,7 +2235,7 @@ y(x) = cos\Big(\frac{x}{10}\Big)
 </div>
 </div>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="../_images/33f2e0752b16656eda538e6bde26cd9802ea0c62ae12408f0ea93584360ed534.png"><img alt="../_images/33f2e0752b16656eda538e6bde26cd9802ea0c62ae12408f0ea93584360ed534.png" src="../_images/33f2e0752b16656eda538e6bde26cd9802ea0c62ae12408f0ea93584360ed534.png" style="width: 613px; height: 316px;" />
+<a class="reference internal image-reference" href="../_images/8706dbdd15f6ee3869c64a6129993ecb0dfb680b6bba28d59085544b9296e429.png"><img alt="../_images/8706dbdd15f6ee3869c64a6129993ecb0dfb680b6bba28d59085544b9296e429.png" src="../_images/8706dbdd15f6ee3869c64a6129993ecb0dfb680b6bba28d59085544b9296e429.png" style="width: 858px; height: 448px;" />
 </a>
 </div>
 </div>
@@ -2172,7 +2282,7 @@ y(x) = cos\Big(\frac{x}{10}\Big)
 </div>
 </div>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="../_images/e8a9bd110b714016460dafdb60b208ffdc249ca78c9da0d67249b517910d041f.png"><img alt="../_images/e8a9bd110b714016460dafdb60b208ffdc249ca78c9da0d67249b517910d041f.png" src="../_images/e8a9bd110b714016460dafdb60b208ffdc249ca78c9da0d67249b517910d041f.png" style="width: 1172px; height: 481px;" />
+<a class="reference internal image-reference" href="../_images/f025ef555196e7c038e86ec99ca55fd4cce4532312eef9fc3063d6ab3e55f89e.png"><img alt="../_images/f025ef555196e7c038e86ec99ca55fd4cce4532312eef9fc3063d6ab3e55f89e.png" src="../_images/f025ef555196e7c038e86ec99ca55fd4cce4532312eef9fc3063d6ab3e55f89e.png" style="width: 1635px; height: 680px;" />
 </a>
 </div>
 </div>
@@ -2211,7 +2321,7 @@ y(x) = cos\Big(\frac{x}{10}\Big)
 </div>
 </div>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="../_images/c3f754b115e4a6037c655eea9fcf5e30485c6906e455ecc36cd86050f7080b07.png"><img alt="../_images/c3f754b115e4a6037c655eea9fcf5e30485c6906e455ecc36cd86050f7080b07.png" src="../_images/c3f754b115e4a6037c655eea9fcf5e30485c6906e455ecc36cd86050f7080b07.png" style="width: 726px; height: 372px;" />
+<a class="reference internal image-reference" href="../_images/a03072a1ef726d79e2d2ab8becbadbddb7705732651f8452517e53da3b433d6f.png"><img alt="../_images/a03072a1ef726d79e2d2ab8becbadbddb7705732651f8452517e53da3b433d6f.png" src="../_images/a03072a1ef726d79e2d2ab8becbadbddb7705732651f8452517e53da3b433d6f.png" style="width: 1015px; height: 526px;" />
 </a>
 </div>
 </div>
@@ -2254,7 +2364,7 @@ a(x, θ) = \text{sign} \big(\sum_{j=1}^{n} θ_j f_j(x)\big), \quad θ \in \mathb
 </div>
 </div>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="../_images/d3c2e680652c5ea0198e2741375c955ea8b239294c23726712c13459783d098a.png"><img alt="../_images/d3c2e680652c5ea0198e2741375c955ea8b239294c23726712c13459783d098a.png" src="../_images/d3c2e680652c5ea0198e2741375c955ea8b239294c23726712c13459783d098a.png" style="width: 378px; height: 261px;" />
+<a class="reference internal image-reference" href="../_images/af25f23b09de6c7e2619f3939046fd546e2a4636bb0de1367de052faea010b5a.png"><img alt="../_images/af25f23b09de6c7e2619f3939046fd546e2a4636bb0de1367de052faea010b5a.png" src="../_images/af25f23b09de6c7e2619f3939046fd546e2a4636bb0de1367de052faea010b5a.png" style="width: 557px; height: 432px;" />
 </a>
 </div>
 </div>
@@ -2310,7 +2420,7 @@ a(x, θ) = \text{sign} \big(\sum_{j=1}^{n} θ_j f_j(x)\big), \quad θ \in \mathb
 </div>
 </div>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="../_images/61964ce01eedaae50309e871279e0452db0c91e09e72f4294d72d98a29cae1b6.png"><img alt="../_images/61964ce01eedaae50309e871279e0452db0c91e09e72f4294d72d98a29cae1b6.png" src="../_images/61964ce01eedaae50309e871279e0452db0c91e09e72f4294d72d98a29cae1b6.png" style="width: 534px; height: 248px;" />
+<a class="reference internal image-reference" href="../_images/89250b59345859d4327d8295ae9051d75d9f59181ebf972b02f6115868a0de97.png"><img alt="../_images/89250b59345859d4327d8295ae9051d75d9f59181ebf972b02f6115868a0de97.png" src="../_images/89250b59345859d4327d8295ae9051d75d9f59181ebf972b02f6115868a0de97.png" style="width: 747px; height: 351px;" />
 </a>
 </div>
 </div>
@@ -2385,7 +2495,7 @@ a(x, θ) = \text{sign} \big(\sum_{j=1}^{n} θ_j f_j(x)\big), \quad θ \in \mathb
 </div>
 </div>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="../_images/fe5a29ad0c115240362673ec9b9ec5adeeab35b24b321562cda7edfa78f631e9.png"><img alt="../_images/fe5a29ad0c115240362673ec9b9ec5adeeab35b24b321562cda7edfa78f631e9.png" src="../_images/fe5a29ad0c115240362673ec9b9ec5adeeab35b24b321562cda7edfa78f631e9.png" style="width: 534px; height: 248px;" />
+<a class="reference internal image-reference" href="../_images/5b55dad48b0d1f3d8311bd3e9c219535a9cb1f2c6cda39e947bbfc05ef992a4d.png"><img alt="../_images/5b55dad48b0d1f3d8311bd3e9c219535a9cb1f2c6cda39e947bbfc05ef992a4d.png" src="../_images/5b55dad48b0d1f3d8311bd3e9c219535a9cb1f2c6cda39e947bbfc05ef992a4d.png" style="width: 747px; height: 351px;" />
 </a>
 </div>
 </div>
@@ -2509,7 +2619,7 @@ A test sample is used to evaluate how your model will work with invisible data.<
 </div>
 </div>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="../_images/0ccfd7e9ad2152fb1a92a55f9dabb23171d0b61d7959d05ab2ea874d601f67b8.png"><img alt="../_images/0ccfd7e9ad2152fb1a92a55f9dabb23171d0b61d7959d05ab2ea874d601f67b8.png" src="../_images/0ccfd7e9ad2152fb1a92a55f9dabb23171d0b61d7959d05ab2ea874d601f67b8.png" style="width: 390px; height: 261px;" />
+<a class="reference internal image-reference" href="../_images/3e4c6ddbf272a9a97cd823d8d2cd3cf302b4ba87ce117fc233c5eff17b941310.png"><img alt="../_images/3e4c6ddbf272a9a97cd823d8d2cd3cf302b4ba87ce117fc233c5eff17b941310.png" src="../_images/3e4c6ddbf272a9a97cd823d8d2cd3cf302b4ba87ce117fc233c5eff17b941310.png" style="width: 578px; height: 432px;" />
 </a>
 </div>
 </div>
@@ -2533,7 +2643,7 @@ A test sample is used to evaluate how your model will work with invisible data.<
 </div>
 </div>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="../_images/bb7f940b1fdacca15c50dbee7a463fa0dd1350315f0b71a3e86a8bf47d6bdf9a.png"><img alt="../_images/bb7f940b1fdacca15c50dbee7a463fa0dd1350315f0b71a3e86a8bf47d6bdf9a.png" src="../_images/bb7f940b1fdacca15c50dbee7a463fa0dd1350315f0b71a3e86a8bf47d6bdf9a.png" style="width: 370px; height: 261px;" />
+<a class="reference internal image-reference" href="../_images/d699e9da7a16874931f1abc93a465e4200c4f8de692af4d8ff8acefdf379da2c.png"><img alt="../_images/d699e9da7a16874931f1abc93a465e4200c4f8de692af4d8ff8acefdf379da2c.png" src="../_images/d699e9da7a16874931f1abc93a465e4200c4f8de692af4d8ff8acefdf379da2c.png" style="width: 547px; height: 432px;" />
 </a>
 </div>
 </div>
@@ -2667,12 +2777,426 @@ weighted avg       0.85      0.84      0.84       100
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>GridSearchCV(estimator=KNeighborsClassifier(),
-             param_grid={&#39;n_neighbors&#39;: [5, 10, 15, 20],
-                         &#39;weights&#39;: [&#39;uniform&#39;, &#39;distance&#39;]})
-</pre></div>
-</div>
-</div>
+<div class="output text_html"><style>#sk-container-id-2 {
+  /* Definition of color scheme common for light and dark mode */
+  --sklearn-color-text: #000;
+  --sklearn-color-text-muted: #666;
+  --sklearn-color-line: gray;
+  /* Definition of color scheme for unfitted estimators */
+  --sklearn-color-unfitted-level-0: #fff5e6;
+  --sklearn-color-unfitted-level-1: #f6e4d2;
+  --sklearn-color-unfitted-level-2: #ffe0b3;
+  --sklearn-color-unfitted-level-3: chocolate;
+  /* Definition of color scheme for fitted estimators */
+  --sklearn-color-fitted-level-0: #f0f8ff;
+  --sklearn-color-fitted-level-1: #d4ebff;
+  --sklearn-color-fitted-level-2: #b3dbfd;
+  --sklearn-color-fitted-level-3: cornflowerblue;
+
+  /* Specific color for light theme */
+  --sklearn-color-text-on-default-background: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, black)));
+  --sklearn-color-background: var(--sg-background-color, var(--theme-background, var(--jp-layout-color0, white)));
+  --sklearn-color-border-box: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, black)));
+  --sklearn-color-icon: #696969;
+
+  @media (prefers-color-scheme: dark) {
+    /* Redefinition of color scheme for dark theme */
+    --sklearn-color-text-on-default-background: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, white)));
+    --sklearn-color-background: var(--sg-background-color, var(--theme-background, var(--jp-layout-color0, #111)));
+    --sklearn-color-border-box: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, white)));
+    --sklearn-color-icon: #878787;
+  }
+}
+
+#sk-container-id-2 {
+  color: var(--sklearn-color-text);
+}
+
+#sk-container-id-2 pre {
+  padding: 0;
+}
+
+#sk-container-id-2 input.sk-hidden--visually {
+  border: 0;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+#sk-container-id-2 div.sk-dashed-wrapped {
+  border: 1px dashed var(--sklearn-color-line);
+  margin: 0 0.4em 0.5em 0.4em;
+  box-sizing: border-box;
+  padding-bottom: 0.4em;
+  background-color: var(--sklearn-color-background);
+}
+
+#sk-container-id-2 div.sk-container {
+  /* jupyter's `normalize.less` sets `[hidden] { display: none; }`
+     but bootstrap.min.css set `[hidden] { display: none !important; }`
+     so we also need the `!important` here to be able to override the
+     default hidden behavior on the sphinx rendered scikit-learn.org.
+     See: https://github.com/scikit-learn/scikit-learn/issues/21755 */
+  display: inline-block !important;
+  position: relative;
+}
+
+#sk-container-id-2 div.sk-text-repr-fallback {
+  display: none;
+}
+
+div.sk-parallel-item,
+div.sk-serial,
+div.sk-item {
+  /* draw centered vertical line to link estimators */
+  background-image: linear-gradient(var(--sklearn-color-text-on-default-background), var(--sklearn-color-text-on-default-background));
+  background-size: 2px 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+/* Parallel-specific style estimator block */
+
+#sk-container-id-2 div.sk-parallel-item::after {
+  content: "";
+  width: 100%;
+  border-bottom: 2px solid var(--sklearn-color-text-on-default-background);
+  flex-grow: 1;
+}
+
+#sk-container-id-2 div.sk-parallel {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  background-color: var(--sklearn-color-background);
+  position: relative;
+}
+
+#sk-container-id-2 div.sk-parallel-item {
+  display: flex;
+  flex-direction: column;
+}
+
+#sk-container-id-2 div.sk-parallel-item:first-child::after {
+  align-self: flex-end;
+  width: 50%;
+}
+
+#sk-container-id-2 div.sk-parallel-item:last-child::after {
+  align-self: flex-start;
+  width: 50%;
+}
+
+#sk-container-id-2 div.sk-parallel-item:only-child::after {
+  width: 0;
+}
+
+/* Serial-specific style estimator block */
+
+#sk-container-id-2 div.sk-serial {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--sklearn-color-background);
+  padding-right: 1em;
+  padding-left: 1em;
+}
+
+
+/* Toggleable style: style used for estimator/Pipeline/ColumnTransformer box that is
+clickable and can be expanded/collapsed.
+- Pipeline and ColumnTransformer use this feature and define the default style
+- Estimators will overwrite some part of the style using the `sk-estimator` class
+*/
+
+/* Pipeline and ColumnTransformer style (default) */
+
+#sk-container-id-2 div.sk-toggleable {
+  /* Default theme specific background. It is overwritten whether we have a
+  specific estimator or a Pipeline/ColumnTransformer */
+  background-color: var(--sklearn-color-background);
+}
+
+/* Toggleable label */
+#sk-container-id-2 label.sk-toggleable__label {
+  cursor: pointer;
+  display: flex;
+  width: 100%;
+  margin-bottom: 0;
+  padding: 0.5em;
+  box-sizing: border-box;
+  text-align: center;
+  align-items: start;
+  justify-content: space-between;
+  gap: 0.5em;
+}
+
+#sk-container-id-2 label.sk-toggleable__label .caption {
+  font-size: 0.6rem;
+  font-weight: lighter;
+  color: var(--sklearn-color-text-muted);
+}
+
+#sk-container-id-2 label.sk-toggleable__label-arrow:before {
+  /* Arrow on the left of the label */
+  content: "▸";
+  float: left;
+  margin-right: 0.25em;
+  color: var(--sklearn-color-icon);
+}
+
+#sk-container-id-2 label.sk-toggleable__label-arrow:hover:before {
+  color: var(--sklearn-color-text);
+}
+
+/* Toggleable content - dropdown */
+
+#sk-container-id-2 div.sk-toggleable__content {
+  max-height: 0;
+  max-width: 0;
+  overflow: hidden;
+  text-align: left;
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-0);
+}
+
+#sk-container-id-2 div.sk-toggleable__content.fitted {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+}
+
+#sk-container-id-2 div.sk-toggleable__content pre {
+  margin: 0.2em;
+  border-radius: 0.25em;
+  color: var(--sklearn-color-text);
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-0);
+}
+
+#sk-container-id-2 div.sk-toggleable__content.fitted pre {
+  /* unfitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+}
+
+#sk-container-id-2 input.sk-toggleable__control:checked~div.sk-toggleable__content {
+  /* Expand drop-down */
+  max-height: 200px;
+  max-width: 100%;
+  overflow: auto;
+}
+
+#sk-container-id-2 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {
+  content: "▾";
+}
+
+/* Pipeline/ColumnTransformer-specific style */
+
+#sk-container-id-2 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  color: var(--sklearn-color-text);
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+#sk-container-id-2 div.sk-label.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+/* Estimator-specific style */
+
+/* Colorize estimator box */
+#sk-container-id-2 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+#sk-container-id-2 div.sk-estimator.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+#sk-container-id-2 div.sk-label label.sk-toggleable__label,
+#sk-container-id-2 div.sk-label label {
+  /* The background is the default theme color */
+  color: var(--sklearn-color-text-on-default-background);
+}
+
+/* On hover, darken the color of the background */
+#sk-container-id-2 div.sk-label:hover label.sk-toggleable__label {
+  color: var(--sklearn-color-text);
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+/* Label box, darken color on hover, fitted */
+#sk-container-id-2 div.sk-label.fitted:hover label.sk-toggleable__label.fitted {
+  color: var(--sklearn-color-text);
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+/* Estimator label */
+
+#sk-container-id-2 div.sk-label label {
+  font-family: monospace;
+  font-weight: bold;
+  display: inline-block;
+  line-height: 1.2em;
+}
+
+#sk-container-id-2 div.sk-label-container {
+  text-align: center;
+}
+
+/* Estimator-specific */
+#sk-container-id-2 div.sk-estimator {
+  font-family: monospace;
+  border: 1px dotted var(--sklearn-color-border-box);
+  border-radius: 0.25em;
+  box-sizing: border-box;
+  margin-bottom: 0.5em;
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-0);
+}
+
+#sk-container-id-2 div.sk-estimator.fitted {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+}
+
+/* on hover */
+#sk-container-id-2 div.sk-estimator:hover {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+#sk-container-id-2 div.sk-estimator.fitted:hover {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+/* Specification for estimator info (e.g. "i" and "?") */
+
+/* Common style for "i" and "?" */
+
+.sk-estimator-doc-link,
+a:link.sk-estimator-doc-link,
+a:visited.sk-estimator-doc-link {
+  float: right;
+  font-size: smaller;
+  line-height: 1em;
+  font-family: monospace;
+  background-color: var(--sklearn-color-background);
+  border-radius: 1em;
+  height: 1em;
+  width: 1em;
+  text-decoration: none !important;
+  margin-left: 0.5em;
+  text-align: center;
+  /* unfitted */
+  border: var(--sklearn-color-unfitted-level-1) 1pt solid;
+  color: var(--sklearn-color-unfitted-level-1);
+}
+
+.sk-estimator-doc-link.fitted,
+a:link.sk-estimator-doc-link.fitted,
+a:visited.sk-estimator-doc-link.fitted {
+  /* fitted */
+  border: var(--sklearn-color-fitted-level-1) 1pt solid;
+  color: var(--sklearn-color-fitted-level-1);
+}
+
+/* On hover */
+div.sk-estimator:hover .sk-estimator-doc-link:hover,
+.sk-estimator-doc-link:hover,
+div.sk-label-container:hover .sk-estimator-doc-link:hover,
+.sk-estimator-doc-link:hover {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-3);
+  color: var(--sklearn-color-background);
+  text-decoration: none;
+}
+
+div.sk-estimator.fitted:hover .sk-estimator-doc-link.fitted:hover,
+.sk-estimator-doc-link.fitted:hover,
+div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
+.sk-estimator-doc-link.fitted:hover {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-3);
+  color: var(--sklearn-color-background);
+  text-decoration: none;
+}
+
+/* Span, style for the box shown on hovering the info icon */
+.sk-estimator-doc-link span {
+  display: none;
+  z-index: 9999;
+  position: relative;
+  font-weight: normal;
+  right: .2ex;
+  padding: .5ex;
+  margin: .5ex;
+  width: min-content;
+  min-width: 20ex;
+  max-width: 50ex;
+  color: var(--sklearn-color-text);
+  box-shadow: 2pt 2pt 4pt #999;
+  /* unfitted */
+  background: var(--sklearn-color-unfitted-level-0);
+  border: .5pt solid var(--sklearn-color-unfitted-level-3);
+}
+
+.sk-estimator-doc-link.fitted span {
+  /* fitted */
+  background: var(--sklearn-color-fitted-level-0);
+  border: var(--sklearn-color-fitted-level-3);
+}
+
+.sk-estimator-doc-link:hover span {
+  display: block;
+}
+
+/* "?"-specific style due to the `<a>` HTML tag */
+
+#sk-container-id-2 a.estimator_doc_link {
+  float: right;
+  font-size: 1rem;
+  line-height: 1em;
+  font-family: monospace;
+  background-color: var(--sklearn-color-background);
+  border-radius: 1rem;
+  height: 1rem;
+  width: 1rem;
+  text-decoration: none;
+  /* unfitted */
+  color: var(--sklearn-color-unfitted-level-1);
+  border: var(--sklearn-color-unfitted-level-1) 1pt solid;
+}
+
+#sk-container-id-2 a.estimator_doc_link.fitted {
+  /* fitted */
+  border: var(--sklearn-color-fitted-level-1) 1pt solid;
+  color: var(--sklearn-color-fitted-level-1);
+}
+
+/* On hover */
+#sk-container-id-2 a.estimator_doc_link:hover {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-3);
+  color: var(--sklearn-color-background);
+  text-decoration: none;
+}
+
+#sk-container-id-2 a.estimator_doc_link.fitted:hover {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-3);
+}
+</style><div id="sk-container-id-2" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>GridSearchCV(estimator=KNeighborsClassifier(),
+             param_grid={&#x27;n_neighbors&#x27;: [5, 10, 15, 20],
+                         &#x27;weights&#x27;: [&#x27;uniform&#x27;, &#x27;distance&#x27;]})</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-2" type="checkbox" ><label for="sk-estimator-id-2" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>GridSearchCV</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.6/modules/generated/sklearn.model_selection.GridSearchCV.html">?<span>Documentation for GridSearchCV</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></div></label><div class="sk-toggleable__content fitted"><pre>GridSearchCV(estimator=KNeighborsClassifier(),
+             param_grid={&#x27;n_neighbors&#x27;: [5, 10, 15, 20],
+                         &#x27;weights&#x27;: [&#x27;uniform&#x27;, &#x27;distance&#x27;]})</pre></div> </div></div><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-3" type="checkbox" ><label for="sk-estimator-id-3" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>best_estimator_: KNeighborsClassifier</div></div></label><div class="sk-toggleable__content fitted"><pre>KNeighborsClassifier(n_neighbors=15)</pre></div> </div></div><div class="sk-serial"><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-4" type="checkbox" ><label for="sk-estimator-id-4" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>KNeighborsClassifier</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.6/modules/generated/sklearn.neighbors.KNeighborsClassifier.html">?<span>Documentation for KNeighborsClassifier</span></a></div></label><div class="sk-toggleable__content fitted"><pre>KNeighborsClassifier(n_neighbors=15)</pre></div> </div></div></div></div></div></div></div></div></div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2818,7 +3342,7 @@ u_{n1} &amp; \dots &amp; u_{nm}
 </div>
 </div>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="../_images/b2f556c2007ef8d67d03ba8d4ee4bfbc5832f353c699565a2c9abad35fac28c8.png"><img alt="../_images/b2f556c2007ef8d67d03ba8d4ee4bfbc5832f353c699565a2c9abad35fac28c8.png" src="../_images/b2f556c2007ef8d67d03ba8d4ee4bfbc5832f353c699565a2c9abad35fac28c8.png" style="width: 332px; height: 250px;" />
+<a class="reference internal image-reference" href="../_images/860e912afd2ddf9d29a0a6ebd083198c7b2307ad64c5d06fa46a218ad17d6424.png"><img alt="../_images/860e912afd2ddf9d29a0a6ebd083198c7b2307ad64c5d06fa46a218ad17d6424.png" src="../_images/860e912afd2ddf9d29a0a6ebd083198c7b2307ad64c5d06fa46a218ad17d6424.png" style="width: 506px; height: 416px;" />
 </a>
 </div>
 </div>
@@ -2881,7 +3405,7 @@ Y_test:  (10000,)
 </div>
 </div>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="../_images/666b01d3a29605c70a1b89e5cbabd11910c157537dd75af0eb31d4051609a752.png"><img alt="../_images/666b01d3a29605c70a1b89e5cbabd11910c157537dd75af0eb31d4051609a752.png" src="../_images/666b01d3a29605c70a1b89e5cbabd11910c157537dd75af0eb31d4051609a752.png" style="width: 373px; height: 248px;" />
+<a class="reference internal image-reference" href="../_images/ab9f237a9df3dad0a773b5c8055666b7bcd82bc4c47bb903afaa305f0010f779.png"><img alt="../_images/ab9f237a9df3dad0a773b5c8055666b7bcd82bc4c47bb903afaa305f0010f779.png" src="../_images/ab9f237a9df3dad0a773b5c8055666b7bcd82bc4c47bb903afaa305f0010f779.png" style="width: 555px; height: 413px;" />
 </a>
 </div>
 </div>
@@ -2908,7 +3432,151 @@ Y_test:  (10000,)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████████████████████████████████████████████████████████████████████████████| 33/33 [01:49&lt;00:00,  3.31s/it]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|                                                                          | 0/33 [00:00&lt;?, ?it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  3%|██                                                                | 1/33 [00:01&lt;00:49,  1.56s/it]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  6%|████                                                              | 2/33 [00:03&lt;00:56,  1.82s/it]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  9%|██████                                                            | 3/33 [00:06&lt;01:04,  2.16s/it]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 12%|████████                                                          | 4/33 [00:09&lt;01:15,  2.60s/it]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 15%|██████████                                                        | 5/33 [00:12&lt;01:21,  2.91s/it]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 18%|████████████                                                      | 6/33 [00:16&lt;01:22,  3.05s/it]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 21%|██████████████                                                    | 7/33 [00:20&lt;01:26,  3.34s/it]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 24%|████████████████                                                  | 8/33 [00:24&lt;01:28,  3.55s/it]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 27%|██████████████████                                                | 9/33 [00:28&lt;01:31,  3.83s/it]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 27%|██████████████████                                                | 9/33 [00:30&lt;01:20,  3.34s/it]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">58</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="k">for</span> <span class="n">pc</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">3</span><span class="p">)):</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="n">pca</span> <span class="o">=</span> <span class="n">PCA</span><span class="p">(</span><span class="n">pc</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">5</span>     <span class="n">X_train_pca</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_train_scaled</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="n">X_test_pca</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>     <span class="n">clf</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+
+<span class="nn">File /opt/conda/lib/python3.11/site-packages/sklearn/utils/_set_output.py:319,</span> in <span class="ni">_wrap_method_output.&lt;locals&gt;.wrapped</span><span class="nt">(self, X, *args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">317</span> <span class="nd">@wraps</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">318</span> <span class="k">def</span><span class="w"> </span><span class="nf">wrapped</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">319</span>     <span class="n">data_to_wrap</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">320</span>     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data_to_wrap</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">321</span>         <span class="c1"># only wrap the first output for cross decomposition</span>
+<span class="g g-Whitespace">    </span><span class="mi">322</span>         <span class="n">return_tuple</span> <span class="o">=</span> <span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">323</span>             <span class="n">_wrap_data_with_container</span><span class="p">(</span><span class="n">method</span><span class="p">,</span> <span class="n">data_to_wrap</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">,</span> <span class="bp">self</span><span class="p">),</span>
+<span class="g g-Whitespace">    </span><span class="mi">324</span>             <span class="o">*</span><span class="n">data_to_wrap</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span>
+<span class="g g-Whitespace">    </span><span class="mi">325</span>         <span class="p">)</span>
+
+<span class="nn">File /opt/conda/lib/python3.11/site-packages/sklearn/base.py:1389,</span> in <span class="ni">_fit_context.&lt;locals&gt;.decorator.&lt;locals&gt;.wrapper</span><span class="nt">(estimator, *args, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1382</span>     <span class="n">estimator</span><span class="o">.</span><span class="n">_validate_params</span><span class="p">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1384</span> <span class="k">with</span> <span class="n">config_context</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1385</span>     <span class="n">skip_parameter_validation</span><span class="o">=</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1386</span>         <span class="n">prefer_skip_nested_validation</span> <span class="ow">or</span> <span class="n">global_skip_validation</span>
+<span class="g g-Whitespace">   </span><span class="mi">1387</span>     <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1388</span> <span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">1389</span>     <span class="k">return</span> <span class="n">fit_method</span><span class="p">(</span><span class="n">estimator</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File /opt/conda/lib/python3.11/site-packages/sklearn/decomposition/_pca.py:468,</span> in <span class="ni">PCA.fit_transform</span><span class="nt">(self, X, y)</span>
+<span class="g g-Whitespace">    </span><span class="mi">445</span> <span class="nd">@_fit_context</span><span class="p">(</span><span class="n">prefer_skip_nested_validation</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">446</span> <span class="k">def</span><span class="w"> </span><span class="nf">fit_transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">447</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;Fit the model with X and apply the dimensionality reduction on X.</span>
+<span class="g g-Whitespace">    </span><span class="mi">448</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">449</span><span class="sd">     Parameters</span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">    </span><span class="mi">466</span><span class="sd">     C-ordered array, use &#39;np.ascontiguousarray&#39;.</span>
+<span class="g g-Whitespace">    </span><span class="mi">467</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">468</span>     <span class="n">U</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">x_is_centered</span><span class="p">,</span> <span class="n">xp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fit</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">469</span>     <span class="k">if</span> <span class="n">U</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">470</span>         <span class="n">U</span> <span class="o">=</span> <span class="n">U</span><span class="p">[:,</span> <span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_components_</span><span class="p">]</span>
+
+<span class="nn">File /opt/conda/lib/python3.11/site-packages/sklearn/decomposition/_pca.py:544,</span> in <span class="ni">PCA._fit</span><span class="nt">(self, X)</span>
+<span class="g g-Whitespace">    </span><span class="mi">542</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fit_full</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">n_components</span><span class="p">,</span> <span class="n">xp</span><span class="p">,</span> <span class="n">is_array_api_compliant</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">543</span> <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fit_svd_solver</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;arpack&quot;</span><span class="p">,</span> <span class="s2">&quot;randomized&quot;</span><span class="p">]:</span>
+<span class="ne">--&gt; </span><span class="mi">544</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fit_truncated</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">n_components</span><span class="p">,</span> <span class="n">xp</span><span class="p">)</span>
+
+<span class="nn">File /opt/conda/lib/python3.11/site-packages/sklearn/decomposition/_pca.py:759,</span> in <span class="ni">PCA._fit_truncated</span><span class="nt">(self, X, n_components, xp)</span>
+<span class="g g-Whitespace">    </span><span class="mi">755</span>     <span class="n">U</span><span class="p">,</span> <span class="n">Vt</span> <span class="o">=</span> <span class="n">svd_flip</span><span class="p">(</span><span class="n">U</span><span class="p">[:,</span> <span class="p">::</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">Vt</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">u_based_decision</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">757</span> <span class="k">elif</span> <span class="n">svd_solver</span> <span class="o">==</span> <span class="s2">&quot;randomized&quot;</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">758</span>     <span class="c1"># sign flipping is done inside</span>
+<span class="ne">--&gt; </span><span class="mi">759</span>     <span class="n">U</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">Vt</span> <span class="o">=</span> <span class="n">randomized_svd</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">760</span>         <span class="n">X_centered</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">761</span>         <span class="n">n_components</span><span class="o">=</span><span class="n">n_components</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">762</span>         <span class="n">n_oversamples</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">n_oversamples</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">763</span>         <span class="n">n_iter</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">iterated_power</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">764</span>         <span class="n">power_iteration_normalizer</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">power_iteration_normalizer</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">765</span>         <span class="n">flip_sign</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">766</span>         <span class="n">random_state</span><span class="o">=</span><span class="n">random_state</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">767</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">768</span>     <span class="n">U</span><span class="p">,</span> <span class="n">Vt</span> <span class="o">=</span> <span class="n">svd_flip</span><span class="p">(</span><span class="n">U</span><span class="p">,</span> <span class="n">Vt</span><span class="p">,</span> <span class="n">u_based_decision</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">770</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_samples_</span> <span class="o">=</span> <span class="n">n_samples</span>
+
+<span class="nn">File /opt/conda/lib/python3.11/site-packages/sklearn/utils/_param_validation.py:189,</span> in <span class="ni">validate_params.&lt;locals&gt;.decorator.&lt;locals&gt;.wrapper</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">187</span> <span class="n">global_skip_validation</span> <span class="o">=</span> <span class="n">get_config</span><span class="p">()[</span><span class="s2">&quot;skip_parameter_validation&quot;</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">188</span> <span class="k">if</span> <span class="n">global_skip_validation</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">189</span>     <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">191</span> <span class="n">func_sig</span> <span class="o">=</span> <span class="n">signature</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">193</span> <span class="c1"># Map *args/**kwargs to the function signature</span>
+
+<span class="nn">File /opt/conda/lib/python3.11/site-packages/sklearn/utils/extmath.py:524,</span> in <span class="ni">randomized_svd</span><span class="nt">(M, n_components, n_oversamples, n_iter, power_iteration_normalizer, transpose, flip_sign, random_state, svd_lapack_driver)</span>
+<span class="g g-Whitespace">    </span><span class="mi">520</span> <span class="k">if</span> <span class="n">transpose</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">521</span>     <span class="c1"># this implementation is a bit faster with smaller shape[1]</span>
+<span class="g g-Whitespace">    </span><span class="mi">522</span>     <span class="n">M</span> <span class="o">=</span> <span class="n">M</span><span class="o">.</span><span class="n">T</span>
+<span class="ne">--&gt; </span><span class="mi">524</span> <span class="n">Q</span> <span class="o">=</span> <span class="n">randomized_range_finder</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">525</span>     <span class="n">M</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">526</span>     <span class="n">size</span><span class="o">=</span><span class="n">n_random</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">527</span>     <span class="n">n_iter</span><span class="o">=</span><span class="n">n_iter</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">528</span>     <span class="n">power_iteration_normalizer</span><span class="o">=</span><span class="n">power_iteration_normalizer</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">529</span>     <span class="n">random_state</span><span class="o">=</span><span class="n">random_state</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">530</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">532</span> <span class="c1"># project M to the (k + p) dimensional space using the basis vectors</span>
+<span class="g g-Whitespace">    </span><span class="mi">533</span> <span class="n">B</span> <span class="o">=</span> <span class="n">Q</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">M</span>
+
+<span class="nn">File /opt/conda/lib/python3.11/site-packages/sklearn/utils/extmath.py:340,</span> in <span class="ni">randomized_range_finder</span><span class="nt">(A, size, n_iter, power_iteration_normalizer, random_state)</span>
+<span class="g g-Whitespace">    </span><span class="mi">336</span>     <span class="n">Q</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">normalizer</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">Q</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">338</span> <span class="c1"># Sample the range of A using by linear projection of Q</span>
+<span class="g g-Whitespace">    </span><span class="mi">339</span> <span class="c1"># Extract an orthonormal basis</span>
+<span class="ne">--&gt; </span><span class="mi">340</span> <span class="n">Q</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">qr_normalizer</span><span class="p">(</span><span class="n">A</span> <span class="o">@</span> <span class="n">Q</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">342</span> <span class="k">return</span> <span class="n">Q</span>
+
+<span class="nn">File /opt/conda/lib/python3.11/site-packages/scipy/linalg/_decomp_qr.py:167,</span> in <span class="ni">qr</span><span class="nt">(a, overwrite_a, lwork, mode, pivoting, check_finite)</span>
+<span class="g g-Whitespace">    </span><span class="mi">164</span>     <span class="n">Q</span><span class="p">,</span> <span class="o">=</span> <span class="n">safecall</span><span class="p">(</span><span class="n">gor_un_gqr</span><span class="p">,</span> <span class="s2">&quot;gorgqr/gungqr&quot;</span><span class="p">,</span> <span class="n">qr</span><span class="p">[:,</span> <span class="p">:</span><span class="n">M</span><span class="p">],</span> <span class="n">tau</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">165</span>                   <span class="n">lwork</span><span class="o">=</span><span class="n">lwork</span><span class="p">,</span> <span class="n">overwrite_a</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">166</span> <span class="k">elif</span> <span class="n">mode</span> <span class="o">==</span> <span class="s1">&#39;economic&#39;</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">167</span>     <span class="n">Q</span><span class="p">,</span> <span class="o">=</span> <span class="n">safecall</span><span class="p">(</span><span class="n">gor_un_gqr</span><span class="p">,</span> <span class="s2">&quot;gorgqr/gungqr&quot;</span><span class="p">,</span> <span class="n">qr</span><span class="p">,</span> <span class="n">tau</span><span class="p">,</span> <span class="n">lwork</span><span class="o">=</span><span class="n">lwork</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">168</span>                   <span class="n">overwrite_a</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">169</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">170</span>     <span class="n">t</span> <span class="o">=</span> <span class="n">qr</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">char</span>
+
+<span class="nn">File /opt/conda/lib/python3.11/site-packages/scipy/linalg/_decomp_qr.py:19,</span> in <span class="ni">safecall</span><span class="nt">(f, name, *args, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span>     <span class="n">ret</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span>     <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;lwork&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ret</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">real</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">int_</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">19</span> <span class="n">ret</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">20</span> <span class="k">if</span> <span class="n">ret</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">21</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;illegal value in </span><span class="si">%d</span><span class="s2">th argument of internal </span><span class="si">%s</span><span class="s2">&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">22</span>                      <span class="o">%</span> <span class="p">(</span><span class="o">-</span><span class="n">ret</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">name</span><span class="p">))</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
 </div>
 </div>
