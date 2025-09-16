@@ -50,10 +50,12 @@ parts:
     title: Seminar 4.2. MRI transformations
   - file: seminar4/seminar4_3_freesurfer
     title: Seminar 4.3. Freesurfer
+  - url: https://drive.google.com/file/d/16--0U-QRcPJaWYqUe1RP5_V4zGvGOR76/view?usp=sharing
+    title: Seminar 5.1. MRI classification with classic ML
   - url: https://drive.google.com/file/d/1XMxW_Y73mbMGFIaWY6YlEfscD8YE35yN/view?usp=sharing
-    title: Seminar 5.1. MRI classification with 3D CNN
+    title: Seminar 5.2. MRI classification with 3D CNN
   - url: https://drive.google.com/file/d/15M13NfhCGKN6akaWj8reFYvfDH7aLPsY/view?usp=sharing
-    title: Seminar 5.2. MRI segmentation with 3D U-net
+    title: Seminar 5.3. MRI segmentation with 3D U-net
 
 - caption: Seminars 6-8. Working with fMRI
   numbered: false
