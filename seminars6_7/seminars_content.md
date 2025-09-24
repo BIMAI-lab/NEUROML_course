@@ -1,5 +1,5 @@
 
-# Summary of the Seminars 6-8
+# Summary of the Seminars 6-7
 
 ## Introduction
 
