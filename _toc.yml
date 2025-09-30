@@ -78,6 +78,6 @@ parts:
 - caption: Seminar 9. Interpretation
   numbered: false
   chapters:
-  - url: https://colab.research.google.com/drive/1sJtU1uWezC-hEpDSkyhl0toioOt3F8FF?usp=sharing
+  - url: https://colab.research.google.com/drive/1yMqKV14iPrhREWP7veNMTIHUKyLoic5-
     title: Seminar 9. Interpretation of 3D CNNs for Brain MRI Data Classification
 
