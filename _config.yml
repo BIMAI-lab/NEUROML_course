@@ -3,7 +3,7 @@
 
 title: Neuroimaging and Machine Learning for Biomedicine
 copyright: "2023-2025" 
-author: Nadezhda Alsahanova, Aleksandra Beliaeva, Dmitriy Kornilov, Fedor Gubanov, Pavel Bartenev
+author: Nadezhda Alsahanova, Aleksandra Beliaeva, Dmitriy Kornilov, Fedor Gubanov, Pavel Bartenev, Maxim Sharaev
 logo: logo.png
 
 # Force re-execution of notebooks on each build.
