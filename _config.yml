@@ -2,7 +2,8 @@
 # Learn more at https://jupyterbook.org/customize/config.html
 
 title: Neuroimaging and Machine Learning for Biomedicine
-author: Nadezhda Alsahanova, Aleksandra Beliaeva
+copyright: "2023-2025" 
+author: Nadezhda Alsahanova, Aleksandra Beliaeva, Dmitriy Kornilov, Fedor Gubanov, Pavel Bartenev
 logo: logo.png
 
 # Force re-execution of notebooks on each build.
