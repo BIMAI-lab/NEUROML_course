@@ -81,3 +81,8 @@ parts:
   - url: https://colab.research.google.com/drive/1yMqKV14iPrhREWP7veNMTIHUKyLoic5-
     title: Seminar 9. Interpretation of 3D CNNs for Brain MRI Data Classification
 
+- caption: Seminar 10. Generative models
+  numbered: false
+  chapters:
+  - url: https://colab.research.google.com/drive/1SU8ku9bk-cjQr45rgVCrMAauh34FoWQb?usp=sharing
+    title: Seminar 10. Diffusion Models for Medical Anomaly Detection with Classifier Guidance
