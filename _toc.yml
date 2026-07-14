@@ -78,6 +78,8 @@ parts:
 - caption: Seminar 9. Interpretation
   numbered: false
   chapters:
+  - file: seminar9/intro.md
+    title: Intro to Interpretable Deep Learning
   - url: https://colab.research.google.com/drive/1yMqKV14iPrhREWP7veNMTIHUKyLoic5-
     title: Seminar 9. Interpretation of 3D CNNs for Brain MRI Data Classification
 
