@@ -16,42 +16,45 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-
-  
-  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/myadmonitions.css?v=0009bf62" />
   
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -66,6 +69,7 @@
     <link rel="prev" title="Preparation to the seminar 2" href="docker.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -81,19 +85,8 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -101,7 +94,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -109,8 +101,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -126,7 +118,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -156,21 +149,17 @@
     
     
     <img src="../_static/logo.png" class="logo__image only-light" alt="Neuroimaging and Machine Learning for Biomedicine - Home"/>
-    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Neuroimaging and Machine Learning for Biomedicine - Home"/>`);</script>
+    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="Neuroimaging and Machine Learning for Biomedicine - Home"/>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -260,6 +249,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Seminar 9. Interpretation</span></p>
 <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../seminar9/intro.html">Intro to Interpretable Deep Learning</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1yMqKV14iPrhREWP7veNMTIHUKyLoic5-">Seminar 9. Interpretation of 3D CNNs for Brain MRI Data Classification</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Seminar 10. Generative models</span></p>
@@ -273,9 +263,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -405,7 +400,7 @@
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -419,25 +414,17 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
 </div></div>
@@ -565,6 +552,49 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Blue -Color-Blue-BGGreen">./data/Brats_kaggle/DICOM/</span>
+├── <span class=" -Color -Color-Blue -Color-Blue-BGGreen">00008</span> [4 entries exceeds filelimit, not opening dir]
+└── <span class=" -Color -Color-Blue -Color-Blue-BGGreen">00009</span> [4 entries exceeds filelimit, not opening dir]
+
+2 directories, 0 files
+Total of 30 DICOM images.
+First 5 filenames:
+Standart DICOM directory tree: 
+
+/workspace/data/Brats_kaggle/DICOM/00008/T1w/Image-29.dcm
+/workspace/data/Brats_kaggle/DICOM/00008/T1w/Image-9.dcm
+/workspace/data/Brats_kaggle/DICOM/00008/T1w/Image-1.dcm
+/workspace/data/Brats_kaggle/DICOM/00008/T1w/Image-3.dcm
+/workspace/data/Brats_kaggle/DICOM/00008/T1w/Image-23.dcm
+/workspace/data/Brats_kaggle/DICOM/00008/T1w/Image-22.dcm
+/workspace/data/Brats_kaggle/DICOM/00008/T1w/Image-4.dcm
+/workspace/data/Brats_kaggle/DICOM/00008/T1w/Image-2.dcm
+/workspace/data/Brats_kaggle/DICOM/00008/T1w/Image-6.dcm
+/workspace/data/Brats_kaggle/DICOM/00008/T1w/Image-8.dcm
+/workspace/data/Brats_kaggle/DICOM/00008/T1w/Image-19.dcm
+/workspace/data/Brats_kaggle/DICOM/00008/T1w/Image-16.dcm
+/workspace/data/Brats_kaggle/DICOM/00008/T1w/Image-30.dcm
+/workspace/data/Brats_kaggle/DICOM/00008/T1w/Image-5.dcm
+/workspace/data/Brats_kaggle/DICOM/00008/T1w/Image-25.dcm
+/workspace/data/Brats_kaggle/DICOM/00008/T1w/Image-24.dcm
+/workspace/data/Brats_kaggle/DICOM/00008/T1w/Image-17.dcm
+/workspace/data/Brats_kaggle/DICOM/00008/T1w/Image-15.dcm
+/workspace/data/Brats_kaggle/DICOM/00008/T1w/Image-14.dcm
+/workspace/data/Brats_kaggle/DICOM/00008/T1w/Image-12.dcm
+/workspace/data/Brats_kaggle/DICOM/00008/T1w/Image-21.dcm
+/workspace/data/Brats_kaggle/DICOM/00008/T1w/Image-27.dcm
+/workspace/data/Brats_kaggle/DICOM/00008/T1w/Image-28.dcm
+/workspace/data/Brats_kaggle/DICOM/00008/T1w/Image-10.dcm
+/workspace/data/Brats_kaggle/DICOM/00008/T1w/Image-26.dcm
+/workspace/data/Brats_kaggle/DICOM/00008/T1w/Image-11.dcm
+/workspace/data/Brats_kaggle/DICOM/00008/T1w/Image-20.dcm
+/workspace/data/Brats_kaggle/DICOM/00008/T1w/Image-18.dcm
+/workspace/data/Brats_kaggle/DICOM/00008/T1w/Image-13.dcm
+/workspace/data/Brats_kaggle/DICOM/00008/T1w/Image-7.dcm
+</pre></div>
+</div>
+</div>
 </div>
 <p>Common MRI DICOM sctructure</p>
 <div class="cell docutils container">
@@ -577,6 +607,12 @@ document.write(`
 <span class="c1"># plt.show()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dimension of one dcm file: (512, 512)
+</pre></div>
+</div>
+<img alt="../_images/93ee01df1f4d30ee53ca5e4183e35529b7e0bc661a1477012966f295c11e855d.png" src="../_images/93ee01df1f4d30ee53ca5e4183e35529b7e0bc661a1477012966f295c11e855d.png" />
 </div>
 </div>
 <p><strong>Lets stack all DICOM’s and plot em aall:</strong></p>
@@ -617,6 +653,9 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/29b54d67657715457e6b0dbf5c301a1f403425af0bedb082c05e623c2ca96eb6.png" src="../_images/29b54d67657715457e6b0dbf5c301a1f403425af0bedb082c05e623c2ca96eb6.png" />
+</div>
 </div>
 <p><strong>DICOM Headers</strong></p>
 <p>Another good way to look at the meta-data in a volume file is to load it with the relevant programming environment and examine the data-structures there. Here are a few examples.
@@ -635,11 +674,83 @@ Accordingly, we need to be able to, at a minimum, store some amount of informati
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Patient id.......: 00008
+Modality.........: MR
+Rows.............: 512
+Columns..........: 512
+Pixel Spacing....: [0.449200004339218, 0.449200004339218]
+Slide Thickness.: 5
+Patient Position.: HFS
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># # dcm_header = pydicom.dcmread(dcm_file)</span>
 <span class="c1"># dcm_file</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dataset.file_meta -------------------------------
+(0002,0010) Transfer Syntax UID                 UI: Implicit VR Little Endian
+-------------------------------------------------
+(0008,0005) Specific Character Set              CS: &#39;ISO_IR 100&#39;
+(0008,0008) Image Type                          CS: [&#39;DERIVED&#39;, &#39;SECONDARY&#39;]
+(0008,0016) SOP Class UID                       UI: MR Image Storage
+(0008,0018) SOP Instance UID                    UI: 1.2.826.0.1.3680043.8.498.12619773221542827483556664577340178568
+(0008,0050) Accession Number                    SH: &#39;00008&#39;
+(0008,0060) Modality                            CS: &#39;MR&#39;
+(0008,103E) Series Description                  LO: &#39;T1w&#39;
+(0010,0010) Patient&#39;s Name                      PN: &#39;00008&#39;
+(0010,0020) Patient ID                          LO: &#39;00008&#39;
+(0018,0023) MR Acquisition Type                 CS: &#39;2D&#39;
+(0018,0050) Slice Thickness                     DS: &#39;5&#39;
+(0018,0081) Echo Time                           DS: None
+(0018,0083) Number of Averages                  DS: &#39;2&#39;
+(0018,0084) Imaging Frequency                   DS: &#39;127.759852&#39;
+(0018,0085) Imaged Nucleus                      SH: &#39;1H&#39;
+(0018,0086) Echo Number(s)                      IS: &#39;1&#39;
+(0018,0087) Magnetic Field Strength             DS: &#39;3&#39;
+(0018,0088) Spacing Between Slices              DS: &#39;1&#39;
+(0018,0091) Echo Train Length                   IS: &#39;1&#39;
+(0018,0093) Percent Sampling                    DS: &#39;100&#39;
+(0018,0094) Percent Phase Field of View         DS: &#39;80&#39;
+(0018,0095) Pixel Bandwidth                     DS: &#39;162.773&#39;
+(0018,1094) Trigger Window                      IS: &#39;0&#39;
+(0018,1100) Reconstruction Diameter             DS: &#39;230&#39;
+(0018,1310) Acquisition Matrix                  US: [0, 384, 224, 0]
+(0018,1312) In-plane Phase Encoding Direction   CS: &#39;ROW&#39;
+(0018,1314) Flip Angle                          DS: &#39;90&#39;
+(0018,1316) SAR                                 DS: &#39;0.586425&#39;
+(0018,5100) Patient Position                    CS: &#39;HFS&#39;
+(0020,000D) Study Instance UID                  UI: 1.2.826.0.1.3680043.8.498.12703311983669326090133525868855770228
+(0020,000E) Series Instance UID                 UI: 1.2.826.0.1.3680043.8.498.35546324633307446370235238616216486386
+(0020,0011) Series Number                       IS: &#39;4&#39;
+(0020,0013) Instance Number                     IS: &#39;20&#39;
+(0020,0032) Image Position (Patient)            DS: [-108.203, -114.126, 62.9744]
+(0020,0037) Image Orientation (Patient)         DS: [0.999463, 0.0145905, 0.029336, -0.0160642, 0.998587, 0.0506459]
+(0020,0060) Laterality                          CS: &#39;&#39;
+(0020,1040) Position Reference Indicator        LO: &#39;&#39;
+(0020,1041) Slice Location                      DS: &#39;72.15431976&#39;
+(0020,9057) In-Stack Position Number            UL: 20
+(0028,0002) Samples per Pixel                   US: 1
+(0028,0004) Photometric Interpretation          CS: &#39;MONOCHROME2&#39;
+(0028,0010) Rows                                US: 512
+(0028,0011) Columns                             US: 512
+(0028,0030) Pixel Spacing                       DS: [0.449200004339218, 0.449200004339218]
+(0028,0100) Bits Allocated                      US: 16
+(0028,0101) Bits Stored                         US: 16
+(0028,0102) High Bit                            US: 15
+(0028,0103) Pixel Representation                US: 1
+(0028,1050) Window Center                       DS: &#39;3123&#39;
+(0028,1051) Window Width                        DS: &#39;6247&#39;
+(0028,1052) Rescale Intercept                   DS: &#39;0&#39;
+(0028,1053) Rescale Slope                       DS: &#39;1&#39;
+(0028,1054) Rescale Type                        LO: &#39;US&#39;
+(7FE0,0010) Pixel Data                          OW: Array of 524288 elements
 </pre></div>
 </div>
 </div>
@@ -657,6 +768,46 @@ Robust .dcm to nii/nii.gz converter. Params <em>%i</em> <em>%n</em> <em>%p</em> 
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Chris Rorden&#39;s dcm2niiX version v1.0.20250505  GCC5.4.0 x86-64 (64-bit Linux)
+Found 30 DICOM file(s)
+DICOM appears corrupt: first group:element should be 0x0002:0x0000 &#39;./data/Brats_kaggle/DICOM/00008/T1w/Image-29.dcm&#39;
+DICOM appears corrupt: first group:element should be 0x0002:0x0000 &#39;./data/Brats_kaggle/DICOM/00008/T1w/Image-9.dcm&#39;
+DICOM appears corrupt: first group:element should be 0x0002:0x0000 &#39;./data/Brats_kaggle/DICOM/00008/T1w/Image-1.dcm&#39;
+DICOM appears corrupt: first group:element should be 0x0002:0x0000 &#39;./data/Brats_kaggle/DICOM/00008/T1w/Image-3.dcm&#39;
+DICOM appears corrupt: first group:element should be 0x0002:0x0000 &#39;./data/Brats_kaggle/DICOM/00008/T1w/Image-23.dcm&#39;
+DICOM appears corrupt: first group:element should be 0x0002:0x0000 &#39;./data/Brats_kaggle/DICOM/00008/T1w/Image-22.dcm&#39;
+DICOM appears corrupt: first group:element should be 0x0002:0x0000 &#39;./data/Brats_kaggle/DICOM/00008/T1w/Image-4.dcm&#39;
+DICOM appears corrupt: first group:element should be 0x0002:0x0000 &#39;./data/Brats_kaggle/DICOM/00008/T1w/Image-2.dcm&#39;
+DICOM appears corrupt: first group:element should be 0x0002:0x0000 &#39;./data/Brats_kaggle/DICOM/00008/T1w/Image-6.dcm&#39;
+DICOM appears corrupt: first group:element should be 0x0002:0x0000 &#39;./data/Brats_kaggle/DICOM/00008/T1w/Image-8.dcm&#39;
+DICOM appears corrupt: first group:element should be 0x0002:0x0000 &#39;./data/Brats_kaggle/DICOM/00008/T1w/Image-19.dcm&#39;
+DICOM appears corrupt: first group:element should be 0x0002:0x0000 &#39;./data/Brats_kaggle/DICOM/00008/T1w/Image-16.dcm&#39;
+DICOM appears corrupt: first group:element should be 0x0002:0x0000 &#39;./data/Brats_kaggle/DICOM/00008/T1w/Image-30.dcm&#39;
+DICOM appears corrupt: first group:element should be 0x0002:0x0000 &#39;./data/Brats_kaggle/DICOM/00008/T1w/Image-5.dcm&#39;
+DICOM appears corrupt: first group:element should be 0x0002:0x0000 &#39;./data/Brats_kaggle/DICOM/00008/T1w/Image-25.dcm&#39;
+DICOM appears corrupt: first group:element should be 0x0002:0x0000 &#39;./data/Brats_kaggle/DICOM/00008/T1w/Image-24.dcm&#39;
+DICOM appears corrupt: first group:element should be 0x0002:0x0000 &#39;./data/Brats_kaggle/DICOM/00008/T1w/Image-17.dcm&#39;
+DICOM appears corrupt: first group:element should be 0x0002:0x0000 &#39;./data/Brats_kaggle/DICOM/00008/T1w/Image-15.dcm&#39;
+DICOM appears corrupt: first group:element should be 0x0002:0x0000 &#39;./data/Brats_kaggle/DICOM/00008/T1w/Image-14.dcm&#39;
+DICOM appears corrupt: first group:element should be 0x0002:0x0000 &#39;./data/Brats_kaggle/DICOM/00008/T1w/Image-12.dcm&#39;
+DICOM appears corrupt: first group:element should be 0x0002:0x0000 &#39;./data/Brats_kaggle/DICOM/00008/T1w/Image-21.dcm&#39;
+DICOM appears corrupt: first group:element should be 0x0002:0x0000 &#39;./data/Brats_kaggle/DICOM/00008/T1w/Image-27.dcm&#39;
+DICOM appears corrupt: first group:element should be 0x0002:0x0000 &#39;./data/Brats_kaggle/DICOM/00008/T1w/Image-28.dcm&#39;
+DICOM appears corrupt: first group:element should be 0x0002:0x0000 &#39;./data/Brats_kaggle/DICOM/00008/T1w/Image-10.dcm&#39;
+DICOM appears corrupt: first group:element should be 0x0002:0x0000 &#39;./data/Brats_kaggle/DICOM/00008/T1w/Image-26.dcm&#39;
+DICOM appears corrupt: first group:element should be 0x0002:0x0000 &#39;./data/Brats_kaggle/DICOM/00008/T1w/Image-11.dcm&#39;
+DICOM appears corrupt: first group:element should be 0x0002:0x0000 &#39;./data/Brats_kaggle/DICOM/00008/T1w/Image-20.dcm&#39;
+DICOM appears corrupt: first group:element should be 0x0002:0x0000 &#39;./data/Brats_kaggle/DICOM/00008/T1w/Image-18.dcm&#39;
+DICOM appears corrupt: first group:element should be 0x0002:0x0000 &#39;./data/Brats_kaggle/DICOM/00008/T1w/Image-13.dcm&#39;
+DICOM appears corrupt: first group:element should be 0x0002:0x0000 &#39;./data/Brats_kaggle/DICOM/00008/T1w/Image-7.dcm&#39;
+Warning: Unable to determine manufacturer (0008,0070), so conversion is not tuned for vendor.
+Convert 30 DICOM as /workspace/00008_00008_T1w (512x512x30x1)
+Compress: &quot;/usr/bin/pigz&quot; -b 960 --no-time -n -f -6 &quot;/workspace/00008_00008_T1w.nii&quot;
+Conversion required 0.117784 seconds (0.048956 for core code).
+</pre></div>
+</div>
+</div>
 </div>
 <p>Plotting results of convertation:</p>
 <div class="cell docutils container">
@@ -664,6 +815,12 @@ Robust .dcm to nii/nii.gz converter. Params <em>%i</em> <em>%n</em> <em>%p</em> 
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plotting.plot_anat(&#39;/workspace/00008_00008_T1w.nii.gz&#39;, bg_img=None)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;nilearn.plotting.displays._slicers.OrthoSlicer at 0x7fcac92063c0&gt;
+</pre></div>
+</div>
+<img alt="../_images/c24901f6ef68f9b32d604e0c092c82fd27ad60801c1492f54878b848b9a665c9.png" src="../_images/c24901f6ef68f9b32d604e0c092c82fd27ad60801c1492f54878b848b9a665c9.png" />
 </div>
 </div>
 </section>
@@ -691,6 +848,19 @@ Robust .dcm to nii/nii.gz converter. Params <em>%i</em> <em>%n</em> <em>%p</em> 
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Image dimensions...........................: [  3 512 512  30   1   1   1   1]
+Voxel size and time interval...............: [-1.        0.4492    0.4492    4.999977  0.        0.        0.
+  0.      ]
+Slice Order................................: 0
+Human readable text........................: np.bytes_(b&#39;TE=0;Time=0.000&#39;)
+Three rows of sform affine transformation..:
+ [-4.4895884e-01 -7.2160424e-03  1.4277743e-01  1.0917840e+02] 
+ [-6.5540536e-03  4.4856551e-01  2.5544879e-01 -1.1994498e+02] 
+ [ 1.3177733e-02 -2.2750149e-02  4.9914060e+00 -2.0237373e+01]
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="mgh-file-format">
@@ -711,6 +881,11 @@ Robust .dcm to nii/nii.gz converter. Params <em>%i</em> <em>%n</em> <em>%p</em> 
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># mgh_file = mgh.load(&#39;./data/freesurfer_preproc/100206/mri/T1.mgz&#39;)</span>
 <span class="c1"># mgh_file.get_fdata().shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(256, 256, 256)
 </pre></div>
 </div>
 </div>
@@ -741,6 +916,9 @@ Robust .dcm to nii/nii.gz converter. Params <em>%i</em> <em>%n</em> <em>%p</em> 
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/d6664124f02ca317b825a4277035378a0fe1d3056042a57ba3d5aa5ea290f194.png" src="../_images/d6664124f02ca317b825a4277035378a0fe1d3056042a57ba3d5aa5ea290f194.png" />
+</div>
 </div>
 <p><strong>MGH Header</strong></p>
 <div class="cell docutils container">
@@ -751,12 +929,28 @@ Robust .dcm to nii/nii.gz converter. Params <em>%i</em> <em>%n</em> <em>%p</em> 
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Image dimensions........: [256 256 256   1]
+Orientation matrix...: 
+ [[-1.0000000e+00  1.8626451e-09 -4.0745363e-10  1.2723160e+02]
+ [ 2.9103830e-10 -3.7252903e-09  1.0000001e+00 -8.1819077e+01]
+ [ 1.8626451e-09 -1.0000000e+00  0.0000000e+00  1.3774704e+02]
+ [ 0.0000000e+00  0.0000000e+00  0.0000000e+00  1.0000000e+00]]
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plotting.plot_anat(mgh_file, bg_img=None)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;nilearn.plotting.displays._slicers.OrthoSlicer at 0x7fcbb3a30690&gt;
+</pre></div>
+</div>
+<img alt="../_images/0c04beb23802c05a974829305eb4f9dd63ed07aa51dd7f62d830c1ae48b0fa3e.png" src="../_images/0c04beb23802c05a974829305eb4f9dd63ed07aa51dd7f62d830c1ae48b0fa3e.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -812,6 +1006,30 @@ The only required function for a heuristic, <em>infotodict</em> is used to both 
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># !tree /workspace/BIDS</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold -Color-Bold-Blue">/workspace/BIDS</span>
+├── CHANGES
+├── dataset_description.json
+├── participants.json
+├── participants.tsv
+├── README
+├── scans.json
+└── <span class=" -Color -Color-Bold -Color-Bold-Blue">sub-00008</span>
+    ├── <span class=" -Color -Color-Bold -Color-Bold-Blue">anat</span>
+    │   ├── sub-00008_acq-Flair_T1w.json
+    │   ├── <span class=" -Color -Color-Bold -Color-Bold-Red">sub-00008_acq-Flair_T1w.nii.gz</span>
+    │   ├── sub-00008_acq-T1Wce_T1w.json
+    │   ├── <span class=" -Color -Color-Bold -Color-Bold-Red">sub-00008_acq-T1Wce_T1w.nii.gz</span>
+    │   ├── sub-00008_acq-T1W_T1w.json
+    │   ├── <span class=" -Color -Color-Bold -Color-Bold-Red">sub-00008_acq-T1W_T1w.nii.gz</span>
+    │   ├── sub-00008_acq-T2W_T1w.json
+    │   └── <span class=" -Color -Color-Bold -Color-Bold-Red">sub-00008_acq-T2W_T1w.nii.gz</span>
+    └── sub-00008_scans.tsv
+
+2 directories, 15 files
 </pre></div>
 </div>
 </div>
@@ -882,14 +1100,16 @@ The only required function for a heuristic, <em>infotodict</em> is used to both 
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
-  <nav class="bd-toc-nav page-toc">
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plan">PLAN:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mri-file-formats">1) MRI File Formats</a></li>
@@ -946,8 +1166,8 @@ By Nadezhda Alsahanova, Aleksandra Beliaeva, Dmitriy Kornilov, Fedor Gubanov, Pa
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>

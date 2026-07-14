@@ -16,42 +16,45 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-
-  
-  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/myadmonitions.css?v=0009bf62" />
   
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -68,6 +71,7 @@
     <link rel="prev" title="How to work with Python" href="Seminar1_python_colab.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -83,19 +87,8 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -103,7 +96,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -111,8 +103,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -128,7 +120,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -158,21 +151,17 @@
     
     
     <img src="../_static/logo.png" class="logo__image only-light" alt="Neuroimaging and Machine Learning for Biomedicine - Home"/>
-    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Neuroimaging and Machine Learning for Biomedicine - Home"/>`);</script>
+    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="Neuroimaging and Machine Learning for Biomedicine - Home"/>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -262,6 +251,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Seminar 9. Interpretation</span></p>
 <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../seminar9/intro.html">Intro to Interpretable Deep Learning</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1yMqKV14iPrhREWP7veNMTIHUKyLoic5-">Seminar 9. Interpretation of 3D CNNs for Brain MRI Data Classification</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Seminar 10. Generative models</span></p>
@@ -275,9 +265,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -407,7 +402,7 @@
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -421,25 +416,17 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
 </div></div>
@@ -584,14 +571,15 @@ document.write(`
 </ul>
 <p><code class="docutils literal notranslate"><span class="pre">Vector</span></code> <span class="math notranslate nohighlight">\(\big(f_1(x), f_2(x), \ldots, f_n(x)\big)\)</span> is a feature description of the object <span class="math notranslate nohighlight">\(x \in X\)</span>.</p>
 <p>The feature data is set as follows:</p>
-<p>\begin{equation*}
+<div class="math notranslate nohighlight">
+\[\begin{split}
 F =
 \begin{pmatrix}
-f_1(x_1) &amp; \dots &amp; f_n(x_1) \
-\vdots &amp; \ddots &amp; \vdots \
-f_1(x_ℓ) &amp; \dots &amp; f_n(x_\ell)
+    f_1(x_1) &amp; \dots &amp; f_n(x_1) \\
+    \vdots &amp; \ddots &amp; \vdots \\
+    f_1(x_ℓ) &amp; \dots &amp; f_n(x_\ell)
 \end{pmatrix}
-\end{equation*}</p>
+\end{split}\]</div>
 <section id="practice">
 <h2>Practice<a class="headerlink" href="#practice" title="Link to this heading">#</a></h2>
 <section id="pandas">
@@ -1398,7 +1386,7 @@ Remember that:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="../_images/87630f7ff3ebf703da586448f6f8fc6f5b28df5a08a8b1be5cd3cb39d3773d33.png"><img alt="../_images/87630f7ff3ebf703da586448f6f8fc6f5b28df5a08a8b1be5cd3cb39d3773d33.png" src="../_images/87630f7ff3ebf703da586448f6f8fc6f5b28df5a08a8b1be5cd3cb39d3773d33.png" style="width: 567px; height: 430px;" />
+<a class="reference internal image-reference" href="../_images/9ed952bce9fa828bf2183adc0d8e6794e13caf56cc105e899befa2ce077433bf.png"><img alt="../_images/9ed952bce9fa828bf2183adc0d8e6794e13caf56cc105e899befa2ce077433bf.png" src="../_images/9ed952bce9fa828bf2183adc0d8e6794e13caf56cc105e899befa2ce077433bf.png" style="width: 386px; height: 261px;" />
 </a>
 </div>
 </div>
@@ -1425,9 +1413,9 @@ sns.catplot<span class="o">?</span>
 </div>
 </div>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="../_images/78354f119a8ac4808476272c50c3c253e239b0ee0c615a536af879cc16718a85.png"><img alt="../_images/78354f119a8ac4808476272c50c3c253e239b0ee0c615a536af879cc16718a85.png" src="../_images/78354f119a8ac4808476272c50c3c253e239b0ee0c615a536af879cc16718a85.png" style="width: 1207px; height: 388px;" />
+<a class="reference internal image-reference" href="../_images/cb9f1ffdd3310bbd71f3d23178daab2cab4872cac30c8109f8955d1829538f9b.png"><img alt="../_images/cb9f1ffdd3310bbd71f3d23178daab2cab4872cac30c8109f8955d1829538f9b.png" src="../_images/cb9f1ffdd3310bbd71f3d23178daab2cab4872cac30c8109f8955d1829538f9b.png" style="width: 870px; height: 281px;" />
 </a>
-<a class="reference internal image-reference" href="../_images/5e7bb83f0b70305ff27d145e6daee8bf6d4ab7f3cba3dba619e08594680852d2.png"><img alt="../_images/5e7bb83f0b70305ff27d145e6daee8bf6d4ab7f3cba3dba619e08594680852d2.png" src="../_images/5e7bb83f0b70305ff27d145e6daee8bf6d4ab7f3cba3dba619e08594680852d2.png" style="width: 1234px; height: 446px;" />
+<a class="reference internal image-reference" href="../_images/fa6a7bd2ad71adb00d31d8ae7e2b40d012fbb4cf688bce177e907e84d2f86fdc.png"><img alt="../_images/fa6a7bd2ad71adb00d31d8ae7e2b40d012fbb4cf688bce177e907e84d2f86fdc.png" src="../_images/fa6a7bd2ad71adb00d31d8ae7e2b40d012fbb4cf688bce177e907e84d2f86fdc.png" style="width: 888px; height: 316px;" />
 </a>
 </div>
 </div>
@@ -1450,7 +1438,7 @@ sns.catplot<span class="o">?</span>
 </div>
 </div>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="../_images/0584f75de0b8af129332e46465c9f08cc469bde0b4e0834ebfad6b8828ddd5ef.png"><img alt="../_images/0584f75de0b8af129332e46465c9f08cc469bde0b4e0834ebfad6b8828ddd5ef.png" src="../_images/0584f75de0b8af129332e46465c9f08cc469bde0b4e0834ebfad6b8828ddd5ef.png" style="width: 1009px; height: 995px;" />
+<a class="reference internal image-reference" href="../_images/a9dd44c3f0a457c1487f91d145efce8e40073ef93427339a13a5f36defe4a800.png"><img alt="../_images/a9dd44c3f0a457c1487f91d145efce8e40073ef93427339a13a5f36defe4a800.png" src="../_images/a9dd44c3f0a457c1487f91d145efce8e40073ef93427339a13a5f36defe4a800.png" style="width: 727px; height: 718px;" />
 </a>
 </div>
 </div>
@@ -1493,7 +1481,7 @@ Corr(x,y)  \in [-1, 1]
 </div>
 </div>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="../_images/e83e32b73f3ff662c4549d7b10db819823e30e56318381981c085050e7cd40dc.png"><img alt="../_images/e83e32b73f3ff662c4549d7b10db819823e30e56318381981c085050e7cd40dc.png" src="../_images/e83e32b73f3ff662c4549d7b10db819823e30e56318381981c085050e7cd40dc.png" style="width: 1288px; height: 388px;" />
+<a class="reference internal image-reference" href="../_images/27f9caea8750d3d9a1811e2e4556d9d795e072cf8f66affd26a3b4385ef720c5.png"><img alt="../_images/27f9caea8750d3d9a1811e2e4556d9d795e072cf8f66affd26a3b4385ef720c5.png" src="../_images/27f9caea8750d3d9a1811e2e4556d9d795e072cf8f66affd26a3b4385ef720c5.png" style="width: 929px; height: 281px;" />
 </a>
 </div>
 </div>
@@ -1509,7 +1497,7 @@ Corr(x,y)  \in [-1, 1]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Correlation: -0.09
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Корреляция: -0.09
 </pre></div>
 </div>
 </div>
@@ -1586,7 +1574,7 @@ Corr(x,y)  \in [-1, 1]
 </div>
 </div>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="../_images/06958d31af93e77f1442261012da518c86c59e704b9c4c8437d38245cea725d4.png"><img alt="../_images/06958d31af93e77f1442261012da518c86c59e704b9c4c8437d38245cea725d4.png" src="../_images/06958d31af93e77f1442261012da518c86c59e704b9c4c8437d38245cea725d4.png" style="width: 1207px; height: 371px;" />
+<a class="reference internal image-reference" href="../_images/9f1659a771399b8c99755d905a373d97ed1506dd6775705c5681aef46dedc329.png"><img alt="../_images/9f1659a771399b8c99755d905a373d97ed1506dd6775705c5681aef46dedc329.png" src="../_images/9f1659a771399b8c99755d905a373d97ed1506dd6775705c5681aef46dedc329.png" style="width: 869px; height: 263px;" />
 </a>
 </div>
 </div>
@@ -1645,13 +1633,14 @@ Corr(x,y)  \in [-1, 1]
 <section class="tex2jax_ignore mathjax_ignore" id="cross-validation-cv">
 <h1>Cross-validation (CV)<a class="headerlink" href="#cross-validation-cv" title="Link to this heading">#</a></h1>
 <p>An <code class="docutils literal notranslate"><span class="pre">external</span> <span class="pre">criterion</span></code> evaluates the quality of “out-of-training”, for example, by a hold-out control sample <span class="math notranslate nohighlight">\(X^k\)</span>:
-\begin{equation}
-Q_{\mu}\big(X^\ell, X^k\big) = Q\big(\mu\big(X^\ell\big), X^k\big).
-\end{equation}</p>
+$<span class="math notranslate nohighlight">\(
+    Q_{\mu}\big(X^\ell, X^k\big) = Q\big(\mu\big(X^\ell\big), X^k\big).
+\)</span>$</p>
 <p>Averaging <code class="docutils literal notranslate"><span class="pre">hold-out</span></code> estimates over a given <span class="math notranslate nohighlight">\(N\)</span> - set of partitions <span class="math notranslate nohighlight">\(X^L = X_n^{\ell} \bigcup X_n^{k}, \quad n = 1, \ldots, N\)</span>:</p>
-<p>\begin{equation}
-\text{CV}\big(\mu, X^L\big) = \frac{1}{\vert N\vert} \sum_{n \in N} Q_{\mu}\big(X_n^{\ell}, X_n^{k}\big).
-\end{equation}</p>
+<div class="math notranslate nohighlight">
+\[
+    \text{CV}\big(\mu, X^L\big) = \frac{1}{\vert N\vert} \sum_{n \in N} Q_{\mu}\big(X_n^{\ell}, X_n^{k}\big).
+\]</div>
 <p>Special cases are different ways of setting <span class="math notranslate nohighlight">\(N\)</span>.</p>
 <ul class="simple">
 <li><p>A random set of partitions.</p></li>
@@ -1660,17 +1649,18 @@ Q_{\mu}\big(X^\ell, X^k\big) = Q\big(\mu\big(X^\ell\big), X^k\big).
 <p><code class="docutils literal notranslate"><span class="pre">Disadvantage:</span></code> CCV estimation is computationally too complicated. Either small values of <span class="math notranslate nohighlight">\(k\)</span> or combinatorial estimates of CCV are used.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Sliding</span> <span class="pre">control</span></code> (Leave One Out CV): <span class="math notranslate nohighlight">\(~k=1\)</span>,
-\begin{equation}
-\text{LOO}\big(\mu, X^L\big) = \frac{1}{L} \sum_{n \in N} Q_{\mu}\big(X^L \backslash {x_i}, {x_i}\big).
-\end{equation}</p></li>
+$<span class="math notranslate nohighlight">\(
+  \text{LOO}\big(\mu, X^L\big) = \frac{1}{L} \sum_{n \in N} Q_{\mu}\big(X^L \backslash \{x_i\}, \{x_i\}\big).
+\)</span>$</p></li>
 </ul>
 <p><code class="docutils literal notranslate"><span class="pre">Disadvantage:</span></code> <span class="math notranslate nohighlight">\(\text{LOO}\)</span>: resource intensive, high variance.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Cross-checking</span></code> on <span class="math notranslate nohighlight">\(q\)</span> blocks (<span class="math notranslate nohighlight">\(q\)</span>-fold CV): randomly splitting <span class="math notranslate nohighlight">\(X^L=X_1^{\ell_1}\bigcup\ldots X_q^{\ell_q}\)</span> into <span class="math notranslate nohighlight">\(q\)</span> blocks of (almost) equal length,</p></li>
 </ul>
-<p>\begin{equation}
-\text{CV}<em>q\big(\mu, X^L\big) = \frac{1}{q} \sum</em>{n=1}^{q} Q_{\mu}\big(X^L \backslash X_n^{\ell_n}, ~X_n^{\ell_n}\big).
-\end{equation}</p>
+<div class="math notranslate nohighlight">
+\[
+    \text{CV}_q\big(\mu, X^L\big) = \frac{1}{q} \sum_{n=1}^{q} Q_{\mu}\big(X^L \backslash X_n^{\ell_n}, ~X_n^{\ell_n}\big).
+\]</div>
 <p>The <code class="docutils literal notranslate"><span class="pre">disadvantage</span></code> of <span class="math notranslate nohighlight">\(q\)</span>-fold CV:</p>
 <ul class="simple">
 <li><p>the score depends significantly on the division into blocks;</p></li>
@@ -1683,13 +1673,13 @@ Q_{\mu}\big(X^\ell, X^k\big) = Q\big(\mu\big(X^\ell\big), X^k\big).
 <p><code class="docutils literal notranslate"><span class="pre">Training</span> <span class="pre">sample:</span></code> <span class="math notranslate nohighlight">\(X^\ell = \big(x_i,~y_i\big)_{i=1}^{\ell}, \quad x_i \in \mathbb{R}^n, \quad y_i \in \mathbb{R}\)</span></p>
 <ul class="simple">
 <li><p>Regression model - <strong>linear</strong>:
-\begin{equation}
+$<span class="math notranslate nohighlight">\(
 a(x, θ) = \sum_{j=1}^{n} θ_j f_j(x), \quad θ \in \mathbb{R}^n
-\end{equation}</p></li>
+\)</span>$</p></li>
 <li><p>The loss function is <strong>quadratic</strong>:
-\begin{equation}
+$<span class="math notranslate nohighlight">\(
 \mathscr{L}(a,~y) = \big(a - y\big)^2
-\end{equation}</p></li>
+\)</span>$</p></li>
 </ul>
 <section id="id1">
 <h2>Practice<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
@@ -1742,7 +1732,7 @@ a(x, θ) = \sum_{j=1}^{n} θ_j f_j(x), \quad θ \in \mathbb{R}^n
 </div>
 </div>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="../_images/b2ab66d27090f58d29415387920dd7707de87d921b3e485a4b76dd76096ebf83.png"><img alt="../_images/b2ab66d27090f58d29415387920dd7707de87d921b3e485a4b76dd76096ebf83.png" src="../_images/b2ab66d27090f58d29415387920dd7707de87d921b3e485a4b76dd76096ebf83.png" style="width: 849px; height: 371px;" />
+<a class="reference internal image-reference" href="../_images/89e807db423b46de7439bcb7ca4ab6d0a77f1f6106aa14d7db40275cf9ab9b3d.png"><img alt="../_images/89e807db423b46de7439bcb7ca4ab6d0a77f1f6106aa14d7db40275cf9ab9b3d.png" src="../_images/89e807db423b46de7439bcb7ca4ab6d0a77f1f6106aa14d7db40275cf9ab9b3d.png" style="width: 611px; height: 263px;" />
 </a>
 </div>
 </div>
@@ -1766,586 +1756,10 @@ a(x, θ) = \sum_{j=1}^{n} θ_j f_j(x), \quad θ \in \mathbb{R}^n
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><style>#sk-container-id-1 {
-  /* Definition of color scheme common for light and dark mode */
-  --sklearn-color-text: #000;
-  --sklearn-color-text-muted: #666;
-  --sklearn-color-line: gray;
-  /* Definition of color scheme for unfitted estimators */
-  --sklearn-color-unfitted-level-0: #fff5e6;
-  --sklearn-color-unfitted-level-1: #f6e4d2;
-  --sklearn-color-unfitted-level-2: #ffe0b3;
-  --sklearn-color-unfitted-level-3: chocolate;
-  /* Definition of color scheme for fitted estimators */
-  --sklearn-color-fitted-level-0: #f0f8ff;
-  --sklearn-color-fitted-level-1: #d4ebff;
-  --sklearn-color-fitted-level-2: #b3dbfd;
-  --sklearn-color-fitted-level-3: cornflowerblue;
-
-  /* Specific color for light theme */
-  --sklearn-color-text-on-default-background: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, black)));
-  --sklearn-color-background: var(--sg-background-color, var(--theme-background, var(--jp-layout-color0, white)));
-  --sklearn-color-border-box: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, black)));
-  --sklearn-color-icon: #696969;
-
-  @media (prefers-color-scheme: dark) {
-    /* Redefinition of color scheme for dark theme */
-    --sklearn-color-text-on-default-background: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, white)));
-    --sklearn-color-background: var(--sg-background-color, var(--theme-background, var(--jp-layout-color0, #111)));
-    --sklearn-color-border-box: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, white)));
-    --sklearn-color-icon: #878787;
-  }
-}
-
-#sk-container-id-1 {
-  color: var(--sklearn-color-text);
-}
-
-#sk-container-id-1 pre {
-  padding: 0;
-}
-
-#sk-container-id-1 input.sk-hidden--visually {
-  border: 0;
-  clip: rect(1px 1px 1px 1px);
-  clip: rect(1px, 1px, 1px, 1px);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-}
-
-#sk-container-id-1 div.sk-dashed-wrapped {
-  border: 1px dashed var(--sklearn-color-line);
-  margin: 0 0.4em 0.5em 0.4em;
-  box-sizing: border-box;
-  padding-bottom: 0.4em;
-  background-color: var(--sklearn-color-background);
-}
-
-#sk-container-id-1 div.sk-container {
-  /* jupyter's `normalize.less` sets `[hidden] { display: none; }`
-     but bootstrap.min.css set `[hidden] { display: none !important; }`
-     so we also need the `!important` here to be able to override the
-     default hidden behavior on the sphinx rendered scikit-learn.org.
-     See: https://github.com/scikit-learn/scikit-learn/issues/21755 */
-  display: inline-block !important;
-  position: relative;
-}
-
-#sk-container-id-1 div.sk-text-repr-fallback {
-  display: none;
-}
-
-div.sk-parallel-item,
-div.sk-serial,
-div.sk-item {
-  /* draw centered vertical line to link estimators */
-  background-image: linear-gradient(var(--sklearn-color-text-on-default-background), var(--sklearn-color-text-on-default-background));
-  background-size: 2px 100%;
-  background-repeat: no-repeat;
-  background-position: center center;
-}
-
-/* Parallel-specific style estimator block */
-
-#sk-container-id-1 div.sk-parallel-item::after {
-  content: "";
-  width: 100%;
-  border-bottom: 2px solid var(--sklearn-color-text-on-default-background);
-  flex-grow: 1;
-}
-
-#sk-container-id-1 div.sk-parallel {
-  display: flex;
-  align-items: stretch;
-  justify-content: center;
-  background-color: var(--sklearn-color-background);
-  position: relative;
-}
-
-#sk-container-id-1 div.sk-parallel-item {
-  display: flex;
-  flex-direction: column;
-}
-
-#sk-container-id-1 div.sk-parallel-item:first-child::after {
-  align-self: flex-end;
-  width: 50%;
-}
-
-#sk-container-id-1 div.sk-parallel-item:last-child::after {
-  align-self: flex-start;
-  width: 50%;
-}
-
-#sk-container-id-1 div.sk-parallel-item:only-child::after {
-  width: 0;
-}
-
-/* Serial-specific style estimator block */
-
-#sk-container-id-1 div.sk-serial {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: var(--sklearn-color-background);
-  padding-right: 1em;
-  padding-left: 1em;
-}
-
-
-/* Toggleable style: style used for estimator/Pipeline/ColumnTransformer box that is
-clickable and can be expanded/collapsed.
-- Pipeline and ColumnTransformer use this feature and define the default style
-- Estimators will overwrite some part of the style using the `sk-estimator` class
-*/
-
-/* Pipeline and ColumnTransformer style (default) */
-
-#sk-container-id-1 div.sk-toggleable {
-  /* Default theme specific background. It is overwritten whether we have a
-  specific estimator or a Pipeline/ColumnTransformer */
-  background-color: var(--sklearn-color-background);
-}
-
-/* Toggleable label */
-#sk-container-id-1 label.sk-toggleable__label {
-  cursor: pointer;
-  display: flex;
-  width: 100%;
-  margin-bottom: 0;
-  padding: 0.5em;
-  box-sizing: border-box;
-  text-align: center;
-  align-items: start;
-  justify-content: space-between;
-  gap: 0.5em;
-}
-
-#sk-container-id-1 label.sk-toggleable__label .caption {
-  font-size: 0.6rem;
-  font-weight: lighter;
-  color: var(--sklearn-color-text-muted);
-}
-
-#sk-container-id-1 label.sk-toggleable__label-arrow:before {
-  /* Arrow on the left of the label */
-  content: "▸";
-  float: left;
-  margin-right: 0.25em;
-  color: var(--sklearn-color-icon);
-}
-
-#sk-container-id-1 label.sk-toggleable__label-arrow:hover:before {
-  color: var(--sklearn-color-text);
-}
-
-/* Toggleable content - dropdown */
-
-#sk-container-id-1 div.sk-toggleable__content {
-  display: none;
-  text-align: left;
-  /* unfitted */
-  background-color: var(--sklearn-color-unfitted-level-0);
-}
-
-#sk-container-id-1 div.sk-toggleable__content.fitted {
-  /* fitted */
-  background-color: var(--sklearn-color-fitted-level-0);
-}
-
-#sk-container-id-1 div.sk-toggleable__content pre {
-  margin: 0.2em;
-  border-radius: 0.25em;
-  color: var(--sklearn-color-text);
-  /* unfitted */
-  background-color: var(--sklearn-color-unfitted-level-0);
-}
-
-#sk-container-id-1 div.sk-toggleable__content.fitted pre {
-  /* unfitted */
-  background-color: var(--sklearn-color-fitted-level-0);
-}
-
-#sk-container-id-1 input.sk-toggleable__control:checked~div.sk-toggleable__content {
-  /* Expand drop-down */
-  display: block;
-  width: 100%;
-  overflow: visible;
-}
-
-#sk-container-id-1 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {
-  content: "▾";
-}
-
-/* Pipeline/ColumnTransformer-specific style */
-
-#sk-container-id-1 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {
-  color: var(--sklearn-color-text);
-  background-color: var(--sklearn-color-unfitted-level-2);
-}
-
-#sk-container-id-1 div.sk-label.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
-  background-color: var(--sklearn-color-fitted-level-2);
-}
-
-/* Estimator-specific style */
-
-/* Colorize estimator box */
-#sk-container-id-1 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {
-  /* unfitted */
-  background-color: var(--sklearn-color-unfitted-level-2);
-}
-
-#sk-container-id-1 div.sk-estimator.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
-  /* fitted */
-  background-color: var(--sklearn-color-fitted-level-2);
-}
-
-#sk-container-id-1 div.sk-label label.sk-toggleable__label,
-#sk-container-id-1 div.sk-label label {
-  /* The background is the default theme color */
-  color: var(--sklearn-color-text-on-default-background);
-}
-
-/* On hover, darken the color of the background */
-#sk-container-id-1 div.sk-label:hover label.sk-toggleable__label {
-  color: var(--sklearn-color-text);
-  background-color: var(--sklearn-color-unfitted-level-2);
-}
-
-/* Label box, darken color on hover, fitted */
-#sk-container-id-1 div.sk-label.fitted:hover label.sk-toggleable__label.fitted {
-  color: var(--sklearn-color-text);
-  background-color: var(--sklearn-color-fitted-level-2);
-}
-
-/* Estimator label */
-
-#sk-container-id-1 div.sk-label label {
-  font-family: monospace;
-  font-weight: bold;
-  display: inline-block;
-  line-height: 1.2em;
-}
-
-#sk-container-id-1 div.sk-label-container {
-  text-align: center;
-}
-
-/* Estimator-specific */
-#sk-container-id-1 div.sk-estimator {
-  font-family: monospace;
-  border: 1px dotted var(--sklearn-color-border-box);
-  border-radius: 0.25em;
-  box-sizing: border-box;
-  margin-bottom: 0.5em;
-  /* unfitted */
-  background-color: var(--sklearn-color-unfitted-level-0);
-}
-
-#sk-container-id-1 div.sk-estimator.fitted {
-  /* fitted */
-  background-color: var(--sklearn-color-fitted-level-0);
-}
-
-/* on hover */
-#sk-container-id-1 div.sk-estimator:hover {
-  /* unfitted */
-  background-color: var(--sklearn-color-unfitted-level-2);
-}
-
-#sk-container-id-1 div.sk-estimator.fitted:hover {
-  /* fitted */
-  background-color: var(--sklearn-color-fitted-level-2);
-}
-
-/* Specification for estimator info (e.g. "i" and "?") */
-
-/* Common style for "i" and "?" */
-
-.sk-estimator-doc-link,
-a:link.sk-estimator-doc-link,
-a:visited.sk-estimator-doc-link {
-  float: right;
-  font-size: smaller;
-  line-height: 1em;
-  font-family: monospace;
-  background-color: var(--sklearn-color-background);
-  border-radius: 1em;
-  height: 1em;
-  width: 1em;
-  text-decoration: none !important;
-  margin-left: 0.5em;
-  text-align: center;
-  /* unfitted */
-  border: var(--sklearn-color-unfitted-level-1) 1pt solid;
-  color: var(--sklearn-color-unfitted-level-1);
-}
-
-.sk-estimator-doc-link.fitted,
-a:link.sk-estimator-doc-link.fitted,
-a:visited.sk-estimator-doc-link.fitted {
-  /* fitted */
-  border: var(--sklearn-color-fitted-level-1) 1pt solid;
-  color: var(--sklearn-color-fitted-level-1);
-}
-
-/* On hover */
-div.sk-estimator:hover .sk-estimator-doc-link:hover,
-.sk-estimator-doc-link:hover,
-div.sk-label-container:hover .sk-estimator-doc-link:hover,
-.sk-estimator-doc-link:hover {
-  /* unfitted */
-  background-color: var(--sklearn-color-unfitted-level-3);
-  color: var(--sklearn-color-background);
-  text-decoration: none;
-}
-
-div.sk-estimator.fitted:hover .sk-estimator-doc-link.fitted:hover,
-.sk-estimator-doc-link.fitted:hover,
-div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
-.sk-estimator-doc-link.fitted:hover {
-  /* fitted */
-  background-color: var(--sklearn-color-fitted-level-3);
-  color: var(--sklearn-color-background);
-  text-decoration: none;
-}
-
-/* Span, style for the box shown on hovering the info icon */
-.sk-estimator-doc-link span {
-  display: none;
-  z-index: 9999;
-  position: relative;
-  font-weight: normal;
-  right: .2ex;
-  padding: .5ex;
-  margin: .5ex;
-  width: min-content;
-  min-width: 20ex;
-  max-width: 50ex;
-  color: var(--sklearn-color-text);
-  box-shadow: 2pt 2pt 4pt #999;
-  /* unfitted */
-  background: var(--sklearn-color-unfitted-level-0);
-  border: .5pt solid var(--sklearn-color-unfitted-level-3);
-}
-
-.sk-estimator-doc-link.fitted span {
-  /* fitted */
-  background: var(--sklearn-color-fitted-level-0);
-  border: var(--sklearn-color-fitted-level-3);
-}
-
-.sk-estimator-doc-link:hover span {
-  display: block;
-}
-
-/* "?"-specific style due to the `<a>` HTML tag */
-
-#sk-container-id-1 a.estimator_doc_link {
-  float: right;
-  font-size: 1rem;
-  line-height: 1em;
-  font-family: monospace;
-  background-color: var(--sklearn-color-background);
-  border-radius: 1rem;
-  height: 1rem;
-  width: 1rem;
-  text-decoration: none;
-  /* unfitted */
-  color: var(--sklearn-color-unfitted-level-1);
-  border: var(--sklearn-color-unfitted-level-1) 1pt solid;
-}
-
-#sk-container-id-1 a.estimator_doc_link.fitted {
-  /* fitted */
-  border: var(--sklearn-color-fitted-level-1) 1pt solid;
-  color: var(--sklearn-color-fitted-level-1);
-}
-
-/* On hover */
-#sk-container-id-1 a.estimator_doc_link:hover {
-  /* unfitted */
-  background-color: var(--sklearn-color-unfitted-level-3);
-  color: var(--sklearn-color-background);
-  text-decoration: none;
-}
-
-#sk-container-id-1 a.estimator_doc_link.fitted:hover {
-  /* fitted */
-  background-color: var(--sklearn-color-fitted-level-3);
-}
-
-.estimator-table summary {
-    padding: .5rem;
-    font-family: monospace;
-    cursor: pointer;
-}
-
-.estimator-table details[open] {
-    padding-left: 0.1rem;
-    padding-right: 0.1rem;
-    padding-bottom: 0.3rem;
-}
-
-.estimator-table .parameters-table {
-    margin-left: auto !important;
-    margin-right: auto !important;
-}
-
-.estimator-table .parameters-table tr:nth-child(odd) {
-    background-color: #fff;
-}
-
-.estimator-table .parameters-table tr:nth-child(even) {
-    background-color: #f6f6f6;
-}
-
-.estimator-table .parameters-table tr:hover {
-    background-color: #e0e0e0;
-}
-
-.estimator-table table td {
-    border: 1px solid rgba(106, 105, 104, 0.232);
-}
-
-.user-set td {
-    color:rgb(255, 94, 0);
-    text-align: left;
-}
-
-.user-set td.value pre {
-    color:rgb(255, 94, 0) !important;
-    background-color: transparent !important;
-}
-
-.default td {
-    color: black;
-    text-align: left;
-}
-
-.user-set td i,
-.default td i {
-    color: black;
-}
-
-.copy-paste-icon {
-    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0NDggNTEyIj48IS0tIUZvbnQgQXdlc29tZSBGcmVlIDYuNy4yIGJ5IEBmb250YXdlc29tZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tIExpY2Vuc2UgLSBodHRwczovL2ZvbnRhd2Vzb21lLmNvbS9saWNlbnNlL2ZyZWUgQ29weXJpZ2h0IDIwMjUgRm9udGljb25zLCBJbmMuLS0+PHBhdGggZD0iTTIwOCAwTDMzMi4xIDBjMTIuNyAwIDI0LjkgNS4xIDMzLjkgMTQuMWw2Ny45IDY3LjljOSA5IDE0LjEgMjEuMiAxNC4xIDMzLjlMNDQ4IDMzNmMwIDI2LjUtMjEuNSA0OC00OCA0OGwtMTkyIDBjLTI2LjUgMC00OC0yMS41LTQ4LTQ4bDAtMjg4YzAtMjYuNSAyMS41LTQ4IDQ4LTQ4ek00OCAxMjhsODAgMCAwIDY0LTY0IDAgMCAyNTYgMTkyIDAgMC0zMiA2NCAwIDAgNDhjMCAyNi41LTIxLjUgNDgtNDggNDhMNDggNTEyYy0yNi41IDAtNDgtMjEuNS00OC00OEwwIDE3NmMwLTI2LjUgMjEuNS00OCA0OC00OHoiLz48L3N2Zz4=);
-    background-repeat: no-repeat;
-    background-size: 14px 14px;
-    background-position: 0;
-    display: inline-block;
-    width: 14px;
-    height: 14px;
-    cursor: pointer;
-}
-</style><body><div id="sk-container-id-1" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>LinearRegression()</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-1" type="checkbox" checked><label for="sk-estimator-id-1" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>LinearRegression</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.7/modules/generated/sklearn.linear_model.LinearRegression.html">?<span>Documentation for LinearRegression</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></div></label><div class="sk-toggleable__content fitted" data-param-prefix="">
-        <div class="estimator-table">
-            <details>
-                <summary>Parameters</summary>
-                <table class="parameters-table">
-                  <tbody>
-                    
-        <tr class="default">
-            <td><i class="copy-paste-icon"
-                 onclick="copyToClipboard('fit_intercept',
-                          this.parentElement.nextElementSibling)"
-            ></i></td>
-            <td class="param">fit_intercept&nbsp;</td>
-            <td class="value">True</td>
-        </tr>
-    
-
-        <tr class="default">
-            <td><i class="copy-paste-icon"
-                 onclick="copyToClipboard('copy_X',
-                          this.parentElement.nextElementSibling)"
-            ></i></td>
-            <td class="param">copy_X&nbsp;</td>
-            <td class="value">True</td>
-        </tr>
-    
-
-        <tr class="default">
-            <td><i class="copy-paste-icon"
-                 onclick="copyToClipboard('tol',
-                          this.parentElement.nextElementSibling)"
-            ></i></td>
-            <td class="param">tol&nbsp;</td>
-            <td class="value">1e-06</td>
-        </tr>
-    
-
-        <tr class="default">
-            <td><i class="copy-paste-icon"
-                 onclick="copyToClipboard('n_jobs',
-                          this.parentElement.nextElementSibling)"
-            ></i></td>
-            <td class="param">n_jobs&nbsp;</td>
-            <td class="value">None</td>
-        </tr>
-    
-
-        <tr class="default">
-            <td><i class="copy-paste-icon"
-                 onclick="copyToClipboard('positive',
-                          this.parentElement.nextElementSibling)"
-            ></i></td>
-            <td class="param">positive&nbsp;</td>
-            <td class="value">False</td>
-        </tr>
-    
-                  </tbody>
-                </table>
-            </details>
-        </div>
-    </div></div></div></div></div><script>function copyToClipboard(text, element) {
-    // Get the parameter prefix from the closest toggleable content
-    const toggleableContent = element.closest('.sk-toggleable__content');
-    const paramPrefix = toggleableContent ? toggleableContent.dataset.paramPrefix : '';
-    const fullParamName = paramPrefix ? `${paramPrefix}${text}` : text;
-
-    const originalStyle = element.style;
-    const computedStyle = window.getComputedStyle(element);
-    const originalWidth = computedStyle.width;
-    const originalHTML = element.innerHTML.replace('Copied!', '');
-
-    navigator.clipboard.writeText(fullParamName)
-        .then(() => {
-            element.style.width = originalWidth;
-            element.style.color = 'green';
-            element.innerHTML = "Copied!";
-
-            setTimeout(() => {
-                element.innerHTML = originalHTML;
-                element.style = originalStyle;
-            }, 2000);
-        })
-        .catch(err => {
-            console.error('Failed to copy:', err);
-            element.style.color = 'red';
-            element.innerHTML = "Failed!";
-            setTimeout(() => {
-                element.innerHTML = originalHTML;
-                element.style = originalStyle;
-            }, 2000);
-        });
-    return false;
-}
-
-document.querySelectorAll('.fa-regular.fa-copy').forEach(function(element) {
-    const toggleableContent = element.closest('.sk-toggleable__content');
-    const paramPrefix = toggleableContent ? toggleableContent.dataset.paramPrefix : '';
-    const paramName = element.parentElement.nextElementSibling.textContent.trim();
-    const fullParamName = paramPrefix ? `${paramPrefix}${paramName}` : paramName;
-
-    element.setAttribute('title', fullParamName);
-});
-</script></body></div></div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>LinearRegression()
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2369,7 +1783,7 @@ document.querySelectorAll('.fa-regular.fa-copy').forEach(function(element) {
 </div>
 </div>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="../_images/4fa464e248918aa0346e9ba7cc8f3681702a25277737e65d4cede31603949d7a.png"><img alt="../_images/4fa464e248918aa0346e9ba7cc8f3681702a25277737e65d4cede31603949d7a.png" src="../_images/4fa464e248918aa0346e9ba7cc8f3681702a25277737e65d4cede31603949d7a.png" style="width: 849px; height: 448px;" />
+<a class="reference internal image-reference" href="../_images/6641803b7c7a7dc5cf11a257da9b783c1bd756a8d634aeaf58ee52f0caf6419e.png"><img alt="../_images/6641803b7c7a7dc5cf11a257da9b783c1bd756a8d634aeaf58ee52f0caf6419e.png" src="../_images/6641803b7c7a7dc5cf11a257da9b783c1bd756a8d634aeaf58ee52f0caf6419e.png" style="width: 611px; height: 318px;" />
 </a>
 </div>
 </div>
@@ -2406,7 +1820,7 @@ y(x) = cos\Big(\frac{x}{10}\Big)
 </div>
 </div>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="../_images/0ce82291bd2f5651a245b6d2eaef81a8b9eab817d7071cbd12e947b0b32760e3.png"><img alt="../_images/0ce82291bd2f5651a245b6d2eaef81a8b9eab817d7071cbd12e947b0b32760e3.png" src="../_images/0ce82291bd2f5651a245b6d2eaef81a8b9eab817d7071cbd12e947b0b32760e3.png" style="width: 852px; height: 446px;" />
+<a class="reference internal image-reference" href="../_images/33f2e0752b16656eda538e6bde26cd9802ea0c62ae12408f0ea93584360ed534.png"><img alt="../_images/33f2e0752b16656eda538e6bde26cd9802ea0c62ae12408f0ea93584360ed534.png" src="../_images/33f2e0752b16656eda538e6bde26cd9802ea0c62ae12408f0ea93584360ed534.png" style="width: 613px; height: 316px;" />
 </a>
 </div>
 </div>
@@ -2453,7 +1867,7 @@ y(x) = cos\Big(\frac{x}{10}\Big)
 </div>
 </div>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="../_images/0c78220873068b726633c4f065c95ac5cc5ef8e55027c61d4df54e7d1354181f.png"><img alt="../_images/0c78220873068b726633c4f065c95ac5cc5ef8e55027c61d4df54e7d1354181f.png" src="../_images/0c78220873068b726633c4f065c95ac5cc5ef8e55027c61d4df54e7d1354181f.png" style="width: 1628px; height: 679px;" />
+<a class="reference internal image-reference" href="../_images/e8a9bd110b714016460dafdb60b208ffdc249ca78c9da0d67249b517910d041f.png"><img alt="../_images/e8a9bd110b714016460dafdb60b208ffdc249ca78c9da0d67249b517910d041f.png" src="../_images/e8a9bd110b714016460dafdb60b208ffdc249ca78c9da0d67249b517910d041f.png" style="width: 1172px; height: 481px;" />
 </a>
 </div>
 </div>
@@ -2492,7 +1906,7 @@ y(x) = cos\Big(\frac{x}{10}\Big)
 </div>
 </div>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="../_images/6580e938c21553a4eb0019eeefb1c4f50cc3b031f7c91d05a67c15af6a7d689a.png"><img alt="../_images/6580e938c21553a4eb0019eeefb1c4f50cc3b031f7c91d05a67c15af6a7d689a.png" src="../_images/6580e938c21553a4eb0019eeefb1c4f50cc3b031f7c91d05a67c15af6a7d689a.png" style="width: 1008px; height: 525px;" />
+<a class="reference internal image-reference" href="../_images/c3f754b115e4a6037c655eea9fcf5e30485c6906e455ecc36cd86050f7080b07.png"><img alt="../_images/c3f754b115e4a6037c655eea9fcf5e30485c6906e455ecc36cd86050f7080b07.png" src="../_images/c3f754b115e4a6037c655eea9fcf5e30485c6906e455ecc36cd86050f7080b07.png" style="width: 726px; height: 372px;" />
 </a>
 </div>
 </div>
@@ -2505,13 +1919,13 @@ y(x) = cos\Big(\frac{x}{10}\Big)
 <p><code class="docutils literal notranslate"><span class="pre">Train</span> <span class="pre">sample:</span></code> <span class="math notranslate nohighlight">\(X^\ell = \big(x_i,~y_i\big)_{i=1}^{\ell}, \quad x_i \in \mathbb{R}^n, \quad y_i \in \{-1,~+1\}\)</span></p>
 <ul class="simple">
 <li><p>Classification model - <strong>linear</strong>:
-\begin{equation}
+$<span class="math notranslate nohighlight">\(
 a(x, θ) = \text{sign} \big(\sum_{j=1}^{n} θ_j f_j(x)\big), \quad θ \in \mathbb{R}^n
-\end{equation}</p></li>
+\)</span>$</p></li>
 <li><p>The loss function is <strong>binary</strong> or its <strong>approximation</strong>::
-\begin{equation}
+$<span class="math notranslate nohighlight">\(
 \mathscr{L}(a,~y) = [ay &lt; 0] = \big[x^\top θ \cdot y &lt; 0\big] \le \mathscr{L}\big(x^\top θ \cdot y)
-\end{equation}</p></li>
+\)</span>$</p></li>
 </ul>
 <section id="id2">
 <h2>Practice<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
@@ -2535,7 +1949,7 @@ a(x, θ) = \text{sign} \big(\sum_{j=1}^{n} θ_j f_j(x)\big), \quad θ \in \mathb
 </div>
 </div>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="../_images/3cc9e356d6a1f94804da297ed268242f0d94c20e12d2e8e3fa2debd591f09f0e.png"><img alt="../_images/3cc9e356d6a1f94804da297ed268242f0d94c20e12d2e8e3fa2debd591f09f0e.png" src="../_images/3cc9e356d6a1f94804da297ed268242f0d94c20e12d2e8e3fa2debd591f09f0e.png" style="width: 556px; height: 430px;" />
+<a class="reference internal image-reference" href="../_images/d3c2e680652c5ea0198e2741375c955ea8b239294c23726712c13459783d098a.png"><img alt="../_images/d3c2e680652c5ea0198e2741375c955ea8b239294c23726712c13459783d098a.png" src="../_images/d3c2e680652c5ea0198e2741375c955ea8b239294c23726712c13459783d098a.png" style="width: 378px; height: 261px;" />
 </a>
 </div>
 </div>
@@ -2591,7 +2005,7 @@ a(x, θ) = \text{sign} \big(\sum_{j=1}^{n} θ_j f_j(x)\big), \quad θ \in \mathb
 </div>
 </div>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="../_images/7a02d33c702b5912cfb236b0c478b0381364ea12b90580ddfe0eb3b987a79bbd.png"><img alt="../_images/7a02d33c702b5912cfb236b0c478b0381364ea12b90580ddfe0eb3b987a79bbd.png" src="../_images/7a02d33c702b5912cfb236b0c478b0381364ea12b90580ddfe0eb3b987a79bbd.png" style="width: 743px; height: 350px;" />
+<a class="reference internal image-reference" href="../_images/61964ce01eedaae50309e871279e0452db0c91e09e72f4294d72d98a29cae1b6.png"><img alt="../_images/61964ce01eedaae50309e871279e0452db0c91e09e72f4294d72d98a29cae1b6.png" src="../_images/61964ce01eedaae50309e871279e0452db0c91e09e72f4294d72d98a29cae1b6.png" style="width: 534px; height: 248px;" />
 </a>
 </div>
 </div>
@@ -2666,7 +2080,7 @@ a(x, θ) = \text{sign} \big(\sum_{j=1}^{n} θ_j f_j(x)\big), \quad θ \in \mathb
 </div>
 </div>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="../_images/74639f46411b4b1eb3011cdc1ad1e58094057b2a0f7e577a22743e1c372711de.png"><img alt="../_images/74639f46411b4b1eb3011cdc1ad1e58094057b2a0f7e577a22743e1c372711de.png" src="../_images/74639f46411b4b1eb3011cdc1ad1e58094057b2a0f7e577a22743e1c372711de.png" style="width: 743px; height: 350px;" />
+<a class="reference internal image-reference" href="../_images/fe5a29ad0c115240362673ec9b9ec5adeeab35b24b321562cda7edfa78f631e9.png"><img alt="../_images/fe5a29ad0c115240362673ec9b9ec5adeeab35b24b321562cda7edfa78f631e9.png" src="../_images/fe5a29ad0c115240362673ec9b9ec5adeeab35b24b321562cda7edfa78f631e9.png" style="width: 534px; height: 248px;" />
 </a>
 </div>
 </div>
@@ -2680,9 +2094,9 @@ a(x, θ) = \text{sign} \big(\sum_{j=1}^{n} θ_j f_j(x)\big), \quad θ \in \mathb
 <p><img alt="" src="https://drive.google.com/uc?export=view&amp;id=1zfrRBSZhAs3RZeLYhUKeo0RsDPpPXjm-" /></p>
 <p><code class="docutils literal notranslate"><span class="pre">Positive</span> <span class="pre">/</span> <span class="pre">Negative</span></code> - which answer was given by the classifier <span class="math notranslate nohighlight">\(a(x)\)</span>. <code class="docutils literal notranslate"><span class="pre">True</span> <span class="pre">/</span> <span class="pre">False</span></code> - the classifier gave the correct answer or made a mistake.</p>
 <p><strong>Number of correct classifications</strong> (the more, the better):
-\begin{equation}
-\text{Accuracy} = \frac{1}{\ell}\sum_{i=1}^{\ell}\big[a(x_i) = y_i\big] = ~\frac{\text{TP} + \text{TN}}{\text{FP} + \text{FN} + \text{TP} + \text{TN}}
-\end{equation}</p>
+$<span class="math notranslate nohighlight">\(
+  \text{Accuracy} = \frac{1}{\ell}\sum_{i=1}^{\ell}\big[a(x_i) = y_i\big] = ~\frac{\text{TP} + \text{TN}}{\text{FP} + \text{FN} + \text{TP} + \text{TN}}
+\)</span>$</p>
 <p><code class="docutils literal notranslate"><span class="pre">!!!</span> <span class="pre">Disadvantage</span> <span class="pre">!!!</span></code>: does not take into account either the number (imbalance) of classes, or the cost of an error on objects of different classes.</p>
 <p><strong>For example</strong>: if there is <span class="math notranslate nohighlight">\(100\)</span> times more samples of one class than another class. If the algorithm <span class="math notranslate nohighlight">\(a(x)\)</span> is wrong on all objects of a small class, then we will have only <span class="math notranslate nohighlight">\(1\%\)</span> error. It seems that <span class="math notranslate nohighlight">\(1\%\)</span> error is good enough, but we have not solved the task correctly.</p>
 </section>
@@ -2700,9 +2114,9 @@ a(x, θ) = \text{sign} \big(\sum_{j=1}^{n} θ_j f_j(x)\big), \quad θ \in \mathb
 </ul>
 <p>Let <span class="math notranslate nohighlight">\(λ_y\)</span> be the penalty for an error on objects of class <span class="math notranslate nohighlight">\(y\)</span>.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">loss</span> <span class="pre">function</span></code> now depends on penalties:
-\begin{equation}
-\mathscr{L}(a, ~y) = \lambda_{y_i}\big[a(x_i; ~w, w_0) \not = y_i \big] = \lambda_{y_i}\big[\big(g(x_i; ~w) - w_0 \big)y_i &lt; 0\big].
-\end{equation}</p>
+$<span class="math notranslate nohighlight">\(
+  \mathscr{L}(a, ~y) = \lambda_{y_i}\big[a(x_i; ~w, w_0) \not = y_i \big] = \lambda_{y_i}\big[\big(g(x_i; ~w) - w_0 \big)y_i &lt; 0\big].
+\)</span>$</p>
 <p><code class="docutils literal notranslate"><span class="pre">The</span> <span class="pre">problem:</span></code>
 In practice, fines of <span class="math notranslate nohighlight">\(\{\lambda_{y_i}\}\)</span> can be reviewed:</p>
 <ul class="simple">
@@ -2717,17 +2131,18 @@ In practice, fines of <span class="math notranslate nohighlight">\(\{\lambda_{y_
 Each point of the curve corresponds to some <span class="math notranslate nohighlight">\(a(x;w, w_0)\)</span>.</p>
 <ul class="simple">
 <li><p>on the X axis: <code class="docutils literal notranslate"><span class="pre">(FPR</span> <span class="pre">-</span> <span class="pre">false</span> <span class="pre">positive</span> <span class="pre">rate)</span></code>:
-\begin{equation}
-\text{FPR} = \frac{\sum_{i=1}^{\el}\big[ y_i = -1\big]\big[a(x_i; w, w_0) = +1\big]}{\sum_{i=1}^{\el}\big[ y_i = -1\big]}
-\end{equation}</p></li>
+$<span class="math notranslate nohighlight">\(
+\text{FPR} = \frac{\sum_{i=1}^{\ell}\big[ y_i = -1\big]\big[a(x_i; w, w_0) = +1\big]}{\sum_{i=1}^{\ell}\big[ y_i = -1\big]}
+\)</span>$</p></li>
 <li><ul>
 <li><p>on the Y axis: <code class="docutils literal notranslate"><span class="pre">(TPR</span> <span class="pre">-</span> <span class="pre">true</span> <span class="pre">positive</span> <span class="pre">rate)</span></code>:</p></li>
 </ul>
 </li>
 </ul>
-<p>\begin{equation}
-\text{TPR} = \frac{\sum_{i=1}^{\el}\big[ y_i = +1\big]\big[a(x_i; w, w_0) = +1\big]}{\sum_{i=1}^{\el}\big[ y_i = +1\big]}
-\end{equation}</p>
+<div class="math notranslate nohighlight">
+\[
+  \text{TPR} = \frac{\sum_{i=1}^{\ell}\big[ y_i = +1\big]\big[a(x_i; w, w_0) = +1\big]}{\sum_{i=1}^{\ell}\big[ y_i = +1\big]}
+\]</div>
 <p><span class="math notranslate nohighlight">\(1 - \text{FPR}\)</span> is called the <code class="docutils literal notranslate"><span class="pre">specificity</span></code> of the algorithm <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(\text{TPR}\)</span> is called the <code class="docutils literal notranslate"><span class="pre">sensitivity</span></code> of the algorithm <span class="math notranslate nohighlight">\(a\)</span>.</p>
 <p>The smaller the <span class="math notranslate nohighlight">\(\text{FPR}\)</span>, the better. The more <span class="math notranslate nohighlight">\(\text{TPR}\)</span>, the better.</p>
 </section>
@@ -2790,7 +2205,7 @@ A test sample is used to evaluate how your model will work with invisible data.<
 </div>
 </div>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="../_images/9a41f0e681ef9a54517fed98553c0f58d9c3ad8b4d930a2fdbe5791280c468cd.png"><img alt="../_images/9a41f0e681ef9a54517fed98553c0f58d9c3ad8b4d930a2fdbe5791280c468cd.png" src="../_images/9a41f0e681ef9a54517fed98553c0f58d9c3ad8b4d930a2fdbe5791280c468cd.png" style="width: 573px; height: 430px;" />
+<a class="reference internal image-reference" href="../_images/0ccfd7e9ad2152fb1a92a55f9dabb23171d0b61d7959d05ab2ea874d601f67b8.png"><img alt="../_images/0ccfd7e9ad2152fb1a92a55f9dabb23171d0b61d7959d05ab2ea874d601f67b8.png" src="../_images/0ccfd7e9ad2152fb1a92a55f9dabb23171d0b61d7959d05ab2ea874d601f67b8.png" style="width: 390px; height: 261px;" />
 </a>
 </div>
 </div>
@@ -2814,7 +2229,7 @@ A test sample is used to evaluate how your model will work with invisible data.<
 </div>
 </div>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="../_images/f47a47708aa5665e32cb256c4c188399a38675898370de0a07aa52ec55209b59.png"><img alt="../_images/f47a47708aa5665e32cb256c4c188399a38675898370de0a07aa52ec55209b59.png" src="../_images/f47a47708aa5665e32cb256c4c188399a38675898370de0a07aa52ec55209b59.png" style="width: 545px; height: 430px;" />
+<a class="reference internal image-reference" href="../_images/bb7f940b1fdacca15c50dbee7a463fa0dd1350315f0b71a3e86a8bf47d6bdf9a.png"><img alt="../_images/bb7f940b1fdacca15c50dbee7a463fa0dd1350315f0b71a3e86a8bf47d6bdf9a.png" src="../_images/bb7f940b1fdacca15c50dbee7a463fa0dd1350315f0b71a3e86a8bf47d6bdf9a.png" style="width: 370px; height: 261px;" />
 </a>
 </div>
 </div>
@@ -2822,19 +2237,22 @@ A test sample is used to evaluate how your model will work with invisible data.<
 <section class="tex2jax_ignore mathjax_ignore" id="assessment-of-the-quality-of-two-class-classification">
 <h1>Assessment of the quality of two-class classification<a class="headerlink" href="#assessment-of-the-quality-of-two-class-classification" title="Link to this heading">#</a></h1>
 <p>Our sample consists of relevant and irrelevant elements.</p>
-<p>\begin{equation}
-\text{Precision} = \frac{\text{TP}}{\text{TP} + \text{FP}}
-\end{equation}</p>
-<p>\begin{equation}
-\text{Recall} = \frac{\text{TP}}{\text{TP} + \text{FN}}
-\end{equation}</p>
+<div class="math notranslate nohighlight">
+\[
+    \text{Precision} = \frac{\text{TP}}{\text{TP} + \text{FP}}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+    \text{Recall} = \frac{\text{TP}}{\text{TP} + \text{FN}}
+\]</div>
 <p>In medical diagnostics:
-\begin{equation}
-\text{Sensitivity} = \frac{\text{TP}}{\text{TP} + \text{FN}}
-\end{equation}</p>
-<p>\begin{equation}
-\text{Specificity} = \frac{\text{TN}}{\text{TN} + \text{FP}}
-\end{equation}</p>
+$<span class="math notranslate nohighlight">\(
+    \text{Sensitivity} = \frac{\text{TP}}{\text{TP} + \text{FN}}
+\)</span>$</p>
+<div class="math notranslate nohighlight">
+\[
+    \text{Specificity} = \frac{\text{TN}}{\text{TN} + \text{FP}}
+\]</div>
 <p><code class="docutils literal notranslate"><span class="pre">Sensitivity</span></code> - the proportion of correct positive diagnoses</p>
 <p><code class="docutils literal notranslate"><span class="pre">Specificity</span></code> - the proportion of correct negative diagnoses</p>
 <p><img alt="" src="https://drive.google.com/uc?export=view&amp;id=1fqhNeKdWtDOXiOWOa7j3M2cqw2CtS45H" /></p>
@@ -2848,20 +2266,24 @@ A test sample is used to evaluate how your model will work with invisible data.<
 <li><p><span class="math notranslate nohighlight">\(\text{FN}_y\)</span> - false negatives</p></li>
 </ul>
 <p>Accuracy and completeness with <code class="docutils literal notranslate"><span class="pre">micro-averaging</span></code>:</p>
-<p>\begin{equation}
-\text{Precision: } P = \frac{\sum_y\text{TP}_y}{\sum_y \big(\text{TP}_y + \text{FP}_y\big)}
-\end{equation}</p>
-<p>\begin{equation}
-\text{Recall: } R = \frac{\sum_y\text{TP}_y}{\sum_y \big(\text{TP}_y + \text{FN}_y\big)}
-\end{equation}</p>
+<div class="math notranslate nohighlight">
+\[
+    \text{Precision: } P = \frac{\sum_y\text{TP}_y}{\sum_y \big(\text{TP}_y + \text{FP}_y\big)}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+    \text{Recall: } R = \frac{\sum_y\text{TP}_y}{\sum_y \big(\text{TP}_y + \text{FN}_y\big)}
+\]</div>
 <p><code class="docutils literal notranslate"><span class="pre">Micro-averaging</span></code> is not error-sensitive on small classes, i.e. micro-averaging is bad where we have unbalanced classes.</p>
 <p>Accuracy and completeness with <code class="docutils literal notranslate"><span class="pre">macro-averaging</span></code>:</p>
-<p>\begin{equation}
-\text{Precision: } P = \frac{1}{\vert Y \vert}\sum_y\frac{\text{TP}_y}{\text{TP}_y + \text{FP}_y}
-\end{equation}</p>
-<p>\begin{equation}
-\text{Recall: } R = \frac{1}{\vert Y \vert}\sum_y\frac{\text{TP}}{\text{TP}_y + \text{FN}_y}
-\end{equation}</p>
+<div class="math notranslate nohighlight">
+\[
+    \text{Precision: } P = \frac{1}{\vert Y \vert}\sum_y\frac{\text{TP}_y}{\text{TP}_y + \text{FP}_y}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+    \text{Recall: } R = \frac{1}{\vert Y \vert}\sum_y\frac{\text{TP}}{\text{TP}_y + \text{FN}_y}
+\]</div>
 <p>Macro-averaging is sensitive to errors in small classes.</p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="assessment-of-classification-quality">
@@ -2948,728 +2370,12 @@ weighted avg       0.85      0.84      0.84       100
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><style>#sk-container-id-2 {
-  /* Definition of color scheme common for light and dark mode */
-  --sklearn-color-text: #000;
-  --sklearn-color-text-muted: #666;
-  --sklearn-color-line: gray;
-  /* Definition of color scheme for unfitted estimators */
-  --sklearn-color-unfitted-level-0: #fff5e6;
-  --sklearn-color-unfitted-level-1: #f6e4d2;
-  --sklearn-color-unfitted-level-2: #ffe0b3;
-  --sklearn-color-unfitted-level-3: chocolate;
-  /* Definition of color scheme for fitted estimators */
-  --sklearn-color-fitted-level-0: #f0f8ff;
-  --sklearn-color-fitted-level-1: #d4ebff;
-  --sklearn-color-fitted-level-2: #b3dbfd;
-  --sklearn-color-fitted-level-3: cornflowerblue;
-
-  /* Specific color for light theme */
-  --sklearn-color-text-on-default-background: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, black)));
-  --sklearn-color-background: var(--sg-background-color, var(--theme-background, var(--jp-layout-color0, white)));
-  --sklearn-color-border-box: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, black)));
-  --sklearn-color-icon: #696969;
-
-  @media (prefers-color-scheme: dark) {
-    /* Redefinition of color scheme for dark theme */
-    --sklearn-color-text-on-default-background: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, white)));
-    --sklearn-color-background: var(--sg-background-color, var(--theme-background, var(--jp-layout-color0, #111)));
-    --sklearn-color-border-box: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, white)));
-    --sklearn-color-icon: #878787;
-  }
-}
-
-#sk-container-id-2 {
-  color: var(--sklearn-color-text);
-}
-
-#sk-container-id-2 pre {
-  padding: 0;
-}
-
-#sk-container-id-2 input.sk-hidden--visually {
-  border: 0;
-  clip: rect(1px 1px 1px 1px);
-  clip: rect(1px, 1px, 1px, 1px);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-}
-
-#sk-container-id-2 div.sk-dashed-wrapped {
-  border: 1px dashed var(--sklearn-color-line);
-  margin: 0 0.4em 0.5em 0.4em;
-  box-sizing: border-box;
-  padding-bottom: 0.4em;
-  background-color: var(--sklearn-color-background);
-}
-
-#sk-container-id-2 div.sk-container {
-  /* jupyter's `normalize.less` sets `[hidden] { display: none; }`
-     but bootstrap.min.css set `[hidden] { display: none !important; }`
-     so we also need the `!important` here to be able to override the
-     default hidden behavior on the sphinx rendered scikit-learn.org.
-     See: https://github.com/scikit-learn/scikit-learn/issues/21755 */
-  display: inline-block !important;
-  position: relative;
-}
-
-#sk-container-id-2 div.sk-text-repr-fallback {
-  display: none;
-}
-
-div.sk-parallel-item,
-div.sk-serial,
-div.sk-item {
-  /* draw centered vertical line to link estimators */
-  background-image: linear-gradient(var(--sklearn-color-text-on-default-background), var(--sklearn-color-text-on-default-background));
-  background-size: 2px 100%;
-  background-repeat: no-repeat;
-  background-position: center center;
-}
-
-/* Parallel-specific style estimator block */
-
-#sk-container-id-2 div.sk-parallel-item::after {
-  content: "";
-  width: 100%;
-  border-bottom: 2px solid var(--sklearn-color-text-on-default-background);
-  flex-grow: 1;
-}
-
-#sk-container-id-2 div.sk-parallel {
-  display: flex;
-  align-items: stretch;
-  justify-content: center;
-  background-color: var(--sklearn-color-background);
-  position: relative;
-}
-
-#sk-container-id-2 div.sk-parallel-item {
-  display: flex;
-  flex-direction: column;
-}
-
-#sk-container-id-2 div.sk-parallel-item:first-child::after {
-  align-self: flex-end;
-  width: 50%;
-}
-
-#sk-container-id-2 div.sk-parallel-item:last-child::after {
-  align-self: flex-start;
-  width: 50%;
-}
-
-#sk-container-id-2 div.sk-parallel-item:only-child::after {
-  width: 0;
-}
-
-/* Serial-specific style estimator block */
-
-#sk-container-id-2 div.sk-serial {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: var(--sklearn-color-background);
-  padding-right: 1em;
-  padding-left: 1em;
-}
-
-
-/* Toggleable style: style used for estimator/Pipeline/ColumnTransformer box that is
-clickable and can be expanded/collapsed.
-- Pipeline and ColumnTransformer use this feature and define the default style
-- Estimators will overwrite some part of the style using the `sk-estimator` class
-*/
-
-/* Pipeline and ColumnTransformer style (default) */
-
-#sk-container-id-2 div.sk-toggleable {
-  /* Default theme specific background. It is overwritten whether we have a
-  specific estimator or a Pipeline/ColumnTransformer */
-  background-color: var(--sklearn-color-background);
-}
-
-/* Toggleable label */
-#sk-container-id-2 label.sk-toggleable__label {
-  cursor: pointer;
-  display: flex;
-  width: 100%;
-  margin-bottom: 0;
-  padding: 0.5em;
-  box-sizing: border-box;
-  text-align: center;
-  align-items: start;
-  justify-content: space-between;
-  gap: 0.5em;
-}
-
-#sk-container-id-2 label.sk-toggleable__label .caption {
-  font-size: 0.6rem;
-  font-weight: lighter;
-  color: var(--sklearn-color-text-muted);
-}
-
-#sk-container-id-2 label.sk-toggleable__label-arrow:before {
-  /* Arrow on the left of the label */
-  content: "▸";
-  float: left;
-  margin-right: 0.25em;
-  color: var(--sklearn-color-icon);
-}
-
-#sk-container-id-2 label.sk-toggleable__label-arrow:hover:before {
-  color: var(--sklearn-color-text);
-}
-
-/* Toggleable content - dropdown */
-
-#sk-container-id-2 div.sk-toggleable__content {
-  display: none;
-  text-align: left;
-  /* unfitted */
-  background-color: var(--sklearn-color-unfitted-level-0);
-}
-
-#sk-container-id-2 div.sk-toggleable__content.fitted {
-  /* fitted */
-  background-color: var(--sklearn-color-fitted-level-0);
-}
-
-#sk-container-id-2 div.sk-toggleable__content pre {
-  margin: 0.2em;
-  border-radius: 0.25em;
-  color: var(--sklearn-color-text);
-  /* unfitted */
-  background-color: var(--sklearn-color-unfitted-level-0);
-}
-
-#sk-container-id-2 div.sk-toggleable__content.fitted pre {
-  /* unfitted */
-  background-color: var(--sklearn-color-fitted-level-0);
-}
-
-#sk-container-id-2 input.sk-toggleable__control:checked~div.sk-toggleable__content {
-  /* Expand drop-down */
-  display: block;
-  width: 100%;
-  overflow: visible;
-}
-
-#sk-container-id-2 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {
-  content: "▾";
-}
-
-/* Pipeline/ColumnTransformer-specific style */
-
-#sk-container-id-2 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {
-  color: var(--sklearn-color-text);
-  background-color: var(--sklearn-color-unfitted-level-2);
-}
-
-#sk-container-id-2 div.sk-label.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
-  background-color: var(--sklearn-color-fitted-level-2);
-}
-
-/* Estimator-specific style */
-
-/* Colorize estimator box */
-#sk-container-id-2 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {
-  /* unfitted */
-  background-color: var(--sklearn-color-unfitted-level-2);
-}
-
-#sk-container-id-2 div.sk-estimator.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
-  /* fitted */
-  background-color: var(--sklearn-color-fitted-level-2);
-}
-
-#sk-container-id-2 div.sk-label label.sk-toggleable__label,
-#sk-container-id-2 div.sk-label label {
-  /* The background is the default theme color */
-  color: var(--sklearn-color-text-on-default-background);
-}
-
-/* On hover, darken the color of the background */
-#sk-container-id-2 div.sk-label:hover label.sk-toggleable__label {
-  color: var(--sklearn-color-text);
-  background-color: var(--sklearn-color-unfitted-level-2);
-}
-
-/* Label box, darken color on hover, fitted */
-#sk-container-id-2 div.sk-label.fitted:hover label.sk-toggleable__label.fitted {
-  color: var(--sklearn-color-text);
-  background-color: var(--sklearn-color-fitted-level-2);
-}
-
-/* Estimator label */
-
-#sk-container-id-2 div.sk-label label {
-  font-family: monospace;
-  font-weight: bold;
-  display: inline-block;
-  line-height: 1.2em;
-}
-
-#sk-container-id-2 div.sk-label-container {
-  text-align: center;
-}
-
-/* Estimator-specific */
-#sk-container-id-2 div.sk-estimator {
-  font-family: monospace;
-  border: 1px dotted var(--sklearn-color-border-box);
-  border-radius: 0.25em;
-  box-sizing: border-box;
-  margin-bottom: 0.5em;
-  /* unfitted */
-  background-color: var(--sklearn-color-unfitted-level-0);
-}
-
-#sk-container-id-2 div.sk-estimator.fitted {
-  /* fitted */
-  background-color: var(--sklearn-color-fitted-level-0);
-}
-
-/* on hover */
-#sk-container-id-2 div.sk-estimator:hover {
-  /* unfitted */
-  background-color: var(--sklearn-color-unfitted-level-2);
-}
-
-#sk-container-id-2 div.sk-estimator.fitted:hover {
-  /* fitted */
-  background-color: var(--sklearn-color-fitted-level-2);
-}
-
-/* Specification for estimator info (e.g. "i" and "?") */
-
-/* Common style for "i" and "?" */
-
-.sk-estimator-doc-link,
-a:link.sk-estimator-doc-link,
-a:visited.sk-estimator-doc-link {
-  float: right;
-  font-size: smaller;
-  line-height: 1em;
-  font-family: monospace;
-  background-color: var(--sklearn-color-background);
-  border-radius: 1em;
-  height: 1em;
-  width: 1em;
-  text-decoration: none !important;
-  margin-left: 0.5em;
-  text-align: center;
-  /* unfitted */
-  border: var(--sklearn-color-unfitted-level-1) 1pt solid;
-  color: var(--sklearn-color-unfitted-level-1);
-}
-
-.sk-estimator-doc-link.fitted,
-a:link.sk-estimator-doc-link.fitted,
-a:visited.sk-estimator-doc-link.fitted {
-  /* fitted */
-  border: var(--sklearn-color-fitted-level-1) 1pt solid;
-  color: var(--sklearn-color-fitted-level-1);
-}
-
-/* On hover */
-div.sk-estimator:hover .sk-estimator-doc-link:hover,
-.sk-estimator-doc-link:hover,
-div.sk-label-container:hover .sk-estimator-doc-link:hover,
-.sk-estimator-doc-link:hover {
-  /* unfitted */
-  background-color: var(--sklearn-color-unfitted-level-3);
-  color: var(--sklearn-color-background);
-  text-decoration: none;
-}
-
-div.sk-estimator.fitted:hover .sk-estimator-doc-link.fitted:hover,
-.sk-estimator-doc-link.fitted:hover,
-div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
-.sk-estimator-doc-link.fitted:hover {
-  /* fitted */
-  background-color: var(--sklearn-color-fitted-level-3);
-  color: var(--sklearn-color-background);
-  text-decoration: none;
-}
-
-/* Span, style for the box shown on hovering the info icon */
-.sk-estimator-doc-link span {
-  display: none;
-  z-index: 9999;
-  position: relative;
-  font-weight: normal;
-  right: .2ex;
-  padding: .5ex;
-  margin: .5ex;
-  width: min-content;
-  min-width: 20ex;
-  max-width: 50ex;
-  color: var(--sklearn-color-text);
-  box-shadow: 2pt 2pt 4pt #999;
-  /* unfitted */
-  background: var(--sklearn-color-unfitted-level-0);
-  border: .5pt solid var(--sklearn-color-unfitted-level-3);
-}
-
-.sk-estimator-doc-link.fitted span {
-  /* fitted */
-  background: var(--sklearn-color-fitted-level-0);
-  border: var(--sklearn-color-fitted-level-3);
-}
-
-.sk-estimator-doc-link:hover span {
-  display: block;
-}
-
-/* "?"-specific style due to the `<a>` HTML tag */
-
-#sk-container-id-2 a.estimator_doc_link {
-  float: right;
-  font-size: 1rem;
-  line-height: 1em;
-  font-family: monospace;
-  background-color: var(--sklearn-color-background);
-  border-radius: 1rem;
-  height: 1rem;
-  width: 1rem;
-  text-decoration: none;
-  /* unfitted */
-  color: var(--sklearn-color-unfitted-level-1);
-  border: var(--sklearn-color-unfitted-level-1) 1pt solid;
-}
-
-#sk-container-id-2 a.estimator_doc_link.fitted {
-  /* fitted */
-  border: var(--sklearn-color-fitted-level-1) 1pt solid;
-  color: var(--sklearn-color-fitted-level-1);
-}
-
-/* On hover */
-#sk-container-id-2 a.estimator_doc_link:hover {
-  /* unfitted */
-  background-color: var(--sklearn-color-unfitted-level-3);
-  color: var(--sklearn-color-background);
-  text-decoration: none;
-}
-
-#sk-container-id-2 a.estimator_doc_link.fitted:hover {
-  /* fitted */
-  background-color: var(--sklearn-color-fitted-level-3);
-}
-
-.estimator-table summary {
-    padding: .5rem;
-    font-family: monospace;
-    cursor: pointer;
-}
-
-.estimator-table details[open] {
-    padding-left: 0.1rem;
-    padding-right: 0.1rem;
-    padding-bottom: 0.3rem;
-}
-
-.estimator-table .parameters-table {
-    margin-left: auto !important;
-    margin-right: auto !important;
-}
-
-.estimator-table .parameters-table tr:nth-child(odd) {
-    background-color: #fff;
-}
-
-.estimator-table .parameters-table tr:nth-child(even) {
-    background-color: #f6f6f6;
-}
-
-.estimator-table .parameters-table tr:hover {
-    background-color: #e0e0e0;
-}
-
-.estimator-table table td {
-    border: 1px solid rgba(106, 105, 104, 0.232);
-}
-
-.user-set td {
-    color:rgb(255, 94, 0);
-    text-align: left;
-}
-
-.user-set td.value pre {
-    color:rgb(255, 94, 0) !important;
-    background-color: transparent !important;
-}
-
-.default td {
-    color: black;
-    text-align: left;
-}
-
-.user-set td i,
-.default td i {
-    color: black;
-}
-
-.copy-paste-icon {
-    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0NDggNTEyIj48IS0tIUZvbnQgQXdlc29tZSBGcmVlIDYuNy4yIGJ5IEBmb250YXdlc29tZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tIExpY2Vuc2UgLSBodHRwczovL2ZvbnRhd2Vzb21lLmNvbS9saWNlbnNlL2ZyZWUgQ29weXJpZ2h0IDIwMjUgRm9udGljb25zLCBJbmMuLS0+PHBhdGggZD0iTTIwOCAwTDMzMi4xIDBjMTIuNyAwIDI0LjkgNS4xIDMzLjkgMTQuMWw2Ny45IDY3LjljOSA5IDE0LjEgMjEuMiAxNC4xIDMzLjlMNDQ4IDMzNmMwIDI2LjUtMjEuNSA0OC00OCA0OGwtMTkyIDBjLTI2LjUgMC00OC0yMS41LTQ4LTQ4bDAtMjg4YzAtMjYuNSAyMS41LTQ4IDQ4LTQ4ek00OCAxMjhsODAgMCAwIDY0LTY0IDAgMCAyNTYgMTkyIDAgMC0zMiA2NCAwIDAgNDhjMCAyNi41LTIxLjUgNDgtNDggNDhMNDggNTEyYy0yNi41IDAtNDgtMjEuNS00OC00OEwwIDE3NmMwLTI2LjUgMjEuNS00OCA0OC00OHoiLz48L3N2Zz4=);
-    background-repeat: no-repeat;
-    background-size: 14px 14px;
-    background-position: 0;
-    display: inline-block;
-    width: 14px;
-    height: 14px;
-    cursor: pointer;
-}
-</style><body><div id="sk-container-id-2" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>GridSearchCV(estimator=KNeighborsClassifier(),
-             param_grid={&#x27;n_neighbors&#x27;: [5, 10, 15, 20],
-                         &#x27;weights&#x27;: [&#x27;uniform&#x27;, &#x27;distance&#x27;]})</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-2" type="checkbox" ><label for="sk-estimator-id-2" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>GridSearchCV</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.7/modules/generated/sklearn.model_selection.GridSearchCV.html">?<span>Documentation for GridSearchCV</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></div></label><div class="sk-toggleable__content fitted" data-param-prefix="">
-        <div class="estimator-table">
-            <details>
-                <summary>Parameters</summary>
-                <table class="parameters-table">
-                  <tbody>
-                    
-        <tr class="user-set">
-            <td><i class="copy-paste-icon"
-                 onclick="copyToClipboard('estimator',
-                          this.parentElement.nextElementSibling)"
-            ></i></td>
-            <td class="param">estimator&nbsp;</td>
-            <td class="value">KNeighborsClassifier()</td>
-        </tr>
-    
-
-        <tr class="user-set">
-            <td><i class="copy-paste-icon"
-                 onclick="copyToClipboard('param_grid',
-                          this.parentElement.nextElementSibling)"
-            ></i></td>
-            <td class="param">param_grid&nbsp;</td>
-            <td class="value">{&#x27;n_neighbors&#x27;: [5, 10, ...], &#x27;weights&#x27;: [&#x27;uniform&#x27;, &#x27;distance&#x27;]}</td>
-        </tr>
-    
-
-        <tr class="default">
-            <td><i class="copy-paste-icon"
-                 onclick="copyToClipboard('scoring',
-                          this.parentElement.nextElementSibling)"
-            ></i></td>
-            <td class="param">scoring&nbsp;</td>
-            <td class="value">None</td>
-        </tr>
-    
-
-        <tr class="default">
-            <td><i class="copy-paste-icon"
-                 onclick="copyToClipboard('n_jobs',
-                          this.parentElement.nextElementSibling)"
-            ></i></td>
-            <td class="param">n_jobs&nbsp;</td>
-            <td class="value">None</td>
-        </tr>
-    
-
-        <tr class="default">
-            <td><i class="copy-paste-icon"
-                 onclick="copyToClipboard('refit',
-                          this.parentElement.nextElementSibling)"
-            ></i></td>
-            <td class="param">refit&nbsp;</td>
-            <td class="value">True</td>
-        </tr>
-    
-
-        <tr class="default">
-            <td><i class="copy-paste-icon"
-                 onclick="copyToClipboard('cv',
-                          this.parentElement.nextElementSibling)"
-            ></i></td>
-            <td class="param">cv&nbsp;</td>
-            <td class="value">None</td>
-        </tr>
-    
-
-        <tr class="default">
-            <td><i class="copy-paste-icon"
-                 onclick="copyToClipboard('verbose',
-                          this.parentElement.nextElementSibling)"
-            ></i></td>
-            <td class="param">verbose&nbsp;</td>
-            <td class="value">0</td>
-        </tr>
-    
-
-        <tr class="default">
-            <td><i class="copy-paste-icon"
-                 onclick="copyToClipboard('pre_dispatch',
-                          this.parentElement.nextElementSibling)"
-            ></i></td>
-            <td class="param">pre_dispatch&nbsp;</td>
-            <td class="value">&#x27;2*n_jobs&#x27;</td>
-        </tr>
-    
-
-        <tr class="default">
-            <td><i class="copy-paste-icon"
-                 onclick="copyToClipboard('error_score',
-                          this.parentElement.nextElementSibling)"
-            ></i></td>
-            <td class="param">error_score&nbsp;</td>
-            <td class="value">nan</td>
-        </tr>
-    
-
-        <tr class="default">
-            <td><i class="copy-paste-icon"
-                 onclick="copyToClipboard('return_train_score',
-                          this.parentElement.nextElementSibling)"
-            ></i></td>
-            <td class="param">return_train_score&nbsp;</td>
-            <td class="value">False</td>
-        </tr>
-    
-                  </tbody>
-                </table>
-            </details>
-        </div>
-    </div></div></div><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-3" type="checkbox" ><label for="sk-estimator-id-3" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>best_estimator_: KNeighborsClassifier</div></div></label><div class="sk-toggleable__content fitted" data-param-prefix="best_estimator___"><pre>KNeighborsClassifier(n_neighbors=15)</pre></div></div></div><div class="sk-serial"><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-4" type="checkbox" ><label for="sk-estimator-id-4" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>KNeighborsClassifier</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.7/modules/generated/sklearn.neighbors.KNeighborsClassifier.html">?<span>Documentation for KNeighborsClassifier</span></a></div></label><div class="sk-toggleable__content fitted" data-param-prefix="best_estimator___">
-        <div class="estimator-table">
-            <details>
-                <summary>Parameters</summary>
-                <table class="parameters-table">
-                  <tbody>
-                    
-        <tr class="user-set">
-            <td><i class="copy-paste-icon"
-                 onclick="copyToClipboard('n_neighbors',
-                          this.parentElement.nextElementSibling)"
-            ></i></td>
-            <td class="param">n_neighbors&nbsp;</td>
-            <td class="value">15</td>
-        </tr>
-    
-
-        <tr class="default">
-            <td><i class="copy-paste-icon"
-                 onclick="copyToClipboard('weights',
-                          this.parentElement.nextElementSibling)"
-            ></i></td>
-            <td class="param">weights&nbsp;</td>
-            <td class="value">&#x27;uniform&#x27;</td>
-        </tr>
-    
-
-        <tr class="default">
-            <td><i class="copy-paste-icon"
-                 onclick="copyToClipboard('algorithm',
-                          this.parentElement.nextElementSibling)"
-            ></i></td>
-            <td class="param">algorithm&nbsp;</td>
-            <td class="value">&#x27;auto&#x27;</td>
-        </tr>
-    
-
-        <tr class="default">
-            <td><i class="copy-paste-icon"
-                 onclick="copyToClipboard('leaf_size',
-                          this.parentElement.nextElementSibling)"
-            ></i></td>
-            <td class="param">leaf_size&nbsp;</td>
-            <td class="value">30</td>
-        </tr>
-    
-
-        <tr class="default">
-            <td><i class="copy-paste-icon"
-                 onclick="copyToClipboard('p',
-                          this.parentElement.nextElementSibling)"
-            ></i></td>
-            <td class="param">p&nbsp;</td>
-            <td class="value">2</td>
-        </tr>
-    
-
-        <tr class="default">
-            <td><i class="copy-paste-icon"
-                 onclick="copyToClipboard('metric',
-                          this.parentElement.nextElementSibling)"
-            ></i></td>
-            <td class="param">metric&nbsp;</td>
-            <td class="value">&#x27;minkowski&#x27;</td>
-        </tr>
-    
-
-        <tr class="default">
-            <td><i class="copy-paste-icon"
-                 onclick="copyToClipboard('metric_params',
-                          this.parentElement.nextElementSibling)"
-            ></i></td>
-            <td class="param">metric_params&nbsp;</td>
-            <td class="value">None</td>
-        </tr>
-    
-
-        <tr class="default">
-            <td><i class="copy-paste-icon"
-                 onclick="copyToClipboard('n_jobs',
-                          this.parentElement.nextElementSibling)"
-            ></i></td>
-            <td class="param">n_jobs&nbsp;</td>
-            <td class="value">None</td>
-        </tr>
-    
-                  </tbody>
-                </table>
-            </details>
-        </div>
-    </div></div></div></div></div></div></div></div></div></div><script>function copyToClipboard(text, element) {
-    // Get the parameter prefix from the closest toggleable content
-    const toggleableContent = element.closest('.sk-toggleable__content');
-    const paramPrefix = toggleableContent ? toggleableContent.dataset.paramPrefix : '';
-    const fullParamName = paramPrefix ? `${paramPrefix}${text}` : text;
-
-    const originalStyle = element.style;
-    const computedStyle = window.getComputedStyle(element);
-    const originalWidth = computedStyle.width;
-    const originalHTML = element.innerHTML.replace('Copied!', '');
-
-    navigator.clipboard.writeText(fullParamName)
-        .then(() => {
-            element.style.width = originalWidth;
-            element.style.color = 'green';
-            element.innerHTML = "Copied!";
-
-            setTimeout(() => {
-                element.innerHTML = originalHTML;
-                element.style = originalStyle;
-            }, 2000);
-        })
-        .catch(err => {
-            console.error('Failed to copy:', err);
-            element.style.color = 'red';
-            element.innerHTML = "Failed!";
-            setTimeout(() => {
-                element.innerHTML = originalHTML;
-                element.style = originalStyle;
-            }, 2000);
-        });
-    return false;
-}
-
-document.querySelectorAll('.fa-regular.fa-copy').forEach(function(element) {
-    const toggleableContent = element.closest('.sk-toggleable__content');
-    const paramPrefix = toggleableContent ? toggleableContent.dataset.paramPrefix : '';
-    const paramName = element.parentElement.nextElementSibling.textContent.trim();
-    const fullParamName = paramPrefix ? `${paramPrefix}${paramName}` : paramName;
-
-    element.setAttribute('title', fullParamName);
-});
-</script></body></div></div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>GridSearchCV(estimator=KNeighborsClassifier(),
+             param_grid={&#39;n_neighbors&#39;: [5, 10, 15, 20],
+                         &#39;weights&#39;: [&#39;uniform&#39;, &#39;distance&#39;]})
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3732,14 +2438,15 @@ F1-score: 0.87
 <p><code class="docutils literal notranslate"><span class="pre">Requirement:</span></code></p>
 <ul class="simple">
 <li><p>the old features <span class="math notranslate nohighlight">\(\big(f_1(x), \ldots, f_n(x)\big)\)</span> must be linearly restored by the new <span class="math notranslate nohighlight">\(\big(g_1(x), \ldots, g_m(x)\big)\)</span>:
-\begin{equation}
-\hat{f_j}(x) = \sum_{s=1}^{m} g_s(x) u_{js}, \quad j =1, \ldots, n, \quad \forall x \in X,
-\end{equation}
-where <span class="math notranslate nohighlight">\(\hat{f_j}(x)\)</span> is the estimate of the initial feature <span class="math notranslate nohighlight">\(f_j(x)\)</span>, and this estimate should be close to all objects in the training sample <span class="math notranslate nohighlight">\(x_1, \ldots, x_{\ell}\)</span>:</p></li>
+$<span class="math notranslate nohighlight">\(
+  \hat{f_j}(x) = \sum_{s=1}^{m} g_s(x) u_{js}, \quad j =1, \ldots, n, \quad \forall x \in X,
+\)</span><span class="math notranslate nohighlight">\(
+where \)</span>\hat{f_j}(x)<span class="math notranslate nohighlight">\( is the estimate of the initial feature \)</span>f_j(x)<span class="math notranslate nohighlight">\(, and this estimate should be close to all objects in the training sample \)</span>x_1, \ldots, x_{\ell}$:</p></li>
 </ul>
-<p>\begin{equation}
-\sum_{i=1}^{\ell}\big(\sum_{j=1}^{n} \hat{f_j}(x_i) - f_j(x_i)\big)^2 → \min_{{g_s(x_i)}, ~{u_{js}}}
-\end{equation}</p>
+<div class="math notranslate nohighlight">
+\[
+    \sum_{i=1}^{\ell}\big(\sum_{j=1}^{n} \hat{f_j}(x_i) - f_j(x_i)\big)^2 → \min_{\{g_s(x_i)\}, ~\{u_{js}\}}
+\]</div>
 <p><code class="docutils literal notranslate"><span class="pre">The</span> <span class="pre">basic</span> <span class="pre">idea:</span></code></p>
 <p>We have <code class="docutils literal notranslate"><span class="pre">initial</span> <span class="pre">features</span></code> and we want to build <code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">features</span></code>, meaning that there will be fewer new features than the original ones. But we want the original ones to be recovered well from a smaller number of new features. In fact, we want to achieve <code class="docutils literal notranslate"><span class="pre">information</span> <span class="pre">compression</span></code>.</p>
 </section>
@@ -3815,7 +2522,7 @@ u_{n1} &amp; \dots &amp; u_{nm}
 </div>
 </div>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="../_images/9ef5bb1a44cfe2297c01c6212b899db87934e02298c81f04becd16a62e7b01cf.png"><img alt="../_images/9ef5bb1a44cfe2297c01c6212b899db87934e02298c81f04becd16a62e7b01cf.png" src="../_images/9ef5bb1a44cfe2297c01c6212b899db87934e02298c81f04becd16a62e7b01cf.png" style="width: 504px; height: 415px;" />
+<a class="reference internal image-reference" href="../_images/b2f556c2007ef8d67d03ba8d4ee4bfbc5832f353c699565a2c9abad35fac28c8.png"><img alt="../_images/b2f556c2007ef8d67d03ba8d4ee4bfbc5832f353c699565a2c9abad35fac28c8.png" src="../_images/b2f556c2007ef8d67d03ba8d4ee4bfbc5832f353c699565a2c9abad35fac28c8.png" style="width: 332px; height: 250px;" />
 </a>
 </div>
 </div>
@@ -3878,7 +2585,7 @@ Y_test:  (10000,)
 </div>
 </div>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="../_images/064cb9ac5e5b619c8521f42ae0edd7d7704d9d6d8a105ae4340c95201ad906c3.png"><img alt="../_images/064cb9ac5e5b619c8521f42ae0edd7d7704d9d6d8a105ae4340c95201ad906c3.png" src="../_images/064cb9ac5e5b619c8521f42ae0edd7d7704d9d6d8a105ae4340c95201ad906c3.png" style="width: 549px; height: 412px;" />
+<a class="reference internal image-reference" href="../_images/666b01d3a29605c70a1b89e5cbabd11910c157537dd75af0eb31d4051609a752.png"><img alt="../_images/666b01d3a29605c70a1b89e5cbabd11910c157537dd75af0eb31d4051609a752.png" src="../_images/666b01d3a29605c70a1b89e5cbabd11910c157537dd75af0eb31d4051609a752.png" style="width: 373px; height: 248px;" />
 </a>
 </div>
 </div>
@@ -3905,188 +2612,7 @@ Y_test:  (10000,)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|                                                              | 0/33 [00:00&lt;?, ?it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  3%|█▋                                                    | 1/33 [00:00&lt;00:18,  1.75it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  6%|███▎                                                  | 2/33 [00:01&lt;00:20,  1.50it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  9%|████▉                                                 | 3/33 [00:02&lt;00:20,  1.43it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 12%|██████▌                                               | 4/33 [00:03&lt;00:23,  1.24it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 15%|████████▏                                             | 5/33 [00:03&lt;00:24,  1.15it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 18%|█████████▊                                            | 6/33 [00:05&lt;00:27,  1.01s/it]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 21%|███████████▍                                          | 7/33 [00:06&lt;00:30,  1.16s/it]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 24%|█████████████                                         | 8/33 [00:08&lt;00:30,  1.22s/it]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 27%|██████████████▋                                       | 9/33 [00:09&lt;00:31,  1.32s/it]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 30%|████████████████                                     | 10/33 [00:11&lt;00:31,  1.38s/it]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 33%|█████████████████▋                                   | 11/33 [00:12&lt;00:31,  1.43s/it]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 36%|███████████████████▎                                 | 12/33 [00:14&lt;00:30,  1.46s/it]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 39%|████████████████████▉                                | 13/33 [00:16&lt;00:31,  1.58s/it]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 42%|██████████████████████▍                              | 14/33 [00:17&lt;00:31,  1.66s/it]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 45%|████████████████████████                             | 15/33 [00:19&lt;00:30,  1.72s/it]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 48%|█████████████████████████▋                           | 16/33 [00:21&lt;00:29,  1.75s/it]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 52%|███████████████████████████▎                         | 17/33 [00:23&lt;00:29,  1.86s/it]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 55%|████████████████████████████▉                        | 18/33 [00:25&lt;00:28,  1.93s/it]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 58%|██████████████████████████████▌                      | 19/33 [00:27&lt;00:27,  1.99s/it]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 58%|██████████████████████████████▌                      | 19/33 [00:30&lt;00:22,  1.58s/it]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">58</span><span class="p">],</span> <span class="n">line</span> <span class="mi">10</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">X_test_pca</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">clf</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">10</span> <span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_pca</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="n">y_preds</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_pca</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="n">acc</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">Y_test</span><span class="p">,</span> <span class="n">y_preds</span><span class="p">)</span>
-
-<span class="nn">File ~/Documents/projects/.venv/lib/python3.13/site-packages/sklearn/base.py:1363,</span> in <span class="ni">_fit_context.&lt;locals&gt;.decorator.&lt;locals&gt;.wrapper</span><span class="nt">(estimator, *args, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1356</span>     <span class="n">estimator</span><span class="o">.</span><span class="n">_validate_params</span><span class="p">()</span>
-<span class="g g-Whitespace">   </span><span class="mi">1358</span> <span class="k">with</span> <span class="n">config_context</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1359</span>     <span class="n">skip_parameter_validation</span><span class="o">=</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1360</span>         <span class="n">prefer_skip_nested_validation</span> <span class="ow">or</span> <span class="n">global_skip_validation</span>
-<span class="g g-Whitespace">   </span><span class="mi">1361</span>     <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1362</span> <span class="p">):</span>
-<span class="ne">-&gt; </span><span class="mi">1363</span>     <span class="k">return</span> <span class="n">fit_method</span><span class="p">(</span><span class="n">estimator</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File ~/Documents/projects/.venv/lib/python3.13/site-packages/sklearn/ensemble/_forest.py:486,</span> in <span class="ni">BaseForest.fit</span><span class="nt">(self, X, y, sample_weight)</span>
-<span class="g g-Whitespace">    </span><span class="mi">475</span> <span class="n">trees</span> <span class="o">=</span> <span class="p">[</span>
-<span class="g g-Whitespace">    </span><span class="mi">476</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_make_estimator</span><span class="p">(</span><span class="n">append</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="n">random_state</span><span class="p">)</span>
-<span class="nn">    477     for i</span> in <span class="ni">range</span><span class="nt">(n_more_estimators)</span>
-<span class="g g-Whitespace">    </span><span class="mi">478</span> <span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">480</span> <span class="c1"># Parallel loop: we prefer the threading backend as the Cython code</span>
-<span class="g g-Whitespace">    </span><span class="mi">481</span> <span class="c1"># for fitting the trees is internally releasing the Python GIL</span>
-<span class="g g-Whitespace">    </span><span class="mi">482</span> <span class="c1"># making threading more efficient than multiprocessing in</span>
-<span class="g g-Whitespace">    </span><span class="mi">483</span> <span class="c1"># that case. However, for joblib 0.12+ we respect any</span>
-<span class="g g-Whitespace">    </span><span class="mi">484</span> <span class="c1"># parallel_backend contexts set at a higher level,</span>
-<span class="g g-Whitespace">    </span><span class="mi">485</span> <span class="c1"># since correctness does not rely on using threads.</span>
-<span class="ne">--&gt; </span><span class="mi">486</span> <span class="n">trees</span> <span class="o">=</span> <span class="n">Parallel</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">487</span>     <span class="n">n_jobs</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">n_jobs</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">488</span>     <span class="n">verbose</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">verbose</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">489</span>     <span class="n">prefer</span><span class="o">=</span><span class="s2">&quot;threads&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">490</span> <span class="p">)(</span>
-<span class="g g-Whitespace">    </span><span class="mi">491</span>     <span class="n">delayed</span><span class="p">(</span><span class="n">_parallel_build_trees</span><span class="p">)(</span>
-<span class="g g-Whitespace">    </span><span class="mi">492</span>         <span class="n">t</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">493</span>         <span class="bp">self</span><span class="o">.</span><span class="n">bootstrap</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">494</span>         <span class="n">X</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">495</span>         <span class="n">y</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">496</span>         <span class="n">sample_weight</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">497</span>         <span class="n">i</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">498</span>         <span class="nb">len</span><span class="p">(</span><span class="n">trees</span><span class="p">),</span>
-<span class="g g-Whitespace">    </span><span class="mi">499</span>         <span class="n">verbose</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">verbose</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">500</span>         <span class="n">class_weight</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">class_weight</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">501</span>         <span class="n">n_samples_bootstrap</span><span class="o">=</span><span class="n">n_samples_bootstrap</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">502</span>         <span class="n">missing_values_in_feature_mask</span><span class="o">=</span><span class="n">missing_values_in_feature_mask</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">503</span>     <span class="p">)</span>
-<span class="nn">    504     for i, t</span> in <span class="ni">enumerate</span><span class="nt">(trees)</span>
-<span class="g g-Whitespace">    </span><span class="mi">505</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">507</span> <span class="c1"># Collect newly grown trees</span>
-<span class="g g-Whitespace">    </span><span class="mi">508</span> <span class="bp">self</span><span class="o">.</span><span class="n">estimators_</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">trees</span><span class="p">)</span>
-
-<span class="nn">File ~/Documents/projects/.venv/lib/python3.13/site-packages/sklearn/utils/parallel.py:82,</span> in <span class="ni">Parallel.__call__</span><span class="nt">(self, iterable)</span>
-<span class="g g-Whitespace">     </span><span class="mi">73</span> <span class="n">warning_filters</span> <span class="o">=</span> <span class="n">warnings</span><span class="o">.</span><span class="n">filters</span>
-<span class="g g-Whitespace">     </span><span class="mi">74</span> <span class="n">iterable_with_config_and_warning_filters</span> <span class="o">=</span> <span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">75</span>     <span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">76</span>         <span class="n">_with_config_and_warning_filters</span><span class="p">(</span><span class="n">delayed_func</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="n">warning_filters</span><span class="p">),</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">80</span>     <span class="k">for</span> <span class="n">delayed_func</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span> <span class="ow">in</span> <span class="n">iterable</span>
-<span class="g g-Whitespace">     </span><span class="mi">81</span> <span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">82</span> <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__call__</span><span class="p">(</span><span class="n">iterable_with_config_and_warning_filters</span><span class="p">)</span>
-
-<span class="nn">File ~/Documents/projects/.venv/lib/python3.13/site-packages/joblib/parallel.py:1986,</span> in <span class="ni">Parallel.__call__</span><span class="nt">(self, iterable)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1984</span>     <span class="n">output</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_sequential_output</span><span class="p">(</span><span class="n">iterable</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1985</span>     <span class="nb">next</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1986</span>     <span class="k">return</span> <span class="n">output</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">return_generator</span> <span class="k">else</span> <span class="nb">list</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1988</span> <span class="c1"># Let&#39;s create an ID that uniquely identifies the current call. If the</span>
-<span class="g g-Whitespace">   </span><span class="mi">1989</span> <span class="c1"># call is interrupted early and that the same instance is immediately</span>
-<span class="g g-Whitespace">   </span><span class="mi">1990</span> <span class="c1"># reused, this id will be used to prevent workers that were</span>
-<span class="g g-Whitespace">   </span><span class="mi">1991</span> <span class="c1"># concurrently finalizing a task from the previous call to run the</span>
-<span class="g g-Whitespace">   </span><span class="mi">1992</span> <span class="c1"># callback.</span>
-<span class="g g-Whitespace">   </span><span class="mi">1993</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lock</span><span class="p">:</span>
-
-<span class="nn">File ~/Documents/projects/.venv/lib/python3.13/site-packages/joblib/parallel.py:1914,</span> in <span class="ni">Parallel._get_sequential_output</span><span class="nt">(self, iterable)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1912</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_dispatched_batches</span> <span class="o">+=</span> <span class="mi">1</span>
-<span class="g g-Whitespace">   </span><span class="mi">1913</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_dispatched_tasks</span> <span class="o">+=</span> <span class="mi">1</span>
-<span class="ne">-&gt; </span><span class="mi">1914</span> <span class="n">res</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1915</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_completed_tasks</span> <span class="o">+=</span> <span class="mi">1</span>
-<span class="g g-Whitespace">   </span><span class="mi">1916</span> <span class="bp">self</span><span class="o">.</span><span class="n">print_progress</span><span class="p">()</span>
-
-<span class="nn">File ~/Documents/projects/.venv/lib/python3.13/site-packages/sklearn/utils/parallel.py:147,</span> in <span class="ni">_FuncWrapper.__call__</span><span class="nt">(self, *args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">145</span> <span class="k">with</span> <span class="n">config_context</span><span class="p">(</span><span class="o">**</span><span class="n">config</span><span class="p">),</span> <span class="n">warnings</span><span class="o">.</span><span class="n">catch_warnings</span><span class="p">():</span>
-<span class="g g-Whitespace">    </span><span class="mi">146</span>     <span class="n">warnings</span><span class="o">.</span><span class="n">filters</span> <span class="o">=</span> <span class="n">warning_filters</span>
-<span class="ne">--&gt; </span><span class="mi">147</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">function</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File ~/Documents/projects/.venv/lib/python3.13/site-packages/sklearn/ensemble/_forest.py:188,</span> in <span class="ni">_parallel_build_trees</span><span class="nt">(tree, bootstrap, X, y, sample_weight, tree_idx, n_trees, verbose, class_weight, n_samples_bootstrap, missing_values_in_feature_mask)</span>
-<span class="g g-Whitespace">    </span><span class="mi">185</span>     <span class="k">elif</span> <span class="n">class_weight</span> <span class="o">==</span> <span class="s2">&quot;balanced_subsample&quot;</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">186</span>         <span class="n">curr_sample_weight</span> <span class="o">*=</span> <span class="n">compute_sample_weight</span><span class="p">(</span><span class="s2">&quot;balanced&quot;</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">indices</span><span class="o">=</span><span class="n">indices</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">188</span>     <span class="n">tree</span><span class="o">.</span><span class="n">_fit</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">189</span>         <span class="n">X</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">190</span>         <span class="n">y</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">191</span>         <span class="n">sample_weight</span><span class="o">=</span><span class="n">curr_sample_weight</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">192</span>         <span class="n">check_input</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">193</span>         <span class="n">missing_values_in_feature_mask</span><span class="o">=</span><span class="n">missing_values_in_feature_mask</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">194</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">195</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">196</span>     <span class="n">tree</span><span class="o">.</span><span class="n">_fit</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">197</span>         <span class="n">X</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">198</span>         <span class="n">y</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">201</span>         <span class="n">missing_values_in_feature_mask</span><span class="o">=</span><span class="n">missing_values_in_feature_mask</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">202</span>     <span class="p">)</span>
-
-<span class="nn">File ~/Documents/projects/.venv/lib/python3.13/site-packages/sklearn/tree/_classes.py:472,</span> in <span class="ni">BaseDecisionTree._fit</span><span class="nt">(self, X, y, sample_weight, check_input, missing_values_in_feature_mask)</span>
-<span class="g g-Whitespace">    </span><span class="mi">461</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">462</span>     <span class="n">builder</span> <span class="o">=</span> <span class="n">BestFirstTreeBuilder</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">463</span>         <span class="n">splitter</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">464</span>         <span class="n">min_samples_split</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">469</span>         <span class="bp">self</span><span class="o">.</span><span class="n">min_impurity_decrease</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">470</span>     <span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">472</span> <span class="n">builder</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tree_</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">sample_weight</span><span class="p">,</span> <span class="n">missing_values_in_feature_mask</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">474</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_outputs_</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">is_classifier</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">475</span>     <span class="bp">self</span><span class="o">.</span><span class="n">n_classes_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_classes_</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-
-<span class="ne">KeyboardInterrupt</span>: 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████████████████████████████████████████████████████████████████████████████| 33/33 [01:49&lt;00:00,  3.31s/it]
 </pre></div>
 </div>
 </div>
@@ -4180,14 +2706,16 @@ Y_test:  (10000,)
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
-  <nav class="bd-toc-nav page-toc">
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Intro to ML</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ml-task">ML task</a></li>
@@ -4303,8 +2831,8 @@ By Nadezhda Alsahanova, Aleksandra Beliaeva, Dmitriy Kornilov, Fedor Gubanov, Pa
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>
