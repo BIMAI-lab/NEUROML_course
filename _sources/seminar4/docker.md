@@ -1,8 +1,8 @@
-# Preparation to the seminar 2
+# Preparation to the seminar 4
 
 ```{contents}
 ```
-## SEMINAR 2 MRI data analysis 
+## SEMINAR 4 MRI data analysis 
 **Note**: To Follow seminar you will need [docker](https://docs.docker.com/get-docker/) installed and supplementary data downloaded
   1) [Install Docker](https://docs.docker.com/engine/install/);
   2) Download `NEUROML-data.zip` from [YaDisk](https://disk.yandex.ru/d/xxnRbLetEh07YQ) and unzip it to local directory;
