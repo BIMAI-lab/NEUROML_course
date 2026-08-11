@@ -1,0 +1,95 @@
+/* =========================
+   Custom admonitions styling
+   ========================= */
+
+
+div.admonition .admonition-title::before {
+  font-family: "Font Awesome 5 Free","Font Awesome 6 Free","FontAwesome";
+  font-weight: 900; /* solid */
+  margin-right: 0.35rem;
+  display: inline-block;
+}
+
+
+div.admonition.dropdown {
+  border-radius: 8px;
+  overflow: hidden; /* чтобы закругление применилось к фону заголовка */
+  border-left-width: 4px;
+  border-left-style: solid;
+}
+div.admonition.dropdown .admonition-title {
+  cursor: pointer;
+  user-select: none;
+  padding-top: 0.55rem;
+  padding-bottom: 0.55rem;
+}
+div.admonition .admonition-content {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+/* -------------------------
+   Exercise 1 
+   ------------------------- */
+div.admonition.admonition-exercise-1.dropdown {
+  border-left-color: rgb(0, 120, 212);            
+}
+div.admonition.admonition-exercise-1.dropdown .admonition-title {
+  background-color: rgba(0, 120, 212, 0.10);
+}
+div.admonition.admonition-exercise-1.dropdown .admonition-title::before {
+  content: "\f19d";                                /* graduation-cap */
+  color: rgb(0, 120, 212);
+}
+
+/* -------------------------
+   Exercise 2 
+   ------------------------- */
+div.admonition.admonition-exercise-2.dropdown {
+  border-left-color: rgb(255, 140, 0);            
+}
+div.admonition.admonition-exercise-2.dropdown .admonition-title {
+  background-color: rgba(255, 140, 0, 0.12);
+}
+div.admonition.admonition-exercise-2.dropdown .admonition-title::before {
+  content: "\f085";                                /* cogs */
+  color: rgb(255, 140, 0);
+}
+
+/* -------------------------
+   Exercise 3 
+   ------------------------- */
+div.admonition.checklist.dropdown {
+  border-left-color: rgb(46, 204, 113);           /* зелёный акцент */
+}
+div.admonition.checklist.dropdown .admonition-title {
+  background-color: rgba(46, 204, 113, 0.10);
+}
+div.admonition.checklist.dropdown .admonition-title::before {
+  content: "\f0ae";                                /* tasks */
+  color: rgb(46, 204, 113);
+}
+
+
+div.admonition.checklist .admonition-content ul,
+div.admonition.checklist .admonition-content ol {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+div.admonition.checklist .admonition-content li {
+  line-height: 1.45;
+}
+
+
+details.dropdown.checklist > summary {
+  background-color: rgba(46, 204, 113, 0.10);
+  list-style: none; /* скрыть маркер */
+}
+details.dropdown.checklist {
+  border-left: 4px solid rgb(46, 204, 113);
+  border-radius: 8px;
+  padding-left: 0.75rem;
+}
+details.dropdown.checklist > summary::-webkit-details-marker {
+  display: none; /* убрать стандартный треугольник в WebKit */
+}

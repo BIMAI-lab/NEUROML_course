@@ -1,0 +1,11 @@
+numpy>=2.1
+scipy>=1.14
+pandas>=2.2
+matplotlib>=3.9
+nibabel>=5.2
+nilearn>=0.10
+tqdm>=4.66
+torch>=2.4
+torchvision>=0.19
+torchio>=0.20
+antspyx>=0.6
