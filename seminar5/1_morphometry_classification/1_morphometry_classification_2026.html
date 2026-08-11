@@ -1,0 +1,2668 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>MRI classification on morphometry data &#8212; Neuroimaging and Machine Learning for Biomedicine</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/myadmonitions.css?v=0009bf62" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'seminar5/1_morphometry_classification/1_morphometry_classification_2026';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="icon" href="../../_static/logo.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../../_static/searchtools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Neuroimaging and Machine Learning for Biomedicine - Home"/>
+    <img src="../../_static/logo.png" class="logo__image only-dark pst-js-only" alt="Neuroimaging and Machine Learning for Biomedicine - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Welcome to the Neuroimaging and Machine Learning for Biomedicine coursebook
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../bio/intro_links.html">Links</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1AM67Sd37J0hIJ-kLyzAZRm8op_JcUQ9b?usp=sharing">Intro to shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seminar1/Seminar1_python_colab.html">How to work with Python</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../../seminar1/Seminar1_ML.html">Intro to ML</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1jkf4Jt0QvDz2O7UoZ-sZAi0V0oke5Yju?usp=sharing">Machine learning fundamentals on medical data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seminar1/00_pytorch_fundamentals.html">Pytorch fundamentals</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://drive.google.com/file/d/1q0XncKq2y_wHLXJaxhjfBCDGHABmzrjM/view?usp=sharing">Intro to computer vision</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Seminar 1. Opening Seminar</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../seminar1/intro.html">Lecture Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seminar1/opening_seminar.html">Motivation &amp; Overview</a></li>
+
+
+
+
+
+
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Seminars 4-5. Working with MRI</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../seminar4/docker.html">Preparation to Seminar 4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seminar4/seminar4_1_mri.html">Seminar 4.1. MRI data analysis, databases and tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seminar4/seminar4_2_transform.html">Transformations</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../../seminar4/seminar4_3_freesurfer.html">FREESURFER</a></li>
+
+
+<li class="toctree-l1"><a class="reference external" href="https://drive.google.com/file/d/16--0U-QRcPJaWYqUe1RP5_V4zGvGOR76/view?usp=sharing">Seminar 5.1. MRI classification with classic ML</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://drive.google.com/file/d/1XMxW_Y73mbMGFIaWY6YlEfscD8YE35yN/view?usp=sharing">Seminar 5.2. MRI classification with 3D CNN</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://drive.google.com/file/d/15M13NfhCGKN6akaWj8reFYvfDH7aLPsY/view?usp=sharing">Seminar 5.3. MRI segmentation with 3D U-net</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Seminars 6-8. Working with fMRI</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../seminars6_7/README.html">Preparation to Seminar 6-8</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seminars6_7/seminars_content.html">Summary of Seminar 6-7</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://drive.google.com/file/d/1kSrmaPF5_bKvH1xEKgp0BMtpnm_I-DtY/view?usp=drive_link">Seminar 6. Preprocessing pipeline for task-based fMRI</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://drive.google.com/file/d/1-9hT7K9lG_pUTIgtjwH7pvxL1mf9QnMP/view?usp=drive_link">Seminar 7.1. 1st-level fMRI data analysis</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://drive.google.com/file/d/1EuyJWzhmST66rDVugbRgsm_p8Jpc7KTQ/view?usp=drive_link">Seminar 7.2. 2st-level (Group) Analysis</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1Hed2ggYNbyvBMeYpNeapMAepxeQBVLRL?usp=sharing">Seminar 8.1. Analyze task-based fMRI for motor and emotion task</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1F0UzTsmF1NK6F3NEsJHUw9G5K3j_-eYA?usp=sharing">Seminar 8.2. Functional connectivity</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Seminar 9. Interpretation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../seminar9/intro.html">Intro to Interpretable Deep Learning</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1yMqKV14iPrhREWP7veNMTIHUKyLoic5-">Seminar 9. Interpretation of 3D CNNs for Brain MRI Data Classification</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Seminar 10. Generative models</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1SU8ku9bk-cjQr45rgVCrMAauh34FoWQb?usp=sharing">Seminar 10. Diffusion Models for Medical Anomaly Detection with Classifier Guidance</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/BIMAI-lab/NEUROML_course" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/BIMAI-lab/NEUROML_course/issues/new?title=Issue%20on%20page%20%2Fseminar5/1_morphometry_classification/1_morphometry_classification_2026.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/seminar5/1_morphometry_classification/1_morphometry_classification_2026.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>MRI classification on morphometry data</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">1. Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#local-setup">2. Local setup</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#macos-or-linux">macOS or Linux</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#windows-powershell">Windows PowerShell</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-the-data">3. Getting the data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#features-and-target">4. Features and target</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classical-analysis-first">5. Classical analysis first</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#now-the-model">6. Now the model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#which-structures-is-it-using">7. Which structures is it using?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-good-is-it-and-how-would-we-compare-two-models">8. How good is it, and how would we compare two models?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-next">What next</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p><a href="https://colab.research.google.com/drive/1A3WVJDT5cFJmWsCoi4b6sf_whx-FuVHh?usp=sharing" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
+<section id="mri-classification-on-morphometry-data">
+<h1>MRI classification on morphometry data<a class="headerlink" href="#mri-classification-on-morphometry-data" title="Link to this heading">#</a></h1>
+<section id="introduction">
+<h2>1. Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p>We’ll do a fairly conventional morphometry analysis and look for sex-related structural signs in the brain.</p>
+<p>The task: build a classifier that tells apart male and female brains from FreeSurfer measures, and along the way see which structures carry the signal. Think of it as an excuse to walk through the whole pipeline - stats, feature selection, multiple comparisons, a linear model - on real data.</p>
+<p>Data comes from the Human Connectome Project (HCP-1200): <a class="reference external" href="https://db.humanconnectome.org/data/projects/HCP_1200">https://db.humanconnectome.org/data/projects/HCP_1200</a></p>
+<p><em>By running this you confirm you have personal access to the data and agree to HCP’s <a class="reference external" href="https://www.humanconnectome.org/study/hcp-young-adult/data-use-terms">data use terms</a>.</em></p>
+</section>
+<section id="local-setup">
+<h2>2. Local setup<a class="headerlink" href="#local-setup" title="Link to this heading">#</a></h2>
+<p>Use <strong>Python 3.12</strong>. The supplied <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> pins the Python packages used by the seminar and includes JupyterLab plus an IPython kernel.</p>
+<section id="macos-or-linux">
+<h3>macOS or Linux<a class="headerlink" href="#macos-or-linux" title="Link to this heading">#</a></h3>
+<p>Open a terminal in the directory containing this notebook and <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code>, then run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3.12<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv
+<span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip
+python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+python<span class="w"> </span>-m<span class="w"> </span>ipykernel<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span>--name<span class="w"> </span>morphometry-seminar<span class="w"> </span>--display-name<span class="w"> </span><span class="s2">&quot;Python (morphometry seminar)&quot;</span>
+jupyter<span class="w"> </span>lab
+</pre></div>
+</div>
+</section>
+<section id="windows-powershell">
+<h3>Windows PowerShell<a class="headerlink" href="#windows-powershell" title="Link to this heading">#</a></h3>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">py</span> <span class="p">-</span><span class="n">3</span><span class="p">.</span><span class="n">12</span> <span class="n">-m</span> <span class="n">venv</span> <span class="p">.</span><span class="n">venv</span>
+<span class="p">.\.</span><span class="n">venv</span><span class="p">\</span><span class="n">Scripts</span><span class="p">\</span><span class="n">Activate</span><span class="p">.</span><span class="n">ps1</span>
+<span class="n">python</span> <span class="n">-m</span> <span class="n">pip</span> <span class="n">install</span> <span class="p">-</span><span class="n">-upgrade</span> <span class="n">pip</span>
+<span class="n">python</span> <span class="n">-m</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">-r</span> <span class="n">requirements</span><span class="p">.</span><span class="n">txt</span>
+<span class="n">python</span> <span class="n">-m</span> <span class="n">ipykernel</span> <span class="n">install</span> <span class="p">-</span><span class="n">-user</span> <span class="p">-</span><span class="n">-name</span> <span class="n">morphometry-seminar</span> <span class="p">-</span><span class="n">-display-name</span> <span class="s2">&quot;Python (morphometry seminar)&quot;</span>
+<span class="n">jupyter</span> <span class="n">lab</span>
+</pre></div>
+</div>
+<p>In JupyterLab, open this notebook and select <strong>Kernel -&gt; Change Kernel -&gt; Python (morphometry seminar)</strong>.</p>
+<p>The main packages are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">numpy</span></code> and <code class="docutils literal notranslate"><span class="pre">scipy</span></code>: numerical and statistical routines;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pandas</span></code>: loading and manipulating the morphometry table;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code>: train/test splitting, feature selection, scaling, logistic regression, and metrics;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">statsmodels</span></code>: multiple-testing corrections;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">gdown</span></code>: downloading the seminar CSV from Google Drive;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">jupyterlab</span></code> and <code class="docutils literal notranslate"><span class="pre">ipykernel</span></code>: running the notebook locally.</p></li>
+</ul>
+</section>
+</section>
+<section id="getting-the-data">
+<h2>3. Getting the data<a class="headerlink" href="#getting-the-data" title="Link to this heading">#</a></h2>
+<p>The id below points at the FreeSurfer table in the shared folder.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">gdown</span>
+
+<span class="c1"># Store downloaded data beside the notebook instead of using Colab&#39;s /content/.</span>
+<span class="n">data_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;data&quot;</span><span class="p">)</span>
+<span class="n">data_dir</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">data_path</span> <span class="o">=</span> <span class="n">data_dir</span> <span class="o">/</span> <span class="s2">&quot;unrestricted_hcp_freesurfer.csv&quot;</span>
+
+<span class="k">if</span> <span class="n">data_path</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Using existing file: </span><span class="si">{</span><span class="n">data_path</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">file_id</span> <span class="o">=</span> <span class="s2">&quot;1OR5i_iePptN1of0LNgwtFVMuKRieJOUX&quot;</span>
+    <span class="n">downloaded</span> <span class="o">=</span> <span class="n">gdown</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">file_id</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">data_path</span><span class="p">),</span> <span class="n">quiet</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">downloaded</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;The data download failed. Check your network connection and file access.&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Downloaded to: </span><span class="si">{</span><span class="n">data_path</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading...
+From: https://drive.google.com/uc?id=1OR5i_iePptN1of0LNgwtFVMuKRieJOUX
+To: /workspace/seminar5_neuroml/1_morphometry_classification/data/unrestricted_hcp_freesurfer.csv
+100%|██████████| 5.99M/5.99M [00:00&lt;00:00, 10.9MB/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloaded to: /workspace/seminar5_neuroml/1_morphometry_classification/data/unrestricted_hcp_freesurfer.csv
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Load it up.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">data_path</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Subject</th>
+      <th>Gender</th>
+      <th>Release</th>
+      <th>FS_InterCranial_Vol</th>
+      <th>FS_BrainSeg_Vol</th>
+      <th>FS_BrainSeg_Vol_No_Vent</th>
+      <th>FS_BrainSeg_Vol_No_Vent_Surf</th>
+      <th>FS_LCort_GM_Vol</th>
+      <th>FS_RCort_GM_Vol</th>
+      <th>FS_TotCort_GM_Vol</th>
+      <th>...</th>
+      <th>FS_R_Rostralanteriorcingulate_CurvInd</th>
+      <th>FS_R_Rostralmiddlefrontal_CurvInd</th>
+      <th>FS_R_Superiorfrontal_CurvInd</th>
+      <th>FS_R_Superiorparietal_CurvInd</th>
+      <th>FS_R_Superiortemporal_CurvInd</th>
+      <th>FS_R_Supramarginal_CurvInd</th>
+      <th>FS_R_Frontalpole_CurvInd</th>
+      <th>FS_R_Temporalpole_CurvInd</th>
+      <th>FS_R_Transversetemporal_CurvInd</th>
+      <th>FS_R_Insula_CurvInd</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>100206</td>
+      <td>M</td>
+      <td>S900</td>
+      <td>1.864518e+06</td>
+      <td>1406924.0</td>
+      <td>1389007.0</td>
+      <td>1.386836e+06</td>
+      <td>304488</td>
+      <td>305634</td>
+      <td>610122</td>
+      <td>...</td>
+      <td>5.6</td>
+      <td>34.6</td>
+      <td>40.1</td>
+      <td>23.3</td>
+      <td>15.6</td>
+      <td>11.9</td>
+      <td>2.9</td>
+      <td>3.8</td>
+      <td>2.8</td>
+      <td>37.5</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>100307</td>
+      <td>F</td>
+      <td>Q1</td>
+      <td>1.512540e+06</td>
+      <td>1109710.0</td>
+      <td>1098854.0</td>
+      <td>1.097122e+06</td>
+      <td>240030</td>
+      <td>243207</td>
+      <td>483238</td>
+      <td>...</td>
+      <td>3.3</td>
+      <td>29.9</td>
+      <td>48.8</td>
+      <td>21.6</td>
+      <td>18.6</td>
+      <td>15.0</td>
+      <td>2.9</td>
+      <td>5.8</td>
+      <td>2.0</td>
+      <td>30.2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>100408</td>
+      <td>M</td>
+      <td>Q3</td>
+      <td>1.684117e+06</td>
+      <td>1280171.0</td>
+      <td>1260943.0</td>
+      <td>1.259250e+06</td>
+      <td>260695</td>
+      <td>265243</td>
+      <td>525938</td>
+      <td>...</td>
+      <td>3.3</td>
+      <td>25.2</td>
+      <td>27.5</td>
+      <td>15.2</td>
+      <td>13.9</td>
+      <td>12.3</td>
+      <td>1.8</td>
+      <td>7.8</td>
+      <td>1.9</td>
+      <td>25.1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>100610</td>
+      <td>M</td>
+      <td>S900</td>
+      <td>1.816044e+06</td>
+      <td>1321362.0</td>
+      <td>1306929.0</td>
+      <td>1.304569e+06</td>
+      <td>276506</td>
+      <td>278002</td>
+      <td>554508</td>
+      <td>...</td>
+      <td>3.0</td>
+      <td>19.6</td>
+      <td>20.0</td>
+      <td>18.6</td>
+      <td>10.6</td>
+      <td>10.8</td>
+      <td>1.2</td>
+      <td>4.1</td>
+      <td>1.4</td>
+      <td>16.6</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>101006</td>
+      <td>F</td>
+      <td>S500</td>
+      <td>1.437868e+06</td>
+      <td>1053766.0</td>
+      <td>1038408.0</td>
+      <td>1.037793e+06</td>
+      <td>203718</td>
+      <td>210539</td>
+      <td>414257</td>
+      <td>...</td>
+      <td>2.9</td>
+      <td>14.7</td>
+      <td>21.3</td>
+      <td>13.2</td>
+      <td>8.7</td>
+      <td>9.8</td>
+      <td>1.1</td>
+      <td>3.0</td>
+      <td>1.0</td>
+      <td>18.9</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 938 columns</p>
+</div></div></div>
+</div>
+<p>Where does this table come from, if you wanted to make your own? Roughly:</p>
+<ul class="simple">
+<li><p>start from a T1-weighted scan (T2 helps but isn’t required),</p></li>
+<li><p>get subjects into BIDS or at least plain <code class="docutils literal notranslate"><span class="pre">.nii</span></code>,</p></li>
+<li><p>run FreeSurfer 6.0 (the docker image is easiest),</p></li>
+<li><p>wait. It’s about 5-11 hours per subject on a single core.</p></li>
+<li><p>collect the <code class="docutils literal notranslate"><span class="pre">*.stats</span></code> files and flatten them into a table like this one.</p></li>
+</ul>
+<p>So the CSV we loaded in two seconds represents a lot of compute.</p>
+</section>
+<section id="features-and-target">
+<h2>4. Features and target<a class="headerlink" href="#features-and-target" title="Link to this heading">#</a></h2>
+<p>935 morphometry columns per subject. Two obvious targets live in this table - sex, and age-over-30 - we’ll go with sex.</p>
+<p>Binarize the target with .map</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">3</span><span class="p">:]]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span><span class="o">.</span><span class="n">map</span><span class="p">({</span><span class="s1">&#39;F&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;M&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">})</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>   <span class="c1"># F=1, M=0</span>
+<span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>((1113, 935), (1113,))
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Gender
+1    606
+0    507
+Name: count, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Split before we touch the data with anything that learns. Stratify so the class ratio survives.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span>
+    <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">stratify</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span>
+<span class="p">)</span>
+<span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">X_test</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>((890, 935), (223, 935))
+</pre></div>
+</div>
+</div>
+</div>
+<p>A quick bit of housekeeping that matters later. Some FreeSurfer columns are identical for every subject (they’re constant). They carry zero information and, worse, they blow up the ANOVA F-test - variance-within-group is 0, so you divide by zero and get NaNs. Drop them once here and both the stats and the model use the clean matrix.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nonconstant</span> <span class="o">=</span> <span class="n">X_train</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="n">X_train</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">dropped</span> <span class="o">=</span> <span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">nonconstant</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;dropping </span><span class="si">{</span><span class="n">dropped</span><span class="si">}</span><span class="s2"> constant columns, </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">nonconstant</span><span class="p">)</span><span class="si">}</span><span class="s2"> features left&quot;</span><span class="p">)</span>
+
+<span class="n">X_train</span> <span class="o">=</span> <span class="n">X_train</span><span class="p">[</span><span class="n">nonconstant</span><span class="p">]</span>
+<span class="n">X_test</span>  <span class="o">=</span> <span class="n">X_test</span><span class="p">[</span><span class="n">nonconstant</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dropping 28 constant columns, 907 features left
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="classical-analysis-first">
+<h2>5. Classical analysis first<a class="headerlink" href="#classical-analysis-first" title="Link to this heading">#</a></h2>
+<p>Before any ML, a few questions worth arguing about in the room:</p>
+<ol class="arabic simple">
+<li><p>Comparing two groups on each feature - parametric or not? Are these features anywhere near Gaussian?</p></li>
+<li><p>Paired or unpaired? (These are different people, so…)</p></li>
+<li><p>What threshold, and - the interesting one - what do you do about running the test 900 times?</p></li>
+</ol>
+<p>Feature selection with a univariate filter: <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.feature_selection.SelectKBest.html">https://scikit-learn.org/stable/modules/generated/sklearn.feature_selection.SelectKBest.html</a></p>
+<p>We fit it on the training set only.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.feature_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">SelectKBest</span><span class="p">,</span> <span class="n">f_classif</span>
+
+<span class="n">skb</span> <span class="o">=</span> <span class="n">SelectKBest</span><span class="p">(</span><span class="n">score_func</span><span class="o">=</span><span class="n">f_classif</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">X_train_new</span> <span class="o">=</span> <span class="n">skb</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="n">X_test_new</span>  <span class="o">=</span> <span class="n">skb</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="n">X_train_new</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(890, 20)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">selected</span> <span class="o">=</span> <span class="n">X_train</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="n">skb</span><span class="o">.</span><span class="n">get_support</span><span class="p">()]</span>
+<span class="n">selected</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;FS_InterCranial_Vol&#39;, &#39;FS_BrainSeg_Vol&#39;, &#39;FS_BrainSeg_Vol_No_Vent&#39;,
+       &#39;FS_BrainSeg_Vol_No_Vent_Surf&#39;, &#39;FS_LCort_GM_Vol&#39;, &#39;FS_RCort_GM_Vol&#39;,
+       &#39;FS_TotCort_GM_Vol&#39;, &#39;FS_SubCort_GM_Vol&#39;, &#39;FS_Total_GM_Vol&#39;,
+       &#39;FS_SupraTentorial_Vol&#39;, &#39;FS_SupraTentorial_Vol_No_Vent&#39;,
+       &#39;FS_SupraTentorial_No_Vent_Voxel_Count&#39;, &#39;FS_L_WM_Vol&#39;, &#39;FS_R_WM_Vol&#39;,
+       &#39;FS_Tot_WM_Vol&#39;, &#39;FS_Mask_Vol&#39;, &#39;FS_L_Amygdala_Vol&#39;,
+       &#39;FS_L_Cerebellum_Cort_Vol.1&#39;, &#39;FS_L_Amygdala_Vox&#39;,
+       &#39;FS_R_Insula_GrayVol&#39;],
+      dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">skb</span><span class="o">.</span><span class="n">scores_</span><span class="p">[</span><span class="n">skb</span><span class="o">.</span><span class="n">get_support</span><span class="p">()]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([624.89052638, 715.87031636, 697.59564357, 697.99749015,
+       552.18591154, 580.69479367, 574.85646631, 540.68340515,
+       702.03960831, 648.09901791, 631.82609549, 630.83300091,
+       500.2122461 , 501.06413765, 501.73862334, 867.8239351 ,
+       504.12177128, 480.25800747, 503.95283951, 496.50180614])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">skb</span><span class="o">.</span><span class="n">pvalues_</span><span class="p">[</span><span class="n">skb</span><span class="o">.</span><span class="n">get_support</span><span class="p">()]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([7.58137035e-105, 4.00299879e-116, 6.53428991e-114, 5.83802209e-114,
+       2.46895787e-095, 4.03744215e-099, 2.37397920e-098, 8.74143489e-094,
+       1.88256336e-114, 8.70083806e-108, 9.91728593e-106, 1.32626616e-105,
+       3.11422563e-088, 2.37039818e-088, 1.90997598e-088, 1.33643073e-133,
+       8.91241839e-089, 1.95355599e-085, 9.40680945e-089, 1.02437796e-087])
+</pre></div>
+</div>
+</div>
+</div>
+<p>What do you know about multiple comparisons?</p>
+<p>If one generates many random features and conducts a statistical test on them, one will eventually hit the p-value threshold, even if the features are completely random. Therefore, some corrections are needed.</p>
+<p><img alt="graph" src="https://janhove.github.io/posts/2016-04-01-multiple-comparisons-scenarios/index_files/figure-html/unnamed-chunk-1-1.svg" /></p>
+<p><img alt="bonf" src="data:image/png;base64,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" /></p>
+<p>The section above explains <em>why</em> we correct. Here we actually do it: run the univariate test across <strong>all</strong> features and correct the p-values with Bonferroni and Benjamini–Hochberg (FDR).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">statsmodels.stats.multitest</span><span class="w"> </span><span class="kn">import</span> <span class="n">multipletests</span>
+
+<span class="n">F</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="n">f_classif</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="n">_</span><span class="p">,</span> <span class="n">p_bonf</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">multipletests</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;bonferroni&#39;</span><span class="p">)</span>
+<span class="n">_</span><span class="p">,</span> <span class="n">p_fdr</span><span class="p">,</span>  <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">multipletests</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;fdr_bh&#39;</span><span class="p">)</span>
+
+<span class="n">results</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s1">&#39;feature&#39;</span><span class="p">:</span> <span class="n">X_train</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span>
+    <span class="s1">&#39;p_raw&#39;</span><span class="p">:</span> <span class="n">p</span><span class="p">,</span>
+    <span class="s1">&#39;p_bonferroni&#39;</span><span class="p">:</span> <span class="n">p_bonf</span><span class="p">,</span>
+    <span class="s1">&#39;p_fdr_bh&#39;</span><span class="p">:</span> <span class="n">p_fdr</span><span class="p">,</span>
+<span class="p">})</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;p_raw&#39;</span><span class="p">)</span>
+
+<span class="n">results</span><span class="p">[</span><span class="s1">&#39;sig_raw&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="s1">&#39;p_raw&#39;</span><span class="p">]</span>        <span class="o">&lt;</span> <span class="mf">0.05</span>
+<span class="n">results</span><span class="p">[</span><span class="s1">&#39;sig_bonf&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="s1">&#39;p_bonferroni&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mf">0.05</span>
+<span class="n">results</span><span class="p">[</span><span class="s1">&#39;sig_fdr&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="s1">&#39;p_fdr_bh&#39;</span><span class="p">]</span>     <span class="o">&lt;</span> <span class="mf">0.05</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;raw p&lt;0.05:&quot;</span><span class="p">,</span> <span class="n">results</span><span class="p">[</span><span class="s1">&#39;sig_raw&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bonferroni:&quot;</span><span class="p">,</span> <span class="n">results</span><span class="p">[</span><span class="s1">&#39;sig_bonf&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;FDR (BH):&quot;</span><span class="p">,</span> <span class="n">results</span><span class="p">[</span><span class="s1">&#39;sig_fdr&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+<span class="n">results</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>raw p&lt;0.05: 621
+Bonferroni: 438
+FDR (BH): 601
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>feature</th>
+      <th>p_raw</th>
+      <th>p_bonferroni</th>
+      <th>p_fdr_bh</th>
+      <th>sig_raw</th>
+      <th>sig_bonf</th>
+      <th>sig_fdr</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>15</th>
+      <td>FS_Mask_Vol</td>
+      <td>1.336431e-133</td>
+      <td>1.212143e-130</td>
+      <td>1.212143e-130</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>FS_BrainSeg_Vol</td>
+      <td>4.002999e-116</td>
+      <td>3.630720e-113</td>
+      <td>1.815360e-113</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>FS_Total_GM_Vol</td>
+      <td>1.882563e-114</td>
+      <td>1.707485e-111</td>
+      <td>5.691617e-112</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>FS_BrainSeg_Vol_No_Vent_Surf</td>
+      <td>5.838022e-114</td>
+      <td>5.295086e-111</td>
+      <td>1.185320e-111</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>FS_BrainSeg_Vol_No_Vent</td>
+      <td>6.534290e-114</td>
+      <td>5.926601e-111</td>
+      <td>1.185320e-111</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>FS_SupraTentorial_Vol</td>
+      <td>8.700838e-108</td>
+      <td>7.891660e-105</td>
+      <td>1.315277e-105</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>FS_SupraTentorial_Vol_No_Vent</td>
+      <td>9.917286e-106</td>
+      <td>8.994978e-103</td>
+      <td>1.284997e-103</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>FS_SupraTentorial_No_Vent_Voxel_Count</td>
+      <td>1.326266e-105</td>
+      <td>1.202923e-102</td>
+      <td>1.503654e-103</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>FS_InterCranial_Vol</td>
+      <td>7.581370e-105</td>
+      <td>6.876303e-102</td>
+      <td>7.640337e-103</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>FS_RCort_GM_Vol</td>
+      <td>4.037442e-99</td>
+      <td>3.661960e-96</td>
+      <td>3.661960e-97</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>FS_TotCort_GM_Vol</td>
+      <td>2.373979e-98</td>
+      <td>2.153199e-95</td>
+      <td>1.957454e-96</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>FS_LCort_GM_Vol</td>
+      <td>2.468958e-95</td>
+      <td>2.239345e-92</td>
+      <td>1.866121e-93</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>FS_SubCort_GM_Vol</td>
+      <td>8.741435e-94</td>
+      <td>7.928481e-91</td>
+      <td>6.098832e-92</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>FS_L_Amygdala_Vol</td>
+      <td>8.912418e-89</td>
+      <td>8.083563e-86</td>
+      <td>5.687984e-87</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>72</th>
+      <td>FS_L_Amygdala_Vox</td>
+      <td>9.406809e-89</td>
+      <td>8.531976e-86</td>
+      <td>5.687984e-87</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>For contrast: one paper that gets multiple comparisons wrong (<a class="reference external" href="https://arxiv.org/pdf/1604.05992.pdf">https://arxiv.org/pdf/1604.05992.pdf</a>) and one that handles it well (<a class="reference external" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3056175/">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3056175/</a>).</p>
+</section>
+<section id="now-the-model">
+<h2>6. Now the model<a class="headerlink" href="#now-the-model" title="Link to this heading">#</a></h2>
+<p>Logistic regression with built-in cross-validation over the regularization strength. Two things people forget:</p>
+<ul class="simple">
+<li><p>these features are on wildly different scales (a volume in the hundreds of thousands vs a cortical thickness around 2-3 mm), so standardize — and do it <em>inside</em> a pipeline so the scaler never sees the test fold,</p></li>
+<li><p>because we scaled, the coefficients become comparable afterwards, which is what makes the biomarker step below meaningful.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.linear_model</span><span class="w"> </span><span class="kn">import</span> <span class="n">LogisticRegressionCV</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">StandardScaler</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.pipeline</span><span class="w"> </span><span class="kn">import</span> <span class="n">make_pipeline</span>
+
+<span class="n">lr_cv</span> <span class="o">=</span> <span class="n">make_pipeline</span><span class="p">(</span>
+    <span class="n">StandardScaler</span><span class="p">(),</span>
+    <span class="n">LogisticRegressionCV</span><span class="p">(</span><span class="n">max_iter</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="n">lr_cv</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_new</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>   <span class="c1"># a minute or two</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/workspace/seminar5_neuroml/1_morphometry_classification/.venv/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:1780: FutureWarning: The default value for l1_ratios will change from None to (0.0,) in version 1.10. From version 1.10 onwards, only array-like with values in [0, 1] will be allowed, None will be forbidden. To avoid this warning, explicitly set a value, e.g. l1_ratios=(0,).
+  warnings.warn(
+/workspace/seminar5_neuroml/1_morphometry_classification/.venv/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:1823: FutureWarning: The fitted attributes of LogisticRegressionCV will be simplified in scikit-learn 1.10 to remove redundancy. Set`use_legacy_attributes=False` to enable the new behavior now, or set it to `True` to silence this warning during the transition period while keeping the deprecated behavior for the time being. The default value of use_legacy_attributes will change from True to False in scikit-learn 1.10. See the docstring of LogisticRegressionCV for more details.
+  warnings.warn(
+</pre></div>
+</div>
+<div class="output text_html"><style>#sk-container-id-1 {
+  /* Definition of color scheme common for light and dark mode */
+  --sklearn-color-text: #000;
+  --sklearn-color-text-muted: #666;
+  --sklearn-color-line: gray;
+  /* Definition of color scheme for unfitted estimators */
+  --sklearn-color-unfitted-level-0: #fff5e6;
+  --sklearn-color-unfitted-level-1: #f6e4d2;
+  --sklearn-color-unfitted-level-2: #ffe0b3;
+  --sklearn-color-unfitted-level-3: chocolate;
+  /* Definition of color scheme for fitted estimators */
+  --sklearn-color-fitted-level-0: #f0f8ff;
+  --sklearn-color-fitted-level-1: #d4ebff;
+  --sklearn-color-fitted-level-2: #b3dbfd;
+  --sklearn-color-fitted-level-3: cornflowerblue;
+}
+
+#sk-container-id-1.light {
+  /* Specific color for light theme */
+  --sklearn-color-text-on-default-background: black;
+  --sklearn-color-background: white;
+  --sklearn-color-border-box: black;
+  --sklearn-color-icon: #696969;
+}
+
+#sk-container-id-1.dark {
+  --sklearn-color-text-on-default-background: white;
+  --sklearn-color-background: #111;
+  --sklearn-color-border-box: white;
+  --sklearn-color-icon: #878787;
+}
+
+#sk-container-id-1 {
+  color: var(--sklearn-color-text);
+}
+
+#sk-container-id-1 pre {
+  padding: 0;
+}
+
+#sk-container-id-1 input.sk-hidden--visually {
+  border: 0;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+#sk-container-id-1 div.sk-dashed-wrapped {
+  border: 1px dashed var(--sklearn-color-line);
+  margin: 0 0.4em 0.5em 0.4em;
+  box-sizing: border-box;
+  padding-bottom: 0.4em;
+  background-color: var(--sklearn-color-background);
+}
+
+#sk-container-id-1 div.sk-container {
+  /* jupyter's `normalize.less` sets `[hidden] { display: none; }`
+     but bootstrap.min.css set `[hidden] { display: none !important; }`
+     so we also need the `!important` here to be able to override the
+     default hidden behavior on the sphinx rendered scikit-learn.org.
+     See: https://github.com/scikit-learn/scikit-learn/issues/21755 */
+  display: inline-block !important;
+  position: relative;
+}
+
+#sk-container-id-1 div.sk-text-repr-fallback {
+  display: none;
+}
+
+div.sk-parallel-item,
+div.sk-serial,
+div.sk-item {
+  /* draw centered vertical line to link estimators */
+  background-image: linear-gradient(var(--sklearn-color-text-on-default-background), var(--sklearn-color-text-on-default-background));
+  background-size: 2px 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+/* Parallel-specific style estimator block */
+
+#sk-container-id-1 div.sk-parallel-item::after {
+  content: "";
+  width: 100%;
+  border-bottom: 2px solid var(--sklearn-color-text-on-default-background);
+  flex-grow: 1;
+}
+
+#sk-container-id-1 div.sk-parallel {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  background-color: var(--sklearn-color-background);
+  position: relative;
+}
+
+#sk-container-id-1 div.sk-parallel-item {
+  display: flex;
+  flex-direction: column;
+}
+
+#sk-container-id-1 div.sk-parallel-item:first-child::after {
+  align-self: flex-end;
+  width: 50%;
+}
+
+#sk-container-id-1 div.sk-parallel-item:last-child::after {
+  align-self: flex-start;
+  width: 50%;
+}
+
+#sk-container-id-1 div.sk-parallel-item:only-child::after {
+  width: 0;
+}
+
+/* Serial-specific style estimator block */
+
+#sk-container-id-1 div.sk-serial {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--sklearn-color-background);
+  padding-right: 1em;
+  padding-left: 1em;
+}
+
+
+/* Toggleable style: style used for estimator/Pipeline/ColumnTransformer box that is
+clickable and can be expanded/collapsed.
+- Pipeline and ColumnTransformer use this feature and define the default style
+- Estimators will overwrite some part of the style using the `sk-estimator` class
+*/
+
+/* Pipeline and ColumnTransformer style (default) */
+
+#sk-container-id-1 div.sk-toggleable {
+  /* Default theme specific background. It is overwritten whether we have a
+  specific estimator or a Pipeline/ColumnTransformer */
+  background-color: var(--sklearn-color-background);
+}
+
+/* Toggleable label */
+#sk-container-id-1 label.sk-toggleable__label {
+  cursor: pointer;
+  display: flex;
+  width: 100%;
+  margin-bottom: 0;
+  padding: 0.5em;
+  box-sizing: border-box;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+}
+
+#sk-container-id-1 label.sk-toggleable__label .caption {
+  font-size: 0.6rem;
+  font-weight: lighter;
+  color: var(--sklearn-color-text-muted);
+}
+
+#sk-container-id-1 label.sk-toggleable__label-arrow:before {
+  /* Arrow on the left of the label */
+  content: "▸";
+  float: left;
+  margin-right: 0.25em;
+  color: var(--sklearn-color-icon);
+}
+
+#sk-container-id-1 label.sk-toggleable__label-arrow:hover:before {
+  color: var(--sklearn-color-text);
+}
+
+/* Toggleable content - dropdown */
+
+#sk-container-id-1 div.sk-toggleable__content {
+  display: none;
+  text-align: left;
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-0);
+}
+
+#sk-container-id-1 div.sk-toggleable__content.fitted {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+}
+
+#sk-container-id-1 div.sk-toggleable__content pre {
+  margin: 0.2em;
+  border-radius: 0.25em;
+  color: var(--sklearn-color-text);
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-0);
+}
+
+#sk-container-id-1 div.sk-toggleable__content.fitted pre {
+  /* unfitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+}
+
+#sk-container-id-1 input.sk-toggleable__control:checked~div.sk-toggleable__content {
+  /* Expand drop-down */
+  display: block;
+  width: 100%;
+  overflow: visible;
+}
+
+#sk-container-id-1 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {
+  content: "▾";
+}
+
+/* Pipeline/ColumnTransformer-specific style */
+
+#sk-container-id-1 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  color: var(--sklearn-color-text);
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+#sk-container-id-1 div.sk-label.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+/* Estimator-specific style */
+
+/* Colorize estimator box */
+#sk-container-id-1 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+#sk-container-id-1 div.sk-estimator.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+#sk-container-id-1 div.sk-label label.sk-toggleable__label,
+#sk-container-id-1 div.sk-label label {
+  /* The background is the default theme color */
+  color: var(--sklearn-color-text-on-default-background);
+}
+
+/* On hover, darken the color of the background */
+#sk-container-id-1 div.sk-label:hover label.sk-toggleable__label {
+  color: var(--sklearn-color-text);
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+/* Label box, darken color on hover, fitted */
+#sk-container-id-1 div.sk-label.fitted:hover label.sk-toggleable__label.fitted {
+  color: var(--sklearn-color-text);
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+/* Estimator label */
+
+#sk-container-id-1 div.sk-label label {
+  font-family: monospace;
+  font-weight: bold;
+  line-height: 1.2em;
+}
+
+#sk-container-id-1 div.sk-label-container {
+  text-align: center;
+}
+
+/* Estimator-specific */
+#sk-container-id-1 div.sk-estimator {
+  font-family: monospace;
+  border: 1px dotted var(--sklearn-color-border-box);
+  border-radius: 0.25em;
+  box-sizing: border-box;
+  margin-bottom: 0.5em;
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-0);
+}
+
+#sk-container-id-1 div.sk-estimator.fitted {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+}
+
+/* on hover */
+#sk-container-id-1 div.sk-estimator:hover {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+#sk-container-id-1 div.sk-estimator.fitted:hover {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+/* Specification for estimator info (e.g. "i" and "?") */
+
+/* Common style for "i" and "?" */
+
+.sk-estimator-doc-link,
+a:link.sk-estimator-doc-link,
+a:visited.sk-estimator-doc-link {
+  float: right;
+  font-size: smaller;
+  line-height: 1em;
+  font-family: monospace;
+  background-color: var(--sklearn-color-unfitted-level-0);
+  border-radius: 1em;
+  height: 1em;
+  width: 1em;
+  text-decoration: none !important;
+  margin-left: 0.5em;
+  text-align: center;
+  /* unfitted */
+  border: var(--sklearn-color-unfitted-level-3) 1pt solid;
+  color: var(--sklearn-color-unfitted-level-3);
+}
+
+.sk-estimator-doc-link.fitted,
+a:link.sk-estimator-doc-link.fitted,
+a:visited.sk-estimator-doc-link.fitted {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+  border: var(--sklearn-color-fitted-level-3) 1pt solid;
+  color: var(--sklearn-color-fitted-level-3);
+}
+
+/* On hover */
+div.sk-estimator:hover .sk-estimator-doc-link:hover,
+.sk-estimator-doc-link:hover,
+div.sk-label-container:hover .sk-estimator-doc-link:hover,
+.sk-estimator-doc-link:hover {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-3);
+  border: var(--sklearn-color-fitted-level-0) 1pt solid;
+  color: var(--sklearn-color-unfitted-level-0);
+  text-decoration: none;
+}
+
+div.sk-estimator.fitted:hover .sk-estimator-doc-link.fitted:hover,
+.sk-estimator-doc-link.fitted:hover,
+div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
+.sk-estimator-doc-link.fitted:hover {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-3);
+  border: var(--sklearn-color-fitted-level-0) 1pt solid;
+  color: var(--sklearn-color-fitted-level-0);
+  text-decoration: none;
+}
+
+/* Span, style for the box shown on hovering the info icon */
+.sk-estimator-doc-link span {
+  display: none;
+  z-index: 9999;
+  position: relative;
+  font-weight: normal;
+  right: .2ex;
+  padding: .5ex;
+  margin: .5ex;
+  width: min-content;
+  min-width: 20ex;
+  max-width: 50ex;
+  color: var(--sklearn-color-text);
+  box-shadow: 2pt 2pt 4pt #999;
+  /* unfitted */
+  background: var(--sklearn-color-unfitted-level-0);
+  border: .5pt solid var(--sklearn-color-unfitted-level-3);
+}
+
+.sk-estimator-doc-link.fitted span {
+  /* fitted */
+  background: var(--sklearn-color-fitted-level-0);
+  border: var(--sklearn-color-fitted-level-3);
+}
+
+.sk-estimator-doc-link:hover span {
+  display: block;
+}
+
+/* "?"-specific style due to the `<a>` HTML tag */
+
+#sk-container-id-1 a.estimator_doc_link {
+  float: right;
+  font-size: 1rem;
+  line-height: 1em;
+  font-family: monospace;
+  background-color: var(--sklearn-color-unfitted-level-0);
+  border-radius: 1rem;
+  height: 1rem;
+  width: 1rem;
+  text-decoration: none;
+  /* unfitted */
+  color: var(--sklearn-color-unfitted-level-1);
+  border: var(--sklearn-color-unfitted-level-1) 1pt solid;
+}
+
+#sk-container-id-1 a.estimator_doc_link.fitted {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+  border: var(--sklearn-color-fitted-level-1) 1pt solid;
+  color: var(--sklearn-color-fitted-level-1);
+}
+
+/* On hover */
+#sk-container-id-1 a.estimator_doc_link:hover {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-3);
+  color: var(--sklearn-color-background);
+  text-decoration: none;
+}
+
+#sk-container-id-1 a.estimator_doc_link.fitted:hover {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-3);
+}
+
+.estimator-table {
+    font-family: monospace;
+}
+
+.estimator-table summary {
+    padding: .5rem;
+    cursor: pointer;
+}
+
+.estimator-table summary::marker {
+    font-size: 0.7rem;
+}
+
+.estimator-table details[open] {
+    padding-left: 0.1rem;
+    padding-right: 0.1rem;
+    padding-bottom: 0.3rem;
+}
+
+.estimator-table .parameters-table {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-top: 0;
+}
+
+.estimator-table .parameters-table tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+.estimator-table .parameters-table tr:nth-child(even) {
+    background-color: #f6f6f6;
+}
+
+.estimator-table .parameters-table tr:hover {
+    background-color: #e0e0e0;
+}
+
+.estimator-table table td {
+    border: 1px solid rgba(106, 105, 104, 0.232);
+}
+
+/*
+    `table td`is set in notebook with right text-align.
+    We need to overwrite it.
+*/
+.estimator-table table td.param {
+    text-align: left;
+    position: relative;
+    padding: 0;
+}
+
+.user-set td {
+    color:rgb(255, 94, 0);
+    text-align: left !important;
+}
+
+.user-set td.value {
+    color:rgb(255, 94, 0);
+    background-color: transparent;
+}
+
+.default td {
+    color: black;
+    text-align: left !important;
+}
+
+.user-set td i,
+.default td i {
+    color: black;
+}
+
+/*
+    Styles for parameter documentation links
+    We need styling for visited so jupyter doesn't overwrite it
+*/
+a.param-doc-link,
+a.param-doc-link:link,
+a.param-doc-link:visited {
+    text-decoration: underline dashed;
+    text-underline-offset: .3em;
+    color: inherit;
+    display: block;
+    padding: .5em;
+}
+
+/* "hack" to make the entire area of the cell containing the link clickable */
+a.param-doc-link::before {
+    position: absolute;
+    content: "";
+    inset: 0;
+}
+
+.param-doc-description {
+    display: none;
+    position: absolute;
+    z-index: 9999;
+    left: 0;
+    padding: .5ex;
+    margin-left: 1.5em;
+    color: var(--sklearn-color-text);
+    box-shadow: .3em .3em .4em #999;
+    width: max-content;
+    text-align: left;
+    max-height: 10em;
+    overflow-y: auto;
+
+    /* unfitted */
+    background: var(--sklearn-color-unfitted-level-0);
+    border: thin solid var(--sklearn-color-unfitted-level-3);
+}
+
+/* Fitted state for parameter tooltips */
+.fitted .param-doc-description {
+    /* fitted */
+    background: var(--sklearn-color-fitted-level-0);
+    border: thin solid var(--sklearn-color-fitted-level-3);
+}
+
+.param-doc-link:hover .param-doc-description {
+    display: block;
+}
+
+.copy-paste-icon {
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0NDggNTEyIj48IS0tIUZvbnQgQXdlc29tZSBGcmVlIDYuNy4yIGJ5IEBmb250YXdlc29tZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tIExpY2Vuc2UgLSBodHRwczovL2ZvbnRhd2Vzb21lLmNvbS9saWNlbnNlL2ZyZWUgQ29weXJpZ2h0IDIwMjUgRm9udGljb25zLCBJbmMuLS0+PHBhdGggZD0iTTIwOCAwTDMzMi4xIDBjMTIuNyAwIDI0LjkgNS4xIDMzLjkgMTQuMWw2Ny45IDY3LjljOSA5IDE0LjEgMjEuMiAxNC4xIDMzLjlMNDQ4IDMzNmMwIDI2LjUtMjEuNSA0OC00OCA0OGwtMTkyIDBjLTI2LjUgMC00OC0yMS41LTQ4LTQ4bDAtMjg4YzAtMjYuNSAyMS41LTQ4IDQ4LTQ4ek00OCAxMjhsODAgMCAwIDY0LTY0IDAgMCAyNTYgMTkyIDAgMC0zMiA2NCAwIDAgNDhjMCAyNi41LTIxLjUgNDgtNDggNDhMNDggNTEyYy0yNi41IDAtNDgtMjEuNS00OC00OEwwIDE3NmMwLTI2LjUgMjEuNS00OCA0OC00OHoiLz48L3N2Zz4=);
+    background-repeat: no-repeat;
+    background-size: 14px 14px;
+    background-position: 0;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+}
+</style><body><div id="sk-container-id-1" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>Pipeline(steps=[(&#x27;standardscaler&#x27;, StandardScaler()),
+                (&#x27;logisticregressioncv&#x27;,
+                 LogisticRegressionCV(max_iter=1000, n_jobs=-1,
+                                      random_state=42))])</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-1" type="checkbox" ><label for="sk-estimator-id-1" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>Pipeline</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.8/modules/generated/sklearn.pipeline.Pipeline.html">?<span>Documentation for Pipeline</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></div></label><div class="sk-toggleable__content fitted" data-param-prefix="">
+        <div class="estimator-table">
+            <details>
+                <summary>Parameters</summary>
+                <table class="parameters-table">
+                  <tbody>
+                    
+        <tr class="user-set">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('steps',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">
+        <a class="param-doc-link"
+            rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.8/modules/generated/sklearn.pipeline.Pipeline.html#:~:text=steps,-list%20of%20tuples">
+            steps
+            <span class="param-doc-description">steps: list of tuples<br><br>List of (name of step, estimator) tuples that are to be chained in<br>sequential order. To be compatible with the scikit-learn API, all steps<br>must define `fit`. All non-last steps must also define `transform`. See<br>:ref:`Combining Estimators <combining_estimators>` for more details.</span>
+        </a>
+    </td>
+            <td class="value">[(&#x27;standardscaler&#x27;, ...), (&#x27;logisticregressioncv&#x27;, ...)]</td>
+        </tr>
+    
+
+        <tr class="default">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('transform_input',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">
+        <a class="param-doc-link"
+            rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.8/modules/generated/sklearn.pipeline.Pipeline.html#:~:text=transform_input,-list%20of%20str%2C%20default%3DNone">
+            transform_input
+            <span class="param-doc-description">transform_input: list of str, default=None<br><br>The names of the :term:`metadata` parameters that should be transformed by the<br>pipeline before passing it to the step consuming it.<br><br>This enables transforming some input arguments to ``fit`` (other than ``X``)<br>to be transformed by the steps of the pipeline up to the step which requires<br>them. Requirement is defined via :ref:`metadata routing <metadata_routing>`.<br>For instance, this can be used to pass a validation set through the pipeline.<br><br>You can only set this if metadata routing is enabled, which you<br>can enable using ``sklearn.set_config(enable_metadata_routing=True)``.<br><br>.. versionadded:: 1.6</span>
+        </a>
+    </td>
+            <td class="value">None</td>
+        </tr>
+    
+
+        <tr class="default">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('memory',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">
+        <a class="param-doc-link"
+            rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.8/modules/generated/sklearn.pipeline.Pipeline.html#:~:text=memory,-str%20or%20object%20with%20the%20joblib.Memory%20interface%2C%20default%3DNone">
+            memory
+            <span class="param-doc-description">memory: str or object with the joblib.Memory interface, default=None<br><br>Used to cache the fitted transformers of the pipeline. The last step<br>will never be cached, even if it is a transformer. By default, no<br>caching is performed. If a string is given, it is the path to the<br>caching directory. Enabling caching triggers a clone of the transformers<br>before fitting. Therefore, the transformer instance given to the<br>pipeline cannot be inspected directly. Use the attribute ``named_steps``<br>or ``steps`` to inspect estimators within the pipeline. Caching the<br>transformers is advantageous when fitting is time consuming. See<br>:ref:`sphx_glr_auto_examples_neighbors_plot_caching_nearest_neighbors.py`<br>for an example on how to enable caching.</span>
+        </a>
+    </td>
+            <td class="value">None</td>
+        </tr>
+    
+
+        <tr class="default">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('verbose',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">
+        <a class="param-doc-link"
+            rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.8/modules/generated/sklearn.pipeline.Pipeline.html#:~:text=verbose,-bool%2C%20default%3DFalse">
+            verbose
+            <span class="param-doc-description">verbose: bool, default=False<br><br>If True, the time elapsed while fitting each step will be printed as it<br>is completed.</span>
+        </a>
+    </td>
+            <td class="value">False</td>
+        </tr>
+    
+                  </tbody>
+                </table>
+            </details>
+        </div>
+    </div></div></div><div class="sk-serial"><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-2" type="checkbox" ><label for="sk-estimator-id-2" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>StandardScaler</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.8/modules/generated/sklearn.preprocessing.StandardScaler.html">?<span>Documentation for StandardScaler</span></a></div></label><div class="sk-toggleable__content fitted" data-param-prefix="standardscaler__">
+        <div class="estimator-table">
+            <details>
+                <summary>Parameters</summary>
+                <table class="parameters-table">
+                  <tbody>
+                    
+        <tr class="default">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('copy',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">
+        <a class="param-doc-link"
+            rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.8/modules/generated/sklearn.preprocessing.StandardScaler.html#:~:text=copy,-bool%2C%20default%3DTrue">
+            copy
+            <span class="param-doc-description">copy: bool, default=True<br><br>If False, try to avoid a copy and do inplace scaling instead.<br>This is not guaranteed to always work inplace; e.g. if the data is<br>not a NumPy array or scipy.sparse CSR matrix, a copy may still be<br>returned.</span>
+        </a>
+    </td>
+            <td class="value">True</td>
+        </tr>
+    
+
+        <tr class="default">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('with_mean',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">
+        <a class="param-doc-link"
+            rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.8/modules/generated/sklearn.preprocessing.StandardScaler.html#:~:text=with_mean,-bool%2C%20default%3DTrue">
+            with_mean
+            <span class="param-doc-description">with_mean: bool, default=True<br><br>If True, center the data before scaling.<br>This does not work (and will raise an exception) when attempted on<br>sparse matrices, because centering them entails building a dense<br>matrix which in common use cases is likely to be too large to fit in<br>memory.</span>
+        </a>
+    </td>
+            <td class="value">True</td>
+        </tr>
+    
+
+        <tr class="default">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('with_std',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">
+        <a class="param-doc-link"
+            rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.8/modules/generated/sklearn.preprocessing.StandardScaler.html#:~:text=with_std,-bool%2C%20default%3DTrue">
+            with_std
+            <span class="param-doc-description">with_std: bool, default=True<br><br>If True, scale the data to unit variance (or equivalently,<br>unit standard deviation).</span>
+        </a>
+    </td>
+            <td class="value">True</td>
+        </tr>
+    
+                  </tbody>
+                </table>
+            </details>
+        </div>
+    </div></div></div><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-3" type="checkbox" ><label for="sk-estimator-id-3" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>LogisticRegressionCV</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.8/modules/generated/sklearn.linear_model.LogisticRegressionCV.html">?<span>Documentation for LogisticRegressionCV</span></a></div></label><div class="sk-toggleable__content fitted" data-param-prefix="logisticregressioncv__">
+        <div class="estimator-table">
+            <details>
+                <summary>Parameters</summary>
+                <table class="parameters-table">
+                  <tbody>
+                    
+        <tr class="default">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('Cs',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">
+        <a class="param-doc-link"
+            rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.8/modules/generated/sklearn.linear_model.LogisticRegressionCV.html#:~:text=Cs,-int%20or%20list%20of%20floats%2C%20default%3D10">
+            Cs
+            <span class="param-doc-description">Cs: int or list of floats, default=10<br><br>Each of the values in Cs describes the inverse of regularization<br>strength. If Cs is as an int, then a grid of Cs values are chosen<br>in a logarithmic scale between 1e-4 and 1e4.<br>Like in support vector machines, smaller values specify stronger<br>regularization.</span>
+        </a>
+    </td>
+            <td class="value">10</td>
+        </tr>
+    
+
+        <tr class="default">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('l1_ratios',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">
+        <a class="param-doc-link"
+            rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.8/modules/generated/sklearn.linear_model.LogisticRegressionCV.html#:~:text=l1_ratios,-array-like%20of%20shape%20%28n_l1_ratios%29%2C%20default%3DNone">
+            l1_ratios
+            <span class="param-doc-description">l1_ratios: array-like of shape (n_l1_ratios), default=None<br><br>Floats between 0 and 1 passed as Elastic-Net mixing parameter (scaling between<br>L1 and L2 penalties). For `l1_ratio = 0` the penalty is an L2 penalty. For<br>`l1_ratio = 1` it is an L1 penalty. For `0 < l1_ratio < 1`, the penalty is a<br>combination of L1 and L2.<br>All the values of the given array-like are tested by cross-validation and the<br>one giving the best prediction score is used.<br><br>.. warning::<br>   Certain values of `l1_ratios`, i.e. some penalties, may not work with some<br>   solvers. See the parameter `solver` below, to know the compatibility between<br>   the penalty and solver.<br><br>.. deprecated:: 1.8<br>    `l1_ratios=None` is deprecated in 1.8 and will raise an error<br>    in version 1.10. Default value will change from `None` to `(0.0,)`<br>    in version 1.10.</span>
+        </a>
+    </td>
+            <td class="value">&#x27;warn&#x27;</td>
+        </tr>
+    
+
+        <tr class="default">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('fit_intercept',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">
+        <a class="param-doc-link"
+            rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.8/modules/generated/sklearn.linear_model.LogisticRegressionCV.html#:~:text=fit_intercept,-bool%2C%20default%3DTrue">
+            fit_intercept
+            <span class="param-doc-description">fit_intercept: bool, default=True<br><br>Specifies if a constant (a.k.a. bias or intercept) should be<br>added to the decision function.</span>
+        </a>
+    </td>
+            <td class="value">True</td>
+        </tr>
+    
+
+        <tr class="default">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('cv',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">
+        <a class="param-doc-link"
+            rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.8/modules/generated/sklearn.linear_model.LogisticRegressionCV.html#:~:text=cv,-int%20or%20cross-validation%20generator%2C%20default%3DNone">
+            cv
+            <span class="param-doc-description">cv: int or cross-validation generator, default=None<br><br>The default cross-validation generator used is Stratified K-Folds.<br>If an integer is provided, it specifies the number of folds, `n_folds`, used.<br>See the module :mod:`sklearn.model_selection` module for the<br>list of possible cross-validation objects.<br><br>.. versionchanged:: 0.22<br>    ``cv`` default value if None changed from 3-fold to 5-fold.</span>
+        </a>
+    </td>
+            <td class="value">None</td>
+        </tr>
+    
+
+        <tr class="default">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('dual',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">
+        <a class="param-doc-link"
+            rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.8/modules/generated/sklearn.linear_model.LogisticRegressionCV.html#:~:text=dual,-bool%2C%20default%3DFalse">
+            dual
+            <span class="param-doc-description">dual: bool, default=False<br><br>Dual (constrained) or primal (regularized, see also<br>:ref:`this equation <regularized-logistic-loss>`) formulation. Dual formulation<br>is only implemented for l2 penalty with liblinear solver. Prefer dual=False when<br>n_samples > n_features.</span>
+        </a>
+    </td>
+            <td class="value">False</td>
+        </tr>
+    
+
+        <tr class="default">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('penalty',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">
+        <a class="param-doc-link"
+            rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.8/modules/generated/sklearn.linear_model.LogisticRegressionCV.html#:~:text=penalty,-%7B%27l1%27%2C%20%27l2%27%2C%20%27elasticnet%27%7D%2C%20default%3D%27l2%27">
+            penalty
+            <span class="param-doc-description">penalty: {'l1', 'l2', 'elasticnet'}, default='l2'<br><br>Specify the norm of the penalty:<br><br>- `'l2'`: add a L2 penalty term (used by default);<br>- `'l1'`: add a L1 penalty term;<br>- `'elasticnet'`: both L1 and L2 penalty terms are added.<br><br>.. warning::<br>   Some penalties may not work with some solvers. See the parameter<br>   `solver` below, to know the compatibility between the penalty and<br>   solver.<br><br>.. deprecated:: 1.8<br>   `penalty` was deprecated in version 1.8 and will be removed in 1.10.<br>   Use `l1_ratio` instead. `l1_ratio=0` for `penalty='l2'`, `l1_ratio=1` for<br>   `penalty='l1'` and `l1_ratio` set to any float between 0 and 1 for<br>   `'penalty='elasticnet'`.</span>
+        </a>
+    </td>
+            <td class="value">&#x27;deprecated&#x27;</td>
+        </tr>
+    
+
+        <tr class="default">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('scoring',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">
+        <a class="param-doc-link"
+            rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.8/modules/generated/sklearn.linear_model.LogisticRegressionCV.html#:~:text=scoring,-str%20or%20callable%2C%20default%3DNone">
+            scoring
+            <span class="param-doc-description">scoring: str or callable, default=None<br><br>The scoring method to use for cross-validation. Options:<br><br>- str: see :ref:`scoring_string_names` for options.<br>- callable: a scorer callable object (e.g., function) with signature<br>  ``scorer(estimator, X, y)``. See :ref:`scoring_callable` for details.<br>- `None`: :ref:`accuracy <accuracy_score>` is used.</span>
+        </a>
+    </td>
+            <td class="value">None</td>
+        </tr>
+    
+
+        <tr class="default">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('solver',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">
+        <a class="param-doc-link"
+            rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.8/modules/generated/sklearn.linear_model.LogisticRegressionCV.html#:~:text=solver,-%7B%27lbfgs%27%2C%20%27liblinear%27%2C%20%27newton-cg%27%2C%20%27newton-cholesky%27%2C%20%27sag%27%2C%20%27saga%27%7D%2C%20%20%20%20%20%20%20%20%20%20%20%20%20default%3D%27lbfgs%27">
+            solver
+            <span class="param-doc-description">solver: {'lbfgs', 'liblinear', 'newton-cg', 'newton-cholesky', 'sag', 'saga'},             default='lbfgs'<br><br>Algorithm to use in the optimization problem. Default is 'lbfgs'.<br>To choose a solver, you might want to consider the following aspects:<br><br>- 'lbfgs' is a good default solver because it works reasonably well for a wide<br>  class of problems.<br>- For :term:`multiclass` problems (`n_classes >= 3`), all solvers except<br>  'liblinear' minimize the full multinomial loss, 'liblinear' will raise an<br>  error.<br>- 'newton-cholesky' is a good choice for<br>  `n_samples` >> `n_features * n_classes`, especially with one-hot encoded<br>  categorical features with rare categories. Be aware that the memory usage<br>  of this solver has a quadratic dependency on `n_features * n_classes`<br>  because it explicitly computes the full Hessian matrix.<br>- For small datasets, 'liblinear' is a good choice, whereas 'sag'<br>  and 'saga' are faster for large ones;<br>- 'liblinear' might be slower in :class:`LogisticRegressionCV`<br>  because it does not handle warm-starting.<br>- 'liblinear' can only handle binary classification by default. To apply a<br>  one-versus-rest scheme for the multiclass setting one can wrap it with the<br>  :class:`~sklearn.multiclass.OneVsRestClassifier`.<br><br>.. warning::<br>   The choice of the algorithm depends on the penalty (`l1_ratio=0` for<br>   L2-penalty, `l1_ratio=1` for L1-penalty and `0 < l1_ratio < 1` for<br>   Elastic-Net) chosen and on (multinomial) multiclass support:<br><br>   ================= ======================== ======================<br>   solver            l1_ratio                 multinomial multiclass<br>   ================= ======================== ======================<br>   'lbfgs'           l1_ratio=0               yes<br>   'liblinear'       l1_ratio=1 or l1_ratio=0 no<br>   'newton-cg'       l1_ratio=0               yes<br>   'newton-cholesky' l1_ratio=0               yes<br>   'sag'             l1_ratio=0               yes<br>   'saga'            0<=l1_ratio<=1           yes<br>   ================= ======================== ======================<br><br>.. note::<br>   'sag' and 'saga' fast convergence is only guaranteed on features<br>   with approximately the same scale. You can preprocess the data with<br>   a scaler from :mod:`sklearn.preprocessing`.<br><br>.. versionadded:: 0.17<br>   Stochastic Average Gradient (SAG) descent solver. Multinomial support in<br>   version 0.18.<br>.. versionadded:: 0.19<br>   SAGA solver.<br>.. versionadded:: 1.2<br>   newton-cholesky solver. Multinomial support in version 1.6.</span>
+        </a>
+    </td>
+            <td class="value">&#x27;lbfgs&#x27;</td>
+        </tr>
+    
+
+        <tr class="default">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('tol',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">
+        <a class="param-doc-link"
+            rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.8/modules/generated/sklearn.linear_model.LogisticRegressionCV.html#:~:text=tol,-float%2C%20default%3D1e-4">
+            tol
+            <span class="param-doc-description">tol: float, default=1e-4<br><br>Tolerance for stopping criteria.</span>
+        </a>
+    </td>
+            <td class="value">0.0001</td>
+        </tr>
+    
+
+        <tr class="user-set">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('max_iter',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">
+        <a class="param-doc-link"
+            rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.8/modules/generated/sklearn.linear_model.LogisticRegressionCV.html#:~:text=max_iter,-int%2C%20default%3D100">
+            max_iter
+            <span class="param-doc-description">max_iter: int, default=100<br><br>Maximum number of iterations of the optimization algorithm.</span>
+        </a>
+    </td>
+            <td class="value">1000</td>
+        </tr>
+    
+
+        <tr class="default">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('class_weight',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">
+        <a class="param-doc-link"
+            rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.8/modules/generated/sklearn.linear_model.LogisticRegressionCV.html#:~:text=class_weight,-dict%20or%20%27balanced%27%2C%20default%3DNone">
+            class_weight
+            <span class="param-doc-description">class_weight: dict or 'balanced', default=None<br><br>Weights associated with classes in the form ``{class_label: weight}``.<br>If not given, all classes are supposed to have weight one.<br><br>The "balanced" mode uses the values of y to automatically adjust<br>weights inversely proportional to class frequencies in the input data<br>as ``n_samples / (n_classes * np.bincount(y))``.<br><br>Note that these weights will be multiplied with sample_weight (passed<br>through the fit method) if sample_weight is specified.<br><br>.. versionadded:: 0.17<br>   class_weight == 'balanced'</span>
+        </a>
+    </td>
+            <td class="value">None</td>
+        </tr>
+    
+
+        <tr class="user-set">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('n_jobs',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">
+        <a class="param-doc-link"
+            rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.8/modules/generated/sklearn.linear_model.LogisticRegressionCV.html#:~:text=n_jobs,-int%2C%20default%3DNone">
+            n_jobs
+            <span class="param-doc-description">n_jobs: int, default=None<br><br>Number of CPU cores used during the cross-validation loop.<br>``None`` means 1 unless in a :obj:`joblib.parallel_backend` context.<br>``-1`` means using all processors. See :term:`Glossary <n_jobs>`<br>for more details.</span>
+        </a>
+    </td>
+            <td class="value">-1</td>
+        </tr>
+    
+
+        <tr class="default">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('verbose',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">
+        <a class="param-doc-link"
+            rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.8/modules/generated/sklearn.linear_model.LogisticRegressionCV.html#:~:text=verbose,-int%2C%20default%3D0">
+            verbose
+            <span class="param-doc-description">verbose: int, default=0<br><br>For the 'liblinear', 'sag' and 'lbfgs' solvers set verbose to any<br>positive number for verbosity.</span>
+        </a>
+    </td>
+            <td class="value">0</td>
+        </tr>
+    
+
+        <tr class="default">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('refit',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">
+        <a class="param-doc-link"
+            rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.8/modules/generated/sklearn.linear_model.LogisticRegressionCV.html#:~:text=refit,-bool%2C%20default%3DTrue">
+            refit
+            <span class="param-doc-description">refit: bool, default=True<br><br>If set to True, the scores are averaged across all folds, and the<br>coefs and the C that corresponds to the best score is taken, and a<br>final refit is done using these parameters.<br>Otherwise the coefs, intercepts and C that correspond to the<br>best scores across folds are averaged.</span>
+        </a>
+    </td>
+            <td class="value">True</td>
+        </tr>
+    
+
+        <tr class="default">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('intercept_scaling',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">
+        <a class="param-doc-link"
+            rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.8/modules/generated/sklearn.linear_model.LogisticRegressionCV.html#:~:text=intercept_scaling,-float%2C%20default%3D1">
+            intercept_scaling
+            <span class="param-doc-description">intercept_scaling: float, default=1<br><br>Useful only when the solver `liblinear` is used<br>and `self.fit_intercept` is set to `True`. In this case, `x` becomes<br>`[x, self.intercept_scaling]`,<br>i.e. a "synthetic" feature with constant value equal to<br>`intercept_scaling` is appended to the instance vector.<br>The intercept becomes<br>``intercept_scaling * synthetic_feature_weight``.<br><br>.. note::<br>    The synthetic feature weight is subject to L1 or L2<br>    regularization as all other features.<br>    To lessen the effect of regularization on synthetic feature weight<br>    (and therefore on the intercept) `intercept_scaling` has to be increased.</span>
+        </a>
+    </td>
+            <td class="value">1.0</td>
+        </tr>
+    
+
+        <tr class="user-set">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('random_state',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">
+        <a class="param-doc-link"
+            rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.8/modules/generated/sklearn.linear_model.LogisticRegressionCV.html#:~:text=random_state,-int%2C%20RandomState%20instance%2C%20default%3DNone">
+            random_state
+            <span class="param-doc-description">random_state: int, RandomState instance, default=None<br><br>Used when `solver='sag'`, 'saga' or 'liblinear' to shuffle the data.<br>Note that this only applies to the solver and not the cross-validation<br>generator. See :term:`Glossary <random_state>` for details.</span>
+        </a>
+    </td>
+            <td class="value">42</td>
+        </tr>
+    
+
+        <tr class="default">
+            <td><i class="copy-paste-icon"
+                 onclick="copyToClipboard('use_legacy_attributes',
+                          this.parentElement.nextElementSibling)"
+            ></i></td>
+            <td class="param">
+        <a class="param-doc-link"
+            rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.8/modules/generated/sklearn.linear_model.LogisticRegressionCV.html#:~:text=use_legacy_attributes,-bool%2C%20default%3DTrue">
+            use_legacy_attributes
+            <span class="param-doc-description">use_legacy_attributes: bool, default=True<br><br>If True, use legacy values for attributes:<br><br>- `C_` is an ndarray of shape (n_classes,) with the same value repeated<br>- `l1_ratio_` is an ndarray of shape (n_classes,) with the same value repeated<br>- `coefs_paths_` is a dict with class labels as keys and ndarrays as values<br>- `scores_` is a dict with class labels as keys and ndarrays as values<br>- `n_iter_` is an ndarray of shape (1, n_folds, n_cs) or similar<br><br>If False, use new values for attributes:<br><br>- `C_` is a float<br>- `l1_ratio_` is a float<br>- `coefs_paths_` is an ndarray of shape<br>  (n_folds, n_l1_ratios, n_cs, n_classes, n_features)<br>  For binary problems (n_classes=2), the 2nd last dimension is 1.<br>- `scores_` is an ndarray of shape (n_folds, n_l1_ratios, n_cs)<br>- `n_iter_` is an ndarray of shape (n_folds, n_l1_ratios, n_cs)<br><br>.. versionchanged:: 1.10<br>   The default will change from True to False in version 1.10.<br>.. deprecated:: 1.10<br>   `use_legacy_attributes` will be deprecated in version 1.10 and be removed in<br>   1.12.</span>
+        </a>
+    </td>
+            <td class="value">&#x27;warn&#x27;</td>
+        </tr>
+    
+                  </tbody>
+                </table>
+            </details>
+        </div>
+    </div></div></div></div></div></div></div><script>function copyToClipboard(text, element) {
+    // Get the parameter prefix from the closest toggleable content
+    const toggleableContent = element.closest('.sk-toggleable__content');
+    const paramPrefix = toggleableContent ? toggleableContent.dataset.paramPrefix : '';
+    const fullParamName = paramPrefix ? `${paramPrefix}${text}` : text;
+
+    const originalStyle = element.style;
+    const computedStyle = window.getComputedStyle(element);
+    const originalWidth = computedStyle.width;
+    const originalHTML = element.innerHTML.replace('Copied!', '');
+
+    navigator.clipboard.writeText(fullParamName)
+        .then(() => {
+            element.style.width = originalWidth;
+            element.style.color = 'green';
+            element.innerHTML = "Copied!";
+
+            setTimeout(() => {
+                element.innerHTML = originalHTML;
+                element.style = originalStyle;
+            }, 2000);
+        })
+        .catch(err => {
+            console.error('Failed to copy:', err);
+            element.style.color = 'red';
+            element.innerHTML = "Failed!";
+            setTimeout(() => {
+                element.innerHTML = originalHTML;
+                element.style = originalStyle;
+            }, 2000);
+        });
+    return false;
+}
+
+document.querySelectorAll('.copy-paste-icon').forEach(function(element) {
+    const toggleableContent = element.closest('.sk-toggleable__content');
+    const paramPrefix = toggleableContent ? toggleableContent.dataset.paramPrefix : '';
+    const paramName = element.parentElement.nextElementSibling
+        .textContent.trim().split(' ')[0];
+    const fullParamName = paramPrefix ? `${paramPrefix}${paramName}` : paramName;
+
+    element.setAttribute('title', fullParamName);
+});
+
+
+/**
+ * Adapted from Skrub
+ * https://github.com/skrub-data/skrub/blob/403466d1d5d4dc76a7ef569b3f8228db59a31dc3/skrub/_reporting/_data/templates/report.js#L789
+ * @returns "light" or "dark"
+ */
+function detectTheme(element) {
+    const body = document.querySelector('body');
+
+    // Check VSCode theme
+    const themeKindAttr = body.getAttribute('data-vscode-theme-kind');
+    const themeNameAttr = body.getAttribute('data-vscode-theme-name');
+
+    if (themeKindAttr && themeNameAttr) {
+        const themeKind = themeKindAttr.toLowerCase();
+        const themeName = themeNameAttr.toLowerCase();
+
+        if (themeKind.includes("dark") || themeName.includes("dark")) {
+            return "dark";
+        }
+        if (themeKind.includes("light") || themeName.includes("light")) {
+            return "light";
+        }
+    }
+
+    // Check Jupyter theme
+    if (body.getAttribute('data-jp-theme-light') === 'false') {
+        return 'dark';
+    } else if (body.getAttribute('data-jp-theme-light') === 'true') {
+        return 'light';
+    }
+
+    // Guess based on a parent element's color
+    const color = window.getComputedStyle(element.parentNode, null).getPropertyValue('color');
+    const match = color.match(/^rgb\s*\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*\)\s*$/i);
+    if (match) {
+        const [r, g, b] = [
+            parseFloat(match[1]),
+            parseFloat(match[2]),
+            parseFloat(match[3])
+        ];
+
+        // https://en.wikipedia.org/wiki/HSL_and_HSV#Lightness
+        const luma = 0.299 * r + 0.587 * g + 0.114 * b;
+
+        if (luma > 180) {
+            // If the text is very bright we have a dark theme
+            return 'dark';
+        }
+        if (luma < 75) {
+            // If the text is very dark we have a light theme
+            return 'light';
+        }
+        // Otherwise fall back to the next heuristic.
+    }
+
+    // Fallback to system preference
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+}
+
+
+function forceTheme(elementId) {
+    const estimatorElement = document.querySelector(`#${elementId}`);
+    if (estimatorElement === null) {
+        console.error(`Element with id ${elementId} not found.`);
+    } else {
+        const theme = detectTheme(estimatorElement);
+        estimatorElement.classList.add(theme);
+    }
+}
+
+forceTheme('sk-container-id-1');</script></body></div></div>
+</div>
+<p>Mean CV accuracy at each regularization strength:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clf</span> <span class="o">=</span> <span class="n">lr_cv</span><span class="o">.</span><span class="n">named_steps</span><span class="p">[</span><span class="s1">&#39;logisticregressioncv&#39;</span><span class="p">]</span>
+<span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">clf</span><span class="o">.</span><span class="n">scores_</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.78876404, 0.83033708, 0.84382022, 0.85955056, 0.86966292,
+       0.87303371, 0.87191011, 0.86853933, 0.86853933, 0.86966292])
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="which-structures-is-it-using">
+<h2>7. Which structures is it using?<a class="headerlink" href="#which-structures-is-it-using" title="Link to this heading">#</a></h2>
+<p>Since everything was standardized, larger |coef| ≈ more influence on the decision.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">coef</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">coef_</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
+<span class="n">biomarkers</span> <span class="o">=</span> <span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;feature&#39;</span><span class="p">:</span> <span class="n">selected</span><span class="p">,</span> <span class="s1">&#39;coef&#39;</span><span class="p">:</span> <span class="n">coef</span><span class="p">})</span>
+              <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">abs_coef</span><span class="o">=</span><span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;coef&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">abs</span><span class="p">())</span>
+              <span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;abs_coef&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+<span class="n">biomarkers</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>feature</th>
+      <th>coef</th>
+      <th>abs_coef</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>15</th>
+      <td>FS_Mask_Vol</td>
+      <td>-3.276498</td>
+      <td>3.276498</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>FS_L_Cerebellum_Cort_Vol.1</td>
+      <td>-0.926200</td>
+      <td>0.926200</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>FS_BrainSeg_Vol</td>
+      <td>0.838787</td>
+      <td>0.838787</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>FS_R_Insula_GrayVol</td>
+      <td>-0.628748</td>
+      <td>0.628748</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>FS_Total_GM_Vol</td>
+      <td>0.497384</td>
+      <td>0.497384</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>FS_L_Amygdala_Vol</td>
+      <td>-0.441830</td>
+      <td>0.441830</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>FS_SupraTentorial_Vol</td>
+      <td>0.432062</td>
+      <td>0.432062</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>FS_L_Amygdala_Vox</td>
+      <td>-0.393187</td>
+      <td>0.393187</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>FS_BrainSeg_Vol_No_Vent</td>
+      <td>0.323231</td>
+      <td>0.323231</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>FS_SubCort_GM_Vol</td>
+      <td>-0.321482</td>
+      <td>0.321482</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>FS_BrainSeg_Vol_No_Vent_Surf</td>
+      <td>0.315080</td>
+      <td>0.315080</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>FS_R_WM_Vol</td>
+      <td>-0.295598</td>
+      <td>0.295598</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>FS_L_WM_Vol</td>
+      <td>0.277687</td>
+      <td>0.277687</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>FS_SupraTentorial_Vol_No_Vent</td>
+      <td>-0.238262</td>
+      <td>0.238262</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>FS_LCort_GM_Vol</td>
+      <td>-0.212197</td>
+      <td>0.212197</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>FS_RCort_GM_Vol</td>
+      <td>0.186722</td>
+      <td>0.186722</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>FS_InterCranial_Vol</td>
+      <td>0.178289</td>
+      <td>0.178289</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>FS_Tot_WM_Vol</td>
+      <td>-0.010953</td>
+      <td>0.010953</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>FS_TotCort_GM_Vol</td>
+      <td>-0.010666</td>
+      <td>0.010666</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>FS_SupraTentorial_No_Vent_Voxel_Count</td>
+      <td>-0.001874</td>
+      <td>0.001874</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Now look at that list honestly. <code class="docutils literal notranslate"><span class="pre">FS_Mask_Vol</span></code>, <code class="docutils literal notranslate"><span class="pre">FS_BrainSeg_Vol</span></code>, total gray matter, intracranial volume… they’re nearly all <strong>global size</strong> measures. And male brains are on average larger. So a good chunk of what this “sex classifier” learned is just <em>head size</em>, not anything region-specific.</p>
+<p>That’s the trap in this kind of study. If the goal is genuine sex-specific structure, you usually correct for total intracranial volume (TIV) first - divide each regional volume by TIV, or add TIV as a covariate - and then ask what still separates the groups.</p>
+<p>Try it: normalize by intracranial volume and re-run the selection.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Normalize volume-like features by intracranial volume, then re-select.</span>
+<span class="n">tiv</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;FS_InterCranial_Vol&#39;</span><span class="p">]</span>
+
+<span class="n">vol_cols</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">X</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="s1">&#39;Vol&#39;</span> <span class="ow">in</span> <span class="n">c</span> <span class="ow">and</span> <span class="n">c</span> <span class="o">!=</span> <span class="s1">&#39;FS_InterCranial_Vol&#39;</span><span class="p">]</span>
+<span class="n">X_norm</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">X_norm</span><span class="p">[</span><span class="n">vol_cols</span><span class="p">]</span> <span class="o">=</span> <span class="n">X_norm</span><span class="p">[</span><span class="n">vol_cols</span><span class="p">]</span><span class="o">.</span><span class="n">div</span><span class="p">(</span><span class="n">tiv</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="n">Xn_tr</span><span class="p">,</span> <span class="n">Xn_te</span><span class="p">,</span> <span class="n">yn_tr</span><span class="p">,</span> <span class="n">yn_te</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span>
+    <span class="n">X_norm</span><span class="p">[</span><span class="n">nonconstant</span><span class="p">],</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">stratify</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span>
+<span class="p">)</span>
+
+<span class="n">skb_n</span> <span class="o">=</span> <span class="n">SelectKBest</span><span class="p">(</span><span class="n">f_classif</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">Xn_tr</span><span class="p">,</span> <span class="n">yn_tr</span><span class="p">)</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">skb_n</span><span class="o">.</span><span class="n">scores_</span><span class="p">[</span><span class="n">skb_n</span><span class="o">.</span><span class="n">get_support</span><span class="p">()],</span>
+          <span class="n">index</span><span class="o">=</span><span class="n">Xn_tr</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="n">skb_n</span><span class="o">.</span><span class="n">get_support</span><span class="p">()])</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>FS_SupraTentorial_No_Vent_Voxel_Count    630.833001
+FS_InterCranial_Vol                      624.890526
+FS_L_Amygdala_Vox                        503.952840
+FS_L_Cerebellum_Cort_Vox.1               480.256559
+FS_L_Cerebellum_Cort_Vox                 469.022498
+FS_R_Amygdala_Vox                        377.107112
+FS_R_Inferiorparietal_Area               364.919767
+FS_L_Rostralmiddlefrontal_Area           359.354110
+FS_L_Rostralmiddlefrontal_NumVert        357.547394
+FS_L_Superiorfrontal_Area                357.167123
+FS_R_Inferiorparietal_NumVert            352.844588
+FS_L_Supramarginal_Area                  349.465768
+FS_L_Supramarginal_NumVert               348.005960
+FS_R_VentDC_Vox                          346.014882
+FS_R_Precentral_Area                     342.535769
+FS_R_Superiorfrontal_Area                341.622306
+FS_L_Superiorfrontal_NumVert             340.828996
+FS_L_VentDC_Vox                          334.482619
+FS_R_Fusiform_Area                       333.863373
+FS_L_Superiortemporal_Area               333.744819
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Compare this ranking to the earlier one. If size-normalization changes who’s at the top, that tells you how much of the original signal was really just “bigger brain.”</p>
+</section>
+<section id="how-good-is-it-and-how-would-we-compare-two-models">
+<h2>8. How good is it, and how would we compare two models?<a class="headerlink" href="#how-good-is-it-and-how-would-we-compare-two-models" title="Link to this heading">#</a></h2>
+<p>Report a few metrics rather than accuracy alone - with a near-balanced problem it’s fine, but the habit matters. For actually deciding whether model A beats model B, this is a sensible reference: <a class="reference external" href="https://arxiv.org/pdf/1806.08295.pdf">https://arxiv.org/pdf/1806.08295.pdf</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span><span class="n">accuracy_score</span><span class="p">,</span> <span class="n">balanced_accuracy_score</span><span class="p">,</span> <span class="n">f1_score</span><span class="p">,</span>
+                             <span class="n">average_precision_score</span><span class="p">,</span> <span class="n">roc_auc_score</span><span class="p">)</span>
+
+<span class="n">y_pred</span>  <span class="o">=</span> <span class="n">lr_cv</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_new</span><span class="p">)</span>
+<span class="n">y_proba</span> <span class="o">=</span> <span class="n">lr_cv</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X_test_new</span><span class="p">)[:,</span> <span class="mi">1</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="p">(</span><span class="n">accuracy_score</span><span class="p">,</span> <span class="n">balanced_accuracy_score</span><span class="p">,</span> <span class="n">f1_score</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">),</span> <span class="mi">4</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="p">(</span><span class="n">average_precision_score</span><span class="p">,</span> <span class="n">roc_auc_score</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_proba</span><span class="p">),</span> <span class="mi">4</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>accuracy_score 0.7848
+balanced_accuracy_score 0.7855
+f1_score 0.7966
+average_precision_score 0.8798
+roc_auc_score 0.8725
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="what-next">
+<h2>What next<a class="headerlink" href="#what-next" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>proper hyperparameter search, and a real statistical comparison between two models,</p></li>
+<li><p>stability of the selected biomarkers across resamples (do the same features keep showing up?),</p></li>
+<li><p>validating them statistically rather than eyeballing coefficients.</p></li>
+</ul>
+<p>Pick one and push on it.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "morphometry-seminar"
+        },
+        kernelOptions: {
+            name: "morphometry-seminar",
+            path: "./seminar5/1_morphometry_classification"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'morphometry-seminar'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">1. Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#local-setup">2. Local setup</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#macos-or-linux">macOS or Linux</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#windows-powershell">Windows PowerShell</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-the-data">3. Getting the data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#features-and-target">4. Features and target</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classical-analysis-first">5. Classical analysis first</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#now-the-model">6. Now the model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#which-structures-is-it-using">7. Which structures is it using?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-good-is-it-and-how-would-we-compare-two-models">8. How good is it, and how would we compare two models?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-next">What next</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Nadezhda Alsahanova, Aleksandra Beliaeva, Dmitriy Kornilov, Fedor Gubanov, Pavel Bartenev, Maxim Sharaev
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023-2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

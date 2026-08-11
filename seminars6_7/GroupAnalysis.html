@@ -16,42 +16,45 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-
-  
-  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/myadmonitions.css?v=0009bf62" />
   
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -61,39 +64,36 @@
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'seminars6_7/GroupAnalysis';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="icon" href="../_static/logo.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
   </head>
-  
-  
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
-
+  <body data-default-mode="">
   
   
   <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
-
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -101,7 +101,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -109,15 +108,59 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
 </div>
 
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
     </header>
   
 
@@ -128,7 +171,8 @@
       
         
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -158,21 +202,17 @@
     
     
     <img src="../_static/logo.png" class="logo__image only-light" alt="Neuroimaging and Machine Learning for Biomedicine - Home"/>
-    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Neuroimaging and Machine Learning for Biomedicine - Home"/>`);</script>
+    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="Neuroimaging and Machine Learning for Biomedicine - Home"/>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -229,10 +269,6 @@
 
 
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Seminars 2-3. Working with EEG</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../seminars2_3/seminar1_working_with_eeg_ipynb_.html">Seminars 2 and 3. EEG analysis</a></li>
-</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Seminars 4-5. Working with MRI</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../seminar4/docker.html">Preparation to Seminar 4</a></li>
@@ -276,9 +312,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -408,7 +449,7 @@
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -422,25 +463,17 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
 </div></div>
@@ -462,14 +495,9 @@ document.write(`
                 <h2> Contents </h2>
             </div>
             <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Group Analysis</a><ul class="visible nav section-nav flex-column">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Group Analysis</a><ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#normalize-data-to-mni-template">Normalize data to MNI template</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparation">Preparation</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#alternatively-prepare-yourself">Alternatively: Prepare yourself</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#normalization-with-ants">Normalization with ANTs</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#imports">Imports</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experiment-parameters">Experiment parameters</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specify-nodes">Specify Nodes</a></li>
@@ -477,11 +505,22 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specify-workflow-ants">Specify Workflow (ANTs)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualize-the-workflow">Visualize the workflow</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-the-workflow">Run the Workflow</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualize-results">Visualize Results</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#visualize-results">Visualize Results</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#nd-level-analysis">2nd level analysis</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-comparison-problem">Multiple comparison problem</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#nd-level-analysis">2nd level analysis</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Visualize results</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-comparison-problem">Multiple comparison problem</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-comparison-correction-methods"><strong>Multiple Comparison Correction Methods</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fwer-familywise-error-rate">FWER – Family‑Wise Error Rate</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fdr-false-discovery-rate">FDR – False Discovery Rate</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summary"><strong>Summary</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
             </nav>
@@ -496,6 +535,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="group-analysis">
 <h1>Group Analysis<a class="headerlink" href="#group-analysis" title="Link to this heading">#</a></h1>
+<p><a class="reference external" href="https://colab.research.google.com/github/BIMAI-lab/NEUROML_course/blob/main/seminars6_7/GroupAnalysis.ipynb"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
 <p>We often want to generalize the results from our experiment to out of sample data. Here we will infer from the individual
 subjects activation maps to one activation map for all subjects.</p>
 <p>To do this the following steps must be done:</p>
@@ -503,20 +543,47 @@ subjects activation maps to one activation map for all subjects.</p>
 <p><strong>2. Build a second level GLM</strong></p>
 <p><strong>3. Hypothesis testing</strong></p>
 <p><img alt="Group Analysis" src="https://s3.studylib.net/store/data/008208763_1-08a21265815c4e2c11a8b6effd90bfa3.png" /></p>
-<p>The second level GLM has the form
-$<span class="math notranslate nohighlight">\( {\beta}= {\beta}_g X_g + {\eta} \)</span>$</p>
+<p>After performing first‑level (single‑subject) <strong>GLM analyses</strong>, we obtain contrast maps for each participant.
+These maps represent estimated effects (e.g., the difference between Finger and Baseline) in each voxel, in the subject’s native space.</p>
+<p>The goal of group‑level analysis is to make inferences about the population from which our participants are drawn. We treat each subject’s contrast image as a “dependent variable” and build a second‑level GLM across subjects.</p>
+<p>For each voxel, we write:
+$<span class="math notranslate nohighlight">\( \beta_{subject}= X_{group}\beta_{group} + \eta \)</span>$</p>
 <p>where:</p>
-<p><span class="math notranslate nohighlight">\(X_g\)</span> - new design matrix</p>
-<p><span class="math notranslate nohighlight">\({\beta}\)</span> - estimated from 1st level</p>
-<p>Then we can find <span class="math notranslate nohighlight">\({\beta}_g\)</span> and perform hypothesis testing on it</p>
-<p><strong>NI-ed</strong> is a collection of neuroimaging-related course materials developed at the University of Amsterdam (Great Explanation) - <a class="reference external" href="https://lukas-snoek.com/NI-edu/section_intros/5_multilevel.html">https://lukas-snoek.com/NI-edu/section_intros/5_multilevel.html</a></p>
+<p><span class="math notranslate nohighlight">\(\beta_{subject}\)</span> - a column vector containing the contrast estimates (e.g., Finger &gt; Baseline) for all subjects at that voxel (size <span class="math notranslate nohighlight">\(N \times 1\)</span>).</p>
+<p><span class="math notranslate nohighlight">\(X_{group}\)</span> - the group‑level design matrix (size <span class="math notranslate nohighlight">\(N \times p\)</span>), with one row per subject and <span class="math notranslate nohighlight">\(p\)</span> regressors (e.g., an intercept for a one‑sample t‑test, or group indicators for a two‑sample t‑test).</p>
+<p><span class="math notranslate nohighlight">\(\beta_{group}\)</span> - a vector of unknown group‑level parameters (size <span class="math notranslate nohighlight">\(p \times 1\)</span>) that we want to estimate.</p>
+<p><span class="math notranslate nohighlight">\(\eta\)</span> – residual error (assumed normally distributed with zero mean and independent across subjects).</p>
+<p>Then we can find <span class="math notranslate nohighlight">\(\beta_{group}\)</span> using ordinary least squares (OLS) and perform hypothesis testing on it.</p>
+<p><strong>Common Group‑Level Designs</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Design</p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(X_{group}\)</span></p></th>
+<th class="head"><p>Interpretation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>One‑sample t‑test</strong></p></td>
+<td><p><span class="math notranslate nohighlight">\([1,1,…,1]^T\)</span> (intercept only)</p></td>
+<td><p>Tests if the average effect across subjects is significantly different from zero.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Two‑sample t‑test</strong></p></td>
+<td><p>Two columns: intercept + group indicator</p></td>
+<td><p>Tests if the mean effect differs between two independent groups (e.g., patients vs. controls).</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>In our case, we start with a <strong>one‑sample t‑test</strong> to assess whether a given contrast (e.g., Finger, Foot, Lips, or Foot &gt; others) shows a consistent effect across the group.</p>
+<blockquote>
+<div><p><strong>NI-ed</strong> is a collection of neuroimaging-related course materials developed at the University of Amsterdam (Great Explanation) - <a class="reference external" href="https://lukas-snoek.com/NI-edu/section_intros/5_multilevel.html">https://lukas-snoek.com/NI-edu/section_intros/5_multilevel.html</a></p>
+</div></blockquote>
 <section id="normalize-data-to-mni-template">
 <h2>Normalize data to MNI template<a class="headerlink" href="#normalize-data-to-mni-template" title="Link to this heading">#</a></h2>
-<p>We will take the computed 1st-level contrasts from the previous experiment  and normalize them into MNI-space.</p>
-</section>
-<section id="preparation">
-<h2>Preparation<a class="headerlink" href="#preparation" title="Link to this heading">#</a></h2>
-<p>We first need to download the already computed deformation field.</p>
+<p>We will take the computed 1st-level contrasts from the previous experiment  and normalize them into <a class="reference external" href="https://www.andysbrainblog.com/andysbrainblog/2024/9/30/brief-history-of-the-mni-template">MNI-space</a>.</p>
+<p><strong>Normalization with <a class="reference external" href="https://github.com/antsx/ants">Advanced Normalization Tools (ANTs)</a></strong></p>
+<p>The normalization with ANTs requires that you first compute the transformation matrix that would bring the anatomical images of each subject into template space. Depending on your system this might take a few hours per subject. To facilitate this step, the transformation matrix is already computed for the T1 images.</p>
+<p>We only need to download the already computed deformation field.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
@@ -525,21 +592,20 @@ datalad get -J 4 -d /data/ds000114 /data/ds000114/derivatives/fmriprep/sub-0[234
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>action summary:
-  get (notneeded: 8)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>get(ok): derivatives/fmriprep/sub-05/anat/sub-05_t1w_space-mni152nlin2009casym_warp.h5 (file) [from web...; from origin...]
+get(ok): derivatives/fmriprep/sub-08/anat/sub-08_t1w_space-mni152nlin2009casym_warp.h5 (file) [from web...; from origin...]
+get(ok): derivatives/fmriprep/sub-02/anat/sub-02_t1w_space-mni152nlin2009casym_warp.h5 (file) [from web...; from origin...]
+get(ok): derivatives/fmriprep/sub-07/anat/sub-07_t1w_space-mni152nlin2009casym_warp.h5 (file) [from origin...]
+get(ok): derivatives/fmriprep/sub-09/anat/sub-09_t1w_space-mni152nlin2009casym_warp.h5 (file) [from origin...]
+get(ok): derivatives/fmriprep/sub-04/anat/sub-04_t1w_space-mni152nlin2009casym_warp.h5 (file) [from web...; from origin...]
+get(ok): derivatives/fmriprep/sub-03/anat/sub-03_t1w_space-mni152nlin2009casym_warp.h5 (file) [from web...; from origin...]
+action summary:
+  get (notneeded: 1, ok: 7)
 </pre></div>
 </div>
 </div>
 </div>
-<section id="alternatively-prepare-yourself">
-<h3>Alternatively: Prepare yourself<a class="headerlink" href="#alternatively-prepare-yourself" title="Link to this heading">#</a></h3>
-<p>We’re using the precomputed warp field from <a class="reference external" href="http://fmriprep.readthedocs.io">fmriprep</a>, as this step otherwise would take up too much time. If you’re nonetheless interested in computing the warp parameters with ANTs yourself, without using <a class="reference external" href="http://fmriprep.readthedocs.io">fmriprep</a>, either check out the script <a class="reference external" href="https://github.com/miykael/nipype_tutorial/blob/master/notebooks/scripts/ANTS_registration.py">ANTS_registration.py</a> or even quicker, use <a class="reference external" href="http://nipype.readthedocs.io/en/latest/interfaces/generated/interfaces.ants/registration.html#registrationsynquick">RegistrationSynQuick</a>, Nipype’s implementation of <code class="docutils literal notranslate"><span class="pre">antsRegistrationSynQuick.sh</span></code>.</p>
-</section>
-</section>
-<section id="normalization-with-ants">
-<h2>Normalization with ANTs<a class="headerlink" href="#normalization-with-ants" title="Link to this heading">#</a></h2>
-<p>The normalization with ANTs requires that you first compute the transformation matrix that would bring the anatomical images of each subject into template space. Depending on your system this might take a few hours per subject. To facilitate this step, the transformation matrix is already computed for the T1 images.</p>
-<p>The data for it can be found under:</p>
+<p>You can now find the data at the following paths:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>ls<span class="w"> </span>/data/ds000114/derivatives/fmriprep/sub-*/anat/*h5
@@ -561,7 +627,21 @@ datalad get -J 4 -d /data/ds000114 /data/ds000114/derivatives/fmriprep/sub-0[234
 </div>
 </div>
 </div>
-<p><strong>Now, let’s start with the ANTs normalization workflow!</strong></p>
+<p>To see if real data is loaded or just links, use <code class="docutils literal notranslate"><span class="pre">datalad</span> <span class="pre">status</span></code> with the <code class="docutils literal notranslate"><span class="pre">--annex</span></code> flag:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>datalad<span class="w"> </span>status<span class="w"> </span>-d<span class="w"> </span>/data/ds000114<span class="w"> </span>--annex<span class="w"> </span>all<span class="w"> </span>/data/ds000114/derivatives/fmriprep/sub-*/anat/*h5
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10 annex&#39;d files (683.4 MB/976.3 MB present/total size)
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Alternatively: Prepare yourself</strong></p>
+<p>We’re using the precomputed warp field from <a class="reference external" href="http://fmriprep.readthedocs.io">fmriprep</a>, as this step otherwise would take up too much time. If you’re nonetheless interested in computing the warp parameters with ANTs yourself, without using <a class="reference external" href="http://fmriprep.readthedocs.io">fmriprep</a>, either check out the script <a class="reference external" href="https://github.com/miykael/nipype_tutorial/blob/master/notebooks/scripts/ANTS_registration.py">ANTS_registration.py</a> or even quicker, use <a class="reference external" href="http://nipype.readthedocs.io/en/latest/interfaces/generated/interfaces.ants/registration.html#registrationsynquick">RegistrationSynQuick</a>, Nipype’s implementation of <code class="docutils literal notranslate"><span class="pre">antsRegistrationSynQuick.sh</span></code>.</p>
 </section>
 <section id="imports">
 <h2>Imports<a class="headerlink" href="#imports" title="Link to this heading">#</a></h2>
@@ -599,12 +679,11 @@ datalad get -J 4 -d /data/ds000114 /data/ds000114/derivatives/fmriprep/sub-0[234
 <span class="n">working_dir</span> <span class="o">=</span> <span class="s1">&#39;workingdir&#39;</span>
 
 <span class="c1"># list of subject identifiers (remember we use only right handed subjects)</span>
-<span class="n">subject_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;02&#39;</span><span class="p">,</span> <span class="s1">&#39;03&#39;</span><span class="p">,</span> <span class="s1">&#39;04&#39;</span><span class="p">,</span> <span class="s1">&#39;05&#39;</span><span class="p">,</span> <span class="s1">&#39;07&#39;</span><span class="p">,</span> <span class="s1">&#39;08&#39;</span><span class="p">,</span> <span class="s1">&#39;09&#39;</span><span class="p">]</span>
+<span class="n">subject_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;02&#39;</span><span class="p">,</span> <span class="s1">&#39;03&#39;</span><span class="p">,</span> <span class="s1">&#39;04&#39;</span><span class="p">,</span> <span class="s1">&#39;05&#39;</span><span class="p">,</span> <span class="s1">&#39;07&#39;</span><span class="p">,</span> <span class="s1">&#39;08&#39;</span><span class="p">]</span>
 
 <span class="c1"># task name</span>
 <span class="n">task_name</span> <span class="o">=</span> <span class="s2">&quot;fingerfootlips&quot;</span>
 <span class="n">number_contrasts</span> <span class="o">=</span> <span class="mi">5</span> <span class="c1"># number of contrast from 1stlevel</span>
-
 
 <span class="c1"># Template to normalize to</span>
 <span class="n">template</span> <span class="o">=</span> <span class="s1">&#39;/data/ds000114/derivatives/fmriprep/mni_icbm152_nlin_asym_09c/1mm_T1.nii.gz&#39;</span>
@@ -701,7 +780,7 @@ datalad get -J 4 -d /data/ds000114 /data/ds000114/derivatives/fmriprep/sub-0[234
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>250815-12:00:32,349 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>260805-16:37:57,834 nipype.workflow INFO:
 	 Generated workflow graph: /output/workingdir/antsflow/graph.png (graph2use=colored, simple_form=True).
 </pre></div>
 </div>
@@ -719,469 +798,440 @@ datalad get -J 4 -d /data/ds000114 /data/ds000114/derivatives/fmriprep/sub-0[234
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>250815-12:00:34,592 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>260805-16:38:10,127 nipype.workflow INFO:
 	 Workflow antsflow settings: [&#39;check&#39;, &#39;execution&#39;, &#39;logging&#39;, &#39;monitoring&#39;]
-250815-12:00:35,8 nipype.workflow INFO:
+260805-16:38:10,198 nipype.workflow INFO:
 	 Running serially.
-250815-12:00:35,10 nipype.workflow INFO:
-	 [Node] Setting-up &quot;antsflow.selectfiles&quot; in &quot;/output/workingdir/antsflow/_subject_id_09/selectfiles&quot;.
-250815-12:00:35,137 nipype.workflow INFO:
-	 [Node] Running &quot;selectfiles&quot; (&quot;nipype.interfaces.io.SelectFiles&quot;)
-250815-12:00:35,312 nipype.workflow INFO:
-	 [Node] Finished &quot;antsflow.selectfiles&quot;.
-250815-12:00:35,314 nipype.workflow INFO:
-	 [Node] Setting-up &quot;antsflow.apply2con&quot; in &quot;/output/workingdir/antsflow/_subject_id_09/apply2con&quot;.
-250815-12:00:35,820 nipype.workflow INFO:
-	 [Node] Setting-up &quot;_apply2con0&quot; in &quot;/output/workingdir/antsflow/_subject_id_09/apply2con/mapflow/_apply2con0&quot;.
-250815-12:00:35,999 nipype.workflow INFO:
-	 [Node] Running &quot;_apply2con0&quot; (&quot;nipype.interfaces.ants.resampling.ApplyTransforms&quot;), a CommandLine Interface with command:
-antsApplyTransforms --float --default-value 0 --float 0 --input /output/datasink/1stLevel/sub-09/con_0001.nii --input-image-type 3 --interpolation BSpline --output con_0001_trans.nii --reference-image /data/ds000114/derivatives/fmriprep/mni_icbm152_nlin_asym_09c/1mm_T1.nii.gz --transform [ /data/ds000114/derivatives/fmriprep/sub-09/anat/sub-09_t1w_space-mni152nlin2009casym_warp.h5, 0 ]
-250815-12:00:46,800 nipype.workflow INFO:
-	 [Node] Finished &quot;_apply2con0&quot;.
-250815-12:00:46,886 nipype.workflow INFO:
-	 [Node] Setting-up &quot;_apply2con1&quot; in &quot;/output/workingdir/antsflow/_subject_id_09/apply2con/mapflow/_apply2con1&quot;.
-250815-12:00:47,117 nipype.workflow INFO:
-	 [Node] Running &quot;_apply2con1&quot; (&quot;nipype.interfaces.ants.resampling.ApplyTransforms&quot;), a CommandLine Interface with command:
-antsApplyTransforms --float --default-value 0 --float 0 --input /output/datasink/1stLevel/sub-09/con_0002.nii --input-image-type 3 --interpolation BSpline --output con_0002_trans.nii --reference-image /data/ds000114/derivatives/fmriprep/mni_icbm152_nlin_asym_09c/1mm_T1.nii.gz --transform [ /data/ds000114/derivatives/fmriprep/sub-09/anat/sub-09_t1w_space-mni152nlin2009casym_warp.h5, 0 ]
-250815-12:00:57,949 nipype.workflow INFO:
-	 [Node] Finished &quot;_apply2con1&quot;.
-250815-12:00:58,31 nipype.workflow INFO:
-	 [Node] Setting-up &quot;_apply2con2&quot; in &quot;/output/workingdir/antsflow/_subject_id_09/apply2con/mapflow/_apply2con2&quot;.
-250815-12:00:58,433 nipype.workflow INFO:
-	 [Node] Running &quot;_apply2con2&quot; (&quot;nipype.interfaces.ants.resampling.ApplyTransforms&quot;), a CommandLine Interface with command:
-antsApplyTransforms --float --default-value 0 --float 0 --input /output/datasink/1stLevel/sub-09/con_0003.nii --input-image-type 3 --interpolation BSpline --output con_0003_trans.nii --reference-image /data/ds000114/derivatives/fmriprep/mni_icbm152_nlin_asym_09c/1mm_T1.nii.gz --transform [ /data/ds000114/derivatives/fmriprep/sub-09/anat/sub-09_t1w_space-mni152nlin2009casym_warp.h5, 0 ]
-250815-12:01:09,22 nipype.workflow INFO:
-	 [Node] Finished &quot;_apply2con2&quot;.
-250815-12:01:09,115 nipype.workflow INFO:
-	 [Node] Setting-up &quot;_apply2con3&quot; in &quot;/output/workingdir/antsflow/_subject_id_09/apply2con/mapflow/_apply2con3&quot;.
-250815-12:01:09,523 nipype.workflow INFO:
-	 [Node] Running &quot;_apply2con3&quot; (&quot;nipype.interfaces.ants.resampling.ApplyTransforms&quot;), a CommandLine Interface with command:
-antsApplyTransforms --float --default-value 0 --float 0 --input /output/datasink/1stLevel/sub-09/con_0004.nii --input-image-type 3 --interpolation BSpline --output con_0004_trans.nii --reference-image /data/ds000114/derivatives/fmriprep/mni_icbm152_nlin_asym_09c/1mm_T1.nii.gz --transform [ /data/ds000114/derivatives/fmriprep/sub-09/anat/sub-09_t1w_space-mni152nlin2009casym_warp.h5, 0 ]
-250815-12:01:22,276 nipype.workflow INFO:
-	 [Node] Finished &quot;_apply2con3&quot;.
-250815-12:01:22,405 nipype.workflow INFO:
-	 [Node] Setting-up &quot;_apply2con4&quot; in &quot;/output/workingdir/antsflow/_subject_id_09/apply2con/mapflow/_apply2con4&quot;.
-250815-12:01:22,674 nipype.workflow INFO:
-	 [Node] Running &quot;_apply2con4&quot; (&quot;nipype.interfaces.ants.resampling.ApplyTransforms&quot;), a CommandLine Interface with command:
-antsApplyTransforms --float --default-value 0 --float 0 --input /output/datasink/1stLevel/sub-09/con_0005.nii --input-image-type 3 --interpolation BSpline --output con_0005_trans.nii --reference-image /data/ds000114/derivatives/fmriprep/mni_icbm152_nlin_asym_09c/1mm_T1.nii.gz --transform [ /data/ds000114/derivatives/fmriprep/sub-09/anat/sub-09_t1w_space-mni152nlin2009casym_warp.h5, 0 ]
-250815-12:01:32,562 nipype.workflow INFO:
-	 [Node] Finished &quot;_apply2con4&quot;.
-250815-12:01:32,642 nipype.workflow INFO:
-	 [Node] Setting-up &quot;_apply2con5&quot; in &quot;/output/workingdir/antsflow/_subject_id_09/apply2con/mapflow/_apply2con5&quot;.
-250815-12:01:32,944 nipype.workflow INFO:
-	 [Node] Running &quot;_apply2con5&quot; (&quot;nipype.interfaces.ants.resampling.ApplyTransforms&quot;), a CommandLine Interface with command:
-antsApplyTransforms --float --default-value 0 --float 0 --input /output/datasink/1stLevel/sub-09/ess_0006.nii --input-image-type 3 --interpolation BSpline --output ess_0006_trans.nii --reference-image /data/ds000114/derivatives/fmriprep/mni_icbm152_nlin_asym_09c/1mm_T1.nii.gz --transform [ /data/ds000114/derivatives/fmriprep/sub-09/anat/sub-09_t1w_space-mni152nlin2009casym_warp.h5, 0 ]
-250815-12:01:41,778 nipype.workflow INFO:
-	 [Node] Finished &quot;_apply2con5&quot;.
-250815-12:01:41,859 nipype.workflow INFO:
-	 [Node] Finished &quot;antsflow.apply2con&quot;.
-250815-12:01:41,861 nipype.workflow INFO:
-	 [Node] Setting-up &quot;antsflow.datasink&quot; in &quot;/output/workingdir/antsflow/_subject_id_09/datasink&quot;.
-250815-12:01:42,181 nipype.workflow INFO:
-	 [Node] Running &quot;datasink&quot; (&quot;nipype.interfaces.io.DataSink&quot;)
-250815-12:01:42,200 nipype.interface INFO:
-	 sub: /output/datasink/norm_ants/_subject_id_09/_apply2con0/con_0001_trans.nii -&gt; /output/datasink/norm_ants/sub-09/con_0001_trans.nii
-250815-12:01:42,253 nipype.interface INFO:
-	 sub: /output/datasink/norm_ants/_subject_id_09/_apply2con1/con_0002_trans.nii -&gt; /output/datasink/norm_ants/sub-09/con_0002_trans.nii
-250815-12:01:42,312 nipype.interface INFO:
-	 sub: /output/datasink/norm_ants/_subject_id_09/_apply2con2/con_0003_trans.nii -&gt; /output/datasink/norm_ants/sub-09/con_0003_trans.nii
-250815-12:01:42,355 nipype.interface INFO:
-	 sub: /output/datasink/norm_ants/_subject_id_09/_apply2con3/con_0004_trans.nii -&gt; /output/datasink/norm_ants/sub-09/con_0004_trans.nii
-250815-12:01:42,399 nipype.interface INFO:
-	 sub: /output/datasink/norm_ants/_subject_id_09/_apply2con4/con_0005_trans.nii -&gt; /output/datasink/norm_ants/sub-09/con_0005_trans.nii
-250815-12:01:42,439 nipype.interface INFO:
-	 sub: /output/datasink/norm_ants/_subject_id_09/_apply2con5/ess_0006_trans.nii -&gt; /output/datasink/norm_ants/sub-09/_apply2con5/ess_0006_trans.nii
-250815-12:01:42,637 nipype.workflow INFO:
-	 [Node] Finished &quot;antsflow.datasink&quot;.
-250815-12:01:42,639 nipype.workflow INFO:
+260805-16:38:10,199 nipype.workflow INFO:
 	 [Node] Setting-up &quot;antsflow.selectfiles&quot; in &quot;/output/workingdir/antsflow/_subject_id_08/selectfiles&quot;.
-250815-12:01:42,747 nipype.workflow INFO:
+260805-16:38:10,203 nipype.workflow INFO:
 	 [Node] Running &quot;selectfiles&quot; (&quot;nipype.interfaces.io.SelectFiles&quot;)
-250815-12:01:42,900 nipype.workflow INFO:
+260805-16:38:10,208 nipype.workflow INFO:
 	 [Node] Finished &quot;antsflow.selectfiles&quot;.
-250815-12:01:42,901 nipype.workflow INFO:
+260805-16:38:10,210 nipype.workflow INFO:
 	 [Node] Setting-up &quot;antsflow.apply2con&quot; in &quot;/output/workingdir/antsflow/_subject_id_08/apply2con&quot;.
-250815-12:01:43,363 nipype.workflow INFO:
+260805-16:38:10,226 nipype.workflow INFO:
 	 [Node] Setting-up &quot;_apply2con0&quot; in &quot;/output/workingdir/antsflow/_subject_id_08/apply2con/mapflow/_apply2con0&quot;.
-250815-12:01:43,584 nipype.workflow INFO:
+260805-16:38:10,236 nipype.workflow INFO:
 	 [Node] Running &quot;_apply2con0&quot; (&quot;nipype.interfaces.ants.resampling.ApplyTransforms&quot;), a CommandLine Interface with command:
 antsApplyTransforms --float --default-value 0 --float 0 --input /output/datasink/1stLevel/sub-08/con_0001.nii --input-image-type 3 --interpolation BSpline --output con_0001_trans.nii --reference-image /data/ds000114/derivatives/fmriprep/mni_icbm152_nlin_asym_09c/1mm_T1.nii.gz --transform [ /data/ds000114/derivatives/fmriprep/sub-08/anat/sub-08_t1w_space-mni152nlin2009casym_warp.h5, 0 ]
-250815-12:01:54,723 nipype.workflow INFO:
+260805-16:38:17,472 nipype.workflow INFO:
 	 [Node] Finished &quot;_apply2con0&quot;.
-250815-12:01:54,869 nipype.workflow INFO:
+260805-16:38:17,481 nipype.workflow INFO:
 	 [Node] Setting-up &quot;_apply2con1&quot; in &quot;/output/workingdir/antsflow/_subject_id_08/apply2con/mapflow/_apply2con1&quot;.
-250815-12:01:55,132 nipype.workflow INFO:
+260805-16:38:17,496 nipype.workflow INFO:
 	 [Node] Running &quot;_apply2con1&quot; (&quot;nipype.interfaces.ants.resampling.ApplyTransforms&quot;), a CommandLine Interface with command:
 antsApplyTransforms --float --default-value 0 --float 0 --input /output/datasink/1stLevel/sub-08/con_0002.nii --input-image-type 3 --interpolation BSpline --output con_0002_trans.nii --reference-image /data/ds000114/derivatives/fmriprep/mni_icbm152_nlin_asym_09c/1mm_T1.nii.gz --transform [ /data/ds000114/derivatives/fmriprep/sub-08/anat/sub-08_t1w_space-mni152nlin2009casym_warp.h5, 0 ]
-250815-12:02:04,461 nipype.workflow INFO:
+260805-16:38:23,624 nipype.workflow INFO:
 	 [Node] Finished &quot;_apply2con1&quot;.
-250815-12:02:04,617 nipype.workflow INFO:
+260805-16:38:23,627 nipype.workflow INFO:
 	 [Node] Setting-up &quot;_apply2con2&quot; in &quot;/output/workingdir/antsflow/_subject_id_08/apply2con/mapflow/_apply2con2&quot;.
-250815-12:02:05,152 nipype.workflow INFO:
+260805-16:38:23,634 nipype.workflow INFO:
 	 [Node] Running &quot;_apply2con2&quot; (&quot;nipype.interfaces.ants.resampling.ApplyTransforms&quot;), a CommandLine Interface with command:
 antsApplyTransforms --float --default-value 0 --float 0 --input /output/datasink/1stLevel/sub-08/con_0003.nii --input-image-type 3 --interpolation BSpline --output con_0003_trans.nii --reference-image /data/ds000114/derivatives/fmriprep/mni_icbm152_nlin_asym_09c/1mm_T1.nii.gz --transform [ /data/ds000114/derivatives/fmriprep/sub-08/anat/sub-08_t1w_space-mni152nlin2009casym_warp.h5, 0 ]
-250815-12:02:14,735 nipype.workflow INFO:
+260805-16:38:29,749 nipype.workflow INFO:
 	 [Node] Finished &quot;_apply2con2&quot;.
-250815-12:02:14,805 nipype.workflow INFO:
+260805-16:38:29,753 nipype.workflow INFO:
 	 [Node] Setting-up &quot;_apply2con3&quot; in &quot;/output/workingdir/antsflow/_subject_id_08/apply2con/mapflow/_apply2con3&quot;.
-250815-12:02:14,992 nipype.workflow INFO:
+260805-16:38:29,760 nipype.workflow INFO:
 	 [Node] Running &quot;_apply2con3&quot; (&quot;nipype.interfaces.ants.resampling.ApplyTransforms&quot;), a CommandLine Interface with command:
 antsApplyTransforms --float --default-value 0 --float 0 --input /output/datasink/1stLevel/sub-08/con_0004.nii --input-image-type 3 --interpolation BSpline --output con_0004_trans.nii --reference-image /data/ds000114/derivatives/fmriprep/mni_icbm152_nlin_asym_09c/1mm_T1.nii.gz --transform [ /data/ds000114/derivatives/fmriprep/sub-08/anat/sub-08_t1w_space-mni152nlin2009casym_warp.h5, 0 ]
-250815-12:02:24,729 nipype.workflow INFO:
+260805-16:38:36,258 nipype.workflow INFO:
 	 [Node] Finished &quot;_apply2con3&quot;.
-250815-12:02:24,838 nipype.workflow INFO:
+260805-16:38:36,261 nipype.workflow INFO:
 	 [Node] Setting-up &quot;_apply2con4&quot; in &quot;/output/workingdir/antsflow/_subject_id_08/apply2con/mapflow/_apply2con4&quot;.
-250815-12:02:25,58 nipype.workflow INFO:
+260805-16:38:36,269 nipype.workflow INFO:
 	 [Node] Running &quot;_apply2con4&quot; (&quot;nipype.interfaces.ants.resampling.ApplyTransforms&quot;), a CommandLine Interface with command:
 antsApplyTransforms --float --default-value 0 --float 0 --input /output/datasink/1stLevel/sub-08/con_0005.nii --input-image-type 3 --interpolation BSpline --output con_0005_trans.nii --reference-image /data/ds000114/derivatives/fmriprep/mni_icbm152_nlin_asym_09c/1mm_T1.nii.gz --transform [ /data/ds000114/derivatives/fmriprep/sub-08/anat/sub-08_t1w_space-mni152nlin2009casym_warp.h5, 0 ]
-250815-12:02:34,242 nipype.workflow INFO:
+260805-16:38:42,516 nipype.workflow INFO:
 	 [Node] Finished &quot;_apply2con4&quot;.
-250815-12:02:34,378 nipype.workflow INFO:
+260805-16:38:42,520 nipype.workflow INFO:
 	 [Node] Setting-up &quot;_apply2con5&quot; in &quot;/output/workingdir/antsflow/_subject_id_08/apply2con/mapflow/_apply2con5&quot;.
-250815-12:02:34,834 nipype.workflow INFO:
+260805-16:38:42,526 nipype.workflow INFO:
 	 [Node] Running &quot;_apply2con5&quot; (&quot;nipype.interfaces.ants.resampling.ApplyTransforms&quot;), a CommandLine Interface with command:
 antsApplyTransforms --float --default-value 0 --float 0 --input /output/datasink/1stLevel/sub-08/ess_0006.nii --input-image-type 3 --interpolation BSpline --output ess_0006_trans.nii --reference-image /data/ds000114/derivatives/fmriprep/mni_icbm152_nlin_asym_09c/1mm_T1.nii.gz --transform [ /data/ds000114/derivatives/fmriprep/sub-08/anat/sub-08_t1w_space-mni152nlin2009casym_warp.h5, 0 ]
-250815-12:02:45,748 nipype.workflow INFO:
+260805-16:38:48,636 nipype.workflow INFO:
 	 [Node] Finished &quot;_apply2con5&quot;.
-250815-12:02:45,822 nipype.workflow INFO:
+260805-16:38:48,644 nipype.workflow INFO:
 	 [Node] Finished &quot;antsflow.apply2con&quot;.
-250815-12:02:45,823 nipype.workflow INFO:
+260805-16:38:48,645 nipype.workflow INFO:
 	 [Node] Setting-up &quot;antsflow.datasink&quot; in &quot;/output/workingdir/antsflow/_subject_id_08/datasink&quot;.
-250815-12:02:46,92 nipype.workflow INFO:
+260805-16:38:48,654 nipype.workflow INFO:
 	 [Node] Running &quot;datasink&quot; (&quot;nipype.interfaces.io.DataSink&quot;)
-250815-12:02:46,102 nipype.interface INFO:
+260805-16:38:48,656 nipype.interface INFO:
 	 sub: /output/datasink/norm_ants/_subject_id_08/_apply2con0/con_0001_trans.nii -&gt; /output/datasink/norm_ants/sub-08/con_0001_trans.nii
-250815-12:02:46,142 nipype.interface INFO:
+260805-16:38:48,657 nipype.interface INFO:
 	 sub: /output/datasink/norm_ants/_subject_id_08/_apply2con1/con_0002_trans.nii -&gt; /output/datasink/norm_ants/sub-08/con_0002_trans.nii
-250815-12:02:46,173 nipype.interface INFO:
+260805-16:38:48,659 nipype.interface INFO:
 	 sub: /output/datasink/norm_ants/_subject_id_08/_apply2con2/con_0003_trans.nii -&gt; /output/datasink/norm_ants/sub-08/con_0003_trans.nii
-250815-12:02:46,204 nipype.interface INFO:
+260805-16:38:48,661 nipype.interface INFO:
 	 sub: /output/datasink/norm_ants/_subject_id_08/_apply2con3/con_0004_trans.nii -&gt; /output/datasink/norm_ants/sub-08/con_0004_trans.nii
-250815-12:02:46,237 nipype.interface INFO:
+260805-16:38:48,662 nipype.interface INFO:
 	 sub: /output/datasink/norm_ants/_subject_id_08/_apply2con4/con_0005_trans.nii -&gt; /output/datasink/norm_ants/sub-08/con_0005_trans.nii
-250815-12:02:46,267 nipype.interface INFO:
+260805-16:38:48,664 nipype.interface INFO:
 	 sub: /output/datasink/norm_ants/_subject_id_08/_apply2con5/ess_0006_trans.nii -&gt; /output/datasink/norm_ants/sub-08/_apply2con5/ess_0006_trans.nii
-250815-12:02:46,427 nipype.workflow INFO:
+260805-16:38:48,668 nipype.workflow INFO:
 	 [Node] Finished &quot;antsflow.datasink&quot;.
-250815-12:02:46,429 nipype.workflow INFO:
+260805-16:38:48,669 nipype.workflow INFO:
 	 [Node] Setting-up &quot;antsflow.selectfiles&quot; in &quot;/output/workingdir/antsflow/_subject_id_07/selectfiles&quot;.
-250815-12:02:46,544 nipype.workflow INFO:
+260805-16:38:48,673 nipype.workflow INFO:
 	 [Node] Running &quot;selectfiles&quot; (&quot;nipype.interfaces.io.SelectFiles&quot;)
-250815-12:02:46,707 nipype.workflow INFO:
+260805-16:38:48,678 nipype.workflow INFO:
 	 [Node] Finished &quot;antsflow.selectfiles&quot;.
-250815-12:02:46,708 nipype.workflow INFO:
+260805-16:38:48,679 nipype.workflow INFO:
 	 [Node] Setting-up &quot;antsflow.apply2con&quot; in &quot;/output/workingdir/antsflow/_subject_id_07/apply2con&quot;.
-250815-12:02:47,289 nipype.workflow INFO:
+260805-16:38:48,686 nipype.workflow INFO:
 	 [Node] Setting-up &quot;_apply2con0&quot; in &quot;/output/workingdir/antsflow/_subject_id_07/apply2con/mapflow/_apply2con0&quot;.
-250815-12:02:47,510 nipype.workflow INFO:
+260805-16:38:48,690 nipype.workflow INFO:
 	 [Node] Running &quot;_apply2con0&quot; (&quot;nipype.interfaces.ants.resampling.ApplyTransforms&quot;), a CommandLine Interface with command:
 antsApplyTransforms --float --default-value 0 --float 0 --input /output/datasink/1stLevel/sub-07/con_0001.nii --input-image-type 3 --interpolation BSpline --output con_0001_trans.nii --reference-image /data/ds000114/derivatives/fmriprep/mni_icbm152_nlin_asym_09c/1mm_T1.nii.gz --transform [ /data/ds000114/derivatives/fmriprep/sub-07/anat/sub-07_t1w_space-mni152nlin2009casym_warp.h5, 0 ]
-250815-12:02:58,825 nipype.workflow INFO:
+260805-16:38:54,827 nipype.workflow INFO:
 	 [Node] Finished &quot;_apply2con0&quot;.
-250815-12:02:58,908 nipype.workflow INFO:
+260805-16:38:54,831 nipype.workflow INFO:
 	 [Node] Setting-up &quot;_apply2con1&quot; in &quot;/output/workingdir/antsflow/_subject_id_07/apply2con/mapflow/_apply2con1&quot;.
-250815-12:02:59,170 nipype.workflow INFO:
+260805-16:38:54,837 nipype.workflow INFO:
 	 [Node] Running &quot;_apply2con1&quot; (&quot;nipype.interfaces.ants.resampling.ApplyTransforms&quot;), a CommandLine Interface with command:
 antsApplyTransforms --float --default-value 0 --float 0 --input /output/datasink/1stLevel/sub-07/con_0002.nii --input-image-type 3 --interpolation BSpline --output con_0002_trans.nii --reference-image /data/ds000114/derivatives/fmriprep/mni_icbm152_nlin_asym_09c/1mm_T1.nii.gz --transform [ /data/ds000114/derivatives/fmriprep/sub-07/anat/sub-07_t1w_space-mni152nlin2009casym_warp.h5, 0 ]
-250815-12:03:08,748 nipype.workflow INFO:
+260805-16:39:01,148 nipype.workflow INFO:
 	 [Node] Finished &quot;_apply2con1&quot;.
-250815-12:03:08,857 nipype.workflow INFO:
+260805-16:39:01,151 nipype.workflow INFO:
 	 [Node] Setting-up &quot;_apply2con2&quot; in &quot;/output/workingdir/antsflow/_subject_id_07/apply2con/mapflow/_apply2con2&quot;.
-250815-12:03:09,153 nipype.workflow INFO:
+260805-16:39:01,158 nipype.workflow INFO:
 	 [Node] Running &quot;_apply2con2&quot; (&quot;nipype.interfaces.ants.resampling.ApplyTransforms&quot;), a CommandLine Interface with command:
 antsApplyTransforms --float --default-value 0 --float 0 --input /output/datasink/1stLevel/sub-07/con_0003.nii --input-image-type 3 --interpolation BSpline --output con_0003_trans.nii --reference-image /data/ds000114/derivatives/fmriprep/mni_icbm152_nlin_asym_09c/1mm_T1.nii.gz --transform [ /data/ds000114/derivatives/fmriprep/sub-07/anat/sub-07_t1w_space-mni152nlin2009casym_warp.h5, 0 ]
-250815-12:03:19,170 nipype.workflow INFO:
+260805-16:39:07,273 nipype.workflow INFO:
 	 [Node] Finished &quot;_apply2con2&quot;.
-250815-12:03:19,249 nipype.workflow INFO:
+260805-16:39:07,283 nipype.workflow INFO:
 	 [Node] Setting-up &quot;_apply2con3&quot; in &quot;/output/workingdir/antsflow/_subject_id_07/apply2con/mapflow/_apply2con3&quot;.
-250815-12:03:19,493 nipype.workflow INFO:
+260805-16:39:07,290 nipype.workflow INFO:
 	 [Node] Running &quot;_apply2con3&quot; (&quot;nipype.interfaces.ants.resampling.ApplyTransforms&quot;), a CommandLine Interface with command:
 antsApplyTransforms --float --default-value 0 --float 0 --input /output/datasink/1stLevel/sub-07/con_0004.nii --input-image-type 3 --interpolation BSpline --output con_0004_trans.nii --reference-image /data/ds000114/derivatives/fmriprep/mni_icbm152_nlin_asym_09c/1mm_T1.nii.gz --transform [ /data/ds000114/derivatives/fmriprep/sub-07/anat/sub-07_t1w_space-mni152nlin2009casym_warp.h5, 0 ]
-250815-12:03:28,952 nipype.workflow INFO:
+260805-16:39:13,352 nipype.workflow INFO:
 	 [Node] Finished &quot;_apply2con3&quot;.
-250815-12:03:29,45 nipype.workflow INFO:
+260805-16:39:13,355 nipype.workflow INFO:
 	 [Node] Setting-up &quot;_apply2con4&quot; in &quot;/output/workingdir/antsflow/_subject_id_07/apply2con/mapflow/_apply2con4&quot;.
-250815-12:03:29,213 nipype.workflow INFO:
+260805-16:39:13,362 nipype.workflow INFO:
 	 [Node] Running &quot;_apply2con4&quot; (&quot;nipype.interfaces.ants.resampling.ApplyTransforms&quot;), a CommandLine Interface with command:
 antsApplyTransforms --float --default-value 0 --float 0 --input /output/datasink/1stLevel/sub-07/con_0005.nii --input-image-type 3 --interpolation BSpline --output con_0005_trans.nii --reference-image /data/ds000114/derivatives/fmriprep/mni_icbm152_nlin_asym_09c/1mm_T1.nii.gz --transform [ /data/ds000114/derivatives/fmriprep/sub-07/anat/sub-07_t1w_space-mni152nlin2009casym_warp.h5, 0 ]
-250815-12:03:38,550 nipype.workflow INFO:
+260805-16:39:19,468 nipype.workflow INFO:
 	 [Node] Finished &quot;_apply2con4&quot;.
-250815-12:03:38,642 nipype.workflow INFO:
+260805-16:39:19,470 nipype.workflow INFO:
 	 [Node] Setting-up &quot;_apply2con5&quot; in &quot;/output/workingdir/antsflow/_subject_id_07/apply2con/mapflow/_apply2con5&quot;.
-250815-12:03:38,887 nipype.workflow INFO:
+260805-16:39:19,476 nipype.workflow INFO:
 	 [Node] Running &quot;_apply2con5&quot; (&quot;nipype.interfaces.ants.resampling.ApplyTransforms&quot;), a CommandLine Interface with command:
 antsApplyTransforms --float --default-value 0 --float 0 --input /output/datasink/1stLevel/sub-07/ess_0006.nii --input-image-type 3 --interpolation BSpline --output ess_0006_trans.nii --reference-image /data/ds000114/derivatives/fmriprep/mni_icbm152_nlin_asym_09c/1mm_T1.nii.gz --transform [ /data/ds000114/derivatives/fmriprep/sub-07/anat/sub-07_t1w_space-mni152nlin2009casym_warp.h5, 0 ]
-250815-12:03:47,965 nipype.workflow INFO:
+260805-16:39:25,858 nipype.workflow INFO:
 	 [Node] Finished &quot;_apply2con5&quot;.
-250815-12:03:48,44 nipype.workflow INFO:
+260805-16:39:25,864 nipype.workflow INFO:
 	 [Node] Finished &quot;antsflow.apply2con&quot;.
-250815-12:03:48,46 nipype.workflow INFO:
+260805-16:39:25,865 nipype.workflow INFO:
 	 [Node] Setting-up &quot;antsflow.datasink&quot; in &quot;/output/workingdir/antsflow/_subject_id_07/datasink&quot;.
-250815-12:03:48,323 nipype.workflow INFO:
+260805-16:39:25,875 nipype.workflow INFO:
 	 [Node] Running &quot;datasink&quot; (&quot;nipype.interfaces.io.DataSink&quot;)
-250815-12:03:48,334 nipype.interface INFO:
+260805-16:39:25,877 nipype.interface INFO:
 	 sub: /output/datasink/norm_ants/_subject_id_07/_apply2con0/con_0001_trans.nii -&gt; /output/datasink/norm_ants/sub-07/con_0001_trans.nii
-250815-12:03:48,381 nipype.interface INFO:
+260805-16:39:25,879 nipype.interface INFO:
 	 sub: /output/datasink/norm_ants/_subject_id_07/_apply2con1/con_0002_trans.nii -&gt; /output/datasink/norm_ants/sub-07/con_0002_trans.nii
-250815-12:03:48,419 nipype.interface INFO:
+260805-16:39:25,881 nipype.interface INFO:
 	 sub: /output/datasink/norm_ants/_subject_id_07/_apply2con2/con_0003_trans.nii -&gt; /output/datasink/norm_ants/sub-07/con_0003_trans.nii
-250815-12:03:48,474 nipype.interface INFO:
+260805-16:39:25,883 nipype.interface INFO:
 	 sub: /output/datasink/norm_ants/_subject_id_07/_apply2con3/con_0004_trans.nii -&gt; /output/datasink/norm_ants/sub-07/con_0004_trans.nii
-250815-12:03:48,507 nipype.interface INFO:
+260805-16:39:25,885 nipype.interface INFO:
 	 sub: /output/datasink/norm_ants/_subject_id_07/_apply2con4/con_0005_trans.nii -&gt; /output/datasink/norm_ants/sub-07/con_0005_trans.nii
-250815-12:03:48,627 nipype.interface INFO:
+260805-16:39:25,887 nipype.interface INFO:
 	 sub: /output/datasink/norm_ants/_subject_id_07/_apply2con5/ess_0006_trans.nii -&gt; /output/datasink/norm_ants/sub-07/_apply2con5/ess_0006_trans.nii
-250815-12:03:48,758 nipype.workflow INFO:
+260805-16:39:25,895 nipype.workflow INFO:
 	 [Node] Finished &quot;antsflow.datasink&quot;.
-250815-12:03:48,759 nipype.workflow INFO:
+260805-16:39:25,896 nipype.workflow INFO:
 	 [Node] Setting-up &quot;antsflow.selectfiles&quot; in &quot;/output/workingdir/antsflow/_subject_id_05/selectfiles&quot;.
-250815-12:03:48,891 nipype.workflow INFO:
+260805-16:39:25,902 nipype.workflow INFO:
 	 [Node] Running &quot;selectfiles&quot; (&quot;nipype.interfaces.io.SelectFiles&quot;)
-250815-12:03:49,2 nipype.workflow INFO:
+260805-16:39:25,907 nipype.workflow INFO:
 	 [Node] Finished &quot;antsflow.selectfiles&quot;.
-250815-12:03:49,4 nipype.workflow INFO:
+260805-16:39:25,908 nipype.workflow INFO:
 	 [Node] Setting-up &quot;antsflow.apply2con&quot; in &quot;/output/workingdir/antsflow/_subject_id_05/apply2con&quot;.
-250815-12:03:49,468 nipype.workflow INFO:
+260805-16:39:25,922 nipype.workflow INFO:
 	 [Node] Setting-up &quot;_apply2con0&quot; in &quot;/output/workingdir/antsflow/_subject_id_05/apply2con/mapflow/_apply2con0&quot;.
-250815-12:03:49,697 nipype.workflow INFO:
+260805-16:39:25,928 nipype.workflow INFO:
 	 [Node] Running &quot;_apply2con0&quot; (&quot;nipype.interfaces.ants.resampling.ApplyTransforms&quot;), a CommandLine Interface with command:
 antsApplyTransforms --float --default-value 0 --float 0 --input /output/datasink/1stLevel/sub-05/con_0001.nii --input-image-type 3 --interpolation BSpline --output con_0001_trans.nii --reference-image /data/ds000114/derivatives/fmriprep/mni_icbm152_nlin_asym_09c/1mm_T1.nii.gz --transform [ /data/ds000114/derivatives/fmriprep/sub-05/anat/sub-05_t1w_space-mni152nlin2009casym_warp.h5, 0 ]
-250815-12:03:59,436 nipype.workflow INFO:
+260805-16:39:32,400 nipype.workflow INFO:
 	 [Node] Finished &quot;_apply2con0&quot;.
-250815-12:03:59,517 nipype.workflow INFO:
+260805-16:39:32,404 nipype.workflow INFO:
 	 [Node] Setting-up &quot;_apply2con1&quot; in &quot;/output/workingdir/antsflow/_subject_id_05/apply2con/mapflow/_apply2con1&quot;.
-250815-12:03:59,951 nipype.workflow INFO:
+260805-16:39:32,410 nipype.workflow INFO:
 	 [Node] Running &quot;_apply2con1&quot; (&quot;nipype.interfaces.ants.resampling.ApplyTransforms&quot;), a CommandLine Interface with command:
 antsApplyTransforms --float --default-value 0 --float 0 --input /output/datasink/1stLevel/sub-05/con_0002.nii --input-image-type 3 --interpolation BSpline --output con_0002_trans.nii --reference-image /data/ds000114/derivatives/fmriprep/mni_icbm152_nlin_asym_09c/1mm_T1.nii.gz --transform [ /data/ds000114/derivatives/fmriprep/sub-05/anat/sub-05_t1w_space-mni152nlin2009casym_warp.h5, 0 ]
-250815-12:04:09,801 nipype.workflow INFO:
+260805-16:39:39,150 nipype.workflow INFO:
 	 [Node] Finished &quot;_apply2con1&quot;.
-250815-12:04:09,887 nipype.workflow INFO:
+260805-16:39:39,153 nipype.workflow INFO:
 	 [Node] Setting-up &quot;_apply2con2&quot; in &quot;/output/workingdir/antsflow/_subject_id_05/apply2con/mapflow/_apply2con2&quot;.
-250815-12:04:10,137 nipype.workflow INFO:
+260805-16:39:39,160 nipype.workflow INFO:
 	 [Node] Running &quot;_apply2con2&quot; (&quot;nipype.interfaces.ants.resampling.ApplyTransforms&quot;), a CommandLine Interface with command:
 antsApplyTransforms --float --default-value 0 --float 0 --input /output/datasink/1stLevel/sub-05/con_0003.nii --input-image-type 3 --interpolation BSpline --output con_0003_trans.nii --reference-image /data/ds000114/derivatives/fmriprep/mni_icbm152_nlin_asym_09c/1mm_T1.nii.gz --transform [ /data/ds000114/derivatives/fmriprep/sub-05/anat/sub-05_t1w_space-mni152nlin2009casym_warp.h5, 0 ]
-250815-12:04:19,568 nipype.workflow INFO:
+260805-16:39:45,716 nipype.workflow INFO:
 	 [Node] Finished &quot;_apply2con2&quot;.
-250815-12:04:19,651 nipype.workflow INFO:
+260805-16:39:45,719 nipype.workflow INFO:
 	 [Node] Setting-up &quot;_apply2con3&quot; in &quot;/output/workingdir/antsflow/_subject_id_05/apply2con/mapflow/_apply2con3&quot;.
-250815-12:04:20,44 nipype.workflow INFO:
+260805-16:39:45,725 nipype.workflow INFO:
 	 [Node] Running &quot;_apply2con3&quot; (&quot;nipype.interfaces.ants.resampling.ApplyTransforms&quot;), a CommandLine Interface with command:
 antsApplyTransforms --float --default-value 0 --float 0 --input /output/datasink/1stLevel/sub-05/con_0004.nii --input-image-type 3 --interpolation BSpline --output con_0004_trans.nii --reference-image /data/ds000114/derivatives/fmriprep/mni_icbm152_nlin_asym_09c/1mm_T1.nii.gz --transform [ /data/ds000114/derivatives/fmriprep/sub-05/anat/sub-05_t1w_space-mni152nlin2009casym_warp.h5, 0 ]
-250815-12:04:30,689 nipype.workflow INFO:
+260805-16:39:51,764 nipype.workflow INFO:
 	 [Node] Finished &quot;_apply2con3&quot;.
-250815-12:04:30,772 nipype.workflow INFO:
+260805-16:39:51,768 nipype.workflow INFO:
 	 [Node] Setting-up &quot;_apply2con4&quot; in &quot;/output/workingdir/antsflow/_subject_id_05/apply2con/mapflow/_apply2con4&quot;.
-250815-12:04:31,81 nipype.workflow INFO:
+260805-16:39:51,774 nipype.workflow INFO:
 	 [Node] Running &quot;_apply2con4&quot; (&quot;nipype.interfaces.ants.resampling.ApplyTransforms&quot;), a CommandLine Interface with command:
 antsApplyTransforms --float --default-value 0 --float 0 --input /output/datasink/1stLevel/sub-05/con_0005.nii --input-image-type 3 --interpolation BSpline --output con_0005_trans.nii --reference-image /data/ds000114/derivatives/fmriprep/mni_icbm152_nlin_asym_09c/1mm_T1.nii.gz --transform [ /data/ds000114/derivatives/fmriprep/sub-05/anat/sub-05_t1w_space-mni152nlin2009casym_warp.h5, 0 ]
-250815-12:04:40,674 nipype.workflow INFO:
+260805-16:39:57,980 nipype.workflow INFO:
 	 [Node] Finished &quot;_apply2con4&quot;.
-250815-12:04:40,807 nipype.workflow INFO:
+260805-16:39:57,985 nipype.workflow INFO:
 	 [Node] Setting-up &quot;_apply2con5&quot; in &quot;/output/workingdir/antsflow/_subject_id_05/apply2con/mapflow/_apply2con5&quot;.
-250815-12:04:41,131 nipype.workflow INFO:
+260805-16:39:57,990 nipype.workflow INFO:
 	 [Node] Running &quot;_apply2con5&quot; (&quot;nipype.interfaces.ants.resampling.ApplyTransforms&quot;), a CommandLine Interface with command:
 antsApplyTransforms --float --default-value 0 --float 0 --input /output/datasink/1stLevel/sub-05/ess_0006.nii --input-image-type 3 --interpolation BSpline --output ess_0006_trans.nii --reference-image /data/ds000114/derivatives/fmriprep/mni_icbm152_nlin_asym_09c/1mm_T1.nii.gz --transform [ /data/ds000114/derivatives/fmriprep/sub-05/anat/sub-05_t1w_space-mni152nlin2009casym_warp.h5, 0 ]
-250815-12:04:50,815 nipype.workflow INFO:
+260805-16:40:03,877 nipype.workflow INFO:
 	 [Node] Finished &quot;_apply2con5&quot;.
-250815-12:04:50,919 nipype.workflow INFO:
+260805-16:40:03,884 nipype.workflow INFO:
 	 [Node] Finished &quot;antsflow.apply2con&quot;.
-250815-12:04:50,922 nipype.workflow INFO:
+260805-16:40:03,885 nipype.workflow INFO:
 	 [Node] Setting-up &quot;antsflow.datasink&quot; in &quot;/output/workingdir/antsflow/_subject_id_05/datasink&quot;.
-250815-12:04:51,309 nipype.workflow INFO:
+260805-16:40:03,895 nipype.workflow INFO:
 	 [Node] Running &quot;datasink&quot; (&quot;nipype.interfaces.io.DataSink&quot;)
-250815-12:04:51,323 nipype.interface INFO:
+260805-16:40:03,898 nipype.interface INFO:
 	 sub: /output/datasink/norm_ants/_subject_id_05/_apply2con0/con_0001_trans.nii -&gt; /output/datasink/norm_ants/sub-05/con_0001_trans.nii
-250815-12:04:51,399 nipype.interface INFO:
+260805-16:40:03,900 nipype.interface INFO:
 	 sub: /output/datasink/norm_ants/_subject_id_05/_apply2con1/con_0002_trans.nii -&gt; /output/datasink/norm_ants/sub-05/con_0002_trans.nii
-250815-12:04:51,454 nipype.interface INFO:
+260805-16:40:03,902 nipype.interface INFO:
 	 sub: /output/datasink/norm_ants/_subject_id_05/_apply2con2/con_0003_trans.nii -&gt; /output/datasink/norm_ants/sub-05/con_0003_trans.nii
-250815-12:04:51,509 nipype.interface INFO:
+260805-16:40:03,904 nipype.interface INFO:
 	 sub: /output/datasink/norm_ants/_subject_id_05/_apply2con3/con_0004_trans.nii -&gt; /output/datasink/norm_ants/sub-05/con_0004_trans.nii
-250815-12:04:51,561 nipype.interface INFO:
+260805-16:40:03,905 nipype.interface INFO:
 	 sub: /output/datasink/norm_ants/_subject_id_05/_apply2con4/con_0005_trans.nii -&gt; /output/datasink/norm_ants/sub-05/con_0005_trans.nii
-250815-12:04:51,608 nipype.interface INFO:
+260805-16:40:03,907 nipype.interface INFO:
 	 sub: /output/datasink/norm_ants/_subject_id_05/_apply2con5/ess_0006_trans.nii -&gt; /output/datasink/norm_ants/sub-05/_apply2con5/ess_0006_trans.nii
-250815-12:04:51,807 nipype.workflow INFO:
+260805-16:40:03,914 nipype.workflow INFO:
 	 [Node] Finished &quot;antsflow.datasink&quot;.
-250815-12:04:51,808 nipype.workflow INFO:
+260805-16:40:03,916 nipype.workflow INFO:
 	 [Node] Setting-up &quot;antsflow.selectfiles&quot; in &quot;/output/workingdir/antsflow/_subject_id_04/selectfiles&quot;.
-250815-12:04:51,922 nipype.workflow INFO:
+260805-16:40:03,921 nipype.workflow INFO:
 	 [Node] Running &quot;selectfiles&quot; (&quot;nipype.interfaces.io.SelectFiles&quot;)
-250815-12:04:52,114 nipype.workflow INFO:
+260805-16:40:03,930 nipype.workflow INFO:
 	 [Node] Finished &quot;antsflow.selectfiles&quot;.
-250815-12:04:52,115 nipype.workflow INFO:
+260805-16:40:03,932 nipype.workflow INFO:
 	 [Node] Setting-up &quot;antsflow.apply2con&quot; in &quot;/output/workingdir/antsflow/_subject_id_04/apply2con&quot;.
-250815-12:04:52,510 nipype.workflow INFO:
+260805-16:40:03,945 nipype.workflow INFO:
 	 [Node] Setting-up &quot;_apply2con0&quot; in &quot;/output/workingdir/antsflow/_subject_id_04/apply2con/mapflow/_apply2con0&quot;.
-250815-12:04:52,744 nipype.workflow INFO:
+260805-16:40:03,952 nipype.workflow INFO:
 	 [Node] Running &quot;_apply2con0&quot; (&quot;nipype.interfaces.ants.resampling.ApplyTransforms&quot;), a CommandLine Interface with command:
 antsApplyTransforms --float --default-value 0 --float 0 --input /output/datasink/1stLevel/sub-04/con_0001.nii --input-image-type 3 --interpolation BSpline --output con_0001_trans.nii --reference-image /data/ds000114/derivatives/fmriprep/mni_icbm152_nlin_asym_09c/1mm_T1.nii.gz --transform [ /data/ds000114/derivatives/fmriprep/sub-04/anat/sub-04_t1w_space-mni152nlin2009casym_warp.h5, 0 ]
-250815-12:05:03,177 nipype.workflow INFO:
+260805-16:40:09,877 nipype.workflow INFO:
 	 [Node] Finished &quot;_apply2con0&quot;.
-250815-12:05:03,260 nipype.workflow INFO:
+260805-16:40:09,882 nipype.workflow INFO:
 	 [Node] Setting-up &quot;_apply2con1&quot; in &quot;/output/workingdir/antsflow/_subject_id_04/apply2con/mapflow/_apply2con1&quot;.
-250815-12:05:03,506 nipype.workflow INFO:
+260805-16:40:09,891 nipype.workflow INFO:
 	 [Node] Running &quot;_apply2con1&quot; (&quot;nipype.interfaces.ants.resampling.ApplyTransforms&quot;), a CommandLine Interface with command:
 antsApplyTransforms --float --default-value 0 --float 0 --input /output/datasink/1stLevel/sub-04/con_0002.nii --input-image-type 3 --interpolation BSpline --output con_0002_trans.nii --reference-image /data/ds000114/derivatives/fmriprep/mni_icbm152_nlin_asym_09c/1mm_T1.nii.gz --transform [ /data/ds000114/derivatives/fmriprep/sub-04/anat/sub-04_t1w_space-mni152nlin2009casym_warp.h5, 0 ]
-250815-12:05:14,126 nipype.workflow INFO:
+260805-16:40:15,868 nipype.workflow INFO:
 	 [Node] Finished &quot;_apply2con1&quot;.
-250815-12:05:14,211 nipype.workflow INFO:
+260805-16:40:15,871 nipype.workflow INFO:
 	 [Node] Setting-up &quot;_apply2con2&quot; in &quot;/output/workingdir/antsflow/_subject_id_04/apply2con/mapflow/_apply2con2&quot;.
-250815-12:05:14,418 nipype.workflow INFO:
+260805-16:40:15,877 nipype.workflow INFO:
 	 [Node] Running &quot;_apply2con2&quot; (&quot;nipype.interfaces.ants.resampling.ApplyTransforms&quot;), a CommandLine Interface with command:
 antsApplyTransforms --float --default-value 0 --float 0 --input /output/datasink/1stLevel/sub-04/con_0003.nii --input-image-type 3 --interpolation BSpline --output con_0003_trans.nii --reference-image /data/ds000114/derivatives/fmriprep/mni_icbm152_nlin_asym_09c/1mm_T1.nii.gz --transform [ /data/ds000114/derivatives/fmriprep/sub-04/anat/sub-04_t1w_space-mni152nlin2009casym_warp.h5, 0 ]
-250815-12:05:24,796 nipype.workflow INFO:
+260805-16:40:21,591 nipype.workflow INFO:
 	 [Node] Finished &quot;_apply2con2&quot;.
-250815-12:05:24,876 nipype.workflow INFO:
+260805-16:40:21,596 nipype.workflow INFO:
 	 [Node] Setting-up &quot;_apply2con3&quot; in &quot;/output/workingdir/antsflow/_subject_id_04/apply2con/mapflow/_apply2con3&quot;.
-250815-12:05:25,153 nipype.workflow INFO:
+260805-16:40:21,604 nipype.workflow INFO:
 	 [Node] Running &quot;_apply2con3&quot; (&quot;nipype.interfaces.ants.resampling.ApplyTransforms&quot;), a CommandLine Interface with command:
 antsApplyTransforms --float --default-value 0 --float 0 --input /output/datasink/1stLevel/sub-04/con_0004.nii --input-image-type 3 --interpolation BSpline --output con_0004_trans.nii --reference-image /data/ds000114/derivatives/fmriprep/mni_icbm152_nlin_asym_09c/1mm_T1.nii.gz --transform [ /data/ds000114/derivatives/fmriprep/sub-04/anat/sub-04_t1w_space-mni152nlin2009casym_warp.h5, 0 ]
-250815-12:05:35,989 nipype.workflow INFO:
+260805-16:40:27,713 nipype.workflow INFO:
 	 [Node] Finished &quot;_apply2con3&quot;.
-250815-12:05:36,102 nipype.workflow INFO:
+260805-16:40:27,717 nipype.workflow INFO:
 	 [Node] Setting-up &quot;_apply2con4&quot; in &quot;/output/workingdir/antsflow/_subject_id_04/apply2con/mapflow/_apply2con4&quot;.
-250815-12:05:36,534 nipype.workflow INFO:
+260805-16:40:27,723 nipype.workflow INFO:
 	 [Node] Running &quot;_apply2con4&quot; (&quot;nipype.interfaces.ants.resampling.ApplyTransforms&quot;), a CommandLine Interface with command:
 antsApplyTransforms --float --default-value 0 --float 0 --input /output/datasink/1stLevel/sub-04/con_0005.nii --input-image-type 3 --interpolation BSpline --output con_0005_trans.nii --reference-image /data/ds000114/derivatives/fmriprep/mni_icbm152_nlin_asym_09c/1mm_T1.nii.gz --transform [ /data/ds000114/derivatives/fmriprep/sub-04/anat/sub-04_t1w_space-mni152nlin2009casym_warp.h5, 0 ]
-250815-12:05:47,986 nipype.workflow INFO:
+260805-16:40:33,828 nipype.workflow INFO:
 	 [Node] Finished &quot;_apply2con4&quot;.
-250815-12:05:48,72 nipype.workflow INFO:
+260805-16:40:33,830 nipype.workflow INFO:
 	 [Node] Setting-up &quot;_apply2con5&quot; in &quot;/output/workingdir/antsflow/_subject_id_04/apply2con/mapflow/_apply2con5&quot;.
-250815-12:05:48,346 nipype.workflow INFO:
+260805-16:40:33,835 nipype.workflow INFO:
 	 [Node] Running &quot;_apply2con5&quot; (&quot;nipype.interfaces.ants.resampling.ApplyTransforms&quot;), a CommandLine Interface with command:
 antsApplyTransforms --float --default-value 0 --float 0 --input /output/datasink/1stLevel/sub-04/ess_0006.nii --input-image-type 3 --interpolation BSpline --output ess_0006_trans.nii --reference-image /data/ds000114/derivatives/fmriprep/mni_icbm152_nlin_asym_09c/1mm_T1.nii.gz --transform [ /data/ds000114/derivatives/fmriprep/sub-04/anat/sub-04_t1w_space-mni152nlin2009casym_warp.h5, 0 ]
-250815-12:05:59,380 nipype.workflow INFO:
+260805-16:40:39,494 nipype.workflow INFO:
 	 [Node] Finished &quot;_apply2con5&quot;.
-250815-12:05:59,456 nipype.workflow INFO:
+260805-16:40:39,500 nipype.workflow INFO:
 	 [Node] Finished &quot;antsflow.apply2con&quot;.
-250815-12:05:59,458 nipype.workflow INFO:
+260805-16:40:39,502 nipype.workflow INFO:
 	 [Node] Setting-up &quot;antsflow.datasink&quot; in &quot;/output/workingdir/antsflow/_subject_id_04/datasink&quot;.
-250815-12:05:59,765 nipype.workflow INFO:
+260805-16:40:39,510 nipype.workflow INFO:
 	 [Node] Running &quot;datasink&quot; (&quot;nipype.interfaces.io.DataSink&quot;)
-250815-12:05:59,777 nipype.interface INFO:
+260805-16:40:39,512 nipype.interface INFO:
 	 sub: /output/datasink/norm_ants/_subject_id_04/_apply2con0/con_0001_trans.nii -&gt; /output/datasink/norm_ants/sub-04/con_0001_trans.nii
-250815-12:05:59,837 nipype.interface INFO:
+260805-16:40:39,514 nipype.interface INFO:
 	 sub: /output/datasink/norm_ants/_subject_id_04/_apply2con1/con_0002_trans.nii -&gt; /output/datasink/norm_ants/sub-04/con_0002_trans.nii
-250815-12:05:59,892 nipype.interface INFO:
+260805-16:40:39,516 nipype.interface INFO:
 	 sub: /output/datasink/norm_ants/_subject_id_04/_apply2con2/con_0003_trans.nii -&gt; /output/datasink/norm_ants/sub-04/con_0003_trans.nii
-250815-12:05:59,957 nipype.interface INFO:
+260805-16:40:39,518 nipype.interface INFO:
 	 sub: /output/datasink/norm_ants/_subject_id_04/_apply2con3/con_0004_trans.nii -&gt; /output/datasink/norm_ants/sub-04/con_0004_trans.nii
-250815-12:06:00,11 nipype.interface INFO:
+260805-16:40:39,520 nipype.interface INFO:
 	 sub: /output/datasink/norm_ants/_subject_id_04/_apply2con4/con_0005_trans.nii -&gt; /output/datasink/norm_ants/sub-04/con_0005_trans.nii
-250815-12:06:00,145 nipype.interface INFO:
+260805-16:40:39,522 nipype.interface INFO:
 	 sub: /output/datasink/norm_ants/_subject_id_04/_apply2con5/ess_0006_trans.nii -&gt; /output/datasink/norm_ants/sub-04/_apply2con5/ess_0006_trans.nii
-250815-12:06:00,365 nipype.workflow INFO:
+260805-16:40:39,529 nipype.workflow INFO:
 	 [Node] Finished &quot;antsflow.datasink&quot;.
-250815-12:06:00,366 nipype.workflow INFO:
+260805-16:40:39,531 nipype.workflow INFO:
 	 [Node] Setting-up &quot;antsflow.selectfiles&quot; in &quot;/output/workingdir/antsflow/_subject_id_03/selectfiles&quot;.
-250815-12:06:00,486 nipype.workflow INFO:
+260805-16:40:39,536 nipype.workflow INFO:
 	 [Node] Running &quot;selectfiles&quot; (&quot;nipype.interfaces.io.SelectFiles&quot;)
-250815-12:06:00,645 nipype.workflow INFO:
+260805-16:40:39,542 nipype.workflow INFO:
 	 [Node] Finished &quot;antsflow.selectfiles&quot;.
-250815-12:06:00,646 nipype.workflow INFO:
+260805-16:40:39,543 nipype.workflow INFO:
 	 [Node] Setting-up &quot;antsflow.apply2con&quot; in &quot;/output/workingdir/antsflow/_subject_id_03/apply2con&quot;.
-250815-12:06:01,252 nipype.workflow INFO:
+260805-16:40:39,557 nipype.workflow INFO:
 	 [Node] Setting-up &quot;_apply2con0&quot; in &quot;/output/workingdir/antsflow/_subject_id_03/apply2con/mapflow/_apply2con0&quot;.
-250815-12:06:01,511 nipype.workflow INFO:
+260805-16:40:39,563 nipype.workflow INFO:
 	 [Node] Running &quot;_apply2con0&quot; (&quot;nipype.interfaces.ants.resampling.ApplyTransforms&quot;), a CommandLine Interface with command:
 antsApplyTransforms --float --default-value 0 --float 0 --input /output/datasink/1stLevel/sub-03/con_0001.nii --input-image-type 3 --interpolation BSpline --output con_0001_trans.nii --reference-image /data/ds000114/derivatives/fmriprep/mni_icbm152_nlin_asym_09c/1mm_T1.nii.gz --transform [ /data/ds000114/derivatives/fmriprep/sub-03/anat/sub-03_t1w_space-mni152nlin2009casym_warp.h5, 0 ]
-250815-12:06:14,122 nipype.workflow INFO:
+260805-16:40:45,720 nipype.workflow INFO:
 	 [Node] Finished &quot;_apply2con0&quot;.
-250815-12:06:14,223 nipype.workflow INFO:
+260805-16:40:45,723 nipype.workflow INFO:
 	 [Node] Setting-up &quot;_apply2con1&quot; in &quot;/output/workingdir/antsflow/_subject_id_03/apply2con/mapflow/_apply2con1&quot;.
-250815-12:06:14,769 nipype.workflow INFO:
+260805-16:40:45,730 nipype.workflow INFO:
 	 [Node] Running &quot;_apply2con1&quot; (&quot;nipype.interfaces.ants.resampling.ApplyTransforms&quot;), a CommandLine Interface with command:
 antsApplyTransforms --float --default-value 0 --float 0 --input /output/datasink/1stLevel/sub-03/con_0002.nii --input-image-type 3 --interpolation BSpline --output con_0002_trans.nii --reference-image /data/ds000114/derivatives/fmriprep/mni_icbm152_nlin_asym_09c/1mm_T1.nii.gz --transform [ /data/ds000114/derivatives/fmriprep/sub-03/anat/sub-03_t1w_space-mni152nlin2009casym_warp.h5, 0 ]
-250815-12:06:26,361 nipype.workflow INFO:
+260805-16:40:51,786 nipype.workflow INFO:
 	 [Node] Finished &quot;_apply2con1&quot;.
-250815-12:06:26,446 nipype.workflow INFO:
+260805-16:40:51,790 nipype.workflow INFO:
 	 [Node] Setting-up &quot;_apply2con2&quot; in &quot;/output/workingdir/antsflow/_subject_id_03/apply2con/mapflow/_apply2con2&quot;.
-250815-12:06:26,685 nipype.workflow INFO:
+260805-16:40:51,796 nipype.workflow INFO:
 	 [Node] Running &quot;_apply2con2&quot; (&quot;nipype.interfaces.ants.resampling.ApplyTransforms&quot;), a CommandLine Interface with command:
 antsApplyTransforms --float --default-value 0 --float 0 --input /output/datasink/1stLevel/sub-03/con_0003.nii --input-image-type 3 --interpolation BSpline --output con_0003_trans.nii --reference-image /data/ds000114/derivatives/fmriprep/mni_icbm152_nlin_asym_09c/1mm_T1.nii.gz --transform [ /data/ds000114/derivatives/fmriprep/sub-03/anat/sub-03_t1w_space-mni152nlin2009casym_warp.h5, 0 ]
-250815-12:06:36,969 nipype.workflow INFO:
+260805-16:40:57,815 nipype.workflow INFO:
 	 [Node] Finished &quot;_apply2con2&quot;.
-250815-12:06:37,52 nipype.workflow INFO:
+260805-16:40:58,16 nipype.workflow INFO:
 	 [Node] Setting-up &quot;_apply2con3&quot; in &quot;/output/workingdir/antsflow/_subject_id_03/apply2con/mapflow/_apply2con3&quot;.
-250815-12:06:37,335 nipype.workflow INFO:
+260805-16:40:58,23 nipype.workflow INFO:
 	 [Node] Running &quot;_apply2con3&quot; (&quot;nipype.interfaces.ants.resampling.ApplyTransforms&quot;), a CommandLine Interface with command:
 antsApplyTransforms --float --default-value 0 --float 0 --input /output/datasink/1stLevel/sub-03/con_0004.nii --input-image-type 3 --interpolation BSpline --output con_0004_trans.nii --reference-image /data/ds000114/derivatives/fmriprep/mni_icbm152_nlin_asym_09c/1mm_T1.nii.gz --transform [ /data/ds000114/derivatives/fmriprep/sub-03/anat/sub-03_t1w_space-mni152nlin2009casym_warp.h5, 0 ]
-250815-12:06:48,114 nipype.workflow INFO:
+260805-16:41:04,5 nipype.workflow INFO:
 	 [Node] Finished &quot;_apply2con3&quot;.
-250815-12:06:48,229 nipype.workflow INFO:
+260805-16:41:04,8 nipype.workflow INFO:
 	 [Node] Setting-up &quot;_apply2con4&quot; in &quot;/output/workingdir/antsflow/_subject_id_03/apply2con/mapflow/_apply2con4&quot;.
-250815-12:06:48,521 nipype.workflow INFO:
+260805-16:41:04,14 nipype.workflow INFO:
 	 [Node] Running &quot;_apply2con4&quot; (&quot;nipype.interfaces.ants.resampling.ApplyTransforms&quot;), a CommandLine Interface with command:
 antsApplyTransforms --float --default-value 0 --float 0 --input /output/datasink/1stLevel/sub-03/con_0005.nii --input-image-type 3 --interpolation BSpline --output con_0005_trans.nii --reference-image /data/ds000114/derivatives/fmriprep/mni_icbm152_nlin_asym_09c/1mm_T1.nii.gz --transform [ /data/ds000114/derivatives/fmriprep/sub-03/anat/sub-03_t1w_space-mni152nlin2009casym_warp.h5, 0 ]
-250815-12:06:59,512 nipype.workflow INFO:
+260805-16:41:10,1 nipype.workflow INFO:
 	 [Node] Finished &quot;_apply2con4&quot;.
-250815-12:06:59,601 nipype.workflow INFO:
+260805-16:41:10,4 nipype.workflow INFO:
 	 [Node] Setting-up &quot;_apply2con5&quot; in &quot;/output/workingdir/antsflow/_subject_id_03/apply2con/mapflow/_apply2con5&quot;.
-250815-12:06:59,838 nipype.workflow INFO:
+260805-16:41:10,9 nipype.workflow INFO:
 	 [Node] Running &quot;_apply2con5&quot; (&quot;nipype.interfaces.ants.resampling.ApplyTransforms&quot;), a CommandLine Interface with command:
 antsApplyTransforms --float --default-value 0 --float 0 --input /output/datasink/1stLevel/sub-03/ess_0006.nii --input-image-type 3 --interpolation BSpline --output ess_0006_trans.nii --reference-image /data/ds000114/derivatives/fmriprep/mni_icbm152_nlin_asym_09c/1mm_T1.nii.gz --transform [ /data/ds000114/derivatives/fmriprep/sub-03/anat/sub-03_t1w_space-mni152nlin2009casym_warp.h5, 0 ]
-250815-12:07:09,907 nipype.workflow INFO:
+260805-16:41:16,150 nipype.workflow INFO:
 	 [Node] Finished &quot;_apply2con5&quot;.
-250815-12:07:09,993 nipype.workflow INFO:
+260805-16:41:16,157 nipype.workflow INFO:
 	 [Node] Finished &quot;antsflow.apply2con&quot;.
-250815-12:07:09,995 nipype.workflow INFO:
+260805-16:41:16,158 nipype.workflow INFO:
 	 [Node] Setting-up &quot;antsflow.datasink&quot; in &quot;/output/workingdir/antsflow/_subject_id_03/datasink&quot;.
-250815-12:07:10,365 nipype.workflow INFO:
+260805-16:41:16,166 nipype.workflow INFO:
 	 [Node] Running &quot;datasink&quot; (&quot;nipype.interfaces.io.DataSink&quot;)
-250815-12:07:10,379 nipype.interface INFO:
+260805-16:41:16,169 nipype.interface INFO:
 	 sub: /output/datasink/norm_ants/_subject_id_03/_apply2con0/con_0001_trans.nii -&gt; /output/datasink/norm_ants/sub-03/con_0001_trans.nii
-250815-12:07:10,438 nipype.interface INFO:
+260805-16:41:16,172 nipype.interface INFO:
 	 sub: /output/datasink/norm_ants/_subject_id_03/_apply2con1/con_0002_trans.nii -&gt; /output/datasink/norm_ants/sub-03/con_0002_trans.nii
-250815-12:07:10,506 nipype.interface INFO:
+260805-16:41:16,173 nipype.interface INFO:
 	 sub: /output/datasink/norm_ants/_subject_id_03/_apply2con2/con_0003_trans.nii -&gt; /output/datasink/norm_ants/sub-03/con_0003_trans.nii
-250815-12:07:10,557 nipype.interface INFO:
+260805-16:41:16,175 nipype.interface INFO:
 	 sub: /output/datasink/norm_ants/_subject_id_03/_apply2con3/con_0004_trans.nii -&gt; /output/datasink/norm_ants/sub-03/con_0004_trans.nii
-250815-12:07:10,616 nipype.interface INFO:
+260805-16:41:16,177 nipype.interface INFO:
 	 sub: /output/datasink/norm_ants/_subject_id_03/_apply2con4/con_0005_trans.nii -&gt; /output/datasink/norm_ants/sub-03/con_0005_trans.nii
-250815-12:07:10,665 nipype.interface INFO:
+260805-16:41:16,179 nipype.interface INFO:
 	 sub: /output/datasink/norm_ants/_subject_id_03/_apply2con5/ess_0006_trans.nii -&gt; /output/datasink/norm_ants/sub-03/_apply2con5/ess_0006_trans.nii
-250815-12:07:10,859 nipype.workflow INFO:
+260805-16:41:16,185 nipype.workflow INFO:
 	 [Node] Finished &quot;antsflow.datasink&quot;.
-250815-12:07:10,861 nipype.workflow INFO:
+260805-16:41:16,187 nipype.workflow INFO:
 	 [Node] Setting-up &quot;antsflow.selectfiles&quot; in &quot;/output/workingdir/antsflow/_subject_id_02/selectfiles&quot;.
-250815-12:07:11,43 nipype.workflow INFO:
+260805-16:41:16,193 nipype.workflow INFO:
 	 [Node] Running &quot;selectfiles&quot; (&quot;nipype.interfaces.io.SelectFiles&quot;)
-250815-12:07:11,280 nipype.workflow INFO:
+260805-16:41:16,200 nipype.workflow INFO:
 	 [Node] Finished &quot;antsflow.selectfiles&quot;.
-250815-12:07:11,281 nipype.workflow INFO:
+260805-16:41:16,201 nipype.workflow INFO:
 	 [Node] Setting-up &quot;antsflow.apply2con&quot; in &quot;/output/workingdir/antsflow/_subject_id_02/apply2con&quot;.
-250815-12:07:11,585 nipype.workflow INFO:
-	 [Node] &quot;antsflow.apply2con&quot; found cached.
-250815-12:07:11,586 nipype.workflow INFO:
+260805-16:41:16,215 nipype.workflow INFO:
+	 [Node] Setting-up &quot;_apply2con0&quot; in &quot;/output/workingdir/antsflow/_subject_id_02/apply2con/mapflow/_apply2con0&quot;.
+260805-16:41:16,221 nipype.workflow INFO:
+	 [Node] Running &quot;_apply2con0&quot; (&quot;nipype.interfaces.ants.resampling.ApplyTransforms&quot;), a CommandLine Interface with command:
+antsApplyTransforms --float --default-value 0 --float 0 --input /output/datasink/1stLevel/sub-02/con_0001.nii --input-image-type 3 --interpolation BSpline --output con_0001_trans.nii --reference-image /data/ds000114/derivatives/fmriprep/mni_icbm152_nlin_asym_09c/1mm_T1.nii.gz --transform [ /data/ds000114/derivatives/fmriprep/sub-02/anat/sub-02_t1w_space-mni152nlin2009casym_warp.h5, 0 ]
+260805-16:41:22,483 nipype.workflow INFO:
+	 [Node] Finished &quot;_apply2con0&quot;.
+260805-16:41:22,486 nipype.workflow INFO:
+	 [Node] Setting-up &quot;_apply2con1&quot; in &quot;/output/workingdir/antsflow/_subject_id_02/apply2con/mapflow/_apply2con1&quot;.
+260805-16:41:22,490 nipype.workflow INFO:
+	 [Node] Running &quot;_apply2con1&quot; (&quot;nipype.interfaces.ants.resampling.ApplyTransforms&quot;), a CommandLine Interface with command:
+antsApplyTransforms --float --default-value 0 --float 0 --input /output/datasink/1stLevel/sub-02/con_0002.nii --input-image-type 3 --interpolation BSpline --output con_0002_trans.nii --reference-image /data/ds000114/derivatives/fmriprep/mni_icbm152_nlin_asym_09c/1mm_T1.nii.gz --transform [ /data/ds000114/derivatives/fmriprep/sub-02/anat/sub-02_t1w_space-mni152nlin2009casym_warp.h5, 0 ]
+260805-16:41:28,820 nipype.workflow INFO:
+	 [Node] Finished &quot;_apply2con1&quot;.
+260805-16:41:28,824 nipype.workflow INFO:
+	 [Node] Setting-up &quot;_apply2con2&quot; in &quot;/output/workingdir/antsflow/_subject_id_02/apply2con/mapflow/_apply2con2&quot;.
+260805-16:41:28,830 nipype.workflow INFO:
+	 [Node] Running &quot;_apply2con2&quot; (&quot;nipype.interfaces.ants.resampling.ApplyTransforms&quot;), a CommandLine Interface with command:
+antsApplyTransforms --float --default-value 0 --float 0 --input /output/datasink/1stLevel/sub-02/con_0003.nii --input-image-type 3 --interpolation BSpline --output con_0003_trans.nii --reference-image /data/ds000114/derivatives/fmriprep/mni_icbm152_nlin_asym_09c/1mm_T1.nii.gz --transform [ /data/ds000114/derivatives/fmriprep/sub-02/anat/sub-02_t1w_space-mni152nlin2009casym_warp.h5, 0 ]
+260805-16:41:35,160 nipype.workflow INFO:
+	 [Node] Finished &quot;_apply2con2&quot;.
+260805-16:41:35,163 nipype.workflow INFO:
+	 [Node] Setting-up &quot;_apply2con3&quot; in &quot;/output/workingdir/antsflow/_subject_id_02/apply2con/mapflow/_apply2con3&quot;.
+260805-16:41:35,169 nipype.workflow INFO:
+	 [Node] Running &quot;_apply2con3&quot; (&quot;nipype.interfaces.ants.resampling.ApplyTransforms&quot;), a CommandLine Interface with command:
+antsApplyTransforms --float --default-value 0 --float 0 --input /output/datasink/1stLevel/sub-02/con_0004.nii --input-image-type 3 --interpolation BSpline --output con_0004_trans.nii --reference-image /data/ds000114/derivatives/fmriprep/mni_icbm152_nlin_asym_09c/1mm_T1.nii.gz --transform [ /data/ds000114/derivatives/fmriprep/sub-02/anat/sub-02_t1w_space-mni152nlin2009casym_warp.h5, 0 ]
+260805-16:41:41,805 nipype.workflow INFO:
+	 [Node] Finished &quot;_apply2con3&quot;.
+260805-16:41:41,812 nipype.workflow INFO:
+	 [Node] Setting-up &quot;_apply2con4&quot; in &quot;/output/workingdir/antsflow/_subject_id_02/apply2con/mapflow/_apply2con4&quot;.
+260805-16:41:41,819 nipype.workflow INFO:
+	 [Node] Running &quot;_apply2con4&quot; (&quot;nipype.interfaces.ants.resampling.ApplyTransforms&quot;), a CommandLine Interface with command:
+antsApplyTransforms --float --default-value 0 --float 0 --input /output/datasink/1stLevel/sub-02/con_0005.nii --input-image-type 3 --interpolation BSpline --output con_0005_trans.nii --reference-image /data/ds000114/derivatives/fmriprep/mni_icbm152_nlin_asym_09c/1mm_T1.nii.gz --transform [ /data/ds000114/derivatives/fmriprep/sub-02/anat/sub-02_t1w_space-mni152nlin2009casym_warp.h5, 0 ]
+260805-16:41:48,357 nipype.workflow INFO:
+	 [Node] Finished &quot;_apply2con4&quot;.
+260805-16:41:48,362 nipype.workflow INFO:
+	 [Node] Setting-up &quot;_apply2con5&quot; in &quot;/output/workingdir/antsflow/_subject_id_02/apply2con/mapflow/_apply2con5&quot;.
+260805-16:41:48,374 nipype.workflow INFO:
+	 [Node] Running &quot;_apply2con5&quot; (&quot;nipype.interfaces.ants.resampling.ApplyTransforms&quot;), a CommandLine Interface with command:
+antsApplyTransforms --float --default-value 0 --float 0 --input /output/datasink/1stLevel/sub-02/ess_0006.nii --input-image-type 3 --interpolation BSpline --output ess_0006_trans.nii --reference-image /data/ds000114/derivatives/fmriprep/mni_icbm152_nlin_asym_09c/1mm_T1.nii.gz --transform [ /data/ds000114/derivatives/fmriprep/sub-02/anat/sub-02_t1w_space-mni152nlin2009casym_warp.h5, 0 ]
+260805-16:41:54,754 nipype.workflow INFO:
+	 [Node] Finished &quot;_apply2con5&quot;.
+260805-16:41:54,760 nipype.workflow INFO:
+	 [Node] Finished &quot;antsflow.apply2con&quot;.
+260805-16:41:54,762 nipype.workflow INFO:
 	 [Node] Setting-up &quot;antsflow.datasink&quot; in &quot;/output/workingdir/antsflow/_subject_id_02/datasink&quot;.
-250815-12:07:11,824 nipype.workflow INFO:
+260805-16:41:54,770 nipype.workflow INFO:
 	 [Node] Running &quot;datasink&quot; (&quot;nipype.interfaces.io.DataSink&quot;)
-250815-12:07:11,833 nipype.interface INFO:
+260805-16:41:54,773 nipype.interface INFO:
 	 sub: /output/datasink/norm_ants/_subject_id_02/_apply2con0/con_0001_trans.nii -&gt; /output/datasink/norm_ants/sub-02/con_0001_trans.nii
-250815-12:07:11,861 nipype.interface INFO:
+260805-16:41:54,774 nipype.interface INFO:
 	 sub: /output/datasink/norm_ants/_subject_id_02/_apply2con1/con_0002_trans.nii -&gt; /output/datasink/norm_ants/sub-02/con_0002_trans.nii
-250815-12:07:11,890 nipype.interface INFO:
+260805-16:41:54,776 nipype.interface INFO:
 	 sub: /output/datasink/norm_ants/_subject_id_02/_apply2con2/con_0003_trans.nii -&gt; /output/datasink/norm_ants/sub-02/con_0003_trans.nii
-250815-12:07:11,919 nipype.interface INFO:
+260805-16:41:54,778 nipype.interface INFO:
 	 sub: /output/datasink/norm_ants/_subject_id_02/_apply2con3/con_0004_trans.nii -&gt; /output/datasink/norm_ants/sub-02/con_0004_trans.nii
-250815-12:07:11,950 nipype.interface INFO:
+260805-16:41:54,779 nipype.interface INFO:
 	 sub: /output/datasink/norm_ants/_subject_id_02/_apply2con4/con_0005_trans.nii -&gt; /output/datasink/norm_ants/sub-02/con_0005_trans.nii
-250815-12:07:11,978 nipype.interface INFO:
+260805-16:41:54,780 nipype.interface INFO:
 	 sub: /output/datasink/norm_ants/_subject_id_02/_apply2con5/ess_0006_trans.nii -&gt; /output/datasink/norm_ants/sub-02/_apply2con5/ess_0006_trans.nii
-250815-12:07:12,120 nipype.workflow INFO:
+260805-16:41:54,786 nipype.workflow INFO:
 	 [Node] Finished &quot;antsflow.datasink&quot;.
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;networkx.classes.digraph.DiGraph at 0x7f1240761668&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;networkx.classes.digraph.DiGraph at 0x7f0191ea20f0&gt;
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="visualize-results">
-<h1>Visualize Results<a class="headerlink" href="#visualize-results" title="Link to this heading">#</a></h1>
+<section id="visualize-results">
+<h2>Visualize Results<a class="headerlink" href="#visualize-results" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">nilearn.plotting</span><span class="w"> </span><span class="kn">import</span> <span class="n">plot_stat_map</span>
@@ -1203,7 +1253,7 @@ antsApplyTransforms --float --default-value 0 --float 0 --input /output/datasink
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;nilearn.plotting.displays.OrthoSlicer at 0x7f12476a24e0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;nilearn.plotting.displays.OrthoSlicer at 0x7f018f060ba8&gt;
 </pre></div>
 </div>
 <img alt="../_images/c1cbf58924f80ee52f8645bc459f14f9b7b1b33dbde1a2ec2c85aa2bb2417c25.png" src="../_images/c1cbf58924f80ee52f8645bc459f14f9b7b1b33dbde1a2ec2c85aa2bb2417c25.png" />
@@ -1219,7 +1269,7 @@ antsApplyTransforms --float --default-value 0 --float 0 --input /output/datasink
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;nilearn.plotting.displays.OrthoSlicer at 0x7f12400daac8&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;nilearn.plotting.displays.OrthoSlicer at 0x7f018df4a780&gt;
 </pre></div>
 </div>
 <img alt="../_images/6c451eed16d65a136630332b63fec6a3c2a7cf0a61c759158959d355883209fa.png" src="../_images/6c451eed16d65a136630332b63fec6a3c2a7cf0a61c759158959d355883209fa.png" />
@@ -1243,12 +1293,13 @@ antsApplyTransforms --float --default-value 0 --float 0 --input /output/datasink
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;nilearn.plotting.displays.LYRZProjector at 0x7f123e85f470&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;nilearn.plotting.displays.LYRZProjector at 0x7f018f998898&gt;
 </pre></div>
 </div>
 <img alt="../_images/a1ab42be780aa5ac9b81a61b212f53b53a27b29d04429dc52751e894a36a57bb.png" src="../_images/a1ab42be780aa5ac9b81a61b212f53b53a27b29d04429dc52751e894a36a57bb.png" />
 </div>
 </div>
+</section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="nd-level-analysis">
 <h1>2nd level analysis<a class="headerlink" href="#nd-level-analysis" title="Link to this heading">#</a></h1>
@@ -1259,15 +1310,16 @@ antsApplyTransforms --float --default-value 0 --float 0 --input /output/datasink
 <span class="n">output_dir</span> <span class="o">=</span> <span class="s1">&#39;datasink&#39;</span>
 <span class="n">working_dir</span> <span class="o">=</span> <span class="s1">&#39;workingdir&#39;</span>
 
-
 <span class="c1"># Which contrasts to use for the 2nd-level analysis</span>
 <span class="n">contrast_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;con_0001&#39;</span><span class="p">,</span> <span class="s1">&#39;con_0002&#39;</span><span class="p">,</span> <span class="s1">&#39;con_0003&#39;</span><span class="p">,</span> <span class="s1">&#39;con_0004&#39;</span><span class="p">,</span> <span class="s1">&#39;con_0005&#39;</span><span class="p">]</span>
 
+<span class="c1"># mask limits the analysis to voxels belonging to the brain.</span>
 <span class="n">mask</span> <span class="o">=</span> <span class="s2">&quot;/data/ds000114/derivatives/fmriprep/mni_icbm152_nlin_asym_09c/1mm_brainmask.nii.gz&quot;</span>
 </pre></div>
 </div>
 </div>
 </div>
+<p>For each of specified contrasts, we will build a separate group model to check whether this effect is significant in the population.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Gunzip - unzip the mask image</span>
@@ -1281,21 +1333,27 @@ antsApplyTransforms --float --default-value 0 --float 0 --input /output/datasink
 <span class="n">level2estimate</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">EstimateModel</span><span class="p">(</span><span class="n">estimation_method</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Classical&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}),</span>
                       <span class="n">name</span><span class="o">=</span><span class="s2">&quot;level2estimate&quot;</span><span class="p">)</span>
 
+<span class="c1"># We define the contrast to test the hypothesis H0:β_group=0.</span>
 <span class="c1"># EstimateContrast - estimates group contrast</span>
 <span class="n">level2conestimate</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">EstimateContrast</span><span class="p">(</span><span class="n">group_contrast</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
                          <span class="n">name</span><span class="o">=</span><span class="s2">&quot;level2conestimate&quot;</span><span class="p">)</span>
-<span class="n">cont1</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Group&#39;</span><span class="p">,</span> <span class="s1">&#39;T&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;mean&#39;</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">]]</span> <span class="c1"># mean beta-ith &gt; mean betta- ith + 1</span>
+
+<span class="n">cont1</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Group&#39;</span><span class="p">,</span> <span class="s1">&#39;T&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;mean&#39;</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">]]</span>
+<span class="c1"># Syntax: [&#39;Group&#39;, &#39;T&#39;, [&#39;mean&#39;], [1]] means: </span>
+<span class="c1"># - Contrast name – &#39;Group&#39;.</span>
+<span class="c1"># - Type – &#39;T&#39; (t-statistic).</span>
+<span class="c1"># - Checked combination – [&#39;mean&#39;].</span>
+<span class="c1"># - Weight – [1] (c = 1).</span>
 <span class="n">level2conestimate</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">contrasts</span> <span class="o">=</span> <span class="p">[</span><span class="n">cont1</span><span class="p">]</span>
 
-<span class="c1"># mean B1 - mean B2</span>
 <span class="c1"># Threshold - thresholds contrasts, we use fdr correction</span>
 <span class="n">level2thresh</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">Threshold</span><span class="p">(</span><span class="n">contrast_index</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
                               <span class="n">use_topo_fdr</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="c1"># fdr correction for multiple hypos testing</span>
                               <span class="n">use_fwe_correction</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
                               <span class="n">extent_threshold</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
-                              <span class="n">height_threshold</span><span class="o">=</span><span class="mf">0.005</span><span class="p">,</span>
+                              <span class="n">height_threshold</span><span class="o">=</span><span class="mf">0.005</span><span class="p">,</span> <span class="c1"># preliminary unadjusted p‑level</span>
                               <span class="n">height_threshold_type</span><span class="o">=</span><span class="s1">&#39;p-value&#39;</span><span class="p">,</span>
-                              <span class="n">extent_fdr_p_threshold</span><span class="o">=</span><span class="mf">0.05</span><span class="p">),</span>
+                              <span class="n">extent_fdr_p_threshold</span><span class="o">=</span><span class="mf">0.05</span><span class="p">),</span> <span class="c1"># the FDR threshold for cluster size.</span>
                     <span class="n">name</span><span class="o">=</span><span class="s2">&quot;level2thresh&quot;</span><span class="p">)</span>
 
 <span class="c1"># Infosource - a function free node to iterate over the list of subject names</span>
@@ -1367,7 +1425,7 @@ antsApplyTransforms --float --default-value 0 --float 0 --input /output/datasink
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>250815-12:09:27,738 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>260806-07:38:21,250 nipype.workflow INFO:
 	 Generated workflow graph: /output/workingdir/ants_l2analysis/graph.png (graph2use=flat, simple_form=True).
 </pre></div>
 </div>
@@ -1381,246 +1439,239 @@ antsApplyTransforms --float --default-value 0 --float 0 --input /output/datasink
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>250815-12:09:42,603 nipype.workflow INFO:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>260806-07:39:12,55 nipype.workflow INFO:
 	 Workflow ants_l2analysis settings: [&#39;check&#39;, &#39;execution&#39;, &#39;logging&#39;, &#39;monitoring&#39;]
-250815-12:09:43,8 nipype.workflow INFO:
+260806-07:39:12,132 nipype.workflow INFO:
 	 Running serially.
-250815-12:09:43,10 nipype.workflow INFO:
+260806-07:39:12,134 nipype.workflow INFO:
 	 [Node] Setting-up &quot;ants_l2analysis.selectfiles&quot; in &quot;/output/workingdir/ants_l2analysis/_contrast_id_con_0005/selectfiles&quot;.
-250815-12:09:43,75 nipype.workflow INFO:
+260806-07:39:12,139 nipype.workflow INFO:
 	 [Node] Running &quot;selectfiles&quot; (&quot;nipype.interfaces.io.SelectFiles&quot;)
-250815-12:09:43,241 nipype.workflow INFO:
+260806-07:39:12,145 nipype.workflow INFO:
 	 [Node] Finished &quot;ants_l2analysis.selectfiles&quot;.
-250815-12:09:43,242 nipype.workflow INFO:
+260806-07:39:12,146 nipype.workflow INFO:
 	 [Node] Setting-up &quot;ants_l2analysis.selectfiles&quot; in &quot;/output/workingdir/ants_l2analysis/_contrast_id_con_0004/selectfiles&quot;.
-250815-12:09:43,304 nipype.workflow INFO:
+260806-07:39:12,150 nipype.workflow INFO:
 	 [Node] Running &quot;selectfiles&quot; (&quot;nipype.interfaces.io.SelectFiles&quot;)
-250815-12:09:43,446 nipype.workflow INFO:
+260806-07:39:12,158 nipype.workflow INFO:
 	 [Node] Finished &quot;ants_l2analysis.selectfiles&quot;.
-250815-12:09:43,448 nipype.workflow INFO:
+260806-07:39:12,160 nipype.workflow INFO:
 	 [Node] Setting-up &quot;ants_l2analysis.selectfiles&quot; in &quot;/output/workingdir/ants_l2analysis/_contrast_id_con_0003/selectfiles&quot;.
-250815-12:09:43,511 nipype.workflow INFO:
+260806-07:39:12,164 nipype.workflow INFO:
 	 [Node] Running &quot;selectfiles&quot; (&quot;nipype.interfaces.io.SelectFiles&quot;)
-250815-12:09:43,664 nipype.workflow INFO:
+260806-07:39:12,170 nipype.workflow INFO:
 	 [Node] Finished &quot;ants_l2analysis.selectfiles&quot;.
-250815-12:09:43,666 nipype.workflow INFO:
+260806-07:39:12,172 nipype.workflow INFO:
 	 [Node] Setting-up &quot;ants_l2analysis.selectfiles&quot; in &quot;/output/workingdir/ants_l2analysis/_contrast_id_con_0002/selectfiles&quot;.
-250815-12:09:43,726 nipype.workflow INFO:
+260806-07:39:12,180 nipype.workflow INFO:
 	 [Node] Running &quot;selectfiles&quot; (&quot;nipype.interfaces.io.SelectFiles&quot;)
-250815-12:09:43,902 nipype.workflow INFO:
+260806-07:39:12,187 nipype.workflow INFO:
 	 [Node] Finished &quot;ants_l2analysis.selectfiles&quot;.
-250815-12:09:43,904 nipype.workflow INFO:
+260806-07:39:12,189 nipype.workflow INFO:
 	 [Node] Setting-up &quot;ants_l2analysis.selectfiles&quot; in &quot;/output/workingdir/ants_l2analysis/_contrast_id_con_0001/selectfiles&quot;.
-250815-12:09:43,982 nipype.workflow INFO:
+260806-07:39:12,197 nipype.workflow INFO:
 	 [Node] Running &quot;selectfiles&quot; (&quot;nipype.interfaces.io.SelectFiles&quot;)
-250815-12:09:44,165 nipype.workflow INFO:
+260806-07:39:12,205 nipype.workflow INFO:
 	 [Node] Finished &quot;ants_l2analysis.selectfiles&quot;.
-250815-12:09:44,166 nipype.workflow INFO:
+260806-07:39:12,207 nipype.workflow INFO:
 	 [Node] Setting-up &quot;ants_l2analysis.gunzip&quot; in &quot;/output/workingdir/ants_l2analysis/gunzip&quot;.
-250815-12:09:44,271 nipype.workflow INFO:
+260806-07:39:12,210 nipype.workflow INFO:
 	 [Node] Running &quot;gunzip&quot; (&quot;nipype.algorithms.misc.Gunzip&quot;)
-250815-12:09:44,876 nipype.workflow INFO:
+260806-07:39:12,305 nipype.workflow INFO:
 	 [Node] Finished &quot;ants_l2analysis.gunzip&quot;.
-250815-12:09:44,878 nipype.workflow INFO:
+260806-07:39:12,307 nipype.workflow INFO:
 	 [Node] Setting-up &quot;ants_l2analysis.onesampttestdes&quot; in &quot;/output/workingdir/ants_l2analysis/_contrast_id_con_0005/onesampttestdes&quot;.
-250815-12:09:45,222 nipype.workflow INFO:
+260806-07:39:12,318 nipype.workflow INFO:
 	 [Node] Running &quot;onesampttestdes&quot; (&quot;nipype.interfaces.spm.model.OneSampleTTestDesign&quot;)
-250815-12:09:57,437 nipype.workflow INFO:
+260806-07:39:23,858 nipype.workflow INFO:
 	 [Node] Finished &quot;ants_l2analysis.onesampttestdes&quot;.
-250815-12:09:57,440 nipype.workflow INFO:
+260806-07:39:23,861 nipype.workflow INFO:
 	 [Node] Setting-up &quot;ants_l2analysis.level2estimate&quot; in &quot;/output/workingdir/ants_l2analysis/_contrast_id_con_0005/level2estimate&quot;.
-250815-12:09:57,616 nipype.workflow INFO:
+260806-07:39:23,870 nipype.workflow INFO:
 	 [Node] Running &quot;level2estimate&quot; (&quot;nipype.interfaces.spm.model.EstimateModel&quot;)
-250815-12:11:20,323 nipype.workflow INFO:
+260806-07:39:46,403 nipype.workflow INFO:
 	 [Node] Finished &quot;ants_l2analysis.level2estimate&quot;.
-250815-12:11:20,325 nipype.workflow INFO:
+260806-07:39:46,405 nipype.workflow INFO:
 	 [Node] Setting-up &quot;ants_l2analysis.level2conestimate&quot; in &quot;/output/workingdir/ants_l2analysis/_contrast_id_con_0005/level2conestimate&quot;.
-250815-12:11:20,798 nipype.workflow INFO:
+260806-07:39:46,419 nipype.workflow INFO:
 	 [Node] Running &quot;level2conestimate&quot; (&quot;nipype.interfaces.spm.model.EstimateContrast&quot;)
-250815-12:11:38,704 nipype.workflow INFO:
+260806-07:39:56,859 nipype.workflow INFO:
 	 [Node] Finished &quot;ants_l2analysis.level2conestimate&quot;.
-250815-12:11:38,707 nipype.workflow INFO:
+260806-07:39:56,861 nipype.workflow INFO:
 	 [Node] Setting-up &quot;ants_l2analysis.level2thresh&quot; in &quot;/output/workingdir/ants_l2analysis/_contrast_id_con_0005/level2thresh&quot;.
-250815-12:11:39,80 nipype.workflow INFO:
+260806-07:39:56,882 nipype.workflow INFO:
 	 [Node] Running &quot;level2thresh&quot; (&quot;nipype.interfaces.spm.model.Threshold&quot;)
-250815-12:11:48,479 nipype.workflow INFO:
+260806-07:40:02,521 nipype.workflow INFO:
 	 [Node] Finished &quot;ants_l2analysis.level2thresh&quot;.
-250815-12:11:48,481 nipype.workflow INFO:
+260806-07:40:02,523 nipype.workflow INFO:
 	 [Node] Setting-up &quot;ants_l2analysis.datasink&quot; in &quot;/output/workingdir/ants_l2analysis/_contrast_id_con_0005/datasink&quot;.
-250815-12:11:48,690 nipype.workflow INFO:
+260806-07:40:02,532 nipype.workflow INFO:
 	 [Node] Running &quot;datasink&quot; (&quot;nipype.interfaces.io.DataSink&quot;)
-250815-12:11:48,700 nipype.interface INFO:
+260806-07:40:02,535 nipype.interface INFO:
 	 sub: /output/datasink/2ndLevel/_contrast_id_con_0005/SPM.mat -&gt; /output/datasink/2ndLevel/con_0005/SPM.mat
-250815-12:11:48,732 nipype.interface INFO:
+260806-07:40:02,587 nipype.interface INFO:
 	 sub: /output/datasink/2ndLevel/_contrast_id_con_0005/spmT_0001.nii -&gt; /output/datasink/2ndLevel/con_0005/spmT_0001.nii
-250815-12:11:48,752 nipype.interface INFO:
+260806-07:40:02,589 nipype.interface INFO:
 	 sub: /output/datasink/2ndLevel/_contrast_id_con_0005/con_0001.nii -&gt; /output/datasink/2ndLevel/con_0005/con_0001.nii
-250815-12:11:48,772 nipype.interface INFO:
+260806-07:40:02,590 nipype.interface INFO:
 	 sub: /output/datasink/2ndLevel/_contrast_id_con_0005/spmT_0001_thr.nii -&gt; /output/datasink/2ndLevel/con_0005/spmT_0001_thr.nii
-250815-12:11:48,901 nipype.workflow INFO:
+260806-07:40:02,598 nipype.workflow INFO:
 	 [Node] Finished &quot;ants_l2analysis.datasink&quot;.
-250815-12:11:48,903 nipype.workflow INFO:
+260806-07:40:02,601 nipype.workflow INFO:
 	 [Node] Setting-up &quot;ants_l2analysis.onesampttestdes&quot; in &quot;/output/workingdir/ants_l2analysis/_contrast_id_con_0004/onesampttestdes&quot;.
-250815-12:11:49,317 nipype.workflow INFO:
+260806-07:40:02,615 nipype.workflow INFO:
 	 [Node] Running &quot;onesampttestdes&quot; (&quot;nipype.interfaces.spm.model.OneSampleTTestDesign&quot;)
-250815-12:11:57,757 nipype.workflow INFO:
+260806-07:40:09,842 nipype.workflow INFO:
 	 [Node] Finished &quot;ants_l2analysis.onesampttestdes&quot;.
-250815-12:11:57,759 nipype.workflow INFO:
+260806-07:40:09,844 nipype.workflow INFO:
 	 [Node] Setting-up &quot;ants_l2analysis.level2estimate&quot; in &quot;/output/workingdir/ants_l2analysis/_contrast_id_con_0004/level2estimate&quot;.
-250815-12:11:57,911 nipype.workflow INFO:
+260806-07:40:09,853 nipype.workflow INFO:
 	 [Node] Running &quot;level2estimate&quot; (&quot;nipype.interfaces.spm.model.EstimateModel&quot;)
-250815-12:13:10,458 nipype.workflow INFO:
+260806-07:40:30,931 nipype.workflow INFO:
 	 [Node] Finished &quot;ants_l2analysis.level2estimate&quot;.
-250815-12:13:10,460 nipype.workflow INFO:
+260806-07:40:30,933 nipype.workflow INFO:
 	 [Node] Setting-up &quot;ants_l2analysis.level2conestimate&quot; in &quot;/output/workingdir/ants_l2analysis/_contrast_id_con_0004/level2conestimate&quot;.
-250815-12:13:10,972 nipype.workflow INFO:
+260806-07:40:30,954 nipype.workflow INFO:
 	 [Node] Running &quot;level2conestimate&quot; (&quot;nipype.interfaces.spm.model.EstimateContrast&quot;)
-250815-12:13:30,201 nipype.workflow INFO:
+260806-07:40:41,75 nipype.workflow INFO:
 	 [Node] Finished &quot;ants_l2analysis.level2conestimate&quot;.
-250815-12:13:30,203 nipype.workflow INFO:
+260806-07:40:41,78 nipype.workflow INFO:
 	 [Node] Setting-up &quot;ants_l2analysis.level2thresh&quot; in &quot;/output/workingdir/ants_l2analysis/_contrast_id_con_0004/level2thresh&quot;.
-250815-12:13:30,588 nipype.workflow INFO:
+260806-07:40:41,98 nipype.workflow INFO:
 	 [Node] Running &quot;level2thresh&quot; (&quot;nipype.interfaces.spm.model.Threshold&quot;)
-250815-12:13:40,746 nipype.workflow INFO:
+260806-07:40:46,951 nipype.workflow INFO:
 	 [Node] Finished &quot;ants_l2analysis.level2thresh&quot;.
-250815-12:13:40,748 nipype.workflow INFO:
+260806-07:40:46,953 nipype.workflow INFO:
 	 [Node] Setting-up &quot;ants_l2analysis.datasink&quot; in &quot;/output/workingdir/ants_l2analysis/_contrast_id_con_0004/datasink&quot;.
-250815-12:13:40,947 nipype.workflow INFO:
+260806-07:40:46,964 nipype.workflow INFO:
 	 [Node] Running &quot;datasink&quot; (&quot;nipype.interfaces.io.DataSink&quot;)
-250815-12:13:40,959 nipype.interface INFO:
+260806-07:40:46,967 nipype.interface INFO:
 	 sub: /output/datasink/2ndLevel/_contrast_id_con_0004/SPM.mat -&gt; /output/datasink/2ndLevel/con_0004/SPM.mat
-250815-12:13:40,989 nipype.interface INFO:
+260806-07:40:46,969 nipype.interface INFO:
 	 sub: /output/datasink/2ndLevel/_contrast_id_con_0004/spmT_0001.nii -&gt; /output/datasink/2ndLevel/con_0004/spmT_0001.nii
-250815-12:13:41,9 nipype.interface INFO:
+260806-07:40:46,971 nipype.interface INFO:
 	 sub: /output/datasink/2ndLevel/_contrast_id_con_0004/con_0001.nii -&gt; /output/datasink/2ndLevel/con_0004/con_0001.nii
-250815-12:13:41,29 nipype.interface INFO:
+260806-07:40:46,973 nipype.interface INFO:
 	 sub: /output/datasink/2ndLevel/_contrast_id_con_0004/spmT_0001_thr.nii -&gt; /output/datasink/2ndLevel/con_0004/spmT_0001_thr.nii
-250815-12:13:41,197 nipype.workflow INFO:
+260806-07:40:46,983 nipype.workflow INFO:
 	 [Node] Finished &quot;ants_l2analysis.datasink&quot;.
-250815-12:13:41,200 nipype.workflow INFO:
+260806-07:40:46,986 nipype.workflow INFO:
 	 [Node] Setting-up &quot;ants_l2analysis.onesampttestdes&quot; in &quot;/output/workingdir/ants_l2analysis/_contrast_id_con_0003/onesampttestdes&quot;.
-250815-12:13:41,724 nipype.workflow INFO:
+260806-07:40:47,19 nipype.workflow INFO:
 	 [Node] Running &quot;onesampttestdes&quot; (&quot;nipype.interfaces.spm.model.OneSampleTTestDesign&quot;)
-250815-12:13:50,575 nipype.workflow INFO:
+260806-07:40:53,662 nipype.workflow INFO:
 	 [Node] Finished &quot;ants_l2analysis.onesampttestdes&quot;.
-250815-12:13:50,577 nipype.workflow INFO:
+260806-07:40:53,664 nipype.workflow INFO:
 	 [Node] Setting-up &quot;ants_l2analysis.level2estimate&quot; in &quot;/output/workingdir/ants_l2analysis/_contrast_id_con_0003/level2estimate&quot;.
-250815-12:13:50,760 nipype.workflow INFO:
+260806-07:40:53,672 nipype.workflow INFO:
 	 [Node] Running &quot;level2estimate&quot; (&quot;nipype.interfaces.spm.model.EstimateModel&quot;)
-250815-12:15:04,232 nipype.workflow INFO:
+260806-07:41:13,474 nipype.workflow INFO:
 	 [Node] Finished &quot;ants_l2analysis.level2estimate&quot;.
-250815-12:15:04,233 nipype.workflow INFO:
+260806-07:41:13,475 nipype.workflow INFO:
 	 [Node] Setting-up &quot;ants_l2analysis.level2conestimate&quot; in &quot;/output/workingdir/ants_l2analysis/_contrast_id_con_0003/level2conestimate&quot;.
-250815-12:15:04,744 nipype.workflow INFO:
+260806-07:41:13,492 nipype.workflow INFO:
 	 [Node] Running &quot;level2conestimate&quot; (&quot;nipype.interfaces.spm.model.EstimateContrast&quot;)
-250815-12:15:22,690 nipype.workflow INFO:
+260806-07:41:23,347 nipype.workflow INFO:
 	 [Node] Finished &quot;ants_l2analysis.level2conestimate&quot;.
-250815-12:15:22,692 nipype.workflow INFO:
+260806-07:41:23,349 nipype.workflow INFO:
 	 [Node] Setting-up &quot;ants_l2analysis.level2thresh&quot; in &quot;/output/workingdir/ants_l2analysis/_contrast_id_con_0003/level2thresh&quot;.
-250815-12:15:23,250 nipype.workflow INFO:
+260806-07:41:23,373 nipype.workflow INFO:
 	 [Node] Running &quot;level2thresh&quot; (&quot;nipype.interfaces.spm.model.Threshold&quot;)
-250815-12:15:33,712 nipype.workflow INFO:
+260806-07:41:28,866 nipype.workflow INFO:
 	 [Node] Finished &quot;ants_l2analysis.level2thresh&quot;.
-250815-12:15:33,715 nipype.workflow INFO:
+260806-07:41:28,871 nipype.workflow INFO:
 	 [Node] Setting-up &quot;ants_l2analysis.datasink&quot; in &quot;/output/workingdir/ants_l2analysis/_contrast_id_con_0003/datasink&quot;.
-250815-12:15:33,988 nipype.workflow INFO:
+260806-07:41:28,891 nipype.workflow INFO:
 	 [Node] Running &quot;datasink&quot; (&quot;nipype.interfaces.io.DataSink&quot;)
-250815-12:15:33,999 nipype.interface INFO:
+260806-07:41:28,896 nipype.interface INFO:
 	 sub: /output/datasink/2ndLevel/_contrast_id_con_0003/SPM.mat -&gt; /output/datasink/2ndLevel/con_0003/SPM.mat
-250815-12:15:34,25 nipype.interface INFO:
+260806-07:41:28,899 nipype.interface INFO:
 	 sub: /output/datasink/2ndLevel/_contrast_id_con_0003/spmT_0001.nii -&gt; /output/datasink/2ndLevel/con_0003/spmT_0001.nii
-250815-12:15:34,46 nipype.interface INFO:
+260806-07:41:28,901 nipype.interface INFO:
 	 sub: /output/datasink/2ndLevel/_contrast_id_con_0003/con_0001.nii -&gt; /output/datasink/2ndLevel/con_0003/con_0001.nii
-250815-12:15:34,67 nipype.interface INFO:
+260806-07:41:28,904 nipype.interface INFO:
 	 sub: /output/datasink/2ndLevel/_contrast_id_con_0003/spmT_0001_thr.nii -&gt; /output/datasink/2ndLevel/con_0003/spmT_0001_thr.nii
-250815-12:15:34,206 nipype.workflow INFO:
+260806-07:41:28,910 nipype.workflow INFO:
 	 [Node] Finished &quot;ants_l2analysis.datasink&quot;.
-250815-12:15:34,210 nipype.workflow INFO:
+260806-07:41:28,911 nipype.workflow INFO:
 	 [Node] Setting-up &quot;ants_l2analysis.onesampttestdes&quot; in &quot;/output/workingdir/ants_l2analysis/_contrast_id_con_0002/onesampttestdes&quot;.
-250815-12:15:34,711 nipype.workflow INFO:
+260806-07:41:28,926 nipype.workflow INFO:
 	 [Node] Running &quot;onesampttestdes&quot; (&quot;nipype.interfaces.spm.model.OneSampleTTestDesign&quot;)
-250815-12:15:43,375 nipype.workflow INFO:
+260806-07:41:35,496 nipype.workflow INFO:
 	 [Node] Finished &quot;ants_l2analysis.onesampttestdes&quot;.
-250815-12:15:43,377 nipype.workflow INFO:
+260806-07:41:35,498 nipype.workflow INFO:
 	 [Node] Setting-up &quot;ants_l2analysis.level2estimate&quot; in &quot;/output/workingdir/ants_l2analysis/_contrast_id_con_0002/level2estimate&quot;.
-250815-12:15:43,525 nipype.workflow INFO:
+260806-07:41:35,504 nipype.workflow INFO:
 	 [Node] Running &quot;level2estimate&quot; (&quot;nipype.interfaces.spm.model.EstimateModel&quot;)
-250815-12:16:55,525 nipype.workflow INFO:
+260806-07:41:55,527 nipype.workflow INFO:
 	 [Node] Finished &quot;ants_l2analysis.level2estimate&quot;.
-250815-12:16:55,528 nipype.workflow INFO:
+260806-07:41:55,529 nipype.workflow INFO:
 	 [Node] Setting-up &quot;ants_l2analysis.level2conestimate&quot; in &quot;/output/workingdir/ants_l2analysis/_contrast_id_con_0002/level2conestimate&quot;.
-250815-12:16:56,55 nipype.workflow INFO:
+260806-07:41:55,543 nipype.workflow INFO:
 	 [Node] Running &quot;level2conestimate&quot; (&quot;nipype.interfaces.spm.model.EstimateContrast&quot;)
-250815-12:17:13,934 nipype.workflow INFO:
+260806-07:42:05,390 nipype.workflow INFO:
 	 [Node] Finished &quot;ants_l2analysis.level2conestimate&quot;.
-250815-12:17:13,935 nipype.workflow INFO:
+260806-07:42:05,393 nipype.workflow INFO:
 	 [Node] Setting-up &quot;ants_l2analysis.level2thresh&quot; in &quot;/output/workingdir/ants_l2analysis/_contrast_id_con_0002/level2thresh&quot;.
-250815-12:17:14,220 nipype.workflow INFO:
+260806-07:42:05,413 nipype.workflow INFO:
 	 [Node] Running &quot;level2thresh&quot; (&quot;nipype.interfaces.spm.model.Threshold&quot;)
-250815-12:17:24,659 nipype.workflow INFO:
+260806-07:42:12,410 nipype.workflow INFO:
 	 [Node] Finished &quot;ants_l2analysis.level2thresh&quot;.
-250815-12:17:24,661 nipype.workflow INFO:
+260806-07:42:12,411 nipype.workflow INFO:
 	 [Node] Setting-up &quot;ants_l2analysis.datasink&quot; in &quot;/output/workingdir/ants_l2analysis/_contrast_id_con_0002/datasink&quot;.
-250815-12:17:24,858 nipype.workflow INFO:
+260806-07:42:12,420 nipype.workflow INFO:
 	 [Node] Running &quot;datasink&quot; (&quot;nipype.interfaces.io.DataSink&quot;)
-250815-12:17:24,866 nipype.interface INFO:
+260806-07:42:12,423 nipype.interface INFO:
 	 sub: /output/datasink/2ndLevel/_contrast_id_con_0002/SPM.mat -&gt; /output/datasink/2ndLevel/con_0002/SPM.mat
-250815-12:17:24,893 nipype.interface INFO:
+260806-07:42:12,426 nipype.interface INFO:
 	 sub: /output/datasink/2ndLevel/_contrast_id_con_0002/spmT_0001.nii -&gt; /output/datasink/2ndLevel/con_0002/spmT_0001.nii
-250815-12:17:24,914 nipype.interface INFO:
+260806-07:42:12,428 nipype.interface INFO:
 	 sub: /output/datasink/2ndLevel/_contrast_id_con_0002/con_0001.nii -&gt; /output/datasink/2ndLevel/con_0002/con_0001.nii
-250815-12:17:24,936 nipype.interface INFO:
+260806-07:42:12,430 nipype.interface INFO:
 	 sub: /output/datasink/2ndLevel/_contrast_id_con_0002/spmT_0001_thr.nii -&gt; /output/datasink/2ndLevel/con_0002/spmT_0001_thr.nii
-250815-12:17:25,78 nipype.workflow INFO:
+260806-07:42:12,435 nipype.workflow INFO:
 	 [Node] Finished &quot;ants_l2analysis.datasink&quot;.
-250815-12:17:25,81 nipype.workflow INFO:
+260806-07:42:12,437 nipype.workflow INFO:
 	 [Node] Setting-up &quot;ants_l2analysis.onesampttestdes&quot; in &quot;/output/workingdir/ants_l2analysis/_contrast_id_con_0001/onesampttestdes&quot;.
-250815-12:17:25,486 nipype.workflow INFO:
+260806-07:42:12,483 nipype.workflow INFO:
 	 [Node] Running &quot;onesampttestdes&quot; (&quot;nipype.interfaces.spm.model.OneSampleTTestDesign&quot;)
-250815-12:17:34,280 nipype.workflow INFO:
+260806-07:42:19,651 nipype.workflow INFO:
 	 [Node] Finished &quot;ants_l2analysis.onesampttestdes&quot;.
-250815-12:17:34,281 nipype.workflow INFO:
+260806-07:42:19,654 nipype.workflow INFO:
 	 [Node] Setting-up &quot;ants_l2analysis.level2estimate&quot; in &quot;/output/workingdir/ants_l2analysis/_contrast_id_con_0001/level2estimate&quot;.
-250815-12:17:34,441 nipype.workflow INFO:
+260806-07:42:19,661 nipype.workflow INFO:
 	 [Node] Running &quot;level2estimate&quot; (&quot;nipype.interfaces.spm.model.EstimateModel&quot;)
-250815-12:18:49,263 nipype.workflow INFO:
+260806-07:42:39,196 nipype.workflow INFO:
 	 [Node] Finished &quot;ants_l2analysis.level2estimate&quot;.
-250815-12:18:49,265 nipype.workflow INFO:
+260806-07:42:39,199 nipype.workflow INFO:
 	 [Node] Setting-up &quot;ants_l2analysis.level2conestimate&quot; in &quot;/output/workingdir/ants_l2analysis/_contrast_id_con_0001/level2conestimate&quot;.
-250815-12:18:49,842 nipype.workflow INFO:
+260806-07:42:39,226 nipype.workflow INFO:
 	 [Node] Running &quot;level2conestimate&quot; (&quot;nipype.interfaces.spm.model.EstimateContrast&quot;)
-250815-12:19:08,567 nipype.workflow INFO:
+260806-07:42:50,350 nipype.workflow INFO:
 	 [Node] Finished &quot;ants_l2analysis.level2conestimate&quot;.
-250815-12:19:08,569 nipype.workflow INFO:
+260806-07:42:50,352 nipype.workflow INFO:
 	 [Node] Setting-up &quot;ants_l2analysis.level2thresh&quot; in &quot;/output/workingdir/ants_l2analysis/_contrast_id_con_0001/level2thresh&quot;.
-250815-12:19:08,980 nipype.workflow INFO:
+260806-07:42:50,368 nipype.workflow INFO:
 	 [Node] Running &quot;level2thresh&quot; (&quot;nipype.interfaces.spm.model.Threshold&quot;)
-250815-12:19:19,152 nipype.workflow INFO:
+260806-07:42:55,941 nipype.workflow INFO:
 	 [Node] Finished &quot;ants_l2analysis.level2thresh&quot;.
-250815-12:19:19,155 nipype.workflow INFO:
+260806-07:42:55,943 nipype.workflow INFO:
 	 [Node] Setting-up &quot;ants_l2analysis.datasink&quot; in &quot;/output/workingdir/ants_l2analysis/_contrast_id_con_0001/datasink&quot;.
-250815-12:19:19,346 nipype.workflow INFO:
+260806-07:42:55,953 nipype.workflow INFO:
 	 [Node] Running &quot;datasink&quot; (&quot;nipype.interfaces.io.DataSink&quot;)
-250815-12:19:19,353 nipype.interface INFO:
+260806-07:42:55,955 nipype.interface INFO:
 	 sub: /output/datasink/2ndLevel/_contrast_id_con_0001/SPM.mat -&gt; /output/datasink/2ndLevel/con_0001/SPM.mat
-250815-12:19:19,376 nipype.interface INFO:
+260806-07:42:55,957 nipype.interface INFO:
 	 sub: /output/datasink/2ndLevel/_contrast_id_con_0001/spmT_0001.nii -&gt; /output/datasink/2ndLevel/con_0001/spmT_0001.nii
-250815-12:19:19,391 nipype.interface INFO:
+260806-07:42:55,959 nipype.interface INFO:
 	 sub: /output/datasink/2ndLevel/_contrast_id_con_0001/con_0001.nii -&gt; /output/datasink/2ndLevel/con_0001/con_0001.nii
-250815-12:19:19,411 nipype.interface INFO:
+260806-07:42:55,961 nipype.interface INFO:
 	 sub: /output/datasink/2ndLevel/_contrast_id_con_0001/spmT_0001_thr.nii -&gt; /output/datasink/2ndLevel/con_0001/spmT_0001_thr.nii
-250815-12:19:19,528 nipype.workflow INFO:
+260806-07:42:55,970 nipype.workflow INFO:
 	 [Node] Finished &quot;ants_l2analysis.datasink&quot;.
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;networkx.classes.digraph.DiGraph at 0x7f123e027c88&gt;
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="ch">#!nipypecli crash /home/neuro/nipype_tutorial/lection/crash-20200721-181746-neuro-selectfiles.a5-607b7489-d773-4d9c-ae69-49eca16a30d1.pklz</span>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;networkx.classes.digraph.DiGraph at 0x7f018c890518&gt;
 </pre></div>
 </div>
 </div>
@@ -1667,6 +1718,22 @@ antsApplyTransforms --float --default-value 0 --float 0 --input /output/datasink
 </div>
 </div>
 </div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>/output/datasink/2ndLevel
+├── con_0001
+│   ├── con_0001.nii       &lt;- Mean effect size for contrast #1
+│   ├── SPM.mat            &lt;- Main model file (design, estimates, parameters)
+│   ├── spmT_0001.nii      &lt;- T-staistics map
+│   └── spmT_0001_thr.nii  &lt;- A threshold map after FDR correction.
+├── con_0002
+│   ├── ...
+...
+└── con_0005
+    ├── ...
+</pre></div>
+</div>
+<section id="id1">
+<h2>Visualize results<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>Let’s look at thresholded T-statistics map of the <strong>average</strong> contrast</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">anatimg</span> <span class="o">=</span> <span class="s1">&#39;/data/ds000114/derivatives/fmriprep/mni_icbm152_nlin_asym_09c/1mm_T1.nii.gz&#39;</span>
@@ -1692,18 +1759,19 @@ antsApplyTransforms --float --default-value 0 --float 0 --input /output/datasink
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/b6bb6dad638cc8ea7f6bdf45f248d014440518b7112145729bb9aa69fe9db6b0.png" src="../_images/b6bb6dad638cc8ea7f6bdf45f248d014440518b7112145729bb9aa69fe9db6b0.png" />
+<img alt="../_images/bab56aefdb89e9e0304a2dad7c04cf817c0bb857337b36c6d377d1f97b1d6fdd.png" src="../_images/bab56aefdb89e9e0304a2dad7c04cf817c0bb857337b36c6d377d1f97b1d6fdd.png" />
 </div>
 </div>
+</section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="multiple-comparison-problem">
 <h1>Multiple comparison problem<a class="headerlink" href="#multiple-comparison-problem" title="Link to this heading">#</a></h1>
 <p>When we make statistical maps we set a threshold at a given confidence level <span class="math notranslate nohighlight">\(\alpha\)</span> and declare all voxels for which beta is above this level as active.
 Typically our  <span class="math notranslate nohighlight">\(H_0\)</span> is that the voxel is not active.</p>
-<p><img alt="Hypothesis testing" src="https://media.springernature.com/lw685/springer-static/image/art%3A10.1038%2Fnmeth.2698/MediaObjects/41592_2013_Article_BFnmeth2698_Fig1_HTML.jpg" /></p>
-<p>The probability that a test will correctly reject <span class="math notranslate nohighlight">\(H_0\)</span> is called the power of the test.</p>
-<p>During fMRI experiments we perform test for each voxel, which means there will be many false active voxels.
-There are many ways to deal with this problem.</p>
+<p>We can present a statistical test with its characteristics depending on the selected <span class="math notranslate nohighlight">\(\alpha\)</span> significance level using this image:</p>
+<img src="https://images.squarespace-cdn.com/content/v1/5acbdd3a25bf024c12f4c8b4/1610052918387-PX5P6TN8MDFZA3YKHFFO/H0+and+H1+Curves.png" width="700">
+<p>In fMRI, we perform statistical tests at thousands of voxels (e.g., 200,000). If we use a voxel‑wise threshold of <span class="math notranslate nohighlight">\(p &lt; 0.05\)</span>, we would expect about <code class="docutils literal notranslate"><span class="pre">what</span> <span class="pre">number?</span></code> false positives by chance alone – even with no real effect.
+Therefore, we must correct set some new thershold to control the number of false discoveries.</p>
 <p>How to choose the threshold ?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1721,30 +1789,84 @@ There are many ways to deal with this problem.</p>
 <img alt="../_images/ab323e31a9211b07940d0ff746d360b2cd66c8c58b7807516bf49e8776e8c740.png" src="../_images/ab323e31a9211b07940d0ff746d360b2cd66c8c58b7807516bf49e8776e8c740.png" />
 </div>
 </div>
-<p><strong>FWER (family-wize error rate) methods</strong></p>
-<p>We control for any false positives <span class="math notranslate nohighlight">\(FP\)</span>:
-$<span class="math notranslate nohighlight">\(FWER=P(FP \geq 1)\)</span><span class="math notranslate nohighlight">\(
-\)</span>H_0<span class="math notranslate nohighlight">\( is that there is no activation in any of the \)</span>V$ voxels.</p>
-<p>Control for type 1 errors(We wrongly have rejected the <span class="math notranslate nohighlight">\(H_0\)</span>).</p>
+<section id="multiple-comparison-correction-methods">
+<h2><strong>Multiple Comparison Correction Methods</strong><a class="headerlink" href="#multiple-comparison-correction-methods" title="Link to this heading">#</a></h2>
+<section id="fwer-familywise-error-rate">
+<h3>FWER – Family‑Wise Error Rate<a class="headerlink" href="#fwer-familywise-error-rate" title="Link to this heading">#</a></h3>
+<p>FWER controls the probability of <strong>making at least one false positive</strong> (Type I error) across all voxels:</p>
+<div class="math notranslate nohighlight">
+\[FWER = P(FP \geq 1)\]</div>
+<p>The null hypothesis is that <strong>there is no activation anywhere in the brain</strong>.</p>
 <ol class="arabic">
-<li><p><strong>Bonferoni correction</strong>. The threshold is adjusted as <span class="math notranslate nohighlight">\(\alpha/V\)</span>.</p>
-<p>Decreases too much the probability of correctly rejecting  <span class="math notranslate nohighlight">\(H_0\)</span>.</p>
-<p>The voxels are not completely independent.</p>
+<li><p><strong>Bonferroni Correction</strong></p>
+<ul class="simple">
+<li><p>Divides the desired (<span class="math notranslate nohighlight">\(\alpha\)</span>) level by the number of tests (<span class="math notranslate nohighlight">\(V\)</span>):<br />
+$<span class="math notranslate nohighlight">\( p_{\text{threshold}} = \frac{\alpha}{V}\)</span>$</p></li>
+<li><p>For (<span class="math notranslate nohighlight">\(V = 200,000\)</span>) and (<span class="math notranslate nohighlight">\(\alpha = 0.05\)</span>), we get (<span class="math notranslate nohighlight">\(p &lt; 2.5 \times 10^{-7}\)</span>) – <strong>extremely conservative</strong>.</p></li>
+<li><p><strong>Problem</strong>: Voxels are not independent (neighbouring voxels are spatially correlated). Bonferroni ignores this and overcorrects, leading to many missed true activations (high false negatives).</p></li>
+</ul>
 </li>
-<li><p><strong>Random field theory</strong> estimates the number of independent statistical tests based upon the spatial correlation, or smoothness.</p>
-<p>The number of independent comparisons for smoothed data is:
-$<span class="math notranslate nohighlight">\(V /FWHM^3 \)</span>$</p>
-<p>where
-<span class="math notranslate nohighlight">\(FWHM\)</span>-full width at half maximum</p>
-<p>At a smoothness of 3 voxels, there would be 1 /27 as many independent comparisons.</p>
-<p>The Euler characteristic of the data give us estimation  how many clusters of activity should be found by chance at a given statistical threshold</p>
+<li><p><strong>Random Field Theory (RFT)</strong></p>
+<ul>
+<li><p>RFT uses the <strong>spatial smoothness</strong> of the data to estimate the <strong>effective number of independent tests</strong>.</p></li>
+<li><p>The effective number is roughly:</p>
+<div class="math notranslate nohighlight">
+\[V_{\text{eff}} = \frac{V}{FWHM^3}\]</div>
+<p>where (FWHM) is the <a class="reference external" href="https://en.wikipedia.org/wiki/Full_width_at_half_maximum">full width at half maximum</a> of the smoothing kernel (in voxels).</p>
+</li>
+<li><p>Example: if <span class="math notranslate nohighlight">\(FWHM = 3\)</span> voxels, then <span class="math notranslate nohighlight">\(V_{\text{eff}\)</span>} \approx V/27$ – far fewer independent comparisons.</p></li>
+<li><p><strong>Result</strong>: Less conservative than Bonferroni, but still often strict. It assumes stationary smoothness and is more suitable for smooth, continuous data.</p></li>
+</ul>
 </li>
 </ol>
-<p>FWER methods often give too conservative threshold, oftentimes FDR gives a better threshold.</p>
-<p><strong>FDR (False discovery rate)</strong></p>
-<p>Control for the false positives <span class="math notranslate nohighlight">\(FP\)</span> among all declared positives <span class="math notranslate nohighlight">\(P\)</span>.
-$<span class="math notranslate nohighlight">\(FDR=E(FP/P)\)</span>$</p>
+<p><strong>Note</strong>: FWER methods are <strong>conservative</strong> by design – they ensure the <strong>probability of any false positive</strong> is below <span class="math notranslate nohighlight">\(\alpha\)</span>. This is ideal when you want to be <strong>very sure</strong> that any activation is real, but may miss subtle effects.</p>
+</section>
+<section id="fdr-false-discovery-rate">
+<h3>FDR – False Discovery Rate<a class="headerlink" href="#fdr-false-discovery-rate" title="Link to this heading">#</a></h3>
+<p>FDR controls the <strong>proportion of false positives among all declared positives</strong>:</p>
+<div class="math notranslate nohighlight">
+\[FDR = E\left(\frac{FP}{P}\right)\]</div>
+<p>where <span class="math notranslate nohighlight">\(FP\)</span> = number of false positives, <span class="math notranslate nohighlight">\(P\)</span> = total number of positive findings (voxels declared significant).</p>
+<ul class="simple">
+<li><p>FDR does <strong>not</strong> control the chance of <em>any</em> false positive; instead, it limits the <strong>expected fraction</strong> of false positives among those you call significant.</p></li>
+<li><p>This makes FDR <strong>less conservative</strong> than FWER, and it often yields more sensitive results.</p></li>
+<li><p>FDR is particularly useful in exploratory analysis, where you are willing to accept a small proportion of false discoveries to detect more true effects.</p></li>
+<li><p>Common implementations: <strong>Benjamini‑Hochberg</strong> (for independent tests) or <strong>topographical FDR</strong> (which accounts for spatial clustering).</p></li>
+</ul>
+</section>
+<section id="summary">
+<h3><strong>Summary</strong><a class="headerlink" href="#summary" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Method</p></th>
+<th class="head"><p>Controls</p></th>
+<th class="head"><p>Conservativeness</p></th>
+<th class="head"><p>When to use</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Bonferroni</strong></p></td>
+<td><p>FWER (any FP)</p></td>
+<td><p>Very high</p></td>
+<td><p>When you need strong control over any false positive; rarely used in fMRI.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>RFT</strong></p></td>
+<td><p>FWER (any FP)</p></td>
+<td><p>Moderate</p></td>
+<td><p>Common in classical SPM analyses; suitable for smooth images.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>FDR</strong></p></td>
+<td><p>FDR (proportion of FP)</p></td>
+<td><p>Lower</p></td>
+<td><p>Widely used today; gives a good balance between sensitivity and specificity. Often preferred in exploratory studies.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>In practice</strong>: FDR is often the default choice for thresholding statistical maps, as it provides a reasonable compromise. However, the final decision should be guided by the scientific question and the level of evidence required.</p>
 <p><strong>Special thanks to Michael Notter for the wonderful <a class="reference external" href="https://miykael.github.io/nipype_tutorial/">nipype tutorial</a></strong></p>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1784,22 +1906,19 @@ $<span class="math notranslate nohighlight">\(FDR=E(FP/P)\)</span>$</p>
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Group Analysis</a><ul class="visible nav section-nav flex-column">
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Group Analysis</a><ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#normalize-data-to-mni-template">Normalize data to MNI template</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparation">Preparation</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#alternatively-prepare-yourself">Alternatively: Prepare yourself</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#normalization-with-ants">Normalization with ANTs</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#imports">Imports</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experiment-parameters">Experiment parameters</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specify-nodes">Specify Nodes</a></li>
@@ -1807,11 +1926,22 @@ $<span class="math notranslate nohighlight">\(FDR=E(FP/P)\)</span>$</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specify-workflow-ants">Specify Workflow (ANTs)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualize-the-workflow">Visualize the workflow</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-the-workflow">Run the Workflow</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualize-results">Visualize Results</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#visualize-results">Visualize Results</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#nd-level-analysis">2nd level analysis</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-comparison-problem">Multiple comparison problem</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#nd-level-analysis">2nd level analysis</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Visualize results</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-comparison-problem">Multiple comparison problem</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-comparison-correction-methods"><strong>Multiple Comparison Correction Methods</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fwer-familywise-error-rate">FWER – Family‑Wise Error Rate</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fdr-false-discovery-rate">FDR – False Discovery Rate</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summary"><strong>Summary</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
   </nav></div>
@@ -1861,8 +1991,8 @@ By Nadezhda Alsahanova, Aleksandra Beliaeva, Dmitriy Kornilov, Fedor Gubanov, Pa
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
 
   <footer class="bd-footer">
   </footer>
