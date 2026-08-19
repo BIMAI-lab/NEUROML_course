@@ -86,5 +86,5 @@ parts:
 - caption: Seminar 10. Generative models
   numbered: false
   chapters:
-  - url: https://colab.research.google.com/drive/1SU8ku9bk-cjQr45rgVCrMAauh34FoWQb?usp=sharing
+  - url: https://colab.research.google.com/drive/1d6fN0swt0ggaDJO5I0r7mGrK8GsDVLCE?usp=sharing
     title: Seminar 10. Diffusion Models for Medical Anomaly Detection with Classifier Guidance
