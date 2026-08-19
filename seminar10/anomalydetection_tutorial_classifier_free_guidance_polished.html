@@ -1,0 +1,1970 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Diffusion Models for Medical Anomaly Detection: Classifier and Classifier-Free Guidance &#8212; Neuroimaging and Machine Learning for Biomedicine</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/myadmonitions.css?v=0009bf62" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'seminar10/anomalydetection_tutorial_classifier_free_guidance_polished';</script>
+    <link rel="icon" href="../_static/logo.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Neuroimaging and Machine Learning for Biomedicine - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Neuroimaging and Machine Learning for Biomedicine - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to the Neuroimaging and Machine Learning for Biomedicine coursebook
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../bio/intro_links.html">Links</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1AM67Sd37J0hIJ-kLyzAZRm8op_JcUQ9b?usp=sharing">Intro to shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../seminar1/Seminar1_python_colab.html">How to work with Python</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../seminar1/Seminar1_ML.html">Intro to ML</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1jkf4Jt0QvDz2O7UoZ-sZAi0V0oke5Yju?usp=sharing">Machine learning fundamentals on medical data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../seminar1/00_pytorch_fundamentals.html">Pytorch fundamentals</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://drive.google.com/file/d/1q0XncKq2y_wHLXJaxhjfBCDGHABmzrjM/view?usp=sharing">Intro to computer vision</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Seminar 1. Opening Seminar</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../seminar1/intro.html">Lecture Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../seminar1/opening_seminar.html">Motivation &amp; Overview</a></li>
+
+
+
+
+
+
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Seminars 4-5. Working with MRI</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../seminar4/docker.html">Preparation to Seminar 4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../seminar4/seminar4_1_mri.html">Seminar 4.1. MRI data analysis, databases and tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../seminar4/seminar4_2_transform.html">Transformations</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../seminar4/seminar4_3_freesurfer.html">FREESURFER</a></li>
+
+
+<li class="toctree-l1"><a class="reference external" href="https://drive.google.com/file/d/16--0U-QRcPJaWYqUe1RP5_V4zGvGOR76/view?usp=sharing">Seminar 5.1. MRI classification with classic ML</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://drive.google.com/file/d/1XMxW_Y73mbMGFIaWY6YlEfscD8YE35yN/view?usp=sharing">Seminar 5.2. MRI classification with 3D CNN</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://drive.google.com/file/d/15M13NfhCGKN6akaWj8reFYvfDH7aLPsY/view?usp=sharing">Seminar 5.3. MRI segmentation with 3D U-net</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Seminars 6-8. Working with fMRI</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../seminars6_7/README.html">Preparation to Seminar 6-8</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../seminars6_7/seminars_content.html">Summary of Seminar 6-7</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://drive.google.com/file/d/1kSrmaPF5_bKvH1xEKgp0BMtpnm_I-DtY/view?usp=drive_link">Seminar 6. Preprocessing pipeline for task-based fMRI</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://drive.google.com/file/d/1-9hT7K9lG_pUTIgtjwH7pvxL1mf9QnMP/view?usp=drive_link">Seminar 7.1. 1st-level fMRI data analysis</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://drive.google.com/file/d/1EuyJWzhmST66rDVugbRgsm_p8Jpc7KTQ/view?usp=drive_link">Seminar 7.2. 2st-level (Group) Analysis</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1Hed2ggYNbyvBMeYpNeapMAepxeQBVLRL?usp=sharing">Seminar 8.1. Analyze task-based fMRI for motor and emotion task</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1F0UzTsmF1NK6F3NEsJHUw9G5K3j_-eYA?usp=sharing">Seminar 8.2. Functional connectivity</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Seminar 9. Interpretation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../seminar9/intro.html">Intro to Interpretable Deep Learning</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1yMqKV14iPrhREWP7veNMTIHUKyLoic5-">Seminar 9. Interpretation of 3D CNNs for Brain MRI Data Classification</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Seminar 10. Generative models</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1d6fN0swt0ggaDJO5I0r7mGrK8GsDVLCE?usp=sharing">Seminar 10. Diffusion Models for Medical Anomaly Detection with Classifier Guidance</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/BIMAI-lab/NEUROML_course" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/BIMAI-lab/NEUROML_course/issues/new?title=Issue%20on%20page%20%2Fseminar10/anomalydetection_tutorial_classifier_free_guidance_polished.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/seminar10/anomalydetection_tutorial_classifier_free_guidance_polished.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Diffusion Models for Medical Anomaly Detection: Classifier and Classifier-Free Guidance</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Diffusion Models for Medical Anomaly Detection: Classifier and Classifier-Free Guidance</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-environment">Setup environment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-imports">Setup imports</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-data-directory">Setup data directory</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-deterministic-training-for-reproducibility">Set deterministic training for reproducibility</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pipeline-at-a-glance">Pipeline at a glance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocessing-the-brats-dataset-into-2d-slices">Preprocessing the BraTS dataset into 2D slices</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocessing-of-the-brats-dataset-in-2d-slices-for-validation">Preprocessing of the BRATS Dataset in 2D slices for validation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-i-classifier-guided-diffusion">Part I — Classifier-guided diffusion</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#define-the-diffusion-network-scheduler-optimizer-and-inferer">Define the diffusion network, scheduler, optimizer, and inferer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#train-the-diffusion-model">Train the diffusion model</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-the-performance-of-the-diffusion-model">Check the performance of the diffusion model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#train-a-noisy-image-classifier-for-guidance">Train a noisy-image classifier for guidance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-training-of-the-classification-model">Model training of the classification model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#image-to-image-translation-toward-a-healthy-reconstruction">Image-to-image translation toward a healthy reconstruction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#encode-the-input-with-reversed-ddim-sampling">Encode the input with reversed DDIM sampling</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#denoise-with-classifier-guidance">Denoise with classifier guidance</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#anomaly-map">Anomaly map</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-the-anomaly-map">Reading the anomaly map</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-ii-classifier-free-guidance-cfg">Part II — Classifier-free guidance (CFG)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-changes-during-cfg-training">What changes during CFG training?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cfg-reconstruction-result">CFG reconstruction result</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="diffusion-models-for-medical-anomaly-detection-classifier-and-classifier-free-guidance">
+<h1>Diffusion Models for Medical Anomaly Detection: Classifier and Classifier-Free Guidance<a class="headerlink" href="#diffusion-models-for-medical-anomaly-detection-classifier-and-classifier-free-guidance" title="Link to this heading">#</a></h1>
+<p>This tutorial demonstrates two ways to guide a diffusion model toward a <strong>healthy reconstruction</strong> of a 2D brain MR slice using MONAI:</p>
+<ol class="arabic simple">
+<li><p><strong>Classifier guidance</strong>: a separate classifier provides gradients that steer DDIM denoising toward the healthy class.</p></li>
+<li><p><strong>Classifier-free guidance (CFG)</strong>: the diffusion model is trained with both class-conditioned and unconditioned examples, so no separate classifier is needed during sampling.</p></li>
+</ol>
+<p>The model is trained on 2D axial slices from the BraTS/Medical Segmentation Decathlon brain-tumor dataset. An anomaly map is then obtained by comparing the original slice with its guided healthy reconstruction.</p>
+<blockquote>
+<div><p><strong>Label convention used in the code:</strong> <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">=</span> <span class="pre">diseased</span></code> and <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">=</span> <span class="pre">healthy</span></code>. In the CFG section, class <code class="docutils literal notranslate"><span class="pre">2</span></code> is reserved as the <strong>null / no-class</strong> condition.</p>
+</div></blockquote>
+<p>Reference: Wolleb et al., <em>Diffusion Models for Medical Anomaly Detection</em> (2022), <a class="reference external" href="https://arxiv.org/abs/2203.04306">https://arxiv.org/abs/2203.04306</a></p>
+<section id="setup-environment">
+<h2>Setup environment<a class="headerlink" href="#setup-environment" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">datetime</span>
+<span class="n">current_time</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">current_time</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2026-08-13 11:52:49.452097
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">"import monai"</span><span class="w"> </span><span class="o">||</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-q<span class="w"> </span><span class="s2">"monai-weekly[pillow, tqdm]"</span>
+<span class="o">!</span>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">"import matplotlib"</span><span class="w"> </span><span class="o">||</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-q<span class="w"> </span>matplotlib
+<span class="o">!</span>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">"import seaborn"</span><span class="w"> </span><span class="o">||</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-q<span class="w"> </span>seaborn
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File "&lt;string&gt;", line 1, in &lt;module&gt;
+ModuleNotFoundError: No module named 'monai'
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">1.6/1.6 MB</span> <span class=" -Color -Color-Red">26.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25h
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="setup-imports">
+<h2>Setup imports<a class="headerlink" href="#setup-imports" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Standard library</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">tempfile</span>
+
+<span class="c1"># Scientific Python / PyTorch</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">torch.nn.functional</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">F</span>
+
+<span class="c1"># MONAI</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">monai</span><span class="w"> </span><span class="kn">import</span> <span class="n">transforms</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">monai.apps</span><span class="w"> </span><span class="kn">import</span> <span class="n">DecathlonDataset</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">monai.config</span><span class="w"> </span><span class="kn">import</span> <span class="n">print_config</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">monai.data</span><span class="w"> </span><span class="kn">import</span> <span class="n">DataLoader</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">monai.utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">set_determinism</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">torch.amp</span><span class="w"> </span><span class="kn">import</span> <span class="n">GradScaler</span><span class="p">,</span> <span class="n">autocast</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">tqdm</span><span class="w"> </span><span class="kn">import</span> <span class="n">tqdm</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">monai.inferers</span><span class="w"> </span><span class="kn">import</span> <span class="n">DiffusionInferer</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">monai.networks.nets.diffusion_model_unet</span><span class="w"> </span><span class="kn">import</span> <span class="n">DiffusionModelEncoder</span><span class="p">,</span> <span class="n">DiffusionModelUNet</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">monai.networks.schedulers.ddim</span><span class="w"> </span><span class="kn">import</span> <span class="n">DDIMScheduler</span>
+
+<span class="n">torch</span><span class="o">.</span><span class="n">multiprocessing</span><span class="o">.</span><span class="n">set_sharing_strategy</span><span class="p">(</span><span class="s2">"file_system"</span><span class="p">)</span>
+
+<span class="n">print_config</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MONAI version: 1.7.dev2632
+Numpy version: 2.0.2
+Pytorch version: 2.11.0+cu128
+MONAI flags: HAS_EXT = False, USE_COMPILED = False, USE_META_DICT = False
+MONAI rev id: 5a454eec9f1b95c6e263b40f7d237f1fdf8f654c
+MONAI __file__: /usr/local/lib/python3.12/dist-packages/monai/__init__.py
+
+Optional dependencies:
+Pytorch Ignite version: NOT INSTALLED or UNKNOWN VERSION.
+ITK version: NOT INSTALLED or UNKNOWN VERSION.
+Nibabel version: 5.4.2
+scikit-image version: 0.25.2
+scipy version: 1.16.3
+Pillow version: 11.3.0
+Tensorboard version: 2.20.0
+gdown version: 5.2.2
+TorchVision version: 0.26.0+cu128
+tqdm version: 4.67.3
+lmdb version: NOT INSTALLED or UNKNOWN VERSION.
+psutil version: 5.9.5
+pandas version: 2.2.2
+einops version: 0.8.2
+transformers version: 5.13.1
+mlflow version: NOT INSTALLED or UNKNOWN VERSION.
+pynrrd version: NOT INSTALLED or UNKNOWN VERSION.
+clearml version: NOT INSTALLED or UNKNOWN VERSION.
+
+For details about installing the optional dependencies, please visit:
+    https://monai.readthedocs.io/en/latest/installation.html#installing-the-recommended-dependencies
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="setup-data-directory">
+<h2>Setup data directory<a class="headerlink" href="#setup-data-directory" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">root_dir</span> <span class="o">=</span> <span class="s1">'data'</span>
+<span class="o">!</span>mkdir<span class="w"> </span><span class="o">{</span>root_dir<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="set-deterministic-training-for-reproducibility">
+<h2>Set deterministic training for reproducibility<a class="headerlink" href="#set-deterministic-training-for-reproducibility" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">set_determinism</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="pipeline-at-a-glance">
+<h2>Pipeline at a glance<a class="headerlink" href="#pipeline-at-a-glance" title="Link to this heading">#</a></h2>
+<p>The workflow used in both guidance variants is:</p>
+<ol class="arabic simple">
+<li><p>Prepare 2D MRI slices and assign a healthy/diseased slice label.</p></li>
+<li><p>Train a diffusion model to predict Gaussian noise at arbitrary timesteps.</p></li>
+<li><p>Encode a diseased input slice partway into the diffusion trajectory using reversed DDIM steps.</p></li>
+<li><p>Denoise toward the <strong>healthy</strong> class using either classifier guidance or classifier-free guidance.</p></li>
+<li><p>Subtract the guided reconstruction from the original image to obtain an anomaly map.</p></li>
+</ol>
+</section>
+<section id="preprocessing-the-brats-dataset-into-2d-slices">
+<h2>Preprocessing the BraTS dataset into 2D slices<a class="headerlink" href="#preprocessing-the-brats-dataset-into-2d-slices" title="Link to this heading">#</a></h2>
+<p>The Medical Segmentation Decathlon brain-tumor data are 3D volumes. The transform pipeline below selects one MRI modality (FLAIR by default), standardizes orientation and spacing, center-crops the volume, normalizes intensities, and finally samples a single axial 2D slice.</p>
+<p>For each sampled slice, the segmentation mask is collapsed to a binary <strong>slice-level label</strong>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">0</span></code> (<strong>diseased</strong>) if the segmentation mask contains any tumor voxel.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">1</span></code> (<strong>healthy</strong>) if the segmentation mask is empty.</p></li>
+</ul>
+<p>The key transforms are:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">LoadImaged</span></code> / <code class="docutils literal notranslate"><span class="pre">EnsureChannelFirstd</span></code>: load images and put channels first.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Lambdad</span></code>: select the requested MRI modality.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Orientationd</span></code> / <code class="docutils literal notranslate"><span class="pre">Spacingd</span></code>: standardize geometry.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CenterSpatialCropd</span></code>: keep a consistent central field of view.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ScaleIntensityRangePercentilesd</span></code>: map robust intensity percentiles to <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">1]</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">RandSpatialCropd</span></code>: draw one <code class="docutils literal notranslate"><span class="pre">64</span> <span class="pre">×</span> <span class="pre">64</span> <span class="pre">×</span> <span class="pre">1</span></code> slice.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CopyItemsd</span></code> + <code class="docutils literal notranslate"><span class="pre">Lambdad</span></code>: convert the segmentation mask to the binary slice label described above.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">channel</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># MRI modality index; 0 corresponds to FLAIR in this dataset</span>
+<span class="k">assert</span> <span class="n">channel</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="s2">"Choose a valid channel"</span>
+
+<span class="n">train_transforms</span> <span class="o">=</span> <span class="n">transforms</span><span class="o">.</span><span class="n">Compose</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="n">transforms</span><span class="o">.</span><span class="n">LoadImaged</span><span class="p">(</span><span class="n">keys</span><span class="o">=</span><span class="p">[</span><span class="s2">"image"</span><span class="p">,</span> <span class="s2">"label"</span><span class="p">]),</span>
+        <span class="n">transforms</span><span class="o">.</span><span class="n">EnsureChannelFirstd</span><span class="p">(</span><span class="n">keys</span><span class="o">=</span><span class="p">[</span><span class="s2">"image"</span><span class="p">,</span> <span class="s2">"label"</span><span class="p">]),</span>
+        <span class="n">transforms</span><span class="o">.</span><span class="n">Lambdad</span><span class="p">(</span><span class="n">keys</span><span class="o">=</span><span class="p">[</span><span class="s2">"image"</span><span class="p">],</span> <span class="n">func</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="n">channel</span><span class="p">,</span> <span class="p">:,</span> <span class="p">:,</span> <span class="p">:]),</span>
+        <span class="n">transforms</span><span class="o">.</span><span class="n">EnsureChannelFirstd</span><span class="p">(</span><span class="n">keys</span><span class="o">=</span><span class="p">[</span><span class="s2">"image"</span><span class="p">],</span> <span class="n">channel_dim</span><span class="o">=</span><span class="s2">"no_channel"</span><span class="p">),</span>
+        <span class="n">transforms</span><span class="o">.</span><span class="n">EnsureTyped</span><span class="p">(</span><span class="n">keys</span><span class="o">=</span><span class="p">[</span><span class="s2">"image"</span><span class="p">,</span> <span class="s2">"label"</span><span class="p">]),</span>
+        <span class="n">transforms</span><span class="o">.</span><span class="n">Orientationd</span><span class="p">(</span><span class="n">keys</span><span class="o">=</span><span class="p">[</span><span class="s2">"image"</span><span class="p">,</span> <span class="s2">"label"</span><span class="p">],</span> <span class="n">axcodes</span><span class="o">=</span><span class="s2">"RAS"</span><span class="p">),</span>
+        <span class="n">transforms</span><span class="o">.</span><span class="n">Spacingd</span><span class="p">(</span><span class="n">keys</span><span class="o">=</span><span class="p">[</span><span class="s2">"image"</span><span class="p">,</span> <span class="s2">"label"</span><span class="p">],</span> <span class="n">pixdim</span><span class="o">=</span><span class="p">(</span><span class="mf">3.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">),</span> <span class="n">mode</span><span class="o">=</span><span class="p">(</span><span class="s2">"bilinear"</span><span class="p">,</span> <span class="s2">"nearest"</span><span class="p">)),</span>
+        <span class="n">transforms</span><span class="o">.</span><span class="n">CenterSpatialCropd</span><span class="p">(</span><span class="n">keys</span><span class="o">=</span><span class="p">[</span><span class="s2">"image"</span><span class="p">,</span> <span class="s2">"label"</span><span class="p">],</span> <span class="n">roi_size</span><span class="o">=</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">44</span><span class="p">)),</span>
+        <span class="n">transforms</span><span class="o">.</span><span class="n">ScaleIntensityRangePercentilesd</span><span class="p">(</span><span class="n">keys</span><span class="o">=</span><span class="s2">"image"</span><span class="p">,</span> <span class="n">lower</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">upper</span><span class="o">=</span><span class="mf">99.5</span><span class="p">,</span> <span class="n">b_min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">b_max</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
+        <span class="n">transforms</span><span class="o">.</span><span class="n">RandSpatialCropd</span><span class="p">(</span><span class="n">keys</span><span class="o">=</span><span class="p">[</span><span class="s2">"image"</span><span class="p">,</span> <span class="s2">"label"</span><span class="p">],</span> <span class="n">roi_size</span><span class="o">=</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">random_size</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span>
+        <span class="n">transforms</span><span class="o">.</span><span class="n">Lambdad</span><span class="p">(</span><span class="n">keys</span><span class="o">=</span><span class="p">[</span><span class="s2">"image"</span><span class="p">,</span> <span class="s2">"label"</span><span class="p">],</span> <span class="n">func</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)),</span>
+        <span class="n">transforms</span><span class="o">.</span><span class="n">CopyItemsd</span><span class="p">(</span><span class="n">keys</span><span class="o">=</span><span class="p">[</span><span class="s2">"label"</span><span class="p">],</span> <span class="n">times</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s2">"slice_label"</span><span class="p">]),</span>
+        <span class="n">transforms</span><span class="o">.</span><span class="n">Lambdad</span><span class="p">(</span>
+            <span class="n">keys</span><span class="o">=</span><span class="p">[</span><span class="s2">"slice_label"</span><span class="p">],</span>
+            <span class="c1"># 0 = tumor present (diseased), 1 = no tumor pixels (healthy)</span>
+            <span class="n">func</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mf">0.0</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="mf">1.0</span><span class="p">,</span>
+        <span class="p">),</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.12/dist-packages/monai/utils/deprecate_utils.py:320: FutureWarning: monai.transforms.spatial.dictionary Orientationd.__init__:labels: Current default value of argument `labels=(('L', 'R'), ('P', 'A'), ('I', 'S'))` was changed in version None from `labels=(('L', 'R'), ('P', 'A'), ('I', 'S'))` to `labels=None`. Default value changed to None meaning that the transform now uses the 'space' of a meta-tensor, if applicable, to determine appropriate axis labels.
+  warn_deprecated(argname, msg, warning_category)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">batch_size</span> <span class="o">=</span> <span class="mi">64</span>
+
+<span class="n">train_ds</span> <span class="o">=</span> <span class="n">DecathlonDataset</span><span class="p">(</span>
+    <span class="n">root_dir</span><span class="o">=</span><span class="n">root_dir</span><span class="p">,</span>
+    <span class="n">task</span><span class="o">=</span><span class="s2">"Task01_BrainTumour"</span><span class="p">,</span>
+    <span class="n">section</span><span class="o">=</span><span class="s2">"training"</span><span class="p">,</span>  <span class="c1"># validation</span>
+    <span class="n">cache_rate</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>  <span class="c1"># you may need a few Gb of RAM... Set to 0 otherwise</span>
+    <span class="n">num_workers</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+    <span class="n">download</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="c1"># Set download to True if the dataset hasn't been downloaded yet</span>
+    <span class="n">seed</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="n">transform</span><span class="o">=</span><span class="n">train_transforms</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Length of training data: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">train_ds</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>  <span class="c1"># this gives the number of patients in the training set</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Train image shape </span><span class="si">{</span><span class="n">train_ds</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">"image"</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+
+<span class="n">train_loader</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">(</span>
+    <span class="n">train_ds</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">num_workers</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">drop_last</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">persistent_workers</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Task01_BrainTumour.tar: 7.09GB [08:44, 14.5MB/s]                            
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2026-08-12 18:30:00,169 - INFO - Verified 'Task01_BrainTumour.tar', md5: 240a19d752f0d9e9101544901065d872.
+2026-08-12 18:30:00,171 - INFO - Downloaded: data/Task01_BrainTumour.tar
+2026-08-12 18:30:00,173 - INFO - Writing into directory: data.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loading dataset: 100%|██████████| 388/388 [07:10&lt;00:00,  1.11s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Length of training data: 388
+Train image shape torch.Size([1, 64, 64])
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.12/dist-packages/torch/utils/data/dataloader.py:424: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  self.check_worker_number_rationality()
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="preprocessing-of-the-brats-dataset-in-2d-slices-for-validation">
+<h2>Preprocessing of the BRATS Dataset in 2D slices for validation<a class="headerlink" href="#preprocessing-of-the-brats-dataset-in-2d-slices-for-validation" title="Link to this heading">#</a></h2>
+<p>We download the BRATS validation dataset from the Decathlon dataset, and define the dataloader to load 2D slices for validation.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">val_ds</span> <span class="o">=</span> <span class="n">DecathlonDataset</span><span class="p">(</span>
+    <span class="n">root_dir</span><span class="o">=</span><span class="n">root_dir</span><span class="p">,</span>
+    <span class="n">task</span><span class="o">=</span><span class="s2">"Task01_BrainTumour"</span><span class="p">,</span>
+    <span class="n">section</span><span class="o">=</span><span class="s2">"validation"</span><span class="p">,</span>
+    <span class="n">cache_rate</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>  <span class="c1"># you may need a few Gb of RAM... Set to 0 otherwise</span>
+    <span class="n">num_workers</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+    <span class="n">download</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="c1"># Set download to True if the dataset hasn't been downloaded yet</span>
+    <span class="n">seed</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="n">transform</span><span class="o">=</span><span class="n">train_transforms</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Length of validation data: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">val_ds</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Validation Image shape </span><span class="si">{</span><span class="n">val_ds</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">"image"</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+
+<span class="n">val_loader</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">(</span>
+    <span class="n">val_ds</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">num_workers</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">drop_last</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">persistent_workers</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2026-08-12 18:38:18,108 - INFO - Verified 'Task01_BrainTumour.tar', md5: 240a19d752f0d9e9101544901065d872.
+2026-08-12 18:38:18,109 - INFO - File exists: data/Task01_BrainTumour.tar, skipped downloading.
+2026-08-12 18:38:18,112 - INFO - Non-empty folder exists in data/Task01_BrainTumour, skipped extracting.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loading dataset: 100%|██████████| 96/96 [01:47&lt;00:00,  1.12s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Length of training data: 96
+Validation Image shape torch.Size([1, 64, 64])
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="part-i-classifier-guided-diffusion">
+<h2>Part I — Classifier-guided diffusion<a class="headerlink" href="#part-i-classifier-guided-diffusion" title="Link to this heading">#</a></h2>
+<section id="define-the-diffusion-network-scheduler-optimizer-and-inferer">
+<h3>Define the diffusion network, scheduler, optimizer, and inferer<a class="headerlink" href="#define-the-diffusion-network-scheduler-optimizer-and-inferer" title="Link to this heading">#</a></h3>
+<p>The first approach trains an <strong>unconditional</strong> 2D diffusion model and a separate classifier. During sampling, the classifier gradient steers the denoising trajectory toward the healthy class.</p>
+<p>The diffusion backbone is a 2D U-Net. <code class="docutils literal notranslate"><span class="pre">DDIMScheduler</span></code> defines the diffusion/noise schedule and the deterministic DDIM sampling updates, while <code class="docutils literal notranslate"><span class="pre">DiffusionInferer</span></code> provides MONAI’s training and sampling interface.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">"cuda"</span><span class="p">)</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">DiffusionModelUNet</span><span class="p">(</span>
+    <span class="n">spatial_dims</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+    <span class="n">in_channels</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">out_channels</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">channels</span><span class="o">=</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">64</span><span class="p">),</span>
+    <span class="n">attention_levels</span><span class="o">=</span><span class="p">(</span><span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">),</span>
+    <span class="n">num_res_blocks</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">num_head_channels</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span>
+    <span class="n">with_conditioning</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+
+<span class="c1"># Forward diffusion is defined over 1,000 training timesteps.</span>
+<span class="n">scheduler</span> <span class="o">=</span> <span class="n">DDIMScheduler</span><span class="p">(</span><span class="n">num_train_timesteps</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+
+<span class="c1"># The model learns to predict the noise added at a randomly sampled timestep.</span>
+<span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span><span class="n">params</span><span class="o">=</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">2.5e-5</span><span class="p">)</span>
+
+<span class="n">inferer</span> <span class="o">=</span> <span class="n">DiffusionInferer</span><span class="p">(</span><span class="n">scheduler</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="train-the-diffusion-model">
+<h3>Train the diffusion model<a class="headerlink" href="#train-the-diffusion-model" title="Link to this heading">#</a></h3>
+<p>At a randomly sampled timestep <span class="math notranslate nohighlight">\(t\)</span>, Gaussian noise <span class="math notranslate nohighlight">\(\epsilon \sim \mathcal{N}(0,I)\)</span> is added to a clean image <span class="math notranslate nohighlight">\(x_0\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+x_t = \sqrt{\bar{\alpha}_t}\,x_0 + \sqrt{1-\bar{\alpha}_t}\,\epsilon.
+\]</div>
+<p>The U-Net predicts the injected noise, <span class="math notranslate nohighlight">\(\epsilon_\theta(x_t,t)\)</span>. Training minimizes the standard noise-prediction objective:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{L}_{\text{diff}} = \mathbb{E}_{x_0,t,\epsilon}\left[\lVert \epsilon - \epsilon_\theta(x_t,t) \rVert_2^2\right].
+\]</div>
+<p>The notebook uses 800 epochs and mixed precision. This is computationally expensive; for experimentation, reducing the epoch count is reasonable.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">max_epochs</span> <span class="o">=</span> <span class="mi">800</span>
+<span class="n">val_interval</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">epoch_loss_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">val_epoch_loss_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="n">scaler</span> <span class="o">=</span> <span class="n">GradScaler</span><span class="p">()</span>
+<span class="n">total_start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">max_epochs</span><span class="p">):</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
+    <span class="n">len_train_loader</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">train_loader</span><span class="p">)</span>
+    <span class="n">epoch_loss</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">for</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">train_loader</span><span class="p">:</span>
+        <span class="n">images</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">"image"</span><span class="p">]</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+        <span class="n">classes</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">"slice_label"</span><span class="p">]</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>  <span class="c1"># retained for symmetry; diffusion training itself is unconditional</span>
+        <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">(</span><span class="n">set_to_none</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">timesteps</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">images</span><span class="p">),))</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>  <span class="c1"># pick a random timestep</span>
+
+        <span class="k">with</span> <span class="n">autocast</span><span class="p">(</span><span class="n">enabled</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">device_type</span><span class="o">=</span><span class="s2">"cuda"</span><span class="p">):</span>
+            <span class="c1"># Sample the exact noise that the network will be trained to recover</span>
+            <span class="n">noise</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn_like</span><span class="p">(</span><span class="n">images</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+
+            <span class="c1"># Predict epsilon from x_t and t</span>
+            <span class="n">noise_pred</span> <span class="o">=</span> <span class="n">inferer</span><span class="p">(</span><span class="n">inputs</span><span class="o">=</span><span class="n">images</span><span class="p">,</span> <span class="n">diffusion_model</span><span class="o">=</span><span class="n">model</span><span class="p">,</span> <span class="n">noise</span><span class="o">=</span><span class="n">noise</span><span class="p">,</span> <span class="n">timesteps</span><span class="o">=</span><span class="n">timesteps</span><span class="p">)</span>
+            <span class="n">loss</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">mse_loss</span><span class="p">(</span><span class="n">noise_pred</span><span class="o">.</span><span class="n">float</span><span class="p">(),</span> <span class="n">noise</span><span class="o">.</span><span class="n">float</span><span class="p">())</span>
+
+        <span class="n">scaler</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="n">loss</span><span class="p">)</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+        <span class="n">scaler</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">optimizer</span><span class="p">)</span>
+        <span class="n">scaler</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+        <span class="n">epoch_loss</span> <span class="o">+=</span> <span class="n">loss</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+    <span class="n">epoch_loss_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">epoch_loss</span> <span class="o">/</span> <span class="p">(</span><span class="n">len_train_loader</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="n">epoch</span> <span class="o">%</span> <span class="n">val_interval</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
+        <span class="n">len_val_loader</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">val_loader</span><span class="p">)</span>
+        <span class="n">val_epoch_loss</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="k">for</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">val_loader</span><span class="p">:</span>
+            <span class="n">images</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">"image"</span><span class="p">]</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+            <span class="n">classes</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">"slice_label"</span><span class="p">]</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+            <span class="n">timesteps</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">images</span><span class="p">),))</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+            <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+                <span class="k">with</span> <span class="n">autocast</span><span class="p">(</span><span class="n">enabled</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">device_type</span><span class="o">=</span><span class="s2">"cuda"</span><span class="p">):</span>
+                    <span class="n">noise</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn_like</span><span class="p">(</span><span class="n">images</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+                    <span class="n">noise_pred</span> <span class="o">=</span> <span class="n">inferer</span><span class="p">(</span><span class="n">inputs</span><span class="o">=</span><span class="n">images</span><span class="p">,</span> <span class="n">diffusion_model</span><span class="o">=</span><span class="n">model</span><span class="p">,</span> <span class="n">noise</span><span class="o">=</span><span class="n">noise</span><span class="p">,</span> <span class="n">timesteps</span><span class="o">=</span><span class="n">timesteps</span><span class="p">)</span>
+                    <span class="n">val_loss</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">mse_loss</span><span class="p">(</span><span class="n">noise_pred</span><span class="o">.</span><span class="n">float</span><span class="p">(),</span> <span class="n">noise</span><span class="o">.</span><span class="n">float</span><span class="p">())</span>
+
+            <span class="n">val_epoch_loss</span> <span class="o">+=</span> <span class="n">val_loss</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+        <span class="n">val_epoch_loss_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">val_epoch_loss</span> <span class="o">/</span> <span class="p">(</span><span class="n">len_val_loader</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Epoch"</span><span class="p">,</span> <span class="n">epoch</span><span class="p">,</span> <span class="s2">"Validation loss"</span><span class="p">,</span> <span class="n">val_epoch_loss</span> <span class="o">/</span> <span class="p">(</span><span class="n">len_val_loader</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+
+<span class="n">total_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">total_start</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"train diffusion completed, total time: </span><span class="si">{</span><span class="n">total_time</span><span class="si">}</span><span class="s2">."</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s2">"default"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">"Learning Curves Diffusion Model"</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">max_epochs</span><span class="p">,</span> <span class="n">max_epochs</span><span class="p">),</span> <span class="n">epoch_loss_list</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"C0"</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">"Train"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">val_interval</span><span class="p">,</span> <span class="n">max_epochs</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">max_epochs</span> <span class="o">/</span> <span class="n">val_interval</span><span class="p">)),</span>
+    <span class="n">val_epoch_loss_list</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">"C1"</span><span class="p">,</span>
+    <span class="n">linewidth</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span>
+    <span class="n">label</span><span class="o">=</span><span class="s2">"Validation"</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">"Epochs"</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">"Loss"</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">prop</span><span class="o">=</span><span class="p">{</span><span class="s2">"size"</span><span class="p">:</span> <span class="mi">14</span><span class="p">})</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.12/dist-packages/torch/utils/data/dataloader.py:432: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  self.check_worker_number_rationality()
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 0 Validation loss 0.49015703797340393
+Epoch 20 Validation loss 0.22860252857208252
+Epoch 40 Validation loss 0.08123321086168289
+Epoch 60 Validation loss 0.03477764129638672
+Epoch 80 Validation loss 0.01947544887661934
+Epoch 100 Validation loss 0.013005109503865242
+Epoch 120 Validation loss 0.016996977850794792
+Epoch 140 Validation loss 0.0074701206758618355
+Epoch 160 Validation loss 0.011830434203147888
+Epoch 180 Validation loss 0.016883105039596558
+Epoch 200 Validation loss 0.010918458923697472
+Epoch 220 Validation loss 0.010576395317912102
+Epoch 240 Validation loss 0.012438306584954262
+Epoch 260 Validation loss 0.008401199243962765
+Epoch 280 Validation loss 0.010650603100657463
+Epoch 300 Validation loss 0.010506544262170792
+Epoch 320 Validation loss 0.006741183344274759
+Epoch 340 Validation loss 0.014951830729842186
+Epoch 360 Validation loss 0.006716431118547916
+Epoch 380 Validation loss 0.00786742102354765
+Epoch 400 Validation loss 0.009064931422472
+Epoch 420 Validation loss 0.01405971311032772
+Epoch 440 Validation loss 0.006562443450093269
+Epoch 460 Validation loss 0.004610526841133833
+Epoch 480 Validation loss 0.010416898876428604
+Epoch 500 Validation loss 0.007717089261859655
+Epoch 520 Validation loss 0.009080639109015465
+Epoch 540 Validation loss 0.005966059397906065
+Epoch 560 Validation loss 0.006566338706761599
+Epoch 580 Validation loss 0.00867344718426466
+Epoch 600 Validation loss 0.007428561337292194
+Epoch 620 Validation loss 0.008882180787622929
+Epoch 640 Validation loss 0.009293762966990471
+Epoch 660 Validation loss 0.009523388929665089
+Epoch 680 Validation loss 0.01420442946255207
+Epoch 700 Validation loss 0.007788652554154396
+Epoch 720 Validation loss 0.01090493705123663
+Epoch 740 Validation loss 0.00902541819959879
+Epoch 760 Validation loss 0.005517738871276379
+Epoch 780 Validation loss 0.008959458209574223
+train diffusion completed, total time: 2323.8500151634216.
+</pre></div>
+</div>
+<img alt="../_images/2b0183bb8eed6e5e9ba5211d49c36b3e4126c6ef90e642328d2b39cffd0ab51d.png" src="../_images/2b0183bb8eed6e5e9ba5211d49c36b3e4126c6ef90e642328d2b39cffd0ab51d.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="check-the-performance-of-the-diffusion-model">
+<h2>Check the performance of the diffusion model<a class="headerlink" href="#check-the-performance-of-the-diffusion-model" title="Link to this heading">#</a></h2>
+<p>We generate a random image from noise to check whether our diffusion model works properly for an image generation task.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
+<span class="n">noise</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">64</span><span class="p">))</span>
+<span class="n">noise</span> <span class="o">=</span> <span class="n">noise</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+<span class="n">scheduler</span><span class="o">.</span><span class="n">set_timesteps</span><span class="p">(</span><span class="n">num_inference_steps</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+<span class="k">with</span> <span class="n">autocast</span><span class="p">(</span><span class="n">enabled</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">device_type</span><span class="o">=</span><span class="s2">"cuda"</span><span class="p">):</span>
+    <span class="n">image</span><span class="p">,</span> <span class="n">intermediates</span> <span class="o">=</span> <span class="n">inferer</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span>
+        <span class="n">input_noise</span><span class="o">=</span><span class="n">noise</span><span class="p">,</span> <span class="n">diffusion_model</span><span class="o">=</span><span class="n">model</span><span class="p">,</span> <span class="n">scheduler</span><span class="o">=</span><span class="n">scheduler</span><span class="p">,</span> <span class="n">save_intermediates</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">intermediate_steps</span><span class="o">=</span><span class="mi">100</span>
+    <span class="p">)</span>
+
+<span class="n">chain</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">(</span><span class="n">intermediates</span><span class="p">,</span> <span class="n">dim</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s2">"default"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">chain</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">cpu</span><span class="p">(),</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">"gray"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">"off"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 1000/1000 [00:19&lt;00:00, 50.13it/s]
+</pre></div>
+</div>
+<img alt="../_images/81bac7a0b4fbcf78d966a745e98b76854103e9c5b25b4285c90f452a3eca8676.png" src="../_images/81bac7a0b4fbcf78d966a745e98b76854103e9c5b25b4285c90f452a3eca8676.png" />
+</div>
+</div>
+</section>
+<section id="train-a-noisy-image-classifier-for-guidance">
+<h2>Train a noisy-image classifier for guidance<a class="headerlink" href="#train-a-noisy-image-classifier-for-guidance" title="Link to this heading">#</a></h2>
+<p>The classifier uses a diffusion-style encoder and receives both the noisy image <span class="math notranslate nohighlight">\(x_t\)</span> and the timestep <span class="math notranslate nohighlight">\(t\)</span>. It predicts whether a slice is diseased (<code class="docutils literal notranslate"><span class="pre">0</span></code>) or healthy (<code class="docutils literal notranslate"><span class="pre">1</span></code>). Training it across noise levels is important because, during guided denoising, the classifier will see partially denoised samples rather than only clean images.</p>
+<p>For logits <span class="math notranslate nohighlight">\(z_\phi(x_t,t)\)</span>, the classifier is trained with cross-entropy:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{L}_{\text{cls}} = -\log p_\phi(y\mid x_t,t).
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">"cuda"</span><span class="p">)</span>
+<span class="n">classifier</span> <span class="o">=</span> <span class="n">DiffusionModelEncoder</span><span class="p">(</span>
+    <span class="n">spatial_dims</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+    <span class="n">in_channels</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">out_channels</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+    <span class="n">channels</span><span class="o">=</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">64</span><span class="p">),</span>
+    <span class="n">attention_levels</span><span class="o">=</span><span class="p">(</span><span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">),</span>
+    <span class="n">num_res_blocks</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+    <span class="n">num_head_channels</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span>
+    <span class="n">with_conditioning</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">classifier</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DiffusionModelEncoder(
+  (conv_in): Convolution(
+    (conv): Conv2d(1, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+  )
+  (time_embed): Sequential(
+    (0): Linear(in_features=32, out_features=128, bias=True)
+    (1): SiLU()
+    (2): Linear(in_features=128, out_features=128, bias=True)
+  )
+  (down_blocks): ModuleList(
+    (0): DownBlock(
+      (resnets): ModuleList(
+        (0): DiffusionUNetResnetBlock(
+          (norm1): GroupNorm(32, 32, eps=1e-06, affine=True)
+          (nonlinearity): SiLU()
+          (conv1): Convolution(
+            (conv): Conv2d(32, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+          )
+          (time_emb_proj): Linear(in_features=128, out_features=32, bias=True)
+          (norm2): GroupNorm(32, 32, eps=1e-06, affine=True)
+          (conv2): Convolution(
+            (conv): Conv2d(32, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+          )
+          (skip_connection): Identity()
+        )
+      )
+      (downsampler): DiffusionUnetDownsample(
+        (op): Convolution(
+          (conv): Conv2d(32, 32, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))
+        )
+      )
+    )
+    (1): AttnDownBlock(
+      (attentions): ModuleList(
+        (0): SpatialAttentionBlock(
+          (norm): GroupNorm(32, 64, eps=1e-06, affine=True)
+          (attn): SABlock(
+            (out_proj): Linear(in_features=64, out_features=64, bias=True)
+            (to_q): Linear(in_features=64, out_features=64, bias=True)
+            (to_k): Linear(in_features=64, out_features=64, bias=True)
+            (to_v): Linear(in_features=64, out_features=64, bias=True)
+            (qkv): Identity()
+            (input_rearrange): Rearrange('b h (l d) -&gt; b l h d', l=1)
+            (out_rearrange): Rearrange('b l h d -&gt; b h (l d)')
+            (drop_output): Dropout(p=0.0, inplace=False)
+            (drop_weights): Dropout(p=0.0, inplace=False)
+          )
+        )
+      )
+      (resnets): ModuleList(
+        (0): DiffusionUNetResnetBlock(
+          (norm1): GroupNorm(32, 32, eps=1e-06, affine=True)
+          (nonlinearity): SiLU()
+          (conv1): Convolution(
+            (conv): Conv2d(32, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+          )
+          (time_emb_proj): Linear(in_features=128, out_features=64, bias=True)
+          (norm2): GroupNorm(32, 64, eps=1e-06, affine=True)
+          (conv2): Convolution(
+            (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+          )
+          (skip_connection): Convolution(
+            (conv): Conv2d(32, 64, kernel_size=(1, 1), stride=(1, 1))
+          )
+        )
+      )
+      (downsampler): DiffusionUnetDownsample(
+        (op): Convolution(
+          (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))
+        )
+      )
+    )
+    (2): AttnDownBlock(
+      (attentions): ModuleList(
+        (0): SpatialAttentionBlock(
+          (norm): GroupNorm(32, 64, eps=1e-06, affine=True)
+          (attn): SABlock(
+            (out_proj): Linear(in_features=64, out_features=64, bias=True)
+            (to_q): Linear(in_features=64, out_features=64, bias=True)
+            (to_k): Linear(in_features=64, out_features=64, bias=True)
+            (to_v): Linear(in_features=64, out_features=64, bias=True)
+            (qkv): Identity()
+            (input_rearrange): Rearrange('b h (l d) -&gt; b l h d', l=1)
+            (out_rearrange): Rearrange('b l h d -&gt; b h (l d)')
+            (drop_output): Dropout(p=0.0, inplace=False)
+            (drop_weights): Dropout(p=0.0, inplace=False)
+          )
+        )
+      )
+      (resnets): ModuleList(
+        (0): DiffusionUNetResnetBlock(
+          (norm1): GroupNorm(32, 64, eps=1e-06, affine=True)
+          (nonlinearity): SiLU()
+          (conv1): Convolution(
+            (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+          )
+          (time_emb_proj): Linear(in_features=128, out_features=64, bias=True)
+          (norm2): GroupNorm(32, 64, eps=1e-06, affine=True)
+          (conv2): Convolution(
+            (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+          )
+          (skip_connection): Identity()
+        )
+      )
+      (downsampler): DiffusionUnetDownsample(
+        (op): Convolution(
+          (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))
+        )
+      )
+    )
+  )
+  (out): Sequential(
+    (0): Linear(in_features=4096, out_features=512, bias=True)
+    (1): ReLU()
+    (2): Dropout(p=0.1, inplace=False)
+    (3): Linear(in_features=512, out_features=2, bias=True)
+  )
+)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="model-training-of-the-classification-model">
+<h2>Model training of the classification model<a class="headerlink" href="#model-training-of-the-classification-model" title="Link to this heading">#</a></h2>
+<p>We train our classification model for 1000 epochs.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">max_epochs</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">val_interval</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">epoch_loss_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">val_epoch_loss_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">optimizer_cls</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span><span class="n">params</span><span class="o">=</span><span class="n">classifier</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">2.5e-5</span><span class="p">)</span>
+
+
+<span class="n">scaler</span> <span class="o">=</span> <span class="n">GradScaler</span><span class="p">()</span>
+<span class="n">total_start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">max_epochs</span><span class="p">):</span>
+    <span class="n">classifier</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
+    <span class="n">len_train_loader</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">train_loader</span><span class="p">)</span>
+    <span class="n">epoch_loss</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">for</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">train_loader</span><span class="p">:</span>
+        <span class="n">images</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">"image"</span><span class="p">]</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+        <span class="n">classes</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">"slice_label"</span><span class="p">]</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+
+        <span class="n">optimizer_cls</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">(</span><span class="n">set_to_none</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">timesteps</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">images</span><span class="p">),))</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+
+        <span class="k">with</span> <span class="n">autocast</span><span class="p">(</span><span class="n">enabled</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">device_type</span><span class="o">=</span><span class="s2">"cuda"</span><span class="p">):</span>
+            <span class="c1"># Corrupt each clean slice to a random diffusion timestep</span>
+            <span class="n">noise</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn_like</span><span class="p">(</span><span class="n">images</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+
+            <span class="c1"># Predict the slice class from the noisy image and its timestep</span>
+            <span class="n">noisy_img</span> <span class="o">=</span> <span class="n">scheduler</span><span class="o">.</span><span class="n">add_noise</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="n">noise</span><span class="p">,</span> <span class="n">timesteps</span><span class="p">)</span>  <span class="c1"># add t steps of noise to the input image</span>
+            <span class="n">pred</span> <span class="o">=</span> <span class="n">classifier</span><span class="p">(</span><span class="n">noisy_img</span><span class="p">,</span> <span class="n">timesteps</span><span class="p">)</span>
+
+            <span class="n">loss</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">cross_entropy</span><span class="p">(</span><span class="n">pred</span><span class="p">,</span> <span class="n">classes</span><span class="o">.</span><span class="n">long</span><span class="p">())</span>
+
+            <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+            <span class="n">optimizer_cls</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+
+        <span class="n">epoch_loss</span> <span class="o">+=</span> <span class="n">loss</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+    <span class="n">epoch_loss_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">epoch_loss</span> <span class="o">/</span> <span class="p">(</span><span class="n">len_train_loader</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">epoch</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="n">val_interval</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">classifier</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
+        <span class="n">len_val_loader</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">val_loader</span><span class="p">)</span>
+        <span class="n">val_epoch_loss</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="k">for</span> <span class="n">data_val</span> <span class="ow">in</span> <span class="n">val_loader</span><span class="p">:</span>
+            <span class="n">images</span> <span class="o">=</span> <span class="n">data_val</span><span class="p">[</span><span class="s2">"image"</span><span class="p">]</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+            <span class="n">classes</span> <span class="o">=</span> <span class="n">data_val</span><span class="p">[</span><span class="s2">"slice_label"</span><span class="p">]</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+            <span class="n">timesteps</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">images</span><span class="p">),))</span><span class="o">.</span><span class="n">to</span><span class="p">(</span>
+                <span class="n">device</span>
+            <span class="p">)</span>  <span class="c1"># check validation accuracy on the original images, i.e., do not add noise</span>
+
+            <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+                <span class="k">with</span> <span class="n">autocast</span><span class="p">(</span><span class="n">enabled</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">device_type</span><span class="o">=</span><span class="s2">"cuda"</span><span class="p">):</span>
+                    <span class="n">noise</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn_like</span><span class="p">(</span><span class="n">images</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+                    <span class="n">pred</span> <span class="o">=</span> <span class="n">classifier</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="n">timesteps</span><span class="p">)</span>
+                    <span class="n">val_loss</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">cross_entropy</span><span class="p">(</span><span class="n">pred</span><span class="p">,</span> <span class="n">classes</span><span class="o">.</span><span class="n">long</span><span class="p">(),</span> <span class="n">reduction</span><span class="o">=</span><span class="s2">"mean"</span><span class="p">)</span>
+
+            <span class="n">val_epoch_loss</span> <span class="o">+=</span> <span class="n">val_loss</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+            <span class="n">_</span><span class="p">,</span> <span class="n">predicted</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">pred</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+        <span class="c1"># Store one validation value per validation epoch (so it aligns with the plot x-axis).</span>
+        <span class="n">val_epoch_loss_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">val_epoch_loss</span> <span class="o">/</span> <span class="p">(</span><span class="n">len_val_loader</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Epoch"</span><span class="p">,</span> <span class="n">epoch</span><span class="p">,</span> <span class="s2">"Validation loss"</span><span class="p">,</span> <span class="n">val_epoch_loss</span> <span class="o">/</span> <span class="p">(</span><span class="n">len_val_loader</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+
+<span class="n">total_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">total_start</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"train completed, total time: </span><span class="si">{</span><span class="n">total_time</span><span class="si">}</span><span class="s2">."</span><span class="p">)</span>
+
+<span class="c1"># Learning curves for the Classifier</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s2">"default"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">"Learning Curves"</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">max_epochs</span><span class="p">,</span> <span class="n">max_epochs</span><span class="p">),</span> <span class="n">epoch_loss_list</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"C0"</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">"Train"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">val_interval</span><span class="p">,</span> <span class="n">max_epochs</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">max_epochs</span> <span class="o">/</span> <span class="n">val_interval</span><span class="p">)),</span>
+    <span class="n">val_epoch_loss_list</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">"C1"</span><span class="p">,</span>
+    <span class="n">linewidth</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span>
+    <span class="n">label</span><span class="o">=</span><span class="s2">"Validation"</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">"Epochs"</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">"Loss"</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">prop</span><span class="o">=</span><span class="p">{</span><span class="s2">"size"</span><span class="p">:</span> <span class="mi">14</span><span class="p">})</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 9 Validation loss 0.2444707751274109
+Epoch 19 Validation loss 0.2844501733779907
+Epoch 29 Validation loss 0.209311380982399
+Epoch 39 Validation loss 0.1575915813446045
+Epoch 49 Validation loss 0.17491045594215393
+Epoch 59 Validation loss 0.14045704901218414
+Epoch 69 Validation loss 0.13946962356567383
+Epoch 79 Validation loss 0.11771580576896667
+Epoch 89 Validation loss 0.13300445675849915
+Epoch 99 Validation loss 0.18975549936294556
+Epoch 109 Validation loss 0.0848136693239212
+Epoch 119 Validation loss 0.16286274790763855
+Epoch 129 Validation loss 0.11404098570346832
+Epoch 139 Validation loss 0.13027410209178925
+Epoch 149 Validation loss 0.17463085055351257
+Epoch 159 Validation loss 0.12158595025539398
+Epoch 169 Validation loss 0.11227664351463318
+Epoch 179 Validation loss 0.15868598222732544
+Epoch 189 Validation loss 0.15956631302833557
+Epoch 199 Validation loss 0.14702282845973969
+Epoch 209 Validation loss 0.1446194052696228
+Epoch 219 Validation loss 0.18400421738624573
+Epoch 229 Validation loss 0.15592871606349945
+Epoch 239 Validation loss 0.1307964026927948
+Epoch 249 Validation loss 0.15232247114181519
+Epoch 259 Validation loss 0.13725830614566803
+Epoch 269 Validation loss 0.10667909681797028
+Epoch 279 Validation loss 0.08652038872241974
+Epoch 289 Validation loss 0.15412437915802002
+Epoch 299 Validation loss 0.13744521141052246
+Epoch 309 Validation loss 0.13775993883609772
+Epoch 319 Validation loss 0.10334078967571259
+Epoch 329 Validation loss 0.1268867403268814
+Epoch 339 Validation loss 0.10560682415962219
+Epoch 349 Validation loss 0.09770996123552322
+Epoch 359 Validation loss 0.14718574285507202
+Epoch 369 Validation loss 0.1292530596256256
+Epoch 379 Validation loss 0.12359867990016937
+Epoch 389 Validation loss 0.14149245619773865
+Epoch 399 Validation loss 0.13104373216629028
+Epoch 409 Validation loss 0.14201155304908752
+Epoch 419 Validation loss 0.1902533918619156
+Epoch 429 Validation loss 0.09946058690547943
+Epoch 439 Validation loss 0.12408953905105591
+Epoch 449 Validation loss 0.11782654374837875
+Epoch 459 Validation loss 0.1282978057861328
+Epoch 469 Validation loss 0.13988612592220306
+Epoch 479 Validation loss 0.11951728165149689
+Epoch 489 Validation loss 0.13470563292503357
+Epoch 499 Validation loss 0.12382958829402924
+Epoch 509 Validation loss 0.1716984063386917
+Epoch 519 Validation loss 0.13534235954284668
+Epoch 529 Validation loss 0.09378332644701004
+Epoch 539 Validation loss 0.0953867956995964
+Epoch 549 Validation loss 0.14955642819404602
+Epoch 559 Validation loss 0.10572860389947891
+Epoch 569 Validation loss 0.1528036892414093
+Epoch 579 Validation loss 0.11720412969589233
+Epoch 589 Validation loss 0.15970078110694885
+Epoch 599 Validation loss 0.13188862800598145
+Epoch 609 Validation loss 0.13770093023777008
+Epoch 619 Validation loss 0.14831554889678955
+Epoch 629 Validation loss 0.13205917179584503
+Epoch 639 Validation loss 0.16608278453350067
+Epoch 649 Validation loss 0.10549509525299072
+Epoch 659 Validation loss 0.0664902850985527
+Epoch 669 Validation loss 0.10860900580883026
+Epoch 679 Validation loss 0.0941731408238411
+Epoch 689 Validation loss 0.15495121479034424
+Epoch 699 Validation loss 0.13234737515449524
+Epoch 709 Validation loss 0.11790253221988678
+Epoch 719 Validation loss 0.0713483914732933
+Epoch 729 Validation loss 0.08935452997684479
+Epoch 739 Validation loss 0.13979309797286987
+Epoch 749 Validation loss 0.09923378378152847
+Epoch 759 Validation loss 0.13501612842082977
+Epoch 769 Validation loss 0.12551164627075195
+Epoch 779 Validation loss 0.09940537810325623
+Epoch 789 Validation loss 0.10961434245109558
+Epoch 799 Validation loss 0.1270933449268341
+Epoch 809 Validation loss 0.17003799974918365
+Epoch 819 Validation loss 0.15673339366912842
+Epoch 829 Validation loss 0.12798528373241425
+Epoch 839 Validation loss 0.10085297375917435
+Epoch 849 Validation loss 0.15775106847286224
+Epoch 859 Validation loss 0.1423439383506775
+Epoch 869 Validation loss 0.15033812820911407
+Epoch 879 Validation loss 0.14326199889183044
+Epoch 889 Validation loss 0.08193591237068176
+Epoch 899 Validation loss 0.12301874160766602
+Epoch 909 Validation loss 0.10880763828754425
+Epoch 919 Validation loss 0.11521914601325989
+Epoch 929 Validation loss 0.1297301948070526
+Epoch 939 Validation loss 0.12889191508293152
+Epoch 949 Validation loss 0.11458688229322433
+Epoch 959 Validation loss 0.06988396495580673
+Epoch 969 Validation loss 0.14670702815055847
+Epoch 979 Validation loss 0.10484817624092102
+Epoch 989 Validation loss 0.14854101836681366
+Epoch 999 Validation loss 0.10149243474006653
+train completed, total time: 2282.904812812805.
+</pre></div>
+</div>
+<img alt="../_images/d20e2c156aee77e364153e7b5d98081eab498d61fb1ec2bae979e20de003aff0.png" src="../_images/d20e2c156aee77e364153e7b5d98081eab498d61fb1ec2bae979e20de003aff0.png" />
+</div>
+</div>
+</section>
+<section id="image-to-image-translation-toward-a-healthy-reconstruction">
+<h2>Image-to-image translation toward a healthy reconstruction<a class="headerlink" href="#image-to-image-translation-toward-a-healthy-reconstruction" title="Link to this heading">#</a></h2>
+<p>We now choose a diseased validation slice and transform it toward the <strong>healthy</strong> class. The procedure has two stages:</p>
+<ol class="arabic simple">
+<li><p><strong>DDIM inversion / encoding:</strong> move the input partway along the diffusion trajectory to obtain a noisy latent representation.</p></li>
+<li><p><strong>Guided DDIM denoising:</strong> reverse that trajectory while steering each step toward the healthy class.</p></li>
+</ol>
+<p>The hope is that anatomy unrelated to the lesion is preserved while tumor-related structure is removed or reduced.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_val</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="nb">iter</span><span class="p">(</span><span class="n">val_loader</span><span class="p">))</span>  <span class="c1"># explicitly fetch a validation batch for reconstruction</span>
+<span class="n">idx_unhealthy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argwhere</span><span class="p">(</span><span class="n">data_val</span><span class="p">[</span><span class="s2">"slice_label"</span><span class="p">]</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">squeeze</span><span class="p">()</span>
+<span class="n">idx</span> <span class="o">=</span> <span class="n">idx_unhealthy</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>  <span class="c1"># choose one diseased slice from this validation batch</span>
+<span class="n">inputimg</span> <span class="o">=</span> <span class="n">data_val</span><span class="p">[</span><span class="s2">"image"</span><span class="p">][</span><span class="n">idx</span><span class="p">]</span>  <span class="c1"># Pick an input slice of the validation set to be transformed</span>
+<span class="n">inputlabel</span> <span class="o">=</span> <span class="n">data_val</span><span class="p">[</span><span class="s2">"slice_label"</span><span class="p">][</span><span class="n">idx</span><span class="p">]</span>  <span class="c1"># Check whether it is healthy or diseased</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"minmax"</span><span class="p">,</span> <span class="n">inputimg</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">inputimg</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="s2">"input"</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">inputlabel</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">inputimg</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">"gray"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">"off"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
+<span class="n">classifier</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>minmax metatensor(0.) metatensor(1.2078)
+</pre></div>
+</div>
+<img alt="../_images/d7256d0ff902c3ded40d500404d153073cd7e3d2e20c64f6285648d59739756a.png" src="../_images/d7256d0ff902c3ded40d500404d153073cd7e3d2e20c64f6285648d59739756a.png" />
+</div>
+</div>
+<section id="encode-the-input-with-reversed-ddim-sampling">
+<h3>Encode the input with reversed DDIM sampling<a class="headerlink" href="#encode-the-input-with-reversed-ddim-sampling" title="Link to this heading">#</a></h3>
+<p>Before applying guidance, the input slice is moved <span class="math notranslate nohighlight">\(L\)</span> steps toward a noisier state using the scheduler’s reversed DDIM update. This is often called <strong>DDIM inversion</strong>.</p>
+<p>Conceptually, the goal is to obtain a noisy state <span class="math notranslate nohighlight">\(x_L\)</span> that still retains enough information about the original anatomy to be reconstructed, while giving the guided reverse process room to alter disease-related features. Here, <code class="docutils literal notranslate"><span class="pre">L</span> <span class="pre">=</span> <span class="pre">200</span></code>; larger values generally allow more freedom to change the image but may reduce faithfulness to the input.</p>
+<p>This step follows the inversion idea used in Wolleb et al. (Eq. 6).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">L</span> <span class="o">=</span> <span class="mi">200</span>
+<span class="n">current_img</span> <span class="o">=</span> <span class="n">inputimg</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+<span class="n">scheduler</span><span class="o">.</span><span class="n">set_timesteps</span><span class="p">(</span><span class="n">num_inference_steps</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+
+<span class="n">progress_bar</span> <span class="o">=</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">L</span><span class="p">))</span>  <span class="c1"># go back and forth L timesteps</span>
+<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">progress_bar</span><span class="p">:</span>  <span class="c1"># go through the noising process</span>
+    <span class="k">with</span> <span class="n">autocast</span><span class="p">(</span><span class="n">enabled</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">device_type</span><span class="o">=</span><span class="s2">"cuda"</span><span class="p">):</span>
+        <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+            <span class="n">model_output</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">current_img</span><span class="p">,</span> <span class="n">timesteps</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">((</span><span class="n">t</span><span class="p">,))</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">current_img</span><span class="o">.</span><span class="n">device</span><span class="p">))</span>
+    <span class="n">current_img</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">scheduler</span><span class="o">.</span><span class="n">reversed_step</span><span class="p">(</span><span class="n">model_output</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">current_img</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s2">"default"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">current_img</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">cpu</span><span class="p">(),</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">"gray"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">"off"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 200/200 [00:05&lt;00:00, 33.36it/s]
+</pre></div>
+</div>
+<img alt="../_images/8cde18de9576ac7f4690fcafa662f9a2818902de5de1c10174ffaebe083d2cbe.png" src="../_images/8cde18de9576ac7f4690fcafa662f9a2818902de5de1c10174ffaebe083d2cbe.png" />
+</div>
+</div>
+</section>
+<section id="denoise-with-classifier-guidance">
+<h3>Denoise with classifier guidance<a class="headerlink" href="#denoise-with-classifier-guidance" title="Link to this heading">#</a></h3>
+<p>At each reverse step, the classifier contributes the gradient of the healthy-class log probability with respect to the current image. In the noise-prediction parameterization used here, the guided estimate is</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{\epsilon}(x_t,t)
+=
+\epsilon_\theta(x_t,t)
+-
+s\sqrt{1-\bar{\alpha}_t}\,
+\nabla_{x_t}\log p_\phi(y\mid x_t,t),
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(s\)</span> is the guidance scale. Because this notebook defines <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">=</span> <span class="pre">diseased</span></code> and <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">=</span> <span class="pre">healthy</span></code>, the code below uses <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">1</span></code> as the guidance target.</p>
+<blockquote>
+<div><p><strong>Interpretation:</strong> larger <span class="math notranslate nohighlight">\(s\)</span> makes the classifier exert more influence, but excessive guidance can introduce artifacts or move the reconstruction too far from the original anatomy.</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">)</span>  <span class="c1"># target class: healthy (0 = diseased, 1 = healthy)</span>
+<span class="n">scale</span> <span class="o">=</span> <span class="mi">6</span>  <span class="c1"># classifier-guidance strength s</span>
+<span class="n">progress_bar</span> <span class="o">=</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">L</span><span class="p">))</span>  <span class="c1"># go back and forth L timesteps</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">progress_bar</span><span class="p">:</span>  <span class="c1"># go through the denoising process</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">L</span> <span class="o">-</span> <span class="n">i</span>
+    <span class="k">with</span> <span class="n">autocast</span><span class="p">(</span><span class="n">enabled</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">device_type</span><span class="o">=</span><span class="s2">"cuda"</span><span class="p">):</span>
+        <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+            <span class="n">model_output</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span>
+                <span class="n">current_img</span><span class="p">,</span> <span class="n">timesteps</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">((</span><span class="n">t</span><span class="p">,))</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">current_img</span><span class="o">.</span><span class="n">device</span><span class="p">)</span>
+            <span class="p">)</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span>  <span class="c1"># this is supposed to be epsilon</span>
+
+        <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">enable_grad</span><span class="p">():</span>
+            <span class="n">x_in</span> <span class="o">=</span> <span class="n">current_img</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">requires_grad_</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+            <span class="n">logits</span> <span class="o">=</span> <span class="n">classifier</span><span class="p">(</span><span class="n">x_in</span><span class="p">,</span> <span class="n">timesteps</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">((</span><span class="n">t</span><span class="p">,))</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">current_img</span><span class="o">.</span><span class="n">device</span><span class="p">))</span>
+            <span class="n">log_probs</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">log_softmax</span><span class="p">(</span><span class="n">logits</span><span class="p">,</span> <span class="n">dim</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+            <span class="n">selected</span> <span class="o">=</span> <span class="n">log_probs</span><span class="p">[:,</span> <span class="n">y</span><span class="o">.</span><span class="n">item</span><span class="p">()]</span>  <span class="c1"># log p_phi(y=healthy | x_t, t)</span>
+            <span class="n">a</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">autograd</span><span class="o">.</span><span class="n">grad</span><span class="p">(</span><span class="n">selected</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span> <span class="n">x_in</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># grad_x log p_phi(y | x_t, t)</span>
+            <span class="n">alpha_prod_t</span> <span class="o">=</span> <span class="n">scheduler</span><span class="o">.</span><span class="n">alphas_cumprod</span><span class="p">[</span><span class="n">t</span><span class="p">]</span>
+            <span class="n">updated_noise</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="n">model_output</span> <span class="o">-</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">alpha_prod_t</span><span class="p">)</span><span class="o">.</span><span class="n">sqrt</span><span class="p">()</span> <span class="o">*</span> <span class="n">scale</span> <span class="o">*</span> <span class="n">a</span>
+            <span class="p">)</span>  <span class="c1"># update the predicted noise epsilon with the gradient of the classifier</span>
+
+    <span class="n">current_img</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">scheduler</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">updated_noise</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">current_img</span><span class="p">)</span>
+    <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">empty_cache</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s2">"default"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">current_img</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">"gray"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">"off"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 200/200 [00:12&lt;00:00, 16.66it/s]
+</pre></div>
+</div>
+<img alt="../_images/ab3b6af01332496f1a51b559f9761cad2900d79b76e0fc8889608e50f1bae3af.png" src="../_images/ab3b6af01332496f1a51b559f9761cad2900d79b76e0fc8889608e50f1bae3af.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="anomaly-map">
+<h2>Anomaly map<a class="headerlink" href="#anomaly-map" title="Link to this heading">#</a></h2>
+<p>The guided reconstruction is treated as an approximation of how the same slice might look without the anomaly. A simple pixel-wise anomaly score is therefore</p>
+<div class="math notranslate nohighlight">
+\[
+A = \left|x_{\text{input}} - x_{\text{healthy reconstruction}}\right|.
+\]</div>
+<p>Large values indicate regions that changed substantially during healthy-directed reconstruction. This is a <strong>reconstruction-difference heuristic</strong>, so intensity changes or imperfect reconstructions can also produce high responses.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">diff</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">inputimg</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span> <span class="o">-</span> <span class="n">current_img</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">cpu</span><span class="p">())</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s2">"default"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">diff</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">"jet"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">"off"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/e4b0963ed2094f66b33816bce98dd06e4032fde848823bb7dab1094e119bf6da.png" src="../_images/e4b0963ed2094f66b33816bce98dd06e4032fde848823bb7dab1094e119bf6da.png" />
+</div>
+</div>
+<section id="reading-the-anomaly-map">
+<h3>Reading the anomaly map<a class="headerlink" href="#reading-the-anomaly-map" title="Link to this heading">#</a></h3>
+<p>The heat map is most useful as a <strong>relative localization signal</strong> rather than a calibrated probability map. In practice, post-processing may include smoothing, thresholding, connected-component filtering, or comparison against the ground-truth segmentation when quantitative evaluation is required.</p>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="part-ii-classifier-free-guidance-cfg">
+<h1>Part II — Classifier-free guidance (CFG)<a class="headerlink" href="#part-ii-classifier-free-guidance-cfg" title="Link to this heading">#</a></h1>
+<p>Classifier-free guidance removes the need for a separate classifier at sampling time. During training, the diffusion model sometimes receives the true class condition and sometimes a special <strong>null condition</strong>. This teaches one network both a conditional predictor and an unconditional predictor.</p>
+<p>In this notebook:</p>
+<ul class="simple">
+<li><p>class <code class="docutils literal notranslate"><span class="pre">0</span></code> = diseased</p></li>
+<li><p>class <code class="docutils literal notranslate"><span class="pre">1</span></code> = healthy</p></li>
+<li><p>class <code class="docutils literal notranslate"><span class="pre">2</span></code> = no-class / unconditional token</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">no_class_prob</span> <span class="pre">=</span> <span class="pre">0.1</span></code> means 10% of training examples drop the class condition</p></li>
+</ul>
+<p>At sampling time, let <span class="math notranslate nohighlight">\(\epsilon_{\text{cond}}\)</span> be the noise prediction for the desired class and <span class="math notranslate nohighlight">\(\epsilon_{\text{uncond}}\)</span> the prediction for the null class. CFG combines them as</p>
+<div class="math notranslate nohighlight">
+\[
+\epsilon_{\text{CFG}}
+=
+\epsilon_{\text{uncond}}
++ w\left(\epsilon_{\text{cond}}-\epsilon_{\text{uncond}}\right)
+=
+w\epsilon_{\text{cond}} + (1-w)\epsilon_{\text{uncond}}.
+\]</div>
+<p>For <span class="math notranslate nohighlight">\(w&gt;1\)</span>, the conditional direction is extrapolated beyond the ordinary class-conditioned prediction.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">"cuda"</span><span class="p">)</span>
+
+<span class="n">num_classes</span> <span class="o">=</span> <span class="mi">3</span>       <span class="c1"># diseased, healthy, and the null/unconditional class</span>
+<span class="n">no_class_prob</span> <span class="o">=</span> <span class="mf">0.1</span>  <span class="c1"># probability of dropping the true class during training</span>
+<span class="n">no_class_val</span> <span class="o">=</span> <span class="mi">2</span>     <span class="c1"># embedding index reserved for the null condition</span>
+<span class="n">cross_attn_dim</span> <span class="o">=</span> <span class="mi">1</span>   <span class="c1"># dimensionality of the learned class embedding</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">DiffusionModelUNet</span><span class="p">(</span>
+    <span class="n">spatial_dims</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+    <span class="n">in_channels</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">out_channels</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">channels</span><span class="o">=</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">64</span><span class="p">),</span>
+    <span class="n">attention_levels</span><span class="o">=</span><span class="p">(</span><span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">),</span>
+    <span class="n">num_res_blocks</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">num_head_channels</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span>
+    <span class="n">with_conditioning</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">cross_attention_dim</span><span class="o">=</span><span class="n">cross_attn_dim</span>
+<span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+
+<span class="n">scheduler</span> <span class="o">=</span> <span class="n">DDIMScheduler</span><span class="p">(</span><span class="n">num_train_timesteps</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+
+<span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span><span class="n">params</span><span class="o">=</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">2.5e-5</span><span class="p">)</span>
+
+<span class="n">inferer</span> <span class="o">=</span> <span class="n">DiffusionInferer</span><span class="p">(</span><span class="n">scheduler</span><span class="p">)</span>
+
+<span class="c1"># Learned scalar embedding passed to the U-Net through cross-attention.</span>
+<span class="n">class_embed</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Embedding</span><span class="p">(</span><span class="n">num_embeddings</span><span class="o">=</span><span class="n">num_classes</span><span class="p">,</span> <span class="n">embedding_dim</span><span class="o">=</span><span class="n">cross_attn_dim</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">max_epochs</span> <span class="o">=</span> <span class="mi">800</span>
+<span class="n">val_interval</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">epoch_loss_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">val_epoch_loss_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="n">scaler</span> <span class="o">=</span> <span class="n">GradScaler</span><span class="p">()</span>
+<span class="n">total_start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">max_epochs</span><span class="p">):</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
+    <span class="n">len_train_loader</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">train_loader</span><span class="p">)</span>
+    <span class="n">epoch_loss</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">for</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">train_loader</span><span class="p">:</span>
+        <span class="n">images</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">"image"</span><span class="p">]</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+
+        <span class="n">classes</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">"slice_label"</span><span class="p">]</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span><span class="o">.</span><span class="n">long</span><span class="p">()</span>
+        <span class="c1"># Randomly replace some labels with the null class so one model learns</span>
+        <span class="c1"># both conditional and unconditional noise prediction.</span>
+        <span class="n">no_class_ids</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">bernoulli</span><span class="p">(</span><span class="n">no_class_prob</span> <span class="o">*</span> <span class="n">torch</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">classes</span><span class="p">),</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">))</span><span class="o">.</span><span class="n">bool</span><span class="p">()</span>
+        <span class="n">classes</span><span class="p">[</span><span class="n">no_class_ids</span><span class="p">]</span> <span class="o">=</span> <span class="n">no_class_val</span>
+        <span class="n">cond</span> <span class="o">=</span> <span class="n">class_embed</span><span class="p">(</span><span class="n">classes</span><span class="p">)</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">(</span><span class="n">set_to_none</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">timesteps</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">images</span><span class="p">),))</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>  <span class="c1"># pick a random timestep</span>
+
+        <span class="k">with</span> <span class="n">autocast</span><span class="p">(</span><span class="n">enabled</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">device_type</span><span class="o">=</span><span class="s2">"cuda"</span><span class="p">):</span>
+            <span class="c1"># Sample the noise to be predicted</span>
+            <span class="n">noise</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn_like</span><span class="p">(</span><span class="n">images</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+
+            <span class="c1"># Predict noise while conditioning through cross-attention</span>
+            <span class="n">noise_pred</span> <span class="o">=</span> <span class="n">inferer</span><span class="p">(</span><span class="n">inputs</span><span class="o">=</span><span class="n">images</span><span class="p">,</span> <span class="n">diffusion_model</span><span class="o">=</span><span class="n">model</span><span class="p">,</span> <span class="n">noise</span><span class="o">=</span><span class="n">noise</span><span class="p">,</span>
+                                 <span class="n">timesteps</span><span class="o">=</span><span class="n">timesteps</span><span class="p">,</span> <span class="n">condition</span><span class="o">=</span><span class="n">cond</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">'crossattn'</span><span class="p">)</span>
+            <span class="n">loss</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">mse_loss</span><span class="p">(</span><span class="n">noise_pred</span><span class="o">.</span><span class="n">float</span><span class="p">(),</span> <span class="n">noise</span><span class="o">.</span><span class="n">float</span><span class="p">())</span>
+
+        <span class="n">scaler</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="n">loss</span><span class="p">)</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+        <span class="n">scaler</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">optimizer</span><span class="p">)</span>
+        <span class="n">scaler</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+        <span class="n">epoch_loss</span> <span class="o">+=</span> <span class="n">loss</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+    <span class="n">epoch_loss_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">epoch_loss</span> <span class="o">/</span> <span class="p">(</span><span class="n">len_train_loader</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="n">epoch</span> <span class="o">%</span> <span class="n">val_interval</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
+        <span class="n">len_val_loader</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">val_loader</span><span class="p">)</span>
+        <span class="n">val_epoch_loss</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="k">for</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">val_loader</span><span class="p">:</span>
+            <span class="n">images</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">"image"</span><span class="p">]</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+
+            <span class="n">classes</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">"slice_label"</span><span class="p">]</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span><span class="o">.</span><span class="n">long</span><span class="p">()</span>
+            <span class="n">no_class_ids</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">bernoulli</span><span class="p">(</span><span class="n">no_class_prob</span> <span class="o">*</span> <span class="n">torch</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">classes</span><span class="p">),</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">))</span><span class="o">.</span><span class="n">bool</span><span class="p">()</span>
+            <span class="n">classes</span><span class="p">[</span><span class="n">no_class_ids</span><span class="p">]</span> <span class="o">=</span> <span class="n">no_class_val</span>
+            <span class="n">cond</span> <span class="o">=</span> <span class="n">class_embed</span><span class="p">(</span><span class="n">classes</span><span class="p">)</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+            <span class="n">timesteps</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">images</span><span class="p">),))</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+            <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+                <span class="k">with</span> <span class="n">autocast</span><span class="p">(</span><span class="n">enabled</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">device_type</span><span class="o">=</span><span class="s2">"cuda"</span><span class="p">):</span>
+                    <span class="n">noise</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn_like</span><span class="p">(</span><span class="n">images</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+                    <span class="n">noise_pred</span> <span class="o">=</span> <span class="n">inferer</span><span class="p">(</span><span class="n">inputs</span><span class="o">=</span><span class="n">images</span><span class="p">,</span> <span class="n">diffusion_model</span><span class="o">=</span><span class="n">model</span><span class="p">,</span> <span class="n">noise</span><span class="o">=</span><span class="n">noise</span><span class="p">,</span>
+                                         <span class="n">timesteps</span><span class="o">=</span><span class="n">timesteps</span><span class="p">,</span> <span class="n">condition</span><span class="o">=</span><span class="n">cond</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">'crossattn'</span><span class="p">)</span>
+                    <span class="n">val_loss</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">mse_loss</span><span class="p">(</span><span class="n">noise_pred</span><span class="o">.</span><span class="n">float</span><span class="p">(),</span> <span class="n">noise</span><span class="o">.</span><span class="n">float</span><span class="p">())</span>
+
+            <span class="n">val_epoch_loss</span> <span class="o">+=</span> <span class="n">val_loss</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+        <span class="n">val_epoch_loss_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">val_epoch_loss</span> <span class="o">/</span> <span class="p">(</span><span class="n">len_val_loader</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Epoch"</span><span class="p">,</span> <span class="n">epoch</span><span class="p">,</span> <span class="s2">"Validation loss"</span><span class="p">,</span> <span class="n">val_epoch_loss</span> <span class="o">/</span> <span class="p">(</span><span class="n">len_val_loader</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+
+<span class="n">total_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">total_start</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"train diffusion completed, total time: </span><span class="si">{</span><span class="n">total_time</span><span class="si">}</span><span class="s2">."</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s2">"default"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">"Learning Curves Diffusion Model"</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">max_epochs</span><span class="p">,</span> <span class="n">max_epochs</span><span class="p">),</span> <span class="n">epoch_loss_list</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"C0"</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">"Train"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">val_interval</span><span class="p">,</span> <span class="n">max_epochs</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">max_epochs</span> <span class="o">/</span> <span class="n">val_interval</span><span class="p">)),</span>
+    <span class="n">val_epoch_loss_list</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">"C1"</span><span class="p">,</span>
+    <span class="n">linewidth</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span>
+    <span class="n">label</span><span class="o">=</span><span class="s2">"Validation"</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">"Epochs"</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">"Loss"</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">prop</span><span class="o">=</span><span class="p">{</span><span class="s2">"size"</span><span class="p">:</span> <span class="mi">14</span><span class="p">})</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 0 Validation loss 0.48741817474365234
+Epoch 20 Validation loss 0.21869635581970215
+Epoch 40 Validation loss 0.08043598383665085
+Epoch 60 Validation loss 0.028941579163074493
+Epoch 80 Validation loss 0.01615307107567787
+Epoch 100 Validation loss 0.009378944523632526
+Epoch 120 Validation loss 0.019436782225966454
+Epoch 140 Validation loss 0.00796346366405487
+Epoch 160 Validation loss 0.01034662313759327
+Epoch 180 Validation loss 0.01042214035987854
+Epoch 200 Validation loss 0.015718020498752594
+Epoch 220 Validation loss 0.005430513061583042
+Epoch 240 Validation loss 0.012419665232300758
+Epoch 260 Validation loss 0.012108078226447105
+Epoch 280 Validation loss 0.006067141890525818
+Epoch 300 Validation loss 0.01111324317753315
+Epoch 320 Validation loss 0.013636311516165733
+Epoch 340 Validation loss 0.011808441020548344
+Epoch 360 Validation loss 0.025745578110218048
+Epoch 380 Validation loss 0.009654534980654716
+Epoch 400 Validation loss 0.006846051663160324
+Epoch 420 Validation loss 0.0106015894562006
+Epoch 440 Validation loss 0.007132146507501602
+Epoch 460 Validation loss 0.006246485281735659
+Epoch 480 Validation loss 0.011964363977313042
+Epoch 500 Validation loss 0.011950889602303505
+Epoch 520 Validation loss 0.007118930108845234
+Epoch 540 Validation loss 0.00860475655645132
+Epoch 560 Validation loss 0.0061138710007071495
+Epoch 580 Validation loss 0.011481840163469315
+Epoch 600 Validation loss 0.00780434999614954
+Epoch 620 Validation loss 0.008030259981751442
+Epoch 640 Validation loss 0.011669203639030457
+Epoch 660 Validation loss 0.008825266733765602
+Epoch 680 Validation loss 0.008791206404566765
+Epoch 700 Validation loss 0.006477706134319305
+Epoch 720 Validation loss 0.007704263553023338
+Epoch 740 Validation loss 0.004370865412056446
+Epoch 760 Validation loss 0.009800110943615437
+Epoch 780 Validation loss 0.008426310494542122
+train diffusion completed, total time: 2507.3537499904633.
+</pre></div>
+</div>
+<img alt="../_images/b496748ff6afef22a4b8c60c5fd94eaef2fd78525ffd99a4c02652d94133cbcd.png" src="../_images/b496748ff6afef22a4b8c60c5fd94eaef2fd78525ffd99a4c02652d94133cbcd.png" />
+</div>
+</div>
+<section id="what-changes-during-cfg-training">
+<h2>What changes during CFG training?<a class="headerlink" href="#what-changes-during-cfg-training" title="Link to this heading">#</a></h2>
+<p>The diffusion objective itself is unchanged: the model still predicts the injected noise. The difference is that the U-Net now receives a learned class embedding. On roughly 10% of examples, that embedding is replaced with the null-class embedding. This condition dropout is what enables an unconditional prediction to be produced by the same network at inference time.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_val</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="nb">iter</span><span class="p">(</span><span class="n">val_loader</span><span class="p">))</span>
+<span class="n">idx_unhealthy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argwhere</span><span class="p">(</span><span class="n">data_val</span><span class="p">[</span><span class="s2">"slice_label"</span><span class="p">]</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">squeeze</span><span class="p">()</span>
+<span class="n">idx</span> <span class="o">=</span> <span class="n">idx_unhealthy</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>  <span class="c1"># Pick a random slice of the validation set to be transformed</span>
+<span class="n">inputimg</span> <span class="o">=</span> <span class="n">data_val</span><span class="p">[</span><span class="s2">"image"</span><span class="p">][</span><span class="n">idx</span><span class="p">]</span>  <span class="c1"># Pick an input slice of the validation set to be transformed</span>
+<span class="n">inputlabel</span> <span class="o">=</span> <span class="n">data_val</span><span class="p">[</span><span class="s2">"slice_label"</span><span class="p">][</span><span class="n">idx</span><span class="p">]</span>  <span class="c1"># Check whether it is healthy or diseased</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"minmax"</span><span class="p">,</span> <span class="n">inputimg</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">inputimg</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="s2">"input"</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">inputlabel</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">inputimg</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">"gray"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">"off"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>minmax metatensor(0.) metatensor(1.0693)
+</pre></div>
+</div>
+<img alt="../_images/f8d7bac71e69fd1e3aac8c5a4c0a4dff3c82b78a08eb2025845cb0cbc42a743f.png" src="../_images/f8d7bac71e69fd1e3aac8c5a4c0a4dff3c82b78a08eb2025845cb0cbc42a743f.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">L</span> <span class="o">=</span> <span class="mi">200</span>
+<span class="n">current_img</span> <span class="o">=</span> <span class="n">inputimg</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+<span class="n">scheduler</span><span class="o">.</span><span class="n">set_timesteps</span><span class="p">(</span><span class="n">num_inference_steps</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+
+<span class="n">progress_bar</span> <span class="o">=</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">L</span><span class="p">))</span>  <span class="c1"># go back and forth L timesteps</span>
+<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">progress_bar</span><span class="p">:</span>  <span class="c1"># go through the noising process</span>
+    <span class="k">with</span> <span class="n">autocast</span><span class="p">(</span><span class="n">enabled</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">device_type</span><span class="o">=</span><span class="s2">"cuda"</span><span class="p">):</span>
+        <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+            <span class="c1"># Invert using the observed/source class (diseased = 0).</span>
+            <span class="n">diseased_cond</span> <span class="o">=</span> <span class="n">class_embed</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span><span class="o">.</span><span class="n">long</span><span class="p">())</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+            <span class="n">model_output</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">current_img</span><span class="p">,</span> <span class="n">timesteps</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">((</span><span class="n">t</span><span class="p">,))</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">current_img</span><span class="o">.</span><span class="n">device</span><span class="p">),</span>
+                                 <span class="n">context</span><span class="o">=</span><span class="n">diseased_cond</span><span class="p">)</span>
+    <span class="n">current_img</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">scheduler</span><span class="o">.</span><span class="n">reversed_step</span><span class="p">(</span><span class="n">model_output</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">current_img</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s2">"default"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">current_img</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">cpu</span><span class="p">(),</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">"gray"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">"off"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 200/200 [00:09&lt;00:00, 21.52it/s]
+</pre></div>
+</div>
+<img alt="../_images/b6e945953fc4d793b23da65f7a33fd0f31f1d61e5c9a1050de3b81330cb8f075.png" src="../_images/b6e945953fc4d793b23da65f7a33fd0f31f1d61e5c9a1050de3b81330cb8f075.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># target class: healthy</span>
+<span class="n">no_class</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># null / unconditional class</span>
+<span class="n">w</span> <span class="o">=</span> <span class="mi">2</span>  <span class="c1"># CFG scale; w &gt; 1 strengthens the healthy-class direction</span>
+<span class="n">progress_bar</span> <span class="o">=</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">L</span><span class="p">))</span>  <span class="c1"># go back and forth L timesteps</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">progress_bar</span><span class="p">:</span>  <span class="c1"># go through the denoising process</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">L</span> <span class="o">-</span> <span class="n">i</span>
+    <span class="k">with</span> <span class="n">autocast</span><span class="p">(</span><span class="n">enabled</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">device_type</span><span class="o">=</span><span class="s2">"cuda"</span><span class="p">):</span>
+        <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+            <span class="n">healthy_cond</span> <span class="o">=</span> <span class="n">class_embed</span><span class="p">(</span><span class="n">y</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span><span class="o">.</span><span class="n">long</span><span class="p">())</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+            <span class="n">no_class_cond</span> <span class="o">=</span> <span class="n">class_embed</span><span class="p">(</span><span class="n">no_class</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span><span class="o">.</span><span class="n">long</span><span class="p">())</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+            <span class="n">model_output_healthy</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">current_img</span><span class="p">,</span> <span class="n">timesteps</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">((</span><span class="n">t</span><span class="p">,))</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">current_img</span><span class="o">.</span><span class="n">device</span><span class="p">),</span>
+                                         <span class="n">context</span><span class="o">=</span><span class="n">healthy_cond</span><span class="p">)</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span>
+
+            <span class="n">model_output_no_class</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">current_img</span><span class="p">,</span> <span class="n">timesteps</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">((</span><span class="n">t</span><span class="p">,))</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">current_img</span><span class="o">.</span><span class="n">device</span><span class="p">),</span>
+                                         <span class="n">context</span><span class="o">=</span><span class="n">no_class_cond</span><span class="p">)</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span>
+
+            <span class="c1"># Equivalent to eps_uncond + w * (eps_cond - eps_uncond).</span>
+            <span class="n">updated_noise</span> <span class="o">=</span> <span class="n">w</span> <span class="o">*</span> <span class="n">model_output_healthy</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">w</span><span class="p">)</span> <span class="o">*</span> <span class="n">model_output_no_class</span>
+
+    <span class="n">current_img</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">scheduler</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">updated_noise</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">current_img</span><span class="p">)</span>
+    <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">empty_cache</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s2">"default"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">current_img</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">"gray"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">"off"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 200/200 [00:18&lt;00:00, 10.59it/s]
+</pre></div>
+</div>
+<img alt="../_images/5ad41f1b07e9b3b344500dae4ea24a5f1ef98cde891b65ead02675bb5a1e07da.png" src="../_images/5ad41f1b07e9b3b344500dae4ea24a5f1ef98cde891b65ead02675bb5a1e07da.png" />
+</div>
+</div>
+</section>
+<section id="cfg-reconstruction-result">
+<h2>CFG reconstruction result<a class="headerlink" href="#cfg-reconstruction-result" title="Link to this heading">#</a></h2>
+<p>The cell above computes both the healthy-conditioned and null-conditioned noise estimates at every denoising step, then extrapolates toward the healthy condition using <code class="docutils literal notranslate"><span class="pre">w</span> <span class="pre">=</span> <span class="pre">2</span></code>. The resulting image is the classifier-free-guided healthy reconstruction used for the final anomaly map.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Pixel-wise reconstruction difference: high values are candidate anomalies.</span>
+<span class="n">diff</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">inputimg</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span> <span class="o">-</span> <span class="n">current_img</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">cpu</span><span class="p">())</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s2">"default"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">diff</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">"jet"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">"off"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/20865fe7146acdee32d929d0f3a1da049725450e75345d2c3241c39788be0f79.png" src="../_images/20865fe7146acdee32d929d0f3a1da049725450e75345d2c3241c39788be0f79.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">torch</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">state_dict</span><span class="p">(),</span> <span class="s1">'monai_cfg.pth'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./seminar10"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Diffusion Models for Medical Anomaly Detection: Classifier and Classifier-Free Guidance</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-environment">Setup environment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-imports">Setup imports</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-data-directory">Setup data directory</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-deterministic-training-for-reproducibility">Set deterministic training for reproducibility</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pipeline-at-a-glance">Pipeline at a glance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocessing-the-brats-dataset-into-2d-slices">Preprocessing the BraTS dataset into 2D slices</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocessing-of-the-brats-dataset-in-2d-slices-for-validation">Preprocessing of the BRATS Dataset in 2D slices for validation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-i-classifier-guided-diffusion">Part I — Classifier-guided diffusion</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#define-the-diffusion-network-scheduler-optimizer-and-inferer">Define the diffusion network, scheduler, optimizer, and inferer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#train-the-diffusion-model">Train the diffusion model</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-the-performance-of-the-diffusion-model">Check the performance of the diffusion model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#train-a-noisy-image-classifier-for-guidance">Train a noisy-image classifier for guidance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-training-of-the-classification-model">Model training of the classification model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#image-to-image-translation-toward-a-healthy-reconstruction">Image-to-image translation toward a healthy reconstruction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#encode-the-input-with-reversed-ddim-sampling">Encode the input with reversed DDIM sampling</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#denoise-with-classifier-guidance">Denoise with classifier guidance</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#anomaly-map">Anomaly map</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-the-anomaly-map">Reading the anomaly map</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-ii-classifier-free-guidance-cfg">Part II — Classifier-free guidance (CFG)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-changes-during-cfg-training">What changes during CFG training?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cfg-reconstruction-result">CFG reconstruction result</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Nadezhda Alsahanova, Aleksandra Beliaeva, Dmitriy Kornilov, Fedor Gubanov, Pavel Bartenev, Maxim Sharaev
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023-2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -16,41 +16,38 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!--
-    this give us a css class that will be invisible only if js is disabled
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/myadmonitions.css?v=0009bf62" />
   
-  <!-- So that users can add custom icons -->
-  <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -64,36 +61,39 @@
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'seminars6_7/IndividualAnalysis';</script>
-    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="icon" href="../_static/logo.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
-  
-    
-    <script src="../_static/searchtools.js"></script>
-    <script src="../_static/language_data.js"></script>
-    <script src="../searchindex.js"></script>
-  
   </head>
-  <body data-default-mode="">
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
   
   
   <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
-
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
-  
-  <dialog id="pst-search-dialog">
-    
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -101,6 +101,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -108,59 +109,15 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
 </div>
 
   
-    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
-<div class="bd-header__inner bd-page-width">
-  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
-    <span class="fa-solid fa-bars"></span>
-  </button>
-  
-  
-  <div class="col-lg-9 navbar-header-items">
-    
-    
-    <div class="navbar-header-items__end">
-      
-        <div class="navbar-item navbar-persistent--container">
-          
-
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button>
-        </div>
-      
-      
-    </div>
-    
-  </div>
-  
-  
-    <div class="navbar-persistent--mobile">
-
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button>
-    </div>
-  
-
-  
-    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
-      <span class="fa-solid fa-outdent"></span>
-    </button>
-  
-</div>
-
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
     </header>
   
 
@@ -171,8 +128,7 @@
       
         
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -202,17 +158,21 @@
     
     
     <img src="../_static/logo.png" class="logo__image only-light" alt="Neuroimaging and Machine Learning for Biomedicine - Home"/>
-    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="Neuroimaging and Machine Learning for Biomedicine - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Neuroimaging and Machine Learning for Biomedicine - Home"/>`);</script>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -303,7 +263,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Seminar 10. Generative models</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1SU8ku9bk-cjQr45rgVCrMAauh34FoWQb?usp=sharing">Seminar 10. Diffusion Models for Medical Anomaly Detection with Classifier Guidance</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1d6fN0swt0ggaDJO5I0r7mGrK8GsDVLCE?usp=sharing">Seminar 10. Diffusion Models for Medical Anomaly Detection with Classifier Guidance</a></li>
 </ul>
 
     </div>
@@ -312,14 +272,9 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
-      <div class="sidebar-primary-item">
-<div id="ethical-ad-placement"
-      class="flat"
-      data-ea-publisher="readthedocs"
-      data-ea-type="readthedocs-sidebar"
-      data-ea-manual="true">
-</div></div>
   </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -449,7 +404,7 @@
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  class="btn btn-sm btn-fullscreen-button"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -463,17 +418,25 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
-<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
 </div></div>
@@ -495,12 +458,12 @@
                 <h2> Contents </h2>
             </div>
             <nav aria-label="Page">
-                <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">GLM: 1st-level Analysis</a><ul class="pst-show_toc_level nav section-nav flex-column">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">GLM: 1st-level Analysis</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hemodynamic-response">Hemodynamic response</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#st-level-analysis-in-nipype">1st Level Analysis in Nipype</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#st-level-analysis-in-nipype">1st Level Analysis in Nipype</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-design-matrix">Prepare design matrix</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initiate-nodes">Initiate Nodes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specify-contrasts">Specify contrasts</a></li>
@@ -556,9 +519,9 @@ The <a class="reference external" href="https://en.wikipedia.org/wiki/Haemodynam
 <span class="n">hrf_times</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
 <span class="n">hrf_signal</span> <span class="o">=</span> <span class="n">hrf</span><span class="p">(</span><span class="n">hrf_times</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">hrf_times</span><span class="p">,</span> <span class="n">hrf_signal</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;BOLD signal&#39;</span><span class="p">)</span>
-<span class="n">_</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;HRF&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'time'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'BOLD signal'</span><span class="p">)</span>
+<span class="n">_</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'HRF'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -580,10 +543,10 @@ Let’s say we had the 3 stimuli during the timecourse</p>
 <span class="n">neural_signal</span><span class="p">[</span><span class="mi">22</span><span class="p">:</span><span class="mi">24</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">neural_signal</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;time (seconds)&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;neural signal&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'time (seconds)'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'neural signal'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">3.2</span><span class="p">)</span>
-<span class="n">_</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Neural model for three impulses&#39;</span><span class="p">)</span>
+<span class="n">_</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Neural model for three impulses'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -600,9 +563,9 @@ Let’s say we had the 3 stimuli during the timecourse</p>
 
 <span class="n">tailed_respose_times</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n_time_points</span> <span class="o">+</span> <span class="n">hrf_times</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">tailed_respose_times</span><span class="p">,</span> <span class="n">bold_signal</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;time (seconds)&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;bold signal&#39;</span><span class="p">)</span>
-<span class="n">_</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Convolved signals&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'time (seconds)'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'bold signal'</span><span class="p">)</span>
+<span class="n">_</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Convolved signals'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -684,14 +647,14 @@ Now that the theory out of our way we can see how it is done in Nipype.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># specify paths</span>
-<span class="n">experiment_dir</span> <span class="o">=</span> <span class="s1">&#39;/output&#39;</span>
-<span class="n">output_dir</span> <span class="o">=</span> <span class="s1">&#39;datasink&#39;</span>
-<span class="n">working_dir</span> <span class="o">=</span> <span class="s1">&#39;workingdir&#39;</span>
+<span class="n">experiment_dir</span> <span class="o">=</span> <span class="s1">'/output'</span>
+<span class="n">output_dir</span> <span class="o">=</span> <span class="s1">'datasink'</span>
+<span class="n">working_dir</span> <span class="o">=</span> <span class="s1">'workingdir'</span>
 
 <span class="c1"># list of subject identifiers</span>
-<span class="n">subject_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;01&#39;</span><span class="p">,</span> <span class="s1">&#39;02&#39;</span><span class="p">,</span> <span class="s1">&#39;03&#39;</span><span class="p">,</span> <span class="s1">&#39;04&#39;</span><span class="p">,</span> <span class="s1">&#39;05&#39;</span><span class="p">,</span> <span class="s1">&#39;06&#39;</span><span class="p">,</span> <span class="s1">&#39;07&#39;</span><span class="p">,</span> <span class="s1">&#39;08&#39;</span><span class="p">,</span> <span class="s1">&#39;09&#39;</span><span class="p">,</span> <span class="s1">&#39;10&#39;</span><span class="p">]</span>
+<span class="n">subject_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'01'</span><span class="p">,</span> <span class="s1">'02'</span><span class="p">,</span> <span class="s1">'03'</span><span class="p">,</span> <span class="s1">'04'</span><span class="p">,</span> <span class="s1">'05'</span><span class="p">,</span> <span class="s1">'06'</span><span class="p">,</span> <span class="s1">'07'</span><span class="p">,</span> <span class="s1">'08'</span><span class="p">,</span> <span class="s1">'09'</span><span class="p">,</span> <span class="s1">'10'</span><span class="p">]</span>
 
-<span class="c1"># subject_list = [&#39;01&#39;, &#39;02&#39;]</span>
+<span class="c1"># subject_list = ['01', '02']</span>
 <span class="c1"># Repetition time(TR) of functional images</span>
 <span class="n">TR</span> <span class="o">=</span> <span class="mf">2.5</span>
 </pre></div>
@@ -712,7 +675,7 @@ Now that the theory out of our way we can see how it is done in Nipype.</p>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">trialinfo</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_table</span><span class="p">(</span><span class="s1">&#39;/data/ds000114/task-fingerfootlips_events.tsv&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">trialinfo</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_table</span><span class="p">(</span><span class="s1">'/data/ds000114/task-fingerfootlips_events.tsv'</span><span class="p">)</span>
 <span class="n">trialinfo</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -789,13 +752,13 @@ Now that the theory out of our way we can see how it is done in Nipype.</p>
     <span class="kn">from</span><span class="w"> </span><span class="nn">nipype.interfaces.base</span><span class="w"> </span><span class="kn">import</span> <span class="n">Bunch</span>
 
     
-    <span class="n">trialinfo</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_table</span><span class="p">(</span><span class="s1">&#39;/data/ds000114/task-fingerfootlips_events.tsv&#39;</span><span class="p">)</span>
+    <span class="n">trialinfo</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_table</span><span class="p">(</span><span class="s1">'/data/ds000114/task-fingerfootlips_events.tsv'</span><span class="p">)</span>
     <span class="c1">#trialinfo.head()</span>
     <span class="n">conditions</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="n">onsets</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="n">durations</span> <span class="o">=</span> <span class="p">[]</span>
 
-    <span class="k">for</span> <span class="n">group</span> <span class="ow">in</span> <span class="n">trialinfo</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;trial_type&#39;</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">group</span> <span class="ow">in</span> <span class="n">trialinfo</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'trial_type'</span><span class="p">):</span>
         <span class="n">conditions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">group</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
         <span class="n">onsets</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">group</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">onset</span> <span class="o">-</span> <span class="mi">10</span><span class="p">))</span> <span class="c1"># subtracting 10s due to removing of 4 dummy scans</span>
         <span class="n">durations</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">group</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">duration</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
@@ -808,10 +771,10 @@ Now that the theory out of our way we can see how it is done in Nipype.</p>
     <span class="k">return</span> <span class="n">subject_info</span>  <span class="c1"># this output will later be returned to infosource</span>
 
 <span class="c1"># Get Subject Info - get subject specific condition information</span>
-<span class="n">getsubjectinfo</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">Function</span><span class="p">(</span><span class="n">input_names</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;subject_id&#39;</span><span class="p">],</span>
-                               <span class="n">output_names</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;subject_info&#39;</span><span class="p">],</span>
+<span class="n">getsubjectinfo</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">Function</span><span class="p">(</span><span class="n">input_names</span><span class="o">=</span><span class="p">[</span><span class="s1">'subject_id'</span><span class="p">],</span>
+                               <span class="n">output_names</span><span class="o">=</span><span class="p">[</span><span class="s1">'subject_info'</span><span class="p">],</span>
                                <span class="n">function</span><span class="o">=</span><span class="n">subjectinfo</span><span class="p">),</span>
-                      <span class="n">name</span><span class="o">=</span><span class="s1">&#39;getsubjectinfo&#39;</span><span class="p">)</span>
+                      <span class="n">name</span><span class="o">=</span><span class="s1">'getsubjectinfo'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -825,32 +788,32 @@ Now that the theory out of our way we can see how it is done in Nipype.</p>
 <span class="c1">#Setup</span>
 <span class="c1">#https://nipype.readthedocs.io/en/latest/api/generated/nipype.algorithms.modelgen.html</span>
 <span class="n">modelspec</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">SpecifySPMModel</span><span class="p">(</span><span class="n">concatenate_runs</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-                                 <span class="n">input_units</span><span class="o">=</span><span class="s1">&#39;secs&#39;</span><span class="p">,</span>
-                                 <span class="n">output_units</span><span class="o">=</span><span class="s1">&#39;secs&#39;</span><span class="p">,</span>
+                                 <span class="n">input_units</span><span class="o">=</span><span class="s1">'secs'</span><span class="p">,</span>
+                                 <span class="n">output_units</span><span class="o">=</span><span class="s1">'secs'</span><span class="p">,</span>
                                  <span class="n">time_repetition</span><span class="o">=</span><span class="n">TR</span><span class="p">,</span>
                                  <span class="n">high_pass_filter_cutoff</span><span class="o">=</span><span class="mi">128</span><span class="p">),</span>
-                 <span class="n">name</span><span class="o">=</span><span class="s2">&quot;modelspec&quot;</span><span class="p">)</span>
+                 <span class="n">name</span><span class="o">=</span><span class="s2">"modelspec"</span><span class="p">)</span>
 
 <span class="c1"># Level1Design - Generates an SPM design matrix</span>
 <span class="c1">#https://www.fil.ion.ucl.ac.uk/spm/doc/manual.pdf #page=73</span>
 <span class="c1">#hrf- Name of basis function(canonical)</span>
-<span class="c1">#&#39;derivs&#39;: [1, 0]-Time derivatives : Time and Dispersion (additional regressors for SPM)</span>
+<span class="c1">#'derivs': [1, 0]-Time derivatives : Time and Dispersion (additional regressors for SPM)</span>
 <span class="c1">#model_serial_correlations-serial correlations using an autoregressive estimator (order 1)</span>
 
-<span class="n">level1design</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">Level1Design</span><span class="p">(</span><span class="n">bases</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;hrf&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;derivs&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]}},</span>
-                                 <span class="n">timing_units</span><span class="o">=</span><span class="s1">&#39;secs&#39;</span><span class="p">,</span>
+<span class="n">level1design</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">Level1Design</span><span class="p">(</span><span class="n">bases</span><span class="o">=</span><span class="p">{</span><span class="s1">'hrf'</span><span class="p">:</span> <span class="p">{</span><span class="s1">'derivs'</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]}},</span>
+                                 <span class="n">timing_units</span><span class="o">=</span><span class="s1">'secs'</span><span class="p">,</span>
                                  <span class="n">interscan_interval</span><span class="o">=</span><span class="n">TR</span><span class="p">,</span>
-                                 <span class="n">model_serial_correlations</span><span class="o">=</span><span class="s1">&#39;AR(1)&#39;</span><span class="p">),</span>
-                    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;level1design&quot;</span><span class="p">)</span>
+                                 <span class="n">model_serial_correlations</span><span class="o">=</span><span class="s1">'AR(1)'</span><span class="p">),</span>
+                    <span class="n">name</span><span class="o">=</span><span class="s2">"level1design"</span><span class="p">)</span>
 
 <span class="c1"># EstimateModel - estimate the parameters of the model</span>
 <span class="c1">#https://www.fil.ion.ucl.ac.uk/spm/doc/manual.pdf#page=69</span>
 
-<span class="n">level1estimate</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">EstimateModel</span><span class="p">(</span><span class="n">estimation_method</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Classical&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}),</span>
-                      <span class="n">name</span><span class="o">=</span><span class="s2">&quot;level1estimate&quot;</span><span class="p">)</span>
+<span class="n">level1estimate</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">EstimateModel</span><span class="p">(</span><span class="n">estimation_method</span><span class="o">=</span><span class="p">{</span><span class="s1">'Classical'</span><span class="p">:</span> <span class="mi">1</span><span class="p">}),</span>
+                      <span class="n">name</span><span class="o">=</span><span class="s2">"level1estimate"</span><span class="p">)</span>
 
 <span class="c1"># EstimateContrast - estimates contrasts</span>
-<span class="n">level1conest</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">EstimateContrast</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;level1conest&quot;</span><span class="p">)</span>
+<span class="n">level1conest</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">EstimateContrast</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s2">"level1conest"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -864,16 +827,16 @@ Now that the theory out of our way we can see how it is done in Nipype.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Condition names</span>
-<span class="n">condition_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Finger&#39;</span><span class="p">,</span> <span class="s1">&#39;Foot&#39;</span><span class="p">,</span> <span class="s1">&#39;Lips&#39;</span><span class="p">]</span>
+<span class="n">condition_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Finger'</span><span class="p">,</span> <span class="s1">'Foot'</span><span class="p">,</span> <span class="s1">'Lips'</span><span class="p">]</span>
 
 <span class="c1"># Contrasts</span>
 <span class="c1"># contrast =  [&lt;contrast_name&gt;, &lt;test&gt;, &lt;condition_names&gt;, &lt;[c1, c2, c3]&gt;]</span>
-<span class="n">cont01</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;average&#39;</span><span class="p">,</span>        <span class="s1">&#39;T&#39;</span><span class="p">,</span> <span class="n">condition_names</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="o">/</span><span class="mf">3.</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mf">3.</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mf">3.</span><span class="p">]]</span> 
-<span class="n">cont02</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Finger&#39;</span><span class="p">,</span>         <span class="s1">&#39;T&#39;</span><span class="p">,</span> <span class="n">condition_names</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]</span> <span class="c1"># FINGER &gt; 0</span>
-<span class="n">cont03</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Foot&#39;</span><span class="p">,</span>           <span class="s1">&#39;T&#39;</span><span class="p">,</span> <span class="n">condition_names</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]</span> <span class="c1"># FOOT &gt; 0</span>
-<span class="n">cont04</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Lips&#39;</span><span class="p">,</span>           <span class="s1">&#39;T&#39;</span><span class="p">,</span> <span class="n">condition_names</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]]</span> <span class="c1"># LIPS &gt; 0</span>
-<span class="n">cont05</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Foot &gt; others&#39;</span><span class="p">,</span>  <span class="s1">&#39;T&#39;</span><span class="p">,</span> <span class="n">condition_names</span><span class="p">,</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">]]</span> <span class="c1"># FOOT &gt; (FINGER + LIPS) / 2</span>
-<span class="n">cont06</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;activation&#39;</span><span class="p">,</span>     <span class="s1">&#39;F&#39;</span><span class="p">,</span> <span class="p">[</span><span class="n">cont02</span><span class="p">,</span> <span class="n">cont03</span><span class="p">,</span> <span class="n">cont04</span><span class="p">]]</span> <span class="c1"># if any </span>
+<span class="n">cont01</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'average'</span><span class="p">,</span>        <span class="s1">'T'</span><span class="p">,</span> <span class="n">condition_names</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="o">/</span><span class="mf">3.</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mf">3.</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mf">3.</span><span class="p">]]</span> 
+<span class="n">cont02</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Finger'</span><span class="p">,</span>         <span class="s1">'T'</span><span class="p">,</span> <span class="n">condition_names</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]</span> <span class="c1"># FINGER &gt; 0</span>
+<span class="n">cont03</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Foot'</span><span class="p">,</span>           <span class="s1">'T'</span><span class="p">,</span> <span class="n">condition_names</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]</span> <span class="c1"># FOOT &gt; 0</span>
+<span class="n">cont04</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Lips'</span><span class="p">,</span>           <span class="s1">'T'</span><span class="p">,</span> <span class="n">condition_names</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]]</span> <span class="c1"># LIPS &gt; 0</span>
+<span class="n">cont05</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Foot &gt; others'</span><span class="p">,</span>  <span class="s1">'T'</span><span class="p">,</span> <span class="n">condition_names</span><span class="p">,</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">]]</span> <span class="c1"># FOOT &gt; (FINGER + LIPS) / 2</span>
+<span class="n">cont06</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'activation'</span><span class="p">,</span>     <span class="s1">'F'</span><span class="p">,</span> <span class="p">[</span><span class="n">cont02</span><span class="p">,</span> <span class="n">cont03</span><span class="p">,</span> <span class="n">cont04</span><span class="p">]]</span> <span class="c1"># if any </span>
 
 <span class="n">contrast_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">cont01</span><span class="p">,</span> <span class="n">cont02</span><span class="p">,</span> <span class="n">cont03</span><span class="p">,</span> <span class="n">cont04</span><span class="p">,</span> <span class="n">cont05</span><span class="p">,</span> <span class="n">cont06</span><span class="p">]</span>
 <span class="c1"># After this step we got T critical for the t-statistics</span>
@@ -888,31 +851,31 @@ Now that the theory out of our way we can see how it is done in Nipype.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Infosource - a function free node to iterate over the list of subject names</span>
-<span class="n">infosource</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">IdentityInterface</span><span class="p">(</span><span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;subject_id&#39;</span><span class="p">,</span>
-                                            <span class="s1">&#39;contrasts&#39;</span><span class="p">],</span>
+<span class="n">infosource</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">IdentityInterface</span><span class="p">(</span><span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">'subject_id'</span><span class="p">,</span>
+                                            <span class="s1">'contrasts'</span><span class="p">],</span>
                                     <span class="n">contrasts</span><span class="o">=</span><span class="n">contrast_list</span><span class="p">),</span>
-                  <span class="n">name</span><span class="o">=</span><span class="s2">&quot;infosource&quot;</span><span class="p">)</span>
-<span class="n">infosource</span><span class="o">.</span><span class="n">iterables</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;subject_id&#39;</span><span class="p">,</span> <span class="n">subject_list</span><span class="p">)]</span>
+                  <span class="n">name</span><span class="o">=</span><span class="s2">"infosource"</span><span class="p">)</span>
+<span class="n">infosource</span><span class="o">.</span><span class="n">iterables</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">'subject_id'</span><span class="p">,</span> <span class="n">subject_list</span><span class="p">)]</span>
 
 <span class="c1"># SelectFiles - to grab the data (alternativ to DataGrabber)</span>
 <span class="n">templates</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s1">&#39;func&#39;</span><span class="p">:</span> <span class="s1">&#39;datasink/preproc/sub-</span><span class="si">{subject_id}</span><span class="s1">/task-</span><span class="si">{task_id}</span><span class="s1">/fwhm-5_ssub-</span><span class="si">{subject_id}</span><span class="s1">_ses-test_task-</span><span class="si">{task_id}</span><span class="s1">_bold.nii&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;mc_param&#39;</span><span class="p">:</span> <span class="s1">&#39;datasink/preproc/sub-</span><span class="si">{subject_id}</span><span class="s1">/task-</span><span class="si">{task_id}</span><span class="s1">/sub-</span><span class="si">{subject_id}</span><span class="s1">_ses-test_task-</span><span class="si">{task_id}</span><span class="s1">_bold.par&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;outliers&#39;</span><span class="p">:</span> <span class="s1">&#39;datasink/preproc/sub-</span><span class="si">{subject_id}</span><span class="s1">/task-</span><span class="si">{task_id}</span><span class="s1">/art.sub-</span><span class="si">{subject_id}</span><span class="s1">_ses-test_task-</span><span class="si">{task_id}</span><span class="s1">_bold_outliers.txt&#39;</span>
+        <span class="s1">'func'</span><span class="p">:</span> <span class="s1">'datasink/preproc/sub-</span><span class="si">{subject_id}</span><span class="s1">/task-</span><span class="si">{task_id}</span><span class="s1">/fwhm-5_ssub-</span><span class="si">{subject_id}</span><span class="s1">_ses-test_task-</span><span class="si">{task_id}</span><span class="s1">_bold.nii'</span><span class="p">,</span>
+        <span class="s1">'mc_param'</span><span class="p">:</span> <span class="s1">'datasink/preproc/sub-</span><span class="si">{subject_id}</span><span class="s1">/task-</span><span class="si">{task_id}</span><span class="s1">/sub-</span><span class="si">{subject_id}</span><span class="s1">_ses-test_task-</span><span class="si">{task_id}</span><span class="s1">_bold.par'</span><span class="p">,</span>
+        <span class="s1">'outliers'</span><span class="p">:</span> <span class="s1">'datasink/preproc/sub-</span><span class="si">{subject_id}</span><span class="s1">/task-</span><span class="si">{task_id}</span><span class="s1">/art.sub-</span><span class="si">{subject_id}</span><span class="s1">_ses-test_task-</span><span class="si">{task_id}</span><span class="s1">_bold_outliers.txt'</span>
     <span class="p">}</span>
 <span class="n">selectfiles</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">SelectFiles</span><span class="p">(</span><span class="n">templates</span><span class="p">,</span>
                                <span class="n">base_directory</span><span class="o">=</span><span class="n">experiment_dir</span><span class="p">,</span>
                                <span class="n">sort_filelist</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
-                   <span class="n">name</span><span class="o">=</span><span class="s2">&quot;selectfiles&quot;</span><span class="p">)</span>
-<span class="n">selectfiles</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">task_id</span> <span class="o">=</span> <span class="s1">&#39;fingerfootlips&#39;</span>
+                   <span class="n">name</span><span class="o">=</span><span class="s2">"selectfiles"</span><span class="p">)</span>
+<span class="n">selectfiles</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">task_id</span> <span class="o">=</span> <span class="s1">'fingerfootlips'</span>
 
 <span class="c1"># Datasink - creates output folder for important outputs</span>
 <span class="n">datasink</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">DataSink</span><span class="p">(</span><span class="n">base_directory</span><span class="o">=</span><span class="n">experiment_dir</span><span class="p">,</span>
                          <span class="n">container</span><span class="o">=</span><span class="n">output_dir</span><span class="p">),</span>
-                <span class="n">name</span><span class="o">=</span><span class="s2">&quot;datasink&quot;</span><span class="p">)</span>
+                <span class="n">name</span><span class="o">=</span><span class="s2">"datasink"</span><span class="p">)</span>
 
 <span class="c1"># Use the following DataSink output substitutions</span>
-<span class="n">substitutions</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;_subject_id_&#39;</span><span class="p">,</span> <span class="s1">&#39;sub-&#39;</span><span class="p">)]</span>
+<span class="n">substitutions</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">'_subject_id_'</span><span class="p">,</span> <span class="s1">'sub-'</span><span class="p">)]</span>
 <span class="n">datasink</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">substitutions</span> <span class="o">=</span> <span class="n">substitutions</span>
 </pre></div>
 </div>
@@ -925,34 +888,34 @@ Now that the theory out of our way we can see how it is done in Nipype.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initiation of the 1st-level analysis workflow</span>
-<span class="n">l1analysis</span> <span class="o">=</span> <span class="n">Workflow</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;l1analysis&#39;</span><span class="p">)</span>
-<span class="n">l1analysis</span><span class="o">.</span><span class="n">base_dir</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">experiment_dir</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">working_dir</span><span class="si">}</span><span class="s1">&#39;</span>
+<span class="n">l1analysis</span> <span class="o">=</span> <span class="n">Workflow</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'l1analysis'</span><span class="p">)</span>
+<span class="n">l1analysis</span><span class="o">.</span><span class="n">base_dir</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">experiment_dir</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">working_dir</span><span class="si">}</span><span class="s1">'</span>
 
 <span class="c1"># Connect up the 1st-level analysis components</span>
-<span class="n">l1analysis</span><span class="o">.</span><span class="n">connect</span><span class="p">([(</span><span class="n">infosource</span><span class="p">,</span> <span class="n">selectfiles</span><span class="p">,</span> <span class="p">[(</span><span class="s1">&#39;subject_id&#39;</span><span class="p">,</span> <span class="s1">&#39;subject_id&#39;</span><span class="p">)]),</span>
-                    <span class="p">(</span><span class="n">infosource</span><span class="p">,</span> <span class="n">getsubjectinfo</span><span class="p">,</span> <span class="p">[(</span><span class="s1">&#39;subject_id&#39;</span><span class="p">,</span>
-                                                   <span class="s1">&#39;subject_id&#39;</span><span class="p">)]),</span>
-                    <span class="p">(</span><span class="n">getsubjectinfo</span><span class="p">,</span> <span class="n">modelspec</span><span class="p">,</span> <span class="p">[(</span><span class="s1">&#39;subject_info&#39;</span><span class="p">,</span>
-                                                  <span class="s1">&#39;subject_info&#39;</span><span class="p">)]),</span>
-                    <span class="p">(</span><span class="n">infosource</span><span class="p">,</span> <span class="n">level1conest</span><span class="p">,</span> <span class="p">[(</span><span class="s1">&#39;contrasts&#39;</span><span class="p">,</span> <span class="s1">&#39;contrasts&#39;</span><span class="p">)]),</span>
-                    <span class="p">(</span><span class="n">selectfiles</span><span class="p">,</span> <span class="n">modelspec</span><span class="p">,</span> <span class="p">[(</span><span class="s1">&#39;func&#39;</span><span class="p">,</span> <span class="s1">&#39;functional_runs&#39;</span><span class="p">)]),</span>
-                    <span class="p">(</span><span class="n">selectfiles</span><span class="p">,</span> <span class="n">modelspec</span><span class="p">,</span> <span class="p">[(</span><span class="s1">&#39;mc_param&#39;</span><span class="p">,</span> <span class="s1">&#39;realignment_parameters&#39;</span><span class="p">),</span>
-                                              <span class="p">(</span><span class="s1">&#39;outliers&#39;</span><span class="p">,</span> <span class="s1">&#39;outlier_files&#39;</span><span class="p">)]),</span>
-                    <span class="p">(</span><span class="n">modelspec</span><span class="p">,</span> <span class="n">level1design</span><span class="p">,</span> <span class="p">[(</span><span class="s1">&#39;session_info&#39;</span><span class="p">,</span>
-                                                <span class="s1">&#39;session_info&#39;</span><span class="p">)]),</span>
-                    <span class="p">(</span><span class="n">level1design</span><span class="p">,</span> <span class="n">level1estimate</span><span class="p">,</span> <span class="p">[(</span><span class="s1">&#39;spm_mat_file&#39;</span><span class="p">,</span>
-                                                     <span class="s1">&#39;spm_mat_file&#39;</span><span class="p">)]),</span>
-                    <span class="p">(</span><span class="n">level1estimate</span><span class="p">,</span> <span class="n">level1conest</span><span class="p">,</span> <span class="p">[(</span><span class="s1">&#39;spm_mat_file&#39;</span><span class="p">,</span>
-                                                     <span class="s1">&#39;spm_mat_file&#39;</span><span class="p">),</span>
-                                                    <span class="p">(</span><span class="s1">&#39;beta_images&#39;</span><span class="p">,</span>
-                                                     <span class="s1">&#39;beta_images&#39;</span><span class="p">),</span>
-                                                    <span class="p">(</span><span class="s1">&#39;residual_image&#39;</span><span class="p">,</span>
-                                                     <span class="s1">&#39;residual_image&#39;</span><span class="p">)]),</span>
-                    <span class="p">(</span><span class="n">level1conest</span><span class="p">,</span> <span class="n">datasink</span><span class="p">,</span> <span class="p">[(</span><span class="s1">&#39;spm_mat_file&#39;</span><span class="p">,</span> <span class="s1">&#39;1stLevel.@spm_mat&#39;</span><span class="p">),</span>
-                                              <span class="p">(</span><span class="s1">&#39;spmT_images&#39;</span><span class="p">,</span> <span class="s1">&#39;1stLevel.@T&#39;</span><span class="p">),</span>
-                                              <span class="p">(</span><span class="s1">&#39;con_images&#39;</span><span class="p">,</span> <span class="s1">&#39;1stLevel.@con&#39;</span><span class="p">),</span>
-                                              <span class="p">(</span><span class="s1">&#39;spmF_images&#39;</span><span class="p">,</span> <span class="s1">&#39;1stLevel.@F&#39;</span><span class="p">),</span>
-                                              <span class="p">(</span><span class="s1">&#39;ess_images&#39;</span><span class="p">,</span> <span class="s1">&#39;1stLevel.@ess&#39;</span><span class="p">),</span>
+<span class="n">l1analysis</span><span class="o">.</span><span class="n">connect</span><span class="p">([(</span><span class="n">infosource</span><span class="p">,</span> <span class="n">selectfiles</span><span class="p">,</span> <span class="p">[(</span><span class="s1">'subject_id'</span><span class="p">,</span> <span class="s1">'subject_id'</span><span class="p">)]),</span>
+                    <span class="p">(</span><span class="n">infosource</span><span class="p">,</span> <span class="n">getsubjectinfo</span><span class="p">,</span> <span class="p">[(</span><span class="s1">'subject_id'</span><span class="p">,</span>
+                                                   <span class="s1">'subject_id'</span><span class="p">)]),</span>
+                    <span class="p">(</span><span class="n">getsubjectinfo</span><span class="p">,</span> <span class="n">modelspec</span><span class="p">,</span> <span class="p">[(</span><span class="s1">'subject_info'</span><span class="p">,</span>
+                                                  <span class="s1">'subject_info'</span><span class="p">)]),</span>
+                    <span class="p">(</span><span class="n">infosource</span><span class="p">,</span> <span class="n">level1conest</span><span class="p">,</span> <span class="p">[(</span><span class="s1">'contrasts'</span><span class="p">,</span> <span class="s1">'contrasts'</span><span class="p">)]),</span>
+                    <span class="p">(</span><span class="n">selectfiles</span><span class="p">,</span> <span class="n">modelspec</span><span class="p">,</span> <span class="p">[(</span><span class="s1">'func'</span><span class="p">,</span> <span class="s1">'functional_runs'</span><span class="p">)]),</span>
+                    <span class="p">(</span><span class="n">selectfiles</span><span class="p">,</span> <span class="n">modelspec</span><span class="p">,</span> <span class="p">[(</span><span class="s1">'mc_param'</span><span class="p">,</span> <span class="s1">'realignment_parameters'</span><span class="p">),</span>
+                                              <span class="p">(</span><span class="s1">'outliers'</span><span class="p">,</span> <span class="s1">'outlier_files'</span><span class="p">)]),</span>
+                    <span class="p">(</span><span class="n">modelspec</span><span class="p">,</span> <span class="n">level1design</span><span class="p">,</span> <span class="p">[(</span><span class="s1">'session_info'</span><span class="p">,</span>
+                                                <span class="s1">'session_info'</span><span class="p">)]),</span>
+                    <span class="p">(</span><span class="n">level1design</span><span class="p">,</span> <span class="n">level1estimate</span><span class="p">,</span> <span class="p">[(</span><span class="s1">'spm_mat_file'</span><span class="p">,</span>
+                                                     <span class="s1">'spm_mat_file'</span><span class="p">)]),</span>
+                    <span class="p">(</span><span class="n">level1estimate</span><span class="p">,</span> <span class="n">level1conest</span><span class="p">,</span> <span class="p">[(</span><span class="s1">'spm_mat_file'</span><span class="p">,</span>
+                                                     <span class="s1">'spm_mat_file'</span><span class="p">),</span>
+                                                    <span class="p">(</span><span class="s1">'beta_images'</span><span class="p">,</span>
+                                                     <span class="s1">'beta_images'</span><span class="p">),</span>
+                                                    <span class="p">(</span><span class="s1">'residual_image'</span><span class="p">,</span>
+                                                     <span class="s1">'residual_image'</span><span class="p">)]),</span>
+                    <span class="p">(</span><span class="n">level1conest</span><span class="p">,</span> <span class="n">datasink</span><span class="p">,</span> <span class="p">[(</span><span class="s1">'spm_mat_file'</span><span class="p">,</span> <span class="s1">'1stLevel.@spm_mat'</span><span class="p">),</span>
+                                              <span class="p">(</span><span class="s1">'spmT_images'</span><span class="p">,</span> <span class="s1">'1stLevel.@T'</span><span class="p">),</span>
+                                              <span class="p">(</span><span class="s1">'con_images'</span><span class="p">,</span> <span class="s1">'1stLevel.@con'</span><span class="p">),</span>
+                                              <span class="p">(</span><span class="s1">'spmF_images'</span><span class="p">,</span> <span class="s1">'1stLevel.@F'</span><span class="p">),</span>
+                                              <span class="p">(</span><span class="s1">'ess_images'</span><span class="p">,</span> <span class="s1">'1stLevel.@ess'</span><span class="p">),</span>
                                               <span class="p">]),</span>
                     <span class="p">])</span>
 </pre></div>
@@ -965,11 +928,11 @@ Now that the theory out of our way we can see how it is done in Nipype.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Save the 1st-level analysis graph as png</span>
-<span class="n">l1analysis</span><span class="o">.</span><span class="n">write_graph</span><span class="p">(</span><span class="n">graph2use</span><span class="o">=</span><span class="s1">&#39;colored&#39;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;png&#39;</span><span class="p">,</span> <span class="n">simple_form</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">l1analysis</span><span class="o">.</span><span class="n">write_graph</span><span class="p">(</span><span class="n">graph2use</span><span class="o">=</span><span class="s1">'colored'</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">'png'</span><span class="p">,</span> <span class="n">simple_form</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="c1"># Visualize the graph</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">Image</span>
-<span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">l1analysis</span><span class="o">.</span><span class="n">base_dir</span><span class="si">}</span><span class="s1">/l1analysis/graph.png&#39;</span><span class="p">)</span>
+<span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">l1analysis</span><span class="o">.</span><span class="n">base_dir</span><span class="si">}</span><span class="s1">/l1analysis/graph.png'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -984,8 +947,8 @@ Now that the theory out of our way we can see how it is done in Nipype.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># show detailed workflow</span>
-<span class="n">l1analysis</span><span class="o">.</span><span class="n">write_graph</span><span class="p">(</span><span class="n">graph2use</span><span class="o">=</span><span class="s1">&#39;flat&#39;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;png&#39;</span><span class="p">,</span> <span class="n">simple_form</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">l1analysis</span><span class="o">.</span><span class="n">base_dir</span><span class="si">}</span><span class="s1">/l1analysis/graph_detailed.png&#39;</span><span class="p">)</span>
+<span class="n">l1analysis</span><span class="o">.</span><span class="n">write_graph</span><span class="p">(</span><span class="n">graph2use</span><span class="o">=</span><span class="s1">'flat'</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">'png'</span><span class="p">,</span> <span class="n">simple_form</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">l1analysis</span><span class="o">.</span><span class="n">base_dir</span><span class="si">}</span><span class="s1">/l1analysis/graph_detailed.png'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1003,55 +966,55 @@ Now that the theory out of our way we can see how it is done in Nipype.</p>
 <p>Run the 1st-level analysis workflow. Run with ‘Linear’ plugin if multiprocessing failed.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">l1analysis</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s1">&#39;Linear&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">l1analysis</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s1">'Linear'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>260805-13:55:51,72 nipype.workflow INFO:
-	 Workflow l1analysis settings: [&#39;check&#39;, &#39;execution&#39;, &#39;logging&#39;, &#39;monitoring&#39;]
+	 Workflow l1analysis settings: ['check', 'execution', 'logging', 'monitoring']
 260805-13:55:51,139 nipype.workflow INFO:
 	 Running serially.
 260805-13:55:51,141 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.getsubjectinfo&quot; in &quot;/output/workingdir/l1analysis/_subject_id_10/getsubjectinfo&quot;.
+	 [Node] Setting-up "l1analysis.getsubjectinfo" in "/output/workingdir/l1analysis/_subject_id_10/getsubjectinfo".
 260805-13:55:51,144 nipype.workflow INFO:
-	 [Node] Running &quot;getsubjectinfo&quot; (&quot;nipype.interfaces.utility.wrappers.Function&quot;)
+	 [Node] Running "getsubjectinfo" ("nipype.interfaces.utility.wrappers.Function")
 260805-13:55:51,159 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.getsubjectinfo&quot;.
+	 [Node] Finished "l1analysis.getsubjectinfo".
 260805-13:55:51,160 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.selectfiles&quot; in &quot;/output/workingdir/l1analysis/_subject_id_10/selectfiles&quot;.
+	 [Node] Setting-up "l1analysis.selectfiles" in "/output/workingdir/l1analysis/_subject_id_10/selectfiles".
 260805-13:55:51,165 nipype.workflow INFO:
-	 [Node] Running &quot;selectfiles&quot; (&quot;nipype.interfaces.io.SelectFiles&quot;)
+	 [Node] Running "selectfiles" ("nipype.interfaces.io.SelectFiles")
 260805-13:55:51,173 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.selectfiles&quot;.
+	 [Node] Finished "l1analysis.selectfiles".
 260805-13:55:51,174 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.modelspec&quot; in &quot;/output/workingdir/l1analysis/_subject_id_10/modelspec&quot;.
+	 [Node] Setting-up "l1analysis.modelspec" in "/output/workingdir/l1analysis/_subject_id_10/modelspec".
 260805-13:55:51,182 nipype.workflow INFO:
-	 [Node] Running &quot;modelspec&quot; (&quot;nipype.algorithms.modelgen.SpecifySPMModel&quot;)
+	 [Node] Running "modelspec" ("nipype.algorithms.modelgen.SpecifySPMModel")
 260805-13:55:51,208 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.modelspec&quot;.
+	 [Node] Finished "l1analysis.modelspec".
 260805-13:55:51,212 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.level1design&quot; in &quot;/output/workingdir/l1analysis/_subject_id_10/level1design&quot;.
+	 [Node] Setting-up "l1analysis.level1design" in "/output/workingdir/l1analysis/_subject_id_10/level1design".
 260805-13:55:51,250 nipype.workflow INFO:
-	 [Node] Running &quot;level1design&quot; (&quot;nipype.interfaces.spm.model.Level1Design&quot;)
+	 [Node] Running "level1design" ("nipype.interfaces.spm.model.Level1Design")
 260805-13:56:04,111 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.level1design&quot;.
+	 [Node] Finished "l1analysis.level1design".
 260805-13:56:04,113 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.level1estimate&quot; in &quot;/output/workingdir/l1analysis/_subject_id_10/level1estimate&quot;.
+	 [Node] Setting-up "l1analysis.level1estimate" in "/output/workingdir/l1analysis/_subject_id_10/level1estimate".
 260805-13:56:04,121 nipype.workflow INFO:
-	 [Node] Running &quot;level1estimate&quot; (&quot;nipype.interfaces.spm.model.EstimateModel&quot;)
+	 [Node] Running "level1estimate" ("nipype.interfaces.spm.model.EstimateModel")
 260805-13:56:17,815 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.level1estimate&quot;.
+	 [Node] Finished "l1analysis.level1estimate".
 260805-13:56:17,817 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.level1conest&quot; in &quot;/output/workingdir/l1analysis/_subject_id_10/level1conest&quot;.
+	 [Node] Setting-up "l1analysis.level1conest" in "/output/workingdir/l1analysis/_subject_id_10/level1conest".
 260805-13:56:17,835 nipype.workflow INFO:
-	 [Node] Running &quot;level1conest&quot; (&quot;nipype.interfaces.spm.model.EstimateContrast&quot;)
+	 [Node] Running "level1conest" ("nipype.interfaces.spm.model.EstimateContrast")
 260805-13:56:26,971 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.level1conest&quot;.
+	 [Node] Finished "l1analysis.level1conest".
 260805-13:56:26,973 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.datasink&quot; in &quot;/output/workingdir/l1analysis/_subject_id_10/datasink&quot;.
+	 [Node] Setting-up "l1analysis.datasink" in "/output/workingdir/l1analysis/_subject_id_10/datasink".
 260805-13:56:26,986 nipype.workflow INFO:
-	 [Node] Running &quot;datasink&quot; (&quot;nipype.interfaces.io.DataSink&quot;)
+	 [Node] Running "datasink" ("nipype.interfaces.io.DataSink")
 260805-13:56:26,988 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_10/SPM.mat -&gt; /output/datasink/1stLevel/sub-10/SPM.mat
 260805-13:56:26,990 nipype.interface INFO:
@@ -1083,47 +1046,47 @@ Now that the theory out of our way we can see how it is done in Nipype.</p>
 260805-13:56:27,16 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_10/ess_0006.nii -&gt; /output/datasink/1stLevel/sub-10/ess_0006.nii
 260805-13:56:27,22 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.datasink&quot;.
+	 [Node] Finished "l1analysis.datasink".
 260805-13:56:27,23 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.getsubjectinfo&quot; in &quot;/output/workingdir/l1analysis/_subject_id_09/getsubjectinfo&quot;.
+	 [Node] Setting-up "l1analysis.getsubjectinfo" in "/output/workingdir/l1analysis/_subject_id_09/getsubjectinfo".
 260805-13:56:27,29 nipype.workflow INFO:
-	 [Node] Running &quot;getsubjectinfo&quot; (&quot;nipype.interfaces.utility.wrappers.Function&quot;)
+	 [Node] Running "getsubjectinfo" ("nipype.interfaces.utility.wrappers.Function")
 260805-13:56:27,46 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.getsubjectinfo&quot;.
+	 [Node] Finished "l1analysis.getsubjectinfo".
 260805-13:56:27,48 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.selectfiles&quot; in &quot;/output/workingdir/l1analysis/_subject_id_09/selectfiles&quot;.
+	 [Node] Setting-up "l1analysis.selectfiles" in "/output/workingdir/l1analysis/_subject_id_09/selectfiles".
 260805-13:56:27,52 nipype.workflow INFO:
-	 [Node] Running &quot;selectfiles&quot; (&quot;nipype.interfaces.io.SelectFiles&quot;)
+	 [Node] Running "selectfiles" ("nipype.interfaces.io.SelectFiles")
 260805-13:56:27,63 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.selectfiles&quot;.
+	 [Node] Finished "l1analysis.selectfiles".
 260805-13:56:27,65 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.modelspec&quot; in &quot;/output/workingdir/l1analysis/_subject_id_09/modelspec&quot;.
+	 [Node] Setting-up "l1analysis.modelspec" in "/output/workingdir/l1analysis/_subject_id_09/modelspec".
 260805-13:56:27,78 nipype.workflow INFO:
-	 [Node] Running &quot;modelspec&quot; (&quot;nipype.algorithms.modelgen.SpecifySPMModel&quot;)
+	 [Node] Running "modelspec" ("nipype.algorithms.modelgen.SpecifySPMModel")
 260805-13:56:27,119 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.modelspec&quot;.
+	 [Node] Finished "l1analysis.modelspec".
 260805-13:56:27,121 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.level1design&quot; in &quot;/output/workingdir/l1analysis/_subject_id_09/level1design&quot;.
+	 [Node] Setting-up "l1analysis.level1design" in "/output/workingdir/l1analysis/_subject_id_09/level1design".
 260805-13:56:27,169 nipype.workflow INFO:
-	 [Node] Running &quot;level1design&quot; (&quot;nipype.interfaces.spm.model.Level1Design&quot;)
+	 [Node] Running "level1design" ("nipype.interfaces.spm.model.Level1Design")
 260805-13:56:35,733 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.level1design&quot;.
+	 [Node] Finished "l1analysis.level1design".
 260805-13:56:35,735 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.level1estimate&quot; in &quot;/output/workingdir/l1analysis/_subject_id_09/level1estimate&quot;.
+	 [Node] Setting-up "l1analysis.level1estimate" in "/output/workingdir/l1analysis/_subject_id_09/level1estimate".
 260805-13:56:35,744 nipype.workflow INFO:
-	 [Node] Running &quot;level1estimate&quot; (&quot;nipype.interfaces.spm.model.EstimateModel&quot;)
+	 [Node] Running "level1estimate" ("nipype.interfaces.spm.model.EstimateModel")
 260805-13:56:49,50 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.level1estimate&quot;.
+	 [Node] Finished "l1analysis.level1estimate".
 260805-13:56:49,52 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.level1conest&quot; in &quot;/output/workingdir/l1analysis/_subject_id_09/level1conest&quot;.
+	 [Node] Setting-up "l1analysis.level1conest" in "/output/workingdir/l1analysis/_subject_id_09/level1conest".
 260805-13:56:49,81 nipype.workflow INFO:
-	 [Node] Running &quot;level1conest&quot; (&quot;nipype.interfaces.spm.model.EstimateContrast&quot;)
+	 [Node] Running "level1conest" ("nipype.interfaces.spm.model.EstimateContrast")
 260805-13:56:58,50 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.level1conest&quot;.
+	 [Node] Finished "l1analysis.level1conest".
 260805-13:56:58,52 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.datasink&quot; in &quot;/output/workingdir/l1analysis/_subject_id_09/datasink&quot;.
+	 [Node] Setting-up "l1analysis.datasink" in "/output/workingdir/l1analysis/_subject_id_09/datasink".
 260805-13:56:58,60 nipype.workflow INFO:
-	 [Node] Running &quot;datasink&quot; (&quot;nipype.interfaces.io.DataSink&quot;)
+	 [Node] Running "datasink" ("nipype.interfaces.io.DataSink")
 260805-13:56:58,62 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_09/SPM.mat -&gt; /output/datasink/1stLevel/sub-09/SPM.mat
 260805-13:56:58,64 nipype.interface INFO:
@@ -1155,53 +1118,53 @@ Now that the theory out of our way we can see how it is done in Nipype.</p>
 260805-13:56:58,91 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_09/ess_0006.nii -&gt; /output/datasink/1stLevel/sub-09/ess_0006.nii
 260805-13:56:58,97 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.datasink&quot;.
+	 [Node] Finished "l1analysis.datasink".
 260805-13:56:58,98 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.getsubjectinfo&quot; in &quot;/output/workingdir/l1analysis/_subject_id_08/getsubjectinfo&quot;.
+	 [Node] Setting-up "l1analysis.getsubjectinfo" in "/output/workingdir/l1analysis/_subject_id_08/getsubjectinfo".
 260805-13:56:58,102 nipype.workflow INFO:
-	 [Node] Running &quot;getsubjectinfo&quot; (&quot;nipype.interfaces.utility.wrappers.Function&quot;)
+	 [Node] Running "getsubjectinfo" ("nipype.interfaces.utility.wrappers.Function")
 260805-13:56:58,122 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.getsubjectinfo&quot;.
+	 [Node] Finished "l1analysis.getsubjectinfo".
 260805-13:56:58,124 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.selectfiles&quot; in &quot;/output/workingdir/l1analysis/_subject_id_08/selectfiles&quot;.
+	 [Node] Setting-up "l1analysis.selectfiles" in "/output/workingdir/l1analysis/_subject_id_08/selectfiles".
 260805-13:56:58,128 nipype.workflow INFO:
-	 [Node] Running &quot;selectfiles&quot; (&quot;nipype.interfaces.io.SelectFiles&quot;)
+	 [Node] Running "selectfiles" ("nipype.interfaces.io.SelectFiles")
 260805-13:56:58,136 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.selectfiles&quot;.
+	 [Node] Finished "l1analysis.selectfiles".
 260805-13:56:58,137 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.modelspec&quot; in &quot;/output/workingdir/l1analysis/_subject_id_08/modelspec&quot;.
+	 [Node] Setting-up "l1analysis.modelspec" in "/output/workingdir/l1analysis/_subject_id_08/modelspec".
 260805-13:56:58,152 nipype.workflow INFO:
-	 [Node] Running &quot;modelspec&quot; (&quot;nipype.algorithms.modelgen.SpecifySPMModel&quot;)
+	 [Node] Running "modelspec" ("nipype.algorithms.modelgen.SpecifySPMModel")
 260805-13:56:58,180 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.modelspec&quot;.
+	 [Node] Finished "l1analysis.modelspec".
 260805-13:56:58,182 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.level1design&quot; in &quot;/output/workingdir/l1analysis/_subject_id_08/level1design&quot;.
+	 [Node] Setting-up "l1analysis.level1design" in "/output/workingdir/l1analysis/_subject_id_08/level1design".
 260805-13:56:58,213 nipype.workflow INFO:
-	 [Node] Running &quot;level1design&quot; (&quot;nipype.interfaces.spm.model.Level1Design&quot;)
+	 [Node] Running "level1design" ("nipype.interfaces.spm.model.Level1Design")
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/miniconda-latest/envs/neuro/lib/python3.6/site-packages/nipype/algorithms/modelgen.py:511: UserWarning: loadtxt: Empty input file: &quot;/output/workingdir/l1analysis/_subject_id_08/modelspec/art.sub-08_ses-test_task-fingerfootlips_bold_outliers.txt&quot;
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/miniconda-latest/envs/neuro/lib/python3.6/site-packages/nipype/algorithms/modelgen.py:511: UserWarning: loadtxt: Empty input file: "/output/workingdir/l1analysis/_subject_id_08/modelspec/art.sub-08_ses-test_task-fingerfootlips_bold_outliers.txt"
   outindices = np.loadtxt(filename, dtype=int)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>260805-13:57:07,292 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.level1design&quot;.
+	 [Node] Finished "l1analysis.level1design".
 260805-13:57:07,294 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.level1estimate&quot; in &quot;/output/workingdir/l1analysis/_subject_id_08/level1estimate&quot;.
+	 [Node] Setting-up "l1analysis.level1estimate" in "/output/workingdir/l1analysis/_subject_id_08/level1estimate".
 260805-13:57:07,303 nipype.workflow INFO:
-	 [Node] Running &quot;level1estimate&quot; (&quot;nipype.interfaces.spm.model.EstimateModel&quot;)
+	 [Node] Running "level1estimate" ("nipype.interfaces.spm.model.EstimateModel")
 260805-13:57:20,55 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.level1estimate&quot;.
+	 [Node] Finished "l1analysis.level1estimate".
 260805-13:57:20,57 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.level1conest&quot; in &quot;/output/workingdir/l1analysis/_subject_id_08/level1conest&quot;.
+	 [Node] Setting-up "l1analysis.level1conest" in "/output/workingdir/l1analysis/_subject_id_08/level1conest".
 260805-13:57:20,123 nipype.workflow INFO:
-	 [Node] Running &quot;level1conest&quot; (&quot;nipype.interfaces.spm.model.EstimateContrast&quot;)
+	 [Node] Running "level1conest" ("nipype.interfaces.spm.model.EstimateContrast")
 260805-13:57:28,740 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.level1conest&quot;.
+	 [Node] Finished "l1analysis.level1conest".
 260805-13:57:28,741 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.datasink&quot; in &quot;/output/workingdir/l1analysis/_subject_id_08/datasink&quot;.
+	 [Node] Setting-up "l1analysis.datasink" in "/output/workingdir/l1analysis/_subject_id_08/datasink".
 260805-13:57:28,749 nipype.workflow INFO:
-	 [Node] Running &quot;datasink&quot; (&quot;nipype.interfaces.io.DataSink&quot;)
+	 [Node] Running "datasink" ("nipype.interfaces.io.DataSink")
 260805-13:57:28,751 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_08/SPM.mat -&gt; /output/datasink/1stLevel/sub-08/SPM.mat
 260805-13:57:28,802 nipype.interface INFO:
@@ -1233,53 +1196,53 @@ Now that the theory out of our way we can see how it is done in Nipype.</p>
 260805-13:57:28,825 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_08/ess_0006.nii -&gt; /output/datasink/1stLevel/sub-08/ess_0006.nii
 260805-13:57:28,831 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.datasink&quot;.
+	 [Node] Finished "l1analysis.datasink".
 260805-13:57:28,832 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.getsubjectinfo&quot; in &quot;/output/workingdir/l1analysis/_subject_id_07/getsubjectinfo&quot;.
+	 [Node] Setting-up "l1analysis.getsubjectinfo" in "/output/workingdir/l1analysis/_subject_id_07/getsubjectinfo".
 260805-13:57:28,836 nipype.workflow INFO:
-	 [Node] Running &quot;getsubjectinfo&quot; (&quot;nipype.interfaces.utility.wrappers.Function&quot;)
+	 [Node] Running "getsubjectinfo" ("nipype.interfaces.utility.wrappers.Function")
 260805-13:57:28,848 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.getsubjectinfo&quot;.
+	 [Node] Finished "l1analysis.getsubjectinfo".
 260805-13:57:28,849 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.selectfiles&quot; in &quot;/output/workingdir/l1analysis/_subject_id_07/selectfiles&quot;.
+	 [Node] Setting-up "l1analysis.selectfiles" in "/output/workingdir/l1analysis/_subject_id_07/selectfiles".
 260805-13:57:28,853 nipype.workflow INFO:
-	 [Node] Running &quot;selectfiles&quot; (&quot;nipype.interfaces.io.SelectFiles&quot;)
+	 [Node] Running "selectfiles" ("nipype.interfaces.io.SelectFiles")
 260805-13:57:28,861 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.selectfiles&quot;.
+	 [Node] Finished "l1analysis.selectfiles".
 260805-13:57:28,862 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.modelspec&quot; in &quot;/output/workingdir/l1analysis/_subject_id_07/modelspec&quot;.
+	 [Node] Setting-up "l1analysis.modelspec" in "/output/workingdir/l1analysis/_subject_id_07/modelspec".
 260805-13:57:28,871 nipype.workflow INFO:
-	 [Node] Running &quot;modelspec&quot; (&quot;nipype.algorithms.modelgen.SpecifySPMModel&quot;)
+	 [Node] Running "modelspec" ("nipype.algorithms.modelgen.SpecifySPMModel")
 260805-13:57:28,894 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.modelspec&quot;.
+	 [Node] Finished "l1analysis.modelspec".
 260805-13:57:28,895 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.level1design&quot; in &quot;/output/workingdir/l1analysis/_subject_id_07/level1design&quot;.
+	 [Node] Setting-up "l1analysis.level1design" in "/output/workingdir/l1analysis/_subject_id_07/level1design".
 260805-13:57:28,930 nipype.workflow INFO:
-	 [Node] Running &quot;level1design&quot; (&quot;nipype.interfaces.spm.model.Level1Design&quot;)
+	 [Node] Running "level1design" ("nipype.interfaces.spm.model.Level1Design")
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/miniconda-latest/envs/neuro/lib/python3.6/site-packages/nipype/algorithms/modelgen.py:511: UserWarning: loadtxt: Empty input file: &quot;/output/workingdir/l1analysis/_subject_id_07/modelspec/art.sub-07_ses-test_task-fingerfootlips_bold_outliers.txt&quot;
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/miniconda-latest/envs/neuro/lib/python3.6/site-packages/nipype/algorithms/modelgen.py:511: UserWarning: loadtxt: Empty input file: "/output/workingdir/l1analysis/_subject_id_07/modelspec/art.sub-07_ses-test_task-fingerfootlips_bold_outliers.txt"
   outindices = np.loadtxt(filename, dtype=int)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>260805-13:57:36,623 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.level1design&quot;.
+	 [Node] Finished "l1analysis.level1design".
 260805-13:57:36,625 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.level1estimate&quot; in &quot;/output/workingdir/l1analysis/_subject_id_07/level1estimate&quot;.
+	 [Node] Setting-up "l1analysis.level1estimate" in "/output/workingdir/l1analysis/_subject_id_07/level1estimate".
 260805-13:57:36,688 nipype.workflow INFO:
-	 [Node] Running &quot;level1estimate&quot; (&quot;nipype.interfaces.spm.model.EstimateModel&quot;)
+	 [Node] Running "level1estimate" ("nipype.interfaces.spm.model.EstimateModel")
 260805-13:57:47,824 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.level1estimate&quot;.
+	 [Node] Finished "l1analysis.level1estimate".
 260805-13:57:47,825 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.level1conest&quot; in &quot;/output/workingdir/l1analysis/_subject_id_07/level1conest&quot;.
+	 [Node] Setting-up "l1analysis.level1conest" in "/output/workingdir/l1analysis/_subject_id_07/level1conest".
 260805-13:57:47,841 nipype.workflow INFO:
-	 [Node] Running &quot;level1conest&quot; (&quot;nipype.interfaces.spm.model.EstimateContrast&quot;)
+	 [Node] Running "level1conest" ("nipype.interfaces.spm.model.EstimateContrast")
 260805-13:57:57,115 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.level1conest&quot;.
+	 [Node] Finished "l1analysis.level1conest".
 260805-13:57:57,116 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.datasink&quot; in &quot;/output/workingdir/l1analysis/_subject_id_07/datasink&quot;.
+	 [Node] Setting-up "l1analysis.datasink" in "/output/workingdir/l1analysis/_subject_id_07/datasink".
 260805-13:57:57,123 nipype.workflow INFO:
-	 [Node] Running &quot;datasink&quot; (&quot;nipype.interfaces.io.DataSink&quot;)
+	 [Node] Running "datasink" ("nipype.interfaces.io.DataSink")
 260805-13:57:57,126 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_07/SPM.mat -&gt; /output/datasink/1stLevel/sub-07/SPM.mat
 260805-13:57:57,127 nipype.interface INFO:
@@ -1311,53 +1274,53 @@ Now that the theory out of our way we can see how it is done in Nipype.</p>
 260805-13:57:57,145 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_07/ess_0006.nii -&gt; /output/datasink/1stLevel/sub-07/ess_0006.nii
 260805-13:57:57,150 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.datasink&quot;.
+	 [Node] Finished "l1analysis.datasink".
 260805-13:57:57,151 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.getsubjectinfo&quot; in &quot;/output/workingdir/l1analysis/_subject_id_06/getsubjectinfo&quot;.
+	 [Node] Setting-up "l1analysis.getsubjectinfo" in "/output/workingdir/l1analysis/_subject_id_06/getsubjectinfo".
 260805-13:57:57,155 nipype.workflow INFO:
-	 [Node] Running &quot;getsubjectinfo&quot; (&quot;nipype.interfaces.utility.wrappers.Function&quot;)
+	 [Node] Running "getsubjectinfo" ("nipype.interfaces.utility.wrappers.Function")
 260805-13:57:57,172 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.getsubjectinfo&quot;.
+	 [Node] Finished "l1analysis.getsubjectinfo".
 260805-13:57:57,173 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.selectfiles&quot; in &quot;/output/workingdir/l1analysis/_subject_id_06/selectfiles&quot;.
+	 [Node] Setting-up "l1analysis.selectfiles" in "/output/workingdir/l1analysis/_subject_id_06/selectfiles".
 260805-13:57:57,177 nipype.workflow INFO:
-	 [Node] Running &quot;selectfiles&quot; (&quot;nipype.interfaces.io.SelectFiles&quot;)
+	 [Node] Running "selectfiles" ("nipype.interfaces.io.SelectFiles")
 260805-13:57:57,185 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.selectfiles&quot;.
+	 [Node] Finished "l1analysis.selectfiles".
 260805-13:57:57,186 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.modelspec&quot; in &quot;/output/workingdir/l1analysis/_subject_id_06/modelspec&quot;.
+	 [Node] Setting-up "l1analysis.modelspec" in "/output/workingdir/l1analysis/_subject_id_06/modelspec".
 260805-13:57:57,198 nipype.workflow INFO:
-	 [Node] Running &quot;modelspec&quot; (&quot;nipype.algorithms.modelgen.SpecifySPMModel&quot;)
+	 [Node] Running "modelspec" ("nipype.algorithms.modelgen.SpecifySPMModel")
 260805-13:57:57,232 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.modelspec&quot;.
+	 [Node] Finished "l1analysis.modelspec".
 260805-13:57:57,233 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.level1design&quot; in &quot;/output/workingdir/l1analysis/_subject_id_06/level1design&quot;.
+	 [Node] Setting-up "l1analysis.level1design" in "/output/workingdir/l1analysis/_subject_id_06/level1design".
 260805-13:57:57,267 nipype.workflow INFO:
-	 [Node] Running &quot;level1design&quot; (&quot;nipype.interfaces.spm.model.Level1Design&quot;)
+	 [Node] Running "level1design" ("nipype.interfaces.spm.model.Level1Design")
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/miniconda-latest/envs/neuro/lib/python3.6/site-packages/nipype/algorithms/modelgen.py:511: UserWarning: loadtxt: Empty input file: &quot;/output/workingdir/l1analysis/_subject_id_06/modelspec/art.sub-06_ses-test_task-fingerfootlips_bold_outliers.txt&quot;
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/miniconda-latest/envs/neuro/lib/python3.6/site-packages/nipype/algorithms/modelgen.py:511: UserWarning: loadtxt: Empty input file: "/output/workingdir/l1analysis/_subject_id_06/modelspec/art.sub-06_ses-test_task-fingerfootlips_bold_outliers.txt"
   outindices = np.loadtxt(filename, dtype=int)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>260805-13:58:05,616 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.level1design&quot;.
+	 [Node] Finished "l1analysis.level1design".
 260805-13:58:05,619 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.level1estimate&quot; in &quot;/output/workingdir/l1analysis/_subject_id_06/level1estimate&quot;.
+	 [Node] Setting-up "l1analysis.level1estimate" in "/output/workingdir/l1analysis/_subject_id_06/level1estimate".
 260805-13:58:05,681 nipype.workflow INFO:
-	 [Node] Running &quot;level1estimate&quot; (&quot;nipype.interfaces.spm.model.EstimateModel&quot;)
+	 [Node] Running "level1estimate" ("nipype.interfaces.spm.model.EstimateModel")
 260805-13:58:18,588 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.level1estimate&quot;.
+	 [Node] Finished "l1analysis.level1estimate".
 260805-13:58:18,590 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.level1conest&quot; in &quot;/output/workingdir/l1analysis/_subject_id_06/level1conest&quot;.
+	 [Node] Setting-up "l1analysis.level1conest" in "/output/workingdir/l1analysis/_subject_id_06/level1conest".
 260805-13:58:18,604 nipype.workflow INFO:
-	 [Node] Running &quot;level1conest&quot; (&quot;nipype.interfaces.spm.model.EstimateContrast&quot;)
+	 [Node] Running "level1conest" ("nipype.interfaces.spm.model.EstimateContrast")
 260805-13:58:27,325 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.level1conest&quot;.
+	 [Node] Finished "l1analysis.level1conest".
 260805-13:58:27,326 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.datasink&quot; in &quot;/output/workingdir/l1analysis/_subject_id_06/datasink&quot;.
+	 [Node] Setting-up "l1analysis.datasink" in "/output/workingdir/l1analysis/_subject_id_06/datasink".
 260805-13:58:27,334 nipype.workflow INFO:
-	 [Node] Running &quot;datasink&quot; (&quot;nipype.interfaces.io.DataSink&quot;)
+	 [Node] Running "datasink" ("nipype.interfaces.io.DataSink")
 260805-13:58:27,336 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_06/SPM.mat -&gt; /output/datasink/1stLevel/sub-06/SPM.mat
 260805-13:58:27,338 nipype.interface INFO:
@@ -1389,47 +1352,47 @@ Now that the theory out of our way we can see how it is done in Nipype.</p>
 260805-13:58:27,355 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_06/ess_0006.nii -&gt; /output/datasink/1stLevel/sub-06/ess_0006.nii
 260805-13:58:27,360 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.datasink&quot;.
+	 [Node] Finished "l1analysis.datasink".
 260805-13:58:27,362 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.getsubjectinfo&quot; in &quot;/output/workingdir/l1analysis/_subject_id_05/getsubjectinfo&quot;.
+	 [Node] Setting-up "l1analysis.getsubjectinfo" in "/output/workingdir/l1analysis/_subject_id_05/getsubjectinfo".
 260805-13:58:27,365 nipype.workflow INFO:
-	 [Node] Running &quot;getsubjectinfo&quot; (&quot;nipype.interfaces.utility.wrappers.Function&quot;)
+	 [Node] Running "getsubjectinfo" ("nipype.interfaces.utility.wrappers.Function")
 260805-13:58:27,378 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.getsubjectinfo&quot;.
+	 [Node] Finished "l1analysis.getsubjectinfo".
 260805-13:58:27,379 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.selectfiles&quot; in &quot;/output/workingdir/l1analysis/_subject_id_05/selectfiles&quot;.
+	 [Node] Setting-up "l1analysis.selectfiles" in "/output/workingdir/l1analysis/_subject_id_05/selectfiles".
 260805-13:58:27,383 nipype.workflow INFO:
-	 [Node] Running &quot;selectfiles&quot; (&quot;nipype.interfaces.io.SelectFiles&quot;)
+	 [Node] Running "selectfiles" ("nipype.interfaces.io.SelectFiles")
 260805-13:58:27,390 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.selectfiles&quot;.
+	 [Node] Finished "l1analysis.selectfiles".
 260805-13:58:27,391 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.modelspec&quot; in &quot;/output/workingdir/l1analysis/_subject_id_05/modelspec&quot;.
+	 [Node] Setting-up "l1analysis.modelspec" in "/output/workingdir/l1analysis/_subject_id_05/modelspec".
 260805-13:58:27,400 nipype.workflow INFO:
-	 [Node] Running &quot;modelspec&quot; (&quot;nipype.algorithms.modelgen.SpecifySPMModel&quot;)
+	 [Node] Running "modelspec" ("nipype.algorithms.modelgen.SpecifySPMModel")
 260805-13:58:27,421 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.modelspec&quot;.
+	 [Node] Finished "l1analysis.modelspec".
 260805-13:58:27,422 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.level1design&quot; in &quot;/output/workingdir/l1analysis/_subject_id_05/level1design&quot;.
+	 [Node] Setting-up "l1analysis.level1design" in "/output/workingdir/l1analysis/_subject_id_05/level1design".
 260805-13:58:27,456 nipype.workflow INFO:
-	 [Node] Running &quot;level1design&quot; (&quot;nipype.interfaces.spm.model.Level1Design&quot;)
+	 [Node] Running "level1design" ("nipype.interfaces.spm.model.Level1Design")
 260805-13:58:35,755 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.level1design&quot;.
+	 [Node] Finished "l1analysis.level1design".
 260805-13:58:35,757 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.level1estimate&quot; in &quot;/output/workingdir/l1analysis/_subject_id_05/level1estimate&quot;.
+	 [Node] Setting-up "l1analysis.level1estimate" in "/output/workingdir/l1analysis/_subject_id_05/level1estimate".
 260805-13:58:35,765 nipype.workflow INFO:
-	 [Node] Running &quot;level1estimate&quot; (&quot;nipype.interfaces.spm.model.EstimateModel&quot;)
+	 [Node] Running "level1estimate" ("nipype.interfaces.spm.model.EstimateModel")
 260805-13:58:51,266 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.level1estimate&quot;.
+	 [Node] Finished "l1analysis.level1estimate".
 260805-13:58:51,269 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.level1conest&quot; in &quot;/output/workingdir/l1analysis/_subject_id_05/level1conest&quot;.
+	 [Node] Setting-up "l1analysis.level1conest" in "/output/workingdir/l1analysis/_subject_id_05/level1conest".
 260805-13:58:51,344 nipype.workflow INFO:
-	 [Node] Running &quot;level1conest&quot; (&quot;nipype.interfaces.spm.model.EstimateContrast&quot;)
+	 [Node] Running "level1conest" ("nipype.interfaces.spm.model.EstimateContrast")
 260805-13:59:00,455 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.level1conest&quot;.
+	 [Node] Finished "l1analysis.level1conest".
 260805-13:59:00,456 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.datasink&quot; in &quot;/output/workingdir/l1analysis/_subject_id_05/datasink&quot;.
+	 [Node] Setting-up "l1analysis.datasink" in "/output/workingdir/l1analysis/_subject_id_05/datasink".
 260805-13:59:00,464 nipype.workflow INFO:
-	 [Node] Running &quot;datasink&quot; (&quot;nipype.interfaces.io.DataSink&quot;)
+	 [Node] Running "datasink" ("nipype.interfaces.io.DataSink")
 260805-13:59:00,466 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_05/SPM.mat -&gt; /output/datasink/1stLevel/sub-05/SPM.mat
 260805-13:59:00,467 nipype.interface INFO:
@@ -1461,47 +1424,47 @@ Now that the theory out of our way we can see how it is done in Nipype.</p>
 260805-13:59:00,483 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_05/ess_0006.nii -&gt; /output/datasink/1stLevel/sub-05/ess_0006.nii
 260805-13:59:00,487 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.datasink&quot;.
+	 [Node] Finished "l1analysis.datasink".
 260805-13:59:00,488 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.getsubjectinfo&quot; in &quot;/output/workingdir/l1analysis/_subject_id_04/getsubjectinfo&quot;.
+	 [Node] Setting-up "l1analysis.getsubjectinfo" in "/output/workingdir/l1analysis/_subject_id_04/getsubjectinfo".
 260805-13:59:00,491 nipype.workflow INFO:
-	 [Node] Running &quot;getsubjectinfo&quot; (&quot;nipype.interfaces.utility.wrappers.Function&quot;)
+	 [Node] Running "getsubjectinfo" ("nipype.interfaces.utility.wrappers.Function")
 260805-13:59:00,502 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.getsubjectinfo&quot;.
+	 [Node] Finished "l1analysis.getsubjectinfo".
 260805-13:59:00,503 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.selectfiles&quot; in &quot;/output/workingdir/l1analysis/_subject_id_04/selectfiles&quot;.
+	 [Node] Setting-up "l1analysis.selectfiles" in "/output/workingdir/l1analysis/_subject_id_04/selectfiles".
 260805-13:59:00,506 nipype.workflow INFO:
-	 [Node] Running &quot;selectfiles&quot; (&quot;nipype.interfaces.io.SelectFiles&quot;)
+	 [Node] Running "selectfiles" ("nipype.interfaces.io.SelectFiles")
 260805-13:59:00,518 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.selectfiles&quot;.
+	 [Node] Finished "l1analysis.selectfiles".
 260805-13:59:00,519 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.modelspec&quot; in &quot;/output/workingdir/l1analysis/_subject_id_04/modelspec&quot;.
+	 [Node] Setting-up "l1analysis.modelspec" in "/output/workingdir/l1analysis/_subject_id_04/modelspec".
 260805-13:59:00,528 nipype.workflow INFO:
-	 [Node] Running &quot;modelspec&quot; (&quot;nipype.algorithms.modelgen.SpecifySPMModel&quot;)
+	 [Node] Running "modelspec" ("nipype.algorithms.modelgen.SpecifySPMModel")
 260805-13:59:00,554 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.modelspec&quot;.
+	 [Node] Finished "l1analysis.modelspec".
 260805-13:59:00,555 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.level1design&quot; in &quot;/output/workingdir/l1analysis/_subject_id_04/level1design&quot;.
+	 [Node] Setting-up "l1analysis.level1design" in "/output/workingdir/l1analysis/_subject_id_04/level1design".
 260805-13:59:00,596 nipype.workflow INFO:
-	 [Node] Running &quot;level1design&quot; (&quot;nipype.interfaces.spm.model.Level1Design&quot;)
+	 [Node] Running "level1design" ("nipype.interfaces.spm.model.Level1Design")
 260805-13:59:09,130 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.level1design&quot;.
+	 [Node] Finished "l1analysis.level1design".
 260805-13:59:09,133 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.level1estimate&quot; in &quot;/output/workingdir/l1analysis/_subject_id_04/level1estimate&quot;.
+	 [Node] Setting-up "l1analysis.level1estimate" in "/output/workingdir/l1analysis/_subject_id_04/level1estimate".
 260805-13:59:09,145 nipype.workflow INFO:
-	 [Node] Running &quot;level1estimate&quot; (&quot;nipype.interfaces.spm.model.EstimateModel&quot;)
+	 [Node] Running "level1estimate" ("nipype.interfaces.spm.model.EstimateModel")
 260805-13:59:21,682 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.level1estimate&quot;.
+	 [Node] Finished "l1analysis.level1estimate".
 260805-13:59:21,684 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.level1conest&quot; in &quot;/output/workingdir/l1analysis/_subject_id_04/level1conest&quot;.
+	 [Node] Setting-up "l1analysis.level1conest" in "/output/workingdir/l1analysis/_subject_id_04/level1conest".
 260805-13:59:21,700 nipype.workflow INFO:
-	 [Node] Running &quot;level1conest&quot; (&quot;nipype.interfaces.spm.model.EstimateContrast&quot;)
+	 [Node] Running "level1conest" ("nipype.interfaces.spm.model.EstimateContrast")
 260805-13:59:30,998 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.level1conest&quot;.
+	 [Node] Finished "l1analysis.level1conest".
 260805-13:59:31,0 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.datasink&quot; in &quot;/output/workingdir/l1analysis/_subject_id_04/datasink&quot;.
+	 [Node] Setting-up "l1analysis.datasink" in "/output/workingdir/l1analysis/_subject_id_04/datasink".
 260805-13:59:31,13 nipype.workflow INFO:
-	 [Node] Running &quot;datasink&quot; (&quot;nipype.interfaces.io.DataSink&quot;)
+	 [Node] Running "datasink" ("nipype.interfaces.io.DataSink")
 260805-13:59:31,19 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_04/SPM.mat -&gt; /output/datasink/1stLevel/sub-04/SPM.mat
 260805-13:59:31,21 nipype.interface INFO:
@@ -1533,47 +1496,47 @@ Now that the theory out of our way we can see how it is done in Nipype.</p>
 260805-13:59:31,63 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_04/ess_0006.nii -&gt; /output/datasink/1stLevel/sub-04/ess_0006.nii
 260805-13:59:31,71 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.datasink&quot;.
+	 [Node] Finished "l1analysis.datasink".
 260805-13:59:31,73 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.getsubjectinfo&quot; in &quot;/output/workingdir/l1analysis/_subject_id_03/getsubjectinfo&quot;.
+	 [Node] Setting-up "l1analysis.getsubjectinfo" in "/output/workingdir/l1analysis/_subject_id_03/getsubjectinfo".
 260805-13:59:31,85 nipype.workflow INFO:
-	 [Node] Running &quot;getsubjectinfo&quot; (&quot;nipype.interfaces.utility.wrappers.Function&quot;)
+	 [Node] Running "getsubjectinfo" ("nipype.interfaces.utility.wrappers.Function")
 260805-13:59:31,123 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.getsubjectinfo&quot;.
+	 [Node] Finished "l1analysis.getsubjectinfo".
 260805-13:59:31,125 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.selectfiles&quot; in &quot;/output/workingdir/l1analysis/_subject_id_03/selectfiles&quot;.
+	 [Node] Setting-up "l1analysis.selectfiles" in "/output/workingdir/l1analysis/_subject_id_03/selectfiles".
 260805-13:59:31,136 nipype.workflow INFO:
-	 [Node] Running &quot;selectfiles&quot; (&quot;nipype.interfaces.io.SelectFiles&quot;)
+	 [Node] Running "selectfiles" ("nipype.interfaces.io.SelectFiles")
 260805-13:59:31,147 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.selectfiles&quot;.
+	 [Node] Finished "l1analysis.selectfiles".
 260805-13:59:31,151 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.modelspec&quot; in &quot;/output/workingdir/l1analysis/_subject_id_03/modelspec&quot;.
+	 [Node] Setting-up "l1analysis.modelspec" in "/output/workingdir/l1analysis/_subject_id_03/modelspec".
 260805-13:59:31,171 nipype.workflow INFO:
-	 [Node] Running &quot;modelspec&quot; (&quot;nipype.algorithms.modelgen.SpecifySPMModel&quot;)
+	 [Node] Running "modelspec" ("nipype.algorithms.modelgen.SpecifySPMModel")
 260805-13:59:31,230 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.modelspec&quot;.
+	 [Node] Finished "l1analysis.modelspec".
 260805-13:59:31,234 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.level1design&quot; in &quot;/output/workingdir/l1analysis/_subject_id_03/level1design&quot;.
+	 [Node] Setting-up "l1analysis.level1design" in "/output/workingdir/l1analysis/_subject_id_03/level1design".
 260805-13:59:31,318 nipype.workflow INFO:
-	 [Node] Running &quot;level1design&quot; (&quot;nipype.interfaces.spm.model.Level1Design&quot;)
+	 [Node] Running "level1design" ("nipype.interfaces.spm.model.Level1Design")
 260805-13:59:43,676 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.level1design&quot;.
+	 [Node] Finished "l1analysis.level1design".
 260805-13:59:43,678 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.level1estimate&quot; in &quot;/output/workingdir/l1analysis/_subject_id_03/level1estimate&quot;.
+	 [Node] Setting-up "l1analysis.level1estimate" in "/output/workingdir/l1analysis/_subject_id_03/level1estimate".
 260805-13:59:43,724 nipype.workflow INFO:
-	 [Node] Running &quot;level1estimate&quot; (&quot;nipype.interfaces.spm.model.EstimateModel&quot;)
+	 [Node] Running "level1estimate" ("nipype.interfaces.spm.model.EstimateModel")
 260805-14:00:01,444 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.level1estimate&quot;.
+	 [Node] Finished "l1analysis.level1estimate".
 260805-14:00:01,445 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.level1conest&quot; in &quot;/output/workingdir/l1analysis/_subject_id_03/level1conest&quot;.
+	 [Node] Setting-up "l1analysis.level1conest" in "/output/workingdir/l1analysis/_subject_id_03/level1conest".
 260805-14:00:01,464 nipype.workflow INFO:
-	 [Node] Running &quot;level1conest&quot; (&quot;nipype.interfaces.spm.model.EstimateContrast&quot;)
+	 [Node] Running "level1conest" ("nipype.interfaces.spm.model.EstimateContrast")
 260805-14:00:10,968 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.level1conest&quot;.
+	 [Node] Finished "l1analysis.level1conest".
 260805-14:00:10,969 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.datasink&quot; in &quot;/output/workingdir/l1analysis/_subject_id_03/datasink&quot;.
+	 [Node] Setting-up "l1analysis.datasink" in "/output/workingdir/l1analysis/_subject_id_03/datasink".
 260805-14:00:11,36 nipype.workflow INFO:
-	 [Node] Running &quot;datasink&quot; (&quot;nipype.interfaces.io.DataSink&quot;)
+	 [Node] Running "datasink" ("nipype.interfaces.io.DataSink")
 260805-14:00:11,37 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_03/SPM.mat -&gt; /output/datasink/1stLevel/sub-03/SPM.mat
 260805-14:00:11,41 nipype.interface INFO:
@@ -1605,47 +1568,47 @@ Now that the theory out of our way we can see how it is done in Nipype.</p>
 260805-14:00:11,61 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_03/ess_0006.nii -&gt; /output/datasink/1stLevel/sub-03/ess_0006.nii
 260805-14:00:11,66 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.datasink&quot;.
+	 [Node] Finished "l1analysis.datasink".
 260805-14:00:11,68 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.getsubjectinfo&quot; in &quot;/output/workingdir/l1analysis/_subject_id_02/getsubjectinfo&quot;.
+	 [Node] Setting-up "l1analysis.getsubjectinfo" in "/output/workingdir/l1analysis/_subject_id_02/getsubjectinfo".
 260805-14:00:11,75 nipype.workflow INFO:
-	 [Node] Running &quot;getsubjectinfo&quot; (&quot;nipype.interfaces.utility.wrappers.Function&quot;)
+	 [Node] Running "getsubjectinfo" ("nipype.interfaces.utility.wrappers.Function")
 260805-14:00:11,96 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.getsubjectinfo&quot;.
+	 [Node] Finished "l1analysis.getsubjectinfo".
 260805-14:00:11,97 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.selectfiles&quot; in &quot;/output/workingdir/l1analysis/_subject_id_02/selectfiles&quot;.
+	 [Node] Setting-up "l1analysis.selectfiles" in "/output/workingdir/l1analysis/_subject_id_02/selectfiles".
 260805-14:00:11,107 nipype.workflow INFO:
-	 [Node] Running &quot;selectfiles&quot; (&quot;nipype.interfaces.io.SelectFiles&quot;)
+	 [Node] Running "selectfiles" ("nipype.interfaces.io.SelectFiles")
 260805-14:00:11,118 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.selectfiles&quot;.
+	 [Node] Finished "l1analysis.selectfiles".
 260805-14:00:11,120 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.modelspec&quot; in &quot;/output/workingdir/l1analysis/_subject_id_02/modelspec&quot;.
+	 [Node] Setting-up "l1analysis.modelspec" in "/output/workingdir/l1analysis/_subject_id_02/modelspec".
 260805-14:00:11,132 nipype.workflow INFO:
-	 [Node] Running &quot;modelspec&quot; (&quot;nipype.algorithms.modelgen.SpecifySPMModel&quot;)
+	 [Node] Running "modelspec" ("nipype.algorithms.modelgen.SpecifySPMModel")
 260805-14:00:11,161 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.modelspec&quot;.
+	 [Node] Finished "l1analysis.modelspec".
 260805-14:00:11,162 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.level1design&quot; in &quot;/output/workingdir/l1analysis/_subject_id_02/level1design&quot;.
+	 [Node] Setting-up "l1analysis.level1design" in "/output/workingdir/l1analysis/_subject_id_02/level1design".
 260805-14:00:11,213 nipype.workflow INFO:
-	 [Node] Running &quot;level1design&quot; (&quot;nipype.interfaces.spm.model.Level1Design&quot;)
+	 [Node] Running "level1design" ("nipype.interfaces.spm.model.Level1Design")
 260805-14:00:19,687 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.level1design&quot;.
+	 [Node] Finished "l1analysis.level1design".
 260805-14:00:19,690 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.level1estimate&quot; in &quot;/output/workingdir/l1analysis/_subject_id_02/level1estimate&quot;.
+	 [Node] Setting-up "l1analysis.level1estimate" in "/output/workingdir/l1analysis/_subject_id_02/level1estimate".
 260805-14:00:19,702 nipype.workflow INFO:
-	 [Node] Running &quot;level1estimate&quot; (&quot;nipype.interfaces.spm.model.EstimateModel&quot;)
+	 [Node] Running "level1estimate" ("nipype.interfaces.spm.model.EstimateModel")
 260805-14:00:33,113 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.level1estimate&quot;.
+	 [Node] Finished "l1analysis.level1estimate".
 260805-14:00:33,115 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.level1conest&quot; in &quot;/output/workingdir/l1analysis/_subject_id_02/level1conest&quot;.
+	 [Node] Setting-up "l1analysis.level1conest" in "/output/workingdir/l1analysis/_subject_id_02/level1conest".
 260805-14:00:33,184 nipype.workflow INFO:
-	 [Node] Running &quot;level1conest&quot; (&quot;nipype.interfaces.spm.model.EstimateContrast&quot;)
+	 [Node] Running "level1conest" ("nipype.interfaces.spm.model.EstimateContrast")
 260805-14:00:43,592 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.level1conest&quot;.
+	 [Node] Finished "l1analysis.level1conest".
 260805-14:00:43,594 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.datasink&quot; in &quot;/output/workingdir/l1analysis/_subject_id_02/datasink&quot;.
+	 [Node] Setting-up "l1analysis.datasink" in "/output/workingdir/l1analysis/_subject_id_02/datasink".
 260805-14:00:43,637 nipype.workflow INFO:
-	 [Node] Running &quot;datasink&quot; (&quot;nipype.interfaces.io.DataSink&quot;)
+	 [Node] Running "datasink" ("nipype.interfaces.io.DataSink")
 260805-14:00:43,641 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_02/SPM.mat -&gt; /output/datasink/1stLevel/sub-02/SPM.mat
 260805-14:00:43,644 nipype.interface INFO:
@@ -1677,47 +1640,47 @@ Now that the theory out of our way we can see how it is done in Nipype.</p>
 260805-14:00:43,675 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_02/ess_0006.nii -&gt; /output/datasink/1stLevel/sub-02/ess_0006.nii
 260805-14:00:43,682 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.datasink&quot;.
+	 [Node] Finished "l1analysis.datasink".
 260805-14:00:43,684 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.getsubjectinfo&quot; in &quot;/output/workingdir/l1analysis/_subject_id_01/getsubjectinfo&quot;.
+	 [Node] Setting-up "l1analysis.getsubjectinfo" in "/output/workingdir/l1analysis/_subject_id_01/getsubjectinfo".
 260805-14:00:43,691 nipype.workflow INFO:
-	 [Node] Running &quot;getsubjectinfo&quot; (&quot;nipype.interfaces.utility.wrappers.Function&quot;)
+	 [Node] Running "getsubjectinfo" ("nipype.interfaces.utility.wrappers.Function")
 260805-14:00:43,709 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.getsubjectinfo&quot;.
+	 [Node] Finished "l1analysis.getsubjectinfo".
 260805-14:00:43,710 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.selectfiles&quot; in &quot;/output/workingdir/l1analysis/_subject_id_01/selectfiles&quot;.
+	 [Node] Setting-up "l1analysis.selectfiles" in "/output/workingdir/l1analysis/_subject_id_01/selectfiles".
 260805-14:00:43,715 nipype.workflow INFO:
-	 [Node] Running &quot;selectfiles&quot; (&quot;nipype.interfaces.io.SelectFiles&quot;)
+	 [Node] Running "selectfiles" ("nipype.interfaces.io.SelectFiles")
 260805-14:00:43,727 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.selectfiles&quot;.
+	 [Node] Finished "l1analysis.selectfiles".
 260805-14:00:43,728 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.modelspec&quot; in &quot;/output/workingdir/l1analysis/_subject_id_01/modelspec&quot;.
+	 [Node] Setting-up "l1analysis.modelspec" in "/output/workingdir/l1analysis/_subject_id_01/modelspec".
 260805-14:00:43,742 nipype.workflow INFO:
-	 [Node] Running &quot;modelspec&quot; (&quot;nipype.algorithms.modelgen.SpecifySPMModel&quot;)
+	 [Node] Running "modelspec" ("nipype.algorithms.modelgen.SpecifySPMModel")
 260805-14:00:43,793 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.modelspec&quot;.
+	 [Node] Finished "l1analysis.modelspec".
 260805-14:00:43,795 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.level1design&quot; in &quot;/output/workingdir/l1analysis/_subject_id_01/level1design&quot;.
+	 [Node] Setting-up "l1analysis.level1design" in "/output/workingdir/l1analysis/_subject_id_01/level1design".
 260805-14:00:43,868 nipype.workflow INFO:
-	 [Node] Running &quot;level1design&quot; (&quot;nipype.interfaces.spm.model.Level1Design&quot;)
+	 [Node] Running "level1design" ("nipype.interfaces.spm.model.Level1Design")
 260805-14:00:53,710 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.level1design&quot;.
+	 [Node] Finished "l1analysis.level1design".
 260805-14:00:53,713 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.level1estimate&quot; in &quot;/output/workingdir/l1analysis/_subject_id_01/level1estimate&quot;.
+	 [Node] Setting-up "l1analysis.level1estimate" in "/output/workingdir/l1analysis/_subject_id_01/level1estimate".
 260805-14:00:53,721 nipype.workflow INFO:
-	 [Node] Running &quot;level1estimate&quot; (&quot;nipype.interfaces.spm.model.EstimateModel&quot;)
+	 [Node] Running "level1estimate" ("nipype.interfaces.spm.model.EstimateModel")
 260805-14:01:06,571 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.level1estimate&quot;.
+	 [Node] Finished "l1analysis.level1estimate".
 260805-14:01:06,572 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.level1conest&quot; in &quot;/output/workingdir/l1analysis/_subject_id_01/level1conest&quot;.
+	 [Node] Setting-up "l1analysis.level1conest" in "/output/workingdir/l1analysis/_subject_id_01/level1conest".
 260805-14:01:06,585 nipype.workflow INFO:
-	 [Node] Running &quot;level1conest&quot; (&quot;nipype.interfaces.spm.model.EstimateContrast&quot;)
+	 [Node] Running "level1conest" ("nipype.interfaces.spm.model.EstimateContrast")
 260805-14:01:16,404 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.level1conest&quot;.
+	 [Node] Finished "l1analysis.level1conest".
 260805-14:01:16,406 nipype.workflow INFO:
-	 [Node] Setting-up &quot;l1analysis.datasink&quot; in &quot;/output/workingdir/l1analysis/_subject_id_01/datasink&quot;.
+	 [Node] Setting-up "l1analysis.datasink" in "/output/workingdir/l1analysis/_subject_id_01/datasink".
 260805-14:01:16,413 nipype.workflow INFO:
-	 [Node] Running &quot;datasink&quot; (&quot;nipype.interfaces.io.DataSink&quot;)
+	 [Node] Running "datasink" ("nipype.interfaces.io.DataSink")
 260805-14:01:16,415 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_01/SPM.mat -&gt; /output/datasink/1stLevel/sub-01/SPM.mat
 260805-14:01:16,417 nipype.interface INFO:
@@ -1749,7 +1712,7 @@ Now that the theory out of our way we can see how it is done in Nipype.</p>
 260805-14:01:16,440 nipype.interface INFO:
 	 sub: /output/datasink/1stLevel/_subject_id_01/ess_0006.nii -&gt; /output/datasink/1stLevel/sub-01/ess_0006.nii
 260805-14:01:16,446 nipype.workflow INFO:
-	 [Node] Finished &quot;l1analysis.datasink&quot;.
+	 [Node] Finished "l1analysis.datasink".
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;networkx.classes.digraph.DiGraph at 0x7f5422159198&gt;
@@ -1953,15 +1916,15 @@ Now that the theory out of our way we can see how it is done in Nipype.</p>
 
 <span class="c1">#Reminder the tests were </span>
 <span class="n">test_to_number</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="mi">1</span><span class="p">:</span> <span class="s1">&#39;average&#39;</span><span class="p">,</span>
-    <span class="mi">2</span><span class="p">:</span> <span class="s1">&#39;Finger&#39;</span><span class="p">,</span>
-    <span class="mi">3</span><span class="p">:</span> <span class="s1">&#39;Foot&#39;</span><span class="p">,</span>
-    <span class="mi">4</span><span class="p">:</span> <span class="s1">&#39;Lips&#39;</span><span class="p">,</span>
-    <span class="mi">5</span><span class="p">:</span> <span class="s1">&#39;Foot &gt; others&#39;</span><span class="p">,</span>
-    <span class="mi">6</span><span class="p">:</span> <span class="s1">&#39;activation&#39;</span>
+    <span class="mi">1</span><span class="p">:</span> <span class="s1">'average'</span><span class="p">,</span>
+    <span class="mi">2</span><span class="p">:</span> <span class="s1">'Finger'</span><span class="p">,</span>
+    <span class="mi">3</span><span class="p">:</span> <span class="s1">'Foot'</span><span class="p">,</span>
+    <span class="mi">4</span><span class="p">:</span> <span class="s1">'Lips'</span><span class="p">,</span>
+    <span class="mi">5</span><span class="p">:</span> <span class="s1">'Foot &gt; others'</span><span class="p">,</span>
+    <span class="mi">6</span><span class="p">:</span> <span class="s1">'activation'</span>
     <span class="p">}</span>
-<span class="n">subject_id</span> <span class="o">=</span> <span class="s1">&#39;01&#39;</span>
-<span class="n">anatimg</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;/data/ds000114/derivatives/fmriprep/sub-</span><span class="si">{</span><span class="n">subject_id</span><span class="si">}</span><span class="s1">/anat/sub-</span><span class="si">{</span><span class="n">subject_id</span><span class="si">}</span><span class="s1">_t1w_preproc.nii.gz&#39;</span>
+<span class="n">subject_id</span> <span class="o">=</span> <span class="s1">'01'</span>
+<span class="n">anatimg</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">'/data/ds000114/derivatives/fmriprep/sub-</span><span class="si">{</span><span class="n">subject_id</span><span class="si">}</span><span class="s1">/anat/sub-</span><span class="si">{</span><span class="n">subject_id</span><span class="si">}</span><span class="s1">_t1w_preproc.nii.gz'</span>
 </pre></div>
 </div>
 </div>
@@ -1973,13 +1936,13 @@ where <span class="math notranslate nohighlight">\(SE\)</span> – estimation of
 <p>This statistic tests the null hypothesis <span class="math notranslate nohighlight">\(H_0:c^T β = 0\)</span>. The greater <span class="math notranslate nohighlight">\(∣t∣\)</span>, the greater the effect’s deviation from zero. The sign indicates the direction of the effect.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">subject_id</span> <span class="o">=</span> <span class="s1">&#39;01&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">subject_id</span> <span class="o">=</span> <span class="s1">'01'</span>
  
-<span class="n">anatimg</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;/data/ds000114/derivatives/fmriprep/sub-</span><span class="si">{</span><span class="n">subject_id</span><span class="si">}</span><span class="s1">/anat/sub-</span><span class="si">{</span><span class="n">subject_id</span><span class="si">}</span><span class="s1">_t1w_preproc.nii.gz&#39;</span>
+<span class="n">anatimg</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">'/data/ds000114/derivatives/fmriprep/sub-</span><span class="si">{</span><span class="n">subject_id</span><span class="si">}</span><span class="s1">/anat/sub-</span><span class="si">{</span><span class="n">subject_id</span><span class="si">}</span><span class="s1">_t1w_preproc.nii.gz'</span>
 <span class="k">for</span> <span class="n">contrast_id</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
     <span class="n">plot_stat_map</span><span class="p">(</span>
-        <span class="sa">f</span><span class="s1">&#39;/output/datasink/1stLevel/sub-</span><span class="si">{</span><span class="n">subject_id</span><span class="si">}</span><span class="s1">/spmT_000</span><span class="si">{</span><span class="n">contrast_id</span><span class="si">}</span><span class="s1">.nii&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="n">test_to_number</span><span class="p">[</span><span class="n">contrast_id</span><span class="p">],</span>
-        <span class="n">bg_img</span><span class="o">=</span><span class="n">anatimg</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">display_mode</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">cut_coords</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span> <span class="n">dim</span><span class="o">=-</span><span class="mi">1</span><span class="p">);</span>
+        <span class="sa">f</span><span class="s1">'/output/datasink/1stLevel/sub-</span><span class="si">{</span><span class="n">subject_id</span><span class="si">}</span><span class="s1">/spmT_000</span><span class="si">{</span><span class="n">contrast_id</span><span class="si">}</span><span class="s1">.nii'</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="n">test_to_number</span><span class="p">[</span><span class="n">contrast_id</span><span class="p">],</span>
+        <span class="n">bg_img</span><span class="o">=</span><span class="n">anatimg</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">display_mode</span><span class="o">=</span><span class="s1">'y'</span><span class="p">,</span> <span class="n">cut_coords</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span> <span class="n">dim</span><span class="o">=-</span><span class="mi">1</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -2001,11 +1964,11 @@ The result is a non-negative number with larger values indicate the presence of 
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">contrast_id</span> <span class="o">=</span> <span class="mi">6</span>
-<span class="n">subject_id</span> <span class="o">=</span> <span class="s1">&#39;01&#39;</span>
+<span class="n">subject_id</span> <span class="o">=</span> <span class="s1">'01'</span>
 
 <span class="n">plot_stat_map</span><span class="p">(</span>
-        <span class="sa">f</span><span class="s1">&#39;/output/datasink/1stLevel/sub-</span><span class="si">{</span><span class="n">subject_id</span><span class="si">}</span><span class="s1">/spmF_000</span><span class="si">{</span><span class="n">contrast_id</span><span class="si">}</span><span class="s1">.nii&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="n">test_to_number</span><span class="p">[</span><span class="n">contrast_id</span><span class="p">],</span>
-        <span class="n">bg_img</span><span class="o">=</span><span class="n">anatimg</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">display_mode</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">cut_coords</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span> <span class="n">dim</span><span class="o">=-</span><span class="mi">1</span><span class="p">);</span>
+        <span class="sa">f</span><span class="s1">'/output/datasink/1stLevel/sub-</span><span class="si">{</span><span class="n">subject_id</span><span class="si">}</span><span class="s1">/spmF_000</span><span class="si">{</span><span class="n">contrast_id</span><span class="si">}</span><span class="s1">.nii'</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="n">test_to_number</span><span class="p">[</span><span class="n">contrast_id</span><span class="p">],</span>
+        <span class="n">bg_img</span><span class="o">=</span><span class="n">anatimg</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">display_mode</span><span class="o">=</span><span class="s1">'y'</span><span class="p">,</span> <span class="n">cut_coords</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span> <span class="n">dim</span><span class="o">=-</span><span class="mi">1</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -2058,22 +2021,20 @@ The result is a non-negative number with larger values indicate the presence of 
             
             
               
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
-  <div class="sidebar-secondary-item"><div
-    id="pst-page-navigation-heading-2"
-    class="page-toc tocsection onthispage">
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
-  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
-    <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">GLM: 1st-level Analysis</a><ul class="pst-show_toc_level nav section-nav flex-column">
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">GLM: 1st-level Analysis</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hemodynamic-response">Hemodynamic response</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#st-level-analysis-in-nipype">1st Level Analysis in Nipype</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#st-level-analysis-in-nipype">1st Level Analysis in Nipype</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-design-matrix">Prepare design matrix</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initiate-nodes">Initiate Nodes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specify-contrasts">Specify contrasts</a></li>
@@ -2134,8 +2095,8 @@ By Nadezhda Alsahanova, Aleksandra Beliaeva, Dmitriy Kornilov, Fedor Gubanov, Pa
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>
