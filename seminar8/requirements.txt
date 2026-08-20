@@ -1,0 +1,31 @@
+# Python 3.12
+
+# Numerical and data-analysis stack
+numpy==2.1.1
+scipy==1.14.1
+pandas==2.2.3
+matplotlib==3.9.2
+
+# Visualization
+matplotlib==3.9.2
+plotly>=6.1.1,<7
+kaleido>=1,<2
+
+# Neuroimaging and functional connectivity
+nibabel==5.2.1
+nilearn==0.10.4
+networkx==3.4.2
+
+# Machine learning and topological data analysis
+scikit-learn==1.5.2
+ripser==0.6.12
+diagram2vec==0.0.2
+
+# Data download and progress reporting
+requests==2.32.5
+tqdm==4.67.1
+
+# Local Jupyter environment
+jupyterlab==4.3.5
+ipykernel==6.29.5
+ipywidgets>=8.1,<9
