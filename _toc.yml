@@ -37,7 +37,7 @@ parts:
 - caption: Seminars 2-3. Working with EEG
   numbered: false
   chapters:
-  - file: seminars2_3/seminar1_working_with_eeg_ipynb_
+  - file: seminars2_3/seminar1_working_with_eeg.ipynb
 
 - caption: Seminars 4-5. Working with MRI
   numbered: false
@@ -70,9 +70,9 @@ parts:
     title: Seminar 7.1. 1st-level fMRI data analysis
   - url: https://drive.google.com/file/d/1EuyJWzhmST66rDVugbRgsm_p8Jpc7KTQ/view?usp=drive_link
     title: Seminar 7.2. 2st-level (Group) Analysis
-  - url: https://colab.research.google.com/drive/1Hed2ggYNbyvBMeYpNeapMAepxeQBVLRL?usp=sharing
+  - url: https://colab.research.google.com/drive/16E2eub4EIc8HfvZIJCVG_qnMqfL2iLaf?usp=sharing
     title: Seminar 8.1. Analyze task-based fMRI for motor and emotion task
-  - url: https://colab.research.google.com/drive/1F0UzTsmF1NK6F3NEsJHUw9G5K3j_-eYA?usp=sharing
+  - url: https://colab.research.google.com/drive/1tuNNkP2JAA02UfCDpScRwI-_OpS7WTxZ?usp=sharing
     title: Seminar 8.2. Functional connectivity
     
 - caption: Seminar 9. Interpretation
