@@ -16,38 +16,41 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-
-  
-  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/myadmonitions.css?v=0009bf62" />
   
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -61,6 +64,7 @@
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'seminar1/Seminar1_ML';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="icon" href="../_static/logo.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -68,34 +72,30 @@
     <link rel="prev" title="How to work with Python" href="Seminar1_python_colab.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
   </head>
-  
-  
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
-
+  <body data-default-mode="">
   
   
   <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
-
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -103,7 +103,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -111,15 +110,59 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
 </div>
 
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
     </header>
   
 
@@ -128,7 +171,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -158,21 +202,17 @@
     
     
     <img src="../_static/logo.png" class="logo__image only-light" alt="Neuroimaging and Machine Learning for Biomedicine - Home"/>
-    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Neuroimaging and Machine Learning for Biomedicine - Home"/>`);</script>
+    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="Neuroimaging and Machine Learning for Biomedicine - Home"/>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -229,6 +269,10 @@
 
 
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Seminars 2-3. Working with EEG</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../seminars2_3/seminar1_working_with_eeg.html">Seminars 2 and 3. EEG analysis</a></li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Seminars 4-5. Working with MRI</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../seminar4/docker.html">Preparation to Seminar 4</a></li>
@@ -253,8 +297,8 @@
 <li class="toctree-l1"><a class="reference external" href="https://drive.google.com/file/d/1kSrmaPF5_bKvH1xEKgp0BMtpnm_I-DtY/view?usp=drive_link">Seminar 6. Preprocessing pipeline for task-based fMRI</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://drive.google.com/file/d/1-9hT7K9lG_pUTIgtjwH7pvxL1mf9QnMP/view?usp=drive_link">Seminar 7.1. 1st-level fMRI data analysis</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://drive.google.com/file/d/1EuyJWzhmST66rDVugbRgsm_p8Jpc7KTQ/view?usp=drive_link">Seminar 7.2. 2st-level (Group) Analysis</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1Hed2ggYNbyvBMeYpNeapMAepxeQBVLRL?usp=sharing">Seminar 8.1. Analyze task-based fMRI for motor and emotion task</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1F0UzTsmF1NK6F3NEsJHUw9G5K3j_-eYA?usp=sharing">Seminar 8.2. Functional connectivity</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/16E2eub4EIc8HfvZIJCVG_qnMqfL2iLaf?usp=sharing">Seminar 8.1. Analyze task-based fMRI for motor and emotion task</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1tuNNkP2JAA02UfCDpScRwI-_OpS7WTxZ?usp=sharing">Seminar 8.2. Functional connectivity</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Seminar 9. Interpretation</span></p>
 <ul class="nav bd-sidenav">
@@ -272,9 +316,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -404,7 +453,7 @@
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -418,25 +467,17 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
 </div></div>
@@ -458,12 +499,12 @@ document.write(`
                 <h2> Contents </h2>
             </div>
             <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Intro to ML</a><ul class="visible nav section-nav flex-column">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Intro to ML</a><ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ml-task">ML task</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#how-objects-are-set-feature-description">How objects are set. Feature description</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#how-objects-are-set-feature-description">How objects are set. Feature description</a><ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice">Practice</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas">Pandas</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualization">Visualization</a></li>
@@ -476,7 +517,7 @@ document.write(`
 </li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-tasks">Types of tasks</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-tasks">Types of tasks</a><ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classification-task">Classification task:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regression-recovery-task">Regression recovery task:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#forecasting-task">Forecasting task</a></li>
@@ -485,7 +526,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-validation-cv">Cross-validation (CV)</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#regression-training">Regression Training</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#regression-training">Regression Training</a><ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Practice</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-case-with-noise">Linear case with noise</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nonlinear-case-feature-extraction">Nonlinear case (feature extraction)</a><ul class="nav section-nav flex-column">
@@ -498,12 +539,12 @@ document.write(`
 </li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#training-classification-model">Training classification model:</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#training-classification-model">Training classification model:</a><ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Practice</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#analysis-of-classification-errors">Analysis of classification errors</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#loss-functions-depending-on-the-error-penalty">Loss functions depending on the error penalty</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#loss-functions-depending-on-the-error-penalty">Loss functions depending on the error penalty</a><ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-the-classifier-works-critically-depends-on-w-0"><strong>How the classifier works critically depends on <span class="math notranslate nohighlight">\(w_0\)</span>!</strong></a></li>
 </ul>
 </li>
@@ -513,13 +554,13 @@ document.write(`
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#accuracy-and-completeness-of-multiclass-classification">Accuracy and completeness of multiclass classification</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#assessment-of-classification-quality">Assessment of classification quality</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#aggregated-estimates">Aggregated estimates:</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-choose-model-hyperparameters">How to choose model hyperparameters</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-choose-model-hyperparameters">How to choose model hyperparameters</a><ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-4">Task 4</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#the-curse-of-dimensionality">The curse of dimensionality</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dimensionality-reduction-the-principal-component-analysis-pca-problem-statement">Dimensionality reduction. The principal component analysis (PCA): problem statement</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#matrix-notation">Matrix notation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#matrix-notation">Matrix notation</a><ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Practice</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#presentation">Presentation:</a></li>
 </ul>
@@ -600,7 +641,7 @@ F =
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
-<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">"ignore"</span><span class="p">)</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
 
 <span class="c1"># importing data processing tools: pandas and numpy</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
@@ -649,7 +690,7 @@ read and write data, respectively. For example, an Excel spreadsheet can be read
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># get titanic files as a DataFrame</span>
-<span class="n">titanic_dataframe</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"https://raw.githubusercontent.com/adasegroup/ML2021_seminars/master/seminar1/titanic/train.csv"</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="s1">'PassengerId'</span><span class="p">)</span>
+<span class="n">titanic_dataframe</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/adasegroup/ML2021_seminars/master/seminar1/titanic/train.csv&quot;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="s1">&#39;PassengerId&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -834,7 +875,7 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class 'pandas.core.frame.DataFrame'&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
 Index: 891 entries, 1 to 891
 Data columns (total 11 columns):
  #   Column    Non-Null Count  Dtype  
@@ -981,7 +1022,7 @@ Remember that:</p>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">titanic_dataframe</span><span class="p">[[</span><span class="s1">'Survived'</span><span class="p">,</span>	<span class="s1">'Pclass'</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">titanic_dataframe</span><span class="p">[[</span><span class="s1">&#39;Survived&#39;</span><span class="p">,</span>	<span class="s1">&#39;Pclass&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1116,7 +1157,7 @@ Remember that:</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">titanic_dataframe</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">,[</span><span class="s1">'Survived'</span><span class="p">,</span>	<span class="s1">'Pclass'</span><span class="p">]]</span> <span class="c1"># choose rows and columns by names</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">titanic_dataframe</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">,[</span><span class="s1">&#39;Survived&#39;</span><span class="p">,</span>	<span class="s1">&#39;Pclass&#39;</span><span class="p">]]</span> <span class="c1"># choose rows and columns by names</span>
 </pre></div>
 </div>
 </div>
@@ -1236,7 +1277,7 @@ Remember that:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># задаем маску по условию</span>
-<span class="n">mask</span> <span class="o">=</span> <span class="n">titanic_dataframe</span><span class="p">[</span><span class="s1">'Age'</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">18</span>
+<span class="n">mask</span> <span class="o">=</span> <span class="n">titanic_dataframe</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">18</span>
 
 <span class="c1"># и отбираем данные</span>
 <span class="n">temp</span> <span class="o">=</span> <span class="n">titanic_dataframe</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>
@@ -1373,10 +1414,10 @@ Remember that:</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># libraries for visualization: matplotlib, seaborn</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s1">'whitegrid'</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s1">&#39;whitegrid&#39;</span><span class="p">)</span>
 
 <span class="o">%</span><span class="k">matplotlib</span> inline
-<span class="o">%</span><span class="k">config</span> InlineBackend.figure_format='retina'
+<span class="o">%</span><span class="k">config</span> InlineBackend.figure_format=&#39;retina&#39;
 </pre></div>
 </div>
 </div>
@@ -1387,11 +1428,11 @@ Remember that:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Simple plot</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">titanic_dataframe</span><span class="p">[</span><span class="s1">'Age'</span><span class="p">]</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">titanic_dataframe</span><span class="p">[</span><span class="s1">'Fare'</span><span class="p">]</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">'x'</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Age'</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'Fare'</span><span class="p">);</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">titanic_dataframe</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">titanic_dataframe</span><span class="p">[</span><span class="s1">&#39;Fare&#39;</span><span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Age&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Fare&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -1410,15 +1451,15 @@ sns.catplot<span class="o">?</span>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">catplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="s1">'Embarked'</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s1">'Survived'</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">titanic_dataframe</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">kind</span> <span class="o">=</span> <span class="s1">'point'</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">catplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;Embarked&#39;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s1">&#39;Survived&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">titanic_dataframe</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">kind</span> <span class="o">=</span> <span class="s1">&#39;point&#39;</span><span class="p">)</span>
 
 <span class="n">figure_handle</span><span class="p">,</span> <span class="p">(</span><span class="n">axis1</span><span class="p">,</span> <span class="n">axis2</span><span class="p">,</span> <span class="n">axis3</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
 
-<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">'Embarked'</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">titanic_dataframe</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axis1</span><span class="p">)</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">'Survived'</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">"Embarked"</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">titanic_dataframe</span> <span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">ax</span><span class="o">=</span><span class="n">axis2</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Embarked&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">titanic_dataframe</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axis1</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Survived&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;Embarked&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">titanic_dataframe</span> <span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">ax</span><span class="o">=</span><span class="n">axis2</span><span class="p">)</span>
 
 <span class="c1"># group by embarked, and get the mean for survived passengers for each value in Embarked</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">'Embarked'</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">'Survived'</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">titanic_dataframe</span><span class="p">[[</span><span class="s2">"Embarked"</span><span class="p">,</span> <span class="s2">"Survived"</span><span class="p">]],</span> <span class="n">order</span><span class="o">=</span><span class="p">[</span><span class="s1">'S'</span><span class="p">,</span><span class="s1">'C'</span><span class="p">,</span><span class="s1">'Q'</span><span class="p">],</span> <span class="n">ax</span><span class="o">=</span><span class="n">axis3</span><span class="p">);</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Embarked&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Survived&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">titanic_dataframe</span><span class="p">[[</span><span class="s2">&quot;Embarked&quot;</span><span class="p">,</span> <span class="s2">&quot;Survived&quot;</span><span class="p">]],</span> <span class="n">order</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;S&#39;</span><span class="p">,</span><span class="s1">&#39;C&#39;</span><span class="p">,</span><span class="s1">&#39;Q&#39;</span><span class="p">],</span> <span class="n">ax</span><span class="o">=</span><span class="n">axis3</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -1442,7 +1483,7 @@ sns.catplot<span class="o">?</span>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">titanic_dataframe</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">"Survived"</span><span class="p">);</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">titanic_dataframe</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;Survived&quot;</span><span class="p">);</span>
 <span class="n">g</span><span class="o">.</span><span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1479,13 +1520,13 @@ Corr(x,y)  \in [-1, 1]
 <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="mi">13</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
 
 <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">titanic_dataframe</span><span class="p">[</span><span class="s1">'Age'</span><span class="p">]);</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Age'</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">titanic_dataframe</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">]);</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Age&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 
 <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">titanic_dataframe</span><span class="p">[</span><span class="s1">'Fare'</span><span class="p">]);</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Fare'</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">titanic_dataframe</span><span class="p">[</span><span class="s1">&#39;Fare&#39;</span><span class="p">]);</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Fare&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1500,9 +1541,9 @@ Corr(x,y)  \in [-1, 1]
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">scipy.stats</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">stats</span>
 <span class="c1"># calculate the correlation</span>
 <span class="n">titanic_dataframe_nonan</span> <span class="o">=</span> <span class="n">titanic_dataframe</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
-<span class="n">corr</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">pearsonr</span><span class="p">(</span><span class="n">titanic_dataframe_nonan</span><span class="p">[</span><span class="s1">'Age'</span><span class="p">],</span> <span class="n">titanic_dataframe_nonan</span><span class="p">[</span><span class="s1">'Fare'</span><span class="p">])</span>
+<span class="n">corr</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">pearsonr</span><span class="p">(</span><span class="n">titanic_dataframe_nonan</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">],</span> <span class="n">titanic_dataframe_nonan</span><span class="p">[</span><span class="s1">&#39;Fare&#39;</span><span class="p">])</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s1">'Correlation:'</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">corr</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Correlation:&#39;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">corr</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -1516,7 +1557,7 @@ Corr(x,y)  \in [-1, 1]
 <h4>Missing values<a class="headerlink" href="#missing-values" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">'Number of missing values of age:'</span><span class="p">,</span> <span class="n">titanic_dataframe</span><span class="p">[</span><span class="s2">"Age"</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Number of missing values of age:&#39;</span><span class="p">,</span> <span class="n">titanic_dataframe</span><span class="p">[</span><span class="s2">&quot;Age&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
@@ -1555,13 +1596,13 @@ Corr(x,y)  \in [-1, 1]
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Prepare plots to see distributions of age</span>
 <span class="n">fig</span><span class="p">,</span> <span class="p">(</span><span class="n">axis1</span><span class="p">,</span> <span class="n">axis2</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
-<span class="n">axis1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">r</span><span class="s1">'Original Age values - Titanic'</span><span class="p">)</span>
-<span class="n">axis2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">r</span><span class="s1">'New Age values - Titanic'</span><span class="p">)</span>
+<span class="n">axis1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Original Age values - Titanic&#39;</span><span class="p">)</span>
+<span class="n">axis2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;New Age values - Titanic&#39;</span><span class="p">)</span>
 
 <span class="c1"># get average, std, and number of NaN values in titanic_df</span>
-<span class="n">average_age_titanic</span> <span class="o">=</span> <span class="n">titanic_dataframe</span><span class="p">[</span><span class="s2">"Age"</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-<span class="n">std_age_titanic</span> <span class="o">=</span> <span class="n">titanic_dataframe</span><span class="p">[</span><span class="s2">"Age"</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
-<span class="n">count_nan_age_titanic</span> <span class="o">=</span> <span class="n">titanic_dataframe</span><span class="p">[</span><span class="s2">"Age"</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">average_age_titanic</span> <span class="o">=</span> <span class="n">titanic_dataframe</span><span class="p">[</span><span class="s2">&quot;Age&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">std_age_titanic</span> <span class="o">=</span> <span class="n">titanic_dataframe</span><span class="p">[</span><span class="s2">&quot;Age&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<span class="n">count_nan_age_titanic</span> <span class="o">=</span> <span class="n">titanic_dataframe</span><span class="p">[</span><span class="s2">&quot;Age&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 
 <span class="c1"># generate random numbers between (mean - std) &amp; (mean + std)</span>
 <span class="n">random_ages</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">average_age_titanic</span> <span class="o">-</span> <span class="n">std_age_titanic</span><span class="p">,</span>
@@ -1570,16 +1611,16 @@ Corr(x,y)  \in [-1, 1]
 
 <span class="c1"># plot original Age values</span>
 <span class="c1"># NOTE: drop all null values, and convert to int</span>
-<span class="n">titanic_dataframe</span><span class="p">[</span><span class="s1">'Age'</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="mi">70</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axis1</span><span class="p">)</span>
+<span class="n">titanic_dataframe</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="mi">70</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axis1</span><span class="p">)</span>
 
 <span class="c1"># fill NaN values in Age column with random values generated</span>
-<span class="n">titanic_dataframe</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">titanic_dataframe</span><span class="p">[</span><span class="s2">"Age"</span><span class="p">]),</span> <span class="s2">"Age"</span><span class="p">]</span> <span class="o">=</span> <span class="n">random_ages</span>
+<span class="n">titanic_dataframe</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">titanic_dataframe</span><span class="p">[</span><span class="s2">&quot;Age&quot;</span><span class="p">]),</span> <span class="s2">&quot;Age&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">random_ages</span>
 
 <span class="c1"># convert from float to int</span>
-<span class="n">titanic_dataframe</span><span class="p">[</span><span class="s1">'Age'</span><span class="p">]</span> <span class="o">=</span> <span class="n">titanic_dataframe</span><span class="p">[</span><span class="s1">'Age'</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="n">titanic_dataframe</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">titanic_dataframe</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
 
 <span class="c1"># plot new Age Values</span>
-<span class="n">titanic_dataframe</span><span class="p">[</span><span class="s1">'Age'</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="mi">70</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axis2</span><span class="p">);</span>
+<span class="n">titanic_dataframe</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="mi">70</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axis2</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -1707,7 +1748,7 @@ $<span class="math notranslate nohighlight">\(
 
 
 <span class="o">%</span><span class="k">matplotlib</span> inline
-<span class="o">%</span><span class="k">config</span> InlineBackend.figure_format='retina'
+<span class="o">%</span><span class="k">config</span> InlineBackend.figure_format=&#39;retina&#39;
 
 <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">4242</span><span class="p">)</span>
 </pre></div>
@@ -1733,10 +1774,10 @@ $<span class="math notranslate nohighlight">\(
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">'Input, $x$'</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">'Output, $v(x)$'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Input, $x$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Output, $v(x)$&#39;</span><span class="p">)</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'Real data'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'g'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Real data&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
 </pre></div>
 </div>
@@ -1782,12 +1823,12 @@ $<span class="math notranslate nohighlight">\(
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">'Input, $x$'</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">'Output, $v(x)$'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Input, $x$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Output, $v(x)$&#39;</span><span class="p">)</span>
 
 <span class="n">v_estimate</span> <span class="o">=</span> <span class="n">regression</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">)[:,</span> <span class="mi">0</span><span class="p">]</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">v_estimate</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">"Estimated </span><span class="si">{</span><span class="nb">round</span><span class="p">(</span><span class="n">bias</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="si">}</span><span class="s2"> + </span><span class="si">{</span><span class="nb">round</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="si">}</span><span class="s2"> * x | MSE: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="n">v_estimate</span><span class="p">),</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'k'</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">);</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">'Data with error'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'g'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">v_estimate</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Estimated </span><span class="si">{</span><span class="nb">round</span><span class="p">(</span><span class="n">bias</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="si">}</span><span class="s2"> + </span><span class="si">{</span><span class="nb">round</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="si">}</span><span class="s2"> * x | MSE: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="n">v_estimate</span><span class="p">),</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;Data with error&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
 </pre></div>
 </div>
@@ -1821,10 +1862,10 @@ y(x) = cos\Big(\frac{x}{10}\Big)
 
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">'Observed'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'b'</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">'x'</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y_real</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">'Real'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'r'</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">'$x$'</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">'$D(x)$'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;Observed&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y_real</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;Real&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$x$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$D(x)$&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
 </pre></div>
 </div>
@@ -1859,8 +1900,8 @@ y(x) = cos\Big(\frac{x}{10}\Big)
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">'Input, $x$'</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">'Output, $v(x)$'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Input, $x$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Output, $v(x)$&#39;</span><span class="p">)</span>
 <span class="c1"># Add degrees to the list and see how the prediction behaves</span>
 <span class="c1"># Try adding a higher degree &gt; 100</span>
 <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span>
@@ -1868,10 +1909,10 @@ y(x) = cos\Big(\frac{x}{10}\Big)
     <span class="n">model</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_poly</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 
     <span class="n">y_estimate</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_poly</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y_estimate</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">" Degree of polynomial </span><span class="si">{</span><span class="n">p</span><span class="si">}</span><span class="s2">, MSE: </span><span class="si">{</span><span class="nb">round</span><span class="p">(</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">y_estimate</span><span class="p">),</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">);</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y_estimate</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot; Degree of polynomial </span><span class="si">{</span><span class="n">p</span><span class="si">}</span><span class="s2">, MSE: </span><span class="si">{</span><span class="nb">round</span><span class="p">(</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">y_estimate</span><span class="p">),</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">);</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">'x'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">'Data with error'</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y_real</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">'$y = x + 5 \cdot \sin(x)$'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;Data with error&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y_real</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$y = x + 5 \cdot \sin(x)$&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
 </pre></div>
 </div>
@@ -1896,8 +1937,8 @@ y(x) = cos\Big(\frac{x}{10}\Big)
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">'Input, $x$'</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">'Output, $v(x)$'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Input, $x$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Output, $v(x)$&#39;</span><span class="p">)</span>
 <span class="c1"># Add degrees to the list and see how the metric behaves on the test</span>
 
 <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span>
@@ -1906,12 +1947,12 @@ y(x) = cos\Big(\frac{x}{10}\Big)
 
     <span class="n">y_estimate_train</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_poly</span><span class="p">)</span>
     <span class="n">y_estimate_test</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">make_polynomial_features</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="n">p</span><span class="p">))</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">X_train</span><span class="p">),</span> <span class="n">y_estimate_train</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">X_train</span><span class="p">)],</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">" Degree of polynomial </span><span class="si">{</span><span class="n">p</span><span class="si">}</span><span class="s2">, MSE train: </span><span class="si">{</span><span class="nb">round</span><span class="p">(</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span><span class="w"> </span><span class="n">y_estimate_train</span><span class="p">),</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2">, MSE test: </span><span class="si">{</span><span class="nb">round</span><span class="p">(</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span><span class="w"> </span><span class="n">y_estimate_test</span><span class="p">),</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">);</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">X_train</span><span class="p">),</span> <span class="n">y_estimate_train</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">X_train</span><span class="p">)],</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot; Degree of polynomial </span><span class="si">{</span><span class="n">p</span><span class="si">}</span><span class="s2">, MSE train: </span><span class="si">{</span><span class="nb">round</span><span class="p">(</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span><span class="w"> </span><span class="n">y_estimate_train</span><span class="p">),</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2">, MSE test: </span><span class="si">{</span><span class="nb">round</span><span class="p">(</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span><span class="w"> </span><span class="n">y_estimate_test</span><span class="p">),</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">);</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">'x'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">'Train data'</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">'x'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">'Test data'</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y_real</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">'$y = x + 5 \cdot \sin(x)$'</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">'best'</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;Train data&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;Test data&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y_real</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$y = x + 5 \cdot \sin(x)$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -1948,12 +1989,12 @@ $<span class="math notranslate nohighlight">\(
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">))</span>
 
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">sign</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">'$sign(x)$'</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">upper_bound</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">'$y = \log(1+\exp(-x))$'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">sign</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$sign(x)$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">upper_bound</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$y = \log(1+\exp(-x))$&#39;</span><span class="p">)</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">'$x$'</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">'$\mathscr</span><span class="si">{L}</span><span class="s1">(x^\top θ \cdot y)$'</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">'best'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$x$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\mathscr</span><span class="si">{L}</span><span class="s1">(x^\top θ \cdot y)$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">();</span>
 </pre></div>
 </div>
@@ -1990,7 +2031,7 @@ $<span class="math notranslate nohighlight">\(
     <span class="k">return</span> <span class="n">x_axis</span><span class="p">,</span> <span class="n">y_axis</span>
 
 
-<span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'blue'</span><span class="p">,</span> <span class="s1">'red'</span><span class="p">]</span>
+<span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="s1">&#39;red&#39;</span><span class="p">]</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">gs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="mi">4</span><span class="p">)),</span> <span class="n">gridspec</span><span class="o">.</span><span class="n">GridSpec</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 
 <span class="n">ax</span> <span class="o">=</span> <span class="p">[]</span>
@@ -1999,17 +2040,17 @@ $<span class="math notranslate nohighlight">\(
     <span class="n">ax</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">((</span><span class="o">-</span><span class="mf">2.5</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">)),</span> <span class="n">ax</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">((</span><span class="o">-</span><span class="mf">2.5</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">))</span>
 
 <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
-    <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">y</span><span class="o">==</span><span class="n">k</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[</span><span class="n">y</span><span class="o">==</span><span class="n">k</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="s1">'o'</span><span class="p">,</span>
-               <span class="n">label</span><span class="o">=</span><span class="s1">'класс </span><span class="si">{}</span><span class="s1">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">k</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="n">cols</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
-    <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">y</span><span class="o">==</span><span class="n">k</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[</span><span class="n">y</span><span class="o">==</span><span class="n">k</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="s1">'o'</span><span class="p">,</span>
-               <span class="n">label</span><span class="o">=</span><span class="s1">'класс </span><span class="si">{}</span><span class="s1">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">k</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="n">cols</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
+    <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">y</span><span class="o">==</span><span class="n">k</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[</span><span class="n">y</span><span class="o">==</span><span class="n">k</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span>
+               <span class="n">label</span><span class="o">=</span><span class="s1">&#39;класс </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">k</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="n">cols</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
+    <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">y</span><span class="o">==</span><span class="n">k</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[</span><span class="n">y</span><span class="o">==</span><span class="n">k</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span>
+               <span class="n">label</span><span class="o">=</span><span class="s1">&#39;класс </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">k</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="n">cols</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
 
-<span class="c1"># let's plot results with and without the constant</span>
+<span class="c1"># let&#39;s plot results with and without the constant</span>
 <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
     <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">*</span><span class="n">get_line</span><span class="p">(</span><span class="o">*</span><span class="n">model</span><span class="o">.</span><span class="n">coef_</span><span class="p">[</span><span class="mi">0</span><span class="p">][:</span><span class="mi">2</span><span class="p">]),</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">cols</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
     <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">*</span><span class="n">get_line</span><span class="p">(</span><span class="o">*</span><span class="n">model</span><span class="o">.</span><span class="n">coef_</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">cols</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
 
-<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">'best'</span><span class="p">),</span> <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">'best'</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">),</span> <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">();</span>
 </pre></div>
 </div>
@@ -2065,7 +2106,7 @@ $<span class="math notranslate nohighlight">\(
 
     <span class="k">return</span> <span class="n">x_axis</span><span class="p">,</span> <span class="n">y_axis</span>
 
-<span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'blue'</span><span class="p">,</span> <span class="s1">'red'</span><span class="p">,</span> <span class="s1">'green'</span><span class="p">]</span>
+<span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">]</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">gs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="mi">4</span><span class="p">)),</span> <span class="n">gridspec</span><span class="o">.</span><span class="n">GridSpec</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 
 <span class="n">ax</span> <span class="o">=</span> <span class="p">[]</span>
@@ -2074,17 +2115,17 @@ $<span class="math notranslate nohighlight">\(
     <span class="n">ax</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">((</span><span class="o">-</span><span class="mf">2.5</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">)),</span> <span class="n">ax</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">((</span><span class="o">-</span><span class="mf">2.5</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">))</span>
 
 <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
-    <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">y</span><span class="o">==</span><span class="n">k</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[</span><span class="n">y</span><span class="o">==</span><span class="n">k</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="s1">'o'</span><span class="p">,</span>
-               <span class="n">label</span><span class="o">=</span><span class="s1">'класс </span><span class="si">{}</span><span class="s1">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">k</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="n">cols</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
-    <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">y</span><span class="o">==</span><span class="n">k</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[</span><span class="n">y</span><span class="o">==</span><span class="n">k</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="s1">'o'</span><span class="p">,</span>
-               <span class="n">label</span><span class="o">=</span><span class="s1">'класс </span><span class="si">{}</span><span class="s1">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">k</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="n">cols</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
+    <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">y</span><span class="o">==</span><span class="n">k</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[</span><span class="n">y</span><span class="o">==</span><span class="n">k</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span>
+               <span class="n">label</span><span class="o">=</span><span class="s1">&#39;класс </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">k</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="n">cols</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
+    <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">y</span><span class="o">==</span><span class="n">k</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[</span><span class="n">y</span><span class="o">==</span><span class="n">k</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span>
+               <span class="n">label</span><span class="o">=</span><span class="s1">&#39;класс </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">k</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="n">cols</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
 
-<span class="c1"># let's plot results with and without the constant</span>
+<span class="c1"># let&#39;s plot results with and without the constant</span>
 <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
     <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">*</span><span class="n">get_line</span><span class="p">(</span><span class="o">*</span><span class="n">models</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">.</span><span class="n">coef_</span><span class="p">[</span><span class="mi">0</span><span class="p">][:</span><span class="mi">2</span><span class="p">]),</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">cols</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
     <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">*</span><span class="n">get_line</span><span class="p">(</span><span class="o">*</span><span class="n">models</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">.</span><span class="n">coef_</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">cols</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
 
-<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">'best'</span><span class="p">),</span> <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">'best'</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">),</span> <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">();</span>
 </pre></div>
 </div>
@@ -2202,14 +2243,14 @@ A test sample is used to evaluate how your model will work with invisible data.<
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'darkorange'</span><span class="p">,</span>
-         <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">'ROC curve (area = </span><span class="si">{}</span><span class="s1">)'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">auc</span><span class="p">(</span><span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">),</span> <span class="mi">2</span><span class="p">)))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">'navy'</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">'--'</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;darkorange&#39;</span><span class="p">,</span>
+         <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;ROC curve (area = </span><span class="si">{}</span><span class="s1">)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">auc</span><span class="p">(</span><span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">),</span> <span class="mi">2</span><span class="p">)))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;navy&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.05</span><span class="p">])</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">'False Positive Rate, FPR'</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">'True Positive Rate, TPR'</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">"lower right"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;False Positive Rate, FPR&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;True Positive Rate, TPR&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;lower right&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -2225,15 +2266,15 @@ A test sample is used to evaluate how your model will work with invisible data.<
 <p><code class="docutils literal notranslate"><span class="pre">AUC</span></code> is the proportion of correctly ordered pairs <span class="math notranslate nohighlight">\(\big(x_i, y_i\big)\)</span>, i.e. between the pair <span class="math notranslate nohighlight">\((i, j)\)</span> is the correct order ratio for the answers: <span class="math notranslate nohighlight">\(\big[y_i &lt;y_j\big]\)</span>. And the function <span class="math notranslate nohighlight">\(g(x,w)\)</span> should reproduce the same order on these objects: <span class="math notranslate nohighlight">\(\big[g(x_i,w) &lt; g(x_j,w)\big]\)</span>. If <span class="math notranslate nohighlight">\(g(x,w)\)</span> can do this, then we will have an ideal <code class="docutils literal notranslate"><span class="pre">ROC</span> <span class="pre">curve</span></code>, the more pairs <span class="math notranslate nohighlight">\(\big(x_i,y_i\big)\)</span> are ordered, the higher the area under the `ROC curve’.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">thresholds</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">lw</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">'TPR'</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">thresholds</span><span class="p">,</span> <span class="mi">1</span><span class="o">-</span><span class="n">fpr</span><span class="p">,</span> <span class="n">lw</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">'1-FPR'</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">thresholds</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">lw</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;TPR&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">thresholds</span><span class="p">,</span> <span class="mi">1</span><span class="o">-</span><span class="n">fpr</span><span class="p">,</span> <span class="n">lw</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;1-FPR&#39;</span><span class="p">)</span>
 
 <span class="n">threshold</span> <span class="o">=</span> <span class="n">thresholds</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">((</span><span class="n">tpr</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">fpr</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)]</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">threshold</span><span class="p">,</span>
-            <span class="n">ls</span><span class="o">=</span><span class="s1">'--'</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">'black'</span><span class="p">,</span>
-            <span class="n">label</span><span class="o">=</span><span class="s1">'best threshold </span><span class="si">{}</span><span class="s1">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">threshold</span><span class="p">,</span> <span class="mi">2</span><span class="p">)))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">'threshold'</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">"lower right"</span><span class="p">)</span>
+            <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span>
+            <span class="n">label</span><span class="o">=</span><span class="s1">&#39;best threshold </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">threshold</span><span class="p">,</span> <span class="mi">2</span><span class="p">)))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;threshold&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;lower right&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">();</span>
 </pre></div>
 </div>
@@ -2373,7 +2414,7 @@ weighted avg       0.85      0.84      0.84       100
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kNN</span> <span class="o">=</span>  <span class="n">KNeighborsClassifier</span><span class="p">()</span>
 
-<span class="n">param_knn</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'n_neighbors'</span> <span class="p">:</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span> <span class="s1">'weights'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'uniform'</span><span class="p">,</span> <span class="s1">'distance'</span><span class="p">]}</span>
+<span class="n">param_knn</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;n_neighbors&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span> <span class="s1">&#39;weights&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;uniform&#39;</span><span class="p">,</span> <span class="s1">&#39;distance&#39;</span><span class="p">]}</span>
 <span class="n">kNN_CV</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">kNN</span><span class="p">,</span> <span class="n">param_grid</span><span class="o">=</span><span class="n">param_knn</span><span class="p">)</span>
 <span class="n">kNN_CV</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">)</span>
 </pre></div>
@@ -2381,8 +2422,8 @@ weighted avg       0.85      0.84      0.84       100
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>GridSearchCV(estimator=KNeighborsClassifier(),
-             param_grid={'n_neighbors': [5, 10, 15, 20],
-                         'weights': ['uniform', 'distance']})
+             param_grid={&#39;n_neighbors&#39;: [5, 10, 15, 20],
+                         &#39;weights&#39;: [&#39;uniform&#39;, &#39;distance&#39;]})
 </pre></div>
 </div>
 </div>
@@ -2394,7 +2435,7 @@ weighted avg       0.85      0.84      0.84       100
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{'n_neighbors': 15, 'weights': 'uniform'}
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;n_neighbors&#39;: 15, &#39;weights&#39;: &#39;uniform&#39;}
 </pre></div>
 </div>
 </div>
@@ -2412,9 +2453,9 @@ weighted avg       0.85      0.84      0.84       100
 
 <span class="n">f1_kNN_CV</span> <span class="o">=</span> <span class="n">f1_score</span><span class="p">(</span><span class="n">Y_test</span><span class="p">,</span> <span class="n">pred_kNN_CV</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">r</span><span class="s1">'ROC-AUC: </span><span class="si">%.2f</span><span class="s1">'</span> <span class="o">%</span> <span class="n">roc_auc_kNN_CV</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">r</span><span class="s1">'PR-AUC: </span><span class="si">%.2f</span><span class="s1">'</span> <span class="o">%</span> <span class="n">pr_auc_kNN_CV</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">r</span><span class="s1">'F1-score: </span><span class="si">%.2f</span><span class="s1">'</span> <span class="o">%</span> <span class="n">f1_kNN_CV</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;ROC-AUC: </span><span class="si">%.2f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">roc_auc_kNN_CV</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;PR-AUC: </span><span class="si">%.2f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">pr_auc_kNN_CV</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;F1-score: </span><span class="si">%.2f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">f1_kNN_CV</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2511,11 +2552,11 @@ u_{n1} &amp; \dots &amp; u_{nm}
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">MNIST_train</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">MNIST</span><span class="p">(</span><span class="s1">'./mnist'</span><span class="p">,</span> <span class="n">train</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">download</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">MNIST_train</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">MNIST</span><span class="p">(</span><span class="s1">&#39;./mnist&#39;</span><span class="p">,</span> <span class="n">train</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">download</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">X_train</span> <span class="o">=</span> <span class="n">MNIST_train</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">view</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">784</span><span class="p">])</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span> <span class="c1"># вектор 1 x 784</span>
 <span class="n">Y_train</span> <span class="o">=</span> <span class="n">MNIST_train</span><span class="o">.</span><span class="n">targets</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
 
-<span class="n">MNIST_test</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">MNIST</span><span class="p">(</span><span class="s1">'./mnist'</span><span class="p">,</span> <span class="n">train</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">download</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">MNIST_test</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">MNIST</span><span class="p">(</span><span class="s1">&#39;./mnist&#39;</span><span class="p">,</span> <span class="n">train</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">download</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">X_test</span> <span class="o">=</span> <span class="n">MNIST_test</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">view</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">784</span><span class="p">])</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
 <span class="n">Y_test</span> <span class="o">=</span> <span class="n">MNIST_test</span><span class="o">.</span><span class="n">targets</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
 </pre></div>
@@ -2526,7 +2567,7 @@ u_{n1} &amp; \dots &amp; u_{nm}
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">):</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">330</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">i</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">MNIST_test</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s1">'gray'</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">MNIST_test</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s1">&#39;gray&#39;</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -2538,10 +2579,10 @@ u_{n1} &amp; \dots &amp; u_{nm}
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">'X_train: '</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'Y_train: '</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">Y_train</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'X_test:  '</span>  <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">X_test</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'Y_test:  '</span>  <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">Y_test</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;X_train: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Y_train: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">Y_train</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;X_test:  &#39;</span>  <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">X_test</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Y_test:  &#39;</span>  <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">Y_test</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -2587,9 +2628,9 @@ Y_test:  (10000,)
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">Y_train</span><span class="p">):</span>
     <span class="n">idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">Y_train</span><span class="p">[:</span><span class="mi">1000</span><span class="p">]</span> <span class="o">==</span> <span class="n">k</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X_train_low</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">X_train_low</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="s1">'.'</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">k</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X_train_low</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">X_train_low</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">k</span><span class="p">))</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">'best'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">();</span>
 </pre></div>
 </div>
@@ -2631,9 +2672,9 @@ Y_test:  (10000,)
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">12</span><span class="p">,</span><span class="mi">9</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">pc_list</span><span class="p">,</span> <span class="n">acc_list</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Random Forest Plot Accuarcy as a Function of Number of Principal Components'</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Principal Components'</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'Accuracy'</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Random Forest Plot Accuarcy as a Function of Number of Principal Components&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Principal Components&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Accuracy&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -2644,7 +2685,7 @@ Y_test:  (10000,)
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Max accuracy: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">acc_list</span><span class="p">)</span><span class="si">}</span><span class="s1">, with number of components: </span><span class="si">{</span><span class="n">pc_list</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">acc_list</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">acc_list</span><span class="p">))[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]]</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Max accuracy: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">acc_list</span><span class="p">)</span><span class="si">}</span><span class="s1">, with number of components: </span><span class="si">{</span><span class="n">pc_list</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">acc_list</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">acc_list</span><span class="p">))[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2716,20 +2757,22 @@ Y_test:  (10000,)
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Intro to ML</a><ul class="visible nav section-nav flex-column">
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Intro to ML</a><ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ml-task">ML task</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#how-objects-are-set-feature-description">How objects are set. Feature description</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#how-objects-are-set-feature-description">How objects are set. Feature description</a><ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice">Practice</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas">Pandas</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualization">Visualization</a></li>
@@ -2742,7 +2785,7 @@ Y_test:  (10000,)
 </li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-tasks">Types of tasks</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-tasks">Types of tasks</a><ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classification-task">Classification task:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regression-recovery-task">Regression recovery task:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#forecasting-task">Forecasting task</a></li>
@@ -2751,7 +2794,7 @@ Y_test:  (10000,)
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-validation-cv">Cross-validation (CV)</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#regression-training">Regression Training</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#regression-training">Regression Training</a><ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Practice</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-case-with-noise">Linear case with noise</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nonlinear-case-feature-extraction">Nonlinear case (feature extraction)</a><ul class="nav section-nav flex-column">
@@ -2764,12 +2807,12 @@ Y_test:  (10000,)
 </li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#training-classification-model">Training classification model:</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#training-classification-model">Training classification model:</a><ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Practice</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#analysis-of-classification-errors">Analysis of classification errors</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#loss-functions-depending-on-the-error-penalty">Loss functions depending on the error penalty</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#loss-functions-depending-on-the-error-penalty">Loss functions depending on the error penalty</a><ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-the-classifier-works-critically-depends-on-w-0"><strong>How the classifier works critically depends on <span class="math notranslate nohighlight">\(w_0\)</span>!</strong></a></li>
 </ul>
 </li>
@@ -2779,13 +2822,13 @@ Y_test:  (10000,)
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#accuracy-and-completeness-of-multiclass-classification">Accuracy and completeness of multiclass classification</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#assessment-of-classification-quality">Assessment of classification quality</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#aggregated-estimates">Aggregated estimates:</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-choose-model-hyperparameters">How to choose model hyperparameters</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-choose-model-hyperparameters">How to choose model hyperparameters</a><ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-4">Task 4</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#the-curse-of-dimensionality">The curse of dimensionality</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dimensionality-reduction-the-principal-component-analysis-pca-problem-statement">Dimensionality reduction. The principal component analysis (PCA): problem statement</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#matrix-notation">Matrix notation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#matrix-notation">Matrix notation</a><ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Practice</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#presentation">Presentation:</a></li>
 </ul>
@@ -2839,8 +2882,8 @@ By Nadezhda Alsahanova, Aleksandra Beliaeva, Dmitriy Kornilov, Fedor Gubanov, Pa
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
 
   <footer class="bd-footer">
   </footer>

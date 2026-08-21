@@ -16,38 +16,41 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-
-  
-  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/myadmonitions.css?v=0009bf62" />
   
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -59,39 +62,38 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'seminars2_3/seminar1_working_with_eeg';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="icon" href="../_static/logo.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Preparation to the seminar 4" href="../seminar4/docker.html" />
+    <link rel="prev" title="Motivation &amp; Overview" href="../seminar1/opening_seminar.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
   </head>
-  
-  
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
-
+  <body data-default-mode="">
   
   
   <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
-
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -99,7 +101,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -107,15 +108,59 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
 </div>
 
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
     </header>
   
 
@@ -124,9 +169,8 @@
       
       
       
-        
-      
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -156,21 +200,17 @@
     
     
     <img src="../_static/logo.png" class="logo__image only-light" alt="Neuroimaging and Machine Learning for Biomedicine - Home"/>
-    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Neuroimaging and Machine Learning for Biomedicine - Home"/>`);</script>
+    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="Neuroimaging and Machine Learning for Biomedicine - Home"/>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -227,6 +267,10 @@
 
 
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Seminars 2-3. Working with EEG</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Seminars 2 and 3. EEG analysis</a></li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Seminars 4-5. Working with MRI</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../seminar4/docker.html">Preparation to Seminar 4</a></li>
@@ -251,8 +295,8 @@
 <li class="toctree-l1"><a class="reference external" href="https://drive.google.com/file/d/1kSrmaPF5_bKvH1xEKgp0BMtpnm_I-DtY/view?usp=drive_link">Seminar 6. Preprocessing pipeline for task-based fMRI</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://drive.google.com/file/d/1-9hT7K9lG_pUTIgtjwH7pvxL1mf9QnMP/view?usp=drive_link">Seminar 7.1. 1st-level fMRI data analysis</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://drive.google.com/file/d/1EuyJWzhmST66rDVugbRgsm_p8Jpc7KTQ/view?usp=drive_link">Seminar 7.2. 2st-level (Group) Analysis</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1Hed2ggYNbyvBMeYpNeapMAepxeQBVLRL?usp=sharing">Seminar 8.1. Analyze task-based fMRI for motor and emotion task</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1F0UzTsmF1NK6F3NEsJHUw9G5K3j_-eYA?usp=sharing">Seminar 8.2. Functional connectivity</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/16E2eub4EIc8HfvZIJCVG_qnMqfL2iLaf?usp=sharing">Seminar 8.1. Analyze task-based fMRI for motor and emotion task</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1tuNNkP2JAA02UfCDpScRwI-_OpS7WTxZ?usp=sharing">Seminar 8.2. Functional connectivity</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Seminar 9. Interpretation</span></p>
 <ul class="nav bd-sidenav">
@@ -270,9 +314,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -402,7 +451,7 @@
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -416,25 +465,17 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
 </div></div>
@@ -456,7 +497,7 @@ document.write(`
                 <h2> Contents </h2>
             </div>
             <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#local-setup-python-3-12-recommended">Local setup (Python 3.12 recommended)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#local-installation-with-conda">Local installation with Conda</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#first-time-setup">First-time setup</a><ul class="nav section-nav flex-column">
@@ -522,7 +563,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="seminars-2-and-3-eeg-analysis">
 <h1>Seminars 2 and 3. EEG analysis<a class="headerlink" href="#seminars-2-and-3-eeg-analysis" title="Link to this heading">#</a></h1>
-<p><a class="reference external" href="https://colab.research.google.com/drive/1H81W_DpkHv-ZC9bEbOBW9zfcOe7SCDnR?usp=sharing"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
+<p><a class="reference external" href="https://colab.research.google.com/drive/1Xt-CnwnyyJ2qR0ONjmGK3xUSsaFTXJcJ?usp=sharing"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
 <p><strong>Plan</strong></p>
 <p>Part 1.</p>
 <p>Preparation and Basic Analysis</p>
@@ -556,7 +597,6 @@ document.write(`
 </ol>
 <section id="local-setup-python-3-12-recommended">
 <h2>Local setup (Python 3.12 recommended)<a class="headerlink" href="#local-setup-python-3-12-recommended" title="Link to this heading">#</a></h2>
-<p>Download requirements.txt file directly from our github</p>
 <section id="local-installation-with-conda">
 <h3>Local installation with Conda<a class="headerlink" href="#local-installation-with-conda" title="Link to this heading">#</a></h3>
 <p>Install Conda by following the official installation guide:</p>
@@ -587,7 +627,7 @@ python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </sp
 <p>Register the environment as a Jupyter kernel:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>ipykernel<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--name<span class="w"> </span>eeg-seminar<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--display-name<span class="w"> </span><span class="s2">"Python (EEG seminar)"</span>
+<span class="w">  </span>--display-name<span class="w"> </span><span class="s2">&quot;Python (EEG seminar)&quot;</span>
 </pre></div>
 </div>
 <p>Start JupyterLab:</p>
@@ -622,7 +662,7 @@ python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </sp
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># For Colab only</span>
-<span class="c1"># !pip install -q "mne&gt;=1.11,&lt;1.13" "mne-connectivity&gt;=0.8,&lt;0.9" "decorator&gt;=4.0.2,&lt;5.0" "jedi&gt;=0.16"</span>
+<span class="c1"># !pip install -q &quot;mne&gt;=1.11,&lt;1.13&quot; &quot;mne-connectivity&gt;=0.8,&lt;0.9&quot; &quot;decorator&gt;=4.0.2,&lt;5.0&quot; &quot;jedi&gt;=0.16&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -630,7 +670,7 @@ python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </sp
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
-<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">'ignore'</span><span class="p">)</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">mne</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
@@ -657,16 +697,16 @@ python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </sp
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="s2">"https://github.com/BIMAI-lab/NEUROML_course/"</span>
-    <span class="s2">"raw/refs/heads/main/seminars2_3/S003R03.edf"</span>
+    <span class="s2">&quot;https://github.com/BIMAI-lab/NEUROML_course/&quot;</span>
+    <span class="s2">&quot;raw/refs/heads/main/seminars2_3/S003R03.edf&quot;</span>
 <span class="p">)</span>
 
-<span class="n">urlretrieve</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="s2">"S003R03.edf"</span><span class="p">)</span>
+<span class="n">urlretrieve</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="s2">&quot;S003R03.edf&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>('S003R03.edf', &lt;http.client.HTTPMessage at 0x126ba1220&gt;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;S003R03.edf&#39;, &lt;http.client.HTTPMessage at 0x126ba1220&gt;)
 </pre></div>
 </div>
 </div>
@@ -674,16 +714,16 @@ python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </sp
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="s2">"https://github.com/BIMAI-lab/NEUROML_course/"</span>
-    <span class="s2">"raw/refs/heads/main/seminars2_3/S003R03.edf.event"</span>
+    <span class="s2">&quot;https://github.com/BIMAI-lab/NEUROML_course/&quot;</span>
+    <span class="s2">&quot;raw/refs/heads/main/seminars2_3/S003R03.edf.event&quot;</span>
 <span class="p">)</span>
 
-<span class="n">urlretrieve</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="s2">"S003R03.edf.event"</span><span class="p">)</span>
+<span class="n">urlretrieve</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="s2">&quot;S003R03.edf.event&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>('S003R03.edf.event', &lt;http.client.HTTPMessage at 0x126ba1dc0&gt;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;S003R03.edf.event&#39;, &lt;http.client.HTTPMessage at 0x126ba1dc0&gt;)
 </pre></div>
 </div>
 </div>
@@ -697,7 +737,7 @@ python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </sp
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample</span> <span class="o">=</span> <span class="n">mne</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">read_raw_edf</span><span class="p">(</span><span class="s1">'S003R03.edf'</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">preload</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample</span> <span class="o">=</span> <span class="n">mne</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">read_raw_edf</span><span class="p">(</span><span class="s1">&#39;S003R03.edf&#39;</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">preload</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1019,7 +1059,7 @@ this file apply (plus whatever default styling the IDE applies).
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"Sampling freq:"</span><span class="p">,</span> <span class="n">sample</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s2">"sfreq"</span><span class="p">],</span> <span class="s2">"Hz"</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sampling freq:&quot;</span><span class="p">,</span> <span class="n">sample</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s2">&quot;sfreq&quot;</span><span class="p">],</span> <span class="s2">&quot;Hz&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1031,7 +1071,7 @@ this file apply (plus whatever default styling the IDE applies).
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"Duration (s):"</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span> <span class="o">/</span> <span class="n">sample</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s2">"sfreq"</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Duration (s):&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span> <span class="o">/</span> <span class="n">sample</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s2">&quot;sfreq&quot;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -1043,7 +1083,7 @@ this file apply (plus whatever default styling the IDE applies).
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"N channels:"</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">sample</span><span class="o">.</span><span class="n">ch_names</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;N channels:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">sample</span><span class="o">.</span><span class="n">ch_names</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -1071,7 +1111,7 @@ this file apply (plus whatever default styling the IDE applies).
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>['Fc5.', 'Fc3.', 'Fc1.']
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Fc5.&#39;, &#39;Fc3.&#39;, &#39;Fc1.&#39;]
 </pre></div>
 </div>
 </div>
@@ -1084,7 +1124,7 @@ Fix this using the <code class="docutils literal notranslate"><span class="pre">
 <span class="c1"># create a mapping: old name → new name (without dot)</span>
 <span class="nb">map</span> <span class="o">=</span> <span class="p">{}</span>
 <span class="k">for</span> <span class="n">ch</span> <span class="ow">in</span> <span class="n">sample</span><span class="o">.</span><span class="n">ch_names</span><span class="p">:</span>
-    <span class="nb">map</span><span class="p">[</span><span class="n">ch</span><span class="p">]</span> <span class="o">=</span> <span class="n">ch</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"."</span><span class="p">,</span> <span class="s2">""</span><span class="p">)</span>
+    <span class="nb">map</span><span class="p">[</span><span class="n">ch</span><span class="p">]</span> <span class="o">=</span> <span class="n">ch</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
 
 <span class="c1"># apply renaming</span>
 <span class="n">sample</span><span class="o">.</span><span class="n">rename_channels</span><span class="p">(</span><span class="nb">map</span><span class="p">)</span>
@@ -1101,7 +1141,7 @@ Fix this using the <code class="docutils literal notranslate"><span class="pre">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">map</span> <span class="o">=</span> <span class="p">{}</span>
 <span class="k">for</span> <span class="n">ch</span> <span class="ow">in</span> <span class="n">sample</span><span class="o">.</span><span class="n">ch_names</span><span class="p">:</span>
-    <span class="nb">map</span><span class="p">[</span><span class="n">ch</span><span class="p">]</span> <span class="o">=</span> <span class="n">ch</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"."</span><span class="p">,</span> <span class="s2">""</span><span class="p">)</span>
+    <span class="nb">map</span><span class="p">[</span><span class="n">ch</span><span class="p">]</span> <span class="o">=</span> <span class="n">ch</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
 <span class="n">sample</span><span class="o">.</span><span class="n">rename_channels</span><span class="p">(</span><span class="nb">map</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1444,7 +1484,7 @@ this file apply (plus whatever default styling the IDE applies).
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>['Fc5', 'Fc3', 'Fc1']
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Fc5&#39;, &#39;Fc3&#39;, &#39;Fc1&#39;]
 </pre></div>
 </div>
 </div>
@@ -1469,29 +1509,29 @@ This ensures comparability with textbooks and standard ERP protocols.</p>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">channels_to_use</span> <span class="o">=</span> <span class="p">[</span>
     <span class="c1"># prefrontal</span>
-    <span class="s1">'Fp1'</span><span class="p">,</span>
-    <span class="s1">'Fp2'</span><span class="p">,</span>
+    <span class="s1">&#39;Fp1&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Fp2&#39;</span><span class="p">,</span>
     <span class="c1"># frontal</span>
-    <span class="s1">'F7'</span><span class="p">,</span>
-    <span class="s1">'F3'</span><span class="p">,</span>
-    <span class="s1">'F4'</span><span class="p">,</span>
-    <span class="s1">'Fz'</span><span class="p">,</span>
-    <span class="s1">'F8'</span><span class="p">,</span>
+    <span class="s1">&#39;F7&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;F3&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;F4&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Fz&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;F8&#39;</span><span class="p">,</span>
     <span class="c1"># central and temporal</span>
-    <span class="s1">'T7'</span><span class="p">,</span>
-    <span class="s1">'C3'</span><span class="p">,</span>
-    <span class="s1">'Cz'</span><span class="p">,</span>
-    <span class="s1">'C4'</span><span class="p">,</span>
-    <span class="s1">'T8'</span><span class="p">,</span>
+    <span class="s1">&#39;T7&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;C3&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Cz&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;C4&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;T8&#39;</span><span class="p">,</span>
     <span class="c1"># parietal</span>
-    <span class="s1">'P7'</span><span class="p">,</span>
-    <span class="s1">'P3'</span><span class="p">,</span>
-    <span class="s1">'Pz'</span><span class="p">,</span>
-    <span class="s1">'P4'</span><span class="p">,</span>
-    <span class="s1">'P8'</span><span class="p">,</span>
+    <span class="s1">&#39;P7&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;P3&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Pz&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;P4&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;P8&#39;</span><span class="p">,</span>
     <span class="c1"># occipital</span>
-    <span class="s1">'O1'</span><span class="p">,</span>
-    <span class="s1">'O2'</span><span class="p">,</span>
+    <span class="s1">&#39;O1&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;O2&#39;</span><span class="p">,</span>
 <span class="p">]</span>
 </pre></div>
 </div>
@@ -1509,7 +1549,7 @@ This ensures comparability with textbooks and standard ERP protocols.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ten_twenty_montage</span> <span class="o">=</span> <span class="n">mne</span><span class="o">.</span><span class="n">channels</span><span class="o">.</span><span class="n">make_standard_montage</span><span class="p">(</span><span class="s1">'standard_1020'</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ten_twenty_montage</span> <span class="o">=</span> <span class="n">mne</span><span class="o">.</span><span class="n">channels</span><span class="o">.</span><span class="n">make_standard_montage</span><span class="p">(</span><span class="s1">&#39;standard_1020&#39;</span><span class="p">)</span>
 <span class="nb">len</span><span class="p">(</span><span class="n">ten_twenty_montage</span><span class="o">.</span><span class="n">ch_names</span><span class="p">)</span> <span class="c1">#This command shows how many channels are embedded in the standard 10–20 montage we loaded. In MNE it is an extended version, so the number will be much greater than 19.</span>
 </pre></div>
 </div>
@@ -1939,7 +1979,7 @@ Plotting power spectral density (dB=True).
 <p>➡️ We apply a band-pass filter (1–50 Hz) to preserve only brain rhythms and remove drift and noise. For this, we use a digital IIR filter, which works efficiently and is applied in MNE in a safe zero-phase mode without time distortion.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_1020</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">l_freq</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">h_freq</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">'iir'</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_1020</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">l_freq</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">h_freq</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;iir&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2331,7 +2371,7 @@ Plotting power spectral density (dB=True).
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot in better scale. Use 'scalings' argument</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot in better scale. Use &#39;scalings&#39; argument</span>
 <span class="n">sample_1020</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n_channels</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">scalings</span><span class="o">=</span><span class="mf">3e-4</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -2360,7 +2400,7 @@ Plotting power spectral density (dB=True).
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Used Annotations descriptions: [np.str_('T0'), np.str_('T1'), np.str_('T2')]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Used Annotations descriptions: [np.str_(&#39;T0&#39;), np.str_(&#39;T1&#39;), np.str_(&#39;T2&#39;)]
 </pre></div>
 </div>
 </div>
@@ -2372,7 +2412,7 @@ Plotting power spectral density (dB=True).
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{np.str_('T0'): 1, np.str_('T1'): 2, np.str_('T2'): 3}
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{np.str_(&#39;T0&#39;): 1, np.str_(&#39;T1&#39;): 2, np.str_(&#39;T2&#39;): 3}
 </pre></div>
 </div>
 </div>
@@ -2431,7 +2471,7 @@ Using data from preloaded Raw for 30 events and 209 original time points ...
 <p>We convert the list of events into a table and count how many times each event type occurs.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">epochs</span><span class="o">.</span><span class="n">events</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">'_'</span><span class="p">,</span> <span class="s1">'__'</span><span class="p">,</span> <span class="s1">'event_id'</span><span class="p">])[</span><span class="s1">'event_id'</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">epochs</span><span class="o">.</span><span class="n">events</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;_&#39;</span><span class="p">,</span> <span class="s1">&#39;__&#39;</span><span class="p">,</span> <span class="s1">&#39;event_id&#39;</span><span class="p">])[</span><span class="s1">&#39;event_id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -2457,7 +2497,7 @@ Name: count, dtype: int64
 <span class="c1"># Each epoch is stored as a 2D NumPy array (channels × samples)</span>
 
 <span class="c1"># Compute the duration of a single epoch in seconds</span>
-<span class="n">epoch_duration</span> <span class="o">=</span> <span class="n">epoch</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="n">sample_1020</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s1">'sfreq'</span><span class="p">]</span>
+<span class="n">epoch_duration</span> <span class="o">=</span> <span class="n">epoch</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="n">sample_1020</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;sfreq&#39;</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">epoch_duration</span><span class="p">)</span>  
 <span class="c1"># 209 samples / 160 Hz sampling rate ≈ 1.3 seconds</span>
 <span class="c1"># This matches the chosen window: tmin = -0.5 s, tmax = 0.8 s</span>
@@ -2466,7 +2506,7 @@ Name: count, dtype: int64
 <span class="nb">print</span><span class="p">(</span><span class="n">sample_1020</span><span class="o">.</span><span class="n">to_data_frame</span><span class="p">()</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>  
 <span class="c1"># (20000, 20)</span>
 <span class="c1"># -&gt; 20,000 time points × 20 channels</span>
-<span class="c1"># Each column corresponds to an EEG channel (plus 'time' if included)</span>
+<span class="c1"># Each column corresponds to an EEG channel (plus &#39;time&#39; if included)</span>
 <span class="c1"># This format is convenient for quick inspection, plotting with pandas,</span>
 <span class="c1"># or exporting EEG data to other analysis pipelines.</span>
 </pre></div>
@@ -2573,7 +2613,7 @@ Name: count, dtype: int64
 <h4>Peak-to-peak amplitude (QC)<a class="headerlink" href="#peak-to-peak-amplitude-qc" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="n">sample_1020</span><span class="o">.</span><span class="n">ch_names</span> <span class="o">+</span> <span class="p">[</span><span class="s1">'epoch'</span><span class="p">]]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'epoch'</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="k">lambda</span> <span class="n">arr</span><span class="p">:</span> <span class="n">arr</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">-</span> <span class="n">arr</span><span class="o">.</span><span class="n">min</span><span class="p">())</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">]);</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="n">sample_1020</span><span class="o">.</span><span class="n">ch_names</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;epoch&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;epoch&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="k">lambda</span> <span class="n">arr</span><span class="p">:</span> <span class="n">arr</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">-</span> <span class="n">arr</span><span class="o">.</span><span class="n">min</span><span class="p">())</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">]);</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -2592,7 +2632,7 @@ Name: count, dtype: int64
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">epochs</span> <span class="o">=</span> <span class="n">mne</span><span class="o">.</span><span class="n">Epochs</span><span class="p">(</span><span class="n">sample_1020</span><span class="p">,</span> <span class="n">events</span><span class="p">,</span>  <span class="n">tmin</span><span class="o">=-</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">tmax</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">reject</span><span class="o">=</span><span class="p">{</span><span class="s1">'eeg'</span><span class="p">:</span> <span class="mf">600e-6</span><span class="p">},</span> <span class="n">preload</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">baseline</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">.1</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">epochs</span> <span class="o">=</span> <span class="n">mne</span><span class="o">.</span><span class="n">Epochs</span><span class="p">(</span><span class="n">sample_1020</span><span class="p">,</span> <span class="n">events</span><span class="p">,</span>  <span class="n">tmin</span><span class="o">=-</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">tmax</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">reject</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;eeg&#39;</span><span class="p">:</span> <span class="mf">600e-6</span><span class="p">},</span> <span class="n">preload</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">baseline</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">.1</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -2602,20 +2642,20 @@ Name: count, dtype: int64
 Applying baseline correction (mode: mean)
 0 projection items activated
 Using data from preloaded Raw for 30 events and 209 original time points ...
-    Rejecting  epoch based on EEG : ['Fp1', 'Fp2']
-    Rejecting  epoch based on EEG : ['Fp2']
-    Rejecting  epoch based on EEG : ['Fp2']
-    Rejecting  epoch based on EEG : ['Fp2']
-    Rejecting  epoch based on EEG : ['Fp2']
-    Rejecting  epoch based on EEG : ['Fp1', 'Fp2']
-    Rejecting  epoch based on EEG : ['Fp1', 'Fp2']
-    Rejecting  epoch based on EEG : ['Fp1', 'Fp2']
-    Rejecting  epoch based on EEG : ['Fp1', 'Fp2']
-    Rejecting  epoch based on EEG : ['Fp1', 'Fp2']
-    Rejecting  epoch based on EEG : ['Fp2']
-    Rejecting  epoch based on EEG : ['Fp1', 'Fp2']
-    Rejecting  epoch based on EEG : ['Fp1', 'Fp2']
-    Rejecting  epoch based on EEG : ['Fp1', 'Fp2']
+    Rejecting  epoch based on EEG : [&#39;Fp1&#39;, &#39;Fp2&#39;]
+    Rejecting  epoch based on EEG : [&#39;Fp2&#39;]
+    Rejecting  epoch based on EEG : [&#39;Fp2&#39;]
+    Rejecting  epoch based on EEG : [&#39;Fp2&#39;]
+    Rejecting  epoch based on EEG : [&#39;Fp2&#39;]
+    Rejecting  epoch based on EEG : [&#39;Fp1&#39;, &#39;Fp2&#39;]
+    Rejecting  epoch based on EEG : [&#39;Fp1&#39;, &#39;Fp2&#39;]
+    Rejecting  epoch based on EEG : [&#39;Fp1&#39;, &#39;Fp2&#39;]
+    Rejecting  epoch based on EEG : [&#39;Fp1&#39;, &#39;Fp2&#39;]
+    Rejecting  epoch based on EEG : [&#39;Fp1&#39;, &#39;Fp2&#39;]
+    Rejecting  epoch based on EEG : [&#39;Fp2&#39;]
+    Rejecting  epoch based on EEG : [&#39;Fp1&#39;, &#39;Fp2&#39;]
+    Rejecting  epoch based on EEG : [&#39;Fp1&#39;, &#39;Fp2&#39;]
+    Rejecting  epoch based on EEG : [&#39;Fp1&#39;, &#39;Fp2&#39;]
 15 bad epochs dropped
 </pre></div>
 </div>
@@ -2659,7 +2699,7 @@ Averaging across epochs before plotting...
 <p>Check that baseline correction and filtering worked properly</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">epochs</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n_channels</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">scalings</span><span class="o">=</span><span class="p">{</span><span class="s1">'eeg'</span><span class="p">:</span><span class="mf">3e-4</span><span class="p">});</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">epochs</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n_channels</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">scalings</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;eeg&#39;</span><span class="p">:</span><span class="mf">3e-4</span><span class="p">});</span>
 </pre></div>
 </div>
 </div>
@@ -2674,7 +2714,7 @@ Averaging across epochs before plotting...
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{'1': 1, '2': 2, '3': 3}
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;1&#39;: 1, &#39;2&#39;: 2, &#39;3&#39;: 3}
 </pre></div>
 </div>
 </div>
@@ -2682,13 +2722,13 @@ Averaging across epochs before plotting...
 <div class="dropdown admonition">
 <p class="admonition-title">Checking number of events of each type (use epochs.events)</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">epochs</span><span class="o">.</span><span class="n">events</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">'_'</span><span class="p">,</span> <span class="s1">'__'</span><span class="p">,</span> <span class="s1">'event_id'</span><span class="p">])[</span><span class="s1">'event_id'</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="err">```</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">epochs</span><span class="o">.</span><span class="n">events</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;_&#39;</span><span class="p">,</span> <span class="s1">&#39;__&#39;</span><span class="p">,</span> <span class="s1">&#39;event_id&#39;</span><span class="p">])[</span><span class="s1">&#39;event_id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="err">```</span>
 </pre></div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">epochs</span><span class="o">.</span><span class="n">events</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">'_'</span><span class="p">,</span> <span class="s1">'__'</span><span class="p">,</span> <span class="s1">'event_id'</span><span class="p">])[</span><span class="s1">'event_id'</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">epochs</span><span class="o">.</span><span class="n">events</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;_&#39;</span><span class="p">,</span> <span class="s1">&#39;__&#39;</span><span class="p">,</span> <span class="s1">&#39;event_id&#39;</span><span class="p">])[</span><span class="s1">&#39;event_id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -2707,9 +2747,9 @@ Name: count, dtype: int64
 <h4>Averaging (Evoked responses)<a class="headerlink" href="#averaging-evoked-responses" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">evoked_T0</span> <span class="o">=</span> <span class="n">epochs</span><span class="p">[</span><span class="s1">'1'</span><span class="p">]</span><span class="o">.</span><span class="n">average</span><span class="p">()</span>
-<span class="n">evoked_T1</span> <span class="o">=</span> <span class="n">epochs</span><span class="p">[</span><span class="s1">'2'</span><span class="p">]</span><span class="o">.</span><span class="n">average</span><span class="p">()</span>
-<span class="n">evoked_T2</span> <span class="o">=</span> <span class="n">epochs</span><span class="p">[</span><span class="s1">'3'</span><span class="p">]</span><span class="o">.</span><span class="n">average</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">evoked_T0</span> <span class="o">=</span> <span class="n">epochs</span><span class="p">[</span><span class="s1">&#39;1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">average</span><span class="p">()</span>
+<span class="n">evoked_T1</span> <span class="o">=</span> <span class="n">epochs</span><span class="p">[</span><span class="s1">&#39;2&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">average</span><span class="p">()</span>
+<span class="n">evoked_T2</span> <span class="o">=</span> <span class="n">epochs</span><span class="p">[</span><span class="s1">&#39;3&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">average</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -2869,7 +2909,7 @@ Fitting ICA took 4.9s.
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">explained_var_ratio</span> <span class="o">=</span> <span class="n">ica</span><span class="o">.</span><span class="n">get_explained_variance_ratio</span><span class="p">(</span><span class="n">sample_1020</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">channel_type</span><span class="p">,</span> <span class="n">ratio</span> <span class="ow">in</span> <span class="n">explained_var_ratio</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Fraction of </span><span class="si">{</span><span class="n">channel_type</span><span class="si">}</span><span class="s2"> variance explained by all components: </span><span class="si">{</span><span class="n">ratio</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Fraction of </span><span class="si">{</span><span class="n">channel_type</span><span class="si">}</span><span class="s2"> variance explained by all components: </span><span class="si">{</span><span class="n">ratio</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2994,7 +3034,7 @@ A narrow spike at 50/60 Hz → line noise; a broad high-frequency floor → EMG.
 <p><strong>Why.</strong> To check the local effect in regions where artifacts are most noticeable (often frontal channels).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ica</span><span class="o">.</span><span class="n">plot_overlay</span><span class="p">(</span><span class="n">sample_1020</span><span class="p">,</span> <span class="n">exclude</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">picks</span><span class="o">=</span><span class="p">[</span><span class="s1">'F3'</span><span class="p">]);</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ica</span><span class="o">.</span><span class="n">plot_overlay</span><span class="p">(</span><span class="n">sample_1020</span><span class="p">,</span> <span class="n">exclude</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">picks</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;F3&#39;</span><span class="p">]);</span>
 </pre></div>
 </div>
 </div>
@@ -3405,7 +3445,7 @@ this file apply (plus whatever default styling the IDE applies).
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">epochs</span> <span class="o">=</span> <span class="n">mne</span><span class="o">.</span><span class="n">Epochs</span><span class="p">(</span><span class="n">sample_1020_clr</span><span class="p">,</span> <span class="n">events</span><span class="p">,</span>  <span class="n">tmin</span><span class="o">=-</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">tmax</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">reject</span><span class="o">=</span><span class="p">{</span><span class="s1">'eeg'</span><span class="p">:</span> <span class="mf">600e-6</span><span class="p">},</span> <span class="n">preload</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">baseline</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">.1</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">epochs</span> <span class="o">=</span> <span class="n">mne</span><span class="o">.</span><span class="n">Epochs</span><span class="p">(</span><span class="n">sample_1020_clr</span><span class="p">,</span> <span class="n">events</span><span class="p">,</span>  <span class="n">tmin</span><span class="o">=-</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">tmax</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">reject</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;eeg&#39;</span><span class="p">:</span> <span class="mf">600e-6</span><span class="p">},</span> <span class="n">preload</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">baseline</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">.1</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -3422,9 +3462,9 @@ Using data from preloaded Raw for 30 events and 209 original time points ...
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">evoked_T0</span> <span class="o">=</span> <span class="n">epochs</span><span class="p">[</span><span class="s1">'1'</span><span class="p">]</span><span class="o">.</span><span class="n">average</span><span class="p">()</span>
-<span class="n">evoked_T1</span> <span class="o">=</span> <span class="n">epochs</span><span class="p">[</span><span class="s1">'2'</span><span class="p">]</span><span class="o">.</span><span class="n">average</span><span class="p">()</span>
-<span class="n">evoked_T2</span> <span class="o">=</span> <span class="n">epochs</span><span class="p">[</span><span class="s1">'3'</span><span class="p">]</span><span class="o">.</span><span class="n">average</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">evoked_T0</span> <span class="o">=</span> <span class="n">epochs</span><span class="p">[</span><span class="s1">&#39;1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">average</span><span class="p">()</span>
+<span class="n">evoked_T1</span> <span class="o">=</span> <span class="n">epochs</span><span class="p">[</span><span class="s1">&#39;2&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">average</span><span class="p">()</span>
+<span class="n">evoked_T2</span> <span class="o">=</span> <span class="n">epochs</span><span class="p">[</span><span class="s1">&#39;3&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">average</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -3481,8 +3521,8 @@ Therefore, GFP is often used as a quick overview to identify time periods that m
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mne</span><span class="o">.</span><span class="n">viz</span><span class="o">.</span><span class="n">plot_compare_evokeds</span><span class="p">(</span>
     <span class="nb">dict</span><span class="p">(</span><span class="n">rest</span><span class="o">=</span><span class="n">evoked_T0</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="n">evoked_T1</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="n">evoked_T2</span><span class="p">),</span>
-    <span class="n">legend</span><span class="o">=</span><span class="s2">"upper left"</span><span class="p">,</span>
-    <span class="n">show_sensors</span><span class="o">=</span><span class="s2">"upper right"</span><span class="p">,</span>
+    <span class="n">legend</span><span class="o">=</span><span class="s2">&quot;upper left&quot;</span><span class="p">,</span>
+    <span class="n">show_sensors</span><span class="o">=</span><span class="s2">&quot;upper right&quot;</span><span class="p">,</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -3611,7 +3651,7 @@ This is called <strong>functional connectivity</strong>.</p>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">conn_T1</span> <span class="o">=</span> <span class="n">mne_connectivity</span><span class="o">.</span><span class="n">spectral_connectivity_epochs</span><span class="p">(</span><span class="n">epochs</span><span class="p">[</span><span class="s1">'2'</span><span class="p">],</span> <span class="n">method</span><span class="o">=</span><span class="s1">'coh'</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">conn_T1</span> <span class="o">=</span> <span class="n">mne_connectivity</span><span class="o">.</span><span class="n">spectral_connectivity_epochs</span><span class="p">(</span><span class="n">epochs</span><span class="p">[</span><span class="s1">&#39;2&#39;</span><span class="p">],</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;coh&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -3650,17 +3690,17 @@ only using indices for lower-triangular matrix
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">plot_topomap_connectivity_2d</span><span class="p">(</span><span class="n">info</span><span class="p">,</span> <span class="n">con</span><span class="p">,</span> <span class="n">picks</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">pairs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cm</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">show_values</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">show_names</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Plots connectivity-like data in 2d</span>
 
 <span class="sd">    Drawing every pair of channels will likely make a mess</span>
 <span class="sd">    There are two options to avoid it:</span>
 <span class="sd">    - provide picks</span>
 <span class="sd">    - provide specific pairs of channels to draw</span>
-<span class="sd">    """</span>
+<span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="c1"># get positions</span>
-    <span class="n">_</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">mne</span><span class="o">.</span><span class="n">viz</span><span class="o">.</span><span class="n">topomap</span><span class="o">.</span><span class="n">_prepare_topomap_plot</span><span class="p">(</span><span class="n">info</span><span class="p">,</span> <span class="s1">'eeg'</span><span class="p">);</span>
+    <span class="n">_</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">mne</span><span class="o">.</span><span class="n">viz</span><span class="o">.</span><span class="n">topomap</span><span class="o">.</span><span class="n">_prepare_topomap_plot</span><span class="p">(</span><span class="n">info</span><span class="p">,</span> <span class="s1">&#39;eeg&#39;</span><span class="p">);</span>
 
 <span class="c1">#     if picks is None and pairs is None:</span>
 <span class="c1">#         picks = info.ch_names</span>
@@ -3687,7 +3727,7 @@ only using indices for lower-triangular matrix
             <span class="p">))</span>
 
     <span class="k">if</span> <span class="ow">not</span> <span class="nb">len</span><span class="p">(</span><span class="n">rows</span><span class="p">):</span>
-        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">'No pairs to plot'</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;No pairs to plot&#39;</span><span class="p">)</span>
 
     <span class="n">con_to_plot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">row</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">rows</span><span class="p">])</span>
     <span class="k">if</span> <span class="n">vmin</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
@@ -3708,7 +3748,7 @@ only using indices for lower-triangular matrix
           <span class="k">if</span> <span class="n">show_values</span><span class="p">:</span>
               <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">((</span><span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">row</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span>
                       <span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">row</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span>
-                      <span class="s1">'</span><span class="si">{:.2f}</span><span class="s1">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>
+                      <span class="s1">&#39;</span><span class="si">{:.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>
 </pre></div>
 </div>
 </div>
@@ -3723,9 +3763,9 @@ only using indices for lower-triangular matrix
 <p>Compute spectral connectivity (coherence) for each condition</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">conn_T0</span> <span class="o">=</span> <span class="n">mne_connectivity</span><span class="o">.</span><span class="n">spectral_connectivity_epochs</span><span class="p">(</span><span class="n">epochs</span><span class="p">[</span><span class="s1">'1'</span><span class="p">],</span> <span class="n">method</span><span class="o">=</span><span class="s1">'coh'</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">conn_T1</span> <span class="o">=</span> <span class="n">mne_connectivity</span><span class="o">.</span><span class="n">spectral_connectivity_epochs</span><span class="p">(</span><span class="n">epochs</span><span class="p">[</span><span class="s1">'2'</span><span class="p">],</span> <span class="n">method</span><span class="o">=</span><span class="s1">'coh'</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">conn_T2</span> <span class="o">=</span> <span class="n">mne_connectivity</span><span class="o">.</span><span class="n">spectral_connectivity_epochs</span><span class="p">(</span><span class="n">epochs</span><span class="p">[</span><span class="s1">'3'</span><span class="p">],</span> <span class="n">method</span><span class="o">=</span><span class="s1">'coh'</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">conn_T0</span> <span class="o">=</span> <span class="n">mne_connectivity</span><span class="o">.</span><span class="n">spectral_connectivity_epochs</span><span class="p">(</span><span class="n">epochs</span><span class="p">[</span><span class="s1">&#39;1&#39;</span><span class="p">],</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;coh&#39;</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">conn_T1</span> <span class="o">=</span> <span class="n">mne_connectivity</span><span class="o">.</span><span class="n">spectral_connectivity_epochs</span><span class="p">(</span><span class="n">epochs</span><span class="p">[</span><span class="s1">&#39;2&#39;</span><span class="p">],</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;coh&#39;</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">conn_T2</span> <span class="o">=</span> <span class="n">mne_connectivity</span><span class="o">.</span><span class="n">spectral_connectivity_epochs</span><span class="p">(</span><span class="n">epochs</span><span class="p">[</span><span class="s1">&#39;3&#39;</span><span class="p">],</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;coh&#39;</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -3737,7 +3777,7 @@ only using indices for lower-triangular matrix
 <p>Check the shape of the result</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">conn_T0</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">output</span><span class="o">=</span><span class="s2">"dense"</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">conn_T0</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">output</span><span class="o">=</span><span class="s2">&quot;dense&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span>
 </pre></div>
 </div>
 </div>
@@ -3754,13 +3794,13 @@ only using indices for lower-triangular matrix
 <p>Average across frequencies (1–50 Hz)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">conn_T0_all</span> <span class="o">=</span> <span class="n">conn_T0</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">output</span><span class="o">=</span><span class="s2">"dense"</span><span class="p">)[:,</span> <span class="p">:,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">50</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">conn_T0_all</span> <span class="o">=</span> <span class="n">conn_T0</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">output</span><span class="o">=</span><span class="s2">&quot;dense&quot;</span><span class="p">)[:,</span> <span class="p">:,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">50</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">conn_T0_all</span> <span class="o">=</span> <span class="n">conn_T0_all</span> <span class="o">+</span> <span class="n">conn_T0_all</span><span class="o">.</span><span class="n">T</span>
 
-<span class="n">conn_T1_all</span> <span class="o">=</span> <span class="n">conn_T1</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">output</span><span class="o">=</span><span class="s2">"dense"</span><span class="p">)[:,</span> <span class="p">:,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">50</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">conn_T1_all</span> <span class="o">=</span> <span class="n">conn_T1</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">output</span><span class="o">=</span><span class="s2">&quot;dense&quot;</span><span class="p">)[:,</span> <span class="p">:,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">50</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">conn_T1_all</span> <span class="o">=</span> <span class="n">conn_T1_all</span> <span class="o">+</span> <span class="n">conn_T1_all</span><span class="o">.</span><span class="n">T</span>
 
-<span class="n">conn_T2_all</span> <span class="o">=</span> <span class="n">conn_T2</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">output</span><span class="o">=</span><span class="s2">"dense"</span><span class="p">)[:,</span> <span class="p">:,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">50</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">conn_T2_all</span> <span class="o">=</span> <span class="n">conn_T2</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">output</span><span class="o">=</span><span class="s2">&quot;dense&quot;</span><span class="p">)[:,</span> <span class="p">:,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">50</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">conn_T2_all</span> <span class="o">=</span> <span class="n">conn_T2_all</span> <span class="o">+</span> <span class="n">conn_T2_all</span><span class="o">.</span><span class="n">T</span>
 </pre></div>
 </div>
@@ -3884,6 +3924,24 @@ only using indices for lower-triangular matrix
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="../seminar1/opening_seminar.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Motivation &amp; Overview</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../seminar4/docker.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Preparation to the seminar 4</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -3891,15 +3949,17 @@ only using indices for lower-triangular matrix
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#local-setup-python-3-12-recommended">Local setup (Python 3.12 recommended)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#local-installation-with-conda">Local installation with Conda</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#first-time-setup">First-time setup</a><ul class="nav section-nav flex-column">
@@ -4000,8 +4060,8 @@ By Nadezhda Alsahanova, Aleksandra Beliaeva, Dmitriy Kornilov, Fedor Gubanov, Pa
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
 
   <footer class="bd-footer">
   </footer>

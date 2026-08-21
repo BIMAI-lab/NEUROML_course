@@ -16,38 +16,41 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-
-  
-  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/myadmonitions.css?v=0009bf62" />
   
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -59,39 +62,36 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'seminar1/03_pytorch_computer_vision';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="icon" href="../_static/logo.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
   </head>
-  
-  
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
-
+  <body data-default-mode="">
   
   
   <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
-
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -99,7 +99,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -107,15 +106,59 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
 </div>
 
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
     </header>
   
 
@@ -126,7 +169,8 @@
       
         
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -156,21 +200,17 @@
     
     
     <img src="../_static/logo.png" class="logo__image only-light" alt="Neuroimaging and Machine Learning for Biomedicine - Home"/>
-    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Neuroimaging and Machine Learning for Biomedicine - Home"/>`);</script>
+    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="Neuroimaging and Machine Learning for Biomedicine - Home"/>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -227,6 +267,10 @@
 
 
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Seminars 2-3. Working with EEG</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../seminars2_3/seminar1_working_with_eeg.html">Seminars 2 and 3. EEG analysis</a></li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Seminars 4-5. Working with MRI</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../seminar4/docker.html">Preparation to Seminar 4</a></li>
@@ -251,8 +295,8 @@
 <li class="toctree-l1"><a class="reference external" href="https://drive.google.com/file/d/1kSrmaPF5_bKvH1xEKgp0BMtpnm_I-DtY/view?usp=drive_link">Seminar 6. Preprocessing pipeline for task-based fMRI</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://drive.google.com/file/d/1-9hT7K9lG_pUTIgtjwH7pvxL1mf9QnMP/view?usp=drive_link">Seminar 7.1. 1st-level fMRI data analysis</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://drive.google.com/file/d/1EuyJWzhmST66rDVugbRgsm_p8Jpc7KTQ/view?usp=drive_link">Seminar 7.2. 2st-level (Group) Analysis</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1Hed2ggYNbyvBMeYpNeapMAepxeQBVLRL?usp=sharing">Seminar 8.1. Analyze task-based fMRI for motor and emotion task</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1F0UzTsmF1NK6F3NEsJHUw9G5K3j_-eYA?usp=sharing">Seminar 8.2. Functional connectivity</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/16E2eub4EIc8HfvZIJCVG_qnMqfL2iLaf?usp=sharing">Seminar 8.1. Analyze task-based fMRI for motor and emotion task</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://colab.research.google.com/drive/1tuNNkP2JAA02UfCDpScRwI-_OpS7WTxZ?usp=sharing">Seminar 8.2. Functional connectivity</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Seminar 9. Interpretation</span></p>
 <ul class="nav bd-sidenav">
@@ -270,9 +314,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -402,7 +451,7 @@
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -416,25 +465,17 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
 </div></div>
@@ -456,7 +497,7 @@ document.write(`
                 <h2> Contents </h2>
             </div>
             <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-classification-problem">What is a classification problem?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-we-re-going-to-cover">What we’re going to cover</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#architecture-of-a-classification-neural-network">0. Architecture of a classification neural network</a></li>
@@ -706,8 +747,8 @@ document.write(`
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 <span class="c1"># Check versions</span>
-<span class="c1"># Note: your PyTorch version shouldn't be lower than 1.10.0 and torchvision version shouldn't be lower than 0.11</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"PyTorch version: </span><span class="si">{</span><span class="n">torch</span><span class="o">.</span><span class="n">__version__</span><span class="si">}</span><span class="se">\n</span><span class="s2">torchvision version: </span><span class="si">{</span><span class="n">torchvision</span><span class="o">.</span><span class="n">__version__</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="c1"># Note: your PyTorch version shouldn&#39;t be lower than 1.10.0 and torchvision version shouldn&#39;t be lower than 0.11</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;PyTorch version: </span><span class="si">{</span><span class="n">torch</span><span class="o">.</span><span class="n">__version__</span><span class="si">}</span><span class="se">\n</span><span class="s2">torchvision version: </span><span class="si">{</span><span class="n">torchvision</span><span class="o">.</span><span class="n">__version__</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -749,16 +790,16 @@ torchvision version: 0.16.0+cu121
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Setup training data</span>
 <span class="n">train_data</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">FashionMNIST</span><span class="p">(</span>
-    <span class="n">root</span><span class="o">=</span><span class="s2">"data"</span><span class="p">,</span> <span class="c1"># where to download data to?</span>
+    <span class="n">root</span><span class="o">=</span><span class="s2">&quot;data&quot;</span><span class="p">,</span> <span class="c1"># where to download data to?</span>
     <span class="n">train</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="c1"># get training data</span>
-    <span class="n">download</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="c1"># download data if it doesn't exist on disk</span>
+    <span class="n">download</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="c1"># download data if it doesn&#39;t exist on disk</span>
     <span class="n">transform</span><span class="o">=</span><span class="n">ToTensor</span><span class="p">(),</span> <span class="c1"># images come as PIL format, we want to turn into Torch tensors</span>
     <span class="n">target_transform</span><span class="o">=</span><span class="kc">None</span> <span class="c1"># you can transform labels as well</span>
 <span class="p">)</span>
 
 <span class="c1"># Setup testing data</span>
 <span class="n">test_data</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">FashionMNIST</span><span class="p">(</span>
-    <span class="n">root</span><span class="o">=</span><span class="s2">"data"</span><span class="p">,</span>
+    <span class="n">root</span><span class="o">=</span><span class="s2">&quot;data&quot;</span><span class="p">,</span>
     <span class="n">train</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="c1"># get test data</span>
     <span class="n">download</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="n">transform</span><span class="o">=</span><span class="n">ToTensor</span><span class="p">()</span>
@@ -946,7 +987,7 @@ Downloading http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/t10k-labe
 <p>See 10 training sample and check the image shape</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># What's the shape of the image?</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># What&#39;s the shape of the image?</span>
 <span class="c1"># TODO </span>
 </pre></div>
 </div>
@@ -1005,16 +1046,16 @@ Downloading http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/t10k-labe
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>['T-shirt/top',
- 'Trouser',
- 'Pullover',
- 'Dress',
- 'Coat',
- 'Sandal',
- 'Shirt',
- 'Sneaker',
- 'Bag',
- 'Ankle boot']
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;T-shirt/top&#39;,
+ &#39;Trouser&#39;,
+ &#39;Pullover&#39;,
+ &#39;Dress&#39;,
+ &#39;Coat&#39;,
+ &#39;Sandal&#39;,
+ &#39;Shirt&#39;,
+ &#39;Sneaker&#39;,
+ &#39;Bag&#39;,
+ &#39;Ankle boot&#39;]
 </pre></div>
 </div>
 </div>
@@ -1040,7 +1081,7 @@ Downloading http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/t10k-labe
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 <span class="n">image</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="n">train_data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Image shape: </span><span class="si">{</span><span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Image shape: </span><span class="si">{</span><span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">image</span><span class="o">.</span><span class="n">squeeze</span><span class="p">())</span> <span class="c1"># image shape is [1, 28, 28] (colour channels, height, width)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">label</span><span class="p">);</span>
 </pre></div>
@@ -1056,7 +1097,7 @@ Downloading http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/t10k-labe
 <p>We can turn the image into grayscale using the <code class="docutils literal notranslate"><span class="pre">cmap</span></code> parameter of <code class="docutils literal notranslate"><span class="pre">plt.imshow()</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">image</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(),</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">"gray"</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">image</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(),</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">class_names</span><span class="p">[</span><span class="n">label</span><span class="p">]);</span>
 </pre></div>
 </div>
@@ -1077,7 +1118,7 @@ Downloading http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/t10k-labe
     <span class="n">random_idx</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">train_data</span><span class="p">),</span> <span class="n">size</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
     <span class="n">img</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="n">train_data</span><span class="p">[</span><span class="n">random_idx</span><span class="p">]</span>
     <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(),</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">"gray"</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(),</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">class_names</span><span class="p">[</span><span class="n">label</span><span class="p">])</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="kc">False</span><span class="p">);</span>
 </pre></div>
@@ -1125,13 +1166,13 @@ Downloading http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/t10k-labe
 
 <span class="n">test_dataloader</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">(</span><span class="n">test_data</span><span class="p">,</span>
     <span class="n">batch_size</span><span class="o">=</span><span class="n">BATCH_SIZE</span><span class="p">,</span>
-    <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span> <span class="c1"># don't necessarily have to shuffle the testing data</span>
+    <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span> <span class="c1"># don&#39;t necessarily have to shuffle the testing data</span>
 <span class="p">)</span>
 
-<span class="c1"># Let's check out what we've created</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Dataloaders: </span><span class="si">{</span><span class="n">train_dataloader</span><span class="p">,</span><span class="w"> </span><span class="n">test_dataloader</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Length of train dataloader: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">train_dataloader</span><span class="p">)</span><span class="si">}</span><span class="s2"> batches of </span><span class="si">{</span><span class="n">BATCH_SIZE</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Length of test dataloader: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">test_dataloader</span><span class="p">)</span><span class="si">}</span><span class="s2"> batches of </span><span class="si">{</span><span class="n">BATCH_SIZE</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="c1"># Let&#39;s check out what we&#39;ve created</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Dataloaders: </span><span class="si">{</span><span class="n">train_dataloader</span><span class="p">,</span><span class="w"> </span><span class="n">test_dataloader</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Length of train dataloader: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">train_dataloader</span><span class="p">)</span><span class="si">}</span><span class="s2"> batches of </span><span class="si">{</span><span class="n">BATCH_SIZE</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Length of test dataloader: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">test_dataloader</span><span class="p">)</span><span class="si">}</span><span class="s2"> batches of </span><span class="si">{</span><span class="n">BATCH_SIZE</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1145,7 +1186,7 @@ Length of test dataloader: 313 batches of 32
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check out what's inside the training dataloader</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check out what&#39;s inside the training dataloader</span>
 <span class="n">train_features_batch</span><span class="p">,</span> <span class="n">train_labels_batch</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="nb">iter</span><span class="p">(</span><span class="n">train_dataloader</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -1167,11 +1208,11 @@ Length of test dataloader: 313 batches of 32
 <span class="n">torch</span><span class="o">.</span><span class="n">manual_seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
 <span class="n">random_idx</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">train_features_batch</span><span class="p">),</span> <span class="n">size</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
 <span class="n">img</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="n">train_features_batch</span><span class="p">[</span><span class="n">random_idx</span><span class="p">],</span> <span class="n">train_labels_batch</span><span class="p">[</span><span class="n">random_idx</span><span class="p">]</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(),</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">"gray"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(),</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">class_names</span><span class="p">[</span><span class="n">label</span><span class="p">])</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">"Off"</span><span class="p">);</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Image size: </span><span class="si">{</span><span class="n">img</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Label: </span><span class="si">{</span><span class="n">label</span><span class="si">}</span><span class="s2">, label size: </span><span class="si">{</span><span class="n">label</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;Off&quot;</span><span class="p">);</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Image size: </span><span class="si">{</span><span class="n">img</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Label: </span><span class="si">{</span><span class="n">label</span><span class="si">}</span><span class="s2">, label size: </span><span class="si">{</span><span class="n">label</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1263,8 +1304,8 @@ Label: 6, label size: torch.Size([])
 <span class="n">output</span> <span class="o">=</span> <span class="n">flatten_model</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># perform forward pass</span>
 
 <span class="c1"># Print out what happened</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Shape before flattening: </span><span class="si">{</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2"> -&gt; [color_channels, height, width]"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Shape after flattening: </span><span class="si">{</span><span class="n">output</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2"> -&gt; [color_channels, height*width]"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Shape before flattening: </span><span class="si">{</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2"> -&gt; [color_channels, height, width]&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Shape after flattening: </span><span class="si">{</span><span class="n">output</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2"> -&gt; [color_channels, height*width]&quot;</span><span class="p">)</span>
 
 <span class="c1"># Try uncommenting below and see what happens</span>
 <span class="c1"># print(x)</span>
@@ -1323,7 +1364,7 @@ Shape after flattening: torch.Size([1, 784]) -&gt; [color_channels, height*width
     <span class="n">hidden_units</span><span class="o">=</span><span class="p">,</span> <span class="c1"># how many units in the hiden layer</span>
     <span class="n">output_shape</span><span class="o">=</span> <span class="c1"># one for every class</span>
 <span class="p">)</span>
-<span class="n">model_0</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s2">"cpu"</span><span class="p">)</span> <span class="c1"># keep model on CPU to begin with</span>
+<span class="n">model_0</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s2">&quot;cpu&quot;</span><span class="p">)</span> <span class="c1"># keep model on CPU to begin with</span>
 </pre></div>
 </div>
 </div>
@@ -1406,10 +1447,10 @@ Shape after flattening: torch.Size([1, 784]) -&gt; [color_channels, height*width
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import accuracy metric</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">torchmetrics</span>
-<span class="n">acc</span> <span class="o">=</span> <span class="n">torchmetrics</span><span class="o">.</span><span class="n">Accuracy</span><span class="p">(</span><span class="n">task</span> <span class="o">=</span> <span class="s1">'multiclass'</span><span class="p">,</span> <span class="n">num_classes</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">class_names</span><span class="p">))</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+<span class="n">acc</span> <span class="o">=</span> <span class="n">torchmetrics</span><span class="o">.</span><span class="n">Accuracy</span><span class="p">(</span><span class="n">task</span> <span class="o">=</span> <span class="s1">&#39;multiclass&#39;</span><span class="p">,</span> <span class="n">num_classes</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">class_names</span><span class="p">))</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
 
 <span class="c1"># Setup loss function and optimizer</span>
-<span class="n">loss_fn</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">CrossEntropyLoss</span><span class="p">()</span> <span class="c1"># this is also called "criterion"/"cost function" in some places</span>
+<span class="n">loss_fn</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">CrossEntropyLoss</span><span class="p">()</span> <span class="c1"># this is also called &quot;criterion&quot;/&quot;cost function&quot; in some places</span>
 <span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">SGD</span><span class="p">(</span><span class="n">params</span><span class="o">=</span><span class="n">model_0</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1465,12 +1506,12 @@ Shape after flattening: torch.Size([1, 784]) -&gt; [color_channels, height*width
 <span class="n">torch</span><span class="o">.</span><span class="n">manual_seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
 <span class="n">train_time_start_on_cpu</span> <span class="o">=</span> <span class="n">timer</span><span class="p">()</span>
 
-<span class="c1"># Set the number of epochs (we'll keep this small for faster training times)</span>
+<span class="c1"># Set the number of epochs (we&#39;ll keep this small for faster training times)</span>
 <span class="n">epochs</span> <span class="o">=</span> <span class="mi">3</span>
 
 <span class="c1"># Create training and testing loop</span>
 <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">epochs</span><span class="p">)):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Epoch: </span><span class="si">{</span><span class="n">epoch</span><span class="si">}</span><span class="se">\n</span><span class="s2">-------"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Epoch: </span><span class="si">{</span><span class="n">epoch</span><span class="si">}</span><span class="se">\n</span><span class="s2">-------&quot;</span><span class="p">)</span>
     <span class="c1">### Training</span>
     <span class="n">train_loss</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="c1"># Add a loop to loop through training batches</span>
@@ -1494,7 +1535,7 @@ Shape after flattening: torch.Size([1, 784]) -&gt; [color_channels, height*width
 
         <span class="c1"># Print out how many samples have been seen</span>
         <span class="k">if</span> <span class="n">batch</span> <span class="o">%</span> <span class="mi">400</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Looked at </span><span class="si">{</span><span class="n">batch</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">)</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">train_dataloader</span><span class="o">.</span><span class="n">dataset</span><span class="p">)</span><span class="si">}</span><span class="s2"> samples"</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Looked at </span><span class="si">{</span><span class="n">batch</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">)</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">train_dataloader</span><span class="o">.</span><span class="n">dataset</span><span class="p">)</span><span class="si">}</span><span class="s2"> samples&quot;</span><span class="p">)</span>
 
     <span class="c1"># Divide total train loss by length of train dataloader (average loss per batch per epoch)</span>
     <span class="n">train_loss</span> <span class="o">/=</span> <span class="nb">len</span><span class="p">(</span><span class="n">train_dataloader</span><span class="p">)</span>
@@ -1521,8 +1562,8 @@ Shape after flattening: torch.Size([1, 784]) -&gt; [color_channels, height*width
         <span class="c1"># Divide total accuracy by length of test dataloader (per batch)</span>
         <span class="n">test_acc</span> <span class="o">/=</span> <span class="nb">len</span><span class="p">(</span><span class="n">test_dataloader</span><span class="p">)</span>
 
-    <span class="c1">## Print out what's happening</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Train loss: </span><span class="si">{</span><span class="n">train_loss</span><span class="si">:</span><span class="s2">.5f</span><span class="si">}</span><span class="s2"> | Test loss: </span><span class="si">{</span><span class="n">test_loss</span><span class="si">:</span><span class="s2">.5f</span><span class="si">}</span><span class="s2">, Test acc: </span><span class="si">{</span><span class="n">test_acc</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+    <span class="c1">## Print out what&#39;s happening</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Train loss: </span><span class="si">{</span><span class="n">train_loss</span><span class="si">:</span><span class="s2">.5f</span><span class="si">}</span><span class="s2"> | Test loss: </span><span class="si">{</span><span class="n">test_loss</span><span class="si">:</span><span class="s2">.5f</span><span class="si">}</span><span class="s2">, Test acc: </span><span class="si">{</span><span class="n">test_acc</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 
 <span class="c1"># Calculate training time</span>
 <span class="n">train_time_end_on_cpu</span> <span class="o">=</span> <span class="n">timer</span><span class="p">()</span>
@@ -1598,7 +1639,7 @@ Looked at 51200/60000 samples
                <span class="n">data_loader</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">,</span>
                <span class="n">loss_fn</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">,</span>
                <span class="n">accuracy_fn</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""Returns a dictionary containing the results of model predicting on data_loader.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns a dictionary containing the results of model predicting on data_loader.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        model (torch.nn.Module): A PyTorch model capable of making predictions on data_loader.</span>
@@ -1608,7 +1649,7 @@ Looked at 51200/60000 samples
 
 <span class="sd">    Returns:</span>
 <span class="sd">        (dict): Results of model making predictions on data_loader.</span>
-<span class="sd">    """</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">loss</span><span class="p">,</span> <span class="n">acc</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
     <span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
     <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">inference_mode</span><span class="p">():</span>
@@ -1625,9 +1666,9 @@ Looked at 51200/60000 samples
         <span class="n">loss</span> <span class="o">/=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data_loader</span><span class="p">)</span>
         <span class="n">acc</span> <span class="o">/=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data_loader</span><span class="p">)</span>
 
-    <span class="k">return</span> <span class="p">{</span><span class="s2">"model_name"</span><span class="p">:</span> <span class="n">model</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="c1"># only works when model was created with a class</span>
-            <span class="s2">"model_loss"</span><span class="p">:</span> <span class="n">loss</span><span class="o">.</span><span class="n">item</span><span class="p">(),</span>
-            <span class="s2">"model_acc"</span><span class="p">:</span> <span class="n">acc</span><span class="p">}</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;model_name&quot;</span><span class="p">:</span> <span class="n">model</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="c1"># only works when model was created with a class</span>
+            <span class="s2">&quot;model_loss&quot;</span><span class="p">:</span> <span class="n">loss</span><span class="o">.</span><span class="n">item</span><span class="p">(),</span>
+            <span class="s2">&quot;model_acc&quot;</span><span class="p">:</span> <span class="n">acc</span><span class="p">}</span>
 
 <span class="c1"># Calculate model 0 results on test dataset</span>
 <span class="n">model_0_results</span> <span class="o">=</span> <span class="n">eval_model</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="n">model_0</span><span class="p">,</span> <span class="n">data_loader</span><span class="o">=</span><span class="n">test_dataloader</span><span class="p">,</span>
@@ -1638,9 +1679,9 @@ Looked at 51200/60000 samples
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{'model_name': 'FashionMNISTModelV0',
- 'model_loss': 2.3190648555755615,
- 'model_acc': 10.852635782747603}
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;model_name&#39;: &#39;FashionMNISTModelV0&#39;,
+ &#39;model_loss&#39;: 2.3190648555755615,
+ &#39;model_acc&#39;: 10.852635782747603}
 </pre></div>
 </div>
 </div>
@@ -1660,13 +1701,13 @@ Looked at 51200/60000 samples
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Setup device agnostic code</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
-<span class="n">device</span> <span class="o">=</span> <span class="s2">"cuda"</span> <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="s2">"cpu"</span>
+<span class="n">device</span> <span class="o">=</span> <span class="s2">&quot;cuda&quot;</span> <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="s2">&quot;cpu&quot;</span>
 <span class="n">device</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>'cuda'
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;cuda&#39;
 </pre></div>
 </div>
 </div>
@@ -1712,13 +1753,13 @@ Looked at 51200/60000 samples
 <span class="n">model_1</span> <span class="o">=</span> <span class="n">FashionMNISTModelV1</span><span class="p">(</span><span class="n">input_shape</span><span class="o">=</span><span class="mi">784</span><span class="p">,</span> <span class="c1"># number of input features</span>
     <span class="n">hidden_units</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
     <span class="n">output_shape</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">class_names</span><span class="p">)</span> <span class="c1"># number of output classes desired</span>
-<span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span> <span class="c1"># send model to GPU if it's available</span>
+<span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span> <span class="c1"># send model to GPU if it&#39;s available</span>
 <span class="nb">next</span><span class="p">(</span><span class="n">model_1</span><span class="o">.</span><span class="n">parameters</span><span class="p">())</span><span class="o">.</span><span class="n">device</span> <span class="c1"># check model device</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device(type='cuda', index=0)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>device(type=&#39;cuda&#39;, index=0)
 </pre></div>
 </div>
 </div>
@@ -1779,10 +1820,10 @@ Looked at 51200/60000 samples
         <span class="c1"># 5. Optimizer step</span>
         <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
 
-    <span class="c1"># Calculate loss and accuracy per epoch and print out what's happening</span>
+    <span class="c1"># Calculate loss and accuracy per epoch and print out what&#39;s happening</span>
     <span class="n">train_loss</span> <span class="o">/=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data_loader</span><span class="p">)</span>
     <span class="n">train_acc</span> <span class="o">/=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data_loader</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Train loss: </span><span class="si">{</span><span class="n">train_loss</span><span class="si">:</span><span class="s2">.5f</span><span class="si">}</span><span class="s2"> | Train accuracy: </span><span class="si">{</span><span class="n">train_acc</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Train loss: </span><span class="si">{</span><span class="n">train_loss</span><span class="si">:</span><span class="s2">.5f</span><span class="si">}</span><span class="s2"> | Train accuracy: </span><span class="si">{</span><span class="n">train_acc</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">test_step</span><span class="p">(</span><span class="n">data_loader</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">,</span>
               <span class="n">model</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">,</span>
@@ -1810,7 +1851,7 @@ Looked at 51200/60000 samples
         <span class="c1"># Adjust metrics and print out</span>
         <span class="n">test_loss</span> <span class="o">/=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data_loader</span><span class="p">)</span>
         <span class="n">test_acc</span> <span class="o">/=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data_loader</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Test loss: </span><span class="si">{</span><span class="n">test_loss</span><span class="si">:</span><span class="s2">.5f</span><span class="si">}</span><span class="s2"> | Test accuracy: </span><span class="si">{</span><span class="n">test_acc</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Test loss: </span><span class="si">{</span><span class="n">test_loss</span><span class="si">:</span><span class="s2">.5f</span><span class="si">}</span><span class="s2"> | Test accuracy: </span><span class="si">{</span><span class="n">test_acc</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1833,7 +1874,7 @@ Looked at 51200/60000 samples
 
 <span class="n">epochs</span> <span class="o">=</span> <span class="mi">3</span>
 <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">epochs</span><span class="p">)):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Epoch: </span><span class="si">{</span><span class="n">epoch</span><span class="si">}</span><span class="se">\n</span><span class="s2">---------"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Epoch: </span><span class="si">{</span><span class="n">epoch</span><span class="si">}</span><span class="se">\n</span><span class="s2">---------&quot;</span><span class="p">)</span>
     <span class="n">train_step</span><span class="p">(</span><span class="n">data_loader</span><span class="o">=</span><span class="n">train_dataloader</span><span class="p">,</span>
         <span class="n">model</span><span class="o">=</span><span class="n">model_1</span><span class="p">,</span>
         <span class="n">loss_fn</span><span class="o">=</span><span class="n">loss_fn</span><span class="p">,</span>
@@ -1948,7 +1989,7 @@ Train time on cuda: 36.633 seconds
 <span class="ne">-&gt; </span><span class="mi">1518</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call_impl</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
 <span class="nn">File /opt/miniconda-latest/lib/python3.8/site-packages/torch/nn/modules/module.py:1527,</span> in <span class="ni">Module._call_impl</span><span class="nt">(self, *args, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1522</span> <span class="c1"># If we don't have any hooks, we want to skip the rest of the logic in</span>
+<span class="g g-Whitespace">   </span><span class="mi">1522</span> <span class="c1"># If we don&#39;t have any hooks, we want to skip the rest of the logic in</span>
 <span class="g g-Whitespace">   </span><span class="mi">1523</span> <span class="c1"># this function, and just call forward.</span>
 <span class="g g-Whitespace">   </span><span class="mi">1524</span> <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_backward_hooks</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_backward_pre_hooks</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_forward_hooks</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_forward_pre_hooks</span>
 <span class="g g-Whitespace">   </span><span class="mi">1525</span>         <span class="ow">or</span> <span class="n">_global_backward_pre_hooks</span> <span class="ow">or</span> <span class="n">_global_backward_hooks</span>
@@ -1967,7 +2008,7 @@ Train time on cuda: 36.633 seconds
 <span class="ne">-&gt; </span><span class="mi">1518</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call_impl</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
 <span class="nn">File /opt/miniconda-latest/lib/python3.8/site-packages/torch/nn/modules/module.py:1527,</span> in <span class="ni">Module._call_impl</span><span class="nt">(self, *args, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1522</span> <span class="c1"># If we don't have any hooks, we want to skip the rest of the logic in</span>
+<span class="g g-Whitespace">   </span><span class="mi">1522</span> <span class="c1"># If we don&#39;t have any hooks, we want to skip the rest of the logic in</span>
 <span class="g g-Whitespace">   </span><span class="mi">1523</span> <span class="c1"># this function, and just call forward.</span>
 <span class="g g-Whitespace">   </span><span class="mi">1524</span> <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_backward_hooks</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_backward_pre_hooks</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_forward_hooks</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_forward_pre_hooks</span>
 <span class="g g-Whitespace">   </span><span class="mi">1525</span>         <span class="ow">or</span> <span class="n">_global_backward_pre_hooks</span> <span class="ow">or</span> <span class="n">_global_backward_hooks</span>
@@ -1988,7 +2029,7 @@ Train time on cuda: 36.633 seconds
 <span class="ne">-&gt; </span><span class="mi">1518</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call_impl</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
 <span class="nn">File /opt/miniconda-latest/lib/python3.8/site-packages/torch/nn/modules/module.py:1527,</span> in <span class="ni">Module._call_impl</span><span class="nt">(self, *args, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1522</span> <span class="c1"># If we don't have any hooks, we want to skip the rest of the logic in</span>
+<span class="g g-Whitespace">   </span><span class="mi">1522</span> <span class="c1"># If we don&#39;t have any hooks, we want to skip the rest of the logic in</span>
 <span class="g g-Whitespace">   </span><span class="mi">1523</span> <span class="c1"># this function, and just call forward.</span>
 <span class="g g-Whitespace">   </span><span class="mi">1524</span> <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_backward_hooks</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_backward_pre_hooks</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_forward_hooks</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_forward_pre_hooks</span>
 <span class="g g-Whitespace">   </span><span class="mi">1525</span>         <span class="ow">or</span> <span class="n">_global_backward_pre_hooks</span> <span class="ow">or</span> <span class="n">_global_backward_hooks</span>
@@ -2023,7 +2064,7 @@ Train time on cuda: 36.633 seconds
                <span class="n">loss_fn</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">,</span>
                <span class="n">accuracy_fn</span><span class="p">,</span>
                <span class="n">device</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span> <span class="o">=</span> <span class="n">device</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""Evaluates a given model on a given dataset.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Evaluates a given model on a given dataset.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        model (torch.nn.Module): A PyTorch model capable of making predictions on data_loader.</span>
@@ -2034,7 +2075,7 @@ Train time on cuda: 36.633 seconds
 
 <span class="sd">    Returns:</span>
 <span class="sd">        (dict): Results of model making predictions on data_loader.</span>
-<span class="sd">    """</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">loss</span><span class="p">,</span> <span class="n">acc</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
     <span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
     <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">inference_mode</span><span class="p">():</span>
@@ -2048,9 +2089,9 @@ Train time on cuda: 36.633 seconds
         <span class="c1"># Scale loss and acc</span>
         <span class="n">loss</span> <span class="o">/=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data_loader</span><span class="p">)</span>
         <span class="n">acc</span> <span class="o">/=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data_loader</span><span class="p">)</span>
-    <span class="k">return</span> <span class="p">{</span><span class="s2">"model_name"</span><span class="p">:</span> <span class="n">model</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="c1"># only works when model was created with a class</span>
-            <span class="s2">"model_loss"</span><span class="p">:</span> <span class="n">loss</span><span class="o">.</span><span class="n">item</span><span class="p">(),</span>
-            <span class="s2">"model_acc"</span><span class="p">:</span> <span class="n">acc</span><span class="p">}</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;model_name&quot;</span><span class="p">:</span> <span class="n">model</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="c1"># only works when model was created with a class</span>
+            <span class="s2">&quot;model_loss&quot;</span><span class="p">:</span> <span class="n">loss</span><span class="o">.</span><span class="n">item</span><span class="p">(),</span>
+            <span class="s2">&quot;model_acc&quot;</span><span class="p">:</span> <span class="n">acc</span><span class="p">}</span>
 
 <span class="c1"># Calculate model 1 results with device-agnostic code</span>
 <span class="n">model_1_results</span> <span class="o">=</span> <span class="n">eval_model</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="n">model_1</span><span class="p">,</span> <span class="n">data_loader</span><span class="o">=</span><span class="n">test_dataloader</span><span class="p">,</span>
@@ -2062,9 +2103,9 @@ Train time on cuda: 36.633 seconds
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{'model_name': 'FashionMNISTModelV1',
- 'model_loss': 0.6850008964538574,
- 'model_acc': 75.01996805111821}
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;model_name&#39;: &#39;FashionMNISTModelV1&#39;,
+ &#39;model_loss&#39;: 0.6850008964538574,
+ &#39;model_acc&#39;: 75.01996805111821}
 </pre></div>
 </div>
 </div>
@@ -2139,18 +2180,18 @@ Train time on cuda: 36.633 seconds
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a convolutional neural network</span>
 <span class="k">class</span><span class="w"> </span><span class="nc">FashionMNISTModelV2</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Model architecture copying TinyVGG from:</span>
 <span class="sd">    https://poloclub.github.io/cnn-explainer/</span>
-<span class="sd">    """</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_shape</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">hidden_units</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">output_shape</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">block_1</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
             <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="n">in_channels</span><span class="o">=</span><span class="n">input_shape</span><span class="p">,</span>
                       <span class="n">out_channels</span><span class="o">=</span><span class="n">hidden_units</span><span class="p">,</span>
-                      <span class="n">kernel_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="c1"># how big is the square that's going over the image?</span>
+                      <span class="n">kernel_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="c1"># how big is the square that&#39;s going over the image?</span>
                       <span class="n">stride</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="c1"># default</span>
-                      <span class="n">padding</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span><span class="c1"># options = "valid" (no padding) or "same" (output has same shape as input) or int for specific number</span>
+                      <span class="n">padding</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span><span class="c1"># options = &quot;valid&quot; (no padding) or &quot;same&quot; (output has same shape as input) or int for specific number</span>
             <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span>
             <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="n">in_channels</span><span class="o">=</span><span class="n">hidden_units</span><span class="p">,</span>
                       <span class="n">out_channels</span><span class="o">=</span><span class="n">hidden_units</span><span class="p">,</span>
@@ -2171,7 +2212,7 @@ Train time on cuda: 36.633 seconds
         <span class="bp">self</span><span class="o">.</span><span class="n">classifier</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
             <span class="n">nn</span><span class="o">.</span><span class="n">Flatten</span><span class="p">(),</span>
             <span class="c1"># Where did this in_features shape come from?</span>
-            <span class="c1"># It's because each layer of our network compresses and changes the shape of our inputs data.</span>
+            <span class="c1"># It&#39;s because each layer of our network compresses and changes the shape of our inputs data.</span>
             <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">in_features</span><span class="o">=</span><span class="n">hidden_units</span><span class="o">*</span><span class="mi">7</span><span class="o">*</span><span class="mi">7</span><span class="p">,</span>
                       <span class="n">out_features</span><span class="o">=</span><span class="n">output_shape</span><span class="p">)</span>
         <span class="p">)</span>
@@ -2243,9 +2284,9 @@ Train time on cuda: 36.633 seconds
 <span class="c1"># Create sample batch of random numbers with same size as image batch</span>
 <span class="n">images</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">64</span><span class="p">))</span> <span class="c1"># [batch_size, color_channels, height, width]</span>
 <span class="n">test_image</span> <span class="o">=</span> <span class="n">images</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># get a single image for testing</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Image batch shape: </span><span class="si">{</span><span class="n">images</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2"> -&gt; [batch_size, color_channels, height, width]"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Single image shape: </span><span class="si">{</span><span class="n">test_image</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2"> -&gt; [color_channels, height, width]"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Single image pixel values:</span><span class="se">\n</span><span class="si">{</span><span class="n">test_image</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Image batch shape: </span><span class="si">{</span><span class="n">images</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2"> -&gt; [batch_size, color_channels, height, width]&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Single image shape: </span><span class="si">{</span><span class="n">test_image</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2"> -&gt; [color_channels, height, width]&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Single image pixel values:</span><span class="se">\n</span><span class="si">{</span><span class="n">test_image</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2300,7 +2341,7 @@ tensor([[[ 1.9269,  1.4873,  0.9007,  ...,  1.8446, -1.1845,  1.3835],
                        <span class="n">out_channels</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
                        <span class="n">kernel_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
                        <span class="n">stride</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
-                       <span class="n">padding</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># also try using "valid" or "same" here</span>
+                       <span class="n">padding</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># also try using &quot;valid&quot; or &quot;same&quot; here</span>
 
 <span class="c1"># Pass the data through the convolutional layer</span>
 <span class="n">conv_layer</span><span class="p">(</span><span class="n">test_image</span><span class="p">)</span> <span class="c1"># Note: If running PyTorch &lt;1.11.0, this will error because of shape issues (nn.Conv.2d() expects a 4d tensor as input)</span>
@@ -2408,7 +2449,7 @@ tensor([[[ 1.9269,  1.4873,  0.9007,  ...,  1.8446, -1.1845,  1.3835],
                          <span class="n">stride</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
                          <span class="n">padding</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 
-<span class="c1"># Pass single image through new conv_layer_2 (this calls nn.Conv2d()'s forward() method on the input)</span>
+<span class="c1"># Pass single image through new conv_layer_2 (this calls nn.Conv2d()&#39;s forward() method on the input)</span>
 <span class="n">conv_layer_2</span><span class="p">(</span><span class="n">test_image</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span><span class="o">.</span><span class="n">shape</span>
 </pre></div>
 </div>
@@ -2436,7 +2477,7 @@ tensor([[[ 1.9269,  1.4873,  0.9007,  ...,  1.8446, -1.1845,  1.3835],
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>OrderedDict([('weight', tensor([[[[ 0.0883,  0.0958, -0.0271,  0.1061, -0.0253],
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>OrderedDict([(&#39;weight&#39;, tensor([[[[ 0.0883,  0.0958, -0.0271,  0.1061, -0.0253],
           [ 0.0233, -0.0562,  0.0678,  0.1018, -0.0847],
           [ 0.1004,  0.0216,  0.0853,  0.0156,  0.0557],
           [-0.0163,  0.0890,  0.0171, -0.0539,  0.0294],
@@ -2623,7 +2664,7 @@ tensor([[[ 1.9269,  1.4873,  0.9007,  ...,  1.8446, -1.1845,  1.3835],
           [ 0.0790, -0.1087, -0.1005,  0.0647,  0.0623],
           [ 0.0950, -0.0872, -0.0845,  0.0592,  0.1004],
           [ 0.0691,  0.0181,  0.0381,  0.1096, -0.0745],
-          [-0.0524,  0.0808, -0.0790, -0.0637,  0.0843]]]])), ('bias', tensor([ 0.0364,  0.0373, -0.0489, -0.0016,  0.1057, -0.0693,  0.0009,  0.0549,
+          [-0.0524,  0.0808, -0.0790, -0.0637,  0.0843]]]])), (&#39;bias&#39;, tensor([ 0.0364,  0.0373, -0.0489, -0.0016,  0.1057, -0.0693,  0.0009,  0.0549,
         -0.0797,  0.1121]))])
 </pre></div>
 </div>
@@ -2635,8 +2676,8 @@ tensor([[[ 1.9269,  1.4873,  0.9007,  ...,  1.8446, -1.1845,  1.3835],
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get shapes of weight and bias tensors within conv_layer_2</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"conv_layer_2 weight shape: </span><span class="se">\n</span><span class="si">{</span><span class="n">conv_layer_2</span><span class="o">.</span><span class="n">weight</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2"> -&gt; [out_channels=10, in_channels=3, kernel_size=5, kernel_size=5]"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">conv_layer_2 bias shape: </span><span class="se">\n</span><span class="si">{</span><span class="n">conv_layer_2</span><span class="o">.</span><span class="n">bias</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2"> -&gt; [out_channels=10]"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;conv_layer_2 weight shape: </span><span class="se">\n</span><span class="si">{</span><span class="n">conv_layer_2</span><span class="o">.</span><span class="n">weight</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2"> -&gt; [out_channels=10, in_channels=3, kernel_size=5, kernel_size=5]&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">conv_layer_2 bias shape: </span><span class="se">\n</span><span class="si">{</span><span class="n">conv_layer_2</span><span class="o">.</span><span class="n">bias</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2"> -&gt; [out_channels=10]&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2665,19 +2706,19 @@ torch.Size([10]) -&gt; [out_channels=10]
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Print out original image shape without and with unsqueezed dimension</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Test image original shape: </span><span class="si">{</span><span class="n">test_image</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Test image with unsqueezed dimension: </span><span class="si">{</span><span class="n">test_image</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Test image original shape: </span><span class="si">{</span><span class="n">test_image</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Test image with unsqueezed dimension: </span><span class="si">{</span><span class="n">test_image</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
 <span class="c1"># Create a sample nn.MaxPoo2d() layer</span>
 <span class="n">max_pool_layer</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">MaxPool2d</span><span class="p">(</span><span class="n">kernel_size</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 
 <span class="c1"># Pass data through just the conv_layer</span>
 <span class="n">test_image_through_conv</span> <span class="o">=</span> <span class="n">conv_layer</span><span class="p">(</span><span class="n">test_image</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Shape after going through conv_layer(): </span><span class="si">{</span><span class="n">test_image_through_conv</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Shape after going through conv_layer(): </span><span class="si">{</span><span class="n">test_image_through_conv</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
 <span class="c1"># Pass data through the max pool layer</span>
 <span class="n">test_image_through_conv_and_max_pool</span> <span class="o">=</span> <span class="n">max_pool_layer</span><span class="p">(</span><span class="n">test_image_through_conv</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Shape after going through conv_layer() and max_pool_layer(): </span><span class="si">{</span><span class="n">test_image_through_conv_and_max_pool</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Shape after going through conv_layer() and max_pool_layer(): </span><span class="si">{</span><span class="n">test_image_through_conv_and_max_pool</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2699,16 +2740,16 @@ Shape after going through conv_layer() and max_pool_layer(): torch.Size([1, 10, 
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">torch</span><span class="o">.</span><span class="n">manual_seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
 <span class="c1"># Create a random tensor with a similiar number of dimensions to our images</span>
 <span class="n">random_tensor</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Random tensor:</span><span class="se">\n</span><span class="si">{</span><span class="n">random_tensor</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Random tensor shape: </span><span class="si">{</span><span class="n">random_tensor</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Random tensor:</span><span class="se">\n</span><span class="si">{</span><span class="n">random_tensor</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Random tensor shape: </span><span class="si">{</span><span class="n">random_tensor</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
 <span class="c1"># Create a max pool layer</span>
 <span class="n">max_pool_layer</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">MaxPool2d</span><span class="p">(</span><span class="n">kernel_size</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># see what happens when you change the kernel_size value</span>
 
 <span class="c1"># Pass the random tensor through the max pool layer</span>
 <span class="n">max_pool_tensor</span> <span class="o">=</span> <span class="n">max_pool_layer</span><span class="p">(</span><span class="n">random_tensor</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Max pool tensor:</span><span class="se">\n</span><span class="si">{</span><span class="n">max_pool_tensor</span><span class="si">}</span><span class="s2"> &lt;- this is the maximum value from random_tensor"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Max pool tensor shape: </span><span class="si">{</span><span class="n">max_pool_tensor</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Max pool tensor:</span><span class="se">\n</span><span class="si">{</span><span class="n">max_pool_tensor</span><span class="si">}</span><span class="s2"> &lt;- this is the maximum value from random_tensor&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Max pool tensor shape: </span><span class="si">{</span><span class="n">max_pool_tensor</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2784,7 +2825,7 @@ Max pool tensor shape: torch.Size([1, 1, 1, 1])
 <span class="c1"># Train and test model</span>
 <span class="n">epochs</span> <span class="o">=</span> <span class="mi">3</span>
 <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">epochs</span><span class="p">)):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Epoch: </span><span class="si">{</span><span class="n">epoch</span><span class="si">}</span><span class="se">\n</span><span class="s2">---------"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Epoch: </span><span class="si">{</span><span class="n">epoch</span><span class="si">}</span><span class="se">\n</span><span class="s2">---------&quot;</span><span class="p">)</span>
     <span class="n">train_step</span><span class="p">(</span><span class="n">data_loader</span><span class="o">=</span><span class="n">train_dataloader</span><span class="p">,</span>
         <span class="n">model</span><span class="o">=</span><span class="n">model_2</span><span class="p">,</span>
         <span class="n">loss_fn</span><span class="o">=</span><span class="n">loss_fn</span><span class="p">,</span>
@@ -2864,9 +2905,9 @@ Train time on cuda: 46.080 seconds
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{'model_name': 'FashionMNISTModelV2',
- 'model_loss': 0.3205042779445648,
- 'model_acc': 88.29872204472844}
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;model_name&#39;: &#39;FashionMNISTModelV2&#39;,
+ &#39;model_loss&#39;: 0.3205042779445648,
+ &#39;model_acc&#39;: 88.29872204472844}
 </pre></div>
 </div>
 </div>
@@ -2944,7 +2985,7 @@ Train time on cuda: 46.080 seconds
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Add training times to results comparison</span>
-<span class="n">compare_results</span><span class="p">[</span><span class="s2">"training_time"</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">total_train_time_model_0</span><span class="p">,</span>
+<span class="n">compare_results</span><span class="p">[</span><span class="s2">&quot;training_time&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">total_train_time_model_0</span><span class="p">,</span>
                                     <span class="n">total_train_time_model_1</span><span class="p">,</span>
                                     <span class="n">total_train_time_model_2</span><span class="p">]</span>
 <span class="n">compare_results</span>
@@ -3018,9 +3059,9 @@ Train time on cuda: 46.080 seconds
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Visualize our model results</span>
-<span class="n">compare_results</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">"model_name"</span><span class="p">)[</span><span class="s2">"model_acc"</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s2">"barh"</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">"accuracy (%)"</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">"model"</span><span class="p">);</span>
+<span class="n">compare_results</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;model_name&quot;</span><span class="p">)[</span><span class="s2">&quot;model_acc&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s2">&quot;barh&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;accuracy (%)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;model&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -3048,7 +3089,7 @@ Train time on cuda: 46.080 seconds
             <span class="n">pred_logit</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
 
             <span class="c1"># Get prediction probability (logit -&gt; prediction probability)</span>
-            <span class="n">pred_prob</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">softmax</span><span class="p">(</span><span class="n">pred_logit</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(),</span> <span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># note: perform softmax on the "logits" dimension, not "batch" dimension (in this case we have a batch size of 1, so can perform on dim=0)</span>
+            <span class="n">pred_prob</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">softmax</span><span class="p">(</span><span class="n">pred_logit</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(),</span> <span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># note: perform softmax on the &quot;logits&quot; dimension, not &quot;batch&quot; dimension (in this case we have a batch size of 1, so can perform on dim=0)</span>
 
             <span class="c1"># Get pred_prob off GPU for further calculations</span>
             <span class="n">pred_probs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pred_prob</span><span class="o">.</span><span class="n">cpu</span><span class="p">())</span>
@@ -3070,7 +3111,7 @@ Train time on cuda: 46.080 seconds
     <span class="n">test_labels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">label</span><span class="p">)</span>
 
 <span class="c1"># View the first test sample shape and label</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Test sample image shape: </span><span class="si">{</span><span class="n">test_samples</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="se">\n</span><span class="s2">Test sample label: </span><span class="si">{</span><span class="n">test_labels</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">class_names</span><span class="p">[</span><span class="n">test_labels</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span><span class="si">}</span><span class="s2">)"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Test sample image shape: </span><span class="si">{</span><span class="n">test_samples</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="se">\n</span><span class="s2">Test sample label: </span><span class="si">{</span><span class="n">test_labels</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">class_names</span><span class="p">[</span><span class="n">test_labels</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -3165,22 +3206,22 @@ Test sample label: 5 (Sandal)
   <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="n">nrows</span><span class="p">,</span> <span class="n">ncols</span><span class="p">,</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
 
   <span class="c1"># Plot the target image</span>
-  <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">sample</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(),</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">"gray"</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">sample</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(),</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">)</span>
 
-  <span class="c1"># Find the prediction label (in text form, e.g. "Sandal")</span>
+  <span class="c1"># Find the prediction label (in text form, e.g. &quot;Sandal&quot;)</span>
   <span class="n">pred_label</span> <span class="o">=</span> <span class="n">class_names</span><span class="p">[</span><span class="n">pred_classes</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span>
 
-  <span class="c1"># Get the truth label (in text form, e.g. "T-shirt")</span>
+  <span class="c1"># Get the truth label (in text form, e.g. &quot;T-shirt&quot;)</span>
   <span class="n">truth_label</span> <span class="o">=</span> <span class="n">class_names</span><span class="p">[</span><span class="n">test_labels</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span>
 
   <span class="c1"># Create the title text of the plot</span>
-  <span class="n">title_text</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"Pred: </span><span class="si">{</span><span class="n">pred_label</span><span class="si">}</span><span class="s2"> | Truth: </span><span class="si">{</span><span class="n">truth_label</span><span class="si">}</span><span class="s2">"</span>
+  <span class="n">title_text</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Pred: </span><span class="si">{</span><span class="n">pred_label</span><span class="si">}</span><span class="s2"> | Truth: </span><span class="si">{</span><span class="n">truth_label</span><span class="si">}</span><span class="s2">&quot;</span>
 
   <span class="c1"># Check for equality and change title colour accordingly</span>
   <span class="k">if</span> <span class="n">pred_label</span> <span class="o">==</span> <span class="n">truth_label</span><span class="p">:</span>
-      <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">title_text</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s2">"g"</span><span class="p">)</span> <span class="c1"># green text if correct</span>
+      <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">title_text</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s2">&quot;g&quot;</span><span class="p">)</span> <span class="c1"># green text if correct</span>
   <span class="k">else</span><span class="p">:</span>
-      <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">title_text</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s2">"r"</span><span class="p">)</span> <span class="c1"># red text if wrong</span>
+      <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">title_text</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="c1"># red text if wrong</span>
   <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="kc">False</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -3213,13 +3254,13 @@ Test sample label: 5 (Sandal)
 <span class="n">y_preds</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">model_2</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
 <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">inference_mode</span><span class="p">():</span>
-  <span class="k">for</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">test_dataloader</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s2">"Making predictions"</span><span class="p">):</span>
+  <span class="k">for</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">test_dataloader</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s2">&quot;Making predictions&quot;</span><span class="p">):</span>
     <span class="c1"># Send data and targets to target device</span>
     <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">),</span> <span class="n">y</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
     <span class="c1"># Do the forward pass</span>
     <span class="n">y_logit</span> <span class="o">=</span> <span class="n">model_2</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
     <span class="c1"># Turn predictions from logits -&gt; prediction probabilities -&gt; predictions labels</span>
-    <span class="n">y_pred</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">softmax</span><span class="p">(</span><span class="n">y_logit</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># note: perform softmax on the "logits" dimension, not "batch" dimension (in this case we have a batch size of 32, so can perform on dim=1)</span>
+    <span class="n">y_pred</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">softmax</span><span class="p">(</span><span class="n">y_logit</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># note: perform softmax on the &quot;logits&quot; dimension, not &quot;batch&quot; dimension (in this case we have a batch size of 32, so can perform on dim=1)</span>
     <span class="c1"># Put predictions on CPU for evaluation</span>
     <span class="n">y_preds</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">y_pred</span><span class="o">.</span><span class="n">cpu</span><span class="p">())</span>
 <span class="c1"># Concatenate list of predictions into a tensor</span>
@@ -3246,17 +3287,17 @@ Test sample label: 5 (Sandal)
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># See if torchmetrics exists, if not, install it</span>
 <span class="k">try</span><span class="p">:</span>
     <span class="kn">import</span><span class="w"> </span><span class="nn">torchmetrics</span><span class="o">,</span><span class="w"> </span><span class="nn">mlxtend</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"mlxtend version: </span><span class="si">{</span><span class="n">mlxtend</span><span class="o">.</span><span class="n">__version__</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-    <span class="k">assert</span> <span class="nb">int</span><span class="p">(</span><span class="n">mlxtend</span><span class="o">.</span><span class="n">__version__</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"."</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span> <span class="o">&gt;=</span> <span class="mi">19</span><span class="p">,</span> <span class="s2">"mlxtend verison should be 0.19.0 or higher"</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;mlxtend version: </span><span class="si">{</span><span class="n">mlxtend</span><span class="o">.</span><span class="n">__version__</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="nb">int</span><span class="p">(</span><span class="n">mlxtend</span><span class="o">.</span><span class="n">__version__</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span> <span class="o">&gt;=</span> <span class="mi">19</span><span class="p">,</span> <span class="s2">&quot;mlxtend verison should be 0.19.0 or higher&quot;</span>
 <span class="k">except</span><span class="p">:</span>
-    <span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>-q<span class="w"> </span>torchmetrics<span class="w"> </span>-U<span class="w"> </span>mlxtend<span class="w"> </span>#<span class="w"> </span>&lt;-<span class="w"> </span>Note:<span class="w"> </span>If<span class="w"> </span>you<span class="err">'</span>re<span class="w"> </span>using<span class="w"> </span>Google<span class="w"> </span>Colab,<span class="w"> </span>this<span class="w"> </span>may<span class="w"> </span>require<span class="w"> </span>restarting<span class="w"> </span>the<span class="w"> </span>runtime
+    <span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>-q<span class="w"> </span>torchmetrics<span class="w"> </span>-U<span class="w"> </span>mlxtend<span class="w"> </span>#<span class="w"> </span>&lt;-<span class="w"> </span>Note:<span class="w"> </span>If<span class="w"> </span>you<span class="err">&#39;</span>re<span class="w"> </span>using<span class="w"> </span>Google<span class="w"> </span>Colab,<span class="w"> </span>this<span class="w"> </span>may<span class="w"> </span>require<span class="w"> </span>restarting<span class="w"> </span>the<span class="w"> </span>runtime
     <span class="kn">import</span><span class="w"> </span><span class="nn">torchmetrics</span><span class="o">,</span><span class="w"> </span><span class="nn">mlxtend</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"mlxtend version: </span><span class="si">{</span><span class="n">mlxtend</span><span class="o">.</span><span class="n">__version__</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;mlxtend version: </span><span class="si">{</span><span class="n">mlxtend</span><span class="o">.</span><span class="n">__version__</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">WARNING: Running pip as the &#39;root&#39; user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv</span>
 mlxtend version: 0.23.0
 </pre></div>
 </div>
@@ -3268,7 +3309,7 @@ mlxtend version: 0.23.0
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import mlxtend upgraded version</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">mlxtend</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">mlxtend</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
-<span class="k">assert</span> <span class="nb">int</span><span class="p">(</span><span class="n">mlxtend</span><span class="o">.</span><span class="n">__version__</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"."</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span> <span class="o">&gt;=</span> <span class="mi">19</span> <span class="c1"># should be version 0.19.0 or higher</span>
+<span class="k">assert</span> <span class="nb">int</span><span class="p">(</span><span class="n">mlxtend</span><span class="o">.</span><span class="n">__version__</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span> <span class="o">&gt;=</span> <span class="mi">19</span> <span class="c1"># should be version 0.19.0 or higher</span>
 </pre></div>
 </div>
 </div>
@@ -3288,7 +3329,7 @@ mlxtend version: 0.23.0
 <span class="kn">from</span><span class="w"> </span><span class="nn">mlxtend.plotting</span><span class="w"> </span><span class="kn">import</span> <span class="n">plot_confusion_matrix</span>
 
 <span class="c1"># 2. Setup confusion matrix instance and compare predictions to targets</span>
-<span class="n">confmat</span> <span class="o">=</span> <span class="n">ConfusionMatrix</span><span class="p">(</span><span class="n">num_classes</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">class_names</span><span class="p">),</span> <span class="n">task</span><span class="o">=</span><span class="s1">'multiclass'</span><span class="p">)</span>
+<span class="n">confmat</span> <span class="o">=</span> <span class="n">ConfusionMatrix</span><span class="p">(</span><span class="n">num_classes</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">class_names</span><span class="p">),</span> <span class="n">task</span><span class="o">=</span><span class="s1">&#39;multiclass&#39;</span><span class="p">)</span>
 <span class="n">confmat_tensor</span> <span class="o">=</span> <span class="n">confmat</span><span class="p">(</span><span class="n">preds</span><span class="o">=</span><span class="n">y_pred_tensor</span><span class="p">,</span>
                          <span class="n">target</span><span class="o">=</span><span class="n">test_data</span><span class="o">.</span><span class="n">targets</span><span class="p">)</span>
 
@@ -3332,18 +3373,18 @@ mlxtend version: 0.23.0
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
 
-<span class="c1"># Create models directory (if it doesn't already exist), see: https://docs.python.org/3/library/pathlib.html#pathlib.Path.mkdir</span>
-<span class="n">MODEL_PATH</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">"models"</span><span class="p">)</span>
+<span class="c1"># Create models directory (if it doesn&#39;t already exist), see: https://docs.python.org/3/library/pathlib.html#pathlib.Path.mkdir</span>
+<span class="n">MODEL_PATH</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;models&quot;</span><span class="p">)</span>
 <span class="n">MODEL_PATH</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="c1"># create parent directories if needed</span>
-                 <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span> <span class="c1"># if models directory already exists, don't error</span>
+                 <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span> <span class="c1"># if models directory already exists, don&#39;t error</span>
 <span class="p">)</span>
 
 <span class="c1"># Create model save path</span>
-<span class="n">MODEL_NAME</span> <span class="o">=</span> <span class="s2">"03_pytorch_computer_vision_model_2.pth"</span>
+<span class="n">MODEL_NAME</span> <span class="o">=</span> <span class="s2">&quot;03_pytorch_computer_vision_model_2.pth&quot;</span>
 <span class="n">MODEL_SAVE_PATH</span> <span class="o">=</span> <span class="n">MODEL_PATH</span> <span class="o">/</span> <span class="n">MODEL_NAME</span>
 
 <span class="c1"># Save the model state dict</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Saving model to: </span><span class="si">{</span><span class="n">MODEL_SAVE_PATH</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Saving model to: </span><span class="si">{</span><span class="n">MODEL_SAVE_PATH</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="n">torch</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">obj</span><span class="o">=</span><span class="n">model_2</span><span class="o">.</span><span class="n">state_dict</span><span class="p">(),</span> <span class="c1"># only saving the state_dict() only saves the learned parameters</span>
            <span class="n">f</span><span class="o">=</span><span class="n">MODEL_SAVE_PATH</span><span class="p">)</span>
 </pre></div>
@@ -3360,7 +3401,7 @@ mlxtend version: 0.23.0
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a new instance of FashionMNISTModelV2 (the same class as our saved state_dict())</span>
-<span class="c1"># Note: loading model will error if the shapes here aren't the same as the saved version</span>
+<span class="c1"># Note: loading model will error if the shapes here aren&#39;t the same as the saved version</span>
 <span class="n">loaded_model_2</span> <span class="o">=</span> <span class="n">FashionMNISTModelV2</span><span class="p">(</span><span class="n">input_shape</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
                                     <span class="n">hidden_units</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="c1"># try changing this to 128 and seeing what happens</span>
                                     <span class="n">output_shape</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
@@ -3392,9 +3433,9 @@ mlxtend version: 0.23.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{'model_name': 'FashionMNISTModelV2',
- 'model_loss': 0.3205042779445648,
- 'model_acc': 88.29872204472844}
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;model_name&#39;: &#39;FashionMNISTModelV2&#39;,
+ &#39;model_loss&#39;: 0.3205042779445648,
+ &#39;model_acc&#39;: 88.29872204472844}
 </pre></div>
 </div>
 </div>
@@ -3407,9 +3448,9 @@ mlxtend version: 0.23.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{'model_name': 'FashionMNISTModelV2',
- 'model_loss': 0.3205042779445648,
- 'model_acc': 88.29872204472844}
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;model_name&#39;: &#39;FashionMNISTModelV2&#39;,
+ &#39;model_loss&#39;: 0.3205042779445648,
+ &#39;model_acc&#39;: 88.29872204472844}
 </pre></div>
 </div>
 </div>
@@ -3456,15 +3497,17 @@ mlxtend version: 0.23.0
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-classification-problem">What is a classification problem?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-we-re-going-to-cover">What we’re going to cover</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#architecture-of-a-classification-neural-network">0. Architecture of a classification neural network</a></li>
@@ -3560,8 +3603,8 @@ By Nadezhda Alsahanova, Aleksandra Beliaeva, Dmitriy Kornilov, Fedor Gubanov, Pa
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
 
   <footer class="bd-footer">
   </footer>
