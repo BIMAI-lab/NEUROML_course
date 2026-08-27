@@ -8,7 +8,5 @@ matplotlib>=3.8,<4
 seaborn>=0.13,<0.14
 
 # Local Jupyter environment
-jupyterlab>=4,<5
+notebook>=6.5,<7
 ipykernel>=6,<8
-ipywidgets>=8.1,<9
-
