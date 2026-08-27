@@ -552,16 +552,16 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ATTENTIOn: follow these instructions if there are no libraries in the environment.</span>
-<span class="c1"># !pip install nilearn</span>
-<span class="c1"># !pip install nibabel</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ATTENTION: follow these instructions if there are no libraries in the environment.</span>
+<span class="c1"># !pip install nilearn==0.10.4</span>
+<span class="c1"># !pip install nibabel==5.2.1</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ATTENTIOn: follow these instructions if there are no libraries in the environment.</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ATTENTION: follow these instructions if there are no libraries in the environment.</span>
 <span class="c1"># !pip install antspyx</span>
 <span class="c1"># !pip install torchio</span>
 </pre></div>
@@ -615,31 +615,21 @@
 <p>To simplify the workflow and focus on interpretation methods, we will work with a small sample of <strong>10 MRI scans</strong> extracted from the preprocessed ADNI data. Each MRI volume is stored in the NIfTI format (<code class="docutils literal notranslate"><span class="pre">.nii</span></code> or <code class="docutils literal notranslate"><span class="pre">.nii.gz</span></code>), which is a standard in neuroimaging</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># !wget -O test_data.zip &quot;https://getfile.dokpub.com/yandex/get/https://disk.yandex.ru/d/gIcjn_h9TD2QyQ&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># !wget -O test_data.zip &quot;https://cloud.appliedai.tech/s/6wXEsjEiJJLRyyA/download?path=%2FSeminar%209&amp;files=test_data.zip&quot;</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2025-09-29 18:35:41--  https://getfile.dokpub.com/yandex/get/https://disk.yandex.ru/d/gIcjn_h9TD2QyQ
-Resolving getfile.dokpub.com (getfile.dokpub.com)... 138.199.175.196
-Connecting to getfile.dokpub.com (getfile.dokpub.com)|138.199.175.196|:443... connected.
-HTTP request sent, awaiting response... 302 Found
-Location: https://downloader.disk.yandex.ru/disk/6a4086360ba229e21dff4e449f4ebc6c58e1d9b821fbfbc5c17920fbcb49e66b/68dadf8e/yLVzctR40OkW-hBDuEw6jHX0EDsA6Lp4x3toZMmjM-UVVf3uBqpyfeJgco-9nO1jeFg32LKaht1tJcjv8WtW4g%3D%3D?uid=0&amp;filename=test_data.zip&amp;disposition=attachment&amp;hash=U44D40ffpkpZzgJQU7nDI1drf0FydzKpvb8Dtjkw0Fq3lfamrllio97GFrxf4I5sq/J6bpmRyOJonT3VoXnDag%3D%3D%3A&amp;limit=0&amp;content_type=application%2Fzip&amp;owner_uid=222635455&amp;fsize=898980334&amp;hid=0a33431c4be40c57eea17bb9c36832e1&amp;media_type=compressed&amp;tknv=v3 [following]
---2025-09-29 18:35:42--  https://downloader.disk.yandex.ru/disk/6a4086360ba229e21dff4e449f4ebc6c58e1d9b821fbfbc5c17920fbcb49e66b/68dadf8e/yLVzctR40OkW-hBDuEw6jHX0EDsA6Lp4x3toZMmjM-UVVf3uBqpyfeJgco-9nO1jeFg32LKaht1tJcjv8WtW4g%3D%3D?uid=0&amp;filename=test_data.zip&amp;disposition=attachment&amp;hash=U44D40ffpkpZzgJQU7nDI1drf0FydzKpvb8Dtjkw0Fq3lfamrllio97GFrxf4I5sq/J6bpmRyOJonT3VoXnDag%3D%3D%3A&amp;limit=0&amp;content_type=application%2Fzip&amp;owner_uid=222635455&amp;fsize=898980334&amp;hid=0a33431c4be40c57eea17bb9c36832e1&amp;media_type=compressed&amp;tknv=v3
-Resolving downloader.disk.yandex.ru (downloader.disk.yandex.ru)... 77.88.21.127, 2a02:6b8::2:127
-Connecting to downloader.disk.yandex.ru (downloader.disk.yandex.ru)|77.88.21.127|:443... connected.
-HTTP request sent, awaiting response... 302 Found
-Location: https://s979sas.storage.yandex.net/rdisk/6a4086360ba229e21dff4e449f4ebc6c58e1d9b821fbfbc5c17920fbcb49e66b/68dadf8e/yLVzctR40OkW-hBDuEw6jHX0EDsA6Lp4x3toZMmjM-UVVf3uBqpyfeJgco-9nO1jeFg32LKaht1tJcjv8WtW4g==?uid=0&amp;filename=test_data.zip&amp;disposition=attachment&amp;hash=U44D40ffpkpZzgJQU7nDI1drf0FydzKpvb8Dtjkw0Fq3lfamrllio97GFrxf4I5sq/J6bpmRyOJonT3VoXnDag%3D%3D%3A&amp;limit=0&amp;content_type=application%2Fzip&amp;owner_uid=222635455&amp;fsize=898980334&amp;hid=0a33431c4be40c57eea17bb9c36832e1&amp;media_type=compressed&amp;tknv=v3&amp;ts=63ff5bdac7f80&amp;s=4bed1adaae5fa6dfee2ef0259702e2c85e279ab1a9dd3f07c95039203179136b&amp;pb=U2FsdGVkX18pHxJP3I41ruAEeW7sgRnZtdWxw-UOFwkSU9ZFv6eCtI75xA_DdH_uuMAmXCvp8mHKaNJTgCxHq-AElqQG0QJ1QRPoF35Pioc [following]
---2025-09-29 18:35:42--  https://s979sas.storage.yandex.net/rdisk/6a4086360ba229e21dff4e449f4ebc6c58e1d9b821fbfbc5c17920fbcb49e66b/68dadf8e/yLVzctR40OkW-hBDuEw6jHX0EDsA6Lp4x3toZMmjM-UVVf3uBqpyfeJgco-9nO1jeFg32LKaht1tJcjv8WtW4g==?uid=0&amp;filename=test_data.zip&amp;disposition=attachment&amp;hash=U44D40ffpkpZzgJQU7nDI1drf0FydzKpvb8Dtjkw0Fq3lfamrllio97GFrxf4I5sq/J6bpmRyOJonT3VoXnDag%3D%3D%3A&amp;limit=0&amp;content_type=application%2Fzip&amp;owner_uid=222635455&amp;fsize=898980334&amp;hid=0a33431c4be40c57eea17bb9c36832e1&amp;media_type=compressed&amp;tknv=v3&amp;ts=63ff5bdac7f80&amp;s=4bed1adaae5fa6dfee2ef0259702e2c85e279ab1a9dd3f07c95039203179136b&amp;pb=U2FsdGVkX18pHxJP3I41ruAEeW7sgRnZtdWxw-UOFwkSU9ZFv6eCtI75xA_DdH_uuMAmXCvp8mHKaNJTgCxHq-AElqQG0QJ1QRPoF35Pioc
-Resolving s979sas.storage.yandex.net (s979sas.storage.yandex.net)... 141.8.180.229, 2a02:6b8:c02:156d:0:41af:58c1:321
-Connecting to s979sas.storage.yandex.net (s979sas.storage.yandex.net)|141.8.180.229|:443... connected.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2026-08-26 13:47:23--  https://cloud.appliedai.tech/s/6wXEsjEiJJLRyyA/download?path=%2FSeminar%209&amp;files=test_data.zip
+Resolving cloud.appliedai.tech (cloud.appliedai.tech)... 195.133.216.210
+Connecting to cloud.appliedai.tech (cloud.appliedai.tech)|195.133.216.210|:443... connected.
 HTTP request sent, awaiting response... 200 OK
 Length: 898980334 (857M) [application/zip]
 Saving to: ‘test_data.zip’
 
-100%[======================================&gt;] 898,980,334 8.55MB/s   in 67s    
+100%[======================================&gt;] 898,980,334 56.8MB/s   in 15s    
 
-2025-09-29 18:36:49 (12.8 MB/s) - ‘test_data.zip’ saved [898980334/898980334]
+2026-08-26 13:47:39 (57.3 MB/s) - ‘test_data.zip’ saved [898980334/898980334]
 </pre></div>
 </div>
 </div>
