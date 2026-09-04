@@ -8,7 +8,7 @@
   2) Download `NEUROML-data.zip` from [YaDisk](https://disk.yandex.ru/d/xxnRbLetEh07YQ) and unzip it to local directory;
   3) Clone [the repository](https://github.com/BIMAI-lab/NEUROML_course) to your local machine;
   4) Run docker locally and ensure it working with command `docker run hello-world`;
-  5) In terminal: `cd NEUROML_course/seminar2`
+  5) In terminal: `cd NEUROML_course/seminar4`
   6) Type command `docker build -t neuroml/seminar2:0.0.1 .` and wait for successfull build (the dot . is importaint)
   7) Run `docker run --rm -it -v /directory/to/downloaded/data/on/step/2:/workspace/data -p 8080:8080 neuroml/seminar2:0.0.1`;\
      **Note**: If you have *Windows*, pay attention to paths, type paths in conventional powershell script `C:\directory\to\downloaded\data\on\step\2`
